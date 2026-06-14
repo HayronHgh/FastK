@@ -1,0 +1,72 @@
+[package]
+name = "fastk"
+version = "0.1.0-rc.1"
+edition = "2021"
+description = "Versioned fixed-record time-series storage engine for normalized records."
+readme = "README.md"
+keywords = ["timeseries", "storage", "market-data", "binary-format", "sqlite"]
+categories = ["database-implementations", "data-structures"]
+exclude = [
+    "/target/**",
+    "/dist/**",
+    "/data/**",
+    "/series/**",
+    "/tmp/**",
+    "*.db",
+    "*.sqlite",
+    "*.7z",
+    "*.zip",
+]
+# TODO: set license before publishing to crates.io.
+# TODO: set repository/homepage before publishing to crates.io.
+
+[lib]
+name = "fastk"
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[[example]]
+name = "fastk_bridge"
+path = "examples/cli/fastk_bridge.rs"
+
+[[example]]
+name = "fastk_admin"
+path = "examples/cli/fastk_admin.rs"
+
+[[example]]
+name = "backtest_facade_demo"
+path = "examples/demos/backtest_facade_demo.rs"
+
+[[example]]
+name = "indicator_series_demo"
+path = "examples/demos/indicator_series_demo.rs"
+
+[[example]]
+name = "prepare_python_demo_store"
+path = "examples/demos/prepare_python_demo_store.rs"
+
+[[example]]
+name = "bench_acceptance"
+path = "examples/benchmarks/bench_acceptance.rs"
+
+[[example]]
+name = "bench_backtest_facade"
+path = "examples/benchmarks/bench_backtest_facade.rs"
+
+[[example]]
+name = "bench_scalar_sidecars"
+path = "examples/benchmarks/bench_scalar_sidecars.rs"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"
+strip = "symbols"

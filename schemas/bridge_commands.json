@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fastk.local/schemas/bridge_commands.json",
+  "title": "FastK Bridge Command Payloads And Responses",
+  "description": "Documentation schema for the current fastk_bridge JSON contract. Read commands use CLI arguments; write commands use these stdin or --input-json payloads.",
+  "$defs": {
+    "kline_record": {
+      "type": "object",
+      "required": ["ts", "open", "high", "low", "close", "volume"],
+      "additionalProperties": false,
+      "properties": {
+        "ts": { "type": "integer" },
+        "open": { "type": "integer" },
+        "high": { "type": "integer" },
+        "low": { "type": "integer" },
+        "close": { "type": "integer" },
+        "volume": { "type": "integer" }
+      }
+    },
+    "scalar_record": {
+      "type": "object",
+      "required": ["ts", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "ts": { "type": "integer" },
+        "value": { "type": "integer" }
+      }
+    },
+    "scalar_predicate": {
+      "oneOf": [
+        { "type": "object", "required": ["Eq"], "properties": { "Eq": { "type": "integer" } }, "additionalProperties": false },
+        { "type": "object", "required": ["Ne"], "properties": { "Ne": { "type": "integer" } }, "additionalProperties": false },
+        { "type": "object", "required": ["Gt"], "properties": { "Gt": { "type": "integer" } }, "additionalProperties": false },
+        { "type": "object", "required": ["Gte"], "properties": { "Gte": { "type": "integer" } }, "additionalProperties": false },
+        { "type": "object", "required": ["Lt"], "properties": { "Lt": { "type": "integer" } }, "additionalProperties": false },
+        { "type": "object", "required": ["Lte"], "properties": { "Lte": { "type": "integer" } }, "additionalProperties": false },
+        {
+          "type": "object",
+          "required": ["Between"],
+          "additionalProperties": false,
+          "properties": {
+            "Between": {
+              "type": "object",
+              "required": ["min", "max", "inclusive"],
+              "additionalProperties": false,
+              "properties": {
+                "min": { "type": "integer" },
+                "max": { "type": "integer" },
+                "inclusive": { "type": "boolean" }
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": ["InSet"],
+          "properties": {
+            "InSet": { "type": "array", "items": { "type": "integer" } }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["NotInSet"],
+          "properties": {
+            "NotInSet": { "type": "array", "items": { "type": "integer" } }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "scalar_predicate_match": {
+      "type": "object",
+      "required": ["ts", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "ts": { "type": "integer" },
+        "value": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "scalar_predicate_stats": {
+      "type": "object",
+      "required": [
+        "chunks_considered",
+        "chunks_scanned",
+        "chunks_pruned",
+        "blocks_considered",
+        "blocks_scanned",
+        "blocks_pruned",
+        "rows_checked",
+        "rows_matched",
+        "index_used",
+        "fallback_scan"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "chunks_considered": { "type": "integer", "minimum": 0 },
+        "chunks_scanned": { "type": "integer", "minimum": 0 },
+        "chunks_pruned": { "type": "integer", "minimum": 0 },
+        "blocks_considered": { "type": "integer", "minimum": 0 },
+        "blocks_scanned": { "type": "integer", "minimum": 0 },
+        "blocks_pruned": { "type": "integer", "minimum": 0 },
+        "rows_checked": { "type": "integer", "minimum": 0 },
+        "rows_matched": { "type": "integer", "minimum": 0 },
+        "index_used": {
+          "anyOf": [
+            { "type": "string", "enum": ["ZoneMap", "ValueIndex", "ZoneMapAndValueIndex", "FullScan"] },
+            { "type": "null" }
+          ]
+        },
+        "fallback_scan": { "type": "boolean" }
+      }
+    },
+    "month_inventory_entry": {
+      "type": "object",
+      "required": [
+        "month_key",
+        "chunk_count",
+        "record_count",
+        "sealed_chunk_count",
+        "active_delta_count",
+        "sidecar_count"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "month_key": { "type": "string" },
+        "chunk_count": { "type": "integer", "minimum": 0 },
+        "record_count": { "type": "integer", "minimum": 0 },
+        "sealed_chunk_count": { "type": "integer", "minimum": 0 },
+        "active_delta_count": { "type": "integer", "minimum": 0 },
+        "sidecar_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "scalar_capabilities": {
+      "type": "object",
+      "required": ["raw_scan", "has_zmap", "has_vix"],
+      "additionalProperties": false,
+      "properties": {
+        "raw_scan": { "type": "boolean" },
+        "has_zmap": { "type": "boolean" },
+        "has_vix": { "type": "boolean" }
+      }
+    },
+    "write_kline_request": {
+      "type": "object",
+      "required": ["timeframe_ms", "price_scale", "volume_scale", "records"],
+      "additionalProperties": false,
+      "properties": {
+        "timeframe_ms": { "type": "integer", "minimum": 1 },
+        "price_scale": { "type": "integer", "minimum": 1 },
+        "volume_scale": { "type": "integer", "minimum": 1 },
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/kline_record" }
+        }
+      }
+    },
+    "write_scalar_request": {
+      "type": "object",
+      "required": ["timeframe_ms", "records"],
+      "additionalProperties": false,
+      "properties": {
+        "timeframe_ms": {
+          "anyOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "null" }
+          ]
+        },
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scalar_record" }
+        }
+      }
+    },
+    "write_indicator_request": {
+      "type": "object",
+      "required": ["records"],
+      "additionalProperties": false,
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scalar_record" }
+        }
+      }
+    },
+    "write_kline_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "timeframe_ms",
+        "price_scale",
+        "volume_scale",
+        "registered",
+        "requested_record_count",
+        "written_record_count",
+        "month_batches_written"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "timeframe_ms": { "type": "integer" },
+        "price_scale": { "type": "integer" },
+        "volume_scale": { "type": "integer" },
+        "registered": { "type": "boolean" },
+        "requested_record_count": { "type": "integer", "minimum": 0 },
+        "written_record_count": { "type": "integer", "minimum": 0 },
+        "month_batches_written": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "write_scalar_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "category",
+        "name",
+        "timeframe_ms",
+        "registered",
+        "requested_record_count",
+        "written_record_count",
+        "month_batches_written"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "timeframe_ms": { "type": "integer" },
+        "registered": { "type": "boolean" },
+        "requested_record_count": { "type": "integer", "minimum": 0 },
+        "written_record_count": { "type": "integer", "minimum": 0 },
+        "month_batches_written": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "kline_range_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "timeframe_ms",
+        "start_ts",
+        "end_ts",
+        "price_scale",
+        "volume_scale",
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "timeframe_ms": { "type": "integer" },
+        "start_ts": { "type": "integer" },
+        "end_ts": { "type": "integer" },
+        "price_scale": { "type": "integer" },
+        "volume_scale": { "type": "integer" },
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/kline_record" }
+        }
+      }
+    },
+    "scalar_range_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "category",
+        "name",
+        "timeframe_ms",
+        "start_ts",
+        "end_ts",
+        "exists",
+        "coverage_start_ts",
+        "coverage_end_ts",
+        "total_record_count",
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "timeframe_ms": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        },
+        "start_ts": { "type": "integer" },
+        "end_ts": { "type": "integer" },
+        "exists": { "type": "boolean" },
+        "coverage_start_ts": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        },
+        "coverage_end_ts": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        },
+        "total_record_count": { "type": "integer", "minimum": 0 },
+        "records": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scalar_record" }
+        }
+      }
+    },
+    "scalar_predicate_query_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "category",
+        "name",
+        "start_ts",
+        "end_ts",
+        "predicate",
+        "return_values",
+        "matches",
+        "stats"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "start_ts": { "type": "integer" },
+        "end_ts": { "type": "integer" },
+        "predicate": { "$ref": "#/$defs/scalar_predicate" },
+        "return_values": { "type": "boolean" },
+        "matches": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scalar_predicate_match" }
+        },
+        "stats": { "$ref": "#/$defs/scalar_predicate_stats" }
+      }
+    },
+    "inventory_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "category",
+        "name",
+        "exists",
+        "record_count",
+        "coverage_start_ts",
+        "coverage_end_ts",
+        "inventory",
+        "capabilities"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": { "type": "string" },
+        "timeframe": { "type": "string" },
+        "category": { "type": "string" },
+        "name": { "type": "string" },
+        "exists": { "type": "boolean" },
+        "record_count": { "type": "integer", "minimum": 0 },
+        "coverage_start_ts": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        },
+        "coverage_end_ts": {
+          "anyOf": [
+            { "type": "integer" },
+            { "type": "null" }
+          ]
+        },
+        "inventory": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/month_inventory_entry" }
+        },
+        "capabilities": {
+          "anyOf": [
+            { "$ref": "#/$defs/scalar_capabilities" },
+            { "type": "null" }
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["contract_version", "commands"],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": { "const": "0.1.0-rc.1" },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "read-kline-range",
+          "write-kline-range",
+          "kline-inventory",
+          "read-indicator-range",
+          "write-indicator-range",
+          "indicator-inventory",
+          "read-scalar-range",
+          "query-scalar-predicate",
+          "write-scalar-range",
+          "scalar-inventory"
+        ]
+      }
+    }
+  }
+}
