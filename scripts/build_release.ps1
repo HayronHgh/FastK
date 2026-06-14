@@ -145,7 +145,8 @@ $docs = @(
     "docs\BACKEND_INTEGRATION.md",
     "docs\BRIDGE_CONTRACT.md",
     "docs\KLINE_STORAGE_COMPARISON.md",
-    "docs\PROJECT_STRUCTURE.md"
+    "docs\PROJECT_STRUCTURE.md",
+    "docs\SIGNAL_SCALAR_STORAGE.md"
 )
 foreach ($doc in $docs) {
     $source = Join-Path $RepoRoot $doc

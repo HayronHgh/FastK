@@ -20,6 +20,7 @@ kline_store/
     RELEASE_CHECKLIST.md
     RELEASE_NOTES.md
     REPLAY_AND_TAIL.md
+    SIGNAL_SCALAR_STORAGE.md
     STORE_LIFECYCLE.md
   examples/
     cli/

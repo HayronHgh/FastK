@@ -423,6 +423,21 @@ cargo run --example fastk_bridge -- read-scalar-range --root ./data/store --symb
 cargo run --example fastk_bridge -- query-scalar-predicate --root ./data/store --symbol BTCUSDT --timeframe 1m --category feature --name rsi_14 --start-ts 1706745600000 --end-ts 1706749200000 --predicate gt --value 7000 --return-values
 ```
 
+Signal-like values can use the same scalar bridge as a caller-side convention:
+
+```bash
+cargo run --example fastk_bridge -- write-scalar-range --root ./data/store --symbol BTCUSDT --timeframe 15m --category signal --name sigvec_test --input-json ./signal_rows.json
+cargo run --example fastk_bridge -- read-scalar-range --root ./data/store --symbol BTCUSDT --timeframe 15m --category signal --name sigvec_test --start-ts 1706745600000 --end-ts 1706747400000
+cargo run --example fastk_bridge -- query-scalar-predicate --root ./data/store --symbol BTCUSDT --timeframe 15m --category signal --name sigvec_test --start-ts 1706745600000 --end-ts 1706747400000 --predicate ne --value 0 --return-values
+cargo run --example fastk_bridge -- query-scalar-predicate --root ./data/store --symbol BTCUSDT --timeframe 15m --category signal --name sigvec_test --start-ts 1706745600000 --end-ts 1706747400000 --predicate eq --value 1 --return-values
+cargo run --example fastk_bridge -- query-scalar-predicate --root ./data/store --symbol BTCUSDT --timeframe 15m --category signal --name sigvec_test --start-ts 1706745600000 --end-ts 1706747400000 --predicate eq --value -1 --return-values
+```
+
+FastK does not interpret `signal` categories or values such as `1` and `-1`.
+They are ordinary scalar categories and integer scalar values; any active,
+long, short, approval, rule, report, or strategy meaning belongs to the caller.
+See [Signal-as-Scalar Bridge](docs/SIGNAL_SCALAR_STORAGE.md).
+
 ## Python Workflow in the Architecture
 
 Repo-root `tools/python/` is intentionally outside the crate. It is an integration layer, not part of the core Rust storage engine.
@@ -551,3 +566,4 @@ Not guaranteed fully frozen yet:
 - [Bridge Contract](docs/BRIDGE_CONTRACT.md)
 - [Project Structure](docs/PROJECT_STRUCTURE.md)
 - [Kline Storage Comparison](docs/KLINE_STORAGE_COMPARISON.md)
+- [Signal-as-Scalar Bridge](docs/SIGNAL_SCALAR_STORAGE.md)

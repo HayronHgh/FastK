@@ -125,6 +125,7 @@ DOCS=(
   docs/BRIDGE_CONTRACT.md
   docs/KLINE_STORAGE_COMPARISON.md
   docs/PROJECT_STRUCTURE.md
+  docs/SIGNAL_SCALAR_STORAGE.md
 )
 for doc in "${DOCS[@]}"; do
   if [ ! -f "$doc" ]; then

@@ -248,6 +248,162 @@ fn bridge_query_scalar_predicate_in_set() {
 }
 
 #[test]
+fn bridge_signal_as_scalar_roundtrip_predicates_and_inventory() {
+    let _guard = CLI_LOCK.lock().expect("cli lock should not be poisoned");
+    let temp_dir = TempDir::new().expect("temp dir should be created");
+    let root = temp_dir.path().to_string_lossy().into_owned();
+    seed_signal_vector(&root, "sigvec_test");
+
+    let read = run_bridge_json(
+        &[
+            "read-scalar-range",
+            "--root",
+            &root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            "sigvec_test",
+            "--start-ts",
+            "1706745600000",
+            "--end-ts",
+            "1706745960000",
+        ],
+        None,
+    );
+    assert_eq!(read["category"], "signal");
+    assert_eq!(read["name"], "sigvec_test");
+    assert_eq!(scalar_values(&read), vec![0, 0, 1, 0, 1, -1, 0]);
+    assert_eq!(
+        scalar_timestamps(&read),
+        vec![
+            1_706_745_600_000i64,
+            1_706_745_660_000,
+            1_706_745_720_000,
+            1_706_745_780_000,
+            1_706_745_840_000,
+            1_706_745_900_000,
+            1_706_745_960_000,
+        ]
+    );
+
+    let non_zero = query_signal_predicate(&root, "sigvec_test", "ne", "0");
+    assert_eq!(match_values(&non_zero), vec![1, 1, -1]);
+    assert_eq!(
+        match_timestamps(&non_zero),
+        vec![1_706_745_720_000i64, 1_706_745_840_000, 1_706_745_900_000]
+    );
+
+    let value_one = query_signal_predicate(&root, "sigvec_test", "eq", "1");
+    assert_eq!(match_values(&value_one), vec![1, 1]);
+    assert_eq!(
+        match_timestamps(&value_one),
+        vec![1_706_745_720_000i64, 1_706_745_840_000]
+    );
+
+    let value_negative_one = query_signal_predicate(&root, "sigvec_test", "eq", "-1");
+    assert_eq!(match_values(&value_negative_one), vec![-1]);
+    assert_eq!(
+        match_timestamps(&value_negative_one),
+        vec![1_706_745_900_000i64]
+    );
+
+    let inventory = run_bridge_json(
+        &[
+            "scalar-inventory",
+            "--root",
+            &root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            "sigvec_test",
+        ],
+        None,
+    );
+    assert!(inventory["exists"].as_bool().expect("exists bool"));
+    assert_eq!(inventory["category"], "signal");
+    assert_eq!(inventory["name"], "sigvec_test");
+    assert_eq!(inventory["record_count"], 7);
+}
+
+#[test]
+fn bridge_signal_as_scalar_month_boundary_roundtrip() {
+    let _guard = CLI_LOCK.lock().expect("cli lock should not be poisoned");
+    let temp_dir = TempDir::new().expect("temp dir should be created");
+    let root = temp_dir.path().to_string_lossy().into_owned();
+
+    let write = run_bridge_json(
+        &[
+            "write-scalar-range",
+            "--root",
+            &root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            "sigvec_boundary",
+        ],
+        Some(
+            r#"{
+              "timeframe_ms": 60000,
+              "records": [
+                { "ts": 1706745480000, "value": 0 },
+                { "ts": 1706745540000, "value": 1 },
+                { "ts": 1706745600000, "value": -1 },
+                { "ts": 1706745660000, "value": 0 }
+              ]
+            }"#,
+        ),
+    );
+    assert_eq!(write["category"], "signal");
+    assert_eq!(write["name"], "sigvec_boundary");
+    assert_eq!(write["written_record_count"], 4);
+    assert_eq!(write["month_batches_written"], 2);
+
+    let read = run_bridge_json(
+        &[
+            "read-scalar-range",
+            "--root",
+            &root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            "sigvec_boundary",
+            "--start-ts",
+            "1706745480000",
+            "--end-ts",
+            "1706745660000",
+        ],
+        None,
+    );
+
+    assert_eq!(
+        scalar_timestamps(&read),
+        vec![
+            1_706_745_480_000i64,
+            1_706_745_540_000,
+            1_706_745_600_000,
+            1_706_745_660_000,
+        ]
+    );
+    assert_eq!(scalar_values(&read), vec![0, 1, -1, 0]);
+}
+
+#[test]
 fn release_manifest_schema_smoke() {
     let manifest_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     let bridge_schema: Value = serde_json::from_str(
@@ -309,6 +465,105 @@ fn seed_scalar_feature(root: &str) {
         ),
     );
     assert_eq!(write["written_record_count"], 3);
+}
+
+fn seed_signal_vector(root: &str, name: &str) {
+    let write = run_bridge_json(
+        &[
+            "write-scalar-range",
+            "--root",
+            root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            name,
+        ],
+        Some(
+            r#"{
+              "timeframe_ms": 60000,
+              "records": [
+                { "ts": 1706745600000, "value": 0 },
+                { "ts": 1706745660000, "value": 0 },
+                { "ts": 1706745720000, "value": 1 },
+                { "ts": 1706745780000, "value": 0 },
+                { "ts": 1706745840000, "value": 1 },
+                { "ts": 1706745900000, "value": -1 },
+                { "ts": 1706745960000, "value": 0 }
+              ]
+            }"#,
+        ),
+    );
+    assert_eq!(write["category"], "signal");
+    assert_eq!(write["name"], name);
+    assert_eq!(write["written_record_count"], 7);
+}
+
+fn query_signal_predicate(root: &str, name: &str, predicate: &str, value: &str) -> Value {
+    run_bridge_json(
+        &[
+            "query-scalar-predicate",
+            "--root",
+            root,
+            "--symbol",
+            "BTCUSDT",
+            "--timeframe",
+            "1m",
+            "--category",
+            "signal",
+            "--name",
+            name,
+            "--start-ts",
+            "1706745600000",
+            "--end-ts",
+            "1706745960000",
+            "--predicate",
+            predicate,
+            "--value",
+            value,
+            "--return-values",
+        ],
+        None,
+    )
+}
+
+fn scalar_timestamps(response: &Value) -> Vec<i64> {
+    response["records"]
+        .as_array()
+        .expect("records array")
+        .iter()
+        .map(|record| record["ts"].as_i64().expect("record ts"))
+        .collect()
+}
+
+fn scalar_values(response: &Value) -> Vec<i64> {
+    response["records"]
+        .as_array()
+        .expect("records array")
+        .iter()
+        .map(|record| record["value"].as_i64().expect("record value"))
+        .collect()
+}
+
+fn match_timestamps(response: &Value) -> Vec<i64> {
+    response["matches"]
+        .as_array()
+        .expect("matches array")
+        .iter()
+        .map(|record| record["ts"].as_i64().expect("match ts"))
+        .collect()
+}
+
+fn match_values(response: &Value) -> Vec<i64> {
+    response["matches"]
+        .as_array()
+        .expect("matches array")
+        .iter()
+        .map(|record| record["value"].as_i64().expect("match value"))
+        .collect()
 }
 
 fn run_bridge_json(args: &[&str], input: Option<&str>) -> Value {
