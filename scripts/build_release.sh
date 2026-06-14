@@ -113,6 +113,12 @@ if [ ! -f "$CRATE_SOURCE" ]; then
 fi
 cp "$CRATE_SOURCE" "$PACKAGE_DIR/crate/fastk-$VERSION.crate"
 
+if [ ! -f "$REPO_ROOT/LICENSE" ]; then
+  echo "missing release license: LICENSE" >&2
+  exit 1
+fi
+cp "$REPO_ROOT/LICENSE" "$PACKAGE_DIR/LICENSE"
+
 DOCS=(
   README.md
   docs/ARCHITECTURE_BOUNDARY.md
@@ -163,6 +169,7 @@ BUILD_TIME_UTC="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 BRIDGE_SHA="$(sha256_file "$PACKAGE_DIR/bin/fastk_bridge$EXE_EXT")"
 ADMIN_SHA="$(sha256_file "$PACKAGE_DIR/bin/fastk_admin$EXE_EXT")"
 CRATE_SHA="$(sha256_file "$PACKAGE_DIR/crate/fastk-$VERSION.crate")"
+LICENSE_SHA="$(sha256_file "$PACKAGE_DIR/LICENSE")"
 
 cat > "$PACKAGE_DIR/release_manifest.json" <<EOF
 {
@@ -188,6 +195,11 @@ cat > "$PACKAGE_DIR/release_manifest.json" <<EOF
       "path": "crate/fastk-$VERSION.crate",
       "kind": "crate",
       "sha256": "$CRATE_SHA"
+    },
+    {
+      "path": "LICENSE",
+      "kind": "license",
+      "sha256": "$LICENSE_SHA"
     }
   ],
   "stable_surfaces": [

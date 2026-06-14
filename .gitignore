@@ -3,3 +3,7 @@
 /series
 /data
 /tmp
+*.db
+*.sqlite
+*.7z
+*.zip

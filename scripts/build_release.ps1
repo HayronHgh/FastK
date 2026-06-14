@@ -134,6 +134,13 @@ if (-not (Test-Path -LiteralPath $crateSource)) {
 $crateDest = Join-Path $crateDir "fastk-$version.crate"
 Copy-Item -LiteralPath $crateSource -Destination $crateDest
 
+$licenseSource = Join-Path $RepoRoot "LICENSE"
+if (-not (Test-Path -LiteralPath $licenseSource)) {
+    throw "missing release license: LICENSE"
+}
+$licenseDest = Join-Path $packageDir "LICENSE"
+Copy-Item -LiteralPath $licenseSource -Destination $licenseDest
+
 $docs = @(
     "README.md",
     "docs\ARCHITECTURE_BOUNDARY.md",
@@ -172,6 +179,11 @@ $artifactEntries += [ordered]@{
     path = Get-RelativeManifestPath $packageDir $crateDest
     kind = "crate"
     sha256 = Get-Sha256 $crateDest
+}
+$artifactEntries += [ordered]@{
+    path = Get-RelativeManifestPath $packageDir $licenseDest
+    kind = "license"
+    sha256 = Get-Sha256 $licenseDest
 }
 Get-ChildItem -LiteralPath $docsDir -File | Sort-Object Name | ForEach-Object {
     $artifactEntries += [ordered]@{

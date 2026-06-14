@@ -8,7 +8,12 @@ release/support material.
 kline_store/
   Cargo.toml
   Cargo.lock
+  CONTRIBUTING.md
+  LICENSE
   README.md
+  .github/
+    workflows/
+      ci.yml
   docs/
     ARCHITECTURE_BOUNDARY.md
     BACKEND_INTEGRATION.md

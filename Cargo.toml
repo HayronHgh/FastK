@@ -4,6 +4,7 @@ version = "0.1.0-rc.1"
 edition = "2021"
 description = "Versioned fixed-record time-series storage engine for normalized records."
 readme = "README.md"
+license = "MIT"
 keywords = ["timeseries", "storage", "market-data", "binary-format", "sqlite"]
 categories = ["database-implementations", "data-structures"]
 exclude = [
@@ -17,7 +18,6 @@ exclude = [
     "*.7z",
     "*.zip",
 ]
-# TODO: set license before publishing to crates.io.
 # TODO: set repository/homepage before publishing to crates.io.
 
 [lib]
