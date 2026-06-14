@@ -1,41 +1,68 @@
 # Kline Storage Comparison
 
-This report compares kline storage options for normalized OHLCV records:
+This report compares storage options for normalized OHLCV kline records:
 
 ```text
 KlineRecord = ts, open, high, low, close, volume
 ```
 
-FastK stores this as six signed 64-bit integers, so the raw payload is 48 bytes
-per row before chunk headers, sparse indexes, manifests, and filesystem
+FastK stores each kline row as six signed 64-bit integers. The raw payload is
+48 bytes per row before chunk headers, manifests, sidecars, and filesystem
 metadata.
 
-## Scope
+## Benchmark Scope
 
-The numbers below are engineering sizing estimates for a 1,000,000-row kline
-dataset. They are meant for architecture comparison and capacity planning, not
-as a substitute for a machine-local benchmark. TimescaleDB numbers are included
-as deployment estimates because this repository does not run a local TimescaleDB
-server in tests.
+The measured numbers below come from the Rust-only benchmark runner:
 
-Assumptions:
+```bash
+cargo run --release --example bench_kline_storage_comparison -- \
+  --root target/kline-storage-comparison-10m \
+  --symbol-count 24 \
+  --months 10 \
+  --records-per-month 41667 \
+  --range-ops 100 \
+  --range-rows 1024
+```
 
-- one symbol/timeframe series
-- integer-scaled OHLCV values
-- rows sorted by timestamp
-- no compression for JSON/CSV unless stated
-- SQLite has an index on timestamp
-- TimescaleDB uses a hypertable with timestamp index
+Benchmark environment:
 
-## Storage Footprint
+- Measured at: `2026-06-14T18:09:55.957032800+00:00`
+- Host OS / arch: `windows` / `x86_64`
+- Dataset: `24` symbols x `10` months x `41,667` rows per month
+- Total rows: `10,000,080`
+- Timeframe: `1m`
+- Range workload: `100` range reads x `1,024` rows
+- Source result file:
+  `target/kline-storage-comparison-10m/kline-storage-comparison-results.json`
 
-| Backend | Record shape | Estimated bytes / row | Estimated 1M-row size | Notes |
-|---|---:|---:|---:|---|
-| FastK | fixed binary `i64 x 6` | 48-56 B | 48-56 MB | Chunk headers and manifests are small relative to row payload. |
-| CSV | text row | 70-120 B | 70-120 MB | Compact and portable, but no native index. |
-| JSONL | object per row | 150-260 B | 150-260 MB | Human-readable but large due to repeated field names. |
-| SQLite3 | table + timestamp index | 90-180 B | 90-180 MB | Good embedded baseline; index adds storage. |
-| TimescaleDB | hypertable + index | 120-240 B | 120-240 MB | Server features add overhead; compression can reduce historical chunks. |
+Python tools are not used for these measurements.
+
+## Measured Results
+
+| Backend | Rows | Size | Bytes / row | Write time | Write throughput | Full read time | Full read throughput |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| FastK | 10,000,080 | 459.02 MiB | 48.13 B | 3.768 s | 2,653,606 rows/s | 0.150 s | 66,521,651 rows/s |
+| CSV | 10,000,080 | 722.75 MiB | 75.79 B | 1.970 s | 5,075,596 rows/s | 2.317 s | 4,316,835 rows/s |
+| JSONL | 10,000,080 | 1,247.27 MiB | 130.79 B | 2.226 s | 4,492,064 rows/s | 2.944 s | 3,396,683 rows/s |
+| SQLite3 | 10,000,080 | 1,569.08 MiB | 164.53 B | 13.654 s | 732,418 rows/s | 2.062 s | 4,849,892 rows/s |
+| TimescaleDB | Not measured | Not measured | Not measured | Not measured | Not measured | Not measured | Not measured |
+
+TimescaleDB is not measured in this local run because it requires an external
+PostgreSQL/TimescaleDB service. Docker is not available on this host and no
+TimescaleDB DSN was configured, so this report does not mix estimated
+TimescaleDB numbers with measured embedded-storage numbers.
+
+## Range Read Results
+
+The range workload reads `102,400` total rows through `100` range queries.
+
+| Backend | Range rows read | Total range time | Average / op | Range throughput | Notes |
+|---|---:|---:|---:|---:|---|
+| FastK | 102,400 | 0.005234 s | 0.0523 ms | 19,562,892 rows/s | Chunk-pruned binary range reads. |
+| SQLite3 | 102,400 | 0.022410 s | 0.2241 ms | 4,569,450 rows/s | Indexed range scan on `(symbol, ts)`. |
+| CSV | Not reported | Not reported | Not reported | Not reported | No external index in this benchmark; range reads require full-file scan. |
+| JSONL | Not reported | Not reported | Not reported | Not reported | No external index in this benchmark; range reads require full-file scan and JSON parse. |
+| TimescaleDB | Not measured | Not measured | Not measured | Not measured | Requires external PostgreSQL/TimescaleDB service. |
 
 ## Operational Comparison
 
@@ -62,28 +89,27 @@ Assumptions:
 
 ## Practical Interpretation
 
-FastK is the best fit when the application wants a local, versioned,
-read-heavy storage layer for already-normalized kline data and feature outputs.
-It avoids SQL planner overhead and stores rows in a compact fixed-width binary
-format.
+FastK has the smallest measured footprint because kline rows remain fixed-width
+binary records. On this dataset it stores `10,000,080` rows in `459.02 MiB`,
+close to the 48-byte raw row payload.
 
-CSV is acceptable for interchange and inspection, but it becomes expensive once
-range reads and latest-N reads are part of the hot path.
+CSV and JSONL write quickly because the benchmark performs simple buffered file
+writes, but both formats pay much higher parse cost during reads and do not
+provide native timestamp indexing.
 
-JSONL is useful for debugging and bridge contracts, but it is inefficient as the
-primary kline store because every row repeats field names and requires heavier
-parsing.
+SQLite3 is the strongest embedded general-purpose baseline. It supports indexed
+range reads and SQL queries, but the table and primary-key index increase both
+write time and storage footprint.
 
-SQLite3 is the strongest embedded general-purpose baseline. It is easier to
-query ad hoc than FastK, but it carries row/index overhead and does not enforce
-FastK's chunk lifecycle.
-
-TimescaleDB is appropriate when the system needs server-side SQL analytics,
-multi-client access, retention jobs, or operational database features. It is
-heavier than FastK for an embedded research/backtest storage component.
+TimescaleDB remains the right comparison point for networked SQL analytics,
+retention jobs, hypertables, compression policies, and multi-client access. It
+is not an embedded local storage dependency, so it should be benchmarked against
+a real PostgreSQL/TimescaleDB deployment before using numbers in capacity
+planning.
 
 ## Recommendation
 
-Use FastK for the local kline and feature persistence layer. Keep CSV/JSONL as
-import/export formats, SQLite3 as a control-plane or general embedded baseline,
-and TimescaleDB only when the project needs a networked analytical database.
+Use FastK for local kline and feature persistence when the hot path is
+read-heavy range access over normalized fixed-record data. Keep CSV/JSONL as
+import/export formats, SQLite3 as the embedded SQL baseline, and TimescaleDB
+for deployments that need a server-side analytical database.

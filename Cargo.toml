@@ -64,6 +64,10 @@ path = "examples/benchmarks/bench_backtest_facade.rs"
 name = "bench_scalar_sidecars"
 path = "examples/benchmarks/bench_scalar_sidecars.rs"
 
+[[example]]
+name = "bench_kline_storage_comparison"
+path = "examples/benchmarks/bench_kline_storage_comparison.rs"
+
 [profile.release]
 opt-level = 3
 lto = "thin"

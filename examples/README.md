@@ -47,6 +47,9 @@ Cargo example names are kept stable through `Cargo.toml`, so commands such as
   - Benchmark for the storage read facade and cache behavior.
 - `benchmarks/bench_scalar_sidecars.rs`
   - Benchmark for scalar sidecars: point lookup, short-range, zmap, and vix.
+- `benchmarks/bench_kline_storage_comparison.rs`
+  - Rust-only storage comparison runner for FastK, CSV, JSONL, and SQLite3.
+  - The default configuration writes about ten million synthetic kline rows.
 
 ## Boundary Note
 
