@@ -67,7 +67,8 @@ class SessionFaults(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        # Match Client's canonical path, including Windows short temp paths.
+        self.root = Path(self.temp.name).resolve()
         self.binary = self.root / "fake bridge.exe"
         self.binary.touch()
         self.log = self.root / "calls.jsonl"
