@@ -1,0 +1,44 @@
+🐍 Found CPython 3.12 at /tmp/attribution-venv/bin/python
+🔗 Found pyo3 bindings
+   Compiling target-lexicon v0.13.5
+   Compiling proc-macro2 v1.0.106
+   Compiling quote v1.0.45
+   Compiling generic-array v0.14.7
+   Compiling zerocopy v0.8.48
+   Compiling crossbeam-utils v0.8.23
+   Compiling crossbeam-epoch v0.9.21
+   Compiling ahash v0.8.12
+   Compiling libc v0.2.184
+   Compiling pyo3-macros-backend v0.30.1
+   Compiling serde_core v1.0.228
+   Compiling crossbeam-deque v0.8.8
+   Compiling rayon-core v1.13.0
+   Compiling zmij v1.0.21
+   Compiling num-traits v0.2.19
+   Compiling matrixmultiply v0.3.11
+   Compiling pyo3-build-config v0.30.1
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling num-complex v0.4.6
+   Compiling num-integer v0.1.47
+   Compiling chrono v0.4.44
+   Compiling syn v3.0.9
+   Compiling syn v2.0.117
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling sha2 v0.10.9
+   Compiling ndarray v0.17.2
+   Compiling serde_json v1.0.149
+   Compiling rayon v1.12.0
+   Compiling serde_derive v1.0.228
+   Compiling hashbrown v0.14.5
+   Compiling serde v1.0.228
+   Compiling hashlink v0.9.1
+   Compiling rusqlite v0.32.1
+   Compiling pyo3-macros v0.30.1
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling fastk-attribution-probe v0.0.0 (/work/external-tests/attribution/probe)
+    Finished `release` profile [optimized] target(s) in 25.15s
+📦 Built wheel for CPython 3.12 to target/v02-attribution-final-linux-wheels/fastk_attribution_probe-0.0.0-cp312-cp312-manylinux_2_34_x86_64.whl

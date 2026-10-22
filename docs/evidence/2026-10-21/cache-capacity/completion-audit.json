@@ -1,0 +1,12 @@
+{
+  "primary_processes": 70,
+  "primary_outputs": 78950,
+  "profile_processes": 36,
+  "profile_outputs": 38790,
+  "all_summaries_recomputed": true,
+  "effective_capacity_verified_by_handles": true,
+  "all_fastk_handles_return_to_baseline": true,
+  "frozen_query_hashes_match": true,
+  "native_tests": 27,
+  "zip_crc_and_hashes_pass": true
+}

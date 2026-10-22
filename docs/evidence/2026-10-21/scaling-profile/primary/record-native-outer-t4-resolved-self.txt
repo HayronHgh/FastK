@@ -1,0 +1,51 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 993  of event 'cycles'
+# Event count (approx.): 27820387296
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                      
+# ........  ...............  .....................  ............................................................................................................................
+#
+     4.16%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560e8e
+     3.90%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afb
+     3.25%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkFileCache>::open
+     2.95%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e55c01c
+     2.76%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3ac840
+     2.33%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e67bcc8
+     1.89%  fastk-scaling-p  libc.so.6              [.] realloc
+     1.68%  fastk-scaling-p  libc.so.6              [.] malloc
+     1.47%  fastk-scaling-p  libc.so.6              [.] 0x000000000009516b
+     1.30%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a5e6
+     1.16%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e6a7526
+     1.15%  fastk-scaling-p  libc.so.6              [.] 0x000000000009672c
+     1.07%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a629
+     1.06%  fastk-scaling-p  [unknown]              [k] 0xffffffff8eaca23b
+     1.05%  fastk-scaling-p  libc.so.6              [.] 0x000000000016e0ba
+     1.00%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e6a557e
+     0.99%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e69f7ac
+     0.99%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e84c7d4
+     0.96%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afd
+     0.84%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9bf6e2
+     0.80%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e42eb2e
+     0.78%  fastk-scaling-p  fastk-scaling-profile  [.] std::io::default_read_exact::<fastk::store_core::chunk::file::ChunkFile>
+     0.77%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3aae04
+     0.75%  fastk-scaling-p  fastk-scaling-profile  [.] fastk::store_core::chunk::sparse_index::lookup_window
+     0.71%  fastk-scaling-p  libc.so.6              [.] 0x00000000000858d1
+     0.68%  fastk-scaling-p  libc.so.6              [.] 0x0000000000096565
+     0.68%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkRuntime>::get_layout
+     0.68%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ea231ca
+     0.66%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f395756
+     0.66%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560d61
+     0.62%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e000080
+     0.60%  fastk-scaling-p  fastk-scaling-profile  [.] fastk_scaling_profile::read
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9c0f6e
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8eaca070
+     0.57%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9d3265
+
+
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#

@@ -1,0 +1,14 @@
+test_all_scalar_predicates_preserve_int64_values (test_native.NativeTests.test_all_scalar_predicates_preserve_int64_values) ... ok
+test_arrays_own_their_lifetime_without_retaining_store_lock (test_native.NativeTests.test_arrays_own_their_lifetime_without_retaining_store_lock) ... ok
+test_dtype_shape_and_integer_overflow_rejected (test_native.NativeTests.test_dtype_shape_and_integer_overflow_rejected) ... ok
+test_invalid_input_does_not_dirty_store_or_replay_failed_write (test_native.NativeTests.test_invalid_input_does_not_dirty_store_or_replay_failed_write) ... ok
+test_layout_range_metadata_and_empty_results (test_native.NativeTests.test_layout_range_metadata_and_empty_results) ... ok
+test_noncontiguous_input_and_independent_readers (test_native.NativeTests.test_noncontiguous_input_and_independent_readers) ... ok
+test_parallel_scalar_and_truncated_payload_fail_without_partial_result (test_native.NativeTests.test_parallel_scalar_and_truncated_payload_fail_without_partial_result) ... ok
+test_reader_requires_initialization_and_cannot_attach_without_a_lease (test_native.NativeTests.test_reader_requires_initialization_and_cannot_attach_without_a_lease) ... ok
+test_shared_reader_parallel_chunks_and_close_race (test_native.NativeTests.test_shared_reader_parallel_chunks_and_close_race) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.722s
+
+OK

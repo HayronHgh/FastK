@@ -1,0 +1,9 @@
+test_fastk_reader_is_shared_and_closed_once_after_workers (test_matrix_lifecycle.MatrixLifecycleTests.test_fastk_reader_is_shared_and_closed_once_after_workers) ... ok
+test_shared_read_failure_aborts_workers_closes_once_and_is_not_replayed (test_matrix_lifecycle.MatrixLifecycleTests.test_shared_read_failure_aborts_workers_closes_once_and_is_not_replayed) ... ok
+test_sql_connection_is_opened_and_closed_on_its_worker (test_matrix_lifecycle.MatrixLifecycleTests.test_sql_connection_is_opened_and_closed_on_its_worker) ... ok
+test_worker_open_failure_aborts_the_barrier (test_matrix_lifecycle.MatrixLifecycleTests.test_worker_open_failure_aborts_the_barrier) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.021s
+
+OK

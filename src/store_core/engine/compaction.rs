@@ -43,21 +43,19 @@ impl CompactionPolicy {
             return None;
         }
 
-        let delta_chunk_count = month_chunks
+        let mut readable: Vec<_> = month_chunks
             .iter()
-            .filter(|chunk| chunk.state == ChunkState::Active)
-            .count();
-        let delta_total_bytes = month_chunks
+            .copied()
+            .filter(|chunk| chunk.state.is_readable())
+            .collect();
+        readable.sort_by_key(|chunk| chunk.start_ts);
+        let delta_chunk_count = readable.len().saturating_sub(1);
+        let delta_total_bytes = readable
             .iter()
-            .filter(|chunk| chunk.state == ChunkState::Active)
+            .skip(1)
             .map(|chunk| chunk.count.saturating_mul(meta.record_size as u64))
             .sum();
-        let append_count = month_chunks
-            .iter()
-            .map(|chunk| chunk.generation as usize)
-            .max()
-            .unwrap_or(1)
-            .saturating_sub(1);
+        let append_count = delta_chunk_count;
         let mut reasons = Vec::new();
 
         if delta_chunk_count >= self.delta_chunk_threshold {

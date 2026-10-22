@@ -1,0 +1,59 @@
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling fastk-attribution-probe v0.0.0 (/work/external-tests/attribution/probe)
+    Finished `release` profile [optimized] target(s) in 14.30s
+FD control verified 1 / 54 {'round': 1, 'route': 'rust', 'workers': 1, 'prepared': False}
+FD control verified 2 / 54 {'round': 0, 'route': 'native', 'workers': 1, 'prepared': False}
+FD control verified 3 / 54 {'round': 1, 'route': 'rust', 'workers': 8, 'prepared': True}
+FD control verified 4 / 54 {'round': 0, 'route': 'probe', 'workers': 4, 'prepared': False}
+FD control verified 5 / 54 {'round': 0, 'route': 'probe', 'workers': 8, 'prepared': True}
+FD control verified 6 / 54 {'round': 0, 'route': 'rust', 'workers': 8, 'prepared': False}
+FD control verified 7 / 54 {'round': 1, 'route': 'probe', 'workers': 8, 'prepared': True}
+FD control verified 8 / 54 {'round': 1, 'route': 'probe', 'workers': 1, 'prepared': False}
+FD control verified 9 / 54 {'round': 2, 'route': 'native', 'workers': 1, 'prepared': True}
+FD control verified 10 / 54 {'round': 0, 'route': 'probe', 'workers': 8, 'prepared': False}
+FD control verified 11 / 54 {'round': 2, 'route': 'rust', 'workers': 4, 'prepared': True}
+FD control verified 12 / 54 {'round': 2, 'route': 'probe', 'workers': 4, 'prepared': False}
+FD control verified 13 / 54 {'round': 0, 'route': 'rust', 'workers': 8, 'prepared': True}
+FD control verified 14 / 54 {'round': 0, 'route': 'probe', 'workers': 4, 'prepared': True}
+FD control verified 15 / 54 {'round': 0, 'route': 'native', 'workers': 8, 'prepared': True}
+FD control verified 16 / 54 {'round': 2, 'route': 'probe', 'workers': 8, 'prepared': True}
+FD control verified 17 / 54 {'round': 1, 'route': 'native', 'workers': 8, 'prepared': True}
+FD control verified 18 / 54 {'round': 1, 'route': 'rust', 'workers': 1, 'prepared': True}
+FD control verified 19 / 54 {'round': 1, 'route': 'probe', 'workers': 4, 'prepared': False}
+FD control verified 20 / 54 {'round': 2, 'route': 'native', 'workers': 1, 'prepared': False}
+FD control verified 21 / 54 {'round': 2, 'route': 'probe', 'workers': 4, 'prepared': True}
+FD control verified 22 / 54 {'round': 2, 'route': 'rust', 'workers': 1, 'prepared': False}
+FD control verified 23 / 54 {'round': 1, 'route': 'probe', 'workers': 1, 'prepared': True}
+FD control verified 24 / 54 {'round': 0, 'route': 'probe', 'workers': 1, 'prepared': False}
+FD control verified 25 / 54 {'round': 1, 'route': 'native', 'workers': 8, 'prepared': False}
+FD control verified 26 / 54 {'round': 2, 'route': 'native', 'workers': 4, 'prepared': True}
+FD control verified 27 / 54 {'round': 0, 'route': 'native', 'workers': 4, 'prepared': False}
+FD control verified 28 / 54 {'round': 1, 'route': 'native', 'workers': 1, 'prepared': True}
+FD control verified 29 / 54 {'round': 1, 'route': 'native', 'workers': 4, 'prepared': True}
+FD control verified 30 / 54 {'round': 2, 'route': 'rust', 'workers': 8, 'prepared': True}
+FD control verified 31 / 54 {'round': 0, 'route': 'native', 'workers': 4, 'prepared': True}
+FD control verified 32 / 54 {'round': 0, 'route': 'rust', 'workers': 4, 'prepared': False}
+FD control verified 33 / 54 {'round': 0, 'route': 'probe', 'workers': 1, 'prepared': True}
+FD control verified 34 / 54 {'round': 1, 'route': 'native', 'workers': 4, 'prepared': False}
+FD control verified 35 / 54 {'round': 1, 'route': 'probe', 'workers': 4, 'prepared': True}
+FD control verified 36 / 54 {'round': 0, 'route': 'rust', 'workers': 4, 'prepared': True}
+FD control verified 37 / 54 {'round': 2, 'route': 'native', 'workers': 8, 'prepared': True}
+FD control verified 38 / 54 {'round': 0, 'route': 'native', 'workers': 1, 'prepared': True}
+FD control verified 39 / 54 {'round': 0, 'route': 'rust', 'workers': 1, 'prepared': True}
+FD control verified 40 / 54 {'round': 2, 'route': 'native', 'workers': 4, 'prepared': False}
+FD control verified 41 / 54 {'round': 2, 'route': 'native', 'workers': 8, 'prepared': False}
+FD control verified 42 / 54 {'round': 2, 'route': 'rust', 'workers': 4, 'prepared': False}
+FD control verified 43 / 54 {'round': 2, 'route': 'rust', 'workers': 8, 'prepared': False}
+FD control verified 44 / 54 {'round': 1, 'route': 'rust', 'workers': 8, 'prepared': False}
+FD control verified 45 / 54 {'round': 0, 'route': 'native', 'workers': 8, 'prepared': False}
+FD control verified 46 / 54 {'round': 2, 'route': 'probe', 'workers': 1, 'prepared': True}
+FD control verified 47 / 54 {'round': 2, 'route': 'probe', 'workers': 1, 'prepared': False}
+FD control verified 48 / 54 {'round': 1, 'route': 'native', 'workers': 1, 'prepared': False}
+FD control verified 49 / 54 {'round': 1, 'route': 'rust', 'workers': 4, 'prepared': True}
+FD control verified 50 / 54 {'round': 2, 'route': 'probe', 'workers': 8, 'prepared': False}
+FD control verified 51 / 54 {'round': 0, 'route': 'rust', 'workers': 1, 'prepared': False}
+FD control verified 52 / 54 {'round': 2, 'route': 'rust', 'workers': 1, 'prepared': True}
+FD control verified 53 / 54 {'round': 1, 'route': 'rust', 'workers': 4, 'prepared': False}
+FD control verified 54 / 54 {'round': 1, 'route': 'probe', 'workers': 8, 'prepared': False}

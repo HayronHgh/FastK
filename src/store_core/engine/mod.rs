@@ -24,7 +24,7 @@ pub use derived::{
 pub use replay::{ReplayCursor, ReplayOptions};
 pub use sequence::{SequenceDuplicate, SequenceGap, SequenceScanReport, SequenceViolation};
 pub use store::{
-    FastKReadSession, FastKStore, IndicatorInventoryEntry, MonthInventoryEntry,
+    FastKReadSession, FastKStore, IndicatorInventoryEntry, MonthInventoryEntry, RangeWriteSummary,
     ScalarQueryCapabilities, SeriesInventoryEntry, SessionCacheSummary, SessionResetMode,
     StoreHealthSummary, StoreStats, DEFAULT_SCALAR_ZMAP_BLOCK_SIZE,
 };

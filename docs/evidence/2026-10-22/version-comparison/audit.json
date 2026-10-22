@@ -1,0 +1,14 @@
+{
+  "public_commit": "814c5667aa25c89373bffc0582cfbb5f49c9d066",
+  "initial_version": "0.1.0-rc.1",
+  "current_version": "0.2.0-rc.1",
+  "native_sha256": "69781ff8ebbcdcab364642b2b3aaff0e3ca76aad51fa7693281dc297eaa9d4b1",
+  "cli_sha256": "d9cb787fa7f8ad7a452501ebd1cc28283a280967171ad8e2700b2f800d2fafe8",
+  "formal_processes": 30,
+  "rows_per_process": 262080,
+  "preflight_outputs": 16,
+  "all_outcomes_identical": true,
+  "store_data_metadata_unchanged": true,
+  "published_runner_ast_identical": true,
+  "measured_source_hashes_verified": true
+}

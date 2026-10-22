@@ -1,0 +1,8 @@
+{
+  "changed_only": [
+    "src/store_core/chunk/cache.rs"
+  ],
+  "change": "diagnostic constant 64 -> 512",
+  "product_unchanged": true,
+  "passed": true
+}

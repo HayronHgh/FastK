@@ -1,0 +1,15 @@
+{
+  "export_windows_handles.py": "df77b6bff5c12f91f09ae665d7d1510acd32e83f8d7ef5a19cf5e3aa68fca4d1",
+  "README.md": "6900b010a459335c51bd19cc00565c92fcff412a72c6db07308d4b87c24878dd",
+  "source/docs/SHARED_READER_LIFETIME.md": "e9ea78576911049cb7cf3e3b3d40afdc5bb786c9189cad0107be88005bd8b252",
+  "source/external-tests/scaling-profile/Cargo.lock": "0fd9a756cb8d237d1f8dce0ef3f432cc6984e9f562f17591c8895cfcf0a8bcdb",
+  "source/external-tests/scaling-profile/Cargo.toml": "e9310362c7cb2acfad030ba0dd4d4ad5b5b453de005c28b7c73ede9ce5b9847d",
+  "source/external-tests/scaling-profile/README.md": "d6e4f721f01f7c1cd6bfd5178ec5aacc99aaaa6d33f245a4d49d1d12258438fe",
+  "source/external-tests/scaling-profile/tests/shared_lifetime.rs": "213c217ff187d11bca11f2abc9dea5d37a50f82e0c8602834ebe895a84d9d42b",
+  "source.sha256.json": "e5b2ea62807e6a7061f2340ba67886607782b1e88f57e7b2120e7c499771813f",
+  "summary.json": "c5ed8d744ca34b73cbf410bd21d9a2219be1a30282f548cba24a4fd617f30773",
+  "windows-handles-fixture-before.rs": "45d061d941348c2d9603f5ab97ee3432fb57b4f3ab9d7e16325cbf5a1d71f4b6",
+  "windows-handles-lifetime.log": "aa525af8f99d5c638c5c3a09ba3c313e71b52555b8e60479c8d2517c76ae6184",
+  "windows-handles-manifest-before.toml": "6d7f70d91ca4854b6670a41456d2dd8ac3d09fe5da75c7eb97f36d826e5c2eb3",
+  "windows-handles-report-before.md": "a10ed03ff3e9ddd9697bf1a60614ad114cefde850ddbb3784c067aca6683d7cd"
+}

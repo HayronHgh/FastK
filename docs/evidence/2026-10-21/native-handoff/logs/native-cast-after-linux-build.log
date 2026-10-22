@@ -1,0 +1,42 @@
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at /tmp/shared-native/bin/python
+🔗 Found pyo3 bindings
+   Compiling proc-macro2 v1.0.106
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling quote v1.0.45
+   Compiling syn v3.0.9
+   Compiling syn v2.0.117
+   Compiling serde_derive v1.0.228
+   Compiling pyo3-macros-backend v0.30.1
+   Compiling bytemuck_derive v1.12.1
+   Compiling serde v1.0.228
+   Compiling bytemuck v1.25.2
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling pyo3-macros v0.30.1
+   Compiling fastk-native v0.2.0-rc.1 (/work/clients/python-native)
+    Finished `native` profile [optimized] target(s) in 21.08s
+📦 Built wheel for CPython 3.12 to /work/target/native-cast-after-linux-wheels/fastk_native-0.2.0rc1-cp312-cp312-manylinux_2_34_x86_64.whl
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.11 at /tmp/native-cast311/bin/python
+🔗 Found pyo3 bindings
+   Compiling proc-macro2 v1.0.106
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling quote v1.0.45
+   Compiling syn v3.0.9
+   Compiling syn v2.0.117
+   Compiling serde_derive v1.0.228
+   Compiling pyo3-macros-backend v0.30.1
+   Compiling bytemuck_derive v1.12.1
+   Compiling serde v1.0.228
+   Compiling bytemuck v1.25.2
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling pyo3-macros v0.30.1
+   Compiling fastk-native v0.2.0-rc.1 (/work/clients/python-native)
+    Finished `native` profile [optimized] target(s) in 20.32s
+📦 Built wheel for CPython 3.11 to /work/target/native-cast-after-linux-wheels/fastk_native-0.2.0rc1-cp311-cp311-manylinux_2_34_x86_64.whl

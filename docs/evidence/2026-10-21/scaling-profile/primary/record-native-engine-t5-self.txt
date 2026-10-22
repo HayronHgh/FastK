@@ -1,0 +1,27 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 32719151889
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                
+# ........  ...............  .....................  ......................................................................................................................
+#
+    73.29%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afb
+     4.91%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e55c01c
+     2.64%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560e8e
+     0.85%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3aac0b
+     0.60%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3a21e9
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0b26
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560d61
+     0.57%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3a1f66
+     0.56%  fastk-scaling-p  fastk-scaling-profile  [.] crossbeam_epoch::default::with_handle::<crossbeam_epoch::default::pin::{closure#0}, crossbeam_epoch::guard::Guard>
+     0.54%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0a70
+     0.52%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3aae04
+
+
+#
+# (Tip: Use parent filter to see specific call path: perf report -p <regex>)
+#

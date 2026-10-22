@@ -1,0 +1,8 @@
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-venv\Scripts\python.exe
+🔗 Found pyo3 bindings
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+   Compiling fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)
+    Finished `native` profile [optimized] target(s) in 17.93s
+📦 Built wheel for CPython 3.12 to target/shared-reader-before-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl

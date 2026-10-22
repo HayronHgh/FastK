@@ -1,0 +1,33 @@
+   Compiling fastk v0.2.0-rc.1 (/tmp/fastk-v02-release-source.yCcpuJ)
+    Finished `release` profile [optimized] target(s) in 22.75s
+warning: manifest has no documentation, homepage or repository
+  |
+  = note: see https://doc.rust-lang.org/cargo/reference/manifest.html#package-metadata for more info
+   Packaging fastk v0.2.0-rc.1 (/tmp/fastk-v02-release-source.yCcpuJ)
+    Packaged 752 files, 17.1MiB (9.9MiB compressed)
+/tmp/fastk-v02-release-source.yCcpuJ/dist/fastk-0.2.0-rc.1-x86_64-unknown-linux-musl-development
+Processing /work/dist/fastk-0.2.0-rc.1-x86_64-unknown-linux-musl-development/python/fastk_client-0.2.0rc1-py3-none-manylinux_2_17_x86_64.whl
+Installing collected packages: fastk-client
+Successfully installed fastk-client-0.2.0rc1
+{"installed_client": "/tmp/fastk-installed-yr3fn7mo/venv/lib/python3.12/site-packages/fastk_client/__init__.py", "contract_version": 1, "rows": 2, "integer_roundtrip": true, "snapshot_verified": true, "session_reuse": true}
+test_contracts (unittest.loader._FailedTest.test_contracts) ... ERROR
+
+======================================================================
+ERROR: test_contracts (unittest.loader._FailedTest.test_contracts)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_contracts
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/work/external-tests/test_contracts.py", line 12, in <module>
+    from fastk_client import Client
+ModuleNotFoundError: No module named 'fastk_client'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

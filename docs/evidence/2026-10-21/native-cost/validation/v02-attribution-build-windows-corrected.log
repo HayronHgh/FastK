@@ -1,0 +1,5 @@
+🐍 Found CPython 3.12 at C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-venv\Scripts\python.exe
+🔗 Found pyo3 bindings
+   Compiling fastk-attribution-probe v0.0.0 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\external-tests\attribution\probe)
+    Finished `release` profile [optimized] target(s) in 6.45s
+📦 Built wheel for CPython 3.12 to target/v02-attribution-final-wheels\fastk_attribution_probe-0.0.0-cp312-cp312-win_amd64.whl

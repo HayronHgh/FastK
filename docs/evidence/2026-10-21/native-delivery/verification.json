@@ -1,0 +1,61 @@
+{
+  "development": true,
+  "verified_at_utc": "2026-10-21T04:02:32.279971+00:00",
+  "artifacts": {
+    "fastk-0.2.0-rc.1-x86_64-pc-windows-gnu-development": {
+      "zip_sha256": "d0109f02718b1bbc0532efc0747186b587a7fc1d43e96f4dc0037fb47c9477d7",
+      "release_manifest_sha256": "5b39a1de7b4bcfa1114ad42d47ee097e5c44cbead035fbce24069aa66ae35cbf",
+      "verified_top_level_entries": 727,
+      "verified_nested_evidence_entries": 637,
+      "zip_matches_directory": true
+    },
+    "fastk-0.2.0-rc.1-x86_64-unknown-linux-musl-development": {
+      "zip_sha256": "8476cca380dfe2f6090b57e304e39fd6a0684e19a6895927640d5fb29561b717",
+      "release_manifest_sha256": "561ed054ad759f458ca058b4a7d145f0c2a243aa73b75e0df9020b951f4f4136",
+      "verified_top_level_entries": 727,
+      "verified_nested_evidence_entries": 637,
+      "zip_matches_directory": true
+    },
+    "fastk-0.2.0rc1-native-development": {
+      "zip_sha256": "9747dd14f3e08d55ccb895a10790cc8bafb702baaca638a3a45743a60f4b5eb0",
+      "release_manifest_sha256": "e45f381c2cb50da9cdf9df324856e1fb62b6734ce6589f9936ee15e45192476e",
+      "verified_top_level_entries": 450,
+      "verified_nested_evidence_entries": 431,
+      "zip_matches_directory": true
+    }
+  },
+  "correctness": {
+    "rust_tests_each_os": 138,
+    "cli_framing_each_os": 4,
+    "python_each_of_four_abis": {
+      "passed": 42,
+      "archive_check_initially_skipped": 1,
+      "archive_check_later_passed": true
+    },
+    "offline_native_abis": 4,
+    "offline_cli_platforms": 2,
+    "shared_rust_reads": 16000
+  },
+  "preservation": {
+    "prior_manifests": 24,
+    "prior_entries": 668,
+    "before_source_files": 110,
+    "measured_harness_files_matching_current": 40,
+    "passed": true
+  },
+  "final_checks": {
+    "artifact_schema_and_hashes": true,
+    "all_zips_match_directories": true,
+    "nested_evidence_hashes": true,
+    "cargo_fmt": true,
+    "ruff_check": true,
+    "ruff_format_files": 45,
+    "windows_msvc_executed": false
+  },
+  "resolved_environment_failures": [
+    "Initial Linux package contracts missed fastk-client in the test venv; installed the packaged wheel and both final manifest suites passed.",
+    "Initial Windows sandbox temp-directory ACL denied the CLI; identical checks passed outside the sandbox."
+  ],
+  "delivery_only_cleanup": "Restored five archived probe-source files excluded by Linux temporary staging and removed generated Python bytecode from new crate archives; no binary or runtime source changes.",
+  "publication": "none; no commit, push or package publication"
+}

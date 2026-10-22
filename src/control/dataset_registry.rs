@@ -193,13 +193,14 @@ impl DatasetRegistry {
         self.ensure_dataset_manifest_schema()?;
         self.ensure_feature_registry_schema()?;
         self.ensure_factor_registry_schema()?;
+        self.conn.execute_batch("CREATE TABLE IF NOT EXISTS dataset_snapshot (dataset_id TEXT NOT NULL, version TEXT NOT NULL, fastk_root TEXT NOT NULL, digest TEXT NOT NULL, PRIMARY KEY(dataset_id, version));")?;
         Ok(())
     }
 
     /// Inserts or updates a dataset manifest row for one explicit `(dataset_id, version)` pair.
     pub fn upsert_dataset(&self, record: &DatasetManifestRecord) -> Result<()> {
         record.validate()?;
-        self.conn.execute(
+        let changed = self.conn.execute(
             r#"
             INSERT INTO dataset_manifest (
                 dataset_id, version, fastk_root, source, market, start_ts, end_ts,
@@ -216,6 +217,7 @@ impl DatasetRegistry {
                 checksum = excluded.checksum,
                 status = excluded.status,
                 created_at = excluded.created_at
+            WHERE NOT EXISTS (SELECT 1 FROM dataset_snapshot s WHERE s.dataset_id = excluded.dataset_id AND s.version = excluded.version)
             "#,
             params![
                 &record.dataset_id,
@@ -231,7 +233,51 @@ impl DatasetRegistry {
                 record.created_at,
             ],
         )?;
+        if changed == 0
+            && self
+                .get_dataset(&record.dataset_id, &record.version)?
+                .as_ref()
+                != Some(record)
+        {
+            return Err(FastKError::InvalidInput(
+                "sealed dataset binding cannot change; publish a new version".into(),
+            ));
+        }
         Ok(())
+    }
+
+    /// Seals bytes before publishing an immutable catalog binding. Legacy `status`
+    /// strings are not treated as proof of sealing; bindings live in a new table.
+    pub fn publish_dataset(&self, record: &DatasetManifestRecord) -> Result<DatasetManifestRecord> {
+        record.validate()?;
+        if let Some((root, digest)) = self.snapshot_binding(&record.dataset_id, &record.version)? {
+            if root != record.fastk_root {
+                return Err(FastKError::InvalidInput(
+                    "sealed dataset binding cannot change".into(),
+                ));
+            }
+            crate::verify_snapshot(&root, Some(&digest))?;
+            return self
+                .get_dataset(&record.dataset_id, &record.version)?
+                .ok_or_else(|| FastKError::InvalidData("snapshot catalog row missing".into()));
+        }
+        let snapshot = crate::seal_snapshot(&record.fastk_root)?;
+        let mut published = record.clone();
+        published.status = "sealed".into();
+        published.checksum = Some(snapshot.digest.clone());
+        let tx = self.conn.unchecked_transaction()?;
+        self.upsert_dataset(&published)?;
+        tx.execute("INSERT INTO dataset_snapshot(dataset_id, version, fastk_root, digest) VALUES (?1,?2,?3,?4)", params![&record.dataset_id, &record.version, &record.fastk_root, &snapshot.digest])?;
+        tx.commit()?;
+        Ok(published)
+    }
+
+    fn snapshot_binding(
+        &self,
+        dataset_id: &str,
+        version: &str,
+    ) -> Result<Option<(String, String)>> {
+        Ok(self.conn.query_row("SELECT fastk_root, digest FROM dataset_snapshot WHERE dataset_id=?1 AND version=?2", params![dataset_id, version], |row| Ok((row.get(0)?, row.get(1)?))).optional()?)
     }
 
     /// Loads one deterministic dataset manifest row.
@@ -290,9 +336,19 @@ impl DatasetRegistry {
 
     /// Returns a compact dataset reference by explicit id and version, if it exists.
     pub fn dataset_ref(&self, dataset_id: &str, version: &str) -> Result<Option<DatasetRef>> {
-        Ok(self
-            .get_dataset(dataset_id, version)?
-            .map(|record| record.dataset_ref()))
+        let record = self.get_dataset(dataset_id, version)?;
+        if let Some((root, digest)) = self.snapshot_binding(dataset_id, version)? {
+            if record
+                .as_ref()
+                .is_none_or(|record| record.fastk_root != root)
+            {
+                return Err(FastKError::InvalidData(
+                    "snapshot catalog binding mismatch".into(),
+                ));
+            }
+            crate::verify_snapshot(&root, Some(&digest))?;
+        }
+        Ok(record.map(|record| record.dataset_ref()))
     }
 
     /// Resolves the FastK root for an explicit dataset id and version.

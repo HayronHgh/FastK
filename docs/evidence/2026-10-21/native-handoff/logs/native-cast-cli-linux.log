@@ -1,0 +1,52 @@
+   Compiling fastk v0.2.0-rc.1 (/work)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.29s
+     Running unittests examples/cli/fastk_bridge.rs (target/scaling-profile-build/debug/examples/fastk_bridge-578cc0012ef754ce)
+
+running 4 tests
+test session_transport::tests::framing_preserves_multiline_json_and_separates_requests ... ok
+test session_transport::tests::eof_only_between_frames_and_bad_sizes_fail_closed ... ok
+test output_tests::compact_propagates_serialization_errors ... ok
+test output_tests::private_compact_preserves_typed_values_and_public_pretty_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+test_cross_month_and_large_integer_roundtrip (test_client.IntegrationTests.test_cross_month_and_large_integer_roundtrip) ... ok
+test_invalid_payload_does_not_spawn_a_child (test_client.TransportTests.test_invalid_payload_does_not_spawn_a_child) ... ok
+test_invalid_response_is_not_accepted (test_client.TransportTests.test_invalid_response_is_not_accepted) ... ok
+test_machine_error_and_integer_payload_without_shell (test_client.TransportTests.test_machine_error_and_integer_payload_without_shell) ... ok
+test_missing_binary_has_explicit_error (test_client.TransportTests.test_missing_binary_has_explicit_error) ... ok
+test_timeout_kills_and_reaps_once_without_retry (test_client.TransportTests.test_timeout_kills_and_reaps_once_without_retry) ... ok
+test_unknown_contract_is_rejected (test_client.TransportTests.test_unknown_contract_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.181s
+
+OK
+test_bad_sizes_rejected_before_body_allocation_and_truncation (test_session.FrameReads.test_bad_sizes_rejected_before_body_allocation_and_truncation) ... ok
+test_fragmented_readinto_and_exact_integer_unicode_values (test_session.FrameReads.test_fragmented_readinto_and_exact_integer_unicode_values) ... ok
+test_body_allocation_failure_poisons_and_reaps (test_session.SessionFaults.test_body_allocation_failure_poisons_and_reaps) ... ok
+test_close_during_frame_construction_never_enqueues_or_waits (test_session.SessionFaults.test_close_during_frame_construction_never_enqueues_or_waits) ... ok
+test_close_interrupts_inflight_and_reaps (test_session.SessionFaults.test_close_interrupts_inflight_and_reaps) ... ok
+test_external_kill_does_not_restart_worker (test_session.SessionFaults.test_external_kill_does_not_restart_worker) ... ok
+test_fragmented_worker_frames (test_session.SessionFaults.test_fragmented_worker_frames) ... ok
+test_malformed_frames_and_crashes_poison_session (test_session.SessionFaults.test_malformed_frames_and_crashes_poison_session) ... ok
+test_nested_context_and_invalid_input_do_not_disrupt_worker (test_session.SessionFaults.test_nested_context_and_invalid_input_do_not_disrupt_worker) ... ok
+test_partial_body_timeout_and_close_reap_without_replay (test_session.SessionFaults.test_partial_body_timeout_and_close_reap_without_replay) ... ok
+test_queue_timeout_never_interrupts_or_sends_another_request (test_session.SessionFaults.test_queue_timeout_never_interrupts_or_sends_another_request) ... ok
+test_scope_reuses_one_child_and_close_is_idempotent (test_session.SessionFaults.test_scope_reuses_one_child_and_close_is_idempotent) ... ok
+test_startup_failures_reap_without_fallback (test_session.SessionFaults.test_startup_failures_reap_without_fallback) ... ok
+test_stderr_is_continuously_drained_and_bounded (test_session.SessionFaults.test_stderr_is_continuously_drained_and_bounded) ... ok
+test_thread_start_failure_reaps_child (test_session.SessionFaults.test_thread_start_failure_reaps_child) ... ok
+test_timeout_reaps_and_no_failed_write_is_replayed (test_session.SessionFaults.test_timeout_reaps_and_no_failed_write_is_replayed) ... ok
+test_timeout_releases_actual_os_write_lock (test_session.SessionFaults.test_timeout_releases_actual_os_write_lock) ... ok
+test_user_exception_and_interrupted_request_cleanup (test_session.SessionFaults.test_user_exception_and_interrupted_request_cleanup) ... ok
+test_write_blocked_in_pipe_is_interruptible (test_session.SessionFaults.test_write_blocked_in_pipe_is_interruptible) ... ok
+test_kline_and_indicator_shapes_and_sealed_writes (test_session.SessionStorage.test_kline_and_indicator_shapes_and_sealed_writes) ... ok
+test_metadata_refresh_between_requests_and_no_idle_read_lock (test_session.SessionStorage.test_metadata_refresh_between_requests_and_no_idle_read_lock) ... ok
+test_partial_month_error_and_explicit_recovery_without_replay (test_session.SessionStorage.test_partial_month_error_and_explicit_recovery_without_replay) ... ok
+test_real_shared_and_exclusive_ownership (test_session.SessionStorage.test_real_shared_and_exclusive_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 10.663s
+
+OK

@@ -1,0 +1,7 @@
+test_real_version_write_read_latest_and_error_schemas (test_contracts.Contracts.test_real_version_write_read_latest_and_error_schemas) ... ok
+test_release_manifest_schema_and_all_artifact_checksums (test_contracts.Contracts.test_release_manifest_schema_and_all_artifact_checksums) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 7.106s
+
+OK

@@ -1,0 +1,1218 @@
+{
+  "environment": "Windows-11-10.0.26200-SP0",
+  "rounds": 3,
+  "hashes": {
+    "before": "ac621e93e0faa18065becf1b4334cc5b799244bf3c5041d8ad1a68a59b14870c",
+    "after": "29fee69ebea3e097d68401f2aa213751551a61968f44ca6c7704acd182abee91",
+    "short": "df014a8b574c837b632b2b1f931d80cd070c35c874c9ff63fa8715f178394363",
+    "bulk": "5b2c863f11b59e2b5c01852187f8dae7fd8db1299b6605a98f47cf0f62651c75"
+  },
+  "store": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\external-standard-evidence\\fastk",
+  "files": [
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 2,
+      "file": "000-before-bulk-shared-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 2,
+      "file": "000-after-bulk-shared-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 1,
+      "file": "001-after-short-independent-4-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 1,
+      "file": "001-before-short-independent-4-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 1,
+      "file": "002-before-short-independent-8-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 1,
+      "file": "002-after-short-independent-8-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 0,
+      "file": "003-after-short-independent-2-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 0,
+      "file": "003-before-short-independent-2-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 2,
+      "file": "004-before-short-independent-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 2,
+      "file": "004-after-short-independent-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 0,
+      "file": "005-after-short-independent-8-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 0,
+      "file": "005-before-short-independent-8-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 2,
+      "file": "006-before-bulk-shared-4-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 2,
+      "file": "006-after-bulk-shared-4-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 2,
+      "file": "007-after-short-shared-2-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 2,
+      "file": "007-before-short-shared-2-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 2,
+      "file": "008-before-short-shared-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 2,
+      "file": "008-after-short-shared-1-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 2,
+      "file": "009-after-short-independent-2-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 2,
+      "file": "009-before-short-independent-2-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 0,
+      "file": "010-before-bulk-shared-4-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 0,
+      "file": "010-after-bulk-shared-4-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 1,
+      "file": "011-after-short-independent-1-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 1,
+      "file": "011-before-short-independent-1-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 1,
+      "file": "012-before-short-shared-4-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 1,
+      "file": "012-after-short-shared-4-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 2,
+      "file": "013-after-short-independent-4-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 2,
+      "file": "013-before-short-independent-4-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 0,
+      "file": "014-before-short-shared-2-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 0,
+      "file": "014-after-short-shared-2-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 2,
+      "file": "015-after-short-shared-4-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 2,
+      "file": "015-before-short-shared-4-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 0,
+      "file": "016-before-short-independent-1-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "independent",
+      "round": 0,
+      "file": "016-after-short-independent-1-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 1,
+      "file": "017-after-bulk-shared-2-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 1,
+      "file": "017-before-bulk-shared-2-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 0,
+      "file": "018-before-short-shared-8-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 0,
+      "file": "018-after-short-shared-8-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 1,
+      "file": "019-after-short-shared-8-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 1,
+      "file": "019-before-short-shared-8-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 1,
+      "file": "020-before-short-shared-1-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 1,
+      "file": "020-after-short-shared-1-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 2,
+      "file": "021-after-short-independent-8-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "independent",
+      "round": 2,
+      "file": "021-before-short-independent-8-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 0,
+      "file": "022-before-bulk-shared-2-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 0,
+      "file": "022-after-bulk-shared-2-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 0,
+      "file": "023-after-bulk-shared-8-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 0,
+      "file": "023-before-bulk-shared-8-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 1,
+      "file": "024-before-bulk-shared-4-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 1,
+      "file": "024-after-bulk-shared-4-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 0,
+      "file": "025-after-short-shared-4-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "shared",
+      "round": 0,
+      "file": "025-before-short-shared-4-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 0,
+      "file": "026-before-short-independent-4-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 4,
+      "sharing": "independent",
+      "round": 0,
+      "file": "026-after-short-independent-4-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 1,
+      "file": "027-after-short-shared-2-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 1,
+      "file": "027-before-short-shared-2-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 2,
+      "file": "028-before-bulk-shared-2-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 2,
+      "sharing": "shared",
+      "round": 2,
+      "file": "028-after-bulk-shared-2-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 2,
+      "file": "029-after-short-shared-8-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 2,
+      "file": "029-before-short-shared-8-2.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 1,
+      "file": "030-before-short-independent-2-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 2,
+      "sharing": "independent",
+      "round": 1,
+      "file": "030-after-short-independent-2-1.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 1,
+      "file": "031-after-bulk-shared-1-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 1,
+      "file": "031-before-bulk-shared-1-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 2,
+      "file": "032-before-bulk-shared-8-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 2,
+      "file": "032-after-bulk-shared-8-2.json"
+    },
+    {
+      "version": "after",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 0,
+      "file": "033-after-short-shared-1-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "short",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 0,
+      "file": "033-before-short-shared-1-0.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 0,
+      "file": "034-before-bulk-shared-1-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 1,
+      "sharing": "shared",
+      "round": 0,
+      "file": "034-after-bulk-shared-1-0.json"
+    },
+    {
+      "version": "after",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 1,
+      "file": "035-after-bulk-shared-8-1.json"
+    },
+    {
+      "version": "before",
+      "mode": "bulk",
+      "workers": 8,
+      "sharing": "shared",
+      "round": 1,
+      "file": "035-before-bulk-shared-8-1.json"
+    }
+  ],
+  "results": {
+    "bulk-shared-1-before": {
+      "short": {
+        "samples": 128700,
+        "median": 4200.0,
+        "p95": 4400,
+        "p99": 6300
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4200.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 36900.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 3465650.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 810850.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 2000,
+        "p99": 2100
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 3367150.0
+      }
+    },
+    "bulk-shared-1-after": {
+      "short": {
+        "samples": 128700,
+        "median": 4100.0,
+        "p95": 4300,
+        "p99": 5900
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4100.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 36500.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 3349300.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 816700.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1800.0,
+        "p95": 1900,
+        "p99": 1900
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 3664950.0
+      }
+    },
+    "short-independent-4-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 46704.70541741922
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 53117.19957209081
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 76950.0,
+        "p95": 180400,
+        "p99": 453500
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 68300.0,
+        "p95": 145000,
+        "p99": 208100
+      }
+    },
+    "short-independent-4-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 44526.092913189685
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 57727.63054316452
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 73100.0,
+        "p95": 169000,
+        "p99": 487300
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 66700.0,
+        "p95": 139000,
+        "p99": 195600
+      }
+    },
+    "short-independent-8-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 55105.335969141015
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 69846.38679268323
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 117150.0,
+        "p95": 266200,
+        "p99": 845100
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 106900.0,
+        "p95": 211300,
+        "p99": 276300
+      }
+    },
+    "short-independent-8-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 53162.81577039612
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 65738.05911828253
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 118500.0,
+        "p95": 259300,
+        "p99": 900800
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 109450.0,
+        "p95": 211100,
+        "p99": 280700
+      }
+    },
+    "short-independent-2-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 31541.775206400114
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 35653.201557770655
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 61500.0,
+        "p95": 121100,
+        "p99": 340600
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 59000.0,
+        "p95": 101300,
+        "p99": 142600
+      }
+    },
+    "short-independent-2-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 30546.482989026765
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 36065.028019752535
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 62400.0,
+        "p95": 122100,
+        "p99": 355900
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 58500.0,
+        "p95": 101400,
+        "p99": 140700
+      }
+    },
+    "short-independent-1-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 18164.219789599905
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 20874.693448557748
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 58500.0,
+        "p95": 104400,
+        "p99": 294600
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 54200.0,
+        "p95": 76200,
+        "p99": 112400
+      }
+    },
+    "short-independent-1-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 18529.46054650247
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 20937.165078565613
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 56000.0,
+        "p95": 93000,
+        "p99": 293400
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 54700.0,
+        "p95": 80400,
+        "p99": 121900
+      }
+    },
+    "bulk-shared-4-before": {
+      "short": {
+        "samples": 128700,
+        "median": 4200.0,
+        "p95": 4400,
+        "p99": 5900
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4300.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 37400.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 1454400.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 428700.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 2000,
+        "p99": 2100
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 1478650.0
+      }
+    },
+    "bulk-shared-4-after": {
+      "short": {
+        "samples": 128700,
+        "median": 4100.0,
+        "p95": 4500,
+        "p99": 6100
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4600.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 37300.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 1468650.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 431150.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 2000,
+        "p99": 2000
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 1437600.0
+      }
+    },
+    "short-shared-2-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 32673.690367658986
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 34188.361134288534
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 60250.0,
+        "p95": 119400,
+        "p99": 341800
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 59350.0,
+        "p95": 153500,
+        "p99": 245700
+      }
+    },
+    "short-shared-2-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 31377.952928682083
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 35097.96750860882
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 61300.0,
+        "p95": 132800,
+        "p99": 338900
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 58600.0,
+        "p95": 115300,
+        "p99": 177900
+      }
+    },
+    "short-shared-1-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 18805.9658310067
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 21577.67510358793
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 55000.0,
+        "p95": 87800,
+        "p99": 284000
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 53200.0,
+        "p95": 72400,
+        "p99": 103800
+      }
+    },
+    "short-shared-1-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 19660.41108132261
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 22438.41205083948
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 54400.0,
+        "p95": 85500,
+        "p99": 280600
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 52600.0,
+        "p95": 69900,
+        "p99": 99000
+      }
+    },
+    "short-shared-4-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 42941.91130543411
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 50284.47651398471
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 78500.0,
+        "p95": 207800,
+        "p99": 537700
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 77300.0,
+        "p95": 201400,
+        "p99": 269600
+      }
+    },
+    "short-shared-4-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 44901.342644343684
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 55080.92659214693
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 77300.0,
+        "p95": 189700,
+        "p99": 577300
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 67000.0,
+        "p95": 150900,
+        "p99": 210800
+      }
+    },
+    "bulk-shared-2-after": {
+      "short": {
+        "samples": 128700,
+        "median": 4100.0,
+        "p95": 4300,
+        "p99": 6300
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4100.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 37300.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 2015700.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 538050.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 2000,
+        "p99": 2900
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 2105800.0
+      }
+    },
+    "bulk-shared-2-before": {
+      "short": {
+        "samples": 128700,
+        "median": 4200.0,
+        "p95": 4400,
+        "p99": 6100
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4200.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 37300.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 2051250.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 519900.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 1900,
+        "p99": 2000
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 2030300.0
+      }
+    },
+    "short-shared-8-before": {
+      "first_qps": {
+        "samples": 3,
+        "median": 44329.12671620369
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 47979.49296077089
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 150300.0,
+        "p95": 338900,
+        "p99": 880200
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 154450.0,
+        "p95": 318000,
+        "p99": 390900
+      }
+    },
+    "short-shared-8-after": {
+      "first_qps": {
+        "samples": 3,
+        "median": 59012.38847483927
+      },
+      "warm_qps": {
+        "samples": 3,
+        "median": 68715.9723790623
+      },
+      "first_ns": {
+        "samples": 4290,
+        "median": 109450.0,
+        "p95": 242800,
+        "p99": 874400
+      },
+      "warm_ns": {
+        "samples": 4290,
+        "median": 107750.0,
+        "p95": 205300,
+        "p99": 269900
+      }
+    },
+    "bulk-shared-8-after": {
+      "short": {
+        "samples": 128700,
+        "median": 4200.0,
+        "p95": 5100,
+        "p99": 6600
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4200.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 37300.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 1410350.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 377750.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1800.0,
+        "p95": 2400,
+        "p99": 2600
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 1404400.0
+      }
+    },
+    "bulk-shared-8-before": {
+      "short": {
+        "samples": 128700,
+        "median": 4200.0,
+        "p95": 4800,
+        "p99": 6200
+      },
+      "small_kline": {
+        "samples": 90,
+        "median": 4200.0
+      },
+      "medium_kline": {
+        "samples": 90,
+        "median": 36900.0
+      },
+      "bulk_kline": {
+        "samples": 90,
+        "median": 1382450.0
+      },
+      "bulk_scalar": {
+        "samples": 90,
+        "median": 438600.0
+      },
+      "latest": {
+        "samples": 450,
+        "median": 1900.0,
+        "p95": 2000,
+        "p99": 2000
+      },
+      "bulk_latest": {
+        "samples": 90,
+        "median": 1459550.0
+      }
+    }
+  },
+  "all_results_verified": true,
+  "os_cold_cache": false,
+  "memory_sampling_during_timing": false
+}

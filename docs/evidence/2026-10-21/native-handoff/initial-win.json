@@ -1,0 +1,1118 @@
+{
+  "timings": [
+    {
+      "case": "bulk_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 5710400.0,
+        "before": 13289900.0
+      },
+      "ratio_after_before": 0.4296796815626905,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "median_ns": 5710400.0,
+            "p95_ns": 8576610.0,
+            "p99_ns": 10492259.000000002,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 7207450.0,
+            "p95_ns": 9529600.0,
+            "p99_ns": 9846683.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 5037700.0,
+            "p95_ns": 7492039.999999998,
+            "p99_ns": 8184177.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "median_ns": 13976600.0,
+            "p95_ns": 15286970.0,
+            "p99_ns": 15926618.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 13289900.0,
+            "p95_ns": 15419609.999999998,
+            "p99_ns": 15980685.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 12819650.0,
+            "p95_ns": 14106724.999999998,
+            "p99_ns": 14566973.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 2898350.0,
+        "before": 9176800.0
+      },
+      "ratio_after_before": 0.3158344956847703,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "median_ns": 2898350.0,
+            "p95_ns": 3619024.9999999995,
+            "p99_ns": 3998639.0000000005,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 2029850.0,
+            "p95_ns": 2231500.0,
+            "p99_ns": 2342953.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 3010800.0,
+            "p95_ns": 3375830.0,
+            "p99_ns": 3502908.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "median_ns": 9656200.0,
+            "p95_ns": 10701880.0,
+            "p99_ns": 11132344.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 5975800.0,
+            "p95_ns": 6866904.999999998,
+            "p99_ns": 7370646.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 9176800.0,
+            "p95_ns": 10646065.0,
+            "p99_ns": 10794821.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 2305950.0,
+        "before": 6123900.0
+      },
+      "ratio_after_before": 0.37654925782589527,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "median_ns": 2305950.0,
+            "p95_ns": 2676920.0,
+            "p99_ns": 2726325.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 2409450.0,
+            "p95_ns": 2883185.0,
+            "p99_ns": 2894939.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 1694850.0,
+            "p95_ns": 1972479.9999999998,
+            "p99_ns": 2634424.000000001,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "median_ns": 8945200.0,
+            "p95_ns": 9786470.0,
+            "p99_ns": 9810448.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 6123900.0,
+            "p95_ns": 8724969.999999998,
+            "p99_ns": 9604197.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 5103500.0,
+            "p95_ns": 5442700.0,
+            "p99_ns": 5946297.000000001,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 1,
+      "median_ns": {
+        "after": 1459850.0,
+        "before": 3703300.0
+      },
+      "ratio_after_before": 0.39420246806901954,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "median_ns": 1459850.0,
+            "p95_ns": 1992300.0,
+            "p99_ns": 2210982.0000000005,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 1851650.0,
+            "p95_ns": 2480955.0,
+            "p99_ns": 2627324.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 1242050.0,
+            "p95_ns": 1529805.0,
+            "p99_ns": 1582180.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "median_ns": 3760450.0,
+            "p95_ns": 5306749.999999996,
+            "p99_ns": 5856930.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 3703300.0,
+            "p95_ns": 4214274.999999999,
+            "p99_ns": 4558783.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 3371100.0,
+            "p95_ns": 4226149.999999999,
+            "p99_ns": 4420993.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 4,
+      "median_ns": {
+        "after": 879900.0,
+        "before": 2779800.0
+      },
+      "ratio_after_before": 0.31653356356572415,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "median_ns": 879900.0,
+            "p95_ns": 1048140.0,
+            "p99_ns": 1064191.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 663550.0,
+            "p95_ns": 865044.9999999999,
+            "p99_ns": 912275.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 882450.0,
+            "p95_ns": 1046405.0,
+            "p99_ns": 1093050.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "median_ns": 2856400.0,
+            "p95_ns": 3574949.9999999995,
+            "p99_ns": 4393487.000000001,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 1897800.0,
+            "p95_ns": 2333010.0,
+            "p99_ns": 2474289.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 2779800.0,
+            "p95_ns": 3296100.0,
+            "p99_ns": 3552923.0000000005,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 8,
+      "median_ns": {
+        "after": 826650.0,
+        "before": 2071500.0
+      },
+      "ratio_after_before": 0.39905865314989136,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "median_ns": 826650.0,
+            "p95_ns": 945309.9999999999,
+            "p99_ns": 1020008.0000000001,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 831350.0,
+            "p95_ns": 1014554.9999999998,
+            "p99_ns": 1096351.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 639450.0,
+            "p95_ns": 724255.0,
+            "p99_ns": 766712.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "median_ns": 2779200.0,
+            "p95_ns": 3320169.999999999,
+            "p99_ns": 3548945.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 2071500.0,
+            "p95_ns": 2766445.0,
+            "p99_ns": 3292852.0000000005,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 1702900.0,
+            "p95_ns": 1906204.9999999998,
+            "p99_ns": 1947526.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 142100.0,
+        "before": 136500.0
+      },
+      "ratio_after_before": 1.041025641025641,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "median_ns": 156100.0,
+            "p95_ns": 195040.0,
+            "p99_ns": 209719.00000000003,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 140250.0,
+            "p95_ns": 200205.0,
+            "p99_ns": 290611.0000000001,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 142100.0,
+            "p95_ns": 204944.9999999999,
+            "p99_ns": 224838.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "median_ns": 145150.0,
+            "p95_ns": 201889.99999999997,
+            "p99_ns": 213281.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 136500.0,
+            "p95_ns": 213165.0,
+            "p99_ns": 223052.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 118850.0,
+            "p95_ns": 197755.0,
+            "p99_ns": 199220.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 124000.0,
+        "before": 141350.0
+      },
+      "ratio_after_before": 0.8772550406791652,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "median_ns": 124000.0,
+            "p95_ns": 187430.0,
+            "p99_ns": 190682.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 135650.0,
+            "p95_ns": 199610.0,
+            "p99_ns": 299029.0000000001,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 102600.0,
+            "p95_ns": 181155.0,
+            "p99_ns": 186454.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "median_ns": 141350.0,
+            "p95_ns": 199354.99999999997,
+            "p99_ns": 232442.00000000003,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 149850.0,
+            "p95_ns": 209429.99999999997,
+            "p99_ns": 216756.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 120200.0,
+            "p95_ns": 182329.99999999997,
+            "p99_ns": 191005.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 125900.0,
+        "before": 155650.0
+      },
+      "ratio_after_before": 0.8088660456151622,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "median_ns": 120750.0,
+            "p95_ns": 169719.99999999997,
+            "p99_ns": 179345.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 135550.0,
+            "p95_ns": 216389.9999999999,
+            "p99_ns": 318053.0000000001,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 125900.0,
+            "p95_ns": 187554.99999999994,
+            "p99_ns": 195771.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "median_ns": 155650.0,
+            "p95_ns": 200695.0,
+            "p99_ns": 201242.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 164950.0,
+            "p95_ns": 215575.0,
+            "p99_ns": 250590.00000000006,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 135350.0,
+            "p95_ns": 199974.99999999994,
+            "p99_ns": 209507.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "short",
+      "budget": 1,
+      "median_ns": {
+        "after": 87500.0,
+        "before": 77550.0
+      },
+      "ratio_after_before": 1.1283043197936815,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "median_ns": 90800.0,
+            "p95_ns": 173084.99999999997,
+            "p99_ns": 209426.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "median_ns": 83200.0,
+            "p95_ns": 129455.0,
+            "p99_ns": 177113.0,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "median_ns": 87500.0,
+            "p95_ns": 152155.0,
+            "p99_ns": 222955.00000000038,
+            "n": 1430
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "median_ns": 82000.0,
+            "p95_ns": 119064.99999999999,
+            "p99_ns": 156413.0,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "median_ns": 77000.0,
+            "p95_ns": 126300.0,
+            "p99_ns": 199540.00000000015,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "median_ns": 77550.0,
+            "p95_ns": 112874.99999999997,
+            "p99_ns": 169633.0000000001,
+            "n": 1430
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 106400.0,
+        "before": 98850.0
+      },
+      "ratio_after_before": 1.0763783510369247,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "median_ns": 95650.0,
+            "p95_ns": 159589.99999999997,
+            "p99_ns": 182932.00000000003,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 107100.0,
+            "p95_ns": 151295.0,
+            "p99_ns": 297014.0000000002,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 106400.0,
+            "p95_ns": 144305.0,
+            "p99_ns": 146055.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "median_ns": 106000.0,
+            "p95_ns": 144139.99999999997,
+            "p99_ns": 185494.00000000006,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 98850.0,
+            "p95_ns": 130644.99999999999,
+            "p99_ns": 133678.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 82350.0,
+            "p95_ns": 115014.99999999999,
+            "p99_ns": 125588.00000000001,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 84550.0,
+        "before": 94350.0
+      },
+      "ratio_after_before": 0.8961314255431903,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "median_ns": 84550.0,
+            "p95_ns": 127984.99999999999,
+            "p99_ns": 137294.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 89300.0,
+            "p95_ns": 148504.99999999994,
+            "p99_ns": 156555.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 76050.0,
+            "p95_ns": 112425.0,
+            "p99_ns": 119774.00000000001,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "median_ns": 94350.0,
+            "p95_ns": 125380.0,
+            "p99_ns": 140158.00000000003,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "median_ns": 115050.0,
+            "p95_ns": 152509.99999999997,
+            "p99_ns": 175821.00000000003,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 81600.0,
+            "p95_ns": 119265.0,
+            "p99_ns": 128346.00000000001,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 96550.0,
+        "before": 106300.0
+      },
+      "ratio_after_before": 0.9082784571966134,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "median_ns": 86300.0,
+            "p95_ns": 123009.99999999999,
+            "p99_ns": 126155.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 99150.0,
+            "p95_ns": 122815.0,
+            "p99_ns": 198447.0000000001,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 96550.0,
+            "p95_ns": 141695.0,
+            "p99_ns": 150194.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "median_ns": 89100.0,
+            "p95_ns": 169179.99999999983,
+            "p99_ns": 197988.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "median_ns": 110800.0,
+            "p95_ns": 152890.0,
+            "p99_ns": 155168.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "median_ns": 106300.0,
+            "p95_ns": 154255.0,
+            "p99_ns": 222886.0000000001,
+            "n": 30
+          }
+        ]
+      }
+    }
+  ],
+  "memory": [
+    {
+      "workload": "bulk",
+      "budget": 1,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 60755968,
+          "peak_private_bytes": 46444544
+        },
+        "before": {
+          "peak_rss_bytes": 81641472,
+          "peak_private_bytes": 67657728
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "python_pid": 34532,
+            "peak_rss_bytes": 60755968,
+            "peak_private_bytes": 46575616,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 652,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 23788,
+            "peak_rss_bytes": 60661760,
+            "peak_private_bytes": 46444544,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 664,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 39988,
+            "peak_rss_bytes": 60755968,
+            "peak_private_bytes": 46370816,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 657,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "python_pid": 32360,
+            "peak_rss_bytes": 81641472,
+            "peak_private_bytes": 67600384,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 787,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 21736,
+            "peak_rss_bytes": 81686528,
+            "peak_private_bytes": 67715072,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 777,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 55916,
+            "peak_rss_bytes": 81510400,
+            "peak_private_bytes": 67657728,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 760,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "bulk",
+      "budget": 4,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 61091840,
+          "peak_private_bytes": 46804992
+        },
+        "before": {
+          "peak_rss_bytes": 81928192,
+          "peak_private_bytes": 67719168
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "python_pid": 11548,
+            "peak_rss_bytes": 61091840,
+            "peak_private_bytes": 46804992,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 602,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 3028,
+            "peak_rss_bytes": 60956672,
+            "peak_private_bytes": 46751744,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 587,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "python_pid": 37216,
+            "peak_rss_bytes": 61108224,
+            "peak_private_bytes": 46972928,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 636,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "python_pid": 41336,
+            "peak_rss_bytes": 81928192,
+            "peak_private_bytes": 68038656,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 718,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 28292,
+            "peak_rss_bytes": 80957440,
+            "peak_private_bytes": 67719168,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 629,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "python_pid": 28732,
+            "peak_rss_bytes": 81989632,
+            "peak_private_bytes": 67665920,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 733,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "bulk",
+      "budget": 8,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 61358080,
+          "peak_private_bytes": 47149056
+        },
+        "before": {
+          "peak_rss_bytes": 82182144,
+          "peak_private_bytes": 68227072
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "python_pid": 47808,
+            "peak_rss_bytes": 61509632,
+            "peak_private_bytes": 47386624,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 619,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "python_pid": 13236,
+            "peak_rss_bytes": 61325312,
+            "peak_private_bytes": 47071232,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 617,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 23064,
+            "peak_rss_bytes": 61358080,
+            "peak_private_bytes": 47149056,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 579,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "python_pid": 39152,
+            "peak_rss_bytes": 82190336,
+            "peak_private_bytes": 68227072,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 708,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "python_pid": 51784,
+            "peak_rss_bytes": 82182144,
+            "peak_private_bytes": 67981312,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 718,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 47652,
+            "peak_rss_bytes": 82055168,
+            "peak_private_bytes": 68337664,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 662,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "short",
+      "budget": 1,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 42713088,
+          "peak_private_bytes": 27525120
+        },
+        "before": {
+          "peak_rss_bytes": 42500096,
+          "peak_private_bytes": 27488256
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "python_pid": 34928,
+            "peak_rss_bytes": 42721280,
+            "peak_private_bytes": 27594752,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 321,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 22692,
+            "peak_rss_bytes": 42463232,
+            "peak_private_bytes": 27525120,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 278,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 25408,
+            "peak_rss_bytes": 42713088,
+            "peak_private_bytes": 27459584,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 273,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "python_pid": 23712,
+            "peak_rss_bytes": 42299392,
+            "peak_private_bytes": 27185152,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 271,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "python_pid": 17500,
+            "peak_rss_bytes": 42500096,
+            "peak_private_bytes": 27492352,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 275,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "python_pid": 55392,
+            "peak_rss_bytes": 42532864,
+            "peak_private_bytes": 27488256,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 272,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    }
+  ],
+  "method": "median of process medians; three paired process rounds; all retained",
+  "memory_scope": "whole workload process incl. warmup/validation; 5ms sampled lower bounds",
+  "passed": true
+}

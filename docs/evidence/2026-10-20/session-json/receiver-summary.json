@@ -1,0 +1,278 @@
+{
+  "all_results_verified": true,
+  "all_children_reaped": true,
+  "groups": {
+    "bulk_kline": {
+      "pretty_original": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 552495250.0,
+          "median_ns": 555787600,
+          "min_ns": 495141300,
+          "max_ns": 573987100
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 392185570.0,
+          "median_ns": 396003500,
+          "min_ns": 338458800,
+          "max_ns": 415136600
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 160309680.0,
+          "median_ns": 160149400,
+          "min_ns": 153068700,
+          "max_ns": 167334300
+        }
+      },
+      "pretty_readinto": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 421465600.0,
+          "median_ns": 419999200,
+          "min_ns": 401521400,
+          "max_ns": 442509600
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 396547740.0,
+          "median_ns": 395314300,
+          "min_ns": 376427200,
+          "max_ns": 415693500
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 24917860.0,
+          "median_ns": 24806600,
+          "min_ns": 22831100,
+          "max_ns": 26816100
+        }
+      },
+      "compact_original": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 490797210.0,
+          "median_ns": 492424500,
+          "min_ns": 474797800,
+          "max_ns": 507106100
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 381012340.0,
+          "median_ns": 377594500,
+          "min_ns": 367985300,
+          "max_ns": 394037300
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 109784870.0,
+          "median_ns": 109126400,
+          "min_ns": 105269700,
+          "max_ns": 115239000
+        }
+      },
+      "compact_readinto": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 392942100.0,
+          "median_ns": 389400700,
+          "min_ns": 380504000,
+          "max_ns": 413584600
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 375794220.0,
+          "median_ns": 372067600,
+          "min_ns": 363570600,
+          "max_ns": 396523600
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 17147880.0,
+          "median_ns": 17061000,
+          "min_ns": 15402500,
+          "max_ns": 19028100
+        }
+      }
+    },
+    "bulk_scalar": {
+      "pretty_original": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 212702270.0,
+          "median_ns": 212800200,
+          "min_ns": 199979000,
+          "max_ns": 221162100
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 152551020.0,
+          "median_ns": 153522600,
+          "min_ns": 140893000,
+          "max_ns": 160436800
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 60151250.0,
+          "median_ns": 59086000,
+          "min_ns": 55597100,
+          "max_ns": 67639500
+        }
+      },
+      "pretty_readinto": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 160239250.0,
+          "median_ns": 158253600,
+          "min_ns": 155185600,
+          "max_ns": 170215100
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 149966150.0,
+          "median_ns": 146759300,
+          "min_ns": 145167500,
+          "max_ns": 158627200
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 10273100.0,
+          "median_ns": 10012200,
+          "min_ns": 9220500,
+          "max_ns": 11587900
+        }
+      },
+      "compact_original": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 185623190.0,
+          "median_ns": 181798500,
+          "min_ns": 178883300,
+          "max_ns": 197189600
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 147615340.0,
+          "median_ns": 145475000,
+          "min_ns": 141427300,
+          "max_ns": 160098800
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 38007850.0,
+          "median_ns": 37456000,
+          "min_ns": 34763300,
+          "max_ns": 42889200
+        }
+      },
+      "compact_readinto": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 149473890.0,
+          "median_ns": 145024200,
+          "min_ns": 138963200,
+          "max_ns": 159691400
+        },
+        "parse_ns": {
+          "samples": 10,
+          "mean_ns": 142999580.0,
+          "median_ns": 137888100,
+          "min_ns": 132628900,
+          "max_ns": 152989200
+        },
+        "non_parse_ns": {
+          "samples": 10,
+          "mean_ns": 6474310.0,
+          "median_ns": 6414500,
+          "min_ns": 5884300,
+          "max_ns": 7426800
+        }
+      }
+    }
+  },
+  "timed_responses": 80,
+  "process_counts": {
+    "bulk_kline-0-pretty-original": 2,
+    "bulk_kline-0-pretty-readinto": 2,
+    "bulk_kline-0-compact-readinto": 2,
+    "bulk_kline-0-compact-original": 2,
+    "bulk_kline-1-compact-readinto": 2,
+    "bulk_kline-1-compact-original": 2,
+    "bulk_kline-1-pretty-original": 2,
+    "bulk_kline-1-pretty-readinto": 2,
+    "bulk_kline-2-compact-readinto": 2,
+    "bulk_kline-2-compact-original": 2,
+    "bulk_kline-2-pretty-original": 2,
+    "bulk_kline-2-pretty-readinto": 2,
+    "bulk_kline-3-compact-readinto": 2,
+    "bulk_kline-3-compact-original": 2,
+    "bulk_kline-3-pretty-original": 2,
+    "bulk_kline-3-pretty-readinto": 2,
+    "bulk_kline-4-compact-original": 2,
+    "bulk_kline-4-pretty-original": 2,
+    "bulk_kline-4-compact-readinto": 2,
+    "bulk_kline-4-pretty-readinto": 2,
+    "bulk_kline-5-compact-readinto": 2,
+    "bulk_kline-5-compact-original": 2,
+    "bulk_kline-5-pretty-original": 2,
+    "bulk_kline-5-pretty-readinto": 2,
+    "bulk_kline-6-pretty-original": 2,
+    "bulk_kline-6-compact-readinto": 2,
+    "bulk_kline-6-compact-original": 2,
+    "bulk_kline-6-pretty-readinto": 2,
+    "bulk_kline-7-pretty-readinto": 2,
+    "bulk_kline-7-compact-readinto": 2,
+    "bulk_kline-7-compact-original": 2,
+    "bulk_kline-7-pretty-original": 2,
+    "bulk_kline-8-compact-readinto": 2,
+    "bulk_kline-8-pretty-readinto": 2,
+    "bulk_kline-8-pretty-original": 2,
+    "bulk_kline-8-compact-original": 2,
+    "bulk_kline-9-pretty-readinto": 2,
+    "bulk_kline-9-compact-original": 2,
+    "bulk_kline-9-pretty-original": 2,
+    "bulk_kline-9-compact-readinto": 2,
+    "bulk_scalar-0-compact-original": 2,
+    "bulk_scalar-0-compact-readinto": 2,
+    "bulk_scalar-0-pretty-original": 2,
+    "bulk_scalar-0-pretty-readinto": 2,
+    "bulk_scalar-1-pretty-readinto": 2,
+    "bulk_scalar-1-compact-original": 2,
+    "bulk_scalar-1-compact-readinto": 2,
+    "bulk_scalar-1-pretty-original": 2,
+    "bulk_scalar-2-pretty-readinto": 2,
+    "bulk_scalar-2-compact-readinto": 2,
+    "bulk_scalar-2-pretty-original": 2,
+    "bulk_scalar-2-compact-original": 2,
+    "bulk_scalar-3-pretty-original": 2,
+    "bulk_scalar-3-pretty-readinto": 2,
+    "bulk_scalar-3-compact-original": 2,
+    "bulk_scalar-3-compact-readinto": 2,
+    "bulk_scalar-4-compact-readinto": 2,
+    "bulk_scalar-4-compact-original": 2,
+    "bulk_scalar-4-pretty-readinto": 2,
+    "bulk_scalar-4-pretty-original": 2,
+    "bulk_scalar-5-compact-original": 2,
+    "bulk_scalar-5-pretty-readinto": 2,
+    "bulk_scalar-5-compact-readinto": 2,
+    "bulk_scalar-5-pretty-original": 2,
+    "bulk_scalar-6-compact-readinto": 2,
+    "bulk_scalar-6-compact-original": 2,
+    "bulk_scalar-6-pretty-original": 2,
+    "bulk_scalar-6-pretty-readinto": 2,
+    "bulk_scalar-7-compact-readinto": 2,
+    "bulk_scalar-7-pretty-readinto": 2,
+    "bulk_scalar-7-pretty-original": 2,
+    "bulk_scalar-7-compact-original": 2,
+    "bulk_scalar-8-compact-readinto": 2,
+    "bulk_scalar-8-compact-original": 2,
+    "bulk_scalar-8-pretty-original": 2,
+    "bulk_scalar-8-pretty-readinto": 2,
+    "bulk_scalar-9-compact-original": 2,
+    "bulk_scalar-9-compact-readinto": 2,
+    "bulk_scalar-9-pretty-readinto": 2,
+    "bulk_scalar-9-pretty-original": 2
+  },
+  "scope": "Cached preencoded Python producer on real OS pipes + existing Session, startup and warm-up excluded; no engine/serialization/caller tuple conversion; experimental readinto is patched in memory only"
+}

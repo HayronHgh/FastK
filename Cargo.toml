@@ -1,7 +1,8 @@
 [package]
 name = "fastk"
-version = "0.1.0-rc.1"
+version = "0.2.0-rc.1"
 edition = "2021"
+rust-version = "1.89"
 description = "Versioned fixed-record time-series storage engine for normalized records."
 readme = "README.md"
 license = "MIT"
@@ -13,6 +14,8 @@ exclude = [
     "/data/**",
     "/series/**",
     "/tmp/**",
+    "/clients/**",
+    "/external-tests/**",
     "*.db",
     "*.sqlite",
     "*.7z",
@@ -28,6 +31,24 @@ chrono = { version = "0.4", default-features = false, features = ["clock", "std"
 rusqlite = { version = "0.32", features = ["bundled"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+sha2 = "0.10"
+rayon = "=1.12.0"
+bytemuck = { version = "=1.25.2", features = ["derive"] }
+
+[target.'cfg(unix)'.dependencies]
+rustix = "=1.1.4"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_Storage_FileSystem", "Win32_System_IO"] }
+
+[workspace]
+members = ["clients/python-native"]
+default-members = ["."]
+resolver = "2"
+
+[features]
+# Explicit opt-in for subprocess crash tests. Never enabled in release artifacts.
+fault-injection = []
 
 [dev-dependencies]
 tempfile = "3"
@@ -74,3 +95,7 @@ lto = "thin"
 codegen-units = 1
 panic = "abort"
 strip = "symbols"
+
+[profile.native]
+inherits = "release"
+panic = "unwind"

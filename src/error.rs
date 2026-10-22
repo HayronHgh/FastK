@@ -14,6 +14,20 @@ pub enum FastKError {
     NotFound(String),
 }
 
+impl FastKError {
+    /// Stable coarse error codes; callers never need to parse Display strings.
+    pub fn code(&self) -> &'static str {
+        match self {
+            Self::Io(_) => "IO",
+            Self::Sqlite(_) => "SQLITE",
+            Self::Serde(_) => "JSON",
+            Self::InvalidInput(_) => "INVALID_INPUT",
+            Self::InvalidData(_) => "INVALID_DATA",
+            Self::NotFound(_) => "NOT_FOUND",
+        }
+    }
+}
+
 impl Display for FastKError {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
         match self {

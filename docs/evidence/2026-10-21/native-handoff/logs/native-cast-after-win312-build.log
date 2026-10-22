@@ -1,0 +1,21 @@
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-venv\Scripts\python.exe
+🔗 Found pyo3 bindings
+   Compiling proc-macro2 v1.0.106
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling quote v1.0.45
+   Compiling syn v3.0.9
+   Compiling syn v2.0.117
+   Compiling serde_derive v1.0.228
+   Compiling pyo3-macros-backend v0.30.1
+   Compiling bytemuck_derive v1.12.1
+   Compiling serde v1.0.228
+   Compiling bytemuck v1.25.2
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+   Compiling pyo3-macros v0.30.1
+   Compiling fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)
+    Finished `native` profile [optimized] target(s) in 20.41s
+📦 Built wheel for CPython 3.12 to target/native-cast-after-win-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl

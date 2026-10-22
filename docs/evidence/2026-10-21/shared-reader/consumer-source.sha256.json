@@ -1,0 +1,12 @@
+{
+  "external-tests/fastk_bench/matrix_worker.py": "07238506e86908f1946878a2f9c07415d47687ce9484dbd87c34e0ef20cf3646",
+  "external-tests/run_read_matrix.py": "60b98d1f9847211cd39cede31e45a6237b7fccc2a99ec7a4a5e066bd4602b8c8",
+  "external-tests/test_matrix_lifecycle.py": "2a43dbbd7c91161666ec68779f7ffebaa00630a533c886d924074afc6287a495",
+  "external-tests/README.md": "9e142dbb16bbab3b4d03ba4e1ca2f5d11357459cf652be9a1dbb91ec56ebaae5",
+  "docs/EXTERNAL_VALIDATION.md": "de59fe1620333ec58e58284f6dd6434abf4f5e19b50ed93c4466e080554353de",
+  "docs/SHARED_READER_LIFETIME.md": "a10ed03ff3e9ddd9697bf1a60614ad114cefde850ddbb3784c067aca6683d7cd",
+  "external-tests/scaling-profile/tests/shared_lifetime.rs": "45d061d941348c2d9603f5ab97ee3432fb57b4f3ab9d7e16325cbf5a1d71f4b6",
+  "external-tests/scaling-profile/Cargo.toml": "6d7f70d91ca4854b6670a41456d2dd8ac3d09fe5da75c7eb97f36d826e5c2eb3",
+  "external-tests/scaling-profile/Cargo.lock": "39c31fcb75a1e0e77dd2fb280d86773053f86906a8a1705edc3ddb91e311cbdc",
+  "target/run_shared_matrix.py": "ddd2193601ae1be887116c41917aaba7ba106db721a9aaf0b00b7b4356e15d66"
+}

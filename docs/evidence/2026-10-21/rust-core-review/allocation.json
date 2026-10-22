@@ -1,0 +1,1 @@
+{"mode":"allocation","samples":[{"bytes_read":12336,"capacity":1,"rows":1,"span_slots":1},{"bytes_read":18336,"capacity":127,"rows":126,"span_slots":127},{"bytes_read":110112,"capacity":2048,"rows":2038,"span_slots":2048},{"bytes_read":98112,"capacity":44428,"rows":2039,"span_slots":2049},{"bytes_read":195888,"capacity":44428,"rows":4076,"span_slots":4096}]}

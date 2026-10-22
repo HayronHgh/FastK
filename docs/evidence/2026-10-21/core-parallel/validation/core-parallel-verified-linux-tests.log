@@ -1,0 +1,204 @@
+   Compiling fastk v0.2.0-rc.1 (/work)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.68s
+     Running unittests src/lib.rs (target/core-parallel-linux-build/debug/deps/fastk-1d7d2e734d98fca7)
+
+running 106 tests
+test benchmark::tests::metrics_accumulator_preserves_off_when_only_off_snapshots_are_added ... ok
+test benchmark::tests::metrics_accumulator_sums_snapshots ... ok
+test feature::query::tests::legacy_scalar_predicate_still_matches_and_classifies ... ok
+test feature::query::tests::scalar_predicate_expr_rejects_invalid_between_bounds ... ok
+test feature::query::tests::scalar_predicate_expr_matches_all_supported_operators ... ok
+test benchmark::tests::acceptance_matrix_contains_warm_and_cold_workloads ... ok
+test control::dataset_registry::tests::versioned_dataset_ref_uses_stable_path_layout ... ok
+test benchmark::tests::latency_summary_reports_expected_percentiles ... ok
+test store_core::chunk::file::tests::local_offsets_clone_eof_and_invalid_seek_are_independent ... ok
+test store_core::chunk::cache::tests::eviction_and_invalidation_keep_in_flight_files_alive_and_retry_failed_opens ... ok
+test store_core::chunk::sparse_index::tests::sampling_validated_records_emits_expected_anchors ... ok
+test store_core::chunk::sparse_index::tests::window_lookup_handles_boundaries ... ok
+test control::dataset_registry::tests::dataset_ref_resolution_checks_id_version_and_root ... ok
+test control::dataset_registry::tests::feature_and_factor_registry_track_dataset_lineage ... ok
+test control::dataset_registry::tests::dataset_manifest_resolves_explicit_versions_without_latest_ambiguity ... ok
+test store_core::engine::compaction::tests::delta_bytes_threshold_triggers_merge ... ok
+test store_core::engine::compaction::tests::delta_count_threshold_triggers_merge ... ok
+test store_core::engine::compaction::tests::state_transition_rules_are_explicit ... ok
+test store_core::engine::derived::tests::canonical_scalar_categories_build_expected_keys ... ok
+test store_core::engine::derived::tests::scoped_binding_roundtrip_matches_series_key ... ok
+test store_core::chunk::cache::tests::concurrent_misses_hits_and_eviction_stay_bounded ... ok
+test store_core::engine::derived::tests::scoped_scalar_name_roundtrip_is_stable ... ok
+test bridge::tests::kline_inventory_bridge_reports_coverage ... ok
+test bridge::tests::write_kline_range_rejects_overlap_with_existing_month ... ok
+test bridge::tests::read_kline_range_bridge_returns_expected_json_shape ... ok
+test bridge::tests::write_kline_range_bridge_auto_registers_and_reads_back ... ok
+test bridge::tests::read_indicator_range_bridge_returns_empty_when_series_is_missing ... ok
+test store_core::engine::backtest::tests::facade_scalar_queries_match_raw_paths ... ok
+test store_core::engine::backtest::tests::facade_query_scalar_predicate_stays_storage_level ... ok
+test store_core::engine::store::tests::chunk_write_and_read_roundtrip ... ok
+test store_core::engine::store::tests::get_kline_at_returns_none_for_missing_timestamp ... ok
+test store_core::engine::store::tests::append_overlap_is_rejected ... ok
+test store_core::engine::store::tests::get_kline_at_finds_exact_record ... ok
+test store_core::engine::store::tests::put_kline_chunk_rejects_cross_month_records ... ok
+test store_core::engine::store::tests::get_kline_range_returns_inclusive_rows ... ok
+test store_core::engine::store::tests::metrics_level_controls_runtime_overhead_and_detail ... ok
+test store_core::engine::backtest::tests::facade_alias_methods_and_reset_modes_work ... ok
+test store_core::engine::store::tests::put_kline_chunk_rejects_non_increasing_timestamps ... ok
+test store_core::engine::store::tests::get_kline_latest_n_spans_previous_chunks ... ok
+test bridge::tests::write_indicator_range_bridge_auto_registers_and_reads_back ... ok
+test bridge::tests::generic_scalar_inventory_reports_factor_series ... ok
+test bridge::tests::generic_scalar_bridge_writes_and_reads_feature_series ... ok
+test store_core::engine::backtest::tests::facade_attach_stays_lazy_until_first_query_and_sidecar_query ... ok
+test bridge::tests::write_indicator_range_rejects_overlap_with_existing_month ... ok
+test store_core::engine::backtest::tests::facade_initialize_and_prewarm_cover_attached_series ... ok
+test bridge::tests::indicator_inventory_bridge_reports_capabilities_and_counts ... ok
+test store_core::engine::backtest::tests::release_check_smoke_surfaces_are_clean ... ok
+test store_core::engine::store::tests::append_strictly_increasing_writes_delta_and_merge_compacts_month ... ok
+test store_core::engine::store::tests::replay_book_delta_batches_and_exhaustion_are_stable ... ok
+test store_core::engine::store::tests::repeated_point_queries_remain_correct ... ok
+test store_core::engine::store::tests::replay_does_not_break_existing_range_query ... ok
+test store_core::engine::backtest::tests::facade_attaches_feature_and_factor_scalar_bindings ... ok
+test store_core::engine::store::tests::replay_invalid_range_and_zero_batch_are_errors ... ok
+test store_core::engine::store::tests::replay_bbo_across_day_partitions ... ok
+test store_core::engine::store::tests::partition_policy_defaults_and_cross_partition_queries_work ... ok
+test store_core::engine::store::tests::indicator_inventory_and_capabilities_are_reported ... ok
+test store_core::engine::store::tests::replay_kline_from_middle_of_chunk ... ok
+test store_core::engine::store::tests::replay_same_ts_preserves_file_order ... ok
+test store_core::engine::store::tests::indicator_series_wrappers_roundtrip_records ... ok
+test store_core::engine::store::tests::inventory_stats_and_capabilities_are_reported ... ok
+test store_core::engine::store::tests::replay_trade_across_hour_partitions ... ok
+test store_core::engine::store::tests::scalar_predicate_query_continuous_gt_uses_zmap ... ok
+test store_core::engine::store::tests::sequence_scan_invalid_range_is_error ... ok
+test store_core::engine::store::tests::replay_respects_end_ts_and_empty_ranges ... ok
+test store_core::engine::store::tests::scalar_predicate_query_discrete_eq_and_in_set_use_vix ... ok
+test store_core::engine::store::tests::replacing_scalar_chunk_replaces_sidecars ... ok
+test store_core::storage::manifest::tests::manifest_checksum_mismatch_is_rejected ... ok
+test store_core::storage::manifest::tests::manifest_roundtrip_preserves_all_fields ... ok
+test store_core::index::query_engine::tests::vix_build_read_and_query_returns_sorted_unique_timestamps ... ok
+test store_core::storage::manifest::tests::manifest_version_mismatch_is_rejected ... ok
+test store_core::engine::store::tests::scalar_point_lookup_and_short_range_are_correct ... ok
+test store_core::engine::store::tests::scalar_predicate_query_between_inclusive_and_exclusive ... ok
+test store_core::index::query_engine::tests::zmap_build_read_and_query_returns_sorted_unique_timestamps ... ok
+test store_core::storage::manifest::tests::legacy_json_is_migrated_to_binary_manifest ... ok
+test store_core::storage::recovery::tests::overlap_resolution_prefers_newer_covering_chunk ... ok
+test store_core::engine::store::tests::sequence_scan_reports_clean_book_delta_across_partitions ... ok
+test store_core::engine::store::tests::read_session_inventory_and_health_summary_are_reported ... ok
+test store_core::engine::store::tests::high_frequency_record_types_write_read_latest_and_inventory ... ok
+test store_core::storage::manifest::tests::shared_manifest_cache_reuses_decoded_meta_for_reopen_like_loads ... ok
+test store_core::engine::store::tests::scalar_predicate_query_invalid_and_empty_ranges_are_explicit ... ok
+test store_core::engine::store::tests::scalar_predicate_query_not_in_set_falls_back_to_scan ... ok
+test store_core::storage::recovery::tests::startup_recovery_dry_run_reports_without_mutating ... ok
+test store_core::engine::store::tests::session_cache_clear_retains_manifest_snapshot ... ok
+test store_core::storage::recovery::tests::startup_recovery_removes_temp_artifacts ... ok
+test store_core::engine::store::tests::sequence_scan_supports_trade_id_and_empty_ranges ... ok
+test types::bbo::tests::bbo_record_binary_roundtrip_preserves_fields ... ok
+test types::book_delta::tests::book_delta_record_binary_roundtrip_preserves_fields ... ok
+test types::meta::tests::find_chunk_for_ts_returns_expected_index ... ok
+test store_core::engine::store::tests::scalar_raw_query_matches_indexed_paths ... ok
+test store_core::engine::store::tests::shared_manifest_cache_shortens_reopen_like_query_bootstrap ... ok
+test types::meta::tests::find_chunks_for_range_returns_expected_span ... ok
+test store_core::engine::store::tests::scalar_sidecars_attach_and_query_correctly ... ok
+test store_core::engine::store::tests::sequence_scan_reports_gap_duplicate_and_non_monotonic_bbo ... ok
+test store_core::storage::recovery::tests::orphan_artifacts_are_detected ... ok
+test types::meta::tests::validate_rejects_overlapping_chunks ... ok
+test types::trade::tests::trade_record_binary_roundtrip_preserves_fields ... ok
+test store_core::engine::store::tests::scalar_predicate_query_missing_sidecar_falls_back_to_scan ... ok
+test store_core::engine::store::tests::replay_scalar_across_month_chunks ... ok
+test store_core::storage::recovery::tests::recovery_normalizes_dangling_merging_state ... ok
+test store_core::storage::recovery::tests::rebuild_manifest_from_fs_restores_scalar_sidecars ... ok
+test store_core::storage::recovery::tests::startup_recovery_adopts_chunk_written_before_manifest_update ... ok
+test store_core::engine::store::tests::scalar_predicate_query_indicator_compatibility_still_works ... ok
+test store_core::storage::recovery::tests::scrub_reports_corrupt_sidecar_consistency_issues ... ok
+test store_core::engine::store::tests::sidecar_cache_hits_after_repeated_zmap_queries ... ok
+test store_core::engine::store::tests::short_range_cross_chunk_returns_only_needed_rows ... ok
+test store_core::engine::store::tests::session_prewarm_and_reset_modes_are_explicit ... ok
+
+test result: ok. 106 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/bridge_cli_contract.rs (target/core-parallel-linux-build/debug/deps/bridge_cli_contract-7167c444fff16bc9)
+
+running 9 tests
+test release_manifest_schema_smoke ... ok
+test bridge_help_does_not_advertise_fetch_compute_or_service_behavior ... ok
+test bridge_help_is_stable ... ok
+test bridge_kline_roundtrip_smoke ... ok
+test bridge_query_scalar_predicate_gt ... ok
+test bridge_query_scalar_predicate_in_set ... ok
+test bridge_scalar_roundtrip_smoke ... ok
+test bridge_signal_as_scalar_month_boundary_roundtrip ... ok
+test bridge_signal_as_scalar_roundtrip_predicates_and_inventory ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 55.74s
+
+     Running tests/parallel_reads.rs (target/core-parallel-linux-build/debug/deps/parallel_reads-319f0d7d696aa8b9)
+
+running 5 tests
+test short_lookup_reads_one_sparse_window_and_bounds_capacity ... ok
+test rejected_inputs_leave_readable_store_and_compaction_debt_resets ... ok
+test truncated_planned_read_returns_error_for_every_worker_budget ... ok
+test shared_cached_and_uncached_ranges_match_across_threads ... ok
+test shared_bulk_ranges_and_latest_match_for_all_worker_budgets ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.56s
+
+     Running tests/release_smoke.rs (target/core-parallel-linux-build/debug/deps/release_smoke-badb30b0f441d88f)
+
+running 2 tests
+test release_smoke_bridge_roundtrip_and_auto_register ... ok
+test release_smoke_backtest_facade_roundtrip ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/storage_contract.rs (target/core-parallel-linux-build/debug/deps/storage_contract-2e77b1231c2d805d)
+
+running 19 tests
+test lock_worker ... ok
+test crash_worker ... ok
+test sidecar_same_length_corruption_is_rejected_on_reopen ... ok
+test recovery_cannot_run_while_another_writer_owns_store ... ok
+test stale_legacy_lock_contents_do_not_block_writer ... ok
+test explicit_repair_reports_the_work_it_performs ... ok
+test snapshot_freezes_writes_and_verifies_relocation_and_tampering ... ok
+test rebuilding_preserves_scales_and_missing_kline_metadata_fails_closed ... ok
+
+running 1 test
+
+running 1 test
+test cross_month_failure_reports_committed_month_and_preserves_it ... ok
+test readonly_handles_share_and_exclude_writers_until_dropped ... ok
+test recovery_never_resurrects_older_orphans_over_committed_replacement ... ok
+test crash_worker ... oktest publishing_snapshot_finalizes_kline_deltas_for_complete_replay ... ok
+
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 0.02s
+
+test scalar_bridge_append_preserves_earlier_rows_in_same_month ... ok
+test scalar_append_and_replace_are_distinct_contracts ... ok
+test process_kill_releases_store_os_lock ... ok
+test alternating_writers_reload_metadata_after_locking ... ok
+test publishing_registry_binding_is_immutable_but_legacy_status_stays_compatible ... ok
+
+running 1 test
+
+running 1 test
+test crash_worker ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 0.01s
+
+
+running 1 test
+
+running 1 test
+test abrupt_exit_at_each_scalar_commit_stage_never_mixes_versions ... ok
+test crash_worker ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 18 filtered out; finished in 0.02s
+
+test injected_flush_sync_and_rename_failures_leave_old_manifest_recoverable ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+   Doc-tests fastk
+
+running 1 test
+test src/lib.rs - (line 24) - compile ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+

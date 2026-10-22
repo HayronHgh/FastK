@@ -1,0 +1,1735 @@
+{
+  "all_results_verified": true,
+  "all_children_reaped": true,
+  "timed_responses": 80,
+  "same_worker_pids": {
+    "production": 50980,
+    "probe_split": 25904
+  },
+  "groups": {
+    "production": {
+      "small_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 2212530.0,
+          "median_ns": 2180900,
+          "min_ns": 1316600,
+          "max_ns": 3102200
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 2261100.0,
+          "median_ns": 2261300,
+          "min_ns": 1360100,
+          "max_ns": 3146000
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 121030.0,
+          "median_ns": 113700,
+          "min_ns": 102600,
+          "max_ns": 190100
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 48570.0,
+          "median_ns": 44300,
+          "min_ns": 41500,
+          "max_ns": 80400
+        }
+      },
+      "medium_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 4839150.0,
+          "median_ns": 4442700,
+          "min_ns": 3439000,
+          "max_ns": 7501700
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 6268130.0,
+          "median_ns": 5774200,
+          "min_ns": 4651600,
+          "max_ns": 9784600
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 2553570.0,
+          "median_ns": 2425400,
+          "min_ns": 2234800,
+          "max_ns": 3714500
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 1428980.0,
+          "median_ns": 1280600,
+          "min_ns": 1177700,
+          "max_ns": 2282900
+        }
+      },
+      "bulk_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 363824490.0,
+          "median_ns": 360724500,
+          "min_ns": 350002900,
+          "max_ns": 379046000
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 519997890.0,
+          "median_ns": 521278600,
+          "min_ns": 500873500,
+          "max_ns": 536650500
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 298412800.0,
+          "median_ns": 296652800,
+          "min_ns": 286961900,
+          "max_ns": 312037500
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 156173400.0,
+          "median_ns": 151492300,
+          "min_ns": 148820100,
+          "max_ns": 176946500
+        }
+      },
+      "bulk_scalar": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 136137740.0,
+          "median_ns": 135151000,
+          "min_ns": 129337400,
+          "max_ns": 142303500
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 238659020.0,
+          "median_ns": 238150100,
+          "min_ns": 230312900,
+          "max_ns": 245833800
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 110551450.0,
+          "median_ns": 109690400,
+          "min_ns": 104241300,
+          "max_ns": 118318100
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 102521280.0,
+          "median_ns": 102928300,
+          "min_ns": 99171500,
+          "max_ns": 106045900
+        }
+      }
+    },
+    "probe_split": {
+      "small_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 1796770.0,
+          "median_ns": 1472500,
+          "min_ns": 704300,
+          "max_ns": 3069500
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 1845180.0,
+          "median_ns": 1514400,
+          "min_ns": 745400,
+          "max_ns": 3114400
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 121050.0,
+          "median_ns": 105600,
+          "min_ns": 93700,
+          "max_ns": 203200
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 48410.0,
+          "median_ns": 43400,
+          "min_ns": 40700,
+          "max_ns": 83000
+        },
+        "stages": {
+          "request_dispatch": {
+            "samples": 10,
+            "mean_ns": 880530.0,
+            "median_ns": 680100,
+            "min_ns": 99700,
+            "max_ns": 2010500
+          },
+          "engine_and_response": {
+            "samples": 10,
+            "mean_ns": 621770.0,
+            "median_ns": 559500,
+            "min_ns": 368600,
+            "max_ns": 825300
+          },
+          "rust_json_encode_buffer": {
+            "samples": 10,
+            "mean_ns": 14800.0,
+            "median_ns": 13300,
+            "min_ns": 12600,
+            "max_ns": 22100
+          },
+          "rust_post_encode_cleanup_and_log": {
+            "samples": 10,
+            "mean_ns": 42230.0,
+            "median_ns": 37600,
+            "min_ns": 32200,
+            "max_ns": 60500
+          },
+          "wire_and_receive": {
+            "samples": 10,
+            "mean_ns": 65420.0,
+            "median_ns": 56200,
+            "min_ns": 43400,
+            "max_ns": 102200
+          },
+          "python_handoff": {
+            "samples": 10,
+            "mean_ns": 35610.0,
+            "median_ns": 35500,
+            "min_ns": 24100,
+            "max_ns": 53100
+          },
+          "python_return_cleanup": {
+            "samples": 10,
+            "mean_ns": 15190.0,
+            "median_ns": 12500,
+            "min_ns": 10900,
+            "max_ns": 22600
+          },
+          "caller_tuple_and_record_release": {
+            "samples": 10,
+            "mean_ns": 48410.0,
+            "median_ns": 43400,
+            "min_ns": 40700,
+            "max_ns": 83000
+          },
+          "encoding_detection": {
+            "samples": 10,
+            "mean_ns": 8430.0,
+            "median_ns": 6700,
+            "min_ns": 4400,
+            "max_ns": 13100
+          },
+          "utf8_decode": {
+            "samples": 10,
+            "mean_ns": 10370.0,
+            "median_ns": 9300,
+            "min_ns": 3100,
+            "max_ns": 22000
+          },
+          "json_parse_and_objects": {
+            "samples": 10,
+            "mean_ns": 100930.0,
+            "median_ns": 91300,
+            "min_ns": 80700,
+            "max_ns": 166000
+          },
+          "decoded_text_release": {
+            "samples": 10,
+            "mean_ns": 1320.0,
+            "median_ns": 1100,
+            "min_ns": 800,
+            "max_ns": 2500
+          },
+          "rust_frame_finalize": {
+            "samples": 10,
+            "mean_ns": 170.0,
+            "median_ns": 200,
+            "min_ns": 100,
+            "max_ns": 300
+          }
+        }
+      },
+      "medium_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 4621120.0,
+          "median_ns": 4443800,
+          "min_ns": 3571700,
+          "max_ns": 6104000
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 5951220.0,
+          "median_ns": 5809000,
+          "min_ns": 4803600,
+          "max_ns": 7400600
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 2414480.0,
+          "median_ns": 2378500,
+          "min_ns": 2334800,
+          "max_ns": 2545700
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 1330100.0,
+          "median_ns": 1296600,
+          "min_ns": 1231900,
+          "max_ns": 1563100
+        },
+        "stages": {
+          "request_dispatch": {
+            "samples": 10,
+            "mean_ns": 811820.0,
+            "median_ns": 672700,
+            "min_ns": 96200,
+            "max_ns": 2277200
+          },
+          "engine_and_response": {
+            "samples": 10,
+            "mean_ns": 667420.0,
+            "median_ns": 676900,
+            "min_ns": 438400,
+            "max_ns": 929300
+          },
+          "rust_json_encode_buffer": {
+            "samples": 10,
+            "mean_ns": 448030.0,
+            "median_ns": 432100,
+            "min_ns": 405200,
+            "max_ns": 618500
+          },
+          "rust_post_encode_cleanup_and_log": {
+            "samples": 10,
+            "mean_ns": 56720.0,
+            "median_ns": 52200,
+            "min_ns": 48800,
+            "max_ns": 77600
+          },
+          "wire_and_receive": {
+            "samples": 10,
+            "mean_ns": 168770.0,
+            "median_ns": 161400,
+            "min_ns": 127800,
+            "max_ns": 199000
+          },
+          "python_handoff": {
+            "samples": 10,
+            "mean_ns": 37480.0,
+            "median_ns": 32400,
+            "min_ns": 23700,
+            "max_ns": 54600
+          },
+          "python_return_cleanup": {
+            "samples": 10,
+            "mean_ns": 16250.0,
+            "median_ns": 15400,
+            "min_ns": 11600,
+            "max_ns": 25100
+          },
+          "caller_tuple_and_record_release": {
+            "samples": 10,
+            "mean_ns": 1330100.0,
+            "median_ns": 1296600,
+            "min_ns": 1231900,
+            "max_ns": 1563100
+          },
+          "encoding_detection": {
+            "samples": 10,
+            "mean_ns": 8510.0,
+            "median_ns": 7700,
+            "min_ns": 2900,
+            "max_ns": 12800
+          },
+          "utf8_decode": {
+            "samples": 10,
+            "mean_ns": 76570.0,
+            "median_ns": 86400,
+            "min_ns": 24400,
+            "max_ns": 94600
+          },
+          "json_parse_and_objects": {
+            "samples": 10,
+            "mean_ns": 2326980.0,
+            "median_ns": 2283200,
+            "min_ns": 2243200,
+            "max_ns": 2494500
+          },
+          "decoded_text_release": {
+            "samples": 10,
+            "mean_ns": 2420.0,
+            "median_ns": 2700,
+            "min_ns": 1000,
+            "max_ns": 3300
+          },
+          "rust_frame_finalize": {
+            "samples": 10,
+            "mean_ns": 150.0,
+            "median_ns": 100,
+            "min_ns": 100,
+            "max_ns": 300
+          }
+        }
+      },
+      "bulk_kline": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 363598650.0,
+          "median_ns": 362013800,
+          "min_ns": 348708600,
+          "max_ns": 384715700
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 520035480.0,
+          "median_ns": 517924600,
+          "min_ns": 504152700,
+          "max_ns": 540882800
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 298186600.0,
+          "median_ns": 297836100,
+          "min_ns": 285067800,
+          "max_ns": 321533800
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 156436830.0,
+          "median_ns": 154853700,
+          "min_ns": 152722700,
+          "max_ns": 165212100
+        },
+        "stages": {
+          "request_dispatch": {
+            "samples": 10,
+            "mean_ns": 479430.0,
+            "median_ns": 164900,
+            "min_ns": 72800,
+            "max_ns": 2356300
+          },
+          "engine_and_response": {
+            "samples": 10,
+            "mean_ns": 5981900.0,
+            "median_ns": 5887300,
+            "min_ns": 5464500,
+            "max_ns": 7156300
+          },
+          "rust_json_encode_buffer": {
+            "samples": 10,
+            "mean_ns": 42560640.0,
+            "median_ns": 41063000,
+            "min_ns": 40871700,
+            "max_ns": 49452900
+          },
+          "rust_post_encode_cleanup_and_log": {
+            "samples": 10,
+            "mean_ns": 753460.0,
+            "median_ns": 714900,
+            "min_ns": 673100,
+            "max_ns": 923900
+          },
+          "wire_and_receive": {
+            "samples": 10,
+            "mean_ns": 15518310.0,
+            "median_ns": 15030800,
+            "min_ns": 14159900,
+            "max_ns": 18290700
+          },
+          "python_handoff": {
+            "samples": 10,
+            "mean_ns": 80650.0,
+            "median_ns": 76000,
+            "min_ns": 64100,
+            "max_ns": 104500
+          },
+          "python_return_cleanup": {
+            "samples": 10,
+            "mean_ns": 37360.0,
+            "median_ns": 37600,
+            "min_ns": 28000,
+            "max_ns": 46800
+          },
+          "caller_tuple_and_record_release": {
+            "samples": 10,
+            "mean_ns": 156436830.0,
+            "median_ns": 154853700,
+            "min_ns": 152722700,
+            "max_ns": 165212100
+          },
+          "encoding_detection": {
+            "samples": 10,
+            "mean_ns": 16250.0,
+            "median_ns": 10500,
+            "min_ns": 8300,
+            "max_ns": 39700
+          },
+          "utf8_decode": {
+            "samples": 10,
+            "mean_ns": 7444020.0,
+            "median_ns": 7351200,
+            "min_ns": 6978500,
+            "max_ns": 8106000
+          },
+          "json_parse_and_objects": {
+            "samples": 10,
+            "mean_ns": 289018710.0,
+            "median_ns": 288274900,
+            "min_ns": 276235000,
+            "max_ns": 312298900
+          },
+          "decoded_text_release": {
+            "samples": 10,
+            "mean_ns": 1707620.0,
+            "median_ns": 1662800,
+            "min_ns": 1602500,
+            "max_ns": 1860700
+          },
+          "rust_frame_finalize": {
+            "samples": 10,
+            "mean_ns": 300.0,
+            "median_ns": 200,
+            "min_ns": 100,
+            "max_ns": 900
+          }
+        }
+      },
+      "bulk_scalar": {
+        "client_call_ns": {
+          "samples": 10,
+          "mean_ns": 137117060.0,
+          "median_ns": 137778600,
+          "min_ns": 130429800,
+          "max_ns": 142782000
+        },
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 240838870.0,
+          "median_ns": 242873000,
+          "min_ns": 232679500,
+          "max_ns": 245935700
+        },
+        "python_parse_and_objects_ns": {
+          "samples": 10,
+          "mean_ns": 110664800.0,
+          "median_ns": 109859100,
+          "min_ns": 102289800,
+          "max_ns": 116540800
+        },
+        "caller_tuple_and_record_release_ns": {
+          "samples": 10,
+          "mean_ns": 103721810.0,
+          "median_ns": 102083200,
+          "min_ns": 100259200,
+          "max_ns": 108699700
+        },
+        "stages": {
+          "request_dispatch": {
+            "samples": 10,
+            "mean_ns": 918580.0,
+            "median_ns": 290000,
+            "min_ns": 102700,
+            "max_ns": 2466000
+          },
+          "engine_and_response": {
+            "samples": 10,
+            "mean_ns": 4128400.0,
+            "median_ns": 4109000,
+            "min_ns": 3727600,
+            "max_ns": 4657400
+          },
+          "rust_json_encode_buffer": {
+            "samples": 10,
+            "mean_ns": 15437040.0,
+            "median_ns": 15407000,
+            "min_ns": 14981000,
+            "max_ns": 15991600
+          },
+          "rust_post_encode_cleanup_and_log": {
+            "samples": 10,
+            "mean_ns": 274140.0,
+            "median_ns": 253000,
+            "min_ns": 236800,
+            "max_ns": 403100
+          },
+          "wire_and_receive": {
+            "samples": 10,
+            "mean_ns": 5578100.0,
+            "median_ns": 5617400,
+            "min_ns": 5223300,
+            "max_ns": 6022100
+          },
+          "python_handoff": {
+            "samples": 10,
+            "mean_ns": 79620.0,
+            "median_ns": 75600,
+            "min_ns": 58900,
+            "max_ns": 105500
+          },
+          "python_return_cleanup": {
+            "samples": 10,
+            "mean_ns": 36110.0,
+            "median_ns": 34800,
+            "min_ns": 24300,
+            "max_ns": 48700
+          },
+          "caller_tuple_and_record_release": {
+            "samples": 10,
+            "mean_ns": 103721810.0,
+            "median_ns": 102083200,
+            "min_ns": 100259200,
+            "max_ns": 108699700
+          },
+          "encoding_detection": {
+            "samples": 10,
+            "mean_ns": 10250.0,
+            "median_ns": 10400,
+            "min_ns": 7200,
+            "max_ns": 14000
+          },
+          "utf8_decode": {
+            "samples": 10,
+            "mean_ns": 2548370.0,
+            "median_ns": 2456600,
+            "min_ns": 2369600,
+            "max_ns": 3041400
+          },
+          "json_parse_and_objects": {
+            "samples": 10,
+            "mean_ns": 107428220.0,
+            "median_ns": 106632300,
+            "min_ns": 99219800,
+            "max_ns": 113372700
+          },
+          "decoded_text_release": {
+            "samples": 10,
+            "mean_ns": 677960.0,
+            "median_ns": 624500,
+            "min_ns": 591100,
+            "max_ns": 822400
+          },
+          "rust_frame_finalize": {
+            "samples": 10,
+            "mean_ns": 270.0,
+            "median_ns": 200,
+            "min_ns": 100,
+            "max_ns": 800
+          }
+        }
+      }
+    }
+  },
+  "controls": {
+    "small_kline": {
+      "orjson_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 33470.0,
+          "median_ns": 26500,
+          "min_ns": 24400,
+          "max_ns": 65500
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 33350.0,
+          "median_ns": 26400,
+          "min_ns": 24300,
+          "max_ns": 65400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 120.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "release_records_only": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 3400.0,
+          "median_ns": 3400,
+          "min_ns": 3300,
+          "max_ns": 3600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 3300.0,
+          "median_ns": 3300,
+          "min_ns": 3200,
+          "max_ns": 3500
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 100.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "stdlib_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 72450.0,
+          "median_ns": 70400,
+          "min_ns": 69400,
+          "max_ns": 80600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 72360.0,
+          "median_ns": 70300,
+          "min_ns": 69400,
+          "max_ns": 80500
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 90.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 100
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "stdlib_text": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 69850.0,
+          "median_ns": 69200,
+          "min_ns": 68600,
+          "max_ns": 75600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 69760.0,
+          "median_ns": 69100,
+          "min_ns": 68500,
+          "max_ns": 75500
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 90.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 100
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "tuple_generator_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 38330.0,
+          "median_ns": 37300,
+          "min_ns": 35800,
+          "max_ns": 47800
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 36520.0,
+          "median_ns": 35500,
+          "min_ns": 34100,
+          "max_ns": 46100
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 1810.0,
+          "median_ns": 1800,
+          "min_ns": 1600,
+          "max_ns": 2000
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "tuple_generator_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 35990.0,
+          "median_ns": 34500,
+          "min_ns": 34000,
+          "max_ns": 47300
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 35890.0,
+          "median_ns": 34400,
+          "min_ns": 33900,
+          "max_ns": 47100
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 100.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "tuple_itemgetter_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 10280.0,
+          "median_ns": 9500,
+          "min_ns": 9300,
+          "max_ns": 13800
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 8450.0,
+          "median_ns": 7600,
+          "min_ns": 7500,
+          "max_ns": 11700
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 1830.0,
+          "median_ns": 1800,
+          "min_ns": 1700,
+          "max_ns": 2100
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "tuple_itemgetter_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 7700.0,
+          "median_ns": 7500,
+          "min_ns": 7400,
+          "max_ns": 8700
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 7600.0,
+          "median_ns": 7400,
+          "min_ns": 7300,
+          "max_ns": 8600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 100.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "utf8_decode": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 1580.0,
+          "median_ns": 800,
+          "min_ns": 800,
+          "max_ns": 6900
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 1530.0,
+          "median_ns": 800,
+          "min_ns": 700,
+          "max_ns": 6800
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 50.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 100
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      }
+    },
+    "medium_kline": {
+      "orjson_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 1063360.0,
+          "median_ns": 1052900,
+          "min_ns": 1000800,
+          "max_ns": 1187500
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 1063250.0,
+          "median_ns": 1052800,
+          "min_ns": 1000600,
+          "max_ns": 1187400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 110.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 34740.0,
+          "median_ns": 20800,
+          "min_ns": 14500,
+          "max_ns": 149400
+        }
+      },
+      "release_records_only": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 115260.0,
+          "median_ns": 112000,
+          "min_ns": 101400,
+          "max_ns": 141200
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 115120.0,
+          "median_ns": 111900,
+          "min_ns": 101300,
+          "max_ns": 141000
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 140.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "stdlib_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 2228800.0,
+          "median_ns": 2212000,
+          "min_ns": 2162900,
+          "max_ns": 2347900
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 2228650.0,
+          "median_ns": 2211800,
+          "min_ns": 2162800,
+          "max_ns": 2347800
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 150.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 28520.0,
+          "median_ns": 17200,
+          "min_ns": 14400,
+          "max_ns": 130900
+        }
+      },
+      "stdlib_text": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 2290740.0,
+          "median_ns": 2196500,
+          "min_ns": 2153400,
+          "max_ns": 3037400
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 2290620.0,
+          "median_ns": 2196400,
+          "min_ns": 2153300,
+          "max_ns": 3037300
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 120.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 16530.0,
+          "median_ns": 15900,
+          "min_ns": 14100,
+          "max_ns": 22000
+        }
+      },
+      "tuple_generator_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 1213540.0,
+          "median_ns": 1202000,
+          "min_ns": 1175500,
+          "max_ns": 1304200
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 1155010.0,
+          "median_ns": 1140900,
+          "min_ns": 1121400,
+          "max_ns": 1245700
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 58530.0,
+          "median_ns": 58500,
+          "min_ns": 54100,
+          "max_ns": 63300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 48970.0,
+          "median_ns": 44600,
+          "min_ns": 39400,
+          "max_ns": 69700
+        }
+      },
+      "tuple_generator_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 1174680.0,
+          "median_ns": 1163100,
+          "min_ns": 1111300,
+          "max_ns": 1306000
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 1174560.0,
+          "median_ns": 1163000,
+          "min_ns": 1111200,
+          "max_ns": 1305900
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 120.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 49140.0,
+          "median_ns": 45800,
+          "min_ns": 44300,
+          "max_ns": 59000
+        }
+      },
+      "tuple_itemgetter_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 391250.0,
+          "median_ns": 371100,
+          "min_ns": 351700,
+          "max_ns": 501100
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 332650.0,
+          "median_ns": 315600,
+          "min_ns": 296400,
+          "max_ns": 431500
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 58600.0,
+          "median_ns": 56400,
+          "min_ns": 55100,
+          "max_ns": 69600
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 73610.0,
+          "median_ns": 72600,
+          "min_ns": 58200,
+          "max_ns": 90000
+        }
+      },
+      "tuple_itemgetter_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 357660.0,
+          "median_ns": 352000,
+          "min_ns": 313900,
+          "max_ns": 419400
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 357570.0,
+          "median_ns": 351900,
+          "min_ns": 313800,
+          "max_ns": 419400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 90.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 84720.0,
+          "median_ns": 86300,
+          "min_ns": 57800,
+          "max_ns": 100600
+        }
+      },
+      "utf8_decode": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 27700.0,
+          "median_ns": 22400,
+          "min_ns": 19000,
+          "max_ns": 71200
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 27590.0,
+          "median_ns": 22400,
+          "min_ns": 19000,
+          "max_ns": 71000
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 110.0,
+          "median_ns": 100,
+          "min_ns": 0,
+          "max_ns": 200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      }
+    },
+    "bulk_kline": {
+      "orjson_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 151788640.0,
+          "median_ns": 151002800,
+          "min_ns": 143919600,
+          "max_ns": 158588600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 151788290.0,
+          "median_ns": 151002500,
+          "min_ns": 143919100,
+          "max_ns": 158588300
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 350.0,
+          "median_ns": 300,
+          "min_ns": 300,
+          "max_ns": 500
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 4342430.0,
+          "median_ns": 4213700,
+          "min_ns": 4051000,
+          "max_ns": 5105900
+        }
+      },
+      "release_records_only": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 35254530.0,
+          "median_ns": 34331300,
+          "min_ns": 31751600,
+          "max_ns": 38645300
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 35252240.0,
+          "median_ns": 34329600,
+          "min_ns": 31749900,
+          "max_ns": 38643400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 2290.0,
+          "median_ns": 1900,
+          "min_ns": 1700,
+          "max_ns": 3900
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "stdlib_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 295797040.0,
+          "median_ns": 292325300,
+          "min_ns": 284333200,
+          "max_ns": 307999100
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 295796260.0,
+          "median_ns": 292324400,
+          "min_ns": 284332100,
+          "max_ns": 307998700
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 780.0,
+          "median_ns": 800,
+          "min_ns": 400,
+          "max_ns": 1300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 3975360.0,
+          "median_ns": 3944800,
+          "min_ns": 3784200,
+          "max_ns": 4178500
+        }
+      },
+      "stdlib_text": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 294188620.0,
+          "median_ns": 284042300,
+          "min_ns": 274471900,
+          "max_ns": 378686400
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 294188370.0,
+          "median_ns": 284042100,
+          "min_ns": 274471700,
+          "max_ns": 378686100
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 250.0,
+          "median_ns": 200,
+          "min_ns": 200,
+          "max_ns": 300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 4067960.0,
+          "median_ns": 4018000,
+          "min_ns": 3777400,
+          "max_ns": 4441100
+        }
+      },
+      "tuple_generator_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 164925350.0,
+          "median_ns": 155789800,
+          "min_ns": 147996600,
+          "max_ns": 238849100
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 146859370.0,
+          "median_ns": 138306800,
+          "min_ns": 130317200,
+          "max_ns": 216638600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 18065980.0,
+          "median_ns": 17679400,
+          "min_ns": 16851900,
+          "max_ns": 22210500
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 10452490.0,
+          "median_ns": 8703000,
+          "min_ns": 4677100,
+          "max_ns": 26087200
+        }
+      },
+      "tuple_generator_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 130644200.0,
+          "median_ns": 130403300,
+          "min_ns": 124458800,
+          "max_ns": 138857400
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 130643960.0,
+          "median_ns": 130403000,
+          "min_ns": 124458500,
+          "max_ns": 138857100
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 240.0,
+          "median_ns": 200,
+          "min_ns": 100,
+          "max_ns": 300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 5748030.0,
+          "median_ns": 4872300,
+          "min_ns": 4763500,
+          "max_ns": 12508900
+        }
+      },
+      "tuple_itemgetter_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 82006340.0,
+          "median_ns": 80970200,
+          "min_ns": 79394500,
+          "max_ns": 91139600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 64459570.0,
+          "median_ns": 63805200,
+          "min_ns": 62789700,
+          "max_ns": 71076400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 17546770.0,
+          "median_ns": 17329200,
+          "min_ns": 16604800,
+          "max_ns": 20063200
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 25304670.0,
+          "median_ns": 24874800,
+          "min_ns": 24462200,
+          "max_ns": 28472300
+        }
+      },
+      "tuple_itemgetter_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 64531990.0,
+          "median_ns": 64171100,
+          "min_ns": 62999600,
+          "max_ns": 67374300
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 64531740.0,
+          "median_ns": 64170600,
+          "min_ns": 62999400,
+          "max_ns": 67374100
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 250.0,
+          "median_ns": 200,
+          "min_ns": 100,
+          "max_ns": 500
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 28611270.0,
+          "median_ns": 28931200,
+          "min_ns": 25437500,
+          "max_ns": 30394000
+        }
+      },
+      "utf8_decode": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 6902860.0,
+          "median_ns": 6809600,
+          "min_ns": 6385000,
+          "max_ns": 7392600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 6901950.0,
+          "median_ns": 6809200,
+          "min_ns": 6384100,
+          "max_ns": 7391600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 910.0,
+          "median_ns": 900,
+          "min_ns": 400,
+          "max_ns": 1400
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      }
+    },
+    "bulk_scalar": {
+      "orjson_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 60468010.0,
+          "median_ns": 60105400,
+          "min_ns": 51854600,
+          "max_ns": 69282500
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 60467670.0,
+          "median_ns": 60105100,
+          "min_ns": 51853900,
+          "max_ns": 69282200
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 340.0,
+          "median_ns": 300,
+          "min_ns": 200,
+          "max_ns": 700
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 3880560.0,
+          "median_ns": 3850200,
+          "min_ns": 3673200,
+          "max_ns": 4313400
+        }
+      },
+      "release_records_only": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 15274960.0,
+          "median_ns": 15101100,
+          "min_ns": 12749200,
+          "max_ns": 17965600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 15273010.0,
+          "median_ns": 15099300,
+          "min_ns": 12746100,
+          "max_ns": 17963600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 1950.0,
+          "median_ns": 1900,
+          "min_ns": 1100,
+          "max_ns": 3100
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      },
+      "stdlib_bytearray": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 113190550.0,
+          "median_ns": 109423500,
+          "min_ns": 104742900,
+          "max_ns": 137469200
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 113190110.0,
+          "median_ns": 109423300,
+          "min_ns": 104742700,
+          "max_ns": 137467700
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 440.0,
+          "median_ns": 300,
+          "min_ns": 200,
+          "max_ns": 1500
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 3905210.0,
+          "median_ns": 3717600,
+          "min_ns": 3598400,
+          "max_ns": 4907700
+        }
+      },
+      "stdlib_text": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 110513940.0,
+          "median_ns": 108407000,
+          "min_ns": 103651200,
+          "max_ns": 121043800
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 110513700.0,
+          "median_ns": 108406800,
+          "min_ns": 103651000,
+          "max_ns": 121043600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 240.0,
+          "median_ns": 200,
+          "min_ns": 200,
+          "max_ns": 400
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 3827360.0,
+          "median_ns": 3744500,
+          "min_ns": 3635100,
+          "max_ns": 4141600
+        }
+      },
+      "tuple_generator_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 108177800.0,
+          "median_ns": 104494000,
+          "min_ns": 95647400,
+          "max_ns": 132340600
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 99672820.0,
+          "median_ns": 96395600,
+          "min_ns": 87729900,
+          "max_ns": 124021600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 8504980.0,
+          "median_ns": 8221500,
+          "min_ns": 7917500,
+          "max_ns": 9938000
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 8908020.0,
+          "median_ns": 6702800,
+          "min_ns": 2723500,
+          "max_ns": 25858100
+        }
+      },
+      "tuple_generator_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 91173750.0,
+          "median_ns": 86603300,
+          "min_ns": 82927100,
+          "max_ns": 116437000
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 91173580.0,
+          "median_ns": 86603100,
+          "min_ns": 82927000,
+          "max_ns": 116436900
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 170.0,
+          "median_ns": 100,
+          "min_ns": 100,
+          "max_ns": 300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 3038020.0,
+          "median_ns": 2903400,
+          "min_ns": 2562900,
+          "max_ns": 4072500
+        }
+      },
+      "tuple_itemgetter_consumed": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 44188370.0,
+          "median_ns": 43072200,
+          "min_ns": 39400000,
+          "max_ns": 49796000
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 35093700.0,
+          "median_ns": 34038300,
+          "min_ns": 31379800,
+          "max_ns": 39997600
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 9094670.0,
+          "median_ns": 8426300,
+          "min_ns": 8020200,
+          "max_ns": 10384400
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 11817410.0,
+          "median_ns": 11285100,
+          "min_ns": 10270000,
+          "max_ns": 15033300
+        }
+      },
+      "tuple_itemgetter_retained": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 33884670.0,
+          "median_ns": 33503300,
+          "min_ns": 31197600,
+          "max_ns": 37352000
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 33884460.0,
+          "median_ns": 33503000,
+          "min_ns": 31197400,
+          "max_ns": 37351800
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 210.0,
+          "median_ns": 200,
+          "min_ns": 100,
+          "max_ns": 300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 14149230.0,
+          "median_ns": 14026800,
+          "min_ns": 11893300,
+          "max_ns": 17500100
+        }
+      },
+      "utf8_decode": {
+        "total_ns": {
+          "samples": 10,
+          "mean_ns": 2521960.0,
+          "median_ns": 2463200,
+          "min_ns": 2238300,
+          "max_ns": 2883300
+        },
+        "operation_ns": {
+          "samples": 10,
+          "mean_ns": 2521150.0,
+          "median_ns": 2462200,
+          "min_ns": 2238000,
+          "max_ns": 2882400
+        },
+        "record_release_ns": {
+          "samples": 10,
+          "mean_ns": 810.0,
+          "median_ns": 900,
+          "min_ns": 300,
+          "max_ns": 1300
+        },
+        "nested_gc_pause_ns": {
+          "samples": 10,
+          "mean_ns": 0.0,
+          "median_ns": 0,
+          "min_ns": 0,
+          "max_ns": 0
+        }
+      }
+    }
+  },
+  "fixtures": {
+    "small_kline": {
+      "bytes": 15939,
+      "sha256": "8037316f75b9e6fc0047a8c648e43380a583e67ca9bd9662ca0b6e662a8c9140"
+    },
+    "medium_kline": {
+      "bytes": 505739,
+      "sha256": "96b1b8f89e63e4e8861130df5e6a2b83ccc42e1ca420f8fc66353523b92cde7d"
+    },
+    "bulk_kline": {
+      "bytes": 54202451,
+      "sha256": "7487b0a28bd878056b02958900c9ec9f36ab4d263771889751fb06382601e776"
+    },
+    "bulk_scalar": {
+      "bytes": 18796230,
+      "sha256": "061e6fab319d864213099fb409b65817984d3efe30b91df8527a2a16e570439b"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[package]
+name = "fastk-read-bench"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+fastk = { path = "/work" }
+serde_json = "1"
+serde = { version = "1", features = ["derive"] }
+sha2 = "0.10"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+panic = "abort"

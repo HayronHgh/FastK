@@ -1,0 +1,43 @@
+{
+  "small_kline": {
+    "symbol": "S05",
+    "start_ts": 1716414480000,
+    "end_ts": 1716422100000,
+    "kind": "range",
+    "expected": {
+      "rows": 127,
+      "sha256": "32635389b32efe422303fd6ce6446be795d29b45e2ec4a38ea633dfb86108c6a"
+    }
+  },
+  "medium_kline": {
+    "symbol": "S05",
+    "start_ts": 1716414480000,
+    "end_ts": 1716660180000,
+    "kind": "range",
+    "expected": {
+      "rows": 4077,
+      "sha256": "fcdb7c33d39093620357ca3a4dc48846619fcc6ce02a0f09c25fa763ff2494a6"
+    }
+  },
+  "bulk_kline": {
+    "symbol": "S00",
+    "start_ts": 1704067260000,
+    "end_ts": 1730419140000,
+    "kind": "range",
+    "expected": {
+      "rows": 437115,
+      "sha256": "74423667b7fb7db52babc84cdb712f37c965ecea57d390a6fcb32b2921d4b321"
+    }
+  },
+  "bulk_scalar": {
+    "symbol": "S00",
+    "start_ts": 1704067260000,
+    "end_ts": 1730419140000,
+    "kind": "range",
+    "feature": "ma20",
+    "expected": {
+      "rows": 437115,
+      "sha256": "b33f2e5b57d1b1af18931381d44dcb23959366c3d6d43460034c9deec8326377"
+    }
+  }
+}

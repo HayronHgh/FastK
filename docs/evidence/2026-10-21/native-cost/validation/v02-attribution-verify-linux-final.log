@@ -1,0 +1,8 @@
+Processing ./target/v02-attribution-final-linux-wheels/fastk_attribution_probe-0.0.0-cp312-cp312-manylinux_2_34_x86_64.whl
+Installing collected packages: fastk-attribution-probe
+  Attempting uninstall: fastk-attribution-probe
+    Found existing installation: fastk-attribution-probe 0.0.0
+    Uninstalling fastk-attribution-probe-0.0.0:
+      Successfully uninstalled fastk-attribution-probe-0.0.0
+Successfully installed fastk-attribution-probe-0.0.0
+{"passed": true, "bulk_cases": 4, "probe_budgets": [1, 4], "core_matrix_cases": 4, "canonical_short_reads": 5720, "ownership_handoff_same_pointer": true}

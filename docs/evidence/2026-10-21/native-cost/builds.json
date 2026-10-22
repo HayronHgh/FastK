@@ -1,0 +1,30 @@
+{
+  "wheels": {
+    "fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl": {
+      "sha256": "03f339d730d9433d196a9411da0d402f049fd5a343ca00ffe32ed032f3eeae44",
+      "modules": {
+        "fastk_native/_native.cp312-win_amd64.pyd": "979f215482c0c353968076a683018dfec1e64141737a397a740513040456b7d1"
+      }
+    },
+    "fastk_native-0.2.0rc1-cp312-cp312-manylinux_2_34_x86_64.whl": {
+      "sha256": "ac794d99b3f64764cac5f8c4962c0164bd4046dbc6369c5e0450e0069aa96fe7",
+      "modules": {
+        "fastk_native/_native.cpython-312-x86_64-linux-gnu.so": "bf36b90736f016437dc0ecfd137f920496cf4db7fe176ed0c431be8b83c68023"
+      }
+    },
+    "fastk_attribution_probe-0.0.0-cp312-cp312-win_amd64.whl": {
+      "sha256": "20824adbc2621182f9149882b7eddd4029cac3f87236a45748a996ebccfac407",
+      "modules": {
+        "_fastk_attribution/_fastk_attribution.cp312-win_amd64.pyd": "91b9d4cfd76f1e106991deb2ccad7fdc9228d6415f7ed2426f64d8a442fb16db"
+      }
+    },
+    "fastk_attribution_probe-0.0.0-cp312-cp312-manylinux_2_34_x86_64.whl": {
+      "sha256": "63fbb3f567e016fe903fa5e9acb84ee53f0a13a3e472e48d4792cb64d336bdda",
+      "modules": {
+        "_fastk_attribution/_fastk_attribution.cpython-312-x86_64-linux-gnu.so": "5d0e6b975de16fbfde95167f9b5f79a4e215d38898378739fd5af10e4a36c971"
+      }
+    }
+  },
+  "core_control_original_binary_sha256": "30135d7ce58f83756d30ee2eebdb6cc1dad1662fe9d9e5de9d89ae023acf7329",
+  "core_control_fd_binary_sha256": "8d43307d31a755d6b9dc59f6090cace615f52ec894cbab2028bb9e7a7f12a1c3"
+}

@@ -1,0 +1,70 @@
+{
+  "before_median_seconds": 2.5433782,
+  "after_median_seconds": 0.080323,
+  "byte_identical": true,
+  "before": [
+    {
+      "label": "before",
+      "bridge_sha256": "98fd69f58b6eb864bf9323468052d90e2dd4aa75a34402678b4acad325c2a80f",
+      "elapsed_ns": 2624069900,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    },
+    {
+      "label": "before-2",
+      "bridge_sha256": "98fd69f58b6eb864bf9323468052d90e2dd4aa75a34402678b4acad325c2a80f",
+      "elapsed_ns": 2543378200,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    },
+    {
+      "label": "before-3",
+      "bridge_sha256": "98fd69f58b6eb864bf9323468052d90e2dd4aa75a34402678b4acad325c2a80f",
+      "elapsed_ns": 2420728900,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    }
+  ],
+  "after": [
+    {
+      "label": "after",
+      "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+      "elapsed_ns": 114491900,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    },
+    {
+      "label": "after-2",
+      "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+      "elapsed_ns": 74819800,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    },
+    {
+      "label": "after-3",
+      "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+      "elapsed_ns": 80323000,
+      "rows": 437115,
+      "stdout_bytes": 30161245,
+      "stdout_sha256": "886f3e25c576006661350751f0b6ca691e640a5f521cce128bf83c6d9dbbe0f6",
+      "samples": 1,
+      "boundary": "process startup plus complete pipe transfer; JSON parsing outside timer; same prepared dataset, OS cache uncontrolled"
+    }
+  ],
+  "scope": "single bulk scalar transfer, three samples each; not a general engine speedup claim"
+}

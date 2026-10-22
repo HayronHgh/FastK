@@ -1,0 +1,22 @@
+{
+  "fastk": {
+    "files": 3241,
+    "bytes": 1859914320
+  },
+  "arrow": {
+    "files": 1200,
+    "bytes": 1175848800
+  },
+  "parquet": {
+    "files": 1200,
+    "bytes": 496284201
+  },
+  "duckdb": {
+    "files": 1,
+    "bytes": 4255395840
+  },
+  "sqlite": {
+    "files": 3,
+    "bytes": 3005304832
+  }
+}

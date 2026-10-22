@@ -1,0 +1,841 @@
+{
+  "binary_sha256": "0bdd0287608fbefabf65d56c8dc3374780d07369328a3373bae15a8d2533789c",
+  "jobs": [
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 1,
+      "name": "000-schedule-t8-g4-r1"
+    },
+    {
+      "mode": "copy",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 2,
+      "name": "001-copy-t4-g4-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 2,
+      "name": "002-pread-t8-g4-r2"
+    },
+    {
+      "mode": "engine",
+      "threads": 2,
+      "groups": 2,
+      "cycles": 400,
+      "round": 1,
+      "name": "003-engine-t2-g2-r1"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 2,
+      "name": "004-copy-t8-g8-r2"
+    },
+    {
+      "mode": "copy",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "005-copy-t5-g5-r1"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "006-pread-t8-g5-r1"
+    },
+    {
+      "mode": "private",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "007-private-t1-g1-r2"
+    },
+    {
+      "mode": "engine",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 400,
+      "round": 0,
+      "name": "008-engine-t1-g1-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 0,
+      "name": "009-copy-t8-g8-r0"
+    },
+    {
+      "mode": "engine",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 400,
+      "round": 2,
+      "name": "010-engine-t1-g1-r2"
+    },
+    {
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "011-private-t8-g1-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "012-pread-t8-g5-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 2,
+      "name": "013-copy-t8-g4-r2"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "014-copy-t8-g5-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "015-pread-t8-g5-r2"
+    },
+    {
+      "mode": "schedule",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 1,
+      "name": "016-schedule-t4-g4-r1"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 0,
+      "name": "017-schedule-t8-g5-r0"
+    },
+    {
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "018-outer-t4-g1-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 2,
+      "name": "019-schedule-t8-g5-r2"
+    },
+    {
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "020-outer-t1-g1-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 0,
+      "name": "021-schedule-t8-g4-r0"
+    },
+    {
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "022-private-t4-g1-r0"
+    },
+    {
+      "mode": "pread",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "023-pread-t5-g5-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "024-engine-t5-g5-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 1,
+      "name": "025-copy-t8-g8-r1"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 2,
+      "name": "026-schedule-t8-g4-r2"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 10000,
+      "round": 0,
+      "name": "027-schedule-t8-g8-r0"
+    },
+    {
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "028-private-t8-g1-r0"
+    },
+    {
+      "mode": "pread",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 1,
+      "name": "029-pread-t4-g4-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "030-engine-t5-g5-r1"
+    },
+    {
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "031-outer-t1-g1-r1"
+    },
+    {
+      "mode": "copy",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "032-copy-t5-g5-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 1,
+      "name": "033-pread-t8-g4-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 0,
+      "name": "034-engine-t4-g4-r0"
+    },
+    {
+      "mode": "private",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "035-private-t1-g1-r0"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 1,
+      "name": "036-pread-t8-g8-r1"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 10000,
+      "round": 2,
+      "name": "037-schedule-t8-g8-r2"
+    },
+    {
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "038-outer-t8-g1-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 0,
+      "name": "039-schedule-t4-g4-r0"
+    },
+    {
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "040-private-t4-g1-r2"
+    },
+    {
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "041-private-t4-g1-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "042-engine-t8-g5-r1"
+    },
+    {
+      "mode": "pread",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "043-pread-t5-g5-r2"
+    },
+    {
+      "mode": "engine",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 400,
+      "round": 1,
+      "name": "044-engine-t1-g1-r1"
+    },
+    {
+      "mode": "pread",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 2,
+      "name": "045-pread-t4-g4-r2"
+    },
+    {
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "046-outer-t4-g1-r1"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 0,
+      "name": "047-pread-t8-g8-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 0,
+      "name": "048-schedule-t5-g5-r0"
+    },
+    {
+      "mode": "engine",
+      "threads": 2,
+      "groups": 2,
+      "cycles": 400,
+      "round": 0,
+      "name": "049-engine-t2-g2-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 10000,
+      "round": 2,
+      "name": "050-schedule-t4-g4-r2"
+    },
+    {
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "051-outer-t4-g1-r2"
+    },
+    {
+      "mode": "engine",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "052-engine-t8-g5-r0"
+    },
+    {
+      "mode": "schedule",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 2,
+      "name": "053-schedule-t5-g5-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 0,
+      "name": "054-pread-t4-g4-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 1,
+      "name": "055-copy-t4-g4-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "056-engine-t5-g5-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 0,
+      "name": "057-pread-t8-g4-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "058-copy-t8-g5-r0"
+    },
+    {
+      "mode": "engine",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 2,
+      "name": "059-engine-t8-g5-r2"
+    },
+    {
+      "mode": "schedule",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 1,
+      "name": "060-schedule-t5-g5-r1"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 10000,
+      "round": 1,
+      "name": "061-schedule-t8-g5-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 1,
+      "name": "062-engine-t4-g4-r1"
+    },
+    {
+      "mode": "pread",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "063-pread-t5-g5-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 0,
+      "name": "064-copy-t8-g4-r0"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400,
+      "round": 1,
+      "name": "065-copy-t8-g4-r1"
+    },
+    {
+      "mode": "copy",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 0,
+      "name": "066-copy-t4-g4-r0"
+    },
+    {
+      "mode": "engine",
+      "threads": 2,
+      "groups": 2,
+      "cycles": 400,
+      "round": 2,
+      "name": "067-engine-t2-g2-r2"
+    },
+    {
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "068-outer-t1-g1-r2"
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400,
+      "round": 2,
+      "name": "069-pread-t8-g8-r2"
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400,
+      "round": 1,
+      "name": "070-copy-t8-g5-r1"
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 10000,
+      "round": 1,
+      "name": "071-schedule-t8-g8-r1"
+    },
+    {
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "072-private-t8-g1-r1"
+    },
+    {
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "073-outer-t8-g1-r1"
+    },
+    {
+      "mode": "copy",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400,
+      "round": 0,
+      "name": "074-copy-t5-g5-r0"
+    },
+    {
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "075-outer-t8-g1-r2"
+    },
+    {
+      "mode": "private",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "076-private-t1-g1-r1"
+    },
+    {
+      "mode": "engine",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400,
+      "round": 2,
+      "name": "077-engine-t4-g4-r2"
+    }
+  ],
+  "records": [
+    {
+      "mode": "engine",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 2000,
+      "name": "record-native-engine-t4"
+    },
+    {
+      "mode": "engine",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 2000,
+      "name": "record-native-engine-t5"
+    },
+    {
+      "mode": "engine",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 2000,
+      "name": "record-native-engine-t8"
+    },
+    {
+      "mode": "outer",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 500,
+      "name": "record-native-outer-t4"
+    },
+    {
+      "mode": "outer",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 500,
+      "name": "record-native-outer-t8"
+    },
+    {
+      "mode": "private",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 500,
+      "name": "record-native-private-t4"
+    },
+    {
+      "mode": "private",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 500,
+      "name": "record-native-private-t8"
+    }
+  ],
+  "settings": [
+    {
+      "mode": "copy",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400
+    },
+    {
+      "mode": "copy",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "copy",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400
+    },
+    {
+      "mode": "pread",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400
+    },
+    {
+      "mode": "pread",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 400
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "pread",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 400
+    },
+    {
+      "mode": "schedule",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 10000
+    },
+    {
+      "mode": "schedule",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 10000
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 4,
+      "cycles": 10000
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 10000
+    },
+    {
+      "mode": "schedule",
+      "threads": 8,
+      "groups": 8,
+      "cycles": 10000
+    },
+    {
+      "mode": "engine",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 400
+    },
+    {
+      "mode": "engine",
+      "threads": 2,
+      "groups": 2,
+      "cycles": 400
+    },
+    {
+      "mode": "engine",
+      "threads": 4,
+      "groups": 4,
+      "cycles": 400
+    },
+    {
+      "mode": "engine",
+      "threads": 5,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "engine",
+      "threads": 8,
+      "groups": 5,
+      "cycles": 400
+    },
+    {
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100
+    },
+    {
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100
+    },
+    {
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100
+    },
+    {
+      "mode": "private",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100
+    },
+    {
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100
+    },
+    {
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100
+    }
+  ],
+  "counters_exclude_setup_validation": true,
+  "frames_for_diagnostics_only": true,
+  "passed": true
+}

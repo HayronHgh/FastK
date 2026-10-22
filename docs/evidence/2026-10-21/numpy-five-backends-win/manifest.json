@@ -1,0 +1,336 @@
+{
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "sqlite": "3.53.1",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "duckdb": "1.5.6",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2",
+      "fastk-native": "0.2.0rc1"
+    },
+    "native_module": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\v02-venv\\Lib\\site-packages\\fastk_native\\_native.cp312-win_amd64.pyd",
+    "native_sha256": "2fa5cbe91eefabfe21c996e949789fad9ee89b406a784eb95ca66c8ab09a99e7",
+    "inputs": {
+      "bulk": "83aa80e8ab9866bf3c8809c8d54b7ac009a400d25667fc8487e37d5406748b10",
+      "short": "9f9e65a3e3c29ef18e44a5a08a1ba2b26893a3f847a98b6e26c5a3b1846d8b0e",
+      "input-manifest": "7222d5c7f09c8d7e515507aaccc1fef69458bc4d4feb86b3c75feb1e7f4fa9d0"
+    },
+    "harness": {
+      "compare_numpy_reads.py": "df5c29c3fd90c043f1cba58935cddbb75fdc900825260e2495f50b3274ad9839",
+      "native_handoff\\worker.py": "c9d16c155b551b1effd54f78549856d6ffb34115be86a896047a2cfe5b2d28b8",
+      "fastk_bench\\__init__.py": "63ec6f82e47686664dc049c21e5b96458526775261f16e3900970759b5780b4f",
+      "fastk_bench\\backends.py": "0465c26b50ba5641a417d9a5f3d687ede97c5961fd9c455a0ececaf34364513b",
+      "fastk_bench\\batches.py": "bf74477ab4bdd6f0f7831d4cedff968dfd49244a0d61e169257f2994e930827f",
+      "fastk_bench\\data.py": "4aadd2b4b3801fc7e54a74721e9287ca6b9b52b0f0897e28d6b30da335c9799f",
+      "fastk_bench\\legacy.py": "6a4fbfbe72a8830c952e9c063410c02d35c7927c51d307910736a775f07e4327",
+      "fastk_bench\\matrix_worker.py": "07238506e86908f1946878a2f9c07415d47687ce9484dbd87c34e0ef20cf3646",
+      "fastk_bench\\process.py": "5c57ff3390327f09204d8f2251f0062ab2e39bcfbfe58abe100d4a667022852d",
+      "fastk_bench\\worker.py": "9cf39ec80d1550ececc1811512a80b4d8ca7f4958a6a765b43384ce44dbf5f2e"
+    }
+  },
+  "jobs": [
+    {
+      "backend": "parquet",
+      "workload": "short",
+      "process_round": 0,
+      "output": "00-parquet-short-r0.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "bulk",
+      "process_round": 0,
+      "output": "01-duckdb-bulk-r0.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "short",
+      "process_round": 0,
+      "output": "02-duckdb-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "short",
+      "process_round": 0,
+      "output": "03-fastk-short-r0.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "bulk",
+      "process_round": 0,
+      "output": "04-sqlite-bulk-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "short",
+      "process_round": 0,
+      "output": "05-arrow-short-r0.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "short",
+      "process_round": 0,
+      "output": "06-sqlite-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "bulk",
+      "process_round": 0,
+      "output": "07-fastk-bulk-r0.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "bulk",
+      "process_round": 0,
+      "output": "08-parquet-bulk-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "bulk",
+      "process_round": 0,
+      "output": "09-arrow-bulk-r0.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "bulk",
+      "process_round": 1,
+      "output": "10-sqlite-bulk-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "short",
+      "process_round": 1,
+      "output": "11-fastk-short-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "short",
+      "process_round": 1,
+      "output": "12-parquet-short-r1.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "short",
+      "process_round": 1,
+      "output": "13-duckdb-short-r1.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "bulk",
+      "process_round": 1,
+      "output": "14-duckdb-bulk-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "short",
+      "process_round": 1,
+      "output": "15-arrow-short-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "bulk",
+      "process_round": 1,
+      "output": "16-arrow-bulk-r1.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "short",
+      "process_round": 1,
+      "output": "17-sqlite-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "bulk",
+      "process_round": 1,
+      "output": "18-fastk-bulk-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "bulk",
+      "process_round": 1,
+      "output": "19-parquet-bulk-r1.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "short",
+      "process_round": 2,
+      "output": "20-sqlite-short-r2.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "bulk",
+      "process_round": 2,
+      "output": "21-duckdb-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "bulk",
+      "process_round": 2,
+      "output": "22-fastk-bulk-r2.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "short",
+      "process_round": 2,
+      "output": "23-parquet-short-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "short",
+      "process_round": 2,
+      "output": "24-arrow-short-r2.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "short",
+      "process_round": 2,
+      "output": "25-duckdb-short-r2.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "bulk",
+      "process_round": 2,
+      "output": "26-sqlite-bulk-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "bulk",
+      "process_round": 2,
+      "output": "27-arrow-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "short",
+      "process_round": 2,
+      "output": "28-fastk-short-r2.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "bulk",
+      "process_round": 2,
+      "output": "29-parquet-bulk-r2.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "bulk",
+      "process_round": 3,
+      "output": "30-duckdb-bulk-r3.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "bulk",
+      "process_round": 3,
+      "output": "31-parquet-bulk-r3.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "short",
+      "process_round": 3,
+      "output": "32-sqlite-short-r3.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "short",
+      "process_round": 3,
+      "output": "33-parquet-short-r3.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "bulk",
+      "process_round": 3,
+      "output": "34-sqlite-bulk-r3.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "bulk",
+      "process_round": 3,
+      "output": "35-arrow-bulk-r3.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "short",
+      "process_round": 3,
+      "output": "36-duckdb-short-r3.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "short",
+      "process_round": 3,
+      "output": "37-arrow-short-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "bulk",
+      "process_round": 3,
+      "output": "38-fastk-bulk-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "short",
+      "process_round": 3,
+      "output": "39-fastk-short-r3.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "bulk",
+      "process_round": 4,
+      "output": "40-parquet-bulk-r4.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "short",
+      "process_round": 4,
+      "output": "41-sqlite-short-r4.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "short",
+      "process_round": 4,
+      "output": "42-parquet-short-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "short",
+      "process_round": 4,
+      "output": "43-fastk-short-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "bulk",
+      "process_round": 4,
+      "output": "44-fastk-bulk-r4.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "bulk",
+      "process_round": 4,
+      "output": "45-duckdb-bulk-r4.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "bulk",
+      "process_round": 4,
+      "output": "46-sqlite-bulk-r4.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "short",
+      "process_round": 4,
+      "output": "47-duckdb-short-r4.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "bulk",
+      "process_round": 4,
+      "output": "48-arrow-bulk-r4.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "short",
+      "process_round": 4,
+      "output": "49-arrow-short-r4.json"
+    }
+  ],
+  "process_rounds": 5
+}

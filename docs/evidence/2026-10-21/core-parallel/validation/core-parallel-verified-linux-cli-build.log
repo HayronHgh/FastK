@@ -1,0 +1,6 @@
+   Compiling libc v0.2.184
+   Compiling rustix v1.1.4
+   Compiling getrandom v0.4.2
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling tempfile v3.27.0
+    Finished `release` profile [optimized] target(s) in 19.26s

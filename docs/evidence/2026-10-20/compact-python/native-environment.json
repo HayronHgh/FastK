@@ -1,0 +1,37 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "psutil": "7.2.2",
+  "seed": 20261023,
+  "routes": {
+    "before": {
+      "bridge_sha256": "56af92b6d64e4e4bd85482e230a70d0cf36e522a93a61f2741b3afa9852489b1",
+      "client_source": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\clients\\python\\src",
+      "client_hashes": {
+        "client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+        "_session.py": "fbe93fea70124e72b4c13016dfcba01784296590e6e264cee95ad6e7423aa7db",
+        "__init__.py": "3c2c7eaa544bd3c5089bd950ec830b7eea00c410a99d30e598629da2ad041e28"
+      }
+    },
+    "after": {
+      "bridge_sha256": "56af92b6d64e4e4bd85482e230a70d0cf36e522a93a61f2741b3afa9852489b1",
+      "client_source": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\clients\\python\\src",
+      "client_hashes": {
+        "client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+        "_session.py": "fbe93fea70124e72b4c13016dfcba01784296590e6e264cee95ad6e7423aa7db",
+        "__init__.py": "3c2c7eaa544bd3c5089bd950ec830b7eea00c410a99d30e598629da2ad041e28"
+      }
+    }
+  },
+  "bulk_query_sha256": "066e42db0c24304977fa545bb41bd323990cd9102a4c0a155002cb40f700a403",
+  "cache": "OS cache uncontrolled, same pre-maintenance store, shuffled fresh-process jobs; no concurrent compile/install",
+  "memory_scope": "external coordinator samples actual child-reported Python PID + Rust PID + venv launcher if present every5ms through warm-up, timed reads, caller mapping, validation and cleanup; excludes coordinator. OS per-process peaks include startup and are never summed as simultaneous peaks. Shared RSS pages may count twice.",
+  "latency_scope": "public Client API and original caller tuple conversion separately; constructor/handshake/warm-up/validation excluded. Fresh Python+Rust processes per shape/round/route.",
+  "experiment": {
+    "scope": "measurement child only, unchanged Client/worker and original caller adapter",
+    "before": "stdlib json.loads(bytearray)",
+    "after": "orjson.loads(bytearray)",
+    "orjson": "3.13.0",
+    "adopted_in_production": false
+  }
+}

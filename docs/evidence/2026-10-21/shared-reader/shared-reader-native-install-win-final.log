@@ -1,0 +1,7 @@
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\shared-reader-before-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+Installing collected packages: fastk-native
+  Attempting uninstall: fastk-native
+    Found existing installation: fastk-native 0.2.0rc1
+    Uninstalling fastk-native-0.2.0rc1:
+      Successfully uninstalled fastk-native-0.2.0rc1
+Successfully installed fastk-native-0.2.0rc1

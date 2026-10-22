@@ -56,13 +56,26 @@ pub fn write_entries(path: &Path, entries: &[ValueIndexEntry]) -> Result<()> {
     for entry in entries {
         bytes.extend_from_slice(&entry.to_le_bytes());
     }
-    fs::write(path, bytes)?;
+    crate::storage::fs::atomic_write_replace(path, |writer| {
+        std::io::Write::write_all(writer, &bytes)?;
+        Ok(())
+    })?;
     Ok(())
 }
 
 /// Reads a `.vix` file.
 pub fn read_entries(path: &Path) -> Result<Vec<ValueIndexEntry>> {
+    read_entries_checked(path, 0)
+}
+
+pub(crate) fn read_entries_checked(path: &Path, checksum: u64) -> Result<Vec<ValueIndexEntry>> {
     let bytes = fs::read(path)?;
+    if checksum != 0 && crate::storage::fs::checksum64(&bytes) != checksum {
+        return Err(FastKError::InvalidData(format!(
+            "sidecar checksum mismatch: {}",
+            path.display()
+        )));
+    }
     if bytes.len() % ValueIndexEntry::BYTE_SIZE != 0 {
         return Err(FastKError::InvalidData(format!(
             "invalid vix byte length {}",

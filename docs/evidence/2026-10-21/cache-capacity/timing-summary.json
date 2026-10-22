@@ -1,0 +1,4668 @@
+{
+  "processes": 70,
+  "timed_outputs": 78950,
+  "all_results_verified": true,
+  "results": [
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            13600.0,
+            13900.0,
+            13700.0,
+            13600.0,
+            13700.0
+          ],
+          "median_ns": 13700.0,
+          "p95_ns": 16954.999999999996,
+          "p99_ns": 24826.000000000022
+        }
+      },
+      "peak_rss": [
+        125030400,
+        124952576,
+        124059648,
+        124043264,
+        125276160
+      ],
+      "peak_private": [
+        43692032,
+        43823104,
+        43814912,
+        44503040,
+        44122112
+      ],
+      "handle_deltas": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 61161472,
+            "private": 39718912
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 61231104,
+            "private": 39718912
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 125071360,
+            "private": 43692032
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125071360,
+            "private": 43692032
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63176704,
+            "private": 40722432
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60870656,
+            "private": 39403520
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60940288,
+            "private": 39403520
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 125038592,
+            "private": 43814912
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125038592,
+            "private": 43814912
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63213568,
+            "private": 40382464
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 61190144,
+            "private": 39796736
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 61259776,
+            "private": 39796736
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 124182528,
+            "private": 42369024
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 124182528,
+            "private": 42369024
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63275008,
+            "private": 41091072
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60776448,
+            "private": 39464960
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60846080,
+            "private": 39464960
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 124211200,
+            "private": 42565632
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 124211200,
+            "private": 42565632
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63287296,
+            "private": 40828928
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60194816,
+            "private": 38797312
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60268544,
+            "private": 38801408
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 125276160,
+            "private": 44122112
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125276160,
+            "private": 44122112
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63401984,
+            "private": 40906752
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 228900,
+          "close_ns": 13016100
+        },
+        {
+          "open_ns": 228100,
+          "close_ns": 12807900
+        },
+        {
+          "open_ns": 208900,
+          "close_ns": 12343900
+        },
+        {
+          "open_ns": 213300,
+          "close_ns": 12432900
+        },
+        {
+          "open_ns": 221200,
+          "close_ns": 13374600
+        }
+      ]
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            17000.0,
+            17600.0,
+            17300.0,
+            16800.0,
+            17100.0
+          ],
+          "median_ns": 17100.0,
+          "p95_ns": 20700.0,
+          "p99_ns": 26739.000000000033
+        }
+      },
+      "peak_rss": [
+        125456384,
+        125489152,
+        125345792,
+        125280256,
+        124338176
+      ],
+      "peak_private": [
+        44171264,
+        44281856,
+        43790336,
+        43958272,
+        44011520
+      ],
+      "handle_deltas": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60317696,
+            "private": 38793216
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60391424,
+            "private": 38797312
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 125116416,
+            "private": 44171264
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125476864,
+            "private": 44171264
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63668224,
+            "private": 42110976
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60985344,
+            "private": 39571456
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 61054976,
+            "private": 39571456
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 125116416,
+            "private": 44281856
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125513728,
+            "private": 44281856
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63692800,
+            "private": 41844736
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60051456,
+            "private": 38576128
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60125184,
+            "private": 38580224
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 124997632,
+            "private": 43790336
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125374464,
+            "private": 43790336
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63565824,
+            "private": 41299968
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60866560,
+            "private": 39755776
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60940288,
+            "private": 39755776
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 124932096,
+            "private": 43958272
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 125321216,
+            "private": 43958272
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63455232,
+            "private": 41160704
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 204,
+            "rss": 60882944,
+            "private": 39510016
+          },
+          {
+            "stage": "opened",
+            "handles": 204,
+            "rss": 60956672,
+            "private": 39514112
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 445,
+            "rss": 123953152,
+            "private": 42606592
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 445,
+            "rss": 124375040,
+            "private": 42655744
+          },
+          {
+            "stage": "after_close",
+            "handles": 205,
+            "rss": 63488000,
+            "private": 41807872
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 217100,
+          "close_ns": 15097500
+        },
+        {
+          "open_ns": 299500,
+          "close_ns": 12759900
+        },
+        {
+          "open_ns": 215600,
+          "close_ns": 12227500
+        },
+        {
+          "open_ns": 226600,
+          "close_ns": 12678500
+        },
+        {
+          "open_ns": 223800,
+          "close_ns": 14755500
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            235700,
+            203400,
+            205800,
+            218200,
+            222100
+          ],
+          "median_ns": 218200,
+          "p95_ns": 263880.0,
+          "p99_ns": 272856.0
+        },
+        "read_ns": {
+          "process_medians": [
+            4751700,
+            4749200,
+            4839800,
+            4820000,
+            4760800
+          ],
+          "median_ns": 4760800,
+          "p95_ns": 5382260.0,
+          "p99_ns": 5416212.0
+        },
+        "close_ns": {
+          "process_medians": [
+            95400,
+            99000,
+            111600,
+            120600,
+            113700
+          ],
+          "median_ns": 111600,
+          "p95_ns": 134540.0,
+          "p99_ns": 137148.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5072100,
+            5102000,
+            5152300,
+            5163000,
+            5104400
+          ],
+          "median_ns": 5104400,
+          "p95_ns": 5728720.0,
+          "p99_ns": 5777720.0
+        }
+      },
+      "peak_rss": [
+        61120512,
+        61108224,
+        61186048,
+        61071360,
+        61218816
+      ],
+      "peak_private": [
+        46698496,
+        46747648,
+        46764032,
+        46473216,
+        46313472
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24932352
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40140800,
+            "private": 25673728
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39325696,
+            "private": 24977408
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25722880
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39440384,
+            "private": 25055232
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40206336,
+            "private": 25739264
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39116800,
+            "private": 24612864
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40091648,
+            "private": 25448448
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39051264,
+            "private": 24588288
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40239104,
+            "private": 25288704
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            369700,
+            408200,
+            439200,
+            411100,
+            440200
+          ],
+          "median_ns": 411100,
+          "p95_ns": 452160.0,
+          "p99_ns": 453152.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1737600,
+            1643400,
+            1690300,
+            1719100,
+            1894500
+          ],
+          "median_ns": 1719100,
+          "p95_ns": 2250420.0,
+          "p99_ns": 2310812.0
+        },
+        "close_ns": {
+          "process_medians": [
+            72100,
+            71700,
+            71500,
+            76700,
+            84700
+          ],
+          "median_ns": 72100,
+          "p95_ns": 82860.0,
+          "p99_ns": 82892.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2160300,
+            2088100,
+            2131300,
+            2209800,
+            2447500
+          ],
+          "median_ns": 2160300,
+          "p95_ns": 2748200.0,
+          "p99_ns": 2809240.0
+        }
+      },
+      "peak_rss": [
+        61120512,
+        61108224,
+        61186048,
+        61071360,
+        61218816
+      ],
+      "peak_private": [
+        46698496,
+        46747648,
+        46764032,
+        46473216,
+        46313472
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24932352
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40140800,
+            "private": 25673728
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39325696,
+            "private": 24977408
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25722880
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39440384,
+            "private": 25055232
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40206336,
+            "private": 25739264
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39116800,
+            "private": 24612864
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40091648,
+            "private": 25448448
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39051264,
+            "private": 24588288
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40239104,
+            "private": 25288704
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            256400,
+            214700,
+            252000,
+            219100,
+            311200
+          ],
+          "median_ns": 252000,
+          "p95_ns": 425960.0,
+          "p99_ns": 427672.0
+        },
+        "read_ns": {
+          "process_medians": [
+            236900,
+            238400,
+            259700,
+            269400,
+            255500
+          ],
+          "median_ns": 255500,
+          "p95_ns": 479880.0,
+          "p99_ns": 517120.0
+        },
+        "close_ns": {
+          "process_medians": [
+            16700,
+            16400,
+            18300,
+            17400,
+            18200
+          ],
+          "median_ns": 17400,
+          "p95_ns": 24860.0,
+          "p99_ns": 26168.0
+        },
+        "total_ns": {
+          "process_medians": [
+            475000,
+            469300,
+            498600,
+            505900,
+            620900
+          ],
+          "median_ns": 498600,
+          "p95_ns": 888960.0,
+          "p99_ns": 890912.0
+        }
+      },
+      "peak_rss": [
+        61120512,
+        61108224,
+        61186048,
+        61071360,
+        61218816
+      ],
+      "peak_private": [
+        46698496,
+        46747648,
+        46764032,
+        46473216,
+        46313472
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24932352
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40140800,
+            "private": 25673728
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39325696,
+            "private": 24977408
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25722880
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39440384,
+            "private": 25055232
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40206336,
+            "private": 25739264
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39116800,
+            "private": 24612864
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40091648,
+            "private": 25448448
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39051264,
+            "private": 24588288
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40239104,
+            "private": 25288704
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            314200,
+            407600,
+            306400,
+            330400,
+            409000
+          ],
+          "median_ns": 330400,
+          "p95_ns": 436400.0,
+          "p99_ns": 441680.0
+        },
+        "read_ns": {
+          "process_medians": [
+            226700,
+            253900,
+            213400,
+            253200,
+            260900
+          ],
+          "median_ns": 253200,
+          "p95_ns": 290400.0,
+          "p99_ns": 291360.0
+        },
+        "close_ns": {
+          "process_medians": [
+            20300,
+            17900,
+            18200,
+            18800,
+            18900
+          ],
+          "median_ns": 18800,
+          "p95_ns": 22840.0,
+          "p99_ns": 23568.0
+        },
+        "total_ns": {
+          "process_medians": [
+            557600,
+            694900,
+            537300,
+            606100,
+            722600
+          ],
+          "median_ns": 606100,
+          "p95_ns": 761080.0,
+          "p99_ns": 763576.0
+        }
+      },
+      "peak_rss": [
+        61120512,
+        61108224,
+        61186048,
+        61071360,
+        61218816
+      ],
+      "peak_private": [
+        46698496,
+        46747648,
+        46764032,
+        46473216,
+        46313472
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24932352
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40140800,
+            "private": 25673728
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39325696,
+            "private": 24977408
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25722880
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39440384,
+            "private": 25055232
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40206336,
+            "private": 25739264
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39116800,
+            "private": 24612864
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40091648,
+            "private": 25448448
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39051264,
+            "private": 24588288
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40239104,
+            "private": 25288704
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            192900.0,
+            204500.0,
+            192900.0,
+            185500.0,
+            192000.0
+          ],
+          "median_ns": 192900.0,
+          "p95_ns": 277339.99999999994,
+          "p99_ns": 343743.0000000001
+        },
+        "read_ns": {
+          "process_medians": [
+            157450.0,
+            165900.0,
+            154200.0,
+            150500.0,
+            154300.0
+          ],
+          "median_ns": 154300.0,
+          "p95_ns": 209965.0,
+          "p99_ns": 271826.0
+        },
+        "close_ns": {
+          "process_medians": [
+            15200.0,
+            15400.0,
+            15000.0,
+            14700.0,
+            14700.0
+          ],
+          "median_ns": 15000.0,
+          "p95_ns": 19300.0,
+          "p99_ns": 29239.000000000033
+        },
+        "total_ns": {
+          "process_medians": [
+            366300.0,
+            388850.0,
+            364100.0,
+            351600.0,
+            363100.0
+          ],
+          "median_ns": 364100.0,
+          "p95_ns": 504684.99999999994,
+          "p99_ns": 604114.0000000001
+        }
+      },
+      "peak_rss": [
+        42524672,
+        41861120,
+        41758720,
+        42213376,
+        41738240
+      ],
+      "peak_private": [
+        28028928,
+        27938816,
+        27914240,
+        27664384,
+        27664384
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40558592,
+            "private": 26157056
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41811968,
+            "private": 28028928
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40509440,
+            "private": 26066944
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41734144,
+            "private": 27938816
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40517632,
+            "private": 26058752
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41758720,
+            "private": 27914240
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40370176,
+            "private": 25726976
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41574400,
+            "private": 26882048
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40382464,
+            "private": 25759744
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41578496,
+            "private": 27664384
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            4800.0,
+            4800.0,
+            4600.0,
+            4600.0,
+            4700.0
+          ],
+          "median_ns": 4700.0,
+          "p95_ns": 5500.0,
+          "p99_ns": 8242.000000000007
+        }
+      },
+      "peak_rss": [
+        42950656,
+        42893312,
+        43069440,
+        43057152,
+        43225088
+      ],
+      "peak_private": [
+        27561984,
+        27475968,
+        27672576,
+        27852800,
+        28020736
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40361984,
+            "private": 25735168
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40476672,
+            "private": 25735168
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42954752,
+            "private": 27561984
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 42954752,
+            "private": 27561984
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41504768,
+            "private": 27107328
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40222720,
+            "private": 25587712
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40337408,
+            "private": 25587712
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42893312,
+            "private": 27475968
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 42893312,
+            "private": 27475968
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41492480,
+            "private": 26152960
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40402944,
+            "private": 25804800
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40517632,
+            "private": 25804800
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 43069440,
+            "private": 27672576
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43069440,
+            "private": 27672576
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41603072,
+            "private": 27377664
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40566784,
+            "private": 26193920
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40681472,
+            "private": 26193920
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 43057152,
+            "private": 27852800
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43057152,
+            "private": 27852800
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41771008,
+            "private": 26533888
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41336832,
+            "private": 26992640
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 41451520,
+            "private": 26992640
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 43225088,
+            "private": 28020736
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43225088,
+            "private": 28020736
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41848832,
+            "private": 27332608
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 341600,
+          "close_ns": 829500
+        },
+        {
+          "open_ns": 317000,
+          "close_ns": 814200
+        },
+        {
+          "open_ns": 393800,
+          "close_ns": 597700
+        },
+        {
+          "open_ns": 299800,
+          "close_ns": 612100
+        },
+        {
+          "open_ns": 328800,
+          "close_ns": 981500
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            69800.0,
+            71150.0,
+            72300.0,
+            63100.0,
+            63200.0
+          ],
+          "median_ns": 69800.0,
+          "p95_ns": 89955.0,
+          "p99_ns": 129259.0000000001
+        }
+      },
+      "peak_rss": [
+        43085824,
+        43077632,
+        43085824,
+        43089920,
+        43143168
+      ],
+      "peak_private": [
+        27705344,
+        27774976,
+        27877376,
+        27693056,
+        27889664
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40382464,
+            "private": 25784320
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40497152,
+            "private": 25784320
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42696704,
+            "private": 27705344
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43102208,
+            "private": 27705344
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41762816,
+            "private": 26939392
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40284160,
+            "private": 25739264
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40398848,
+            "private": 25739264
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42708992,
+            "private": 27774976
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43089920,
+            "private": 27774976
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 42029056,
+            "private": 27320320
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40390656,
+            "private": 25939968
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40505344,
+            "private": 25939968
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42704896,
+            "private": 27877376
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43102208,
+            "private": 27877376
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41807872,
+            "private": 27598848
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40390656,
+            "private": 25796608
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40505344,
+            "private": 25796608
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42700800,
+            "private": 27693056
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43098112,
+            "private": 27693056
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41852928,
+            "private": 27181056
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40431616,
+            "private": 25976832
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40546304,
+            "private": 25976832
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 259,
+            "rss": 42741760,
+            "private": 27889664
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 259,
+            "rss": 43151360,
+            "private": 27889664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41861120,
+            "private": 27385856
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 325400,
+          "close_ns": 678700
+        },
+        {
+          "open_ns": 382200,
+          "close_ns": 684600
+        },
+        {
+          "open_ns": 315200,
+          "close_ns": 642900
+        },
+        {
+          "open_ns": 412500,
+          "close_ns": 514300
+        },
+        {
+          "open_ns": 299400,
+          "close_ns": 573900
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            219300,
+            232700,
+            228200,
+            202300,
+            250200
+          ],
+          "median_ns": 228200,
+          "p95_ns": 278980.0,
+          "p99_ns": 286036.0
+        },
+        "read_ns": {
+          "process_medians": [
+            4731400,
+            4858300,
+            4673100,
+            4694700,
+            4803500
+          ],
+          "median_ns": 4731400,
+          "p95_ns": 5548940.0,
+          "p99_ns": 5609468.0
+        },
+        "close_ns": {
+          "process_medians": [
+            103400,
+            105200,
+            107700,
+            105700,
+            102800
+          ],
+          "median_ns": 105200,
+          "p95_ns": 133460.0,
+          "p99_ns": 136132.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5039100,
+            5162600,
+            4992800,
+            5000500,
+            5207000
+          ],
+          "median_ns": 5039100,
+          "p95_ns": 5940360.0,
+          "p99_ns": 6012312.0
+        }
+      },
+      "peak_rss": [
+        60981248,
+        61050880,
+        61128704,
+        61112320,
+        61100032
+      ],
+      "peak_private": [
+        46575616,
+        46661632,
+        46223360,
+        46501888,
+        46682112
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39198720,
+            "private": 24805376
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40038400,
+            "private": 25550848
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39206912,
+            "private": 24883200
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40075264,
+            "private": 25632768
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39108608,
+            "private": 24551424
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40148992,
+            "private": 25194496
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39378944,
+            "private": 24801280
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25477120
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39424000,
+            "private": 25034752
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40120320,
+            "private": 25657344
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            444500,
+            401900,
+            420400,
+            382500,
+            354100
+          ],
+          "median_ns": 401900,
+          "p95_ns": 445460.0,
+          "p99_ns": 447252.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1673100,
+            1684600,
+            1671600,
+            1626800,
+            2079300
+          ],
+          "median_ns": 1673100,
+          "p95_ns": 2256460.0,
+          "p99_ns": 2279668.0
+        },
+        "close_ns": {
+          "process_medians": [
+            69700,
+            75700,
+            69000,
+            68100,
+            79200
+          ],
+          "median_ns": 69700,
+          "p95_ns": 77180.0,
+          "p99_ns": 77196.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2187200,
+            2169900,
+            2185100,
+            2103500,
+            2403900
+          ],
+          "median_ns": 2185100,
+          "p95_ns": 2770680.0,
+          "p99_ns": 2828456.0
+        }
+      },
+      "peak_rss": [
+        60981248,
+        61050880,
+        61128704,
+        61112320,
+        61100032
+      ],
+      "peak_private": [
+        46575616,
+        46661632,
+        46223360,
+        46501888,
+        46682112
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39198720,
+            "private": 24805376
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40038400,
+            "private": 25550848
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39206912,
+            "private": 24883200
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40075264,
+            "private": 25632768
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39108608,
+            "private": 24551424
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40148992,
+            "private": 25194496
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39378944,
+            "private": 24801280
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25477120
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39424000,
+            "private": 25034752
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40120320,
+            "private": 25657344
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            311100,
+            246400,
+            230800,
+            216500,
+            239700
+          ],
+          "median_ns": 239700,
+          "p95_ns": 434100.0,
+          "p99_ns": 458420.0
+        },
+        "read_ns": {
+          "process_medians": [
+            236800,
+            250700,
+            238000,
+            241500,
+            254400
+          ],
+          "median_ns": 241500,
+          "p95_ns": 475799.99999999994,
+          "p99_ns": 512040.0
+        },
+        "close_ns": {
+          "process_medians": [
+            17900,
+            18800,
+            16800,
+            18000,
+            19600
+          ],
+          "median_ns": 18000,
+          "p95_ns": 24940.0,
+          "p99_ns": 26156.0
+        },
+        "total_ns": {
+          "process_medians": [
+            533900,
+            490500,
+            466200,
+            476000,
+            511100
+          ],
+          "median_ns": 490500,
+          "p95_ns": 871260.0,
+          "p99_ns": 897584.0
+        }
+      },
+      "peak_rss": [
+        60981248,
+        61050880,
+        61128704,
+        61112320,
+        61100032
+      ],
+      "peak_private": [
+        46575616,
+        46661632,
+        46223360,
+        46501888,
+        46682112
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39198720,
+            "private": 24805376
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40038400,
+            "private": 25550848
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39206912,
+            "private": 24883200
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40075264,
+            "private": 25632768
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39108608,
+            "private": 24551424
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40148992,
+            "private": 25194496
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39378944,
+            "private": 24801280
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25477120
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39424000,
+            "private": 25034752
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40120320,
+            "private": 25657344
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            351500,
+            335100,
+            309300,
+            396600,
+            318800
+          ],
+          "median_ns": 335100,
+          "p95_ns": 448680.0,
+          "p99_ns": 454856.0
+        },
+        "read_ns": {
+          "process_medians": [
+            220100,
+            225900,
+            221600,
+            251600,
+            243100
+          ],
+          "median_ns": 225900,
+          "p95_ns": 273560.0,
+          "p99_ns": 277212.0
+        },
+        "close_ns": {
+          "process_medians": [
+            18200,
+            19300,
+            17200,
+            18800,
+            19800
+          ],
+          "median_ns": 18800,
+          "p95_ns": 20100.0,
+          "p99_ns": 20180.0
+        },
+        "total_ns": {
+          "process_medians": [
+            589800,
+            578800,
+            539500,
+            675100,
+            563200
+          ],
+          "median_ns": 578800,
+          "p95_ns": 739600.0,
+          "p99_ns": 746560.0
+        }
+      },
+      "peak_rss": [
+        60981248,
+        61050880,
+        61128704,
+        61112320,
+        61100032
+      ],
+      "peak_private": [
+        46575616,
+        46661632,
+        46223360,
+        46501888,
+        46682112
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39198720,
+            "private": 24805376
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40038400,
+            "private": 25550848
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39206912,
+            "private": 24883200
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40075264,
+            "private": 25632768
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39108608,
+            "private": 24551424
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40148992,
+            "private": 25194496
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39378944,
+            "private": 24801280
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40132608,
+            "private": 25477120
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39424000,
+            "private": 25034752
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40120320,
+            "private": 25657344
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            194250.0,
+            207300.0,
+            186000.0,
+            186650.0,
+            189700.0
+          ],
+          "median_ns": 189700.0,
+          "p95_ns": 279394.99999999994,
+          "p99_ns": 350798.0000000001
+        },
+        "read_ns": {
+          "process_medians": [
+            155550.0,
+            165550.0,
+            147300.0,
+            150200.0,
+            150600.0
+          ],
+          "median_ns": 150600.0,
+          "p95_ns": 216634.9999999999,
+          "p99_ns": 276868.0
+        },
+        "close_ns": {
+          "process_medians": [
+            15000.0,
+            15400.0,
+            14700.0,
+            14800.0,
+            14900.0
+          ],
+          "median_ns": 14900.0,
+          "p95_ns": 20054.999999999996,
+          "p99_ns": 29239.000000000033
+        },
+        "total_ns": {
+          "process_medians": [
+            365650.0,
+            390350.0,
+            349000.0,
+            352300.0,
+            356300.0
+          ],
+          "median_ns": 356300.0,
+          "p95_ns": 515474.9999999999,
+          "p99_ns": 610439.0
+        }
+      },
+      "peak_rss": [
+        41771008,
+        41500672,
+        42123264,
+        41644032,
+        41877504
+      ],
+      "peak_private": [
+        27860992,
+        26820608,
+        28082176,
+        27852800,
+        27734016
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40390656,
+            "private": 25923584
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41598976,
+            "private": 27078656
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40300544,
+            "private": 25677824
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41500672,
+            "private": 26820608
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40538112,
+            "private": 26071040
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41730048,
+            "private": 27914240
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40448000,
+            "private": 25989120
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41648128,
+            "private": 27852800
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40304640,
+            "private": 25718784
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41549824,
+            "private": 26951680
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            4800.0,
+            4600.0,
+            4600.0,
+            4600.0,
+            4600.0
+          ],
+          "median_ns": 4600.0,
+          "p95_ns": 5300.0,
+          "p99_ns": 7900.0
+        }
+      },
+      "peak_rss": [
+        43118592,
+        42967040,
+        43180032,
+        42979328,
+        42876928
+      ],
+      "peak_private": [
+        27824128,
+        27713536,
+        27701248,
+        27762688,
+        27537408
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40390656,
+            "private": 25808896
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40505344,
+            "private": 25808896
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 43126784,
+            "private": 27824128
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43126784,
+            "private": 27824128
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41844736,
+            "private": 27537408
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40370176,
+            "private": 25878528
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40484864,
+            "private": 25878528
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42967040,
+            "private": 27713536
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 42967040,
+            "private": 27713536
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41533440,
+            "private": 27344896
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41197568,
+            "private": 26624000
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 41312256,
+            "private": 26624000
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 43180032,
+            "private": 27701248
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43180032,
+            "private": 27701248
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41713664,
+            "private": 26726400
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40402944,
+            "private": 26038272
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40517632,
+            "private": 26038272
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42979328,
+            "private": 27762688
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 42979328,
+            "private": 27762688
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41623552,
+            "private": 27168768
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40300544,
+            "private": 25698304
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40415232,
+            "private": 25698304
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42876928,
+            "private": 27537408
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 42876928,
+            "private": 27537408
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 42160128,
+            "private": 27209728
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 336700,
+          "close_ns": 1462400
+        },
+        {
+          "open_ns": 326200,
+          "close_ns": 1884000
+        },
+        {
+          "open_ns": 331200,
+          "close_ns": 1322500
+        },
+        {
+          "open_ns": 307000,
+          "close_ns": 1694400
+        },
+        {
+          "open_ns": 329800,
+          "close_ns": 1476300
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            23100.0,
+            11500.0,
+            13950.0,
+            11600.0,
+            11400.0
+          ],
+          "median_ns": 11600.0,
+          "p95_ns": 78284.99999999997,
+          "p99_ns": 103139.00000000003
+        }
+      },
+      "peak_rss": [
+        43175936,
+        43196416,
+        43077632,
+        42954752,
+        42991616
+      ],
+      "peak_private": [
+        27746304,
+        27738112,
+        27648000,
+        27602944,
+        27611136
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41099264,
+            "private": 26451968
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 41213952,
+            "private": 26451968
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42778624,
+            "private": 27746304
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43241472,
+            "private": 27746304
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41914368,
+            "private": 27332608
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41271296,
+            "private": 26640384
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 41385984,
+            "private": 26640384
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42827776,
+            "private": 27738112
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43212800,
+            "private": 27738112
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 42016768,
+            "private": 27422720
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41086976,
+            "private": 26701824
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 41201664,
+            "private": 26701824
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42717184,
+            "private": 27648000
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43102208,
+            "private": 27648000
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41893888,
+            "private": 27394048
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40239104,
+            "private": 25636864
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40353792,
+            "private": 25636864
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42586112,
+            "private": 27602944
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 42975232,
+            "private": 27602944
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41799680,
+            "private": 27025408
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40341504,
+            "private": 25735168
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40456192,
+            "private": 25735168
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 323,
+            "rss": 42622976,
+            "private": 27611136
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 323,
+            "rss": 43016192,
+            "private": 27611136
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41754624,
+            "private": 27017216
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 326900,
+          "close_ns": 1207900
+        },
+        {
+          "open_ns": 348000,
+          "close_ns": 1063700
+        },
+        {
+          "open_ns": 293900,
+          "close_ns": 1207800
+        },
+        {
+          "open_ns": 317300,
+          "close_ns": 917100
+        },
+        {
+          "open_ns": 368000,
+          "close_ns": 954200
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            212700,
+            219900,
+            211600,
+            213200,
+            226600
+          ],
+          "median_ns": 213200,
+          "p95_ns": 268240.0,
+          "p99_ns": 277808.0
+        },
+        "read_ns": {
+          "process_medians": [
+            5047300,
+            4915500,
+            4713200,
+            4823400,
+            5046600
+          ],
+          "median_ns": 4915500,
+          "p95_ns": 5397900.0,
+          "p99_ns": 5409580.0
+        },
+        "close_ns": {
+          "process_medians": [
+            110500,
+            96100,
+            107500,
+            108000,
+            87200
+          ],
+          "median_ns": 107500,
+          "p95_ns": 160680.0,
+          "p99_ns": 162056.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5424300,
+            5233200,
+            5111000,
+            5154800,
+            5423700
+          ],
+          "median_ns": 5233200,
+          "p95_ns": 5718460.0,
+          "p99_ns": 5730652.0
+        }
+      },
+      "peak_rss": [
+        61038592,
+        61120512,
+        61116416,
+        61669376,
+        61190144
+      ],
+      "peak_private": [
+        46665728,
+        46583808,
+        46690304,
+        46788608,
+        47042560
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39333888,
+            "private": 24956928
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40058880,
+            "private": 25640960
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39219200,
+            "private": 24817664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40144896,
+            "private": 25559040
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24924160
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40034304,
+            "private": 25604096
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40316928,
+            "private": 25763840
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40693760,
+            "private": 25767936
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39305216,
+            "private": 24907776
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40210432,
+            "private": 26017792
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            445300,
+            355500,
+            344400,
+            411000,
+            412700
+          ],
+          "median_ns": 411000,
+          "p95_ns": 478280.0,
+          "p99_ns": 482696.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1699500,
+            1707400,
+            1879800,
+            1879700,
+            1660000
+          ],
+          "median_ns": 1707400,
+          "p95_ns": 2213100.0,
+          "p99_ns": 2248124.0
+        },
+        "close_ns": {
+          "process_medians": [
+            79700,
+            76100,
+            71500,
+            75200,
+            71200
+          ],
+          "median_ns": 75200,
+          "p95_ns": 88680.0,
+          "p99_ns": 90856.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2224500,
+            2153600,
+            2412200,
+            2447300,
+            2075800
+          ],
+          "median_ns": 2224500,
+          "p95_ns": 2687680.0,
+          "p99_ns": 2734616.0
+        }
+      },
+      "peak_rss": [
+        61038592,
+        61120512,
+        61116416,
+        61669376,
+        61190144
+      ],
+      "peak_private": [
+        46665728,
+        46583808,
+        46690304,
+        46788608,
+        47042560
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39333888,
+            "private": 24956928
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40058880,
+            "private": 25640960
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39219200,
+            "private": 24817664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40144896,
+            "private": 25559040
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24924160
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40034304,
+            "private": 25604096
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40316928,
+            "private": 25763840
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40693760,
+            "private": 25767936
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39305216,
+            "private": 24907776
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40210432,
+            "private": 26017792
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            219100,
+            239700,
+            213400,
+            242500,
+            223600
+          ],
+          "median_ns": 223600,
+          "p95_ns": 396500.0,
+          "p99_ns": 418900.0
+        },
+        "read_ns": {
+          "process_medians": [
+            230900,
+            249300,
+            243100,
+            270800,
+            261800
+          ],
+          "median_ns": 249300,
+          "p95_ns": 488899.99999999994,
+          "p99_ns": 527300.0
+        },
+        "close_ns": {
+          "process_medians": [
+            16000,
+            18800,
+            16500,
+            18700,
+            17200
+          ],
+          "median_ns": 17200,
+          "p95_ns": 25080.0,
+          "p99_ns": 26056.0
+        },
+        "total_ns": {
+          "process_medians": [
+            460000,
+            507800,
+            473000,
+            530800,
+            498900
+          ],
+          "median_ns": 498900,
+          "p95_ns": 876320.0,
+          "p99_ns": 883424.0
+        }
+      },
+      "peak_rss": [
+        61038592,
+        61120512,
+        61116416,
+        61669376,
+        61190144
+      ],
+      "peak_private": [
+        46665728,
+        46583808,
+        46690304,
+        46788608,
+        47042560
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39333888,
+            "private": 24956928
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40058880,
+            "private": 25640960
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39219200,
+            "private": 24817664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40144896,
+            "private": 25559040
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24924160
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40034304,
+            "private": 25604096
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40316928,
+            "private": 25763840
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40693760,
+            "private": 25767936
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39305216,
+            "private": 24907776
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40210432,
+            "private": 26017792
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            372200,
+            333700,
+            326700,
+            308000,
+            417800
+          ],
+          "median_ns": 333700,
+          "p95_ns": 440820.0,
+          "p99_ns": 443604.0
+        },
+        "read_ns": {
+          "process_medians": [
+            243000,
+            234000,
+            255100,
+            236400,
+            245000
+          ],
+          "median_ns": 243000,
+          "p95_ns": 273640.0,
+          "p99_ns": 279208.0
+        },
+        "close_ns": {
+          "process_medians": [
+            18300,
+            18900,
+            18300,
+            19100,
+            18400
+          ],
+          "median_ns": 18400,
+          "p95_ns": 20580.0,
+          "p99_ns": 20916.0
+        },
+        "total_ns": {
+          "process_medians": [
+            639000,
+            587500,
+            602800,
+            561400,
+            680800
+          ],
+          "median_ns": 602800,
+          "p95_ns": 751240.0,
+          "p99_ns": 756088.0
+        }
+      },
+      "peak_rss": [
+        61038592,
+        61120512,
+        61116416,
+        61669376,
+        61190144
+      ],
+      "peak_private": [
+        46665728,
+        46583808,
+        46690304,
+        46788608,
+        47042560
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39333888,
+            "private": 24956928
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40058880,
+            "private": 25640960
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39219200,
+            "private": 24817664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40144896,
+            "private": 25559040
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39276544,
+            "private": 24924160
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40034304,
+            "private": 25604096
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40316928,
+            "private": 25763840
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40693760,
+            "private": 25767936
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 39305216,
+            "private": 24907776
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 40210432,
+            "private": 26017792
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            203200.0,
+            211450.0,
+            194900.0,
+            193200.0,
+            191750.0
+          ],
+          "median_ns": 194900.0,
+          "p95_ns": 294784.99999999994,
+          "p99_ns": 380827.0000000001
+        },
+        "read_ns": {
+          "process_medians": [
+            161650.0,
+            169100.0,
+            159000.0,
+            157300.0,
+            153250.0
+          ],
+          "median_ns": 159000.0,
+          "p95_ns": 226284.99999999997,
+          "p99_ns": 315555.0
+        },
+        "close_ns": {
+          "process_medians": [
+            15500.0,
+            15800.0,
+            14900.0,
+            15000.0,
+            14900.0
+          ],
+          "median_ns": 15000.0,
+          "p95_ns": 20300.0,
+          "p99_ns": 31226.000000000022
+        },
+        "total_ns": {
+          "process_medians": [
+            382300.0,
+            398450.0,
+            370400.0,
+            367450.0,
+            360500.0
+          ],
+          "median_ns": 370400.0,
+          "p95_ns": 536050.0,
+          "p99_ns": 706961.0000000003
+        }
+      },
+      "peak_rss": [
+        41730048,
+        41971712,
+        41746432,
+        41611264,
+        41562112
+      ],
+      "peak_private": [
+        27938816,
+        27881472,
+        27578368,
+        27684864,
+        27697152
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40505344,
+            "private": 26042368
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41717760,
+            "private": 27934720
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 41435136,
+            "private": 26824704
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41656320,
+            "private": 27881472
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40222720,
+            "private": 25612288
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41484288,
+            "private": 26796032
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40341504,
+            "private": 25817088
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41590784,
+            "private": 27684864
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40321024,
+            "private": 25845760
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41566208,
+            "private": 27697152
+          }
+        ]
+      ],
+      "lifetime": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            4600.0,
+            4700.0,
+            4600.0,
+            4600.0,
+            4500.0
+          ],
+          "median_ns": 4600.0,
+          "p95_ns": 5300.0,
+          "p99_ns": 7700.0
+        }
+      },
+      "peak_rss": [
+        43073536,
+        43032576,
+        43098112,
+        43126784,
+        43233280
+      ],
+      "peak_private": [
+        27672576,
+        27615232,
+        27889664,
+        27951104,
+        28082176
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40361984,
+            "private": 25735168
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40476672,
+            "private": 25735168
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 43073536,
+            "private": 27672576
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43073536,
+            "private": 27672576
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41619456,
+            "private": 27054080
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40382464,
+            "private": 25841664
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40497152,
+            "private": 25841664
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 43032576,
+            "private": 27615232
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43032576,
+            "private": 27615232
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41656320,
+            "private": 27287552
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40427520,
+            "private": 25964544
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40542208,
+            "private": 25964544
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 43106304,
+            "private": 27889664
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43106304,
+            "private": 27889664
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41644032,
+            "private": 27271168
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40456192,
+            "private": 26054656
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40570880,
+            "private": 26054656
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 43126784,
+            "private": 27951104
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43126784,
+            "private": 27951104
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41644032,
+            "private": 26865664
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40529920,
+            "private": 26099712
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40644608,
+            "private": 26099712
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 43241472,
+            "private": 28082176
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43241472,
+            "private": 28082176
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 42369024,
+            "private": 27521024
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 351100,
+          "close_ns": 3607000
+        },
+        {
+          "open_ns": 327200,
+          "close_ns": 1817600
+        },
+        {
+          "open_ns": 289200,
+          "close_ns": 2830800
+        },
+        {
+          "open_ns": 316800,
+          "close_ns": 1845800
+        },
+        {
+          "open_ns": 306600,
+          "close_ns": 2479600
+        }
+      ]
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            7000.0,
+            7100.0,
+            6900.0,
+            7100.0,
+            9100.0
+          ],
+          "median_ns": 7100.0,
+          "p95_ns": 10400.0,
+          "p99_ns": 12971.000000000004
+        }
+      },
+      "peak_rss": [
+        43253760,
+        42999808,
+        43081728,
+        42946560,
+        43175936
+      ],
+      "peak_private": [
+        28020736,
+        27631616,
+        27893760,
+        27611136,
+        28041216
+      ],
+      "handle_deltas": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "resources": [
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40452096,
+            "private": 25985024
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40566784,
+            "private": 25985024
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 42889216,
+            "private": 28020736
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43261952,
+            "private": 28020736
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41893888,
+            "private": 27676672
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40263680,
+            "private": 25604096
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40378368,
+            "private": 25604096
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 42684416,
+            "private": 27631616
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43077632,
+            "private": 27631616
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41701376,
+            "private": 26836992
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40337408,
+            "private": 25882624
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40452096,
+            "private": 25882624
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 42733568,
+            "private": 27893760
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43126784,
+            "private": 27893760
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41918464,
+            "private": 27262976
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40247296,
+            "private": 25636864
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40361984,
+            "private": 25636864
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 42602496,
+            "private": 27611136
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43012096,
+            "private": 27611136
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41730048,
+            "private": 27316224
+          }
+        ],
+        [
+          {
+            "stage": "baseline",
+            "handles": 194,
+            "rss": 40472576,
+            "private": 26025984
+          },
+          {
+            "stage": "opened",
+            "handles": 195,
+            "rss": 40587264,
+            "private": 26025984
+          },
+          {
+            "stage": "after_warmup",
+            "handles": 435,
+            "rss": 42856448,
+            "private": 28041216
+          },
+          {
+            "stage": "after_timed_queries",
+            "handles": 435,
+            "rss": 43298816,
+            "private": 28041216
+          },
+          {
+            "stage": "after_close",
+            "handles": 194,
+            "rss": 41984000,
+            "private": 27467776
+          }
+        ]
+      ],
+      "lifetime": [
+        {
+          "open_ns": 432800,
+          "close_ns": 1189400
+        },
+        {
+          "open_ns": 314700,
+          "close_ns": 1567400
+        },
+        {
+          "open_ns": 306400,
+          "close_ns": 2381200
+        },
+        {
+          "open_ns": 341500,
+          "close_ns": 1295400
+        },
+        {
+          "open_ns": 349900,
+          "close_ns": 1336600
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "round": 0,
+      "output": "00-fastk-128-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "round": 0,
+      "output": "01-fastk-256-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 0,
+      "output": "02-arrow-256-hot-replay-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 0,
+      "output": "03-arrow-256-hot-local-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 0,
+      "output": "04-fastk-256-hot-local-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "round": 0,
+      "output": "05-fastk-128-cycle-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "round": 0,
+      "output": "06-fastk-64-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "round": 0,
+      "output": "07-fastk-64-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "round": 0,
+      "output": "08-fastk-64-hot-local-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "round": 0,
+      "output": "09-fastk-64-cycle-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "round": 0,
+      "output": "10-fastk-128-hot-local-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 0,
+      "output": "11-fastk-256-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "round": 0,
+      "output": "12-fastk-128-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "round": 0,
+      "output": "13-fastk-256-cycle-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "round": 1,
+      "output": "14-fastk-64-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "round": 1,
+      "output": "15-fastk-64-hot-replay-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 1,
+      "output": "16-arrow-256-hot-local-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "round": 1,
+      "output": "17-fastk-128-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "round": 1,
+      "output": "18-fastk-128-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "round": 1,
+      "output": "19-fastk-256-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "round": 1,
+      "output": "20-fastk-64-hot-local-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 1,
+      "output": "21-fastk-256-hot-replay-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "round": 1,
+      "output": "22-fastk-256-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "round": 1,
+      "output": "23-fastk-128-hot-replay-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 1,
+      "output": "24-fastk-256-hot-local-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "round": 1,
+      "output": "25-fastk-64-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 1,
+      "output": "26-arrow-256-hot-replay-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "round": 1,
+      "output": "27-fastk-128-hot-local-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "round": 2,
+      "output": "28-fastk-128-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 2,
+      "output": "29-arrow-256-hot-local-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "round": 2,
+      "output": "30-fastk-256-cycle-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "round": 2,
+      "output": "31-fastk-128-hot-replay-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "round": 2,
+      "output": "32-fastk-128-cycle-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 2,
+      "output": "33-fastk-256-hot-local-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 2,
+      "output": "34-arrow-256-hot-replay-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "round": 2,
+      "output": "35-fastk-64-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "round": 2,
+      "output": "36-fastk-64-hot-local-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "round": 2,
+      "output": "37-fastk-128-hot-local-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "round": 2,
+      "output": "38-fastk-64-hot-replay-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "round": 2,
+      "output": "39-fastk-256-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "round": 2,
+      "output": "40-fastk-64-cycle-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 2,
+      "output": "41-fastk-256-hot-replay-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "round": 3,
+      "output": "42-fastk-128-hot-replay-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "round": 3,
+      "output": "43-fastk-64-hot-local-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "round": 3,
+      "output": "44-fastk-128-hot-local-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 3,
+      "output": "45-fastk-256-hot-local-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "round": 3,
+      "output": "46-fastk-64-cycle-short-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "round": 3,
+      "output": "47-fastk-256-cycle-short-r3.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 3,
+      "output": "48-arrow-256-hot-local-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "round": 3,
+      "output": "49-fastk-64-hot-replay-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "round": 3,
+      "output": "50-fastk-128-cycle-bulk-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 3,
+      "output": "51-fastk-256-hot-replay-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "round": 3,
+      "output": "52-fastk-256-cycle-bulk-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "round": 3,
+      "output": "53-fastk-64-cycle-bulk-r3.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 3,
+      "output": "54-arrow-256-hot-replay-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "round": 3,
+      "output": "55-fastk-128-cycle-short-r3.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 4,
+      "output": "56-fastk-256-hot-local-r4.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 4,
+      "output": "57-arrow-256-hot-replay-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "hot-replay",
+      "round": 4,
+      "output": "58-fastk-256-hot-replay-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-bulk",
+      "round": 4,
+      "output": "59-fastk-256-cycle-bulk-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-replay",
+      "round": 4,
+      "output": "60-fastk-128-hot-replay-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-local",
+      "round": 4,
+      "output": "61-fastk-64-hot-local-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "hot-local",
+      "round": 4,
+      "output": "62-fastk-128-hot-local-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-short",
+      "round": 4,
+      "output": "63-fastk-128-cycle-short-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 128,
+      "workload": "cycle-bulk",
+      "round": 4,
+      "output": "64-fastk-128-cycle-bulk-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-short",
+      "round": 4,
+      "output": "65-fastk-64-cycle-short-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 256,
+      "workload": "cycle-short",
+      "round": 4,
+      "output": "66-fastk-256-cycle-short-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "cycle-bulk",
+      "round": 4,
+      "output": "67-fastk-64-cycle-bulk-r4.json"
+    },
+    {
+      "backend": "arrow",
+      "capacity": 256,
+      "workload": "hot-local",
+      "round": 4,
+      "output": "68-arrow-256-hot-local-r4.json"
+    },
+    {
+      "backend": "fastk",
+      "capacity": 64,
+      "workload": "hot-replay",
+      "round": 4,
+      "output": "69-fastk-64-hot-replay-r4.json"
+    }
+  ],
+  "modules": {
+    "64": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\cache-capacity-study\\module-isolated-64",
+      "sha256": "79bc5a676d68c1d51530d0bde3450a1c69fd55fd328cc2bde5fae52e5106ce9c",
+      "wheel_sha256": "b0572d061652000e71b375c76229939d6bcc503c3fb9de9230d044946a38178a",
+      "build_seconds": 55.994274377822876
+    },
+    "128": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\cache-capacity-study\\module-isolated-128",
+      "sha256": "e791773a8c532cf858ef9f8fc742cb7644cd20a9d4ee457583b4958485fb3561",
+      "wheel_sha256": "39bea6d3dd6078c067caee7575a6d6a0e2b52149483c5a63d808ca70c3a6ea76",
+      "build_seconds": 55.50486516952515
+    },
+    "256": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\cache-capacity-study\\module-isolated-256",
+      "sha256": "505e9f7171b3bb35d94665c7df97785f4aec34a477dd8984f1ac7d102e44affc",
+      "wheel_sha256": "e8aa9e6da2fed0b0bae5d1fb035335a033577d509479b18912180011e6ed3a32",
+      "build_seconds": 55.88527703285217
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.3.5",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+test_cross_month_and_large_integer_roundtrip (test_client.IntegrationTests.test_cross_month_and_large_integer_roundtrip) ... ok
+test_invalid_payload_does_not_spawn_a_child (test_client.TransportTests.test_invalid_payload_does_not_spawn_a_child) ... ok
+test_invalid_response_is_not_accepted (test_client.TransportTests.test_invalid_response_is_not_accepted) ... ok
+test_machine_error_and_integer_payload_without_shell (test_client.TransportTests.test_machine_error_and_integer_payload_without_shell) ... ok
+test_missing_binary_has_explicit_error (test_client.TransportTests.test_missing_binary_has_explicit_error) ... ok
+test_timeout_kills_and_reaps_once_without_retry (test_client.TransportTests.test_timeout_kills_and_reaps_once_without_retry) ... ok
+test_unknown_contract_is_rejected (test_client.TransportTests.test_unknown_contract_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.187s
+
+OK

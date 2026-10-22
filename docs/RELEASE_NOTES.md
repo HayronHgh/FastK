@@ -1,4 +1,82 @@
+# FastK v0.2.0-rc.1
+
+The independent `fastk-native` Python module returns named NumPy int64 batches
+for Kline/Scalar reads and accepts typed batches for writes. Existing Rust,
+CLI and subprocess contracts remain; native calls explicitly have no hard
+timeout. Disk records stay 48-byte Kline / 16-byte Scalar.
+
+Core changes fix cursor races with positional IO, keep write guards on the
+stack, validate rejected inputs before recovery markers, reset compaction debt,
+reuse sparse windows and bound capacity. Optional per-handle parallel reads
+fill one ordered buffer with bounded workers. The main external comparison now
+uses five in-process adapters with the same fully materialized NumPy output.
+
+See [native contract](NATIVE_ENGINE.md), [verification](NATIVE_VALIDATION.md), and
+[native quickstart](../clients/python-native/README.md).
+
 # FastK v0.1.0-rc.1
+
+## Private compact JSON update — 2026-10-20
+
+Scoped sessions serialize the existing typed response as compact JSON directly
+into their single Vec. A private CLI output wrapper selects presentation at the
+adapter boundary. The same dispatcher, engine APIs and Python return dictionaries
+remain; public one-shot CLI pretty JSON bytes are unchanged. No parser dependency,
+public format option or automatic retry is introduced. Deadline, no-replay and
+per-request ownership behavior are unchanged. See [compact verification](COMPACT_SESSION_RESULTS.md)
+for paired bulk/1,430-short replay, memory measurements and compatibility evidence.
+
+## Scoped buffer update — 2026-10-20
+
+Scoped reads receive validated frames directly into a preallocated bytearray.
+The Rust worker serializes its existing pretty response directly into one Vec,
+clearing partial success bytes before returning a business error. Public methods,
+result shapes, JSON bytes, timeout/no-replay and ownership behavior are retained.
+Compact JSON was deferred in this earlier step. See [paired buffer verification](BUFFER_REUSE_RESULTS.md)
+for same-workload latency, external process memory sampling and fault checks.
+
+## Scoped Python worker update — 2026-10-20
+
+`with Client(root) as store` reuses a local bridge worker through the existing
+methods and return dictionaries. Calls outside a context retain one-shot
+behavior. Ownership is acquired per request; an idle worker retains no store
+guard. Timeout or protocol failure terminates and reaps the worker without
+retry/restart, including interrupted writes. Concurrent requests are serialized;
+a deadline while waiting sends nothing and leaves the active call alone.
+
+See [transport semantics](SESSION_TRANSPORT.md) and [verified replay results](SESSION_REUSE_RESULTS.md).
+This update retains the existing JSON serializer, record format and contract 1;
+large JSON optimization remains separate. New local wheels are development
+artifacts and do not overwrite the earlier technical-validation packages.
+
+## Technical validation update — 2026-10-20
+
+This working-tree update keeps MIT and the research/technical scope. Local
+packages are labelled development artifacts; it does not claim enterprise
+readiness or change the existing binary record format.
+
+- Persistent OS-owned reader/writer locks; startup recovery and rebuild share
+  ownership. Guards explicitly unlock to avoid transient inherited-fd locks.
+- Writer metadata refresh, append-safe scalar bridge writes, atomic synced
+  sidecars, and old-file cleanup after manifest commit.
+- Healthy bridge writes no longer scan every unrelated chunk via repeated
+  initialization; pending recovery remains handled under writer ownership.
+- Manifest rebuild preserves valid scales and refuses to guess missing
+  caller-specific semantic metadata. Repair reports its own work accurately.
+- Recovery never lets an older orphan roll back a committed replacement.
+- Buffered bridge JSON output preserves existing response bytes while reducing
+  bulk pipe-transfer overhead; subprocess startup remains part of client cost.
+- Explicit read-only opening, verified physical snapshots, complete sealed
+  replay, and additive immutable registry publication (legacy statuses preserved).
+- Dependency-free Python client, bundled Windows/Linux wheels, contract
+  discovery, opt-in JSON errors and offline installation checks.
+- Isolated public-API comparisons against SQLite WITHOUT ROWID, DuckDB,
+  Parquet and Arrow IPC; original CSV/JSONL numbers remain historical evidence.
+
+See [Core Contract](CORE_CONTRACT.md), [Installation](INSTALLATION.md) and
+[External Validation](EXTERNAL_VALIDATION.md) for exact boundaries and commands.
+Python subprocess overhead must be measured and must not be hidden behind
+Rust-only timings.
 
 ## Release Positioning
 

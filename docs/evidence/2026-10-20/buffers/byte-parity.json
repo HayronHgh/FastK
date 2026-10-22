@@ -1,0 +1,53 @@
+{
+  "all_bytes_identical": true,
+  "all_children_reaped": true,
+  "checks": [
+    {
+      "case": "small_kline",
+      "bytes": 23342,
+      "sha256": "c31fa9e62572a4f9d583dfd07b2d9165e0c29eb11cc19b55363b603c316710b2"
+    },
+    {
+      "case": "medium_kline",
+      "bytes": 742242,
+      "sha256": "2be75060a4ee82e9995aa112604829451b035bbc52d7634c3e55d9f5d1fb0509"
+    },
+    {
+      "case": "bulk_kline",
+      "bytes": 79555158,
+      "sha256": "feb5ff8ce9aeb2e1f351aefc9db72cd5c51cbdc70f2ed9c3020f983f7ccaa4d5"
+    },
+    {
+      "case": "bulk_scalar",
+      "bytes": 30161273,
+      "sha256": "d7f441d8d2703eeef438ade7e3b19bfff000a8ff5e164d70a019688c62d4c8f3"
+    },
+    {
+      "case": "application_error",
+      "bytes": 134,
+      "sha256": "f9da576f03d89666f7c2e5290a9b1d65627b32f8490ee5ca477877b9338a7cda"
+    },
+    {
+      "case": "after_error",
+      "bytes": 23342,
+      "sha256": "868065cb0ca1e9407cd8d2a39cb6c527eed5ccdc8640c1a0830a025858bf2933"
+    }
+  ],
+  "one_shot": [
+    {
+      "case": "version",
+      "bytes": 74,
+      "sha256": "7bccd9abd1a5937d28904092df3082ca15a0d544fc34525f449782281afcc32b"
+    },
+    {
+      "case": "small_kline",
+      "bytes": 23314,
+      "sha256": "9dbff7aa3f9ff3568941f51e418235d24f041d6fb1a0dc57670c941ab8c3af63"
+    },
+    {
+      "case": "medium_kline",
+      "bytes": 742214,
+      "sha256": "eb1b9e9a63cc6e7c205ad4b54933e5c267b68f71b1e76eb6c29a04be35a7ad35"
+    }
+  ]
+}

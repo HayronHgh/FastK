@@ -1,0 +1,2489 @@
+{
+  "jobs": [
+    {
+      "backend": "arrow",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "00-arrow-peer-catalog-short-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "01-arrow-peer-cycle-short-r0.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 0,
+      "output": "02-parquet-peer-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "03-sqlite-peer-cycle-short-r0.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "04-duckdb-peer-cycle-short-r0.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 0,
+      "output": "05-sqlite-peer-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "before",
+      "process_round": 0,
+      "output": "06-fastk-before-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "before",
+      "process_round": 0,
+      "output": "07-fastk-before-cycle-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "after",
+      "process_round": 0,
+      "output": "08-fastk-after-hot-replay-r0.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 0,
+      "output": "09-duckdb-peer-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "after",
+      "process_round": 0,
+      "output": "10-fastk-after-hot-local-r0.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "11-parquet-peer-cycle-short-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "before",
+      "process_round": 0,
+      "output": "12-fastk-before-hot-local-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "after",
+      "process_round": 0,
+      "output": "13-fastk-after-cycle-short-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-replay",
+      "version": "peer",
+      "process_round": 0,
+      "output": "14-arrow-peer-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "after",
+      "process_round": 0,
+      "output": "15-fastk-after-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 0,
+      "output": "16-arrow-peer-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "before",
+      "process_round": 0,
+      "output": "17-fastk-before-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "18-parquet-peer-catalog-short-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-local",
+      "version": "peer",
+      "process_round": 0,
+      "output": "19-arrow-peer-hot-local-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-local",
+      "version": "peer",
+      "process_round": 1,
+      "output": "20-arrow-peer-hot-local-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "after",
+      "process_round": 1,
+      "output": "21-fastk-after-cycle-short-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 1,
+      "output": "22-arrow-peer-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "23-arrow-peer-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "after",
+      "process_round": 1,
+      "output": "24-fastk-after-hot-replay-r1.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 1,
+      "output": "25-sqlite-peer-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "26-parquet-peer-catalog-short-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "27-parquet-peer-cycle-short-r1.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 1,
+      "output": "28-duckdb-peer-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "29-duckdb-peer-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "before",
+      "process_round": 1,
+      "output": "30-fastk-before-hot-replay-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "before",
+      "process_round": 1,
+      "output": "31-fastk-before-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-replay",
+      "version": "peer",
+      "process_round": 1,
+      "output": "32-arrow-peer-hot-replay-r1.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "33-sqlite-peer-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "after",
+      "process_round": 1,
+      "output": "34-fastk-after-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "before",
+      "process_round": 1,
+      "output": "35-fastk-before-cycle-short-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "before",
+      "process_round": 1,
+      "output": "36-fastk-before-hot-local-r1.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 1,
+      "output": "37-arrow-peer-catalog-short-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 1,
+      "output": "38-parquet-peer-cycle-bulk-r1.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "after",
+      "process_round": 1,
+      "output": "39-fastk-after-hot-local-r1.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "40-parquet-peer-cycle-short-r2.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "41-parquet-peer-catalog-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "after",
+      "process_round": 2,
+      "output": "42-fastk-after-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "after",
+      "process_round": 2,
+      "output": "43-fastk-after-cycle-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "before",
+      "process_round": 2,
+      "output": "44-fastk-before-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "before",
+      "process_round": 2,
+      "output": "45-fastk-before-cycle-short-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 2,
+      "output": "46-arrow-peer-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "after",
+      "process_round": 2,
+      "output": "47-fastk-after-hot-replay-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-replay",
+      "version": "peer",
+      "process_round": 2,
+      "output": "48-arrow-peer-hot-replay-r2.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "49-duckdb-peer-cycle-short-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "before",
+      "process_round": 2,
+      "output": "50-fastk-before-hot-replay-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "51-arrow-peer-cycle-short-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "catalog-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "52-arrow-peer-catalog-short-r2.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 2,
+      "output": "53-sqlite-peer-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "sqlite",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 2,
+      "output": "54-sqlite-peer-cycle-short-r2.json"
+    },
+    {
+      "backend": "duckdb",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 2,
+      "output": "55-duckdb-peer-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-local",
+      "version": "peer",
+      "process_round": 2,
+      "output": "56-arrow-peer-hot-local-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "before",
+      "process_round": 2,
+      "output": "57-fastk-before-hot-local-r2.json"
+    },
+    {
+      "backend": "parquet",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 2,
+      "output": "58-parquet-peer-cycle-bulk-r2.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "after",
+      "process_round": 2,
+      "output": "59-fastk-after-hot-local-r2.json"
+    }
+  ],
+  "modules": {
+    "before": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\lazy-read-final\\before-module",
+      "sha256": "2fa5cbe91eefabfe21c996e949789fad9ee89b406a784eb95ca66c8ab09a99e7",
+      "wheel_sha256": "f6705d5b09c71ccd15c62ee6bc6c9380425cdb729fea1b5fea685cbb462b11e5"
+    },
+    "after": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\lazy-read-final\\after-module",
+      "sha256": "c99093a24cac9d985589705cf36d449aa23f03dfa276a966f06bd54ce234d677",
+      "wheel_sha256": "fc4a727f6e45e0a19731cf4e5b3927a853843a09342d631d5ed1beaba4049669"
+    }
+  },
+  "process_rounds": 3,
+  "results": [
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "catalog-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1349000.0,
+            1399300.0,
+            1411700.0
+          ],
+          "median_ns": 1399300.0,
+          "p95_ns": 2093340.0,
+          "p99_ns": 2472955.0
+        },
+        "read_ns": {
+          "process_medians": [
+            556850.0,
+            561100.0,
+            568750.0
+          ],
+          "median_ns": 561100.0,
+          "p95_ns": 801660.0,
+          "p99_ns": 967325.0000000002
+        },
+        "close_ns": {
+          "process_medians": [
+            107400.0,
+            105250.0,
+            107500.0
+          ],
+          "median_ns": 107400.0,
+          "p95_ns": 340665.0,
+          "p99_ns": 427360.00000000023
+        },
+        "total_ns": {
+          "process_medians": [
+            2041000.0,
+            2085000.0,
+            2110750.0
+          ],
+          "median_ns": 2085000.0,
+          "p95_ns": 3087475.0,
+          "p99_ns": 3683460.000000002
+        }
+      },
+      "peak_private": [
+        43552768,
+        43589632,
+        44216320
+      ],
+      "peak_rss": [
+        65236992,
+        65101824,
+        65409024
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            145000,
+            148600,
+            169800
+          ],
+          "median_ns": 148600,
+          "p95_ns": 218020.0,
+          "p99_ns": 229124.0
+        },
+        "read_ns": {
+          "process_medians": [
+            13534200,
+            13996200,
+            13908300
+          ],
+          "median_ns": 13908300,
+          "p95_ns": 14654520.0,
+          "p99_ns": 14718024.0
+        },
+        "close_ns": {
+          "process_medians": [
+            2598900,
+            2657000,
+            2563100
+          ],
+          "median_ns": 2598900,
+          "p95_ns": 2813620.0,
+          "p99_ns": 2827924.0
+        },
+        "total_ns": {
+          "process_medians": [
+            16574700,
+            16813100,
+            16720300
+          ],
+          "median_ns": 16720300,
+          "p95_ns": 17671680.0,
+          "p99_ns": 17684096.0
+        }
+      },
+      "peak_private": [
+        59789312,
+        59830272,
+        59334656
+      ],
+      "peak_rss": [
+        93138944,
+        102551552,
+        97402880
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            211100,
+            222800,
+            248400
+          ],
+          "median_ns": 222800,
+          "p95_ns": 254720.0,
+          "p99_ns": 255504.0
+        },
+        "read_ns": {
+          "process_medians": [
+            7219100,
+            7022200,
+            7026300
+          ],
+          "median_ns": 7026300,
+          "p95_ns": 7796800.0,
+          "p99_ns": 7943360.0
+        },
+        "close_ns": {
+          "process_medians": [
+            823200,
+            750500,
+            866400
+          ],
+          "median_ns": 823200,
+          "p95_ns": 926760.0,
+          "p99_ns": 940152.0
+        },
+        "total_ns": {
+          "process_medians": [
+            8290000,
+            8001000,
+            8134400
+          ],
+          "median_ns": 8134400,
+          "p95_ns": 8863600.0,
+          "p99_ns": 9022160.0
+        }
+      },
+      "peak_private": [
+        59789312,
+        59830272,
+        59334656
+      ],
+      "peak_rss": [
+        93138944,
+        102551552,
+        97402880
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            203100,
+            188900,
+            176700
+          ],
+          "median_ns": 188900,
+          "p95_ns": 254020.0,
+          "p99_ns": 260324.0
+        },
+        "read_ns": {
+          "process_medians": [
+            892200,
+            801700,
+            692000
+          ],
+          "median_ns": 801700,
+          "p95_ns": 1693019.9999999998,
+          "p99_ns": 1839244.0
+        },
+        "close_ns": {
+          "process_medians": [
+            74800,
+            85400,
+            74600
+          ],
+          "median_ns": 74800,
+          "p95_ns": 97780.0,
+          "p99_ns": 100036.0
+        },
+        "total_ns": {
+          "process_medians": [
+            1224100,
+            1076000,
+            943300
+          ],
+          "median_ns": 1076000,
+          "p95_ns": 2063579.9999999998,
+          "p99_ns": 2239196.0
+        }
+      },
+      "peak_private": [
+        59789312,
+        59830272,
+        59334656
+      ],
+      "peak_rss": [
+        93138944,
+        102551552,
+        97402880
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            239100,
+            225600,
+            237000
+          ],
+          "median_ns": 237000,
+          "p95_ns": 363680.0,
+          "p99_ns": 386496.0
+        },
+        "read_ns": {
+          "process_medians": [
+            801200,
+            893300,
+            885800
+          ],
+          "median_ns": 885800,
+          "p95_ns": 1064580.0,
+          "p99_ns": 1066836.0
+        },
+        "close_ns": {
+          "process_medians": [
+            65000,
+            69700,
+            64200
+          ],
+          "median_ns": 65000,
+          "p95_ns": 102180.0,
+          "p99_ns": 104516.0
+        },
+        "total_ns": {
+          "process_medians": [
+            1062200,
+            1175500,
+            1211600
+          ],
+          "median_ns": 1175500,
+          "p95_ns": 1521380.0,
+          "p99_ns": 1526356.0
+        }
+      },
+      "peak_private": [
+        59789312,
+        59830272,
+        59334656
+      ],
+      "peak_rss": [
+        93138944,
+        102551552,
+        97402880
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            142900.0,
+            145300.0,
+            144800.0
+          ],
+          "median_ns": 144800.0,
+          "p95_ns": 182500.0,
+          "p99_ns": 232326.00000000003
+        },
+        "read_ns": {
+          "process_medians": [
+            506950.0,
+            545050.0,
+            532500.0
+          ],
+          "median_ns": 532500.0,
+          "p95_ns": 644855.0,
+          "p99_ns": 734820.0000000001
+        },
+        "close_ns": {
+          "process_medians": [
+            38900.0,
+            47000.0,
+            45600.0
+          ],
+          "median_ns": 45600.0,
+          "p95_ns": 74764.99999999999,
+          "p99_ns": 100817.0000000001
+        },
+        "total_ns": {
+          "process_medians": [
+            690550.0,
+            741900.0,
+            726400.0
+          ],
+          "median_ns": 726400.0,
+          "p95_ns": 889320.0,
+          "p99_ns": 1006516.0000000007
+        }
+      },
+      "peak_private": [
+        41750528,
+        41275392,
+        41762816
+      ],
+      "peak_rss": [
+        63979520,
+        63758336,
+        63979520
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            14100.0,
+            14100.0,
+            13900.0
+          ],
+          "median_ns": 14100.0,
+          "p95_ns": 22900.0,
+          "p99_ns": 35613.000000000015
+        }
+      },
+      "peak_private": [
+        44007424,
+        44109824,
+        43585536
+      ],
+      "peak_rss": [
+        124973056,
+        124133376,
+        125227008
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            18700.0,
+            18400.0,
+            20400.0
+          ],
+          "median_ns": 18700.0,
+          "p95_ns": 30200.0,
+          "p99_ns": 42094.00000000005
+        }
+      },
+      "peak_private": [
+        44515328,
+        43597824,
+        43761664
+      ],
+      "peak_rss": [
+        125472768,
+        124436480,
+        124366848
+      ]
+    },
+    {
+      "backend": "duckdb",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            15119000,
+            14761400,
+            14345200
+          ],
+          "median_ns": 14761400,
+          "p95_ns": 16433060.0,
+          "p99_ns": 16705492.0
+        },
+        "read_ns": {
+          "process_medians": [
+            62928900,
+            54479000,
+            51207800
+          ],
+          "median_ns": 54479000,
+          "p95_ns": 60290160.0,
+          "p99_ns": 61126752.0
+        },
+        "close_ns": {
+          "process_medians": [
+            8189800,
+            7769000,
+            7655400
+          ],
+          "median_ns": 7769000,
+          "p95_ns": 8334500.0,
+          "p99_ns": 8397780.0
+        },
+        "total_ns": {
+          "process_medians": [
+            86584100,
+            77568000,
+            73165200
+          ],
+          "median_ns": 77568000,
+          "p95_ns": 84364600.0,
+          "p99_ns": 85575720.0
+        }
+      },
+      "peak_private": [
+        107102208,
+        109170688,
+        107474944
+      ],
+      "peak_rss": [
+        128565248,
+        128995328,
+        128856064
+      ]
+    },
+    {
+      "backend": "duckdb",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            15779700,
+            14182500,
+            14441200
+          ],
+          "median_ns": 14441200,
+          "p95_ns": 15509380.0,
+          "p99_ns": 15528676.0
+        },
+        "read_ns": {
+          "process_medians": [
+            45864100,
+            40645300,
+            42070000
+          ],
+          "median_ns": 42070000,
+          "p95_ns": 43005480.0,
+          "p99_ns": 43188696.0
+        },
+        "close_ns": {
+          "process_medians": [
+            8904900,
+            7984600,
+            8184100
+          ],
+          "median_ns": 8184100,
+          "p95_ns": 8463840.0,
+          "p99_ns": 8515488.0
+        },
+        "total_ns": {
+          "process_medians": [
+            72304400,
+            63265800,
+            64408100
+          ],
+          "median_ns": 64408100,
+          "p95_ns": 65750920.0,
+          "p99_ns": 66039532.0
+        }
+      },
+      "peak_private": [
+        107102208,
+        109170688,
+        107474944
+      ],
+      "peak_rss": [
+        128565248,
+        128995328,
+        128856064
+      ]
+    },
+    {
+      "backend": "duckdb",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            15398000,
+            14461000,
+            13754200
+          ],
+          "median_ns": 14461000,
+          "p95_ns": 15685920.0,
+          "p99_ns": 15865504.0
+        },
+        "read_ns": {
+          "process_medians": [
+            8045400,
+            7105700,
+            6626700
+          ],
+          "median_ns": 7105700,
+          "p95_ns": 10547780.0,
+          "p99_ns": 11209956.0
+        },
+        "close_ns": {
+          "process_medians": [
+            6712300,
+            5731000,
+            5337700
+          ],
+          "median_ns": 5731000,
+          "p95_ns": 7370180.0,
+          "p99_ns": 7736356.0
+        },
+        "total_ns": {
+          "process_medians": [
+            30183600,
+            26780900,
+            26149200
+          ],
+          "median_ns": 26780900,
+          "p95_ns": 33149380.0,
+          "p99_ns": 34475876.0
+        }
+      },
+      "peak_private": [
+        107102208,
+        109170688,
+        107474944
+      ],
+      "peak_rss": [
+        128565248,
+        128995328,
+        128856064
+      ]
+    },
+    {
+      "backend": "duckdb",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            15516000,
+            14435100,
+            15216200
+          ],
+          "median_ns": 15216200,
+          "p95_ns": 20355140.0,
+          "p99_ns": 21051908.0
+        },
+        "read_ns": {
+          "process_medians": [
+            7267500,
+            6570200,
+            6560400
+          ],
+          "median_ns": 6570200,
+          "p95_ns": 8304480.0,
+          "p99_ns": 8625536.0
+        },
+        "close_ns": {
+          "process_medians": [
+            6177800,
+            5863500,
+            6563500
+          ],
+          "median_ns": 6177800,
+          "p95_ns": 7462820.0,
+          "p99_ns": 7578804.0
+        },
+        "total_ns": {
+          "process_medians": [
+            28757200,
+            26294000,
+            28478900
+          ],
+          "median_ns": 28478900,
+          "p95_ns": 36094680.0,
+          "p99_ns": 37250696.0
+        }
+      },
+      "peak_private": [
+        107102208,
+        109170688,
+        107474944
+      ],
+      "peak_rss": [
+        128565248,
+        128995328,
+        128856064
+      ]
+    },
+    {
+      "backend": "duckdb",
+      "version": "peer",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            12811500.0,
+            12205000.0,
+            11996500.0
+          ],
+          "median_ns": 12205000.0,
+          "p95_ns": 15270155.0,
+          "p99_ns": 17620854.000000007
+        },
+        "read_ns": {
+          "process_medians": [
+            6122450.0,
+            6093100.0,
+            5997350.0
+          ],
+          "median_ns": 6093100.0,
+          "p95_ns": 7666355.0,
+          "p99_ns": 9123529.000000002
+        },
+        "close_ns": {
+          "process_medians": [
+            4330950.0,
+            3992450.0,
+            3708600.0
+          ],
+          "median_ns": 3992450.0,
+          "p95_ns": 6573379.999999998,
+          "p99_ns": 7801784.0
+        },
+        "total_ns": {
+          "process_medians": [
+            23409750.0,
+            22532300.0,
+            21837750.0
+          ],
+          "median_ns": 22532300.0,
+          "p95_ns": 28605095.0,
+          "p99_ns": 32899472.000000007
+        }
+      },
+      "peak_private": [
+        55988224,
+        55734272,
+        55136256
+      ],
+      "peak_rss": [
+        78938112,
+        78245888,
+        78798848
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            223300,
+            261000,
+            219200
+          ],
+          "median_ns": 223300,
+          "p95_ns": 373300.0,
+          "p99_ns": 391644.0
+        },
+        "read_ns": {
+          "process_medians": [
+            5095300,
+            5162800,
+            4962800
+          ],
+          "median_ns": 5095300,
+          "p95_ns": 6066320.0,
+          "p99_ns": 6089024.0
+        },
+        "close_ns": {
+          "process_medians": [
+            144900,
+            129900,
+            136000
+          ],
+          "median_ns": 136000,
+          "p95_ns": 142180.0,
+          "p99_ns": 144276.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5461400,
+            5510800,
+            5318300
+          ],
+          "median_ns": 5461400,
+          "p95_ns": 6416780.0,
+          "p99_ns": 6419116.0
+        }
+      },
+      "peak_private": [
+        46473216,
+        46882816,
+        46587904
+      ],
+      "peak_rss": [
+        61100032,
+        61239296,
+        60985344
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            458700,
+            467000,
+            468600
+          ],
+          "median_ns": 467000,
+          "p95_ns": 511100.0,
+          "p99_ns": 514060.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1805700,
+            1795000,
+            1920600
+          ],
+          "median_ns": 1805700,
+          "p95_ns": 2479600.0,
+          "p99_ns": 2524960.0
+        },
+        "close_ns": {
+          "process_medians": [
+            90900,
+            86200,
+            87400
+          ],
+          "median_ns": 87400,
+          "p95_ns": 155740.0,
+          "p99_ns": 168908.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2396000,
+            2438900,
+            2493200
+          ],
+          "median_ns": 2438900,
+          "p95_ns": 3005960.0,
+          "p99_ns": 3099192.0
+        }
+      },
+      "peak_private": [
+        46473216,
+        46882816,
+        46587904
+      ],
+      "peak_rss": [
+        61100032,
+        61239296,
+        60985344
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            263100,
+            262900,
+            247900
+          ],
+          "median_ns": 262900,
+          "p95_ns": 480499.99999999994,
+          "p99_ns": 515620.0
+        },
+        "read_ns": {
+          "process_medians": [
+            310600,
+            278200,
+            281100
+          ],
+          "median_ns": 281100,
+          "p95_ns": 611480.0,
+          "p99_ns": 665736.0
+        },
+        "close_ns": {
+          "process_medians": [
+            19700,
+            18000,
+            20700
+          ],
+          "median_ns": 19700,
+          "p95_ns": 28960.0,
+          "p99_ns": 28992.0
+        },
+        "total_ns": {
+          "process_medians": [
+            593400,
+            557000,
+            549700
+          ],
+          "median_ns": 557000,
+          "p95_ns": 1075540.0,
+          "p99_ns": 1118356.0
+        }
+      },
+      "peak_private": [
+        46473216,
+        46882816,
+        46587904
+      ],
+      "peak_rss": [
+        61100032,
+        61239296,
+        60985344
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            420300,
+            460700,
+            393300
+          ],
+          "median_ns": 420300,
+          "p95_ns": 527540.0,
+          "p99_ns": 541348.0
+        },
+        "read_ns": {
+          "process_medians": [
+            291100,
+            273300,
+            278500
+          ],
+          "median_ns": 278500,
+          "p95_ns": 318700.0,
+          "p99_ns": 321420.0
+        },
+        "close_ns": {
+          "process_medians": [
+            20400,
+            20600,
+            20700
+          ],
+          "median_ns": 20600,
+          "p95_ns": 24700.0,
+          "p99_ns": 25340.0
+        },
+        "total_ns": {
+          "process_medians": [
+            729000,
+            758400,
+            676200
+          ],
+          "median_ns": 729000,
+          "p95_ns": 865940.0,
+          "p99_ns": 887588.0
+        }
+      },
+      "peak_private": [
+        46473216,
+        46882816,
+        46587904
+      ],
+      "peak_rss": [
+        61100032,
+        61239296,
+        60985344
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            214850.0,
+            222700.0,
+            206400.0
+          ],
+          "median_ns": 214850.0,
+          "p95_ns": 356694.99999999994,
+          "p99_ns": 507679.0000000002
+        },
+        "read_ns": {
+          "process_medians": [
+            180800.0,
+            184300.0,
+            173400.0
+          ],
+          "median_ns": 180800.0,
+          "p95_ns": 280284.99999999994,
+          "p99_ns": 442900.0
+        },
+        "close_ns": {
+          "process_medians": [
+            15500.0,
+            15800.0,
+            15300.0
+          ],
+          "median_ns": 15500.0,
+          "p95_ns": 23300.0,
+          "p99_ns": 33797.00000000003
+        },
+        "total_ns": {
+          "process_medians": [
+            413250.0,
+            428400.0,
+            399950.0
+          ],
+          "median_ns": 413250.0,
+          "p95_ns": 659385.0,
+          "p99_ns": 962562.0000000012
+        }
+      },
+      "peak_private": [
+        27803648,
+        27648000,
+        27897856
+      ],
+      "peak_rss": [
+        42024960,
+        42254336,
+        41914368
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            4900.0,
+            4800.0,
+            4900.0
+          ],
+          "median_ns": 4900.0,
+          "p95_ns": 7400.0,
+          "p99_ns": 12181.00000000004
+        }
+      },
+      "peak_private": [
+        28102656,
+        27602944,
+        27488256
+      ],
+      "peak_rss": [
+        43229184,
+        42844160,
+        42795008
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "after",
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            72000.0,
+            76900.0,
+            67100.0
+          ],
+          "median_ns": 72000.0,
+          "p95_ns": 96109.99999999999,
+          "p99_ns": 135942.0
+        }
+      },
+      "peak_private": [
+        27856896,
+        28086272,
+        27746304
+      ],
+      "peak_rss": [
+        43270144,
+        43233280,
+        42999808
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            244000,
+            257800,
+            278500
+          ],
+          "median_ns": 257800,
+          "p95_ns": 525880.0,
+          "p99_ns": 578856.0
+        },
+        "read_ns": {
+          "process_medians": [
+            5327600,
+            5369700,
+            5721200
+          ],
+          "median_ns": 5369700,
+          "p95_ns": 6123280.0,
+          "p99_ns": 6150636.0
+        },
+        "close_ns": {
+          "process_medians": [
+            127500,
+            141400,
+            122200
+          ],
+          "median_ns": 127500,
+          "p95_ns": 154000.0,
+          "p99_ns": 155760.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5680100,
+            5786900,
+            6052300
+          ],
+          "median_ns": 5786900,
+          "p95_ns": 6722740.0,
+          "p99_ns": 6762068.0
+        }
+      },
+      "peak_private": [
+        46362624,
+        46735360,
+        46714880
+      ],
+      "peak_rss": [
+        61038592,
+        61177856,
+        61186048
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            440500,
+            465800,
+            538700
+          ],
+          "median_ns": 465800,
+          "p95_ns": 604940.0,
+          "p99_ns": 609708.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1919600,
+            2095200,
+            2072200
+          ],
+          "median_ns": 2072200,
+          "p95_ns": 2665640.0,
+          "p99_ns": 2675528.0
+        },
+        "close_ns": {
+          "process_medians": [
+            84800,
+            95700,
+            100700
+          ],
+          "median_ns": 95700,
+          "p95_ns": 110280.0,
+          "p99_ns": 113176.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2521600,
+            2801900,
+            2711600
+          ],
+          "median_ns": 2711600,
+          "p95_ns": 3293020.0,
+          "p99_ns": 3293484.0
+        }
+      },
+      "peak_private": [
+        46362624,
+        46735360,
+        46714880
+      ],
+      "peak_rss": [
+        61038592,
+        61177856,
+        61186048
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            313600,
+            452300,
+            306700
+          ],
+          "median_ns": 313600,
+          "p95_ns": 448340.0,
+          "p99_ns": 462068.0
+        },
+        "read_ns": {
+          "process_medians": [
+            440600,
+            523600,
+            471700
+          ],
+          "median_ns": 471700,
+          "p95_ns": 711700.0,
+          "p99_ns": 756580.0
+        },
+        "close_ns": {
+          "process_medians": [
+            17600,
+            24100,
+            22200
+          ],
+          "median_ns": 22200,
+          "p95_ns": 23000.0,
+          "p99_ns": 23880.0
+        },
+        "total_ns": {
+          "process_medians": [
+            734800,
+            1070200,
+            959400
+          ],
+          "median_ns": 959400,
+          "p95_ns": 1137000.0,
+          "p99_ns": 1170920.0
+        }
+      },
+      "peak_private": [
+        46362624,
+        46735360,
+        46714880
+      ],
+      "peak_rss": [
+        61038592,
+        61177856,
+        61186048
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            452700,
+            423600,
+            394200
+          ],
+          "median_ns": 423600,
+          "p95_ns": 539980.0,
+          "p99_ns": 543196.0
+        },
+        "read_ns": {
+          "process_medians": [
+            496400,
+            456100,
+            416900
+          ],
+          "median_ns": 456100,
+          "p95_ns": 504980.0,
+          "p99_ns": 507708.0
+        },
+        "close_ns": {
+          "process_medians": [
+            20800,
+            19300,
+            20800
+          ],
+          "median_ns": 20800,
+          "p95_ns": 23300.0,
+          "p99_ns": 23300.0
+        },
+        "total_ns": {
+          "process_medians": [
+            979000,
+            902800,
+            846900
+          ],
+          "median_ns": 902800,
+          "p95_ns": 1080980.0,
+          "p99_ns": 1115556.0
+        }
+      },
+      "peak_private": [
+        46362624,
+        46735360,
+        46714880
+      ],
+      "peak_rss": [
+        61038592,
+        61177856,
+        61186048
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            232700.0,
+            210900.0,
+            212100.0
+          ],
+          "median_ns": 212100.0,
+          "p95_ns": 323355.0,
+          "p99_ns": 426724.0000000002
+        },
+        "read_ns": {
+          "process_medians": [
+            351950.0,
+            321000.0,
+            322500.0
+          ],
+          "median_ns": 322500.0,
+          "p95_ns": 456024.99999999994,
+          "p99_ns": 613246.0000000001
+        },
+        "close_ns": {
+          "process_medians": [
+            15500.0,
+            14800.0,
+            14600.0
+          ],
+          "median_ns": 14800.0,
+          "p95_ns": 20800.0,
+          "p99_ns": 36013.000000000015
+        },
+        "total_ns": {
+          "process_medians": [
+            604700.0,
+            551050.0,
+            556350.0
+          ],
+          "median_ns": 556350.0,
+          "p95_ns": 767785.0,
+          "p99_ns": 996217.0000000008
+        }
+      },
+      "peak_private": [
+        27607040,
+        27881472,
+        27615232
+      ],
+      "peak_rss": [
+        41533440,
+        41594880,
+        41717760
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            7100.0,
+            7100.0,
+            7100.0
+          ],
+          "median_ns": 7100.0,
+          "p95_ns": 9800.0,
+          "p99_ns": 12284.000000000015
+        }
+      },
+      "peak_private": [
+        27717632,
+        27713536,
+        27521024
+      ],
+      "peak_rss": [
+        42921984,
+        42958848,
+        42881024
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            88700.0,
+            73900.0,
+            73700.0
+          ],
+          "median_ns": 73900.0,
+          "p95_ns": 94829.99999999997,
+          "p99_ns": 122568.00000000003
+        }
+      },
+      "peak_private": [
+        28000256,
+        27750400,
+        27942912
+      ],
+      "peak_rss": [
+        43229184,
+        42983424,
+        43192320
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "catalog-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1597400.0,
+            1592300.0,
+            1544050.0
+          ],
+          "median_ns": 1592300.0,
+          "p95_ns": 2487565.0,
+          "p99_ns": 2957244.000000001
+        },
+        "read_ns": {
+          "process_medians": [
+            3448850.0,
+            3310050.0,
+            3252450.0
+          ],
+          "median_ns": 3310050.0,
+          "p95_ns": 4382045.0,
+          "p99_ns": 5106224.000000001
+        },
+        "close_ns": {
+          "process_medians": [
+            170500.0,
+            141450.0,
+            134600.0
+          ],
+          "median_ns": 141450.0,
+          "p95_ns": 407574.9999999999,
+          "p99_ns": 509036.00000000006
+        },
+        "total_ns": {
+          "process_medians": [
+            5307750.0,
+            5105550.0,
+            4993450.0
+          ],
+          "median_ns": 5105550.0,
+          "p95_ns": 6981970.0,
+          "p99_ns": 8214861.000000001
+        }
+      },
+      "peak_private": [
+        68972544,
+        68444160,
+        69345280
+      ],
+      "peak_rss": [
+        73871360,
+        72978432,
+        73977856
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            171900,
+            185700,
+            164400
+          ],
+          "median_ns": 171900,
+          "p95_ns": 251360.0,
+          "p99_ns": 252272.0
+        },
+        "read_ns": {
+          "process_medians": [
+            50363800,
+            53599800,
+            51937700
+          ],
+          "median_ns": 51937700,
+          "p95_ns": 55654180.0,
+          "p99_ns": 56390916.0
+        },
+        "close_ns": {
+          "process_medians": [
+            488600,
+            495500,
+            509100
+          ],
+          "median_ns": 495500,
+          "p95_ns": 582720.0,
+          "p99_ns": 586864.0
+        },
+        "total_ns": {
+          "process_medians": [
+            50987800,
+            54246500,
+            52644800
+          ],
+          "median_ns": 52644800,
+          "p95_ns": 56394780.0,
+          "p99_ns": 57134556.0
+        }
+      },
+      "peak_private": [
+        132358144,
+        131145728,
+        130027520
+      ],
+      "peak_rss": [
+        141422592,
+        142413824,
+        141381632
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            210600,
+            212700,
+            252700
+          ],
+          "median_ns": 212700,
+          "p95_ns": 256620.0,
+          "p99_ns": 257324.0
+        },
+        "read_ns": {
+          "process_medians": [
+            21277900,
+            23742500,
+            23321600
+          ],
+          "median_ns": 23321600,
+          "p95_ns": 25226440.0,
+          "p99_ns": 25273928.0
+        },
+        "close_ns": {
+          "process_medians": [
+            179500,
+            222400,
+            230200
+          ],
+          "median_ns": 222400,
+          "p95_ns": 262600.0,
+          "p99_ns": 269160.0
+        },
+        "total_ns": {
+          "process_medians": [
+            21675800,
+            24229900,
+            24001600
+          ],
+          "median_ns": 24001600,
+          "p95_ns": 25674140.0,
+          "p99_ns": 25722668.0
+        }
+      },
+      "peak_private": [
+        132358144,
+        131145728,
+        130027520
+      ],
+      "peak_rss": [
+        141422592,
+        142413824,
+        141381632
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            205700,
+            201200,
+            183700
+          ],
+          "median_ns": 201200,
+          "p95_ns": 240100.0,
+          "p99_ns": 241816.0
+        },
+        "read_ns": {
+          "process_medians": [
+            4634200,
+            4676100,
+            4265400
+          ],
+          "median_ns": 4634200,
+          "p95_ns": 6598800.0,
+          "p99_ns": 6873440.0
+        },
+        "close_ns": {
+          "process_medians": [
+            36100,
+            39900,
+            40400
+          ],
+          "median_ns": 39900,
+          "p95_ns": 52500.0,
+          "p99_ns": 54660.0
+        },
+        "total_ns": {
+          "process_medians": [
+            4844300,
+            4913200,
+            4500200
+          ],
+          "median_ns": 4844300,
+          "p95_ns": 6876020.0,
+          "p99_ns": 7149604.0
+        }
+      },
+      "peak_private": [
+        132358144,
+        131145728,
+        130027520
+      ],
+      "peak_rss": [
+        141422592,
+        142413824,
+        141381632
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            230700,
+            256700,
+            263300
+          ],
+          "median_ns": 256700,
+          "p95_ns": 302060.0,
+          "p99_ns": 308060.0
+        },
+        "read_ns": {
+          "process_medians": [
+            3784500,
+            4321100,
+            3903300
+          ],
+          "median_ns": 3903300,
+          "p95_ns": 4313960.0,
+          "p99_ns": 4360072.0
+        },
+        "close_ns": {
+          "process_medians": [
+            40900,
+            55400,
+            49900
+          ],
+          "median_ns": 49900,
+          "p95_ns": 59640.0,
+          "p99_ns": 60408.0
+        },
+        "total_ns": {
+          "process_medians": [
+            4029500,
+            4674800,
+            4261400
+          ],
+          "median_ns": 4261400,
+          "p95_ns": 4605460.0,
+          "p99_ns": 4647812.0
+        }
+      },
+      "peak_private": [
+        132358144,
+        131145728,
+        130027520
+      ],
+      "peak_rss": [
+        141422592,
+        142413824,
+        141381632
+      ]
+    },
+    {
+      "backend": "parquet",
+      "version": "peer",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            165600.0,
+            159750.0,
+            158500.0
+          ],
+          "median_ns": 159750.0,
+          "p95_ns": 258259.99999999994,
+          "p99_ns": 321081.00000000006
+        },
+        "read_ns": {
+          "process_medians": [
+            3279850.0,
+            3166350.0,
+            3154900.0
+          ],
+          "median_ns": 3166350.0,
+          "p95_ns": 4119175.0,
+          "p99_ns": 4803112.000000001
+        },
+        "close_ns": {
+          "process_medians": [
+            31100.0,
+            26200.0,
+            27400.0
+          ],
+          "median_ns": 27400.0,
+          "p95_ns": 65664.99999999999,
+          "p99_ns": 88239.00000000003
+        },
+        "total_ns": {
+          "process_medians": [
+            3495100.0,
+            3362400.0,
+            3352300.0
+          ],
+          "median_ns": 3362400.0,
+          "p95_ns": 4360590.0,
+          "p99_ns": 5133768.000000001
+        }
+      },
+      "peak_private": [
+        66813952,
+        67018752,
+        67203072
+      ],
+      "peak_rss": [
+        72192000,
+        72269824,
+        73076736
+      ]
+    },
+    {
+      "backend": "sqlite",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1460500,
+            1378100,
+            1527900
+          ],
+          "median_ns": 1460500,
+          "p95_ns": 2311700.0,
+          "p99_ns": 2390556.0
+        },
+        "read_ns": {
+          "process_medians": [
+            549677300,
+            508583500,
+            510040900
+          ],
+          "median_ns": 510040900,
+          "p95_ns": 538983340.0,
+          "p99_ns": 540177388.0
+        },
+        "close_ns": {
+          "process_medians": [
+            4301100,
+            3732300,
+            4551800
+          ],
+          "median_ns": 4301100,
+          "p95_ns": 4624740.0,
+          "p99_ns": 4677188.0
+        },
+        "total_ns": {
+          "process_medians": [
+            555497900,
+            513693900,
+            515998100
+          ],
+          "median_ns": 515998100,
+          "p95_ns": 545977200.0,
+          "p99_ns": 547607520.0
+        }
+      },
+      "peak_private": [
+        207192064,
+        206651392,
+        207003648
+      ],
+      "peak_rss": [
+        219619328,
+        218828800,
+        219521024
+      ]
+    },
+    {
+      "backend": "sqlite",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1928100,
+            1964700,
+            1815200
+          ],
+          "median_ns": 1928100,
+          "p95_ns": 2320900.0,
+          "p99_ns": 2338740.0
+        },
+        "read_ns": {
+          "process_medians": [
+            280212700,
+            240231100,
+            240688000
+          ],
+          "median_ns": 240688000,
+          "p95_ns": 256826120.0,
+          "p99_ns": 259114104.0
+        },
+        "close_ns": {
+          "process_medians": [
+            2660900,
+            2150500,
+            2168200
+          ],
+          "median_ns": 2168200,
+          "p95_ns": 2839340.0,
+          "p99_ns": 2880088.0
+        },
+        "total_ns": {
+          "process_medians": [
+            285542400,
+            244161900,
+            244939400
+          ],
+          "median_ns": 244939400,
+          "p95_ns": 260500360.0,
+          "p99_ns": 263171912.0
+        }
+      },
+      "peak_private": [
+        207192064,
+        206651392,
+        207003648
+      ],
+      "peak_rss": [
+        219619328,
+        218828800,
+        219521024
+      ]
+    },
+    {
+      "backend": "sqlite",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1632100,
+            1452300,
+            1250300
+          ],
+          "median_ns": 1452300,
+          "p95_ns": 2197740.0,
+          "p99_ns": 2239468.0
+        },
+        "read_ns": {
+          "process_medians": [
+            4825400,
+            4002500,
+            3990400
+          ],
+          "median_ns": 4002500,
+          "p95_ns": 4798140.0,
+          "p99_ns": 4921708.0
+        },
+        "close_ns": {
+          "process_medians": [
+            147000,
+            93200,
+            99400
+          ],
+          "median_ns": 99400,
+          "p95_ns": 166220.0,
+          "p99_ns": 179324.0
+        },
+        "total_ns": {
+          "process_medians": [
+            6699200,
+            5553500,
+            5428700
+          ],
+          "median_ns": 5553500,
+          "p95_ns": 8074620.0,
+          "p99_ns": 8247884.0
+        }
+      },
+      "peak_private": [
+        207192064,
+        206651392,
+        207003648
+      ],
+      "peak_rss": [
+        219619328,
+        218828800,
+        219521024
+      ]
+    },
+    {
+      "backend": "sqlite",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            2049000,
+            1873800,
+            1802900
+          ],
+          "median_ns": 1873800,
+          "p95_ns": 1949420.0,
+          "p99_ns": 1974124.0
+        },
+        "read_ns": {
+          "process_medians": [
+            245600,
+            214500,
+            208900
+          ],
+          "median_ns": 214500,
+          "p95_ns": 224800.0,
+          "p99_ns": 226640.0
+        },
+        "close_ns": {
+          "process_medians": [
+            110600,
+            98100,
+            87800
+          ],
+          "median_ns": 98100,
+          "p95_ns": 113280.0,
+          "p99_ns": 113376.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2394800,
+            2179200,
+            2147200
+          ],
+          "median_ns": 2179200,
+          "p95_ns": 2247900.0,
+          "p99_ns": 2266620.0
+        }
+      },
+      "peak_private": [
+        207192064,
+        206651392,
+        207003648
+      ],
+      "peak_rss": [
+        219619328,
+        218828800,
+        219521024
+      ]
+    },
+    {
+      "backend": "sqlite",
+      "version": "peer",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            1090150.0,
+            1075850.0,
+            1119300.0
+          ],
+          "median_ns": 1090150.0,
+          "p95_ns": 1567484.9999999998,
+          "p99_ns": 1899006.0000000007
+        },
+        "read_ns": {
+          "process_medians": [
+            164400.0,
+            163500.0,
+            166150.0
+          ],
+          "median_ns": 164400.0,
+          "p95_ns": 218865.0,
+          "p99_ns": 254847.0000000002
+        },
+        "close_ns": {
+          "process_medians": [
+            66600.0,
+            65700.0,
+            67000.0
+          ],
+          "median_ns": 66600.0,
+          "p95_ns": 96964.99999999999,
+          "p99_ns": 138713.0
+        },
+        "total_ns": {
+          "process_medians": [
+            1326500.0,
+            1311800.0,
+            1356750.0
+          ],
+          "median_ns": 1326500.0,
+          "p95_ns": 1864150.0,
+          "p99_ns": 2216673.0
+        }
+      },
+      "peak_private": [
+        28798976,
+        28880896,
+        28889088
+      ],
+      "peak_rss": [
+        42913792,
+        42958848,
+        43155456
+      ]
+    }
+  ],
+  "verified_timed_outputs": 60420,
+  "all_results_verified": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "duckdb": "1.5.6",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2"
+    }
+  },
+  "source_sha256": {
+    "external-tests/read_lifecycle/__init__.py": "2378f3ad05fc85cd65d9a216b76b9b19df89e441cc90b08906d7246b00b435a2",
+    "external-tests/read_lifecycle/run.py": "a05bfc2f7d0d3d3226e1599531ffc57030401d44801dd213efbed31c4ec21715",
+    "external-tests/read_lifecycle/test_worker.py": "4895d9b7c97e0983897e550117eb8c90f9c4ddcbbc46b90cb6c30f3326c0db87",
+    "external-tests/read_lifecycle/worker.py": "883da1bae4186fcdc38c2f3f7b6d9ed4bb01ae95bdb0d30653464352e5fa0d7e",
+    "external-tests/fastk_bench/__init__.py": "63ec6f82e47686664dc049c21e5b96458526775261f16e3900970759b5780b4f",
+    "external-tests/fastk_bench/backends.py": "0465c26b50ba5641a417d9a5f3d687ede97c5961fd9c455a0ececaf34364513b",
+    "external-tests/fastk_bench/batches.py": "bf74477ab4bdd6f0f7831d4cedff968dfd49244a0d61e169257f2994e930827f",
+    "external-tests/fastk_bench/data.py": "4aadd2b4b3801fc7e54a74721e9287ca6b9b52b0f0897e28d6b30da335c9799f",
+    "external-tests/fastk_bench/legacy.py": "6a4fbfbe72a8830c952e9c063410c02d35c7927c51d307910736a775f07e4327",
+    "external-tests/fastk_bench/matrix_worker.py": "07238506e86908f1946878a2f9c07415d47687ce9484dbd87c34e0ef20cf3646",
+    "external-tests/fastk_bench/process.py": "5c57ff3390327f09204d8f2251f0062ab2e39bcfbfe58abe100d4a667022852d",
+    "external-tests/fastk_bench/worker.py": "9cf39ec80d1550ececc1811512a80b4d8ca7f4958a6a765b43384ce44dbf5f2e"
+  }
+}

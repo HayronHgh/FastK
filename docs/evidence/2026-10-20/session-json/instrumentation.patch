@@ -1,0 +1,139 @@
+--- examples/cli/fastk_bridge.rs
++++ target/session-json-probe-v2/bridge.rs
+@@ -355,9 +355,14 @@
+     // Pretty JSON contains many newlines. Buffer above stdout's line writer so
+     // bulk responses do not issue one OS pipe write per output line.
+     let mut handle = io::BufWriter::with_capacity(64 * 1024, output);
++    let cost_json_start = cost_ticks();
+     serde_json::to_writer_pretty(&mut handle, value)?;
+     handle.write_all(b"\n")?;
+     handle.flush()?;
++    let cost_json_end = cost_ticks();
++    eprintln!("FASTK_BULK_JSON {}", serde_json::json!({
++        "start_tick":cost_json_start, "end_tick":cost_json_end
++    }));
+     Ok(())
+ }
+ 
+@@ -400,3 +405,11 @@
+     --root <path> --symbol <symbol> --timeframe <tf> --category <category> --name <name>"
+     );
+ }
++
++#[link(name = "kernel32")]
++unsafe extern "system" { fn QueryPerformanceCounter(value: *mut i64) -> i32; }
++fn cost_ticks() -> i64 {
++    let mut value = 0;
++    assert_ne!(unsafe { QueryPerformanceCounter(&mut value) }, 0);
++    value
++}
+--- examples/cli/session_transport.rs
++++ target/session-json-probe-v2/session_transport.rs
+@@ -4,7 +4,7 @@
+ use fastk::{FastKError, Result};
+ use serde::Deserialize;
+ 
+-use super::{dispatch, Input};
++use super::{cost_ticks, dispatch, Input};
+ 
+ const MAX_FRAME_BYTES: u64 = 1024 * 1024 * 1024;
+ 
+@@ -74,10 +74,13 @@
+             return Err(FastKError::InvalidInput("invalid session request".into()));
+         }
+         last_id = request.id;
++        let cost_dispatch_start = cost_ticks();
+         let mut output = Vec::new();
+         // Same dispatcher and response serializer as one-shot CLI. Its local
+         // stores/guards have dropped before a response is written.
+-        let response = match dispatch(request.args, Input::Session(request.payload), &mut output) {
++        let cost_result = dispatch(request.args, Input::Session(request.payload), &mut output);
++        let cost_dispatch_end = cost_ticks();
++        let response = match cost_result {
+             Ok(()) => {
+                 let mut response =
+                     format!("{{\"id\":{},\"ok\":true,\"result\":", request.id).into_bytes();
+@@ -90,7 +93,15 @@
+                 "error": {"code": error.code(), "message": error.to_string()}
+             }))?,
+         };
++        let cost_write_start = cost_ticks();
+         write_frame(&mut writer, &response)?;
++        let cost_write_end = cost_ticks();
++        eprintln!("FASTK_BULK_SESSION {}", serde_json::json!({
++            "id":request.id, "dispatch_start_tick":cost_dispatch_start,
++            "dispatch_end_tick":cost_dispatch_end, "write_start_tick":cost_write_start,
++            "write_end_tick":cost_write_end, "result_bytes":output.len(),
++            "frame_bytes":response.len()
++        }));
+     }
+     Ok(())
+ }
+--- clients/python/src/fastk_client/_session.py
++++ target/session-json-probe-v2/python/fastk_cost_client/_session.py
+@@ -12,6 +12,8 @@
+ from dataclasses import dataclass, field
+ from pathlib import Path
+ 
++from ._measure import TRACE, ticks
++
+ MAX_FRAME_BYTES = 1024 * 1024 * 1024
+ 
+ 
+@@ -37,13 +39,29 @@
+ 
+ 
+ def _read_exact(stream, size):
++    started = ticks()
+     chunks = bytearray()
++    read_ns = append_ns = calls = 0
+     while len(chunks) < size:
++        before = time.perf_counter_ns()
+         chunk = stream.read(min(size - len(chunks), 64 * 1024))
++        after = time.perf_counter_ns()
+         if not chunk:
+             raise SessionProtocolError("worker closed a session frame")
+         chunks.extend(chunk)
+-    return bytes(chunks)
++        appended = time.perf_counter_ns()
++        read_ns += after - before
++        append_ns += appended - after
++        calls += 1
++    before = time.perf_counter_ns()
++    result = bytes(chunks)
++    copied = time.perf_counter_ns()
++    TRACE.setdefault("reads", []).append({
++        "bytes": size, "calls": calls, "syscall_and_wait_ns": read_ns,
++        "append_ns": append_ns, "final_bytes_copy_ns": copied-before,
++        "start_tick": started, "end_tick": ticks(),
++    })
++    return result
+ 
+ 
+ def _read_frame(stream):
+@@ -72,6 +90,7 @@
+         self._ready = _Exchange()
+         self._failure: str | None = None
+         self._stderr: deque[bytes] = deque(maxlen=8)
++        self._cost_stderr = bytearray()
+         self._sequence = 0
+         self._closed = False
+         self.process = subprocess.Popen(
+@@ -122,6 +141,9 @@
+         try:
+             while chunk := self.process.stderr.read(8192):
+                 self._stderr.append(chunk)
++                self._cost_stderr.extend(chunk)
++                if len(self._cost_stderr) > 65536:
++                    del self._cost_stderr[:-65536]
+         except OSError:
+             pass
+ 
+@@ -138,6 +160,7 @@
+                     raise SessionBroken("session closed before dispatch")
+                 _write_all(self.process.stdin, current.frame)
+                 current.response = _read_frame(self.process.stdout)
++                TRACE["io_return_tick"] = ticks()
+                 current.done.set()
+         except Exception as exc:
+             self._failure = str(exc)

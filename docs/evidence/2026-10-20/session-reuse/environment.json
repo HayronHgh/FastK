@@ -1,0 +1,24 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "baseline_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+  "bridge_sha256": "b1d34929a311b72173849da0d12e5ad064a9e6ad6a1e50485d7903d11397ed85",
+  "client_sources": {
+    "client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+    "_session.py": "ce1042d3b93a0ceba28a43726b5c683d385889b474f6b7e661cbaa3a1b57d936",
+    "__init__.py": "3c2c7eaa544bd3c5089bd950ec830b7eea00c410a99d30e598629da2ad041e28"
+  },
+  "query_files": {
+    "queries-0.json": "8726ab96deff606bac088c4071cdebf4ff738f524e6e9e2d81d1511355d0447f",
+    "queries-1.json": "93c4fcfac0bbe18c5980487607a4adc857a366d0845c3ea7b71277ce41d9e61c",
+    "queries-2.json": "fe26c47c54b7e9715082696fe0b8ff13314478e767f4b1054a3ef4dcea5b0453",
+    "queries-3.json": "717a903e802d8b8506429a3b4ccdc4e6462bc19d56bc2fed382f3fa466a04fbc",
+    "queries-4.json": "c7d2674555813e7f2ca2e739682bcc1abe98b4b777e9c4284b762b112762307b"
+  },
+  "store": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\external-standard-evidence\\fastk",
+  "seed": 20261020,
+  "cache": "OS cache uncontrolled; same pre-maintenance store; randomized route order each round",
+  "timed_scope": "Client read plus original ordered tuple adapter; validation/hash excluded",
+  "startup_scope": "constructor version subprocess and context handshake reported separately; first-result includes both",
+  "limits": "Short ranges only; no full-research or bulk JSON improvement claimed"
+}

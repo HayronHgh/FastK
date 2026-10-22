@@ -1,0 +1,17 @@
+[build-system]
+requires = ["maturin==1.15.0"]
+build-backend = "maturin"
+
+[project]
+name = "fastk-native"
+version = "0.2.0rc1"
+description = "In-process FastK storage engine with precise NumPy batches"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["numpy>=2.3.5,<3"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "fastk_native._native"
+profile = "native"

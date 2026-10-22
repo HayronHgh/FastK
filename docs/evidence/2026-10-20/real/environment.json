@@ -1,0 +1,29 @@
+{
+  "measured_at_utc": "2026-10-20T11:16:28.934600+00:00",
+  "os": "Windows-11-10.0.26200-SP0",
+  "architecture": "AMD64",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "cpu_logical_count": 24,
+  "physical_memory_bytes": 100591579136,
+  "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+  "harness_sha256": "c373138accf4c5f5082f89d9bae83f13a0bea876b0ed6d4ede0fa947c623993a",
+  "reused_prepared_stores": null,
+  "dependencies": {
+    "duckdb": "1.5.6",
+    "pyarrow": "26.0.0",
+    "psutil": "7.2.2",
+    "fastk-client": "0.1.0rc1"
+  },
+  "seed": 20261020,
+  "profile": "real",
+  "input_bar_rows": 1054080,
+  "input_scalar_rows": 4216320,
+  "logical_fixed_record_payload_bytes": 118056960,
+  "file_space_definition": "sum of file lengths; filesystem allocation and directory metadata excluded",
+  "rounds": 2,
+  "short_ops_per_round": 140,
+  "full_scans_per_round": 1,
+  "durability": "FastK: per-month synced files+manifest, Windows directory sync best-effort; SQLite: WAL synchronous FULL bulk transaction+checkpoint; DuckDB: bulk transaction+checkpoint; Parquet/Arrow: fsynced files, POSIX directory sync. These are not equivalent crash guarantees.",
+  "threads": "DuckDB and file readers use one thread; FastK bridge is synchronous",
+  "metrics": "query time includes full Python materialization; validation outside timer; RSS includes worker and FastK subprocesses"
+}

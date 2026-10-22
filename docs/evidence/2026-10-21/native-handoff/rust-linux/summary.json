@@ -1,0 +1,156 @@
+{
+  "before": {
+    "small_kline": {
+      "samples": 120,
+      "min_ns": 2465,
+      "median_ns": 2545,
+      "max_ns": 4880
+    },
+    "medium_kline": {
+      "samples": 120,
+      "min_ns": 20139,
+      "median_ns": 22414,
+      "max_ns": 87008
+    },
+    "bulk_kline": {
+      "samples": 120,
+      "min_ns": 1681096,
+      "median_ns": 2039059,
+      "max_ns": 3318036
+    },
+    "bulk_scalar": {
+      "samples": 120,
+      "min_ns": 251888,
+      "median_ns": 356190,
+      "max_ns": 1038162
+    },
+    "latest": {
+      "samples": 1920,
+      "min_ns": 1082,
+      "median_ns": 1142,
+      "max_ns": 14047,
+      "p95_ns": 1193,
+      "p99_ns": 1432
+    },
+    "bulk_latest": {
+      "samples": 120,
+      "min_ns": 1634936,
+      "median_ns": 2047295,
+      "max_ns": 3619440
+    }
+  },
+  "after": {
+    "small_kline": {
+      "samples": 120,
+      "min_ns": 2514,
+      "median_ns": 2615,
+      "max_ns": 2725
+    },
+    "medium_kline": {
+      "samples": 120,
+      "min_ns": 20239,
+      "median_ns": 23315,
+      "max_ns": 213022
+    },
+    "bulk_kline": {
+      "samples": 120,
+      "min_ns": 1637241,
+      "median_ns": 2078816,
+      "max_ns": 3112659
+    },
+    "bulk_scalar": {
+      "samples": 120,
+      "min_ns": 249272,
+      "median_ns": 338646,
+      "max_ns": 653275
+    },
+    "latest": {
+      "samples": 1920,
+      "min_ns": 1062,
+      "median_ns": 1132,
+      "max_ns": 4368,
+      "p95_ns": 1513,
+      "p99_ns": 1693
+    },
+    "bulk_latest": {
+      "samples": 120,
+      "min_ns": 1673902,
+      "median_ns": 2022633,
+      "max_ns": 3119201
+    }
+  },
+  "ratio_after_before": {
+    "small_kline": 1.0275049115913557,
+    "medium_kline": 1.0401980904791648,
+    "bulk_kline": 1.0194977192911043,
+    "bulk_scalar": 0.9507453886970437,
+    "latest": 0.9912434325744308,
+    "bulk_latest": 0.9879538610703391
+  },
+  "gate": {
+    "maximum_regression": 1.05,
+    "passed": true
+  },
+  "all_results_verified": true,
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-unknown-linux-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+  "round_orders": [
+    [
+      "before",
+      "after"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "after",
+      "before"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "after",
+      "before"
+    ],
+    [
+      "after",
+      "before"
+    ],
+    [
+      "after",
+      "before"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "after",
+      "before"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "after",
+      "before"
+    ]
+  ],
+  "binary_sha256": {
+    "before": "eb44a228d0c6734123812d5315d3fd541377bfc79487f8ca0d0c6193e843dbe4",
+    "after": "49470c0a991b49319b66b83f4027c18f13c6ba8281979cf53a817e7673c7a141"
+  },
+  "probe_source_sha256": "7e548a23def06f5c6a838a18d14fd219f30ed53eba8bb8e349b59dde7fd49289",
+  "limits": [
+    "metrics off, one prewarmed handle; OS cache uncontrolled",
+    "12 paired process rounds; 32 separately recorded warmup reads per case; 32 measured repeats per short/latest, ten per bulk",
+    "query execution only; validation and result destruction outside timer"
+  ]
+}

@@ -1,0 +1,150 @@
+verified 1 / 18 {'mode': 'bulk', 'route': 'copy-batch', 'round': 0}
+verified 2 / 18 {'mode': 'bulk', 'route': 'arrow', 'round': 0}
+verified 3 / 18 {'mode': 'bulk', 'route': 'arrow', 'round': 1}
+verified 4 / 18 {'mode': 'bulk', 'route': 'copy-batch', 'round': 2}
+verified 5 / 18 {'mode': 'bulk', 'route': 'probe', 'round': 0}
+verified 6 / 18 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 2}
+verified 7 / 18 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 1}
+verified 8 / 18 {'mode': 'bulk', 'route': 'probe', 'round': 2}
+verified 9 / 18 {'mode': 'bulk', 'route': 'probe', 'round': 1}
+verified 10 / 18 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 0}
+verified 11 / 18 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 1}
+verified 12 / 18 {'mode': 'bulk', 'route': 'copy-batch', 'round': 1}
+verified 13 / 18 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 0}
+verified 14 / 18 {'mode': 'bulk', 'route': 'arrow', 'round': 2}
+verified 15 / 18 {'mode': 'bulk', 'route': 'native', 'round': 1}
+verified 16 / 18 {'mode': 'bulk', 'route': 'native', 'round': 0}
+verified 17 / 18 {'mode': 'bulk', 'route': 'native', 'round': 2}
+verified 18 / 18 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 2}
+verified 1 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 2, 'switch_interval': 0.0001}
+verified 2 / 132 {'mode': 'outer', 'route': 'direct', 'round': 2, 'workers': 1}
+verified 3 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 1, 'workers': 8}
+verified 4 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 8}
+verified 5 / 132 {'mode': 'outer', 'route': 'probe', 'round': 1, 'workers': 4}
+verified 6 / 132 {'mode': 'outer', 'route': 'direct', 'round': 1, 'workers': 1}
+verified 7 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 4}
+verified 8 / 132 {'mode': 'bulk', 'route': 'native', 'round': 0, 'internal': 4}
+verified 9 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 8}
+verified 10 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 2, 'switch_interval': 0.0001}
+verified 11 / 132 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 2}
+verified 12 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 2, 'workers': 8}
+verified 13 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 2, 'switch_interval': 0.001}
+verified 14 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 8, 'switch_interval': 0.001}
+verified 15 / 132 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 2}
+verified 16 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 1, 'workers': 2}
+verified 17 / 132 {'mode': 'bulk', 'route': 'native', 'round': 2}
+verified 18 / 132 {'mode': 'outer', 'route': 'direct', 'round': 0, 'workers': 4}
+verified 19 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 2, 'workers': 1}
+verified 20 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 8, 'switch_interval': 0.001}
+verified 21 / 132 {'mode': 'outer', 'route': 'direct', 'round': 0, 'workers': 8}
+verified 22 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 2, 'workers': 4}
+verified 23 / 132 {'mode': 'outer', 'route': 'probe', 'round': 1, 'workers': 1}
+verified 24 / 132 {'mode': 'bulk', 'route': 'copy-batch', 'round': 2}
+verified 25 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 8}
+verified 26 / 132 {'mode': 'outer', 'route': 'probe', 'round': 2, 'workers': 4}
+verified 27 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 4}
+verified 28 / 132 {'mode': 'outer', 'route': 'direct', 'round': 1, 'workers': 4}
+verified 29 / 132 {'mode': 'bulk', 'route': 'copy-batch', 'round': 1}
+verified 30 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 1, 'internal': 4}
+verified 31 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 2}
+verified 32 / 132 {'mode': 'outer', 'route': 'direct', 'round': 1, 'workers': 2}
+verified 33 / 132 {'mode': 'outer', 'route': 'probe', 'round': 2, 'workers': 2}
+verified 34 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 0, 'workers': 4, 'shared': True}
+verified 35 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 2, 'switch_interval': 0.001}
+verified 36 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 1, 'workers': 2}
+verified 37 / 132 {'mode': 'outer', 'route': 'probe', 'round': 2, 'workers': 8}
+verified 38 / 132 {'mode': 'outer', 'route': 'probe', 'round': 1, 'workers': 2}
+verified 39 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 8, 'switch_interval': 0.0001}
+verified 40 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 2, 'internal': 2}
+verified 41 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 1}
+verified 42 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 4, 'switch_interval': 0.001}
+verified 43 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 8, 'switch_interval': 0.0001}
+verified 44 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 4}
+verified 45 / 132 {'mode': 'bulk', 'route': 'copy-batch', 'round': 0}
+verified 46 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 0, 'workers': 2}
+verified 47 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 1, 'workers': 4}
+verified 48 / 132 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 0}
+verified 49 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 1, 'internal': 8}
+verified 50 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 0, 'workers': 1}
+verified 51 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 1, 'workers': 1}
+verified 52 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 2, 'workers': 4}
+verified 53 / 132 {'mode': 'outer', 'route': 'direct', 'round': 2, 'workers': 2}
+verified 54 / 132 {'mode': 'bulk', 'route': 'native', 'round': 2, 'internal': 2}
+verified 55 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 1}
+verified 56 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 2, 'workers': 8}
+verified 57 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 8, 'switch_interval': 0.001}
+verified 58 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 2, 'workers': 1}
+verified 59 / 132 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 1}
+verified 60 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 2, 'workers': 4, 'shared': True}
+verified 61 / 132 {'mode': 'outer', 'route': 'probe', 'round': 2, 'workers': 1}
+verified 62 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 0, 'workers': 1}
+verified 63 / 132 {'mode': 'bulk', 'route': 'native', 'round': 1}
+verified 64 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 0, 'internal': 4}
+verified 65 / 132 {'mode': 'bulk', 'route': 'arrow-probe', 'round': 0}
+verified 66 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 0, 'workers': 8}
+verified 67 / 132 {'mode': 'outer', 'route': 'direct', 'round': 0, 'workers': 4, 'shared': True}
+verified 68 / 132 {'mode': 'outer', 'route': 'probe', 'round': 0, 'workers': 2}
+verified 69 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 2}
+verified 70 / 132 {'mode': 'outer', 'route': 'probe', 'round': 0, 'workers': 4}
+verified 71 / 132 {'mode': 'bulk', 'route': 'native', 'round': 1, 'internal': 8}
+verified 72 / 132 {'mode': 'bulk', 'route': 'numpy-copy', 'round': 1}
+verified 73 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 1, 'workers': 8}
+verified 74 / 132 {'mode': 'bulk', 'route': 'native', 'round': 1, 'internal': 2}
+verified 75 / 132 {'mode': 'outer', 'route': 'probe', 'round': 1, 'workers': 8}
+verified 76 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 0, 'workers': 4}
+verified 77 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 1, 'workers': 4}
+verified 78 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 1}
+verified 79 / 132 {'mode': 'bulk', 'route': 'native', 'round': 0, 'internal': 8}
+verified 80 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 2, 'workers': 2}
+verified 81 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 4, 'switch_interval': 0.001}
+verified 82 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 8, 'switch_interval': 0.0001}
+verified 83 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 2, 'internal': 8}
+verified 84 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 2}
+verified 85 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 1, 'workers': 2}
+verified 86 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 0, 'workers': 8}
+verified 87 / 132 {'mode': 'bulk', 'route': 'arrow', 'round': 1}
+verified 88 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 1, 'workers': 4}
+verified 89 / 132 {'mode': 'outer', 'route': 'direct', 'round': 2, 'workers': 4}
+verified 90 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 0}
+verified 91 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 1}
+verified 92 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 0, 'workers': 2}
+verified 93 / 132 {'mode': 'outer', 'route': 'probe', 'round': 0, 'workers': 8}
+verified 94 / 132 {'mode': 'outer', 'route': 'direct', 'round': 2, 'workers': 8}
+verified 95 / 132 {'mode': 'bulk', 'route': 'arrow', 'round': 2}
+verified 96 / 132 {'mode': 'outer', 'route': 'probe', 'round': 0, 'workers': 1}
+verified 97 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 2, 'workers': 2}
+verified 98 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 4, 'switch_interval': 0.0001}
+verified 99 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 2, 'workers': 2}
+verified 100 / 132 {'mode': 'outer', 'route': 'direct', 'round': 0, 'workers': 2}
+verified 101 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 2}
+verified 102 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 0, 'workers': 2}
+verified 103 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 0, 'workers': 8}
+verified 104 / 132 {'mode': 'outer', 'route': 'direct', 'round': 1, 'workers': 4, 'shared': True}
+verified 105 / 132 {'mode': 'bulk', 'route': 'native', 'round': 2, 'internal': 4}
+verified 106 / 132 {'mode': 'outer', 'route': 'native', 'round': 0, 'workers': 4, 'switch_interval': 0.0001}
+verified 107 / 132 {'mode': 'outer', 'route': 'direct', 'round': 0, 'workers': 1}
+verified 108 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 0, 'internal': 8}
+verified 109 / 132 {'mode': 'bulk', 'route': 'native', 'round': 1, 'internal': 4}
+verified 110 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 1, 'workers': 1}
+verified 111 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 0, 'workers': 1}
+verified 112 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 0, 'internal': 2}
+verified 113 / 132 {'mode': 'outer', 'route': 'native', 'round': 2, 'workers': 4, 'switch_interval': 0.0001}
+verified 114 / 132 {'mode': 'outer', 'route': 'direct', 'round': 1, 'workers': 8}
+verified 115 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 1, 'workers': 8}
+verified 116 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 1, 'workers': 4, 'shared': True}
+verified 117 / 132 {'mode': 'bulk', 'route': 'native', 'round': 0, 'internal': 2}
+verified 118 / 132 {'mode': 'outer', 'route': 'direct', 'round': 2, 'workers': 4, 'shared': True}
+verified 119 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 0, 'workers': 4}
+verified 120 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 2, 'workers': 4}
+verified 121 / 132 {'mode': 'bulk', 'route': 'native', 'round': 0}
+verified 122 / 132 {'mode': 'outer', 'route': 'rust-words', 'round': 2, 'workers': 8}
+verified 123 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 1, 'internal': 2}
+verified 124 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 1, 'workers': 1}
+verified 125 / 132 {'mode': 'outer', 'route': 'gil-only', 'round': 0, 'workers': 4}
+verified 126 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 4, 'switch_interval': 0.001}
+verified 127 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 2, 'switch_interval': 0.0001}
+verified 128 / 132 {'mode': 'outer', 'route': 'native', 'round': 1, 'workers': 2, 'switch_interval': 0.001}
+verified 129 / 132 {'mode': 'outer', 'route': 'rust-core', 'round': 2, 'workers': 1}
+verified 130 / 132 {'mode': 'bulk', 'route': 'probe', 'round': 2, 'internal': 4}
+verified 131 / 132 {'mode': 'bulk', 'route': 'arrow', 'round': 0}
+verified 132 / 132 {'mode': 'bulk', 'route': 'native', 'round': 2, 'internal': 8}

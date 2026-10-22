@@ -1,0 +1,8 @@
+{
+  "total_processes": 62,
+  "total_verified_timed_outputs": 55910,
+  "primary": "summary.json",
+  "initial_cache": "arrow-cache/summary.json",
+  "controlled_cache": "arrow-cache-control/summary.json",
+  "interpretation": "Arrow full working-set mmap cache beats FastK short reads; main Arrow64 ranking is cache-dependent"
+}

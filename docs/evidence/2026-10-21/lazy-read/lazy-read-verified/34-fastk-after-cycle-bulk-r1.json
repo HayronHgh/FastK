@@ -1,0 +1,208 @@
+{
+  "backend": "fastk",
+  "mode": "cycle",
+  "python_pid": 53068,
+  "samples": [
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 0,
+      "open_ns": 376700,
+      "read_ns": 608400,
+      "close_ns": 29700,
+      "total_ns": 1014800
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 0,
+      "open_ns": 464500,
+      "read_ns": 332400,
+      "close_ns": 25100,
+      "total_ns": 822000
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 0,
+      "open_ns": 261700,
+      "read_ns": 5955700,
+      "close_ns": 121300,
+      "total_ns": 6338700
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 0,
+      "open_ns": 496000,
+      "read_ns": 2545100,
+      "close_ns": 91000,
+      "total_ns": 3132100
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 1,
+      "open_ns": 536100,
+      "read_ns": 321100,
+      "close_ns": 25400,
+      "total_ns": 882600
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 1,
+      "open_ns": 255100,
+      "read_ns": 305400,
+      "close_ns": 20500,
+      "total_ns": 581000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 1,
+      "open_ns": 236900,
+      "read_ns": 2547300,
+      "close_ns": 80900,
+      "total_ns": 2865100
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 1,
+      "open_ns": 337500,
+      "read_ns": 6209900,
+      "close_ns": 102200,
+      "total_ns": 6649600
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 2,
+      "open_ns": 548900,
+      "read_ns": 1851400,
+      "close_ns": 92400,
+      "total_ns": 2492700
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 2,
+      "open_ns": 414200,
+      "read_ns": 311700,
+      "close_ns": 21500,
+      "total_ns": 747400
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 2,
+      "open_ns": 239000,
+      "read_ns": 263200,
+      "close_ns": 18300,
+      "total_ns": 520500
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 2,
+      "open_ns": 244200,
+      "read_ns": 5399200,
+      "close_ns": 148700,
+      "total_ns": 5792100
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 3,
+      "open_ns": 505600,
+      "read_ns": 1886500,
+      "close_ns": 94700,
+      "total_ns": 2486800
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 3,
+      "open_ns": 404000,
+      "read_ns": 303100,
+      "close_ns": 27000,
+      "total_ns": 734100
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 3,
+      "open_ns": 281900,
+      "read_ns": 5269700,
+      "close_ns": 144800,
+      "total_ns": 5696400
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 3,
+      "open_ns": 530900,
+      "read_ns": 397300,
+      "close_ns": 63200,
+      "total_ns": 991400
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 4,
+      "open_ns": 378000,
+      "read_ns": 5757300,
+      "close_ns": 143400,
+      "total_ns": 6278700
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 4,
+      "open_ns": 541300,
+      "read_ns": 364500,
+      "close_ns": 29700,
+      "total_ns": 935500
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 4,
+      "open_ns": 312900,
+      "read_ns": 317700,
+      "close_ns": 30200,
+      "total_ns": 660800
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 4,
+      "open_ns": 270500,
+      "read_ns": 2036100,
+      "close_ns": 108500,
+      "total_ns": 2415100
+    }
+  ],
+  "native_sha256": "69781ff8ebbcdcab364642b2b3aaff0e3ca76aad51fa7693281dc297eaa9d4b1",
+  "all_results_verified": true,
+  "arrow_capacity": 64,
+  "patched_arrow_function_sha256": null,
+  "catalog_policy": "caller_resident",
+  "limits": [
+    "OS cache uncontrolled; a fresh handle is not a cold disk",
+    "Libraries imported before timers; Python process remains resident",
+    "Cycle close includes adapter.close and destruction; validation and output destruction excluded"
+  ],
+  "memory": {
+    "python_pid": 53068,
+    "peak_rss_bytes": 61120512,
+    "peak_private_bytes": 46460928,
+    "private_definition": "Windows private commit; Linux unique resident set (USS)",
+    "sampling_interval_ms": 5,
+    "samples": 468,
+    "peak_process_thread_count": 4,
+    "numeric_library_thread_limits": 1,
+    "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+  }
+}

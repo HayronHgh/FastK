@@ -1,0 +1,5 @@
+error: no matching package named `bytemuck` found
+location searched: crates.io index
+required by package `fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)`
+note: offline mode (via `--offline`) can sometimes cause surprising resolution failures
+help: if this error is too confusing you may wish to retry without `--offline`

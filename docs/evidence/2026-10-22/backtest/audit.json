@@ -1,0 +1,11 @@
+{
+  "formal_processes": 180,
+  "preflight_processes": 5,
+  "verified_preflight_batches": 130,
+  "timed_rows": 189734400,
+  "identical_all_outcomes": true,
+  "source_hashes_verified": true,
+  "existing_65_files_unchanged": true,
+  "native_svg_charts": 6,
+  "all_phase_accounting_checked": true
+}

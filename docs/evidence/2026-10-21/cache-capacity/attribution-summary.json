@@ -1,0 +1,1621 @@
+{
+  "processes": 36,
+  "verified_timed_outputs": 38790,
+  "results": [
+    {
+      "capacity": 64,
+      "mode": "cycle-bulk",
+      "case": "bulk_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4966620,
+          "open_ns_per_query": 506320.0,
+          "io_ns_per_query": 4311420.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 5500.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4576300,
+          "open_ns_per_query": 523640.0,
+          "io_ns_per_query": 3905320.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6400.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4601520,
+          "open_ns_per_query": 540380.0,
+          "io_ns_per_query": 3905640.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 5800.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 4601520,
+        "open_ns_per_query": 523640.0,
+        "io_ns_per_query": 3905640.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 5800.0,
+        "io_calls": 200,
+        "io_bytes": 105187680,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "cycle-bulk",
+      "case": "bulk_scalar",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1882420,
+          "open_ns_per_query": 556760.0,
+          "io_ns_per_query": 1124380.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6560.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1625040,
+          "open_ns_per_query": 525440.0,
+          "io_ns_per_query": 950500.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6160.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1675680,
+          "open_ns_per_query": 521120.0,
+          "io_ns_per_query": 998020.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6520.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 1675680,
+        "open_ns_per_query": 525440.0,
+        "io_ns_per_query": 998020.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 6520.0,
+        "io_calls": 200,
+        "io_bytes": 35249280,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "cycle-bulk",
+      "case": "medium_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 305800,
+          "open_ns_per_query": 59940.0,
+          "io_ns_per_query": 81520.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1840.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 269120,
+          "open_ns_per_query": 50960.0,
+          "io_ns_per_query": 74020.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1360.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 281600,
+          "open_ns_per_query": 56880.0,
+          "io_ns_per_query": 78960.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1360.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 281600,
+        "open_ns_per_query": 56880.0,
+        "io_ns_per_query": 78960.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1360.0,
+        "io_calls": 175,
+        "io_bytes": 1008200,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "cycle-bulk",
+      "case": "small_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 230160,
+          "open_ns_per_query": 69000.0,
+          "io_ns_per_query": 31880.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1680.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 197460,
+          "open_ns_per_query": 55600.0,
+          "io_ns_per_query": 31460.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1320.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 196880,
+          "open_ns_per_query": 61180.0,
+          "io_ns_per_query": 26900.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1380.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 197460,
+        "open_ns_per_query": 61180.0,
+        "io_ns_per_query": 31460.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1380.0,
+        "io_calls": 20,
+        "io_bytes": 89920,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "cycle-short",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 124832.93706293707,
+          "open_ns_per_query": 45323.77622377622,
+          "io_ns_per_query": 12455.104895104894,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 619.4405594405595,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 135509.16083916085,
+          "open_ns_per_query": 50387.48251748252,
+          "io_ns_per_query": 11911.608391608392,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 644.2657342657343,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 125208.81118881119,
+          "open_ns_per_query": 46456.993006993005,
+          "io_ns_per_query": 11320.62937062937,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 616.4335664335664,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 1430,
+        "hit_rate": 0.5,
+        "query_mean_ns": 125208.81118881119,
+        "open_ns_per_query": 46456.993006993005,
+        "io_ns_per_query": 11911.608391608392,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 619.4405594405595,
+        "io_calls": 5720,
+        "io_bytes": 25380944,
+        "eviction_drops": 0,
+        "header_misses": 1430
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "hot-local",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2357.132867132867,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1283.4965034965035,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 56.71328671328671,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 563500,
+              "open_ns": 274000,
+              "warm_handles": 121
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2467.2027972027972,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1354.6853146853148,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 61.60839160839161,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 1200000,
+              "open_ns": 236400,
+              "warm_handles": 121
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2467.2027972027972,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1356.2237762237762,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 60.41958041958042,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 586600,
+              "open_ns": 206300,
+              "warm_handles": 121
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 0,
+        "hit_rate": 1.0,
+        "query_mean_ns": 2467.2027972027972,
+        "open_ns_per_query": 0.0,
+        "io_ns_per_query": 1354.6853146853148,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 60.41958041958042,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 0,
+        "header_misses": 0
+      }
+    },
+    {
+      "capacity": 64,
+      "mode": "hot-replay",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 374,
+          "misses": 1056,
+          "hit_rate": 0.26153846153846155,
+          "query_mean_ns": 39819.51048951049,
+          "open_ns_per_query": 29462.447552447553,
+          "io_ns_per_query": 3451.188811188811,
+          "eviction_drop_ns_per_query": 3860.769230769231,
+          "cache_management_ns_per_query": 347.13286713286715,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 1056,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 585400,
+              "open_ns": 240600,
+              "warm_handles": 121
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 374,
+          "misses": 1056,
+          "hit_rate": 0.26153846153846155,
+          "query_mean_ns": 43024.96503496503,
+          "open_ns_per_query": 31512.65734265734,
+          "io_ns_per_query": 4000.2097902097903,
+          "eviction_drop_ns_per_query": 4260.7692307692305,
+          "cache_management_ns_per_query": 349.02097902097904,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 1056,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 580000,
+              "open_ns": 290200,
+              "warm_handles": 121
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 374,
+          "misses": 1056,
+          "hit_rate": 0.26153846153846155,
+          "query_mean_ns": 41038.041958041955,
+          "open_ns_per_query": 30256.573426573428,
+          "io_ns_per_query": 3732.6573426573427,
+          "eviction_drop_ns_per_query": 3990.979020979021,
+          "cache_management_ns_per_query": 353.2167832167832,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 1056,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 121,
+              "close_ns": 646100,
+              "open_ns": 203500,
+              "warm_handles": 121
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 374,
+        "misses": 1056,
+        "hit_rate": 0.26153846153846155,
+        "query_mean_ns": 41038.041958041955,
+        "open_ns_per_query": 30256.573426573428,
+        "io_ns_per_query": 3732.6573426573427,
+        "eviction_drop_ns_per_query": 3990.979020979021,
+        "cache_management_ns_per_query": 349.02097902097904,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 1056,
+        "header_misses": 0
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "cycle-bulk",
+      "case": "bulk_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4797180,
+          "open_ns_per_query": 502900.0,
+          "io_ns_per_query": 4153180.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6260.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4823580,
+          "open_ns_per_query": 520280.0,
+          "io_ns_per_query": 4160280.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6420.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4762300,
+          "open_ns_per_query": 526620.0,
+          "io_ns_per_query": 4107760.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 5640.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 4797180,
+        "open_ns_per_query": 520280.0,
+        "io_ns_per_query": 4153180.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 6260.0,
+        "io_calls": 200,
+        "io_bytes": 105187680,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "cycle-bulk",
+      "case": "bulk_scalar",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1789400,
+          "open_ns_per_query": 524540.0,
+          "io_ns_per_query": 1104400.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6700.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1712220,
+          "open_ns_per_query": 511320.0,
+          "io_ns_per_query": 1046300.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6160.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1816400,
+          "open_ns_per_query": 547820.0,
+          "io_ns_per_query": 1101080.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 7400.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 1789400,
+        "open_ns_per_query": 524540.0,
+        "io_ns_per_query": 1101080.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 6700.0,
+        "io_calls": 200,
+        "io_bytes": 35249280,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "cycle-bulk",
+      "case": "medium_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 304080,
+          "open_ns_per_query": 61500.0,
+          "io_ns_per_query": 77380.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1860.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 317240,
+          "open_ns_per_query": 79920.0,
+          "io_ns_per_query": 92020.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1600.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 293780,
+          "open_ns_per_query": 50920.0,
+          "io_ns_per_query": 78240.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1720.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 304080,
+        "open_ns_per_query": 61500.0,
+        "io_ns_per_query": 78240.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1720.0,
+        "io_calls": 175,
+        "io_bytes": 1008200,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "cycle-bulk",
+      "case": "small_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 211560,
+          "open_ns_per_query": 61100.0,
+          "io_ns_per_query": 33500.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1500.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 196580,
+          "open_ns_per_query": 58520.0,
+          "io_ns_per_query": 25760.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1320.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 212740,
+          "open_ns_per_query": 59500.0,
+          "io_ns_per_query": 31940.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1700.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 211560,
+        "open_ns_per_query": 59500.0,
+        "io_ns_per_query": 31940.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1500.0,
+        "io_calls": 20,
+        "io_bytes": 89920,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "cycle-short",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 123814.40559440559,
+          "open_ns_per_query": 44163.77622377622,
+          "io_ns_per_query": 13699.160839160839,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 606.5734265734266,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 132563.4965034965,
+          "open_ns_per_query": 48030.97902097902,
+          "io_ns_per_query": 13827.272727272728,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 728.4615384615385,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 121441.11888111888,
+          "open_ns_per_query": 43904.96503496503,
+          "io_ns_per_query": 12307.482517482518,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 598.3916083916084,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 1430,
+        "hit_rate": 0.5,
+        "query_mean_ns": 123814.40559440559,
+        "open_ns_per_query": 44163.77622377622,
+        "io_ns_per_query": 13699.160839160839,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 606.5734265734266,
+        "io_calls": 5720,
+        "io_bytes": 25380944,
+        "eviction_drops": 0,
+        "header_misses": 1430
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "hot-local",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2352.6573426573427,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1277.7622377622379,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 56.92307692307692,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1413600,
+              "open_ns": 216400,
+              "warm_handles": 185
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2415.5944055944055,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1292.8671328671328,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 61.74825174825175,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1095100,
+              "open_ns": 253400,
+              "warm_handles": 185
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2356.853146853147,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1273.7762237762238,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 57.27272727272727,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1045000,
+              "open_ns": 274500,
+              "warm_handles": 185
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 0,
+        "hit_rate": 1.0,
+        "query_mean_ns": 2356.853146853147,
+        "open_ns_per_query": 0.0,
+        "io_ns_per_query": 1277.7622377622379,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 57.27272727272727,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 0,
+        "header_misses": 0
+      }
+    },
+    {
+      "capacity": 128,
+      "mode": "hot-replay",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 759,
+          "misses": 671,
+          "hit_rate": 0.5307692307692308,
+          "query_mean_ns": 29800.20979020979,
+          "open_ns_per_query": 20709.58041958042,
+          "io_ns_per_query": 3351.818181818182,
+          "eviction_drop_ns_per_query": 2863.146853146853,
+          "cache_management_ns_per_query": 301.53846153846155,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 671,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1174900,
+              "open_ns": 267600,
+              "warm_handles": 185
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 759,
+          "misses": 671,
+          "hit_rate": 0.5307692307692308,
+          "query_mean_ns": 26700,
+          "open_ns_per_query": 18613.496503496503,
+          "io_ns_per_query": 3020.4895104895104,
+          "eviction_drop_ns_per_query": 2456.013986013986,
+          "cache_management_ns_per_query": 276.013986013986,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 671,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1020300,
+              "open_ns": 634700,
+              "warm_handles": 185
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 759,
+          "misses": 671,
+          "hit_rate": 0.5307692307692308,
+          "query_mean_ns": 30991.46853146853,
+          "open_ns_per_query": 20986.433566433567,
+          "io_ns_per_query": 3654.6853146853146,
+          "eviction_drop_ns_per_query": 3257.132867132867,
+          "cache_management_ns_per_query": 312.93706293706293,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 671,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 185,
+              "close_ns": 1252100,
+              "open_ns": 257300,
+              "warm_handles": 185
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 759,
+        "misses": 671,
+        "hit_rate": 0.5307692307692308,
+        "query_mean_ns": 29800.20979020979,
+        "open_ns_per_query": 20709.58041958042,
+        "io_ns_per_query": 3351.818181818182,
+        "eviction_drop_ns_per_query": 2863.146853146853,
+        "cache_management_ns_per_query": 301.53846153846155,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 671,
+        "header_misses": 0
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "cycle-bulk",
+      "case": "bulk_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 5122080,
+          "open_ns_per_query": 557860.0,
+          "io_ns_per_query": 4408220.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 7460.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4531860,
+          "open_ns_per_query": 511580.0,
+          "io_ns_per_query": 3866160.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 5560.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 4640380,
+          "open_ns_per_query": 483240.0,
+          "io_ns_per_query": 4026100.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 5600.0,
+          "io_calls": 200,
+          "io_bytes": 105187680,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 4640380,
+        "open_ns_per_query": 511580.0,
+        "io_ns_per_query": 4026100.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 5600.0,
+        "io_calls": 200,
+        "io_bytes": 105187680,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "cycle-bulk",
+      "case": "bulk_scalar",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1743160,
+          "open_ns_per_query": 513780.0,
+          "io_ns_per_query": 1066320.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6100.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1852500,
+          "open_ns_per_query": 575220.0,
+          "io_ns_per_query": 1103080.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 7400.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 50,
+          "misses": 50,
+          "hit_rate": 0.5,
+          "query_mean_ns": 1620260,
+          "open_ns_per_query": 500400.0,
+          "io_ns_per_query": 946900.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 6660.0,
+          "io_calls": 200,
+          "io_bytes": 35249280,
+          "eviction_drops": 0,
+          "header_misses": 50,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 50,
+        "misses": 50,
+        "hit_rate": 0.5,
+        "query_mean_ns": 1743160,
+        "open_ns_per_query": 513780.0,
+        "io_ns_per_query": 1066320.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 6660.0,
+        "io_calls": 200,
+        "io_bytes": 35249280,
+        "eviction_drops": 0,
+        "header_misses": 50
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "cycle-bulk",
+      "case": "medium_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 280060,
+          "open_ns_per_query": 52320.0,
+          "io_ns_per_query": 82780.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1460.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 293380,
+          "open_ns_per_query": 62400.0,
+          "io_ns_per_query": 79820.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1900.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 308300,
+          "open_ns_per_query": 61940.0,
+          "io_ns_per_query": 78020.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 2060.0,
+          "io_calls": 175,
+          "io_bytes": 1008200,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 293380,
+        "open_ns_per_query": 61940.0,
+        "io_ns_per_query": 79820.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1900.0,
+        "io_calls": 175,
+        "io_bytes": 1008200,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "cycle-bulk",
+      "case": "small_kline",
+      "processes": [
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 207760,
+          "open_ns_per_query": 61500.0,
+          "io_ns_per_query": 27860.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1480.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 215840,
+          "open_ns_per_query": 58360.0,
+          "io_ns_per_query": 37220.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1220.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        },
+        {
+          "queries": 5,
+          "hits": 5,
+          "misses": 5,
+          "hit_rate": 0.5,
+          "query_mean_ns": 216040,
+          "open_ns_per_query": 67140.0,
+          "io_ns_per_query": 31200.0,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 1420.0,
+          "io_calls": 20,
+          "io_bytes": 89920,
+          "eviction_drops": 0,
+          "header_misses": 5,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 5,
+        "hits": 5,
+        "misses": 5,
+        "hit_rate": 0.5,
+        "query_mean_ns": 215840,
+        "open_ns_per_query": 61500.0,
+        "io_ns_per_query": 31200.0,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 1420.0,
+        "io_calls": 20,
+        "io_bytes": 89920,
+        "eviction_drops": 0,
+        "header_misses": 5
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "cycle-short",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 121023.84615384616,
+          "open_ns_per_query": 42760.0,
+          "io_ns_per_query": 13319.86013986014,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 593.916083916084,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 118606.01398601399,
+          "open_ns_per_query": 43427.342657342655,
+          "io_ns_per_query": 10485.944055944055,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 590.06993006993,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 1430,
+          "hit_rate": 0.5,
+          "query_mean_ns": 124849.93006993007,
+          "open_ns_per_query": 44894.895104895106,
+          "io_ns_per_query": 13015.664335664336,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 606.5034965034965,
+          "io_calls": 5720,
+          "io_bytes": 25380944,
+          "eviction_drops": 0,
+          "header_misses": 1430,
+          "lifetime": []
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 1430,
+        "hit_rate": 0.5,
+        "query_mean_ns": 121023.84615384616,
+        "open_ns_per_query": 43427.342657342655,
+        "io_ns_per_query": 13015.664335664336,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 593.916083916084,
+        "io_calls": 5720,
+        "io_bytes": 25380944,
+        "eviction_drops": 0,
+        "header_misses": 1430
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "hot-local",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2380.6993006993007,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1306.6433566433566,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 55.66433566433567,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 2302700,
+              "open_ns": 285400,
+              "warm_handles": 297
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2418.5314685314684,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1300.06993006993,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 58.88111888111888,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 2961500,
+              "open_ns": 291700,
+              "warm_handles": 297
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 2330.769230769231,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 1262.5874125874127,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 57.9020979020979,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 2251000,
+              "open_ns": 329400,
+              "warm_handles": 297
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 0,
+        "hit_rate": 1.0,
+        "query_mean_ns": 2380.6993006993007,
+        "open_ns_per_query": 0.0,
+        "io_ns_per_query": 1300.06993006993,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 57.9020979020979,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 0,
+        "header_misses": 0
+      }
+    },
+    {
+      "capacity": 256,
+      "mode": "hot-replay",
+      "case": "short",
+      "processes": [
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 5497.202797202797,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 3172.6573426573427,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 83.14685314685315,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 2595800,
+              "open_ns": 302100,
+              "warm_handles": 297
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 4469.79020979021,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 2554.2657342657344,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 70.6993006993007,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 1192700,
+              "open_ns": 259400,
+              "warm_handles": 297
+            }
+          ]
+        },
+        {
+          "queries": 1430,
+          "hits": 1430,
+          "misses": 0,
+          "hit_rate": 1.0,
+          "query_mean_ns": 4027.6923076923076,
+          "open_ns_per_query": 0.0,
+          "io_ns_per_query": 2297.5524475524476,
+          "eviction_drop_ns_per_query": 0.0,
+          "cache_management_ns_per_query": 74.47552447552448,
+          "io_calls": 1430,
+          "io_bytes": 17378208,
+          "eviction_drops": 0,
+          "header_misses": 0,
+          "lifetime": [
+            {
+              "after_close_handles": 56,
+              "before_close_handles": 297,
+              "close_ns": 2234600,
+              "open_ns": 291800,
+              "warm_handles": 297
+            }
+          ]
+        }
+      ],
+      "medians": {
+        "queries": 1430,
+        "hits": 1430,
+        "misses": 0,
+        "hit_rate": 1.0,
+        "query_mean_ns": 4469.79020979021,
+        "open_ns_per_query": 0.0,
+        "io_ns_per_query": 2554.2657342657344,
+        "eviction_drop_ns_per_query": 0.0,
+        "cache_management_ns_per_query": 74.47552447552448,
+        "io_calls": 1430,
+        "io_bytes": 17378208,
+        "eviction_drops": 0,
+        "header_misses": 0
+      }
+    }
+  ],
+  "all_results_verified": true
+}

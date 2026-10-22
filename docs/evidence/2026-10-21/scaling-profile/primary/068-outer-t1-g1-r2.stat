@@ -1,0 +1,10 @@
+# started on Wed Oct 21 08:09:16 2026
+
+{"counter-value" : "1065.061064", "unit" : "msec", "event" : "task-clock", "event-runtime" : 1065061064, "pcnt-running" : 100.00, "metric-value" : 0.941351, "metric-unit" : "CPUs utilized"}
+{"counter-value" : "5780110082.000000", "unit" : "", "event" : "cycles", "event-runtime" : 1065061064, "pcnt-running" : 100.00, "metric-value" : 5.427022, "metric-unit" : "GHz"}
+{"counter-value" : "5256607636.000000", "unit" : "", "event" : "instructions", "event-runtime" : 1065061064, "pcnt-running" : 100.00, "metric-value" : 0.909430, "metric-unit" : "insn per cycle"}
+{"counter-value" : "394308747.000000", "unit" : "", "event" : "cache-references", "event-runtime" : 1065061064, "pcnt-running" : 100.00, "metric-value" : 370.221727, "metric-unit" : "M/sec"}
+{"counter-value" : "42798120.000000", "unit" : "", "event" : "cache-misses", "event-runtime" : 1065061064, "pcnt-running" : 100.00, "metric-value" : 10.853962, "metric-unit" : "of all cache refs"}
+{"counter-value" : "6.000000", "unit" : "", "event" : "context-switches", "event-runtime" : 1065030767, "pcnt-running" : 100.00, "metric-value" : 5.633480, "metric-unit" : "/sec"}
+{"counter-value" : "0.000000", "unit" : "", "event" : "cpu-migrations", "event-runtime" : 1065002774, "pcnt-running" : 100.00, "metric-value" : 0.000000, "metric-unit" : "/sec"}
+{"counter-value" : "16.000000", "unit" : "", "event" : "page-faults", "event-runtime" : 1064994910, "pcnt-running" : 100.00, "metric-value" : 15.022613, "metric-unit" : "/sec"}

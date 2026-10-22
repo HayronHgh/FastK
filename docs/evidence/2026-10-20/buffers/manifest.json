@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-20",
+  "kind": "readinto-and-single-vec",
+  "compact_json": false,
+  "public_contract": 1,
+  "session_protocol": 1,
+  "timed_canonical_responses": 2940,
+  "bulk_warmups_verified": 80,
+  "short_queries_per_route": 1430,
+  "routes": 2,
+  "fresh_jobs": 90,
+  "all_children_reaped": true,
+  "rust_tests_each_os": {
+    "root": 134,
+    "framing": 2
+  },
+  "python_each_os": {
+    "pass": 31,
+    "skip": 1
+  },
+  "skip_reason": "Full release archive manifest check; new wheels/bridges use independent development manifest/hashes",
+  "offline_wheel_smoke_each_os": "PASS",
+  "ruff_files": 29,
+  "byte_pairs": {
+    "session": 6,
+    "one_shot": 3
+  },
+  "performance_platform": "Windows11/Python3.12.14/Ryzen9 9900X",
+  "sampling_interval_ms": 5,
+  "memory_scope": "Actual child-reported Python PID + Rust + venv launcher, external sampler. Concurrent RSS/commit samples; separate OS per-process peaks not additive. Whole RSS remains similar.",
+  "limits": "OS cache/scheduling uncontrolled;10bulk observations perroute/shape, no bulk tails; Linux performance not measured"
+}

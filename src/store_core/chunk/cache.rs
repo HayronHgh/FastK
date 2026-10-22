@@ -2,9 +2,11 @@ use std::collections::{HashMap, VecDeque};
 use std::fs::File;
 use std::io::{Seek, SeekFrom};
 use std::path::Path;
-use std::sync::{Arc, Mutex};
+use std::sync::atomic::{AtomicBool, Ordering};
+use std::sync::{Arc, Mutex, RwLock};
 use std::time::Instant;
 
+use crate::chunk::file::ChunkFile;
 use crate::chunk::header::ChunkHeader;
 use crate::chunk::sparse_index::{self, SparseIndexEntry};
 use crate::error::Result;
@@ -80,14 +82,30 @@ impl ChunkHeaderCache {
 #[derive(Debug)]
 pub struct ChunkFileCache {
     capacity: usize,
-    inner: Mutex<FileCacheState>,
+    inner: RwLock<FileCacheState>,
     metrics: Arc<StoreMetrics>,
 }
 
 #[derive(Debug, Default)]
 struct FileCacheState {
     order: VecDeque<ChunkCacheKey>,
-    files: HashMap<ChunkCacheKey, File>,
+    files: HashMap<ChunkCacheKey, CachedFile>,
+}
+
+#[derive(Debug)]
+struct CachedFile {
+    file: Arc<File>,
+    referenced: AtomicBool,
+}
+
+impl CachedFile {
+    fn reader(&self) -> ChunkFile {
+        // A hot entry needs neither queue mutation nor repeated cache-line writes.
+        if !self.referenced.load(Ordering::Relaxed) {
+            self.referenced.store(true, Ordering::Relaxed);
+        }
+        ChunkFile::new(self.file.clone())
+    }
 }
 
 impl Default for ChunkFileCache {
@@ -100,49 +118,73 @@ impl ChunkFileCache {
     pub fn new(capacity: usize, metrics: Arc<StoreMetrics>) -> Self {
         Self {
             capacity: capacity.max(1),
-            inner: Mutex::new(FileCacheState::default()),
+            inner: RwLock::new(FileCacheState::default()),
             metrics,
         }
     }
 
-    pub fn open(&self, key: ChunkCacheKey, path: &Path) -> Result<File> {
-        let mut state = self.inner.lock().expect("file cache poisoned");
-
-        if let Some(file) = state.files.get(&key) {
-            let clone = file.try_clone()?;
-            touch(&mut state.order, &key);
-            self.metrics.record_chunk_file_hit();
-            return Ok(clone);
-        }
-        self.metrics.record_chunk_file_miss();
-
-        let open_started = Instant::now();
-        let file = File::open(path)?;
-        self.metrics
-            .record_chunk_file_open_ns(open_started.elapsed().as_nanos() as u64);
-        let clone = file.try_clone()?;
-        state.files.insert(key.clone(), file);
-        touch(&mut state.order, &key);
-
-        while state.files.len() > self.capacity {
-            if let Some(evicted) = state.order.pop_front() {
-                state.files.remove(&evicted);
+    pub fn open(&self, key: ChunkCacheKey, path: &Path) -> Result<ChunkFile> {
+        {
+            let state = self.inner.read().expect("file cache poisoned");
+            if let Some(file) = state.files.get(&key) {
+                self.metrics.record_chunk_file_hit();
+                return Ok(file.reader());
             }
         }
-
-        Ok(clone)
+        self.metrics.record_chunk_file_miss();
+        let started = Instant::now();
+        let opened = Arc::new(File::open(path)?);
+        self.metrics
+            .record_chunk_file_open_ns(started.elapsed().as_nanos() as u64);
+        let mut state = self.inner.write().expect("file cache poisoned");
+        if let Some(file) = state.files.get(&key) {
+            return Ok(file.reader());
+        }
+        // Second chance eviction keeps hits read-only. Only a cache miss changes
+        // the bounded queue; an in-flight reader retains its own Arc<File>.
+        let evicted = if state.files.len() == self.capacity {
+            loop {
+                let candidate = state.order.pop_front().expect("nonempty file cache");
+                if state.files[&candidate]
+                    .referenced
+                    .swap(false, Ordering::Relaxed)
+                {
+                    state.order.push_back(candidate);
+                } else {
+                    break state.files.remove(&candidate);
+                }
+            }
+        } else {
+            None
+        };
+        let reader = ChunkFile::new(opened.clone());
+        state.order.push_back(key.clone());
+        state.files.insert(
+            key,
+            CachedFile {
+                file: opened,
+                referenced: AtomicBool::new(false),
+            },
+        );
+        drop(state);
+        // Closing a file may enter the kernel; do it after releasing the cache lock.
+        drop(evicted);
+        Ok(reader)
     }
 
     pub fn invalidate(&self, key: &ChunkCacheKey) {
-        let mut state = self.inner.lock().expect("file cache poisoned");
-        state.files.remove(key);
+        let mut state = self.inner.write().expect("file cache poisoned");
+        let removed = state.files.remove(key);
         state.order.retain(|candidate| candidate != key);
+        drop(state);
+        drop(removed);
     }
 
     pub fn clear(&self) {
-        let mut state = self.inner.lock().expect("file cache poisoned");
-        state.files.clear();
-        state.order.clear();
+        let mut state = self.inner.write().expect("file cache poisoned");
+        let removed = std::mem::take(&mut *state);
+        drop(state);
+        drop(removed);
     }
 }
 
@@ -200,7 +242,12 @@ impl ChunkRuntime {
         Ok(layout)
     }
 
-    pub fn open_file(&self, chunk: &ChunkMeta, series_id: u64, series_dir: &Path) -> Result<File> {
+    pub fn open_file(
+        &self,
+        chunk: &ChunkMeta,
+        series_id: u64,
+        series_dir: &Path,
+    ) -> Result<ChunkFile> {
         let key = ChunkCacheKey::from_meta(chunk, series_id);
         let path = series_dir.join(&chunk.relative_path);
         self.files.open(key, &path)
@@ -232,9 +279,75 @@ impl Default for ChunkRuntime {
     }
 }
 
-fn touch(order: &mut VecDeque<ChunkCacheKey>, key: &ChunkCacheKey) {
-    if let Some(position) = order.iter().position(|candidate| candidate == key) {
-        order.remove(position);
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::io::Read;
+
+    fn key(id: u64) -> ChunkCacheKey {
+        ChunkCacheKey {
+            chunk_id: id,
+            generation: 0,
+            series_id: 0,
+            relative_path: id.to_string(),
+        }
     }
-    order.push_back(key.clone());
+
+    #[test]
+    fn eviction_and_invalidation_keep_in_flight_files_alive_and_retry_failed_opens() {
+        let root = tempfile::tempdir().unwrap();
+        for id in 0..4 {
+            std::fs::write(root.path().join(id.to_string()), [id as u8]).unwrap();
+        }
+        let cache = ChunkFileCache::new(2, StoreMetrics::shared());
+        let mut pinned = cache.open(key(0), &root.path().join("0")).unwrap();
+        drop(cache.open(key(1), &root.path().join("1")).unwrap());
+        // Give the first entry a second chance; the untouched entry is evicted.
+        drop(cache.open(key(0), &root.path().join("0")).unwrap());
+        drop(cache.open(key(2), &root.path().join("2")).unwrap());
+        {
+            let state = cache.inner.read().unwrap();
+            assert_eq!(state.files.len(), 2);
+            assert!(state.files.contains_key(&key(0)));
+            assert!(!state.files.contains_key(&key(1)));
+        }
+        cache.invalidate(&key(0));
+        cache.clear();
+        let mut byte = [255];
+        pinned.read_exact(&mut byte).unwrap();
+        assert_eq!(byte, [0]);
+        assert!(cache.open(key(3), &root.path().join("missing")).is_err());
+        drop(cache.open(key(3), &root.path().join("3")).unwrap());
+        let state = cache.inner.read().unwrap();
+        assert_eq!(state.files.len(), 1);
+        assert_eq!(state.order.len(), 1);
+    }
+
+    #[test]
+    fn concurrent_misses_hits_and_eviction_stay_bounded() {
+        let root = tempfile::tempdir().unwrap();
+        for id in 0..8 {
+            std::fs::write(root.path().join(id.to_string()), [id as u8; 32]).unwrap();
+        }
+        let cache = ChunkFileCache::new(2, StoreMetrics::shared());
+        let barrier = std::sync::Barrier::new(8);
+        std::thread::scope(|scope| {
+            for id in 0..8 {
+                let (cache, barrier, root) = (&cache, &barrier, root.path());
+                scope.spawn(move || {
+                    barrier.wait();
+                    for turn in 0..300 {
+                        let id = (id + turn) % 8;
+                        let mut reader = cache.open(key(id), &root.join(id.to_string())).unwrap();
+                        let mut bytes = [0; 32];
+                        reader.read_exact(&mut bytes).unwrap();
+                        assert_eq!(bytes, [id as u8; 32]);
+                        let state = cache.inner.read().unwrap();
+                        assert!(state.files.len() <= 2);
+                        assert_eq!(state.files.len(), state.order.len());
+                    }
+                });
+            }
+        });
+    }
 }

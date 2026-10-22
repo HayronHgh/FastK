@@ -1,0 +1,384 @@
+{
+  "all_results_verified": true,
+  "binary_sha256": "8d43307d31a755d6b9dc59f6090cace615f52ec894cbab2028bb9e7a7f12a1c3",
+  "results": [
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 1,
+      "prepared": false,
+      "file": "000-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 1,
+      "prepared": false,
+      "file": "001-native.json"
+    },
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 8,
+      "prepared": true,
+      "file": "002-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 4,
+      "prepared": false,
+      "file": "003-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 8,
+      "prepared": true,
+      "file": "004-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 8,
+      "prepared": false,
+      "file": "005-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 8,
+      "prepared": true,
+      "file": "006-probe.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 1,
+      "prepared": false,
+      "file": "007-probe.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 1,
+      "prepared": true,
+      "file": "008-native.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 8,
+      "prepared": false,
+      "file": "009-probe.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 4,
+      "prepared": true,
+      "file": "010-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 4,
+      "prepared": false,
+      "file": "011-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 8,
+      "prepared": true,
+      "file": "012-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 4,
+      "prepared": true,
+      "file": "013-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 8,
+      "prepared": true,
+      "file": "014-native.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 8,
+      "prepared": true,
+      "file": "015-probe.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 8,
+      "prepared": true,
+      "file": "016-native.json"
+    },
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 1,
+      "prepared": true,
+      "file": "017-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 4,
+      "prepared": false,
+      "file": "018-probe.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 1,
+      "prepared": false,
+      "file": "019-native.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 4,
+      "prepared": true,
+      "file": "020-probe.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 1,
+      "prepared": false,
+      "file": "021-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 1,
+      "prepared": true,
+      "file": "022-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 1,
+      "prepared": false,
+      "file": "023-probe.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 8,
+      "prepared": false,
+      "file": "024-native.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 4,
+      "prepared": true,
+      "file": "025-native.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 4,
+      "prepared": false,
+      "file": "026-native.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 1,
+      "prepared": true,
+      "file": "027-native.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 4,
+      "prepared": true,
+      "file": "028-native.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 8,
+      "prepared": true,
+      "file": "029-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 4,
+      "prepared": true,
+      "file": "030-native.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 4,
+      "prepared": false,
+      "file": "031-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "probe",
+      "workers": 1,
+      "prepared": true,
+      "file": "032-probe.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 4,
+      "prepared": false,
+      "file": "033-native.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 4,
+      "prepared": true,
+      "file": "034-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 4,
+      "prepared": true,
+      "file": "035-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 8,
+      "prepared": true,
+      "file": "036-native.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 1,
+      "prepared": true,
+      "file": "037-native.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 1,
+      "prepared": true,
+      "file": "038-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 4,
+      "prepared": false,
+      "file": "039-native.json"
+    },
+    {
+      "round": 2,
+      "route": "native",
+      "workers": 8,
+      "prepared": false,
+      "file": "040-native.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 4,
+      "prepared": false,
+      "file": "041-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 8,
+      "prepared": false,
+      "file": "042-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 8,
+      "prepared": false,
+      "file": "043-rust.json"
+    },
+    {
+      "round": 0,
+      "route": "native",
+      "workers": 8,
+      "prepared": false,
+      "file": "044-native.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 1,
+      "prepared": true,
+      "file": "045-probe.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 1,
+      "prepared": false,
+      "file": "046-probe.json"
+    },
+    {
+      "round": 1,
+      "route": "native",
+      "workers": 1,
+      "prepared": false,
+      "file": "047-native.json"
+    },
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 4,
+      "prepared": true,
+      "file": "048-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "probe",
+      "workers": 8,
+      "prepared": false,
+      "file": "049-probe.json"
+    },
+    {
+      "round": 0,
+      "route": "rust",
+      "workers": 1,
+      "prepared": false,
+      "file": "050-rust.json"
+    },
+    {
+      "round": 2,
+      "route": "rust",
+      "workers": 1,
+      "prepared": true,
+      "file": "051-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "rust",
+      "workers": 4,
+      "prepared": false,
+      "file": "052-rust.json"
+    },
+    {
+      "round": 1,
+      "route": "probe",
+      "workers": 8,
+      "prepared": false,
+      "file": "053-probe.json"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+[package]
+name = "fastk-core-review"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+fastk = { path = "../.." }
+serde_json = "1"
+
+[profile.release]
+panic = "unwind"

@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20",
+  "all_results_verified": true,
+  "production_changed": false,
+  "production_bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+  "probe_sha256": "4ee13303e71c34dc3cac5f2f67f413d5ced8ae93b2230ba02a722da12f216679",
+  "full_replay": {
+    "paired_ranges_per_binary": 1430,
+    "rounds": 5,
+    "controls_per_group": 100,
+    "byte_identical_pairs": 1430,
+    "warm_engine_reads": 7150,
+    "timeline_closes_per_sample": true
+  },
+  "size_study": {
+    "short_ranges_per_binary": 200,
+    "medium_rows": 4077,
+    "bulk_rows": 437115,
+    "samples_per_binary_per_large_size": 5,
+    "bulk_response_bytes": 79555130
+  },
+  "input_manifest_sha256": "7222d5c7f09c8d7e515507aaccc1fef69458bc4d4feb86b3c75feb1e7f4fa9d0",
+  "prior_summary_sha256": "af4a62aa3ecb1513085ef2b3008167f6b51901a064f7da6204c0b64ab87d5bae",
+  "prior_query_sha256": {
+    "queries-0.json": "8726ab96deff606bac088c4071cdebf4ff738f524e6e9e2d81d1511355d0447f",
+    "queries-1.json": "93c4fcfac0bbe18c5980487607a4adc857a366d0845c3ea7b71277ce41d9e61c",
+    "queries-2.json": "fe26c47c54b7e9715082696fe0b8ff13314478e767f4b1054a3ef4dcea5b0453",
+    "queries-3.json": "717a903e802d8b8506429a3b4ccdc4e6462bc19d56bc2fed382f3fa466a04fbc",
+    "queries-4.json": "c7d2674555813e7f2ca2e739682bcc1abe98b4b777e9c4284b762b112762307b"
+  },
+  "limitations": [
+    "Windows host only; OS cache and scheduling uncontrolled",
+    "probe perturbation reported against paired original binary",
+    "large-size samples descriptive; no p95/p99 claim",
+    "no large payloads or stores included; hashes and source allow reconstruction",
+    "warm Rust handle is a lower bound, not Python or concurrency parity"
+  ]
+}

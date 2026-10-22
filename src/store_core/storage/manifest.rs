@@ -72,8 +72,22 @@ pub fn load_series_meta_shared_cached(series_dir: &Path) -> Option<ManifestLoadR
 
 /// Loads `series.meta` into a shared process cache, auto-migrating legacy JSON manifests.
 pub fn load_series_meta_shared(series_dir: &Path) -> Result<ManifestLoadReport> {
+    load_series_meta_shared_mode(series_dir, false)
+}
+
+pub(crate) fn invalidate_root(root: &Path) {
+    manifest_cache()
+        .write()
+        .expect("manifest cache poisoned")
+        .retain(|key, _| !Path::new(key).starts_with(root));
+}
+
+pub(crate) fn load_series_meta_shared_mode(
+    series_dir: &Path,
+    read_only: bool,
+) -> Result<ManifestLoadReport> {
     let meta_path = path::series_meta_path(series_dir);
-    if !meta_path.exists() {
+    if !read_only && !meta_path.exists() {
         return Err(FastKError::NotFound(format!(
             "series meta not found: {}",
             meta_path.display()
@@ -81,30 +95,44 @@ pub fn load_series_meta_shared(series_dir: &Path) -> Result<ManifestLoadReport> 
     }
 
     let cache_key = meta_path.to_string_lossy().into_owned();
-    let fingerprint = manifest_fingerprint(&meta_path)?;
-    if let Some(cached) = manifest_cache()
-        .read()
-        .expect("manifest cache poisoned")
-        .get(&cache_key)
-    {
-        if cached.fingerprint == fingerprint {
-            return Ok(ManifestLoadReport {
-                meta: cached.meta.clone(),
-                stats: ManifestLoadStats {
-                    shared_cache_hit: true,
-                    ..ManifestLoadStats::default()
-                },
-            });
+    // Read-only stores keep decoded metadata in their own cache until close.
+    if !read_only {
+        let fingerprint = manifest_fingerprint(&meta_path)?;
+        if let Some(cached) = manifest_cache()
+            .read()
+            .expect("manifest cache poisoned")
+            .get(&cache_key)
+        {
+            if cached.fingerprint == fingerprint {
+                return Ok(ManifestLoadReport {
+                    meta: cached.meta.clone(),
+                    stats: ManifestLoadStats {
+                        shared_cache_hit: true,
+                        ..ManifestLoadStats::default()
+                    },
+                });
+            }
         }
     }
 
     let read_started = Instant::now();
-    let bytes = std::fs::read(&meta_path)?;
+    let bytes = std::fs::read(&meta_path).map_err(|error| {
+        if error.kind() == std::io::ErrorKind::NotFound {
+            FastKError::NotFound(format!("series meta not found: {}", meta_path.display()))
+        } else {
+            error.into()
+        }
+    })?;
     let file_read_ns = read_started.elapsed().as_nanos() as u64;
     let (meta, stats) = if bytes.starts_with(&MANIFEST_MAGIC) {
         let (meta, stats) = decode_manifest_with_stats(&bytes)?;
         (meta, stats)
     } else {
+        if read_only {
+            return Err(FastKError::InvalidInput(
+                "legacy JSON manifest requires explicit writable migration".into(),
+            ));
+        }
         let decode_started = Instant::now();
         let legacy: LegacySeriesMeta = serde_json::from_slice(&bytes)?;
         let migrated = migrate_legacy_json(legacy, series_dir)?;
@@ -122,16 +150,18 @@ pub fn load_series_meta_shared(series_dir: &Path) -> Result<ManifestLoadReport> 
 
     meta.validate()?;
     let meta = Arc::new(meta);
-    manifest_cache()
-        .write()
-        .expect("manifest cache poisoned")
-        .insert(
-            cache_key,
-            CachedManifest {
-                fingerprint: manifest_fingerprint(&meta_path)?,
-                meta: meta.clone(),
-            },
-        );
+    if !read_only {
+        manifest_cache()
+            .write()
+            .expect("manifest cache poisoned")
+            .insert(
+                cache_key,
+                CachedManifest {
+                    fingerprint: manifest_fingerprint(&meta_path)?,
+                    meta: meta.clone(),
+                },
+            );
+    }
     Ok(ManifestLoadReport {
         meta,
         stats: ManifestLoadStats {
@@ -698,6 +728,24 @@ mod tests {
         assert_eq!(*second.meta, meta);
         assert_eq!(second.stats.file_read_ns, 0);
         assert_eq!(second.stats.decode_ns, 0);
+    }
+
+    #[test]
+    fn read_only_load_bypasses_and_does_not_publish_shared_metadata() {
+        let temp_dir = TempDir::new().unwrap();
+        let series_dir = path::kline_series_dir(temp_dir.path(), "BTCUSDT", "1m");
+        std::fs::create_dir_all(path::chunks_dir(&series_dir)).unwrap();
+        let original = sample_meta();
+        crate::storage::manifest::save_series_meta(&series_dir, &original).unwrap();
+        let mut updated = original.clone();
+        updated.manifest_seq += 1;
+        let meta_path = path::series_meta_path(&series_dir);
+        std::fs::write(&meta_path, super::encode_manifest(&updated).unwrap()).unwrap();
+        let loaded = super::load_series_meta_shared_mode(&series_dir, true).unwrap();
+        assert_eq!(*loaded.meta, updated);
+        assert!(!loaded.stats.shared_cache_hit);
+        let cached = super::load_series_meta_shared_cached(&series_dir).unwrap();
+        assert_eq!(*cached.meta, original);
     }
 
     fn sample_meta() -> SeriesMeta {

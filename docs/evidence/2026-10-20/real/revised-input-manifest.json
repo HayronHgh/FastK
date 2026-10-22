@@ -1,0 +1,1337 @@
+{
+  "format_version": 1,
+  "profile": "real",
+  "seed": 20261020,
+  "scale": 100000000,
+  "timeframe_ms": 60000,
+  "gap_policy": "preserve; never forward-fill",
+  "synthetic_gap_every": null,
+  "normalization": "strict ordered UTC epoch milliseconds; Decimal OHLCV to signed i64 at scale 1e8",
+  "feature_policy": "integer floor mean over preceding available rows, including partial initial windows",
+  "sources": [
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-01.zip",
+      "sha256": "40b78258091a468f8756843f207f5913eafc1d6e756c40a78711320d93fa5e75",
+      "archive": "BTCUSDT-1m-2024-01.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-02.zip",
+      "sha256": "431132e0db8b9fe6e5c93c8e9ba3ae37dbcfa0edcdd57618b1b78ac18d14be79",
+      "archive": "BTCUSDT-1m-2024-02.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-03.zip",
+      "sha256": "a9af86295eae839f1d072643c67eed7fcc47bb1d82c12ef312d041eec9511e7b",
+      "archive": "BTCUSDT-1m-2024-03.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-04.zip",
+      "sha256": "753040cbfaa72bf9b1fdc6253a3b521a9a174a664dfd0929a556be327b016bc6",
+      "archive": "BTCUSDT-1m-2024-04.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-05.zip",
+      "sha256": "0f709143f66a09acc430d24a5f27f9accd52689c23ce10f2c0b6ea26997bfa8a",
+      "archive": "BTCUSDT-1m-2024-05.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-06.zip",
+      "sha256": "90f4fc3f55918787848c71f4cd0f2f1a5851bbffaf6392e76e9ab555b7479d2b",
+      "archive": "BTCUSDT-1m-2024-06.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-07.zip",
+      "sha256": "9cfd749fd2027a0c6f261bed607b49dd1256369fb41b784934544a3676f8162e",
+      "archive": "BTCUSDT-1m-2024-07.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-08.zip",
+      "sha256": "6a1cac2a5482132dc5a030534aa028e2becc560877f2b93b7add90194f576c42",
+      "archive": "BTCUSDT-1m-2024-08.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-09.zip",
+      "sha256": "1e30f6091b05eeb7b0449735d749354b81ab429ab1449bae82a21e316db8eac3",
+      "archive": "BTCUSDT-1m-2024-09.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-10.zip",
+      "sha256": "13f7f9f9bed652fd152422246cfbcaefa6223692c5c37fb3ca4e72f45501e607",
+      "archive": "BTCUSDT-1m-2024-10.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-11.zip",
+      "sha256": "c30a63bd0e8a77f2d18a2a019272b907f29a84fd5378796cf9333b041edcb12b",
+      "archive": "BTCUSDT-1m-2024-11.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2024-12.zip",
+      "sha256": "58fef0b7c7abce7a0201efd04ed3732f236f607f3fcecf228fb8384cad1ae2c1",
+      "archive": "BTCUSDT-1m-2024-12.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-01.zip",
+      "sha256": "2fb2c9b77365183f77e185de3578de2f3be5fefe433d7c0564f033f968d5e23c",
+      "archive": "ETHUSDT-1m-2024-01.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-02.zip",
+      "sha256": "ede3c9d4d47a5e9fdbc2e37b7086d97d4bcceec54316dd345fe0a1f8e648c443",
+      "archive": "ETHUSDT-1m-2024-02.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-03.zip",
+      "sha256": "b63d885ef49b4e0f2a654ab02c5dcb502fb8abeb7300f3ebff4a33aadd3d4a82",
+      "archive": "ETHUSDT-1m-2024-03.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-04.zip",
+      "sha256": "9c6ef16ea4e0593ac4547d2f6c64c272d8f39806871473c4877885af47a67b88",
+      "archive": "ETHUSDT-1m-2024-04.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-05.zip",
+      "sha256": "4e09e26b7a2b352d24c25f6fc6cdd531d167d460a48226e4a8080413e0bb5e66",
+      "archive": "ETHUSDT-1m-2024-05.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-06.zip",
+      "sha256": "27040862f050687c6da296108dfcfb29e0500e0f9c8dd73669146e9e68a128c0",
+      "archive": "ETHUSDT-1m-2024-06.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-07.zip",
+      "sha256": "bda530d17235096c0e619edff1bef56154923b980d7a73406ea66114966ba0d2",
+      "archive": "ETHUSDT-1m-2024-07.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-08.zip",
+      "sha256": "de64ff8c0e9bd0ff9ca7fc4015948fac94087c7293915a2a7f7bb47780e98e60",
+      "archive": "ETHUSDT-1m-2024-08.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-09.zip",
+      "sha256": "cb2ef3750b2608a871dcc6db479382e33b7d341f89ea17ed58b9fd44db88a793",
+      "archive": "ETHUSDT-1m-2024-09.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-10.zip",
+      "sha256": "99b11df1d79a2408d639cf512f1cfc6a4df4687de9146bd6271f9489ba15a8ba",
+      "archive": "ETHUSDT-1m-2024-10.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-11.zip",
+      "sha256": "2c3e15ae6458707b07d2d8b51ad6634756153bc65f9bbb44d5ddb7ecdbccd0c6",
+      "archive": "ETHUSDT-1m-2024-11.zip"
+    },
+    {
+      "url": "https://data.binance.vision/data/spot/monthly/klines/ETHUSDT/1m/ETHUSDT-1m-2024-12.zip",
+      "sha256": "76e33a1db36f036c1e5866de2ebc54ab825522c801e1f9c487a85be781af4716",
+      "archive": "ETHUSDT-1m-2024-12.zip"
+    }
+  ],
+  "parts": [
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-01",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-01/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "341c62acd70d243d0b9cfed6f7d3afe5e0a449254e16f6123c233831ad978b43"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-01",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-01/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "a939930348e9083becd4c7684a4ca42f5cfbf6475feb664a3408fed16e5639e8"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-01",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-01/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "424023863dad0bb4b85f37c2791e911113a6ac160468539b1f7f4eebd76d396f"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-01",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-01/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "0c8770ea80b39598fe92882d048bd7537dcd589549b7723cf207d6867c79e29b"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-01",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-01/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "62eafbccf5a7a009fb59ac2b25639f0e71497586cee31e1fe5c8390284d601bd"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-02",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-02/bars.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "576ec1b61b6d7bac07cb7cf5d78d3560f0cde08c889f6c615acec29d10498616"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-02",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-02/ma5.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "d6c91d6f9a3ac16c4ba73d0421ed3dfb9e3ff1354dc332a34d8c101323c56799"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-02",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-02/ma20.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "ca645c1d5c9498d8b9f28bf67642b9e660c03220e91751a35612ac5222a9b515"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-02",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-02/ma60.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "7d05423f7ae0ec6fabf88de164b653075fe0028d0a6a746023b3d4b8718e21b9"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-02",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-02/volume20.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "4ef98a310a0822e3fb1e0327295a95110f4ec38d4aa911b47e85fc1e33f02e96"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-03",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-03/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "b7924cad3e00c5a314d24db5aedd1532fa42d185e614cb6405fd9d47240a7bb6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-03",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-03/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "18dbb81d428bde2c91a8c4c174da95bcdae0b092cfbdb48dfec0f22d7705aada"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-03",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-03/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "0e2a04423225ba95a81ecab2e0dd94c2d564849bed82561d6ced1a6dd2c98722"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-03",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-03/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "78b34407926b536da21393cfb47743a51c7f7dace1bdc7795064d86555d165bc"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-03",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-03/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "e3eaefc1289e27dba427cd1fc32c39e1f8eb82d5acc5676f04e77815cbaf660e"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-04",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-04/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "f8394406fb2f286622101786890089d961bc88981d261fc860076ac8c67bb3c6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-04",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-04/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "93fe6b40a1649b4dd0c52d668c3ab962db8835fdc9ab2284c0b8017f0d8d79c6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-04",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-04/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "f5aef4c1d9578d449958401d36521333d68e914c07bd22b72a15a84635c0be59"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-04",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-04/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "13e08d04a0a548187fba5cb8da0850dcaacac15ce3e8c2946dea0b6bb2e50427"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-04",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-04/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "85bad055be7cb3a59bf3dd05f2a1bd66e8372dd30154167da8932b6e49ac29a6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-05",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-05/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "ae664b1bbb824e52f90dcf17d01c0a2677fd3e0f027bd230d2bb28f10fca9914"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-05",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-05/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "cd3a2e392f975af35084a214a228c634701028cb97770f7b788d33d1055cccc6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-05",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-05/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "7837eabd71a9a99e2f669dd30581f0be494d63366c6965d4556161e13449b2c7"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-05",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-05/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "e76fbee0c905c019a729bd1566e29f0bc00415de5ca5b26919444fbf72aa246f"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-05",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-05/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "ef91caf42d957ec0df1d7f001e22eb56f63ea565fcb0959ce943152a60c900ea"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-06",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-06/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "39f98cc13e3c81db56e3cad33e88bf6933a6bdbb62fc3e7b54b53ddc3c0028ca"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-06",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-06/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "24dd331fe890fe3d5385e3cf75d5969537eb559ba4979b18f2522b23ddbeb96a"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-06",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-06/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "b236591a39245e50272cad8db5be65dc94f7deb7c1b2b111410e5bd0d0557a63"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-06",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-06/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "768734607dfb86436a7dfcc8ede058e6e1b285d2dc1f4ffaee7532a781a17dcc"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-06",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-06/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "bf73fefc3f308f5a28c803bc58ee179667e1bf6f49bc6980289f1dad8be1436f"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-07",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-07/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "c1702565872f2b0c1e4f2f7726aedf87831442b951a463f579b89477a1562bc0"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-07",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-07/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "5913e2de8dc5ad23e7644414ef2d7c65023f8b1b13b9e4f612277c1d73b05969"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-07",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-07/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "780c07d29f047254ded042814d9201a950c022f6a4ca83ffbb57f524a40f30b9"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-07",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-07/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "d63ceafeab164f9721eb09391b960ec029b987be99960c9f91dac6448463ff9e"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-07",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-07/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "298a6c0258ea527d3b5db415436e39db778070f04d2854856ecdbadf0f211fd7"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-08",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-08/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "163874e4942b414426afbdcaf462c1b1bb01fae7548e05cd69e919dc212fda65"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-08",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-08/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "967c3122298264e0e22661fbe4165a91906710c5bfe87fe4ccd82dd22e66f7d6"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-08",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-08/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "9503413c368a8b397e9c663485b28d3875cbd5ce744c6e3205c6fcb1feb71fbd"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-08",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-08/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "016d71ab368de8aa63810057050e38f59b9bec394b101abae9f93139c2844195"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-08",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-08/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "673391b40d87a84a78c68b0816daf85c4659ad9d6f9a4ba4958d1c107796ba82"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-09",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-09/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "9a0abe2a6b12a11d1f07b8990f75a43b8aa358ad8663fb97c5d2057fdcea0456"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-09",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-09/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "78448e3ff0b97283908af0e0b3ff87b69436c3ca04ed9db5aded50d96258d86a"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-09",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-09/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "16b59d7973dde314c3df1e460077bfd51b43fe5b80a126190df370f3b63bcdc4"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-09",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-09/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "c5dacf5354d3d6aa3d42d5742e3ee3182a8d68e336a3f7d8dba6b5c0f0143752"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-09",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-09/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "575d4906c06dcfca965967c91ba24afc5eefb3298dd3df5c6e189ee36f52d87f"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-10",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-10/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "1c9805af1524230f0a9752f12cdaff77199a2edcdfdc645d1742fd8426d5c0e2"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-10",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-10/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "f523a68c59365148ecb4713b5ce3d6790b752155da0f32b12a929d883bebfc46"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-10",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-10/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "46d73e455982431e7b516a6194bbe92db6d8c1ed42552126c4293b7794334ac8"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-10",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-10/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "852d9263b63ebc6a83fc4189a54de56210fb71c1a3cc3a1b1197f2bff10545bc"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-10",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-10/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "9a16396f2b077b2956422820b0c6d905bf3b20bea0c798d786afcebd604a33ea"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-11/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "740a6f55e9a1fd0e17706ad1795f3de283bb4e6e78f487fa326ccfe00ea8c729"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-11/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "97363e2aaf62b6dcd34409600830f25415180393797166766d5bdf48c334887c"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-11/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "a4895ae1ae3c9cd7ee2a7b0ec258c2c5f583ba886a1789b725b6c95c366d545f"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-11/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "5e0fb45b159b3e41464fc437da26daad098f64999f5616266a2f36e152403a44"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-11/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "b8691cd2fad57cda322369100ea603f25c2b7b3878d215285f9dd4343e16c641"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-12",
+      "kind": "bars",
+      "path": "BTCUSDT/2024-12/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "10b1c0cb9e4cabe7e8d8fe49165dce86428107bfe74be7ba6bf785ee98ac9505"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-12",
+      "kind": "ma5",
+      "path": "BTCUSDT/2024-12/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "6843720a00e44a9f17e61dbf02a8b3ef5ecf9de58e29b4ce7fec03a62c1921f0"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-12",
+      "kind": "ma20",
+      "path": "BTCUSDT/2024-12/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "a1080ee51f45104d93141bbda6841cb809de5d24eb3d8672c3a5d4ff58c37d1e"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-12",
+      "kind": "ma60",
+      "path": "BTCUSDT/2024-12/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "d8a58a2b0c0e5f248addf4405c7804c4f5cafb5bde0e8ef22483548fb4baacdb"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "month": "2024-12",
+      "kind": "volume20",
+      "path": "BTCUSDT/2024-12/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "68a706183212caa573d6d0bc4479c49adb82223f62a3d52490d28c600f9e215c"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-01",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-01/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "24d353e69648da660fac80e7406b2cead1ba291a7f47c3bf81f1e8fcf6ee2d38"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-01",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-01/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "7873f425e1958b2791de635549691602f5df3c318686aea1c81f7c6e83ae686c"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-01",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-01/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "f8922f0b5e8c440526c9648599114d951c47dc944850ca6b7998cb9355cc570c"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-01",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-01/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "6ada2294a0e3f4d127e88df98a6ed4939630d4dce06d89de651121cbf87aece0"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-01",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-01/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1704067200000,
+      "end_ts": 1706745540000,
+      "sha256": "4002f19d4d3f409fc06babb2288adfdcdaede5b0545c78ee471f39a8462939e1"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-02",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-02/bars.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "dfb697a8b1234e538f4eaeefb27251637e30a0e532df6a5bf4ac6e411ff47316"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-02",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-02/ma5.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "c31a4f22c9de4cba0e2d15918ceb5a9f2d9a675ff3daac2c4375f40b1d02cc12"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-02",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-02/ma20.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "af45fdb25a7d197ff1732ab49d14ff2240872a941685159e7d3b76ce6870ff2a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-02",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-02/ma60.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "82c27598e64c62eeb0cce444e3ef1e26ac965fee892d9338a0d5530455781ee0"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-02",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-02/volume20.arrow",
+      "rows": 41760,
+      "start_ts": 1706745600000,
+      "end_ts": 1709251140000,
+      "sha256": "745eb9c0e13ca3664ba40fdaa0e995619f5e203e9c64914f73968119e087dfd7"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-03",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-03/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "f46d71535dc7cd0f28f3a9ad20f686e57dcf1f57d9d18f16b6e3df4e743574d5"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-03",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-03/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "eca227d182857486b0b83fa00eab6e02c077e2bf973fb7f4fcde025fa975536d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-03",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-03/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "fc8a0b9e19283d3ac61efec8738094ca16cc96f0949f8d80d2fa20963b265b36"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-03",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-03/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "644c162425244471c985d9c8420f10fd250345580382c8d4498e8275949c4ff5"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-03",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-03/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1709251200000,
+      "end_ts": 1711929540000,
+      "sha256": "ca3aca7f827e616786630e169d79bbeced5c288ff1b12a2f3b42e39f37d32ddb"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-04",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-04/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "d0b7c64ae69d8ffa2c6550d080f15199ff5e4fdf4f38d214a6febe062382d118"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-04",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-04/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "3b6afe3a6955266ccc1fee0bd5aeb593f5d4be14bc6714a134ee0866dc5c469f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-04",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-04/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "8d37b15f7f2e432ce87223aa61e273f51bf03a85e0e52453cd2615c35bed1e01"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-04",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-04/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "e949e09b5a64c3d194f8519c413dcd2487cb1595d5b0285123846b441884cf92"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-04",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-04/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1711929600000,
+      "end_ts": 1714521540000,
+      "sha256": "540f5f38494a634cfa1a553e4e142aea0a9a3dd58b8b12ad86498710cbf6da8f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-05",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-05/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "7b3bbbcd93881451c413835827088555e9811c1545059addd14fa4e41da2166a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-05",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-05/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "53b6bb4f6e5e5f4d8f31103ee3a34dd2601eb16fcae794ea509784426902c70e"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-05",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-05/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "3552a347730038d4eef910d3accd2d3862cec3a6fa94830c76b671cf6b3f90f8"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-05",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-05/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "7492e587763b6c28acb667d8202a0dedd7f330a263e01213cdf458026844271f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-05",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-05/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1714521600000,
+      "end_ts": 1717199940000,
+      "sha256": "95dbb54fae129840f14f5707f611f0f72336aac30b985135b31ebc2d180ceea4"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-06",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-06/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "9e86c91034557ede8a9e97265ff0fce990d4fe7c650a38aba1008c8e9b0d864a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-06",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-06/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "007f00677c255a3e5de4b1b45f989a1e8353728b92b296902339b7963da33f7a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-06",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-06/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "acf1583edcbbd0bd87878ced96e3c96d1b7629d174ef63515ae24914708d20d3"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-06",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-06/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "94e0a381eb5c69ba46a2364a5853a33623c1d4bf02f685b6aab90f9cada1b1e2"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-06",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-06/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1717200000000,
+      "end_ts": 1719791940000,
+      "sha256": "95b4cf09a533554647bfb4d2c86cd3ae8df9944fd7f219dca45810f983750364"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-07",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-07/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "81dc37bffdaa7b09f8c849ccca0fd6736d4c6f1138894f01919622593eafc40d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-07",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-07/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "e808f64e0121343dab11d3324fd91b5a7572c8895445702784a669645c2cc77b"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-07",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-07/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "bdcd1cf8c6faed2c82122a6db0cca417ff8a4e8d3367fe8c0796414d7f072c1c"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-07",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-07/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "d574aa205943b13e6c11ba3f9c039ce3ad1506029096037b38af3f3f2df8e16d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-07",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-07/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1719792000000,
+      "end_ts": 1722470340000,
+      "sha256": "77db67acd3f94fe203f93cd27941a2ede985c1b816b75ebe2e2b86c60f796c6d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-08",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-08/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "ccb89725012ccb9d594ef8381a35472d0d71b30440eebf92ce86b87a41d80695"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-08",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-08/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "dcde3f80921922e4014cad4f6b8e998f9749c4255f8b3e4de0b5e22a9eaae4a2"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-08",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-08/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "702b3b10e6d8990f032c2f98618886ab351d93ed5c27103985e79ac01167e61a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-08",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-08/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "eb72e1c6230807cb3eb4dcec0cc414848d103efc24eac81ca795e0a033576ead"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-08",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-08/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1722470400000,
+      "end_ts": 1725148740000,
+      "sha256": "dc3fe5c44aaf0041c85fe568ecb4cb5a44e87563797b1c61fdabca48ad580a4d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-09",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-09/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "1a8080f03fedd663e6c56aa9c1142869452fcda34ea2b81e3a6fbb0e70103da0"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-09",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-09/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "b149014369c8fadcc7e3c367f3a56db3fc9a3d2fa844a91df12b17c4fe515f24"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-09",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-09/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "c8b6357884ac24779da780f0f80175c8906956306d248b789b5bd64ed601f00a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-09",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-09/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "002deb6bd0ba9c850e038d06dcba6eaeef0817c61e7d08da5238a2aaef801550"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-09",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-09/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1725148800000,
+      "end_ts": 1727740740000,
+      "sha256": "65ef744423588f2ad67c42fbe672b05c755e405f71103ceba138a35c4fb0a59f"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-10",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-10/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "bae692808d7ada545b20ed3cab2e174e504451c42b9ef83445f5756b39d691e8"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-10",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-10/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "3746cbabd82e956835ed807e7d51e9b4726b8dd42e94d166c4947ee3ab87ccb3"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-10",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-10/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "b1b5fa81f3c7a9f460e9ef2e6f6980ad2641309163025aee0e4cb6ad38304024"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-10",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-10/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "65abb0f7c2292985e1789f358fa4d83f3b9b525155bfb2df80165a46ed749e78"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-10",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-10/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1727740800000,
+      "end_ts": 1730419140000,
+      "sha256": "9bc100abfd8f21bf5d6f99e79c1543ce37feaf126b68df8b760bf0b1c2daa9c1"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-11/bars.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "04593efeacef3e0338f5e70a410d9effc9e59ab099af2369b5883bc065945301"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-11/ma5.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "6476af603f4f5d40b02b06249a9ca64c2a2960d9acfd0c68c46db27a69b6f612"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-11/ma20.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "f7fc7d83eff6fcdef1ce8f2dafab89326308c97d1b34c258a97c277ab206fc5a"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-11/ma60.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "5edd69f737f0d9c3a6448d3a8e42b0eee25d54dd2346cebb0f986b82dddddf6d"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-11/volume20.arrow",
+      "rows": 43200,
+      "start_ts": 1730419200000,
+      "end_ts": 1733011140000,
+      "sha256": "6773f7be1a87387d2d00d258236c9c8e7e59945cc8a05da56084e4c90f8e3841"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-12",
+      "kind": "bars",
+      "path": "ETHUSDT/2024-12/bars.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "c66fa67b4f56577a64488ea4b9d054ccfc0d42818b5ea4035f51fecdaee387c4"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-12",
+      "kind": "ma5",
+      "path": "ETHUSDT/2024-12/ma5.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "ecc1e2e923a7c6013f640f2bf01ddbfc650a85c03aadb2ec5ef952000a230454"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-12",
+      "kind": "ma20",
+      "path": "ETHUSDT/2024-12/ma20.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "27bf4c18b3a0dacb7869480f2a2b685ff644cf395310fb47f764772c4e145623"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-12",
+      "kind": "ma60",
+      "path": "ETHUSDT/2024-12/ma60.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "bcb32df3f7438f4c7ded97f7a2c8a9ba950d98119426de3fc99a83c6ba8ec8c2"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "month": "2024-12",
+      "kind": "volume20",
+      "path": "ETHUSDT/2024-12/volume20.arrow",
+      "rows": 44640,
+      "start_ts": 1733011200000,
+      "end_ts": 1735689540000,
+      "sha256": "35d8746f276a0355af6adf395ef6d104d11a094612af8804f51be450de79a2af"
+    }
+  ],
+  "parent_manifest_sha256": "c752b0160a99bb365dc0e22ee3d5fc8c771637cfae73e0c87d8f7170ef5cc935",
+  "revision": "last close of each original month +1; recompute all four rolling features; full rebuild into new root"
+}

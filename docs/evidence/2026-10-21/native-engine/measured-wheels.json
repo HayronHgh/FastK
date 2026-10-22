@@ -1,0 +1,34 @@
+{
+  "fastk_native-0.2.0rc1-cp311-cp311-win_amd64.whl": {
+    "sha256": "89683dc3b986e0c27f01acc8be9685d2f4cfc0f5108eb2c7845a8b6c8836f15d",
+    "modules": {
+      "fastk_native/_native.cp311-win_amd64.pyd": "173d3648ecf506273c7ceb4a47f39c269ec8a9f261ce68c5d29730011a548ff2"
+    }
+  },
+  "fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl": {
+    "sha256": "03f339d730d9433d196a9411da0d402f049fd5a343ca00ffe32ed032f3eeae44",
+    "modules": {
+      "fastk_native/_native.cp312-win_amd64.pyd": "979f215482c0c353968076a683018dfec1e64141737a397a740513040456b7d1"
+    }
+  },
+  "fastk_native-0.2.0rc1-cp311-cp311-manylinux_2_34_x86_64.whl": {
+    "sha256": "922eb31bc9236323facefac4a106384fa2f99eb099fc8e78306646d0a37d0066",
+    "modules": {
+      "fastk_native/_native.cpython-311-x86_64-linux-gnu.so": "2921517f148c19b2404e9fa324441b0ddc39a4e447a6bb28640d58ae557b2a02"
+    }
+  },
+  "fastk_native-0.2.0rc1-cp312-cp312-manylinux_2_34_x86_64.whl": {
+    "sha256": "ac794d99b3f64764cac5f8c4962c0164bd4046dbc6369c5e0450e0069aa96fe7",
+    "modules": {
+      "fastk_native/_native.cpython-312-x86_64-linux-gnu.so": "bf36b90736f016437dc0ecfd137f920496cf4db7fe176ed0c431be8b83c68023"
+    }
+  },
+  "fastk_client-0.2.0rc1-py3-none-win_amd64.whl": {
+    "sha256": "c676d2d9c5d9114dd28a3cd05a9f54ddb19a7e2b2a6fa973f570ad505e8d7c51",
+    "modules": {}
+  },
+  "fastk_client-0.2.0rc1-py3-none-manylinux_2_17_x86_64.whl": {
+    "sha256": "f2346c79d72da574b19b7fa9c7c4e6a1d5e07b6c377c5f691ad526f15d042df9",
+    "modules": {}
+  }
+}

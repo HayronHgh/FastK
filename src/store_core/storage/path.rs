@@ -130,3 +130,14 @@ pub fn partition_key(ts: i64, unit: PartitionUnit) -> Result<String> {
         ))),
     }
 }
+
+pub(crate) fn next_month_start(ts: i64) -> Result<i64> {
+    let date = chrono::DateTime::<Utc>::from_timestamp_millis(ts)
+        .and_then(|dt| dt.date_naive().with_day(1))
+        .and_then(|date| date.checked_add_months(chrono::Months::new(1)))
+        .and_then(|date| date.and_hms_opt(0, 0, 0))
+        .ok_or_else(|| {
+            FastKError::InvalidInput("timestamp outside supported UTC month range".into())
+        })?;
+    Ok(date.and_utc().timestamp_millis())
+}

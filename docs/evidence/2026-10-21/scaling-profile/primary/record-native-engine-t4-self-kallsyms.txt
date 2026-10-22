@@ -1,0 +1,23 @@
+# Kernel-only nearest text symbol mapping from same-boot /proc/kallsyms.
+# Original perf report remains unchanged.
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 30418366870
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                
+# ........  ...............  .....................  ......................................................................................................................
+#
+    78.53%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0x8b (raw 0xffffffff8ead0afb)
+     4.06%  fastk-scaling-p  [unknown]              [k] filemap_get_read_batch+0xdc (raw 0xffffffff8e55c01c)
+     2.96%  fastk-scaling-p  [unknown]              [k] filemap_read+0x38e (raw 0xffffffff8e560e8e)
+     0.84%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0xb6 (raw 0xffffffff8ead0b26)
+     0.60%  fastk-scaling-p  [unknown]              [k] filemap_read+0x261 (raw 0xffffffff8e560d61)
+
+
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#

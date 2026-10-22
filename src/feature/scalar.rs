@@ -4,7 +4,7 @@ use crate::types::{FixedRecord, RecordType};
 
 /// Fixed-width scalar record used by the predicate query layer.
 #[repr(C)]
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, bytemuck::NoUninit)]
 pub struct ScalarRecord {
     pub ts: i64,
     pub value: i64,

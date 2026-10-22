@@ -1,0 +1,35 @@
+{
+  "processes": 143,
+  "verified_timed_outputs": 134710,
+  "formal_outputs": 60420,
+  "supplement_outputs": 960,
+  "first_requests": {
+    "fastk": [
+      1055900,
+      822700,
+      842300
+    ],
+    "arrow": [
+      1955100,
+      2284900,
+      2162200
+    ],
+    "parquet": [
+      6292500,
+      6573900,
+      6450600
+    ],
+    "duckdb": [
+      31124000,
+      32687500,
+      37529700
+    ],
+    "sqlite": [
+      6163800,
+      2022200,
+      2176200
+    ]
+  },
+  "unchanged_public_native_source_sha256": "a75b172bad47ff371f9b75cbb90a18d8224335310c6f67163c5dc9a234694a94",
+  "sqlite_path_control_outputs": 4290
+}

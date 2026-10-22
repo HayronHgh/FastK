@@ -225,7 +225,7 @@ fn bench_sqlite(config: &Config) -> Result<BackendResult> {
                 close INTEGER NOT NULL,
                 volume INTEGER NOT NULL,
                 PRIMARY KEY(symbol, ts)
-            );",
+            ) WITHOUT ROWID;",
         )
         .map_err(sqlite_err)?;
     let tx = connection.transaction().map_err(sqlite_err)?;

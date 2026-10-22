@@ -1,0 +1,65 @@
+{
+  "process_rounds": 3,
+  "verified_timed_outputs": 4290,
+  "phases": {
+    "open_ns": {
+      "process_medians": [
+        816050.0,
+        811250.0,
+        811050.0
+      ],
+      "median_ns": 811250.0,
+      "p95_ns": 1075465.0,
+      "p99_ns": 1329878.0
+    },
+    "read_ns": {
+      "process_medians": [
+        160000.0,
+        159300.0,
+        160100.0
+      ],
+      "median_ns": 160000.0,
+      "p95_ns": 194974.99999999997,
+      "p99_ns": 233055.00000000003
+    },
+    "close_ns": {
+      "process_medians": [
+        65100.0,
+        65000.0,
+        64300.0
+      ],
+      "median_ns": 65000.0,
+      "p95_ns": 85019.99999999999,
+      "p99_ns": 118192.00000000019
+    },
+    "total_ns": {
+      "process_medians": [
+        1045350.0,
+        1038650.0,
+        1039850.0
+      ],
+      "median_ns": 1039850.0,
+      "p95_ns": 1355575.0,
+      "p99_ns": 1668030.0000000005
+    }
+  },
+  "peak_rss": [
+    42987520,
+    42274816,
+    42303488
+  ],
+  "peak_private": [
+    27881472,
+    27852800,
+    28024832
+  ],
+  "source_sha256": {
+    "run_lazy_sqlite_open.py": "763c582ad92758a47a91521ba01cd7bdb6d7476d4a613f951841b123edaf417f",
+    "_lazy_sqlite_open_worker.py": "162fea3ce595e9abcc1e144c77d3264b07e9e87eba63d0f4e4c9d1b5136c028b"
+  },
+  "limits": [
+    "Additional three-process path-only control; previous default-adapter measurements retained",
+    "Same actual absolute DB path, SQL, cache_size, NumPy conversion and open/query/close boundaries",
+    "Path equivalence checked before timers; existing adapter file stays unchanged"
+  ]
+}

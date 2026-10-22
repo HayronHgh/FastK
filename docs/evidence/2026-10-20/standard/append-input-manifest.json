@@ -1,0 +1,1216 @@
+{
+  "format_version": 1,
+  "profile": "standard",
+  "seed": 20261020,
+  "scale": 100000000,
+  "timeframe_ms": 60000,
+  "gap_policy": "preserve; never forward-fill",
+  "synthetic_gap_every": 211,
+  "normalization": "strict ordered UTC epoch milliseconds; Decimal OHLCV to signed i64 at scale 1e8",
+  "feature_policy": "integer floor mean over preceding available rows, including partial initial windows",
+  "sources": [],
+  "parts": [
+    {
+      "symbol": "S00",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S00/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "855f7427e20334187dfdf0c658752ef936432bc79257426b9857bf3c8f2b3593"
+    },
+    {
+      "symbol": "S00",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S00/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "1bb5da0fa35f3976e0217d183fdabc11bf2920a04cd71c24dbd1e5230f737c02"
+    },
+    {
+      "symbol": "S00",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S00/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "dd6ca1bdc4892a2fcf406494a19119ef24a9840a108e73be945a4d512baeead9"
+    },
+    {
+      "symbol": "S00",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S00/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "dd4ec223d515d73a899cefedd8f5be0c1bd4666c7bd0703db593ff3a72c1aa17"
+    },
+    {
+      "symbol": "S00",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S00/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S01",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S01/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "49e163ac42c83ab31ccbd671377ea975a89bd2908c90efc2263c8121b2da6476"
+    },
+    {
+      "symbol": "S01",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S01/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "acea9c05e753af8507ab94e261a27aa48ed4ca2d16cf9c89b1b2aa168d2db939"
+    },
+    {
+      "symbol": "S01",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S01/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "3924636a66248011c178faca340b067d4c2731da7d58e03471cbf49de90e92e6"
+    },
+    {
+      "symbol": "S01",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S01/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "59e54ea27d94730f86132fb0750be8a640a197c71960fda78e6d5b3afe44f03e"
+    },
+    {
+      "symbol": "S01",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S01/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S02",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S02/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "52549a7d1eddfb69cdac99c5e419e91448cc661f446512f7fbe80666be947e80"
+    },
+    {
+      "symbol": "S02",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S02/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0039511b552dda5d93bb3186358916fec72338fe29b58c3860722bd13ac9fdb5"
+    },
+    {
+      "symbol": "S02",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S02/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "e60e860dbdadb34ef8613d4165c553308542195561048370b95fe4ebb5f3533d"
+    },
+    {
+      "symbol": "S02",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S02/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "1fe9581a474a3728022cc6a08d8aa05c52c2ff8203527fee647aac01d62bf41a"
+    },
+    {
+      "symbol": "S02",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S02/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S03",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S03/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "66fb236957819a0fc437caa5d3c9ec328cc833105d37f05fe9b6069bec52de10"
+    },
+    {
+      "symbol": "S03",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S03/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a73671dddf0bada213d5fdce2b341cda08c25259f3e5c83d911213e7cdf7417f"
+    },
+    {
+      "symbol": "S03",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S03/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "7104eb8c65468dcf44a12704f4d53f7a4667c80bafc02ea8ce727d812382d2b1"
+    },
+    {
+      "symbol": "S03",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S03/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "e23bba2d64e99aac8eb76f090190fd9c0e7f368666e932a33af3432f7ebc1c10"
+    },
+    {
+      "symbol": "S03",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S03/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S04",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S04/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "27974f60a25778287535f791c40ff3a3397da31095cf00746b4da0e22574d9ec"
+    },
+    {
+      "symbol": "S04",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S04/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "3f0a799f71a72f0ba124182bc29ed87465b6a7118216115666e3c794bc514fe2"
+    },
+    {
+      "symbol": "S04",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S04/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "9515b731a44394ad88030fa62b999b3d1a1e30195c5d5c6ae45c6eb2894adf44"
+    },
+    {
+      "symbol": "S04",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S04/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "392e970235e61b6928775b557bf808903095568b93ce89920bd72984993971be"
+    },
+    {
+      "symbol": "S04",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S04/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S05",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S05/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "66ef3df6bf18f4f86a314c9f07d79fa43545f84ed19e2a97027044955afac75a"
+    },
+    {
+      "symbol": "S05",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S05/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "be7aa8afa7c30d62d77a376fffd4e92780901fc6e84895876a624743c430600b"
+    },
+    {
+      "symbol": "S05",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S05/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "cc001769bc61fc97533cc5724d4c856d7f80a48e730059e4b7e568269c64ff19"
+    },
+    {
+      "symbol": "S05",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S05/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "3eb885337cef097f6cfb5ab7b644fbd1103b5bd0bb5a464ff8fb2ca202917b70"
+    },
+    {
+      "symbol": "S05",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S05/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S06",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S06/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "295b9cc1254bc199880263cb1dd77c62d04eaaa8815548d746dc2ba0271a8f9c"
+    },
+    {
+      "symbol": "S06",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S06/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a21bb739e30830a0ae85337eadf572ea21463c5a37653de46324c91b06c22aa3"
+    },
+    {
+      "symbol": "S06",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S06/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "befac5e77fc20bde0eb281ad6f171b64e65d293f89a80953b4b1082baaae21dd"
+    },
+    {
+      "symbol": "S06",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S06/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "24f0ffe4ddf0f6bf844e98b900d764a54f3c4d6ea83ca9cef28000f89d60810e"
+    },
+    {
+      "symbol": "S06",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S06/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S07",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S07/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "189f3ad32bdc94a9d5c88734cc394f23052fb49621f237ac7db64dba061a7ab8"
+    },
+    {
+      "symbol": "S07",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S07/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "69cefc03e45f23db9aa4fd0145caab73e6a942d89c783691509bf3a4334ee0be"
+    },
+    {
+      "symbol": "S07",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S07/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "b7695b1a777265bcf6d515d64c2d99492de899c7dbcebf8321774f397aebae01"
+    },
+    {
+      "symbol": "S07",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S07/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "af6ea9f718e97b299cbbd6b8c892af0b057fa29ef08b2478869dfc739ff730ba"
+    },
+    {
+      "symbol": "S07",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S07/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S08",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S08/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a5bd83091b3820ee6c56668155f6e612abf1a155512eacaca782d85a802b2ee8"
+    },
+    {
+      "symbol": "S08",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S08/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0aaaed22f62b1c1aa98fc932a1b63da8aa52a45e7d814c02b46ea3474ac98c74"
+    },
+    {
+      "symbol": "S08",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S08/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "54b0dedf491a3d6075b764a9d9d2dfd20f68a23720f869be8502bec363ab3f85"
+    },
+    {
+      "symbol": "S08",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S08/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "27ff2e6ca29190b9f90516a0b02ebe6fb212249688908740824d90c32d0d492d"
+    },
+    {
+      "symbol": "S08",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S08/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S09",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S09/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "17d68028b04292f9be84c0d3c69b6dd6112be1a999c6984ac398e9e6107182d2"
+    },
+    {
+      "symbol": "S09",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S09/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "d4a6d3d1e3b60558ef93afa331e70eef8538d3e6fa84ff94b9c2dfebfdacabb1"
+    },
+    {
+      "symbol": "S09",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S09/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "be4b886da822fe964781776226eafc64b13eb618a1284278be55eda5324b984d"
+    },
+    {
+      "symbol": "S09",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S09/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0e5d6854d308f87c207b2dc4b2994f13c50f7faed2911bb0a04bb753a53f9c95"
+    },
+    {
+      "symbol": "S09",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S09/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S10",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S10/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "7ee6591349d427ded76391c553e4ff364b12711657eb83011b161d3650366e0a"
+    },
+    {
+      "symbol": "S10",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S10/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "201ebf76f35880a5fc86b064ae00031e596c0ab7eb9e384547775fe6643ed8ee"
+    },
+    {
+      "symbol": "S10",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S10/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "b4736cc7d5cce0dc9f094e8629a3f9896e380e4ade8beaf2d70d42237956aaa7"
+    },
+    {
+      "symbol": "S10",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S10/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "aa990fc792f9827f07a026a5ffdd2169fa17d1485affac8abe3dc8d45f860923"
+    },
+    {
+      "symbol": "S10",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S10/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S11",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S11/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "ecfef8f71d4198632c938f533e37d1fb172931ea7eaadef8f52b09b8597e3f64"
+    },
+    {
+      "symbol": "S11",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S11/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "c78b2c26fc195d92f3a1b88668558bbb5e6ecc749f6180a80b89366c6dd10bef"
+    },
+    {
+      "symbol": "S11",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S11/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a3608a4f16dcc258debb9cb394a021842c550cd4c6e2928b18623ff5dc7999f0"
+    },
+    {
+      "symbol": "S11",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S11/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "6f08f30e45191e2b264d148cce21eec3796eddf85f2bf42ebe97e900c580476e"
+    },
+    {
+      "symbol": "S11",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S11/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S12",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S12/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "64a063c56a7ca039025daea5499883f47b5986941f717a1ce91daabc320c441b"
+    },
+    {
+      "symbol": "S12",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S12/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "b90b7454d84e2595d49cded72148ffc2dee8d84111dbd41a98ea129d30cd5f0a"
+    },
+    {
+      "symbol": "S12",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S12/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "5c7d18c1fc702a1d1b41080c9fa9d9ff37f550541d7cbf30d2476d28aeb6ab51"
+    },
+    {
+      "symbol": "S12",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S12/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "9a8431ec5a1963ededc21d8e78f1c88ea8d77cf718d9e7c54c0d65579d5db1c0"
+    },
+    {
+      "symbol": "S12",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S12/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S13",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S13/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0699355d1a482301716357e95ec5cf7d14cf2e007740b7814d13399cb29ac30f"
+    },
+    {
+      "symbol": "S13",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S13/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a34f622db74ec693a7dc536cb352a25960da3a1ff8da3e66b80e5d057203424f"
+    },
+    {
+      "symbol": "S13",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S13/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "1ef4667ee37e38a256f256a921e4fae8d8da036baa8e822e6da056366d3dfe69"
+    },
+    {
+      "symbol": "S13",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S13/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "6a0deb62a8883d04ed1ca2e4232b9a72edb76318d8cb7a328332ade7e78cc097"
+    },
+    {
+      "symbol": "S13",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S13/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S14",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S14/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a20465cee7dab35e621d9113bab5c9e664daf6de0a564a5cd0313407ef3340a3"
+    },
+    {
+      "symbol": "S14",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S14/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "81af9cfd8cf7cd173af1b17220986d5df579092f0db14e0cc7e50157862ae53c"
+    },
+    {
+      "symbol": "S14",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S14/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fb469d16e7a15d2823d899bb97f7bbbb6007e68fea9eb879999a7c116ac79895"
+    },
+    {
+      "symbol": "S14",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S14/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "b4e1198f1e654c1a1e717416f59f67600adc581be97503368fe9dd40565ee9f0"
+    },
+    {
+      "symbol": "S14",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S14/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S15",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S15/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "8b598ef441007a235b416ad266215886db02da1319200073aec0e7cc07c775d3"
+    },
+    {
+      "symbol": "S15",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S15/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "51b00f10a1f1baff41cec4ac01f9ccef5a1d935406b2a0e38240e0384271d5e4"
+    },
+    {
+      "symbol": "S15",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S15/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "66acc6d5880c73913b129de24d40990ad4f35e63ca9c97e4e2dac2b8d71e6e87"
+    },
+    {
+      "symbol": "S15",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S15/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "3c140ab0ae3bebfb8a88e295dfbc5ade89aee8da4b63a5967ffbd6f3c715f6b4"
+    },
+    {
+      "symbol": "S15",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S15/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S16",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S16/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "e94c98340f5f8d9fce84224bd0a9bf54418d7ac9cbb7c4a665744d71e5497f40"
+    },
+    {
+      "symbol": "S16",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S16/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "ac8bfc1b66aa23699200ad36d59b6c169913c67e148462e3fc23c16cd26ee942"
+    },
+    {
+      "symbol": "S16",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S16/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "ea4e67feb86c135e7ac5a169d190e394a282b0d943529f8f7ebe56c3c8193fbe"
+    },
+    {
+      "symbol": "S16",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S16/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0d8cd0e7a92ebe4ce4210f34ae2e3ca4cb30aa131075a05c8467517ff589ed66"
+    },
+    {
+      "symbol": "S16",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S16/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S17",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S17/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "f4c4edf30bf7eaeb3c6407de17a0f83d30554efef642eb740888a737cb576e8f"
+    },
+    {
+      "symbol": "S17",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S17/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "5079185cf47a08e0918cc61ce9c0001f8a021de13a55e783f8456d12d9d85d7b"
+    },
+    {
+      "symbol": "S17",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S17/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "09ab040c0a3d9070cc45cd62a50a334bb9ffc05690ab738c386fd2b9f7b9908a"
+    },
+    {
+      "symbol": "S17",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S17/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "4bad92e68a1e26c498a5626e2f1a63a9a03f06ad14b068cdeae7eb964e510c3f"
+    },
+    {
+      "symbol": "S17",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S17/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S18",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S18/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "bcbd34ba57c113f0137448252ad1df2a4aa75e31b9e65189a01a03ded0a13547"
+    },
+    {
+      "symbol": "S18",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S18/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "2d204aa9e811ce99700b172535d69002b5f4157100586b81860fe46af8aa3149"
+    },
+    {
+      "symbol": "S18",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S18/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "cccde3e33c4315d557dc3045292fde158ab12c757c801de8eabbd689b127b742"
+    },
+    {
+      "symbol": "S18",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S18/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "d8784eac5afed0bd84916aea951e2e94a54a1de83e2967df730f3daa1c89a3fd"
+    },
+    {
+      "symbol": "S18",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S18/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S19",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S19/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "03e77f0b04fc9cdfa647dddf0219783aa02f5f67d9530d5c3ae6157ff0f6f94e"
+    },
+    {
+      "symbol": "S19",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S19/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "ced6d7348b2a4cdcc28f7c2510f3f621303857a48070b5cfc2c757078229859d"
+    },
+    {
+      "symbol": "S19",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S19/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "25816e1bb0baf5127320a93351562c74f08b7705bef4101cb9239601094d6fa7"
+    },
+    {
+      "symbol": "S19",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S19/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a97abbc9e794dcc98d1fc04451b27ec0715d9bc655853e30ec28e1a11f93caf7"
+    },
+    {
+      "symbol": "S19",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S19/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S20",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S20/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "898f2f7b7920b2e2c49b30b5fcb9a2c80ba9247b9006928642354ee389b14d09"
+    },
+    {
+      "symbol": "S20",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S20/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "18cbc6eae1708ee9a657821b3bf1ee13a868d0257e10898bbedfa32d8f583f8c"
+    },
+    {
+      "symbol": "S20",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S20/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "e40c088506c09caae936369e709d8e2cc3e7ad52d95bb303909e038118539c6f"
+    },
+    {
+      "symbol": "S20",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S20/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "809b7160b31b162b9ccf2c190a130f0ffdeacca7df1550a0b8a868360ca60d8a"
+    },
+    {
+      "symbol": "S20",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S20/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S21",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S21/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "09634f30cf754ea88b8a0bc85373490551ea42d15bec1d1a100aee70a2a5b649"
+    },
+    {
+      "symbol": "S21",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S21/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "0c13c051de3f53d60f4b208cea114a97b01890a2b989865cc51150922991ddcc"
+    },
+    {
+      "symbol": "S21",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S21/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "c8dc698916322532024f1dd8d89694f5612bcb1e38c6bf9f511bda6c1a765369"
+    },
+    {
+      "symbol": "S21",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S21/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "d68c00db8555e7f152ef4d7bb3acef8c9c93791941963ddbe1f0cd7cccb79d16"
+    },
+    {
+      "symbol": "S21",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S21/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S22",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S22/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "a2f508046ec674835f6cad0e8b71cbd3987dd868af1c2cb692a6022da5e18d4a"
+    },
+    {
+      "symbol": "S22",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S22/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "7c0b209efcfabf8134ea4ff973398b93311a5aad6c214ca810debc63aefde7f4"
+    },
+    {
+      "symbol": "S22",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S22/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "bfe3554f17ab3e507c14194b12ad7dd1a9131c87d717ff0af91ca03e430bd0c5"
+    },
+    {
+      "symbol": "S22",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S22/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "e938d31fae666554cd3afff0174089dca0d4fc9f697b6c89981c1bd1b38c230f"
+    },
+    {
+      "symbol": "S22",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S22/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    },
+    {
+      "symbol": "S23",
+      "month": "2024-11",
+      "kind": "bars",
+      "path": "S23/2024-11/bars.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "3814a4f2f6d5a40d66bf944850f604bd7f00390da3b1dd67b37a4f5087028991"
+    },
+    {
+      "symbol": "S23",
+      "month": "2024-11",
+      "kind": "ma5",
+      "path": "S23/2024-11/ma5.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "2d8a9c170adf00d06e4ddcbaec5bc46ad4cbf9e5703c6102324f6d05a254ed69"
+    },
+    {
+      "symbol": "S23",
+      "month": "2024-11",
+      "kind": "ma20",
+      "path": "S23/2024-11/ma20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "37e4d846e79ac8e9c055918f65d266114add0c4e8f7696ed99b34cdf803c661d"
+    },
+    {
+      "symbol": "S23",
+      "month": "2024-11",
+      "kind": "ma60",
+      "path": "S23/2024-11/ma60.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "574f9c16dda74da72b4dd55b6ad8508a22dd8364a6f451e3ea6d689335c4306d"
+    },
+    {
+      "symbol": "S23",
+      "month": "2024-11",
+      "kind": "volume20",
+      "path": "S23/2024-11/volume20.arrow",
+      "rows": 128,
+      "start_ts": 1730419200000,
+      "end_ts": 1730426820000,
+      "sha256": "fa1261ab3d7aa16fd4eedfd26371d78f06e9d7abc32eeca53079550b8896cc36"
+    }
+  ],
+  "parent_manifest_sha256": "7222d5c7f09c8d7e515507aaccc1fef69458bc4d4feb86b3c75feb1e7f4fa9d0",
+  "extension": "128 synthetic later bars per symbol with rolling features continued from original history"
+}

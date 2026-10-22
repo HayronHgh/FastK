@@ -1,0 +1,264 @@
+{
+  "all_results_verified": true,
+  "binary_sha256": "30135d7ce58f83756d30ee2eebdb6cc1dad1662fe9d9e5de9d89ae023acf7329",
+  "results": [
+    {
+      "route": "probe",
+      "workers": 1,
+      "round": 1,
+      "file": "000-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 2,
+      "file": "001-core-control.json"
+    },
+    {
+      "route": "probe",
+      "workers": 4,
+      "round": 0,
+      "file": "002-probe.json"
+    },
+    {
+      "route": "probe",
+      "workers": 8,
+      "round": 0,
+      "file": "003-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 4,
+      "round": 0,
+      "file": "004-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 1,
+      "monitor": true,
+      "file": "005-core-control.json"
+    },
+    {
+      "route": "probe",
+      "workers": 2,
+      "round": 0,
+      "file": "006-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 2,
+      "round": 2,
+      "file": "007-core-control.json"
+    },
+    {
+      "route": "native",
+      "workers": 1,
+      "round": 1,
+      "file": "008-native.json"
+    },
+    {
+      "route": "probe",
+      "workers": 8,
+      "round": 2,
+      "file": "009-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 2,
+      "round": 1,
+      "file": "010-core-control.json"
+    },
+    {
+      "route": "native",
+      "workers": 2,
+      "round": 0,
+      "file": "011-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 8,
+      "round": 0,
+      "file": "012-native.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 1,
+      "file": "013-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 0,
+      "monitor": true,
+      "file": "014-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 0,
+      "file": "015-core-control.json"
+    },
+    {
+      "route": "probe",
+      "workers": 4,
+      "round": 1,
+      "file": "016-probe.json"
+    },
+    {
+      "route": "probe",
+      "workers": 1,
+      "round": 0,
+      "file": "017-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 0,
+      "monitor": true,
+      "file": "018-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 2,
+      "monitor": true,
+      "file": "019-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 2,
+      "round": 0,
+      "file": "020-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 1,
+      "monitor": true,
+      "file": "021-core-control.json"
+    },
+    {
+      "route": "native",
+      "workers": 4,
+      "round": 2,
+      "file": "022-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 2,
+      "round": 1,
+      "file": "023-native.json"
+    },
+    {
+      "route": "probe",
+      "workers": 2,
+      "round": 1,
+      "file": "024-probe.json"
+    },
+    {
+      "route": "native",
+      "workers": 4,
+      "round": 1,
+      "file": "025-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 1,
+      "round": 0,
+      "file": "026-native.json"
+    },
+    {
+      "route": "probe",
+      "workers": 2,
+      "round": 2,
+      "file": "027-probe.json"
+    },
+    {
+      "route": "native",
+      "workers": 4,
+      "round": 0,
+      "file": "028-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 1,
+      "round": 2,
+      "file": "029-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 8,
+      "round": 2,
+      "file": "030-native.json"
+    },
+    {
+      "route": "native",
+      "workers": 2,
+      "round": 2,
+      "file": "031-native.json"
+    },
+    {
+      "route": "probe",
+      "workers": 4,
+      "round": 2,
+      "file": "032-probe.json"
+    },
+    {
+      "route": "probe",
+      "workers": 1,
+      "round": 2,
+      "file": "033-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 1,
+      "file": "034-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 4,
+      "round": 1,
+      "file": "035-core-control.json"
+    },
+    {
+      "route": "probe",
+      "workers": 8,
+      "round": 1,
+      "file": "036-probe.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 2,
+      "monitor": true,
+      "file": "037-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 1,
+      "round": 0,
+      "file": "038-core-control.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 8,
+      "round": 2,
+      "file": "039-core-control.json"
+    },
+    {
+      "route": "native",
+      "workers": 8,
+      "round": 1,
+      "file": "040-native.json"
+    },
+    {
+      "route": "core-control",
+      "workers": 4,
+      "round": 2,
+      "file": "041-core-control.json"
+    }
+  ]
+}

@@ -63,17 +63,26 @@ where
         .open(&temp_path)?;
 
     let mut writer = BufWriter::new(file);
-    let write_result = write_fn(&mut writer);
-    let flush_result = writer.flush().map_err(FastKError::from);
-    let sync_result = writer.get_ref().sync_all().map_err(FastKError::from);
+    let write_result = write_fn(&mut writer).and_then(|()| {
+        io_fault_point("flush", dest)?;
+        writer.flush()?;
+        io_fault_point("sync", dest)?;
+        writer.get_ref().sync_all()?;
+        Ok(())
+    });
     drop(writer);
 
-    if let Err(err) = write_result.and(flush_result).and(sync_result) {
+    if let Err(err) = write_result {
         let _ = fs::remove_file(&temp_path);
         return Err(err);
     }
 
-    replace_file_atomically(&temp_path, dest, allow_replace)?;
+    if let Err(err) = io_fault_point("rename", dest)
+        .and_then(|()| replace_file_atomically(&temp_path, dest, allow_replace))
+    {
+        let _ = fs::remove_file(&temp_path);
+        return Err(err);
+    }
     sync_parent_dir(parent)?;
     Ok(())
 }
@@ -147,13 +156,13 @@ fn replace_file_atomically(temp_path: &Path, dest: &Path, allow_replace: bool) -
 }
 
 #[cfg(unix)]
-fn sync_parent_dir(path: &Path) -> Result<()> {
+pub(crate) fn sync_parent_dir(path: &Path) -> Result<()> {
     File::open(path)?.sync_all()?;
     Ok(())
 }
 
 #[cfg(windows)]
-fn sync_parent_dir(path: &Path) -> Result<()> {
+pub(crate) fn sync_parent_dir(path: &Path) -> Result<()> {
     use std::os::windows::fs::OpenOptionsExt;
 
     const FILE_FLAG_BACKUP_SEMANTICS: u32 = 0x02000000;
@@ -177,6 +186,32 @@ fn sync_parent_dir(path: &Path) -> Result<()> {
 }
 
 #[cfg(not(any(unix, windows)))]
-fn sync_parent_dir(_path: &Path) -> Result<()> {
+pub(crate) fn sync_parent_dir(_path: &Path) -> Result<()> {
+    Ok(())
+}
+
+/// Process termination hooks exist only in explicitly instrumented test builds.
+pub(crate) fn fault_point(name: &str) {
+    #[cfg(feature = "fault-injection")]
+    if std::env::var("FASTK_TEST_CRASH_AT").as_deref() == Ok(name) {
+        std::process::exit(86);
+    }
+    let _ = name;
+}
+
+fn io_fault_point(stage: &str, dest: &Path) -> Result<()> {
+    #[cfg(feature = "fault-injection")]
+    if let Ok(setting) = std::env::var("FASTK_TEST_IO_AT") {
+        if let Some((wanted, suffix)) = setting.split_once(':') {
+            if wanted == stage && dest.to_string_lossy().ends_with(suffix) {
+                return Err(std::io::Error::new(
+                    std::io::ErrorKind::StorageFull,
+                    "injected storage failure",
+                )
+                .into());
+            }
+        }
+    }
+    let _ = (stage, dest);
     Ok(())
 }

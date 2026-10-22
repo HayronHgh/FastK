@@ -4,7 +4,36 @@ FastK is a Rust storage engine for normalized, fixed-record time-series data.
 It is designed for read-heavy market-data and research workflows that need fast
 local range reads without bringing in a full SQL database.
 
-Current release target: `v0.1.0-rc.1`
+Current release target: `v0.2.0-rc.1`
+
+FastK is a technical/research MIT project, not an enterprise service offering.
+Start with [Installation](docs/INSTALLATION.md) for compiler-free Python/CLI use,
+[Core Contract](docs/CORE_CONTRACT.md) for ownership and data guarantees, and
+[External Validation](docs/EXTERNAL_VALIDATION.md) for reproducible comparisons
+and when to choose another storage option. Historical subprocess results and
+current native results are separate; Rust-only timings are not a client speed promise.
+Python applications can use the [same-process NumPy module](clients/python-native/README.md)
+for named, precise integer batches without JSON. See the [native engine contract](docs/NATIVE_ENGINE.md)
+and [v0.2 verification](docs/NATIVE_VALIDATION.md). [Earlier results](docs/VALIDATION_RESULTS.md)
+preserve historical subprocess measurements.
+Repeated Python reads can use [`with Client(...)`](docs/SESSION_REUSE_RESULTS.md)
+to reuse a local worker; see the measured replay and failure/ownership checks.
+The [buffer implementation results](docs/BUFFER_REUSE_RESULTS.md) report paired
+bulk/short latency, worker and process-tree memory, and unchanged JSON bytes.
+The subsequent [compact session results](docs/COMPACT_SESSION_RESULTS.md) isolate
+private JSON whitespace reduction; public CLI pretty JSON remains unchanged.
+The [Python cost study](docs/COMPACT_PYTHON_COST.md) separates decoding, parsing
+and caller conversion after compaction, with a measured optimization proposal
+and the native decoder's memory/compatibility tradeoffs.
+The [Rust core review](docs/RUST_CORE_REVIEW.md) preserves the pre-v0.2 audit.
+Version 0.2 fixes its shared-file cursor race using positional reads, bounds
+partial-range capacity and resets compaction debt after merging.
+
+The [fixed backtest study](docs/BACKTEST_RESULTS.md) switches only the storage
+adapter across FastK, Arrow, Parquet, DuckDB and SQLite, with identical trades
+and equity curves. The [initial-public-version comparison](docs/VERSION_COMPARISON.md)
+separately measures the original CLI/JSON delivery against current native use;
+its whole-application ratios are not Rust-only algorithm speedups.
 
 ## What This Project Is For
 
@@ -56,17 +85,22 @@ kline_store/
     benchmarks/     # benchmark runners
   docs/             # architecture and integration documents
   schemas/          # JSON contract schemas
+  clients/python/   # dependency-free public subprocess client
+  external-tests/   # installed-artifact tests and isolated comparisons
   scripts/          # release build and smoke scripts
   tests/            # bridge and release smoke tests
 ```
 
 See [Project Structure](docs/PROJECT_STRUCTURE.md) for the full tree.
 
-## Install Prerequisites
+## Build From Source Prerequisites
+
+These prerequisites are for Rust development. Release-wheel and standalone CLI
+users can follow [Installation](docs/INSTALLATION.md) without Rust or Cargo.
 
 Required:
 
-- Rust stable toolchain
+- Rust 1.89 or newer
 - Cargo
 
 Recommended:
@@ -97,6 +131,8 @@ Run all checks used for development:
 cargo fmt --check
 cargo check --examples
 cargo test
+# Crash and injected-IO contract tests:
+cargo test --locked --features fault-injection
 ```
 
 Build a release package on Windows:

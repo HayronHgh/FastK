@@ -1,0 +1,16 @@
+   Compiling serde_core v1.0.228
+   Compiling serde_json v1.0.149
+   Compiling serde v1.0.228
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling fastk-scaling-profile v0.0.0 (/work/external-tests/scaling-profile)
+    Finished `release` profile [optimized + debuginfo] target(s) in 18.00s
+     Running tests/shared_lifetime.rs (target/scaling-profile-build/release/deps/shared_lifetime-1007c454f64ae393)
+
+running 1 test
+{"fds_after_last_owner":0,"first_wave_ns":57803124,"passed":true,"queries":576000,"store_fds_after_waves":[65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65],"workers":1}
+{"fds_after_last_owner":0,"first_wave_ns":10795127,"passed":true,"queries":576000,"store_fds_after_waves":[65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65],"workers":4}
+{"fds_after_last_owner":0,"first_wave_ns":14410169,"passed":true,"queries":576000,"store_fds_after_waves":[65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65,65],"workers":8}
+test one_store_survives_first_touch_reuse_and_releases_its_last_lease ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.61s
+

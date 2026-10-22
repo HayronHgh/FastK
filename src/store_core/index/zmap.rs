@@ -111,13 +111,26 @@ pub fn write_entries(path: &Path, entries: &[ZoneMapEntry]) -> Result<()> {
     for entry in entries {
         bytes.extend_from_slice(&entry.to_le_bytes());
     }
-    fs::write(path, bytes)?;
+    crate::storage::fs::atomic_write_replace(path, |writer| {
+        std::io::Write::write_all(writer, &bytes)?;
+        Ok(())
+    })?;
     Ok(())
 }
 
 /// Reads a `.zmap` file.
 pub fn read_entries(path: &Path) -> Result<Vec<ZoneMapEntry>> {
+    read_entries_checked(path, 0)
+}
+
+pub(crate) fn read_entries_checked(path: &Path, checksum: u64) -> Result<Vec<ZoneMapEntry>> {
     let bytes = fs::read(path)?;
+    if checksum != 0 && crate::storage::fs::checksum64(&bytes) != checksum {
+        return Err(FastKError::InvalidData(format!(
+            "sidecar checksum mismatch: {}",
+            path.display()
+        )));
+    }
     if bytes.len() % ZoneMapEntry::BYTE_SIZE != 0 {
         return Err(FastKError::InvalidData(format!(
             "invalid zmap byte length {}",

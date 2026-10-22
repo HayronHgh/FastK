@@ -1,0 +1,605 @@
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk-12ux741n8x6g0\s-hnf49i3ajh-1n3pyqg-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk-194kxa8petk3c\s-hnf49i3ao7-0rumfut-working`
+
+warning: `fastk` (lib) generated 1 warning
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\release_smoke-31huk9lekpmhu\s-hnf49jvx8n-0zu0bw1-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\prepare_python_demo_store-0soamn4vgp9a1\s-hnf49jwrxc-0eydy1u-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\indicator_series_demo-1eusmu897j37f\s-hnf49jx7jg-1t2d9ek-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\bridge_cli_contract-2um1r8xoaid6w\s-hnf49jwa3b-0oerk9u-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\backtest_facade_demo-3tkhmmbi3mz68\s-hnf49jxr5p-19adxl6-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\parallel_reads-2rxy0s1rjws5i\s-hnf49jwqu5-0t2m7rr-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk_admin-0pinememv7b8v\s-hnf49jyeez-0ze4m6a-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\bench_backtest_facade-22erwart5bbks\s-hnf49jy2uc-1pievah-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\bench_acceptance-12v7pp5uvfeq4\s-hnf49jxkud-0v15q1l-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\bench_scalar_sidecars-000lsar9pij0d\s-hnf49jyozd-0qmv0yq-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\storage_contract-2mak188cb4a0o\s-hnf49jvr9n-0ff6jr8-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk_bridge-0sf5icykw5gko\s-hnf49jx0b6-12v13h4-working`
+
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\bench_kline_storage_comparison-1rj31qegeye1y\s-hnf49jz7wg-1bbxksp-working`
+
+warning: `fastk` (example "prepare_python_demo_store") generated 1 warning
+warning: `fastk` (test "bridge_cli_contract") generated 1 warning
+warning: `fastk` (example "backtest_facade_demo") generated 1 warning
+warning: `fastk` (example "indicator_series_demo") generated 1 warning
+warning: `fastk` (test "release_smoke") generated 1 warning
+warning: `fastk` (lib test) generated 1 warning
+warning: `fastk` (example "fastk_admin") generated 1 warning
+warning: `fastk` (example "bench_acceptance") generated 1 warning
+warning: `fastk` (test "parallel_reads") generated 1 warning
+warning: `fastk` (example "bench_backtest_facade") generated 1 warning
+warning: `fastk` (example "bench_scalar_sidecars") generated 1 warning
+warning: `fastk` (example "fastk_bridge") generated 1 warning
+warning: `fastk` (example "bench_kline_storage_comparison") generated 1 warning
+warning: `fastk` (test "storage_contract") generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.23s
+     Running unittests src\lib.rs (target\debug\deps\fastk-04c825843623946b.exe)
+
+running 107 tests
+test benchmark::tests::acceptance_matrix_contains_warm_and_cold_workloads ... ok
+test benchmark::tests::metrics_accumulator_preserves_off_when_only_off_snapshots_are_added ... ok
+test benchmark::tests::latency_summary_reports_expected_percentiles ... ok
+test benchmark::tests::metrics_accumulator_sums_snapshots ... ok
+test control::dataset_registry::tests::versioned_dataset_ref_uses_stable_path_layout ... ok
+test feature::query::tests::legacy_scalar_predicate_still_matches_and_classifies ... ok
+test feature::query::tests::scalar_predicate_expr_matches_all_supported_operators ... ok
+test feature::query::tests::scalar_predicate_expr_rejects_invalid_between_bounds ... ok
+test store_core::chunk::sparse_index::tests::window_lookup_handles_boundaries ... ok
+test store_core::chunk::sparse_index::tests::sampling_validated_records_emits_expected_anchors ... ok
+test store_core::engine::compaction::tests::delta_bytes_threshold_triggers_merge ... ok
+test store_core::engine::compaction::tests::delta_count_threshold_triggers_merge ... ok
+test store_core::engine::compaction::tests::state_transition_rules_are_explicit ... ok
+test store_core::engine::derived::tests::canonical_scalar_categories_build_expected_keys ... ok
+test store_core::engine::derived::tests::scoped_binding_roundtrip_matches_series_key ... ok
+test store_core::engine::derived::tests::scoped_scalar_name_roundtrip_is_stable ... ok
+test control::dataset_registry::tests::dataset_manifest_resolves_explicit_versions_without_latest_ambiguity ... ok
+test control::dataset_registry::tests::dataset_ref_resolution_checks_id_version_and_root ... ok
+test control::dataset_registry::tests::feature_and_factor_registry_track_dataset_lineage ... ok
+test store_core::chunk::file::tests::local_offsets_clone_eof_and_invalid_seek_are_independent ... ok
+test store_core::chunk::cache::tests::eviction_and_invalidation_keep_in_flight_files_alive_and_retry_failed_opens ... ok
+test bridge::tests::write_kline_range_bridge_auto_registers_and_reads_back ... FAILED
+test bridge::tests::indicator_inventory_bridge_reports_capabilities_and_counts ... FAILED
+test store_core::engine::backtest::tests::release_check_smoke_surfaces_are_clean ... FAILED
+test bridge::tests::generic_scalar_bridge_writes_and_reads_feature_series ... FAILED
+test bridge::tests::kline_inventory_bridge_reports_coverage ... FAILED
+test bridge::tests::read_indicator_range_bridge_returns_empty_when_series_is_missing ... FAILED
+test bridge::tests::write_indicator_range_bridge_auto_registers_and_reads_back ... FAILED
+test bridge::tests::read_kline_range_bridge_returns_expected_json_shape ... FAILED
+test store_core::engine::backtest::tests::facade_alias_methods_and_reset_modes_work ... FAILED
+test bridge::tests::generic_scalar_inventory_reports_factor_series ... FAILED
+test store_core::engine::backtest::tests::facade_attach_stays_lazy_until_first_query_and_sidecar_query ... FAILED
+test store_core::engine::backtest::tests::facade_initialize_and_prewarm_cover_attached_series ... FAILED
+test bridge::tests::write_indicator_range_rejects_overlap_with_existing_month ... FAILED
+test store_core::engine::store::tests::get_kline_at_finds_exact_record ... FAILED
+test store_core::engine::backtest::tests::facade_scalar_queries_match_raw_paths ... FAILED
+test bridge::tests::write_kline_range_rejects_overlap_with_existing_month ... FAILED
+test store_core::engine::store::tests::chunk_write_and_read_roundtrip ... FAILED
+test store_core::engine::store::tests::get_kline_latest_n_spans_previous_chunks ... FAILED
+test store_core::engine::backtest::tests::facade_attaches_feature_and_factor_scalar_bindings ... FAILED
+test store_core::engine::backtest::tests::facade_query_scalar_predicate_stays_storage_level ... FAILED
+test store_core::engine::store::tests::append_overlap_is_rejected ... FAILED
+test store_core::engine::store::tests::append_strictly_increasing_writes_delta_and_merge_compacts_month ... FAILED
+test store_core::engine::store::tests::get_kline_at_returns_none_for_missing_timestamp ... FAILED
+test store_core::engine::store::tests::get_kline_range_returns_inclusive_rows ... FAILED
+test store_core::engine::store::tests::high_frequency_record_types_write_read_latest_and_inventory ... FAILED
+test store_core::engine::store::tests::indicator_inventory_and_capabilities_are_reported ... FAILED
+test store_core::engine::store::tests::indicator_series_wrappers_roundtrip_records ... FAILED
+test store_core::engine::store::tests::put_kline_chunk_rejects_non_increasing_timestamps ... FAILED
+test store_core::engine::store::tests::read_session_inventory_and_health_summary_are_reported ... FAILED
+test store_core::engine::store::tests::partition_policy_defaults_and_cross_partition_queries_work ... FAILED
+test store_core::engine::store::tests::put_kline_chunk_rejects_cross_month_records ... FAILED
+test store_core::engine::store::tests::metrics_level_controls_runtime_overhead_and_detail ... FAILED
+test store_core::engine::store::tests::replacing_scalar_chunk_replaces_sidecars ... FAILED
+test store_core::engine::store::tests::inventory_stats_and_capabilities_are_reported ... FAILED
+test store_core::engine::store::tests::replay_respects_end_ts_and_empty_ranges ... FAILED
+test store_core::engine::store::tests::repeated_point_queries_remain_correct ... FAILED
+test store_core::engine::store::tests::replay_same_ts_preserves_file_order ... FAILED
+test store_core::engine::store::tests::replay_book_delta_batches_and_exhaustion_are_stable ... FAILED
+test store_core::engine::store::tests::replay_scalar_across_month_chunks ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_between_inclusive_and_exclusive ... FAILED
+test store_core::engine::store::tests::replay_does_not_break_existing_range_query ... FAILED
+test store_core::engine::store::tests::replay_bbo_across_day_partitions ... FAILED
+test store_core::engine::store::tests::replay_kline_from_middle_of_chunk ... FAILED
+test store_core::engine::store::tests::replay_invalid_range_and_zero_batch_are_errors ... FAILED
+test store_core::storage::manifest::tests::manifest_checksum_mismatch_is_rejected ... ok
+test store_core::storage::manifest::tests::manifest_roundtrip_preserves_all_fields ... ok
+test store_core::storage::manifest::tests::manifest_version_mismatch_is_rejected ... ok
+test store_core::engine::store::tests::scalar_point_lookup_and_short_range_are_correct ... FAILED
+test store_core::engine::store::tests::replay_trade_across_hour_partitions ... FAILED
+test store_core::index::query_engine::tests::vix_build_read_and_query_returns_sorted_unique_timestamps ... FAILED
+test store_core::index::query_engine::tests::zmap_build_read_and_query_returns_sorted_unique_timestamps ... FAILED
+test store_core::storage::recovery::tests::overlap_resolution_prefers_newer_covering_chunk ... ok
+test store_core::storage::manifest::tests::read_only_load_bypasses_and_does_not_publish_shared_metadata ... FAILED
+test store_core::storage::manifest::tests::shared_manifest_cache_reuses_decoded_meta_for_reopen_like_loads ... FAILED
+test store_core::storage::recovery::tests::orphan_artifacts_are_detected ... FAILED
+test store_core::storage::manifest::tests::legacy_json_is_migrated_to_binary_manifest ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_continuous_gt_uses_zmap ... FAILED
+test types::bbo::tests::bbo_record_binary_roundtrip_preserves_fields ... ok
+test types::book_delta::tests::book_delta_record_binary_roundtrip_preserves_fields ... ok
+test types::meta::tests::find_chunk_for_ts_returns_expected_index ... ok
+test types::meta::tests::find_chunks_for_range_returns_expected_span ... ok
+test types::meta::tests::validate_rejects_overlapping_chunks ... ok
+test types::trade::tests::trade_record_binary_roundtrip_preserves_fields ... ok
+test store_core::engine::store::tests::scalar_predicate_query_not_in_set_falls_back_to_scan ... FAILED
+test store_core::engine::store::tests::scalar_raw_query_matches_indexed_paths ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_indicator_compatibility_still_works ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_discrete_eq_and_in_set_use_vix ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_missing_sidecar_falls_back_to_scan ... FAILED
+test store_core::engine::store::tests::scalar_predicate_query_invalid_and_empty_ranges_are_explicit ... FAILED
+test store_core::storage::recovery::tests::recovery_normalizes_dangling_merging_state ... FAILED
+test store_core::storage::recovery::tests::scrub_reports_corrupt_sidecar_consistency_issues ... FAILED
+test store_core::engine::store::tests::sequence_scan_invalid_range_is_error ... FAILED
+test store_core::engine::store::tests::session_cache_clear_retains_manifest_snapshot ... FAILED
+test store_core::engine::store::tests::sequence_scan_reports_clean_book_delta_across_partitions ... FAILED
+test store_core::storage::recovery::tests::startup_recovery_dry_run_reports_without_mutating ... ok
+test store_core::engine::store::tests::scalar_sidecars_attach_and_query_correctly ... FAILED
+test store_core::storage::recovery::tests::rebuild_manifest_from_fs_restores_scalar_sidecars ... FAILED
+test store_core::engine::store::tests::shared_manifest_cache_shortens_reopen_like_query_bootstrap ... FAILED
+test store_core::engine::store::tests::sequence_scan_reports_gap_duplicate_and_non_monotonic_bbo ... FAILED
+test store_core::engine::store::tests::session_prewarm_and_reset_modes_are_explicit ... FAILED
+test store_core::engine::store::tests::sequence_scan_supports_trade_id_and_empty_ranges ... FAILED
+test store_core::engine::store::tests::short_range_cross_chunk_returns_only_needed_rows ... FAILED
+test store_core::engine::store::tests::sidecar_cache_hits_after_repeated_zmap_queries ... FAILED
+test store_core::storage::recovery::tests::startup_recovery_adopts_chunk_written_before_manifest_update ... FAILED
+test store_core::storage::recovery::tests::startup_recovery_removes_temp_artifacts ... ok
+test store_core::chunk::cache::tests::concurrent_misses_hits_and_eviction_stay_bounded ... ok
+
+failures:
+
+---- bridge::tests::write_kline_range_bridge_auto_registers_and_reads_back stdout ----
+
+thread 'bridge::tests::write_kline_range_bridge_auto_registers_and_reads_back' (23220) panicked at src\bridge.rs:970:10:
+kline write should succeed: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- bridge::tests::indicator_inventory_bridge_reports_capabilities_and_counts stdout ----
+
+thread 'bridge::tests::indicator_inventory_bridge_reports_capabilities_and_counts' (46408) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::release_check_smoke_surfaces_are_clean stdout ----
+
+thread 'store_core::engine::backtest::tests::release_check_smoke_surfaces_are_clean' (24532) panicked at src\store_core\engine\backtest.rs:837:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::generic_scalar_bridge_writes_and_reads_feature_series stdout ----
+
+thread 'bridge::tests::generic_scalar_bridge_writes_and_reads_feature_series' (51020) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::kline_inventory_bridge_reports_coverage stdout ----
+
+thread 'bridge::tests::kline_inventory_bridge_reports_coverage' (19344) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::read_indicator_range_bridge_returns_empty_when_series_is_missing stdout ----
+
+thread 'bridge::tests::read_indicator_range_bridge_returns_empty_when_series_is_missing' (19832) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::write_indicator_range_bridge_auto_registers_and_reads_back stdout ----
+
+thread 'bridge::tests::write_indicator_range_bridge_auto_registers_and_reads_back' (17668) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::read_kline_range_bridge_returns_expected_json_shape stdout ----
+
+thread 'bridge::tests::read_kline_range_bridge_returns_expected_json_shape' (23228) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_alias_methods_and_reset_modes_work stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_alias_methods_and_reset_modes_work' (18228) panicked at src\store_core\engine\backtest.rs:695:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::generic_scalar_inventory_reports_factor_series stdout ----
+
+thread 'bridge::tests::generic_scalar_inventory_reports_factor_series' (49420) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_attach_stays_lazy_until_first_query_and_sidecar_query stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_attach_stays_lazy_until_first_query_and_sidecar_query' (19600) panicked at src\store_core\engine\backtest.rs:750:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_initialize_and_prewarm_cover_attached_series stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_initialize_and_prewarm_cover_attached_series' (45812) panicked at src\store_core\engine\backtest.rs:467:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::write_indicator_range_rejects_overlap_with_existing_month stdout ----
+
+thread 'bridge::tests::write_indicator_range_rejects_overlap_with_existing_month' (55900) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::get_kline_at_finds_exact_record stdout ----
+
+thread 'store_core::engine::store::tests::get_kline_at_finds_exact_record' (40156) panicked at src\store_core\engine\store_tests.rs:24:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_scalar_queries_match_raw_paths stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_scalar_queries_match_raw_paths' (23532) panicked at src\store_core\engine\backtest.rs:529:14:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- bridge::tests::write_kline_range_rejects_overlap_with_existing_month stdout ----
+
+thread 'bridge::tests::write_kline_range_rejects_overlap_with_existing_month' (17328) panicked at src\bridge.rs:1034:14:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::chunk_write_and_read_roundtrip stdout ----
+
+thread 'store_core::engine::store::tests::chunk_write_and_read_roundtrip' (50608) panicked at src\store_core\engine\store_tests.rs:13:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::get_kline_latest_n_spans_previous_chunks stdout ----
+
+thread 'store_core::engine::store::tests::get_kline_latest_n_spans_previous_chunks' (51884) panicked at src\store_core\engine\store_tests.rs:106:56:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_attaches_feature_and_factor_scalar_bindings stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_attaches_feature_and_factor_scalar_bindings' (10676) panicked at src\store_core\engine\backtest.rs:636:14:
+feature series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::backtest::tests::facade_query_scalar_predicate_stays_storage_level stdout ----
+
+thread 'store_core::engine::backtest::tests::facade_query_scalar_predicate_stays_storage_level' (50244) panicked at src\store_core\engine\backtest.rs:592:14:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::append_overlap_is_rejected stdout ----
+
+thread 'store_core::engine::store::tests::append_overlap_is_rejected' (55596) panicked at src\store_core\engine\store_tests.rs:253:10:
+series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::append_strictly_increasing_writes_delta_and_merge_compacts_month stdout ----
+
+thread 'store_core::engine::store::tests::append_strictly_increasing_writes_delta_and_merge_compacts_month' (54860) panicked at src\store_core\engine\store_tests.rs:205:10:
+series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::get_kline_at_returns_none_for_missing_timestamp stdout ----
+
+thread 'store_core::engine::store::tests::get_kline_at_returns_none_for_missing_timestamp' (45060) panicked at src\store_core\engine\store_tests.rs:46:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::get_kline_range_returns_inclusive_rows stdout ----
+
+thread 'store_core::engine::store::tests::get_kline_range_returns_inclusive_rows' (34724) panicked at src\store_core\engine\store_tests.rs:58:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::high_frequency_record_types_write_read_latest_and_inventory stdout ----
+
+thread 'store_core::engine::store::tests::high_frequency_record_types_write_read_latest_and_inventory' (51176) panicked at src\store_core\engine\store_tests.rs:1140:10:
+trade series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::indicator_inventory_and_capabilities_are_reported stdout ----
+
+thread 'store_core::engine::store::tests::indicator_inventory_and_capabilities_are_reported' (25324) panicked at src\store_core\engine\store_tests.rs:898:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::indicator_series_wrappers_roundtrip_records stdout ----
+
+thread 'store_core::engine::store::tests::indicator_series_wrappers_roundtrip_records' (19064) panicked at src\store_core\engine\store_tests.rs:859:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::put_kline_chunk_rejects_non_increasing_timestamps stdout ----
+
+thread 'store_core::engine::store::tests::put_kline_chunk_rejects_non_increasing_timestamps' (46572) panicked at src\store_core\engine\store_tests.rs:131:10:
+series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::read_session_inventory_and_health_summary_are_reported stdout ----
+
+thread 'store_core::engine::store::tests::read_session_inventory_and_health_summary_are_reported' (20472) panicked at src\store_core\engine\store_tests.rs:936:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::partition_policy_defaults_and_cross_partition_queries_work stdout ----
+
+thread 'store_core::engine::store::tests::partition_policy_defaults_and_cross_partition_queries_work' (50316) panicked at src\store_core\engine\store_tests.rs:1589:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::put_kline_chunk_rejects_cross_month_records stdout ----
+
+thread 'store_core::engine::store::tests::put_kline_chunk_rejects_cross_month_records' (12452) panicked at src\store_core\engine\store_tests.rs:168:10:
+series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::metrics_level_controls_runtime_overhead_and_detail stdout ----
+
+thread 'store_core::engine::store::tests::metrics_level_controls_runtime_overhead_and_detail' (30000) panicked at src\store_core\engine\store_tests.rs:1019:38:
+fixture should build: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replacing_scalar_chunk_replaces_sidecars stdout ----
+
+thread 'store_core::engine::store::tests::replacing_scalar_chunk_replaces_sidecars' (19672) panicked at src\store_core\engine\store_tests.rs:349:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::inventory_stats_and_capabilities_are_reported stdout ----
+
+thread 'store_core::engine::store::tests::inventory_stats_and_capabilities_are_reported' (34216) panicked at src\store_core\engine\store_tests.rs:814:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_respects_end_ts_and_empty_ranges stdout ----
+
+thread 'store_core::engine::store::tests::replay_respects_end_ts_and_empty_ranges' (19372) panicked at src\store_core\engine\store_tests.rs:1486:10:
+trade series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::repeated_point_queries_remain_correct stdout ----
+
+thread 'store_core::engine::store::tests::repeated_point_queries_remain_correct' (23684) panicked at src\store_core\engine\store_tests.rs:93:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_same_ts_preserves_file_order stdout ----
+
+thread 'store_core::engine::store::tests::replay_same_ts_preserves_file_order' (49428) panicked at src\store_core\engine\store_tests.rs:1561:10:
+trade series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_book_delta_batches_and_exhaustion_are_stable stdout ----
+
+thread 'store_core::engine::store::tests::replay_book_delta_batches_and_exhaustion_are_stable' (7500) panicked at src\store_core\engine\store_tests.rs:1444:10:
+book delta series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_scalar_across_month_chunks stdout ----
+
+thread 'store_core::engine::store::tests::replay_scalar_across_month_chunks' (51772) panicked at src\store_core\engine\store_tests.rs:1371:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_between_inclusive_and_exclusive stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_between_inclusive_and_exclusive' (43540) panicked at src\store_core\engine\store_tests.rs:548:10:
+feature series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_does_not_break_existing_range_query stdout ----
+
+thread 'store_core::engine::store::tests::replay_does_not_break_existing_range_query' (17816) panicked at src\store_core\engine\store_tests.rs:1540:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_bbo_across_day_partitions stdout ----
+
+thread 'store_core::engine::store::tests::replay_bbo_across_day_partitions' (23084) panicked at src\store_core\engine\store_tests.rs:1422:10:
+bbo series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_kline_from_middle_of_chunk stdout ----
+
+thread 'store_core::engine::store::tests::replay_kline_from_middle_of_chunk' (53012) panicked at src\store_core\engine\store_tests.rs:1349:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_invalid_range_and_zero_batch_are_errors stdout ----
+
+thread 'store_core::engine::store::tests::replay_invalid_range_and_zero_batch_are_errors' (51332) panicked at src\store_core\engine\store_tests.rs:1521:38:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_point_lookup_and_short_range_are_correct stdout ----
+
+thread 'store_core::engine::store::tests::scalar_point_lookup_and_short_range_are_correct' (36684) panicked at src\store_core\engine\store_tests.rs:1103:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::replay_trade_across_hour_partitions stdout ----
+
+thread 'store_core::engine::store::tests::replay_trade_across_hour_partitions' (51656) panicked at src\store_core\engine\store_tests.rs:1402:10:
+trade series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::index::query_engine::tests::vix_build_read_and_query_returns_sorted_unique_timestamps stdout ----
+
+thread 'store_core::index::query_engine::tests::vix_build_read_and_query_returns_sorted_unique_timestamps' (56172) panicked at src\store_core\index\query_engine.rs:112:51:
+vix write should succeed: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::index::query_engine::tests::zmap_build_read_and_query_returns_sorted_unique_timestamps stdout ----
+
+thread 'store_core::index::query_engine::tests::zmap_build_read_and_query_returns_sorted_unique_timestamps' (29952) panicked at src\store_core\index\query_engine.rs:71:52:
+zmap write should succeed: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::manifest::tests::read_only_load_bypasses_and_does_not_publish_shared_metadata stdout ----
+
+thread 'store_core::storage::manifest::tests::read_only_load_bypasses_and_does_not_publish_shared_metadata' (29224) panicked at src\store_core\storage\manifest.rs:739:76:
+called `Result::unwrap()` on an `Err` value: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::manifest::tests::shared_manifest_cache_reuses_decoded_meta_for_reopen_like_loads stdout ----
+
+thread 'store_core::storage::manifest::tests::shared_manifest_cache_reuses_decoded_meta_for_reopen_like_loads' (29020) panicked at src\store_core\storage\manifest.rs:721:14:
+manifest should save: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::recovery::tests::orphan_artifacts_are_detected stdout ----
+
+thread 'store_core::storage::recovery::tests::orphan_artifacts_are_detected' (25152) panicked at src\store_core\storage\recovery.rs:1268:56:
+manifest should save: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::manifest::tests::legacy_json_is_migrated_to_binary_manifest stdout ----
+
+thread 'store_core::storage::manifest::tests::legacy_json_is_migrated_to_binary_manifest' (23612) panicked at src\store_core\storage\manifest.rs:705:50:
+legacy manifest should migrate: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_continuous_gt_uses_zmap stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_continuous_gt_uses_zmap' (37696) panicked at src\store_core\engine\store_tests.rs:504:10:
+feature series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_not_in_set_falls_back_to_scan stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_not_in_set_falls_back_to_scan' (7804) panicked at src\store_core\engine\store_tests.rs:651:10:
+feature series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_raw_query_matches_indexed_paths stdout ----
+
+thread 'store_core::engine::store::tests::scalar_raw_query_matches_indexed_paths' (29460) panicked at src\store_core\engine\store_tests.rs:461:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_indicator_compatibility_still_works stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_indicator_compatibility_still_works' (38852) panicked at src\store_core\engine\store_tests.rs:773:10:
+kline should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_discrete_eq_and_in_set_use_vix stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_discrete_eq_and_in_set_use_vix' (54712) panicked at src\store_core\engine\store_tests.rs:603:10:
+feature series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_missing_sidecar_falls_back_to_scan stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_missing_sidecar_falls_back_to_scan' (35600) panicked at src\store_core\engine\store_tests.rs:687:10:
+factor series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_predicate_query_invalid_and_empty_ranges_are_explicit stdout ----
+
+thread 'store_core::engine::store::tests::scalar_predicate_query_invalid_and_empty_ranges_are_explicit' (51532) panicked at src\store_core\engine\store_tests.rs:737:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::recovery::tests::recovery_normalizes_dangling_merging_state stdout ----
+
+thread 'store_core::storage::recovery::tests::recovery_normalizes_dangling_merging_state' (3748) panicked at src\store_core\storage\recovery.rs:1506:10:
+chunk should write: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::recovery::tests::scrub_reports_corrupt_sidecar_consistency_issues stdout ----
+
+thread 'store_core::storage::recovery::tests::scrub_reports_corrupt_sidecar_consistency_issues' (52016) panicked at src\store_core\storage\recovery.rs:1427:10:
+scalar chunk should write: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::sequence_scan_invalid_range_is_error stdout ----
+
+thread 'store_core::engine::store::tests::sequence_scan_invalid_range_is_error' (15508) panicked at src\store_core\engine\store_tests.rs:1333:10:
+bbo series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::session_cache_clear_retains_manifest_snapshot stdout ----
+
+thread 'store_core::engine::store::tests::session_cache_clear_retains_manifest_snapshot' (40344) panicked at src\store_core\engine\store_tests.rs:996:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::sequence_scan_reports_clean_book_delta_across_partitions stdout ----
+
+thread 'store_core::engine::store::tests::sequence_scan_reports_clean_book_delta_across_partitions' (44360) panicked at src\store_core\engine\store_tests.rs:1231:10:
+book delta series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::scalar_sidecars_attach_and_query_correctly stdout ----
+
+thread 'store_core::engine::store::tests::scalar_sidecars_attach_and_query_correctly' (30228) panicked at src\store_core\engine\store_tests.rs:284:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::recovery::tests::rebuild_manifest_from_fs_restores_scalar_sidecars stdout ----
+
+thread 'store_core::storage::recovery::tests::rebuild_manifest_from_fs_restores_scalar_sidecars' (54460) panicked at src\store_core\storage\recovery.rs:1364:10:
+scalar chunk should write: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::shared_manifest_cache_shortens_reopen_like_query_bootstrap stdout ----
+
+thread 'store_core::engine::store::tests::shared_manifest_cache_shortens_reopen_like_query_bootstrap' (27316) panicked at src\store_core\engine\store_tests.rs:1068:10:
+series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::sequence_scan_reports_gap_duplicate_and_non_monotonic_bbo stdout ----
+
+thread 'store_core::engine::store::tests::sequence_scan_reports_gap_duplicate_and_non_monotonic_bbo' (44120) panicked at src\store_core\engine\store_tests.rs:1261:10:
+bbo series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::session_prewarm_and_reset_modes_are_explicit stdout ----
+
+thread 'store_core::engine::store::tests::session_prewarm_and_reset_modes_are_explicit' (48116) panicked at src\store_core\engine\store_tests.rs:1642:10:
+kline series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::sequence_scan_supports_trade_id_and_empty_ranges stdout ----
+
+thread 'store_core::engine::store::tests::sequence_scan_supports_trade_id_and_empty_ranges' (23832) panicked at src\store_core\engine\store_tests.rs:1295:10:
+trade series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::short_range_cross_chunk_returns_only_needed_rows stdout ----
+
+thread 'store_core::engine::store::tests::short_range_cross_chunk_returns_only_needed_rows' (19216) panicked at src\store_core\engine\store_tests.rs:73:56:
+fixture should be created: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::engine::store::tests::sidecar_cache_hits_after_repeated_zmap_queries stdout ----
+
+thread 'store_core::engine::store::tests::sidecar_cache_hits_after_repeated_zmap_queries' (13692) panicked at src\store_core\engine\store_tests.rs:408:10:
+scalar series should register: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+---- store_core::storage::recovery::tests::startup_recovery_adopts_chunk_written_before_manifest_update stdout ----
+
+thread 'store_core::storage::recovery::tests::startup_recovery_adopts_chunk_written_before_manifest_update' (18740) panicked at src\store_core\storage\recovery.rs:1230:56:
+manifest should save: Io(Os { code: 5, kind: PermissionDenied, message: "存取被拒。" })
+
+
+failures:
+    bridge::tests::generic_scalar_bridge_writes_and_reads_feature_series
+    bridge::tests::generic_scalar_inventory_reports_factor_series
+    bridge::tests::indicator_inventory_bridge_reports_capabilities_and_counts
+    bridge::tests::kline_inventory_bridge_reports_coverage
+    bridge::tests::read_indicator_range_bridge_returns_empty_when_series_is_missing
+    bridge::tests::read_kline_range_bridge_returns_expected_json_shape
+    bridge::tests::write_indicator_range_bridge_auto_registers_and_reads_back
+    bridge::tests::write_indicator_range_rejects_overlap_with_existing_month
+    bridge::tests::write_kline_range_bridge_auto_registers_and_reads_back
+    bridge::tests::write_kline_range_rejects_overlap_with_existing_month
+    store_core::engine::backtest::tests::facade_alias_methods_and_reset_modes_work
+    store_core::engine::backtest::tests::facade_attach_stays_lazy_until_first_query_and_sidecar_query
+    store_core::engine::backtest::tests::facade_attaches_feature_and_factor_scalar_bindings
+    store_core::engine::backtest::tests::facade_initialize_and_prewarm_cover_attached_series
+    store_core::engine::backtest::tests::facade_query_scalar_predicate_stays_storage_level
+    store_core::engine::backtest::tests::facade_scalar_queries_match_raw_paths
+    store_core::engine::backtest::tests::release_check_smoke_surfaces_are_clean
+    store_core::engine::store::tests::append_overlap_is_rejected
+    store_core::engine::store::tests::append_strictly_increasing_writes_delta_and_merge_compacts_month
+    store_core::engine::store::tests::chunk_write_and_read_roundtrip
+    store_core::engine::store::tests::get_kline_at_finds_exact_record
+    store_core::engine::store::tests::get_kline_at_returns_none_for_missing_timestamp
+    store_core::engine::store::tests::get_kline_latest_n_spans_previous_chunks
+    store_core::engine::store::tests::get_kline_range_returns_inclusive_rows
+    store_core::engine::store::tests::high_frequency_record_types_write_read_latest_and_inventory
+    store_core::engine::store::tests::indicator_inventory_and_capabilities_are_reported
+    store_core::engine::store::tests::indicator_series_wrappers_roundtrip_records
+    store_core::engine::store::tests::inventory_stats_and_capabilities_are_reported
+    store_core::engine::store::tests::metrics_level_controls_runtime_overhead_and_detail
+    store_core::engine::store::tests::partition_policy_defaults_and_cross_partition_queries_work
+    store_core::engine::store::tests::put_kline_chunk_rejects_cross_month_records
+    store_core::engine::store::tests::put_kline_chunk_rejects_non_increasing_timestamps
+    store_core::engine::store::tests::read_session_inventory_and_health_summary_are_reported
+    store_core::engine::store::tests::repeated_point_queries_remain_correct
+    store_core::engine::store::tests::replacing_scalar_chunk_replaces_sidecars
+    store_core::engine::store::tests::replay_bbo_across_day_partitions
+    store_core::engine::store::tests::replay_book_delta_batches_and_exhaustion_are_stable
+    store_core::engine::store::tests::replay_does_not_break_existing_range_query
+    store_core::engine::store::tests::replay_invalid_range_and_zero_batch_are_errors
+    store_core::engine::store::tests::replay_kline_from_middle_of_chunk
+    store_core::engine::store::tests::replay_respects_end_ts_and_empty_ranges
+    store_core::engine::store::tests::replay_same_ts_preserves_file_order
+    store_core::engine::store::tests::replay_scalar_across_month_chunks
+    store_core::engine::store::tests::replay_trade_across_hour_partitions
+    store_core::engine::store::tests::scalar_point_lookup_and_short_range_are_correct
+    store_core::engine::store::tests::scalar_predicate_query_between_inclusive_and_exclusive
+    store_core::engine::store::tests::scalar_predicate_query_continuous_gt_uses_zmap
+    store_core::engine::store::tests::scalar_predicate_query_discrete_eq_and_in_set_use_vix
+    store_core::engine::store::tests::scalar_predicate_query_indicator_compatibility_still_works
+    store_core::engine::store::tests::scalar_predicate_query_invalid_and_empty_ranges_are_explicit
+    store_core::engine::store::tests::scalar_predicate_query_missing_sidecar_falls_back_to_scan
+    store_core::engine::store::tests::scalar_predicate_query_not_in_set_falls_back_to_scan
+    store_core::engine::store::tests::scalar_raw_query_matches_indexed_paths
+    store_core::engine::store::tests::scalar_sidecars_attach_and_query_correctly
+    store_core::engine::store::tests::sequence_scan_invalid_range_is_error
+    store_core::engine::store::tests::sequence_scan_reports_clean_book_delta_across_partitions
+    store_core::engine::store::tests::sequence_scan_reports_gap_duplicate_and_non_monotonic_bbo
+    store_core::engine::store::tests::sequence_scan_supports_trade_id_and_empty_ranges
+    store_core::engine::store::tests::session_cache_clear_retains_manifest_snapshot
+    store_core::engine::store::tests::session_prewarm_and_reset_modes_are_explicit
+    store_core::engine::store::tests::shared_manifest_cache_shortens_reopen_like_query_bootstrap
+    store_core::engine::store::tests::short_range_cross_chunk_returns_only_needed_rows
+    store_core::engine::store::tests::sidecar_cache_hits_after_repeated_zmap_queries
+    store_core::index::query_engine::tests::vix_build_read_and_query_returns_sorted_unique_timestamps
+    store_core::index::query_engine::tests::zmap_build_read_and_query_returns_sorted_unique_timestamps
+    store_core::storage::manifest::tests::legacy_json_is_migrated_to_binary_manifest
+    store_core::storage::manifest::tests::read_only_load_bypasses_and_does_not_publish_shared_metadata
+    store_core::storage::manifest::tests::shared_manifest_cache_reuses_decoded_meta_for_reopen_like_loads
+    store_core::storage::recovery::tests::orphan_artifacts_are_detected
+    store_core::storage::recovery::tests::rebuild_manifest_from_fs_restores_scalar_sidecars
+    store_core::storage::recovery::tests::recovery_normalizes_dangling_merging_state
+    store_core::storage::recovery::tests::scrub_reports_corrupt_sidecar_consistency_issues
+    store_core::storage::recovery::tests::startup_recovery_adopts_chunk_written_before_manifest_update
+
+test result: FAILED. 34 passed; 73 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.28s
+
+error: test failed, to rerun pass `--lib`

@@ -1,0 +1,54 @@
+{
+  "all_serial_reference_rows_match_independent_arrow_input": true,
+  "input_manifest_sha256": "7222d5c7f09c8d7e515507aaccc1fef69458bc4d4feb86b3c75feb1e7f4fa9d0",
+  "checks": [
+    {
+      "query": {
+        "kind": "range",
+        "symbol": "S00",
+        "start_ts": 1704127260000,
+        "end_ts": 1704134820000
+      },
+      "canonical": {
+        "rows": 126,
+        "sha256": "e7ad589bb9d4642a4632fce33befd68de51bf35740d528cfae579c51e69648b2"
+      }
+    },
+    {
+      "query": {
+        "kind": "range",
+        "symbol": "S00",
+        "start_ts": 1704367260000,
+        "end_ts": 1704374820000
+      },
+      "canonical": {
+        "rows": 126,
+        "sha256": "e3df53bcb56ba24e255ec17c2ebf71560838165759b65c1f22a4fac404ceddce"
+      }
+    },
+    {
+      "query": {
+        "kind": "range",
+        "symbol": "S00",
+        "start_ts": 1704967260000,
+        "end_ts": 1704974820000
+      },
+      "canonical": {
+        "rows": 127,
+        "sha256": "7be5318082509ac9beb26e8c42555f4b00ff2c3b4d1ab11520f2b152d368e056"
+      }
+    },
+    {
+      "query": {
+        "kind": "range",
+        "symbol": "S00",
+        "start_ts": 1705867260000,
+        "end_ts": 1705874820000
+      },
+      "canonical": {
+        "rows": 127,
+        "sha256": "b558d8aa60851b873f71c260cc1a4751a2cc0e6f7dbc7f260577b4271cbf51af"
+      }
+    }
+  ]
+}
