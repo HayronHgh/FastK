@@ -1,0 +1,7 @@
+{
+  "external-tests/scaling-profile/Cargo.toml": "e9310362c7cb2acfad030ba0dd4d4ad5b5b453de005c28b7c73ede9ce5b9847d",
+  "external-tests/scaling-profile/Cargo.lock": "0fd9a756cb8d237d1f8dce0ef3f432cc6984e9f562f17591c8895cfcf0a8bcdb",
+  "external-tests/scaling-profile/README.md": "d6e4f721f01f7c1cd6bfd5178ec5aacc99aaaa6d33f245a4d49d1d12258438fe",
+  "external-tests/scaling-profile/tests/shared_lifetime.rs": "213c217ff187d11bca11f2abc9dea5d37a50f82e0c8602834ebe895a84d9d42b",
+  "docs/SHARED_READER_LIFETIME.md": "e9ea78576911049cb7cf3e3b3d40afdc5bb786c9189cad0107be88005bd8b252"
+}

@@ -393,6 +393,85 @@
           ]
         }
       }
+    },
+    "version_response": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "contract_version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "const": "fastk"
+        },
+        "version": {
+          "type": "string"
+        },
+        "contract_version": {
+          "const": 1
+        }
+      }
+    },
+    "error_response": {
+      "type": "object",
+      "required": [
+        "error"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "enum": [
+                "IO",
+                "SQLITE",
+                "JSON",
+                "INVALID_INPUT",
+                "INVALID_DATA",
+                "NOT_FOUND"
+              ]
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "latest_response": {
+      "type": "object",
+      "required": [
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kline_record"
+          }
+        }
+      }
+    },
+    "init_response": {
+      "type": "object",
+      "required": [
+        "initialized"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "initialized": {
+          "const": true
+        }
+      }
     }
   },
   "type": "object",
@@ -414,7 +493,12 @@
           "read-scalar-range",
           "query-scalar-predicate",
           "write-scalar-range",
-          "scalar-inventory"
+          "scalar-inventory",
+          "version",
+          "init",
+          "seal-snapshot",
+          "verify-snapshot",
+          "read-kline-latest"
         ]
       }
     }

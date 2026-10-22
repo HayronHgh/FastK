@@ -1,0 +1,2486 @@
+{
+  "timings": [
+    {
+      "case": "bulk_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 4699325.0,
+        "before": 8334225.0
+      },
+      "ratio_after_before": 0.5638586671226179,
+      "paired_median_ratio": 0.5453906234670176,
+      "paired_bootstrap_95": [
+        0.5406554471356737,
+        0.5741492495549403
+      ],
+      "process_pairs": 12,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 5710400.0,
+            "p95_ns": 8576610.0,
+            "p99_ns": 10492259.000000002,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 7207450.0,
+            "p95_ns": 9529600.0,
+            "p99_ns": 9846683.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 5037700.0,
+            "p95_ns": 7492039.999999998,
+            "p99_ns": 8184177.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4949050.0,
+            "p95_ns": 5272495.0,
+            "p99_ns": 5322280.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4631100.0,
+            "p95_ns": 5575024.999999999,
+            "p99_ns": 5798563.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4499850.0,
+            "p95_ns": 5719959.999999996,
+            "p99_ns": 6417539.0,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4869600.0,
+            "p95_ns": 5511114.999999999,
+            "p99_ns": 5676033.0,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4767550.0,
+            "p95_ns": 5075565.0,
+            "p99_ns": 5466431.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4521850.0,
+            "p95_ns": 4922045.0,
+            "p99_ns": 5036324.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4537800.0,
+            "p95_ns": 4990385.0,
+            "p99_ns": 5257194.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4531800.0,
+            "p95_ns": 5082585.0,
+            "p99_ns": 5209493.0,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 4549500.0,
+            "p95_ns": 5001540.0,
+            "p99_ns": 5124742.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 13976600.0,
+            "p95_ns": 15286970.0,
+            "p99_ns": 15926618.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 13289900.0,
+            "p95_ns": 15419609.999999998,
+            "p99_ns": 15980685.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 12819650.0,
+            "p95_ns": 14106724.999999998,
+            "p99_ns": 14566973.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8332650.0,
+            "p95_ns": 9219924.999999998,
+            "p99_ns": 9903136.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8100100.0,
+            "p95_ns": 8595855.0,
+            "p99_ns": 8854973.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8335800.0,
+            "p95_ns": 9208325.0,
+            "p99_ns": 9618709.0,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8619850.0,
+            "p95_ns": 9708135.0,
+            "p99_ns": 11566421.000000002,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8029300.0,
+            "p95_ns": 9176875.0,
+            "p99_ns": 10055976.000000002,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8304050.0,
+            "p95_ns": 8991640.0,
+            "p99_ns": 9257510.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8307250.0,
+            "p95_ns": 9239155.0,
+            "p99_ns": 9269276.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 8369150.0,
+            "p95_ns": 9361020.0,
+            "p99_ns": 9663016.0,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 7890700.0,
+            "p95_ns": 8648465.0,
+            "p99_ns": 9170749.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 2898350.0,
+        "before": 9176800.0
+      },
+      "ratio_after_before": 0.3158344956847703,
+      "paired_median_ratio": 0.32808822247406505,
+      "paired_bootstrap_95": [
+        0.30015430500611007,
+        0.3396783694233408
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2898350.0,
+            "p95_ns": 3619024.9999999995,
+            "p99_ns": 3998639.0000000005,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2029850.0,
+            "p95_ns": 2231500.0,
+            "p99_ns": 2342953.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 3010800.0,
+            "p95_ns": 3375830.0,
+            "p99_ns": 3502908.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 9656200.0,
+            "p95_ns": 10701880.0,
+            "p99_ns": 11132344.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 5975800.0,
+            "p95_ns": 6866904.999999998,
+            "p99_ns": 7370646.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 9176800.0,
+            "p95_ns": 10646065.0,
+            "p99_ns": 10794821.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 2305950.0,
+        "before": 6123900.0
+      },
+      "ratio_after_before": 0.37654925782589527,
+      "paired_median_ratio": 0.3320956206524934,
+      "paired_bootstrap_95": [
+        0.25778629879712023,
+        0.39345025229020725
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2305950.0,
+            "p95_ns": 2676920.0,
+            "p99_ns": 2726325.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2409450.0,
+            "p95_ns": 2883185.0,
+            "p99_ns": 2894939.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1694850.0,
+            "p95_ns": 1972479.9999999998,
+            "p99_ns": 2634424.000000001,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 8945200.0,
+            "p95_ns": 9786470.0,
+            "p99_ns": 9810448.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 6123900.0,
+            "p95_ns": 8724969.999999998,
+            "p99_ns": 9604197.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 5103500.0,
+            "p95_ns": 5442700.0,
+            "p99_ns": 5946297.000000001,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 1,
+      "median_ns": {
+        "after": 1225750.0,
+        "before": 2338475.0
+      },
+      "ratio_after_before": 0.5241663904895284,
+      "paired_median_ratio": 0.4898384737407515,
+      "paired_bootstrap_95": [
+        0.48685456717971876,
+        0.5185644102430329
+      ],
+      "process_pairs": 12,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1459850.0,
+            "p95_ns": 1992300.0,
+            "p99_ns": 2210982.0000000005,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1851650.0,
+            "p95_ns": 2480955.0,
+            "p99_ns": 2627324.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1242050.0,
+            "p95_ns": 1529805.0,
+            "p99_ns": 1582180.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1235450.0,
+            "p95_ns": 1438745.0,
+            "p99_ns": 1465525.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1275100.0,
+            "p95_ns": 1493939.9999999998,
+            "p99_ns": 1531860.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1148250.0,
+            "p95_ns": 1393030.0,
+            "p99_ns": 1462671.0,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1253500.0,
+            "p95_ns": 1674694.9999999998,
+            "p99_ns": 1818836.0,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1216050.0,
+            "p95_ns": 1434619.9999999998,
+            "p99_ns": 1504755.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1136750.0,
+            "p95_ns": 1300790.0,
+            "p99_ns": 1363679.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1142600.0,
+            "p95_ns": 1322605.0,
+            "p99_ns": 1457657.0000000002,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1106100.0,
+            "p95_ns": 1297739.9999999998,
+            "p99_ns": 1328957.0,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 1143750.0,
+            "p95_ns": 1367085.0,
+            "p99_ns": 1450754.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 3760450.0,
+            "p95_ns": 5306749.999999996,
+            "p99_ns": 5856930.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 3703300.0,
+            "p95_ns": 4214274.999999999,
+            "p99_ns": 4558783.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 3371100.0,
+            "p95_ns": 4226149.999999999,
+            "p99_ns": 4420993.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2300100.0,
+            "p95_ns": 2642035.0,
+            "p99_ns": 2750410.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2231600.0,
+            "p95_ns": 2547510.0,
+            "p99_ns": 2587524.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2341800.0,
+            "p95_ns": 2601840.0,
+            "p99_ns": 2719114.0,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2574400.0,
+            "p95_ns": 3064865.0,
+            "p99_ns": 3075042.0,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2246400.0,
+            "p95_ns": 2434590.0,
+            "p99_ns": 2472328.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2335150.0,
+            "p95_ns": 2739340.0,
+            "p99_ns": 3479546.000000001,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2342900.0,
+            "p95_ns": 2606045.0,
+            "p99_ns": 2633349.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2260350.0,
+            "p95_ns": 2536365.0,
+            "p99_ns": 2606192.0,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 2312650.0,
+            "p95_ns": 2677230.0,
+            "p99_ns": 2794121.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 4,
+      "median_ns": {
+        "after": 879900.0,
+        "before": 2779800.0
+      },
+      "ratio_after_before": 0.31653356356572415,
+      "paired_median_ratio": 0.31745089574789553,
+      "paired_bootstrap_95": [
+        0.3080450917238482,
+        0.3496416903783328
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 879900.0,
+            "p95_ns": 1048140.0,
+            "p99_ns": 1064191.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 663550.0,
+            "p95_ns": 865044.9999999999,
+            "p99_ns": 912275.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 882450.0,
+            "p95_ns": 1046405.0,
+            "p99_ns": 1093050.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2856400.0,
+            "p95_ns": 3574949.9999999995,
+            "p99_ns": 4393487.000000001,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1897800.0,
+            "p95_ns": 2333010.0,
+            "p99_ns": 2474289.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2779800.0,
+            "p95_ns": 3296100.0,
+            "p99_ns": 3552923.0000000005,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "bulk_scalar",
+      "budget": 8,
+      "median_ns": {
+        "after": 826650.0,
+        "before": 2071500.0
+      },
+      "ratio_after_before": 0.39905865314989136,
+      "paired_median_ratio": 0.3755064889306477,
+      "paired_bootstrap_95": [
+        0.2974417098445596,
+        0.40132754042964036
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 826650.0,
+            "p95_ns": 945309.9999999999,
+            "p99_ns": 1020008.0000000001,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 831350.0,
+            "p95_ns": 1014554.9999999998,
+            "p99_ns": 1096351.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 639450.0,
+            "p95_ns": 724255.0,
+            "p99_ns": 766712.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2779200.0,
+            "p95_ns": 3320169.999999999,
+            "p99_ns": 3548945.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 2071500.0,
+            "p95_ns": 2766445.0,
+            "p99_ns": 3292852.0000000005,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 1702900.0,
+            "p95_ns": 1906204.9999999998,
+            "p99_ns": 1947526.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 130175.0,
+        "before": 138850.0
+      },
+      "ratio_after_before": 0.9375225063017645,
+      "paired_median_ratio": 0.8943916712101755,
+      "paired_bootstrap_95": [
+        0.8581858293157225,
+        1.0201489381987305
+      ],
+      "process_pairs": 12,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 156100.0,
+            "p95_ns": 195040.0,
+            "p99_ns": 209719.00000000003,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 140250.0,
+            "p95_ns": 200205.0,
+            "p99_ns": 290611.0000000001,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 142100.0,
+            "p95_ns": 204944.9999999999,
+            "p99_ns": 224838.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 118950.0,
+            "p95_ns": 198284.99999999997,
+            "p99_ns": 212046.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 134250.0,
+            "p95_ns": 192939.99999999994,
+            "p99_ns": 221282.00000000003,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 125550.0,
+            "p95_ns": 201014.99999999997,
+            "p99_ns": 223944.00000000003,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 136200.0,
+            "p95_ns": 239664.99999999994,
+            "p99_ns": 342403.0000000001,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 136400.0,
+            "p95_ns": 182634.99999999997,
+            "p99_ns": 190241.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 119600.0,
+            "p95_ns": 179035.0,
+            "p99_ns": 191847.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 126100.0,
+            "p95_ns": 185869.99999999994,
+            "p99_ns": 194955.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 115850.0,
+            "p95_ns": 184289.99999999994,
+            "p99_ns": 236675.00000000006,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 119900.0,
+            "p95_ns": 168010.0,
+            "p99_ns": 189684.00000000003,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 145150.0,
+            "p95_ns": 201889.99999999997,
+            "p99_ns": 213281.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 136500.0,
+            "p95_ns": 213165.0,
+            "p99_ns": 223052.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 118850.0,
+            "p95_ns": 197755.0,
+            "p99_ns": 199220.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 137350.0,
+            "p95_ns": 223709.9999999999,
+            "p99_ns": 237465.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 132550.0,
+            "p95_ns": 197139.99999999994,
+            "p99_ns": 216131.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 146050.0,
+            "p95_ns": 298434.99999999977,
+            "p99_ns": 411623.0000000001,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 155950.0,
+            "p95_ns": 218269.99999999997,
+            "p99_ns": 248557.00000000003,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 136000.0,
+            "p95_ns": 201474.99999999997,
+            "p99_ns": 215263.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 148300.0,
+            "p95_ns": 205260.0,
+            "p99_ns": 211647.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 137750.0,
+            "p95_ns": 220059.99999999994,
+            "p99_ns": 234902.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 146150.0,
+            "p95_ns": 205294.99999999997,
+            "p99_ns": 232588.00000000003,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 139950.0,
+            "p95_ns": 200669.99999999997,
+            "p99_ns": 207197.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 124000.0,
+        "before": 141350.0
+      },
+      "ratio_after_before": 0.8772550406791652,
+      "paired_median_ratio": 0.8772550406791652,
+      "paired_bootstrap_95": [
+        0.8535773710482529,
+        0.9052385719052386
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 124000.0,
+            "p95_ns": 187430.0,
+            "p99_ns": 190682.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 135650.0,
+            "p95_ns": 199610.0,
+            "p99_ns": 299029.0000000001,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 102600.0,
+            "p95_ns": 181155.0,
+            "p99_ns": 186454.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 141350.0,
+            "p95_ns": 199354.99999999997,
+            "p99_ns": 232442.00000000003,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 149850.0,
+            "p95_ns": 209429.99999999997,
+            "p99_ns": 216756.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 120200.0,
+            "p95_ns": 182329.99999999997,
+            "p99_ns": 191005.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "medium_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 125900.0,
+        "before": 155650.0
+      },
+      "ratio_after_before": 0.8088660456151622,
+      "paired_median_ratio": 0.8217641709608973,
+      "paired_bootstrap_95": [
+        0.7757789913266945,
+        0.9301810121906169
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 120750.0,
+            "p95_ns": 169719.99999999997,
+            "p99_ns": 179345.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 135550.0,
+            "p95_ns": 216389.9999999999,
+            "p99_ns": 318053.0000000001,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 125900.0,
+            "p95_ns": 187554.99999999994,
+            "p99_ns": 195771.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 155650.0,
+            "p95_ns": 200695.0,
+            "p99_ns": 201242.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 164950.0,
+            "p95_ns": 215575.0,
+            "p99_ns": 250590.00000000006,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 135350.0,
+            "p95_ns": 199974.99999999994,
+            "p99_ns": 209507.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "short",
+      "budget": 1,
+      "median_ns": {
+        "after": 78150.0,
+        "before": 77200.0
+      },
+      "ratio_after_before": 1.0123056994818653,
+      "paired_median_ratio": 1.0195236899643265,
+      "paired_bootstrap_95": [
+        0.9820208715844043,
+        1.0800402615217428
+      ],
+      "process_pairs": 12,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 90800.0,
+            "p95_ns": 173084.99999999997,
+            "p99_ns": 209426.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 83200.0,
+            "p95_ns": 129455.0,
+            "p99_ns": 177113.0,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 87500.0,
+            "p95_ns": 152155.0,
+            "p99_ns": 222955.00000000038,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 77600.0,
+            "p95_ns": 111209.99999999999,
+            "p99_ns": 155571.0,
+            "n": 1430
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 76700.0,
+            "p95_ns": 111009.99999999999,
+            "p99_ns": 167969.00000000015,
+            "n": 1430
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 74600.0,
+            "p95_ns": 98419.99999999999,
+            "p99_ns": 133968.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 78700.0,
+            "p95_ns": 114119.99999999999,
+            "p99_ns": 166946.0000000001,
+            "n": 1430
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 85350.0,
+            "p95_ns": 195710.0,
+            "p99_ns": 254214.00000000012,
+            "n": 1430
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 79900.0,
+            "p95_ns": 149769.99999999994,
+            "p99_ns": 199878.00000000006,
+            "n": 1430
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 74500.0,
+            "p95_ns": 100755.0,
+            "p99_ns": 150242.0,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 72200.0,
+            "p95_ns": 94955.0,
+            "p99_ns": 135297.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 73200.0,
+            "p95_ns": 101529.99999999997,
+            "p99_ns": 155882.00000000015,
+            "n": 1430
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 82000.0,
+            "p95_ns": 119064.99999999999,
+            "p99_ns": 156413.0,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 77000.0,
+            "p95_ns": 126300.0,
+            "p99_ns": 199540.00000000015,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 77550.0,
+            "p95_ns": 112874.99999999997,
+            "p99_ns": 169633.0000000001,
+            "n": 1430
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 73250.0,
+            "p95_ns": 102955.0,
+            "p99_ns": 127668.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 78800.0,
+            "p95_ns": 110764.99999999999,
+            "p99_ns": 142520.00000000006,
+            "n": 1430
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 74100.0,
+            "p95_ns": 97674.99999999997,
+            "p99_ns": 133913.0,
+            "n": 1430
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 72900.0,
+            "p95_ns": 100264.99999999999,
+            "p99_ns": 134607.00000000006,
+            "n": 1430
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 90000.0,
+            "p95_ns": 149329.99999999997,
+            "p99_ns": 210527.00000000015,
+            "n": 1430
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 77400.0,
+            "p95_ns": 123479.99999999993,
+            "p99_ns": 193988.00000000012,
+            "n": 1430
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 75200.0,
+            "p95_ns": 97300.0,
+            "p99_ns": 150259.00000000012,
+            "n": 1430
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 78000.0,
+            "p95_ns": 120984.99999999997,
+            "p99_ns": 169226.00000000003,
+            "n": 1430
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 72800.0,
+            "p95_ns": 93964.99999999999,
+            "p99_ns": 129941.00000000026,
+            "n": 1430
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 1,
+      "median_ns": {
+        "after": 95400.0,
+        "before": 98950.0
+      },
+      "ratio_after_before": 0.9641232945932289,
+      "paired_median_ratio": 0.9119900560938297,
+      "paired_bootstrap_95": [
+        0.8932786630076912,
+        1.0103742398337916
+      ],
+      "process_pairs": 12,
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 95650.0,
+            "p95_ns": 159589.99999999997,
+            "p99_ns": 182932.00000000003,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 107100.0,
+            "p95_ns": 151295.0,
+            "p99_ns": 297014.0000000002,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 106400.0,
+            "p95_ns": 144305.0,
+            "p99_ns": 146055.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 104800.0,
+            "p95_ns": 147045.0,
+            "p99_ns": 153012.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 99150.0,
+            "p95_ns": 152009.99999999997,
+            "p99_ns": 167651.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 95150.0,
+            "p95_ns": 141200.0,
+            "p99_ns": 142407.0,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 103850.0,
+            "p95_ns": 167155.0,
+            "p99_ns": 184169.00000000003,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 90650.0,
+            "p95_ns": 145549.99999999994,
+            "p99_ns": 157059.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 72700.0,
+            "p95_ns": 160524.99999999994,
+            "p99_ns": 193772.00000000003,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 85250.0,
+            "p95_ns": 119404.99999999999,
+            "p99_ns": 123853.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 90000.0,
+            "p95_ns": 119210.0,
+            "p99_ns": 126613.00000000001,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 86650.0,
+            "p95_ns": 145979.99999999997,
+            "p99_ns": 152171.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 106000.0,
+            "p95_ns": 144139.99999999997,
+            "p99_ns": 185494.00000000006,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 98850.0,
+            "p95_ns": 130644.99999999999,
+            "p99_ns": 133678.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 82350.0,
+            "p95_ns": 115014.99999999999,
+            "p99_ns": 125588.00000000001,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 116350.0,
+            "p95_ns": 153699.99999999997,
+            "p99_ns": 161727.0,
+            "n": 30
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 98000.0,
+            "p95_ns": 163744.99999999997,
+            "p99_ns": 182567.0,
+            "n": 30
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 94300.0,
+            "p95_ns": 193819.99999999985,
+            "p99_ns": 234179.00000000003,
+            "n": 30
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 115200.0,
+            "p95_ns": 155954.99999999997,
+            "p99_ns": 166013.0,
+            "n": 30
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 93300.0,
+            "p95_ns": 145610.0,
+            "p99_ns": 155807.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 99050.0,
+            "p95_ns": 154705.0,
+            "p99_ns": 156336.0,
+            "n": 30
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 92500.0,
+            "p95_ns": 150630.0,
+            "p99_ns": 171254.00000000003,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 101600.0,
+            "p95_ns": 136145.0,
+            "p99_ns": 158300.00000000003,
+            "n": 30
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "median_ns": 100100.0,
+            "p95_ns": 143395.0,
+            "p99_ns": 145078.0,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 4,
+      "median_ns": {
+        "after": 84550.0,
+        "before": 94350.0
+      },
+      "ratio_after_before": 0.8961314255431903,
+      "paired_median_ratio": 0.8961314255431903,
+      "paired_bootstrap_95": [
+        0.7761842677096914,
+        0.9319852941176471
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 84550.0,
+            "p95_ns": 127984.99999999999,
+            "p99_ns": 137294.0,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 89300.0,
+            "p95_ns": 148504.99999999994,
+            "p99_ns": 156555.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 76050.0,
+            "p95_ns": 112425.0,
+            "p99_ns": 119774.00000000001,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 94350.0,
+            "p95_ns": 125380.0,
+            "p99_ns": 140158.00000000003,
+            "n": 30
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 115050.0,
+            "p95_ns": 152509.99999999997,
+            "p99_ns": 175821.00000000003,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 81600.0,
+            "p95_ns": 119265.0,
+            "p99_ns": 128346.00000000001,
+            "n": 30
+          }
+        ]
+      }
+    },
+    {
+      "case": "small_kline",
+      "budget": 8,
+      "median_ns": {
+        "after": 96550.0,
+        "before": 106300.0
+      },
+      "ratio_after_before": 0.9082784571966134,
+      "paired_median_ratio": 0.9082784571966134,
+      "paired_bootstrap_95": [
+        0.89485559566787,
+        0.9685746352413019
+      ],
+      "process_pairs": 3,
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 86300.0,
+            "p95_ns": 123009.99999999999,
+            "p99_ns": 126155.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 99150.0,
+            "p95_ns": 122815.0,
+            "p99_ns": 198447.0000000001,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 96550.0,
+            "p95_ns": 141695.0,
+            "p99_ns": 150194.0,
+            "n": 30
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 89100.0,
+            "p95_ns": 169179.99999999983,
+            "p99_ns": 197988.0,
+            "n": 30
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 110800.0,
+            "p95_ns": 152890.0,
+            "p99_ns": 155168.0,
+            "n": 30
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "median_ns": 106300.0,
+            "p95_ns": 154255.0,
+            "p99_ns": 222886.0000000001,
+            "n": 30
+          }
+        ]
+      }
+    }
+  ],
+  "memory": [
+    {
+      "workload": "bulk",
+      "budget": 1,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 60776448.0,
+          "peak_private_bytes": 46467072.0
+        },
+        "before": {
+          "peak_rss_bytes": 81545216.0,
+          "peak_private_bytes": 67594240.0
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 34532,
+            "peak_rss_bytes": 60755968,
+            "peak_private_bytes": 46575616,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 652,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 23788,
+            "peak_rss_bytes": 60661760,
+            "peak_private_bytes": 46444544,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 664,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 39988,
+            "peak_rss_bytes": 60755968,
+            "peak_private_bytes": 46370816,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 657,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 54696,
+            "peak_rss_bytes": 61362176,
+            "peak_private_bytes": 46952448,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 623,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 44952,
+            "peak_rss_bytes": 60858368,
+            "peak_private_bytes": 46325760,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 619,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 54460,
+            "peak_rss_bytes": 60604416,
+            "peak_private_bytes": 46370816,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 626,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 49128,
+            "peak_rss_bytes": 60940288,
+            "peak_private_bytes": 46931968,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 615,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 49460,
+            "peak_rss_bytes": 60686336,
+            "peak_private_bytes": 46546944,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 643,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 19064,
+            "peak_rss_bytes": 60813312,
+            "peak_private_bytes": 46718976,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 611,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 25128,
+            "peak_rss_bytes": 60850176,
+            "peak_private_bytes": 46325760,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 620,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 22996,
+            "peak_rss_bytes": 60657664,
+            "peak_private_bytes": 46489600,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 621,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 55284,
+            "peak_rss_bytes": 60796928,
+            "peak_private_bytes": 46247936,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 625,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 32360,
+            "peak_rss_bytes": 81641472,
+            "peak_private_bytes": 67600384,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 787,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 21736,
+            "peak_rss_bytes": 81686528,
+            "peak_private_bytes": 67715072,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 777,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 55916,
+            "peak_rss_bytes": 81510400,
+            "peak_private_bytes": 67657728,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 760,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 520,
+            "peak_rss_bytes": 81694720,
+            "peak_private_bytes": 67461120,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 679,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 588,
+            "peak_rss_bytes": 81473536,
+            "peak_private_bytes": 67543040,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 675,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 784,
+            "peak_rss_bytes": 81559552,
+            "peak_private_bytes": 67600384,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 693,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 50316,
+            "peak_rss_bytes": 80834560,
+            "peak_private_bytes": 67575808,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 706,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 35600,
+            "peak_rss_bytes": 81465344,
+            "peak_private_bytes": 67493888,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 668,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 24868,
+            "peak_rss_bytes": 81530880,
+            "peak_private_bytes": 67788800,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 674,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 22184,
+            "peak_rss_bytes": 81256448,
+            "peak_private_bytes": 67588096,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 672,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 27176,
+            "peak_rss_bytes": 81756160,
+            "peak_private_bytes": 67682304,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 700,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 23808,
+            "peak_rss_bytes": 81731584,
+            "peak_private_bytes": 67420160,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 683,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "bulk",
+      "budget": 4,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 61091840,
+          "peak_private_bytes": 46804992
+        },
+        "before": {
+          "peak_rss_bytes": 81928192,
+          "peak_private_bytes": 67719168
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 11548,
+            "peak_rss_bytes": 61091840,
+            "peak_private_bytes": 46804992,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 602,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 3028,
+            "peak_rss_bytes": 60956672,
+            "peak_private_bytes": 46751744,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 587,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 37216,
+            "peak_rss_bytes": 61108224,
+            "peak_private_bytes": 46972928,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 636,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 41336,
+            "peak_rss_bytes": 81928192,
+            "peak_private_bytes": 68038656,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 718,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 28292,
+            "peak_rss_bytes": 80957440,
+            "peak_private_bytes": 67719168,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 629,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 28732,
+            "peak_rss_bytes": 81989632,
+            "peak_private_bytes": 67665920,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 733,
+            "peak_process_thread_count": 8,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "bulk",
+      "budget": 8,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 61358080,
+          "peak_private_bytes": 47149056
+        },
+        "before": {
+          "peak_rss_bytes": 82182144,
+          "peak_private_bytes": 68227072
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 47808,
+            "peak_rss_bytes": 61509632,
+            "peak_private_bytes": 47386624,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 619,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 13236,
+            "peak_rss_bytes": 61325312,
+            "peak_private_bytes": 47071232,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 617,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 23064,
+            "peak_rss_bytes": 61358080,
+            "peak_private_bytes": 47149056,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 579,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 39152,
+            "peak_rss_bytes": 82190336,
+            "peak_private_bytes": 68227072,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 708,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 51784,
+            "peak_rss_bytes": 82182144,
+            "peak_private_bytes": 67981312,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 718,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 47652,
+            "peak_rss_bytes": 82055168,
+            "peak_private_bytes": 68337664,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 662,
+            "peak_process_thread_count": 12,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    },
+    {
+      "workload": "short",
+      "budget": 1,
+      "median_peak": {
+        "after": {
+          "peak_rss_bytes": 42469376.0,
+          "peak_private_bytes": 27455488.0
+        },
+        "before": {
+          "peak_rss_bytes": 42479616.0,
+          "peak_private_bytes": 27355136.0
+        }
+      },
+      "processes": {
+        "after": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 34928,
+            "peak_rss_bytes": 42721280,
+            "peak_private_bytes": 27594752,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 321,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 22692,
+            "peak_rss_bytes": 42463232,
+            "peak_private_bytes": 27525120,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 278,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 25408,
+            "peak_rss_bytes": 42713088,
+            "peak_private_bytes": 27459584,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 273,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 22456,
+            "peak_rss_bytes": 42401792,
+            "peak_private_bytes": 27238400,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 268,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 11904,
+            "peak_rss_bytes": 42278912,
+            "peak_private_bytes": 27123712,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 266,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 47036,
+            "peak_rss_bytes": 42758144,
+            "peak_private_bytes": 27815936,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 270,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 16256,
+            "peak_rss_bytes": 42479616,
+            "peak_private_bytes": 27451392,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 271,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 46840,
+            "peak_rss_bytes": 42438656,
+            "peak_private_bytes": 27529216,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 268,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 8632,
+            "peak_rss_bytes": 42364928,
+            "peak_private_bytes": 27230208,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 272,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 54636,
+            "peak_rss_bytes": 42643456,
+            "peak_private_bytes": 27185152,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 270,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 54000,
+            "peak_rss_bytes": 42475520,
+            "peak_private_bytes": 27475968,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 273,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 41956,
+            "peak_rss_bytes": 42344448,
+            "peak_private_bytes": 27037696,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 266,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ],
+        "before": [
+          {
+            "round": 1,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 23712,
+            "peak_rss_bytes": 42299392,
+            "peak_private_bytes": 27185152,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 271,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 17500,
+            "peak_rss_bytes": 42500096,
+            "peak_private_bytes": 27492352,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 275,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-verified-win",
+            "python_pid": 55392,
+            "peak_rss_bytes": 42532864,
+            "peak_private_bytes": 27488256,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 272,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 2,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 26992,
+            "peak_rss_bytes": 42708992,
+            "peak_private_bytes": 27697152,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 268,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 1,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 52264,
+            "peak_rss_bytes": 42590208,
+            "peak_private_bytes": 27430912,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 268,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 4,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 34908,
+            "peak_rss_bytes": 42422272,
+            "peak_private_bytes": 27234304,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 269,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 8,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 36176,
+            "peak_rss_bytes": 42295296,
+            "peak_private_bytes": 27201536,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 266,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 5,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 24796,
+            "peak_rss_bytes": 42344448,
+            "peak_private_bytes": 27189248,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 276,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 7,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 52476,
+            "peak_rss_bytes": 42512384,
+            "peak_private_bytes": 27512832,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 271,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 3,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 35884,
+            "peak_rss_bytes": 42323968,
+            "peak_private_bytes": 27168768,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 264,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 0,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 42636,
+            "peak_rss_bytes": 42573824,
+            "peak_private_bytes": 27418624,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 274,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          },
+          {
+            "round": 6,
+            "cohort": "native-cast-serial-win",
+            "python_pid": 49428,
+            "peak_rss_bytes": 42459136,
+            "peak_private_bytes": 27291648,
+            "private_definition": "Windows private commit; Linux unique resident set (USS)",
+            "sampling_interval_ms": 5,
+            "samples": 273,
+            "peak_process_thread_count": 4,
+            "numeric_library_thread_limits": 1,
+            "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+          }
+        ]
+      }
+    }
+  ],
+  "method": "median of process medians; all process pairs retained, including supplements",
+  "memory_scope": "whole workload process incl. warmup/validation; 5ms sampled lower bounds",
+  "passed": true
+}

@@ -1,0 +1,7 @@
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk-12ux741n8x6g0\s-hnf49i3ajh-1n3pyqg-working`
+
+warning: `fastk` (lib) generated 1 warning
+warning: hard linking files in the incremental compilation cache failed. copying files instead. consider moving the cache directory to a file system which supports hard linking in session dir `\\?\C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\incremental\fastk_bridge-0sf5icykw5gko\s-hnf49jx0b6-12v13h4-working`
+
+warning: `fastk` (example "fastk_bridge") generated 1 warning
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.21s

@@ -1,0 +1,6 @@
+     Locking 76 packages to latest compatible versions
+      Adding rustix v1.1.4 (available: v1.1.5)
+   Compiling windows-sys v0.61.2
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+   Compiling fastk-read-bench v0.0.0 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-windows-rust-warm32\after)
+    Finished `release` profile [optimized] target(s) in 13.62s

@@ -1,0 +1,23 @@
+{
+  "kind": "scoped-session-follow-up",
+  "date": "2026-10-20",
+  "queries_per_route": 1430,
+  "routes": 3,
+  "canonical_responses_verified": 4290,
+  "rust_tests_per_os": 136,
+  "python_tests_per_os": {
+    "passed": 26,
+    "skipped": 1
+  },
+  "skipped": "Complete release-package manifest validation; this follow-up delivers local wheels/bridges",
+  "offline_installed_wheel_smoke": {
+    "windows": "PASS",
+    "linux": "PASS"
+  },
+  "rust": {
+    "windows": "1.97.1 GNU, -C target-feature=+crt-static",
+    "linux": "1.90.0, musl in Docker"
+  },
+  "historical_queries": "../standard/raw/queries-{0..4}.json.gz",
+  "limits": "OS cache uncontrolled; startup separate; short-read replay only; large JSON unchanged"
+}

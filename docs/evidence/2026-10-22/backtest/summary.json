@@ -1,0 +1,1662 @@
+{
+  "all_outcomes_identical": true,
+  "processes": 180,
+  "results": [
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "fastk",
+      "total_ns": 539068200,
+      "total_samples_ns": [
+        539232900,
+        531478900,
+        539068200,
+        546342900,
+        535938900
+      ],
+      "phase_medians_ns": {
+        "open_ns": 5078100,
+        "read_ns": 18377200,
+        "close_ns": 360300,
+        "load_ns": 23919600,
+        "compute_ns": 497575000,
+        "release_ns": 1571100
+      },
+      "load_fraction": 0.04437267863324158,
+      "batch_load_p95_ns": 2206465.0,
+      "rss_bytes": 46370816,
+      "private_bytes": 32088064,
+      "first_data_ns": 2567000,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "sqlite",
+      "total_ns": 1640061900,
+      "total_samples_ns": [
+        1616355200,
+        1640061900,
+        1661456900,
+        1641223900,
+        1604297200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 20335400,
+        "read_ns": 1093247900,
+        "close_ns": 12248400,
+        "load_ns": 1127098600,
+        "compute_ns": 490236400,
+        "release_ns": 2685000
+      },
+      "load_fraction": 0.6887260211203794,
+      "batch_load_p95_ns": 100064525.0,
+      "rss_bytes": 65568768,
+      "private_bytes": 51687424,
+      "first_data_ns": 94984400,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "duckdb",
+      "total_ns": 855791400,
+      "total_samples_ns": [
+        855791400,
+        854418100,
+        842681700,
+        862407800,
+        871672200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 107144700,
+        "read_ns": 211244200,
+        "close_ns": 32654200,
+        "load_ns": 352106400,
+        "compute_ns": 487463600,
+        "release_ns": 1668100
+      },
+      "load_fraction": 0.41143951668595874,
+      "batch_load_p95_ns": 32820685.0,
+      "rss_bytes": 77443072,
+      "private_bytes": 55316480,
+      "first_data_ns": 33102200,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "parquet",
+      "total_ns": 662031600,
+      "total_samples_ns": [
+        671974900,
+        659741000,
+        662031600,
+        663255700,
+        648008200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 797100,
+        "read_ns": 146157900,
+        "close_ns": 499400,
+        "load_ns": 147431700,
+        "compute_ns": 495013900,
+        "release_ns": 1717600
+      },
+      "load_fraction": 0.22269586527289634,
+      "batch_load_p95_ns": 13994239.999999998,
+      "rss_bytes": 86880256,
+      "private_bytes": 65454080,
+      "first_data_ns": 16078700,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "arrow",
+      "total_ns": 553531800,
+      "total_samples_ns": [
+        561196400,
+        552278600,
+        560600700,
+        553531800,
+        537855600
+      ],
+      "phase_medians_ns": {
+        "open_ns": 701000,
+        "read_ns": 35312700,
+        "close_ns": 4494700,
+        "load_ns": 40487500,
+        "compute_ns": 493957800,
+        "release_ns": 1600100
+      },
+      "load_fraction": 0.07395256273245086,
+      "batch_load_p95_ns": 4177945.0,
+      "rss_bytes": 67174400,
+      "private_bytes": 45645824,
+      "first_data_ns": 4505200,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "rsi",
+      "backend": "memory",
+      "total_ns": 505856200,
+      "total_samples_ns": [
+        520491400,
+        522891100,
+        505856200,
+        505796500,
+        500237300
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 277700,
+        "close_ns": 0,
+        "load_ns": 282900,
+        "compute_ns": 489525400,
+        "release_ns": 8000
+      },
+      "load_fraction": 0.0005592498421488162,
+      "batch_load_p95_ns": 38345.0,
+      "rss_bytes": 121294848,
+      "private_bytes": 103960576,
+      "first_data_ns": 703100,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "fastk",
+      "total_ns": 142113600,
+      "total_samples_ns": [
+        141793900,
+        142113600,
+        152150800,
+        143763600,
+        137949000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 4448500,
+        "read_ns": 17980500,
+        "close_ns": 409700,
+        "load_ns": 23104100,
+        "compute_ns": 71901500,
+        "release_ns": 1496400
+      },
+      "load_fraction": 0.16118613901471435,
+      "batch_load_p95_ns": 2195280.0,
+      "rss_bytes": 52740096,
+      "private_bytes": 38641664,
+      "first_data_ns": 2480000,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "sqlite",
+      "total_ns": 1224054700,
+      "total_samples_ns": [
+        1221387200,
+        1245502500,
+        1286123300,
+        1224054700,
+        1218877500
+      ],
+      "phase_medians_ns": {
+        "open_ns": 19508400,
+        "read_ns": 1074428800,
+        "close_ns": 12244900,
+        "load_ns": 1105363700,
+        "compute_ns": 71718300,
+        "release_ns": 2488600
+      },
+      "load_fraction": 0.9019962549469401,
+      "batch_load_p95_ns": 97795665.0,
+      "rss_bytes": 70701056,
+      "private_bytes": 56737792,
+      "first_data_ns": 93515400,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "duckdb",
+      "total_ns": 454394000,
+      "total_samples_ns": [
+        454394000,
+        473156800,
+        480939100,
+        452350300,
+        454280000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 101830400,
+        "read_ns": 208475000,
+        "close_ns": 33077700,
+        "load_ns": 343119400,
+        "compute_ns": 66925100,
+        "release_ns": 1594200
+      },
+      "load_fraction": 0.7532119971114846,
+      "batch_load_p95_ns": 30724765.0,
+      "rss_bytes": 80658432,
+      "private_bytes": 58068992,
+      "first_data_ns": 31432700,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "parquet",
+      "total_ns": 261516300,
+      "total_samples_ns": [
+        263416300,
+        260242600,
+        272331800,
+        261516300,
+        257507200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 630300,
+        "read_ns": 141204100,
+        "close_ns": 517600,
+        "load_ns": 142382100,
+        "compute_ns": 70299600,
+        "release_ns": 1598500
+      },
+      "load_fraction": 0.5367902872166201,
+      "batch_load_p95_ns": 13728549.999999998,
+      "rss_bytes": 94220288,
+      "private_bytes": 72720384,
+      "first_data_ns": 15572900,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "arrow",
+      "total_ns": 155819900,
+      "total_samples_ns": [
+        161417300,
+        155819900,
+        154796700,
+        150905500,
+        156178200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 448100,
+        "read_ns": 32491400,
+        "close_ns": 4189600,
+        "load_ns": 37197400,
+        "compute_ns": 67502600,
+        "release_ns": 1390400
+      },
+      "load_fraction": 0.23867784805722786,
+      "batch_load_p95_ns": 3816589.9999999995,
+      "rss_bytes": 74375168,
+      "private_bytes": 52162560,
+      "first_data_ns": 4525300,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "sma",
+      "backend": "memory",
+      "total_ns": 114332900,
+      "total_samples_ns": [
+        119912300,
+        111243400,
+        113842800,
+        114332900,
+        115831500
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 195800,
+        "close_ns": 0,
+        "load_ns": 200200,
+        "compute_ns": 68712600,
+        "release_ns": 5400
+      },
+      "load_fraction": 0.0017996573279853007,
+      "batch_load_p95_ns": 29689.99999999999,
+      "rss_bytes": 119730176,
+      "private_bytes": 104108032,
+      "first_data_ns": 733200,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "fastk",
+      "total_ns": 331198500,
+      "total_samples_ns": [
+        331198500,
+        331953300,
+        326809000,
+        341963800,
+        318504600
+      ],
+      "phase_medians_ns": {
+        "open_ns": 4504300,
+        "read_ns": 17469800,
+        "close_ns": 326600,
+        "load_ns": 22180700,
+        "compute_ns": 151829600,
+        "release_ns": 1541100
+      },
+      "load_fraction": 0.06787052988136802,
+      "batch_load_p95_ns": 2127650.0,
+      "rss_bytes": 81805312,
+      "private_bytes": 70496256,
+      "first_data_ns": 2590400,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "sqlite",
+      "total_ns": 1408757900,
+      "total_samples_ns": [
+        1399727800,
+        1407414300,
+        1446334600,
+        1408757900,
+        1414076000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 19600100,
+        "read_ns": 1085909500,
+        "close_ns": 11673600,
+        "load_ns": 1117316800,
+        "compute_ns": 140733800,
+        "release_ns": 1997300
+      },
+      "load_fraction": 0.7933328843823553,
+      "batch_load_p95_ns": 98671780.0,
+      "rss_bytes": 88334336,
+      "private_bytes": 74457088,
+      "first_data_ns": 94057600,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "duckdb",
+      "total_ns": 637341800,
+      "total_samples_ns": [
+        637341800,
+        666034000,
+        664201400,
+        629286600,
+        633917300
+      ],
+      "phase_medians_ns": {
+        "open_ns": 102283100,
+        "read_ns": 206201400,
+        "close_ns": 32418900,
+        "load_ns": 340720800,
+        "compute_ns": 145217700,
+        "release_ns": 1548600
+      },
+      "load_fraction": 0.5354986106489475,
+      "batch_load_p95_ns": 30851510.0,
+      "rss_bytes": 104415232,
+      "private_bytes": 83136512,
+      "first_data_ns": 31776900,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "parquet",
+      "total_ns": 443496300,
+      "total_samples_ns": [
+        435643800,
+        446030900,
+        458868100,
+        440897000,
+        443496300
+      ],
+      "phase_medians_ns": {
+        "open_ns": 749400,
+        "read_ns": 143200100,
+        "close_ns": 521800,
+        "load_ns": 144505400,
+        "compute_ns": 148540600,
+        "release_ns": 1637700
+      },
+      "load_fraction": 0.3239806928174707,
+      "batch_load_p95_ns": 13637185.0,
+      "rss_bytes": 121929728,
+      "private_bytes": 101994496,
+      "first_data_ns": 14974800,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "arrow",
+      "total_ns": 333845900,
+      "total_samples_ns": [
+        333669500,
+        333845900,
+        336496800,
+        337324800,
+        331065900
+      ],
+      "phase_medians_ns": {
+        "open_ns": 513900,
+        "read_ns": 33606300,
+        "close_ns": 4293800,
+        "load_ns": 38524600,
+        "compute_ns": 145391900,
+        "release_ns": 1508700
+      },
+      "load_fraction": 0.11448727001267174,
+      "batch_load_p95_ns": 3881769.9999999995,
+      "rss_bytes": 103030784,
+      "private_bytes": 82743296,
+      "first_data_ns": 4631300,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "monthly",
+      "case": "momentum",
+      "backend": "memory",
+      "total_ns": 311369000,
+      "total_samples_ns": [
+        316911300,
+        307915500,
+        318860900,
+        300534300,
+        311369000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 265800,
+        "close_ns": 0,
+        "load_ns": 270700,
+        "compute_ns": 156782300,
+        "release_ns": 6700
+      },
+      "load_fraction": 0.0008791372957840706,
+      "batch_load_p95_ns": 36140.0,
+      "rss_bytes": 140513280,
+      "private_bytes": 123727872,
+      "first_data_ns": 667300,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "fastk",
+      "total_ns": 514639400,
+      "total_samples_ns": [
+        514639400,
+        512221600,
+        520467100,
+        519189900,
+        509156600
+      ],
+      "phase_medians_ns": {
+        "open_ns": 328800,
+        "read_ns": 13507600,
+        "close_ns": 198000,
+        "load_ns": 13983700,
+        "compute_ns": 482431900,
+        "release_ns": 1583700
+      },
+      "load_fraction": 0.027155222683623997,
+      "batch_load_p95_ns": 13983700.0,
+      "rss_bytes": 104030208,
+      "private_bytes": 91361280,
+      "first_data_ns": 14415100,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "sqlite",
+      "total_ns": 1677523000,
+      "total_samples_ns": [
+        1678557700,
+        1663369400,
+        1665791400,
+        1678659100,
+        1677523000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 1474700,
+        "read_ns": 1143618900,
+        "close_ns": 8632900,
+        "load_ns": 1155895500,
+        "compute_ns": 504966600,
+        "release_ns": 1505400
+      },
+      "load_fraction": 0.6886242278117696,
+      "batch_load_p95_ns": 1155895500.0,
+      "rss_bytes": 320417792,
+      "private_bytes": 309243904,
+      "first_data_ns": 1156290100,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "duckdb",
+      "total_ns": 655507700,
+      "total_samples_ns": [
+        653109400,
+        655507700,
+        662387500,
+        666408800,
+        650899000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 8828600,
+        "read_ns": 134118800,
+        "close_ns": 4557100,
+        "load_ns": 147605000,
+        "compute_ns": 487543300,
+        "release_ns": 1614000
+      },
+      "load_fraction": 0.22600348425547082,
+      "batch_load_p95_ns": 147605000.0,
+      "rss_bytes": 189640704,
+      "private_bytes": 173047808,
+      "first_data_ns": 147995800,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "parquet",
+      "total_ns": 606405400,
+      "total_samples_ns": [
+        590884100,
+        595440200,
+        615406000,
+        606405400,
+        612319100
+      ],
+      "phase_medians_ns": {
+        "open_ns": 89700,
+        "read_ns": 99553800,
+        "close_ns": 844200,
+        "load_ns": 100500800,
+        "compute_ns": 483060400,
+        "release_ns": 1542800
+      },
+      "load_fraction": 0.16841922243202048,
+      "batch_load_p95_ns": 100500800.0,
+      "rss_bytes": 215875584,
+      "private_bytes": 201588736,
+      "first_data_ns": 101053400,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "arrow",
+      "total_ns": 553841900,
+      "total_samples_ns": [
+        552189700,
+        553841900,
+        563043300,
+        563939600,
+        532533800
+      ],
+      "phase_medians_ns": {
+        "open_ns": 64900,
+        "read_ns": 32694500,
+        "close_ns": 6016900,
+        "load_ns": 38467100,
+        "compute_ns": 497703200,
+        "release_ns": 1582400
+      },
+      "load_fraction": 0.07218978400995392,
+      "batch_load_p95_ns": 38467100.0,
+      "rss_bytes": 147349504,
+      "private_bytes": 105508864,
+      "first_data_ns": 38942100,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "rsi",
+      "backend": "memory",
+      "total_ns": 499297900,
+      "total_samples_ns": [
+        497290900,
+        499297900,
+        521183400,
+        525170600,
+        498149000
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 38400,
+        "close_ns": 0,
+        "load_ns": 39600,
+        "compute_ns": 482932400,
+        "release_ns": 1600
+      },
+      "load_fraction": 7.924273873649851e-05,
+      "batch_load_p95_ns": 39600.0,
+      "rss_bytes": 120373248,
+      "private_bytes": 104009728,
+      "first_data_ns": 690000,
+      "outcome": {
+        "case": "rsi",
+        "rows": 1054080,
+        "final_equity": 2504.627041871251,
+        "return_fraction": -0.9749537295812875,
+        "max_drawdown": 0.9750005858310774,
+        "fills": 7544,
+        "completed_round_trips": 3771,
+        "fees": 104415.26081492814,
+        "open_positions": {
+          "BTCUSDT": 0.012403857667381649,
+          "ETHUSDT": 0.40263997530944096
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "766bbf273aed0f4d360e20e833c0ceb2a247cb3b65b09a0ff6355428a4e91397",
+        "trades_sha256": "b8744f4d6df4c841e7c1929a5a533fa02405d817ac5065a09b67e35d788aee92"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "fastk",
+      "total_ns": 130634400,
+      "total_samples_ns": [
+        130484200,
+        130634400,
+        130824900,
+        141200400,
+        129674200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 299600,
+        "read_ns": 13654300,
+        "close_ns": 191800,
+        "load_ns": 14145000,
+        "compute_ns": 70625800,
+        "release_ns": 1561200
+      },
+      "load_fraction": 0.10908106624139574,
+      "batch_load_p95_ns": 14145000.0,
+      "rss_bytes": 111550464,
+      "private_bytes": 97083392,
+      "first_data_ns": 14554500,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "sqlite",
+      "total_ns": 1292216200,
+      "total_samples_ns": [
+        1310981400,
+        1299765300,
+        1287507800,
+        1292216200,
+        1277714600
+      ],
+      "phase_medians_ns": {
+        "open_ns": 1541000,
+        "read_ns": 1163579600,
+        "close_ns": 11381400,
+        "load_ns": 1176721800,
+        "compute_ns": 70233800,
+        "release_ns": 1529400
+      },
+      "load_fraction": 0.9098824877022105,
+      "batch_load_p95_ns": 1176721800.0,
+      "rss_bytes": 320446464,
+      "private_bytes": 309288960,
+      "first_data_ns": 1177122800,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "duckdb",
+      "total_ns": 266602800,
+      "total_samples_ns": [
+        268243000,
+        258558700,
+        266602800,
+        265109500,
+        277052800
+      ],
+      "phase_medians_ns": {
+        "open_ns": 9091200,
+        "read_ns": 135648600,
+        "close_ns": 4776000,
+        "load_ns": 149992800,
+        "compute_ns": 69134900,
+        "release_ns": 1538800
+      },
+      "load_fraction": 0.5626077445548209,
+      "batch_load_p95_ns": 149992800.0,
+      "rss_bytes": 193875968,
+      "private_bytes": 171225088,
+      "first_data_ns": 150477800,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "parquet",
+      "total_ns": 222650700,
+      "total_samples_ns": [
+        219445200,
+        218066000,
+        232682500,
+        222650700,
+        232984500
+      ],
+      "phase_medians_ns": {
+        "open_ns": 69400,
+        "read_ns": 99145100,
+        "close_ns": 837600,
+        "load_ns": 100080400,
+        "compute_ns": 70441800,
+        "release_ns": 1521600
+      },
+      "load_fraction": 0.4489615678016181,
+      "batch_load_p95_ns": 100080400.0,
+      "rss_bytes": 223834112,
+      "private_bytes": 210903040,
+      "first_data_ns": 100537700,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "arrow",
+      "total_ns": 162743200,
+      "total_samples_ns": [
+        160995800,
+        180216100,
+        186412700,
+        162743200,
+        157722100
+      ],
+      "phase_medians_ns": {
+        "open_ns": 68800,
+        "read_ns": 33118900,
+        "close_ns": 6212000,
+        "load_ns": 39486800,
+        "compute_ns": 72319400,
+        "release_ns": 1572600
+      },
+      "load_fraction": 0.24230687491295172,
+      "batch_load_p95_ns": 39486800.0,
+      "rss_bytes": 154427392,
+      "private_bytes": 113565696,
+      "first_data_ns": 39911200,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "sma",
+      "backend": "memory",
+      "total_ns": 117930000,
+      "total_samples_ns": [
+        113516100,
+        114092600,
+        119543900,
+        117930000,
+        118985100
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 38000,
+        "close_ns": 0,
+        "load_ns": 39300,
+        "compute_ns": 71944700,
+        "release_ns": 2000
+      },
+      "load_fraction": 0.00033919816009101377,
+      "batch_load_p95_ns": 39300.0,
+      "rss_bytes": 122527744,
+      "private_bytes": 104251392,
+      "first_data_ns": 625100,
+      "outcome": {
+        "case": "sma",
+        "rows": 1054080,
+        "final_equity": 1.4508360828241424,
+        "return_fraction": -0.9999854916391717,
+        "max_drawdown": 0.9999857720274733,
+        "fills": 21159,
+        "completed_round_trips": 10579,
+        "fees": 100492.00681156204,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.00016828918678167302
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "27ee3b2f7694b109dd89dc177da2a64b287151aa7d80ac7e00141704770c334f",
+        "trades_sha256": "e4dcb9941068534a6523a9f6457239cb45f62815875a209179b0ead326b83fbf"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "fastk",
+      "total_ns": 320183400,
+      "total_samples_ns": [
+        321548800,
+        316754300,
+        317139000,
+        328052100,
+        320183400
+      ],
+      "phase_medians_ns": {
+        "open_ns": 286600,
+        "read_ns": 13546300,
+        "close_ns": 208100,
+        "load_ns": 14058600,
+        "compute_ns": 155472200,
+        "release_ns": 1563300
+      },
+      "load_fraction": 0.04432945806097642,
+      "batch_load_p95_ns": 14058600.0,
+      "rss_bytes": 129753088,
+      "private_bytes": 115159040,
+      "first_data_ns": 14517700,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "sqlite",
+      "total_ns": 1487784700,
+      "total_samples_ns": [
+        1472381300,
+        1476282300,
+        1500731400,
+        1487784700,
+        1496387200
+      ],
+      "phase_medians_ns": {
+        "open_ns": 1518400,
+        "read_ns": 1165872200,
+        "close_ns": 10779600,
+        "load_ns": 1177107300,
+        "compute_ns": 153001800,
+        "release_ns": 1575200
+      },
+      "load_fraction": 0.7911812105609098,
+      "batch_load_p95_ns": 1177107300.0,
+      "rss_bytes": 320659456,
+      "private_bytes": 309223424,
+      "first_data_ns": 1177492400,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "duckdb",
+      "total_ns": 459186700,
+      "total_samples_ns": [
+        465221200,
+        459186700,
+        477853300,
+        456367500,
+        452725700
+      ],
+      "phase_medians_ns": {
+        "open_ns": 9194300,
+        "read_ns": 136617800,
+        "close_ns": 4563800,
+        "load_ns": 150282200,
+        "compute_ns": 155306100,
+        "release_ns": 1557700
+      },
+      "load_fraction": 0.32681937108627035,
+      "batch_load_p95_ns": 150282200.0,
+      "rss_bytes": 196370432,
+      "private_bytes": 178475008,
+      "first_data_ns": 150815700,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "parquet",
+      "total_ns": 405722700,
+      "total_samples_ns": [
+        403199700,
+        409762500,
+        405722700,
+        405124500,
+        420666800
+      ],
+      "phase_medians_ns": {
+        "open_ns": 66200,
+        "read_ns": 99180900,
+        "close_ns": 858100,
+        "load_ns": 100038400,
+        "compute_ns": 154003600,
+        "release_ns": 1542400
+      },
+      "load_fraction": 0.24452250569809644,
+      "batch_load_p95_ns": 100038400.0,
+      "rss_bytes": 241479680,
+      "private_bytes": 226271232,
+      "first_data_ns": 100473100,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "arrow",
+      "total_ns": 348457500,
+      "total_samples_ns": [
+        343770600,
+        368773600,
+        380110900,
+        340859500,
+        348457500
+      ],
+      "phase_medians_ns": {
+        "open_ns": 75300,
+        "read_ns": 31768200,
+        "close_ns": 5972900,
+        "load_ns": 37922300,
+        "compute_ns": 156688600,
+        "release_ns": 1534600
+      },
+      "load_fraction": 0.1088290537583493,
+      "batch_load_p95_ns": 37922300.0,
+      "rss_bytes": 154271744,
+      "private_bytes": 128921600,
+      "first_data_ns": 38359500,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    },
+    {
+      "mode": "bulk",
+      "case": "momentum",
+      "backend": "memory",
+      "total_ns": 306005000,
+      "total_samples_ns": [
+        306005000,
+        307561800,
+        319444600,
+        302614500,
+        304987700
+      ],
+      "phase_medians_ns": {
+        "open_ns": 0,
+        "read_ns": 37900,
+        "close_ns": 0,
+        "load_ns": 39200,
+        "compute_ns": 152494400,
+        "release_ns": 1500
+      },
+      "load_fraction": 0.00012689411776368943,
+      "batch_load_p95_ns": 39200.0,
+      "rss_bytes": 141471744,
+      "private_bytes": 126111744,
+      "first_data_ns": 656600,
+      "outcome": {
+        "case": "momentum",
+        "rows": 1054080,
+        "final_equity": 3.1329721894152144e-11,
+        "return_fraction": -0.9999999999999997,
+        "max_drawdown": 0.9999999999999997,
+        "fills": 65690,
+        "completed_round_trips": 32844,
+        "fees": 93105.7302182783,
+        "open_positions": {
+          "BTCUSDT": 2.5202670051432585e-16,
+          "ETHUSDT": 2.3207255621471723e-15
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "fecddf5b8ff6a12b34e29bff33336a68df4dec2b2ef4b7b60039784a131f68b2",
+        "trades_sha256": "44792aa629ed6044a338f64e22070ae2e57273ffda86d45cb59a5e0605884433"
+      }
+    }
+  ]
+}

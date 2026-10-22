@@ -1,0 +1,75 @@
+rustc 1.97.1 (8bab26f4f 2026-07-14)
+   Compiling version_check v0.9.5
+   Compiling cfg-if v1.0.4
+   Compiling proc-macro2 v1.0.106
+   Compiling zerocopy v0.8.48
+   Compiling crossbeam-utils v0.8.23
+   Compiling once_cell v1.21.4
+   Compiling typenum v1.20.1
+   Compiling crossbeam-epoch v0.9.21
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.45
+   Compiling shlex v1.3.0
+   Compiling find-msvc-tools v0.1.9
+   Compiling crossbeam-deque v0.8.8
+   Compiling pkg-config v0.3.32
+   Compiling serde_core v1.0.228
+   Compiling vcpkg v0.2.15
+   Compiling autocfg v1.5.0
+   Compiling bitflags v2.11.0
+   Compiling rayon-core v1.13.0
+   Compiling zmij v1.0.21
+   Compiling libc v0.2.184
+   Compiling rustix v1.1.4
+   Compiling serde_json v1.0.149
+   Compiling getrandom v0.4.2
+   Compiling cc v1.2.59
+   Compiling linux-raw-sys v0.12.1
+   Compiling serde v1.0.228
+   Compiling itoa v1.0.18
+   Compiling either v1.19.0
+   Compiling smallvec v1.15.1
+   Compiling generic-array v0.14.7
+   Compiling ahash v0.8.12
+   Compiling num-traits v0.2.19
+   Compiling iana-time-zone v0.1.65
+   Compiling cpufeatures v0.2.17
+   Compiling fallible-streaming-iterator v0.1.9
+   Compiling memchr v2.8.0
+   Compiling fallible-iterator v0.3.0
+   Compiling fastrand v2.3.0
+   Compiling libsqlite3-sys v0.30.1
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling syn v2.0.117
+   Compiling chrono v0.4.44
+   Compiling sha2 v0.10.9
+   Compiling rayon v1.12.0
+   Compiling tempfile v3.27.0
+   Compiling serde_derive v1.0.228
+   Compiling hashbrown v0.14.5
+   Compiling hashlink v0.9.1
+   Compiling rusqlite v0.32.1
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling fastk-scaling-profile v0.0.0 (/work/external-tests/scaling-profile)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 17.05s
+     Running unittests src/bin/bandwidth.rs (target/scaling-profile-build/debug/deps/bandwidth-bd5ea7f70ed9638d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/cache_counts.rs (target/scaling-profile-build/debug/deps/cache_counts-0b369c0af5245530)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/scaling-profile-build/debug/deps/fastk_scaling_profile-cbbe8b9436773dfb)
+
+running 1 test
+test file::tests::local_offsets_clone_eof_and_invalid_seek_are_independent ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

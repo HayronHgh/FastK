@@ -16,8 +16,13 @@ fn main() {
 fn run() -> Result<()> {
     let config = Config::parse(env::args().skip(1))?;
     match config.command {
+        Command::Init => {
+            let mut store = FastKStore::open(&config.root)?;
+            store.init()?;
+            println!("{{\"initialized\":true}}");
+        }
         Command::Validate => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let reports = if config.verbose {
                 store.validate_manifest_vs_fs_verbose()?
             } else {
@@ -38,7 +43,7 @@ fn run() -> Result<()> {
             );
         }
         Command::Scrub => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let reports = store.scrub_store(config.verbose)?;
             if reports.iter().any(|report| !report.validation.is_clean()) {
                 println!(
@@ -54,11 +59,9 @@ fn run() -> Result<()> {
         }
         Command::Repair => {
             let report = if config.dry_run {
-                let store = FastKStore::open(&config.root)?;
-                store.repair_store_dry_run()?
+                fastk::preview_recovery(&config.root)?
             } else {
-                let mut store = FastKStore::open(&config.root)?;
-                store.repair_store()?
+                fastk::recover_store(&config.root)?
             };
             println!(
                 "{}",
@@ -73,7 +76,7 @@ fn run() -> Result<()> {
             );
         }
         Command::ListOrphans => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let artifacts = store.list_orphans()?;
             println!(
                 "{}",
@@ -88,7 +91,7 @@ fn run() -> Result<()> {
             );
         }
         Command::ListSeries => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let series = store.list_series()?;
             println!(
                 "{}",
@@ -96,7 +99,7 @@ fn run() -> Result<()> {
             );
         }
         Command::Stats => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let stats = store.store_stats()?;
             println!(
                 "{}",
@@ -104,7 +107,7 @@ fn run() -> Result<()> {
             );
         }
         Command::Health => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let health = store.health_summary()?;
             println!(
                 "{}",
@@ -112,7 +115,7 @@ fn run() -> Result<()> {
             );
         }
         Command::Inventory => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             match (&config.symbol, &config.timeframe, &config.category, &config.name) {
                 (Some(symbol), Some(timeframe), _, _) => {
                     let inventory = store.kline_month_inventory(symbol, timeframe)?;
@@ -142,7 +145,7 @@ fn run() -> Result<()> {
             }
         }
         Command::Capabilities => {
-            let store = FastKStore::open(&config.root)?;
+            let store = FastKStore::open_read_only(&config.root)?;
             let symbol = config.symbol.ok_or_else(|| {
                 FastKError::InvalidInput("capabilities requires --symbol".to_string())
             })?;
@@ -169,6 +172,7 @@ fn run() -> Result<()> {
 
 #[derive(Debug, Clone, Copy)]
 enum Command {
+    Init,
     Validate,
     Scrub,
     Repair,
@@ -211,6 +215,7 @@ impl Config {
         let mut args = args.into_iter();
         while let Some(arg) = args.next() {
             match arg.as_str() {
+                "init" => command = Some(Command::Init),
                 "validate" => command = Some(Command::Validate),
                 "scrub" => command = Some(Command::Scrub),
                 "repair" => command = Some(Command::Repair),
@@ -266,6 +271,7 @@ where
 fn print_help() {
     println!("fastk_admin <command> --root <path>");
     println!("commands:");
+    println!("  init");
     println!("  validate");
     println!("  scrub");
     println!("  repair");

@@ -1,0 +1,73 @@
+{
+  "all_session_values_identical": true,
+  "compact_session": true,
+  "all_one_shot_bytes_identical": true,
+  "all_children_reaped": true,
+  "checks": [
+    {
+      "case": "small_kline",
+      "before_bytes": 23342,
+      "after_bytes": 15939,
+      "before_sha256": "c31fa9e62572a4f9d583dfd07b2d9165e0c29eb11cc19b55363b603c316710b2",
+      "after_sha256": "8037316f75b9e6fc0047a8c648e43380a583e67ca9bd9662ca0b6e662a8c9140",
+      "bytes_identical": false
+    },
+    {
+      "case": "medium_kline",
+      "before_bytes": 742242,
+      "after_bytes": 505739,
+      "before_sha256": "2be75060a4ee82e9995aa112604829451b035bbc52d7634c3e55d9f5d1fb0509",
+      "after_sha256": "96b1b8f89e63e4e8861130df5e6a2b83ccc42e1ca420f8fc66353523b92cde7d",
+      "bytes_identical": false
+    },
+    {
+      "case": "bulk_kline",
+      "before_bytes": 79555158,
+      "after_bytes": 54202451,
+      "before_sha256": "feb5ff8ce9aeb2e1f351aefc9db72cd5c51cbdc70f2ed9c3020f983f7ccaa4d5",
+      "after_sha256": "7487b0a28bd878056b02958900c9ec9f36ab4d263771889751fb06382601e776",
+      "bytes_identical": false
+    },
+    {
+      "case": "bulk_scalar",
+      "before_bytes": 30161273,
+      "after_bytes": 18796230,
+      "before_sha256": "d7f441d8d2703eeef438ade7e3b19bfff000a8ff5e164d70a019688c62d4c8f3",
+      "after_sha256": "061e6fab319d864213099fb409b65817984d3efe30b91df8527a2a16e570439b",
+      "bytes_identical": false
+    },
+    {
+      "case": "application_error",
+      "before_bytes": 134,
+      "after_bytes": 134,
+      "before_sha256": "f9da576f03d89666f7c2e5290a9b1d65627b32f8490ee5ca477877b9338a7cda",
+      "after_sha256": "f9da576f03d89666f7c2e5290a9b1d65627b32f8490ee5ca477877b9338a7cda",
+      "bytes_identical": true
+    },
+    {
+      "case": "after_error",
+      "before_bytes": 23342,
+      "after_bytes": 15939,
+      "before_sha256": "868065cb0ca1e9407cd8d2a39cb6c527eed5ccdc8640c1a0830a025858bf2933",
+      "after_sha256": "bde7fc9697514b0a149db04427bfe07bc85482eeb8787562289e489cc1a16070",
+      "bytes_identical": false
+    }
+  ],
+  "one_shot": [
+    {
+      "case": "version",
+      "bytes": 74,
+      "sha256": "7bccd9abd1a5937d28904092df3082ca15a0d544fc34525f449782281afcc32b"
+    },
+    {
+      "case": "small_kline",
+      "bytes": 23314,
+      "sha256": "9dbff7aa3f9ff3568941f51e418235d24f041d6fb1a0dc57670c941ab8c3af63"
+    },
+    {
+      "case": "medium_kline",
+      "bytes": 742214,
+      "sha256": "eb1b9e9a63cc6e7c205ad4b54933e5c267b68f71b1e76eb6c29a04be35a7ad35"
+    }
+  ]
+}

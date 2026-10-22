@@ -1,0 +1,20 @@
+Looking in links: /work/target/v02-attribution-wheelhouse
+Processing ./target/v02-attribution-wheelhouse/numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/pyarrow-26.0.0-cp312-cp312-manylinux_2_28_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/psutil-7.2.2-cp36-abi3-manylinux_2_12_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/maturin-1.15.0-py3-none-manylinux_2_12_x86_64.whl
+Installing collected packages: pyarrow, psutil, numpy, maturin
+Successfully installed maturin-1.15.0 numpy-2.3.5 psutil-7.2.2 pyarrow-26.0.0
+Processing ./target/v02-linux-wheels/fastk_native-0.2.0rc1-cp312-cp312-manylinux_2_34_x86_64.whl
+Installing collected packages: fastk-native
+Successfully installed fastk-native-0.2.0rc1
+max 100000
+usage_usec 14704379
+user_usec 4128010
+system_usec 10576369
+nice_usec 0
+nr_periods 0
+nr_throttled 0
+throttled_usec 0
+nr_bursts 0
+burst_usec 0

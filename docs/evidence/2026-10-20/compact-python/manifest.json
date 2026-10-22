@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-20",
+  "kind": "compact-python-cost-and-proposal-only",
+  "production_optimization_implemented": false,
+  "production_native_dependency": false,
+  "live_timed_responses": 80,
+  "live_fixture_responses": 8,
+  "exact_live_frame_pairs": 4,
+  "cached_controls_verified": 360,
+  "fresh_native_jobs": 90,
+  "native_timed_responses": 2940,
+  "native_bulk_warmups": 80,
+  "short_queries_per_route": 1430,
+  "all_children_reaped": true,
+  "native_fault_tests_windows": {
+    "pass": 31,
+    "skip": 1
+  },
+  "skip": "Full release archive manifest check",
+  "static_checks": "Ruff check/format 30 files; cargo fmt PASS",
+  "performance_platform": "Windows11/Python3.12.14/Ryzen9 9900X",
+  "native_candidate": "orjson3.13.0, private process-only trial; not recommended default due memory/semantic differences",
+  "memory_scope": "External actual PythonPID+Rust+optional launcher5ms concurrent RSS/private commit, individual OS peaks separate, includes warmup/caller/validation/request cleanup, excludes coordinator/explicit shutdown",
+  "limitations": "10 bulk/control observations, no bulk tails; OS cache/scheduling uncontrolled. Tokenization and object allocation not independently timed. GC timers nested. Linux native decoder not tested. No combined native+itemgetter end-to-end win claimed."
+}

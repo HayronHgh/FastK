@@ -7,3 +7,5 @@ pub(crate) mod kline_writer;
 pub(crate) mod scalar_reader;
 pub(crate) mod scalar_writer;
 pub(crate) mod sparse_index;
+
+pub(crate) mod file;

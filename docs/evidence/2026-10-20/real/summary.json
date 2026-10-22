@@ -1,0 +1,529 @@
+{
+  "environment": {
+    "measured_at_utc": "2026-10-20T11:16:28.934600+00:00",
+    "os": "Windows-11-10.0.26200-SP0",
+    "architecture": "AMD64",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "cpu_logical_count": 24,
+    "physical_memory_bytes": 100591579136,
+    "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+    "harness_sha256": "c373138accf4c5f5082f89d9bae83f13a0bea876b0ed6d4ede0fa947c623993a",
+    "reused_prepared_stores": null,
+    "dependencies": {
+      "duckdb": "1.5.6",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2",
+      "fastk-client": "0.1.0rc1"
+    },
+    "seed": 20261020,
+    "profile": "real",
+    "input_bar_rows": 1054080,
+    "input_scalar_rows": 4216320,
+    "logical_fixed_record_payload_bytes": 118056960,
+    "file_space_definition": "sum of file lengths; filesystem allocation and directory metadata excluded",
+    "rounds": 2,
+    "short_ops_per_round": 140,
+    "full_scans_per_round": 1,
+    "durability": "FastK: per-month synced files+manifest, Windows directory sync best-effort; SQLite: WAL synchronous FULL bulk transaction+checkpoint; DuckDB: bulk transaction+checkpoint; Parquet/Arrow: fsynced files, POSIX directory sync. These are not equivalent crash guarantees.",
+    "threads": "DuckDB and file readers use one thread; FastK bridge is synchronous",
+    "metrics": "query time includes full Python materialization; validation outside timer; RSS includes worker and FastK subprocesses"
+  },
+  "setup_order": [
+    "arrow",
+    "sqlite",
+    "fastk",
+    "duckdb",
+    "parquet"
+  ],
+  "round_orders": [
+    [
+      "arrow",
+      "sqlite",
+      "fastk",
+      "duckdb",
+      "parquet"
+    ],
+    [
+      "sqlite",
+      "fastk",
+      "duckdb",
+      "parquet",
+      "arrow"
+    ]
+  ],
+  "all_results_verified": true,
+  "maintenance_input_recalculation_ns": 6985136500,
+  "backends": {
+    "fastk": {
+      "build_ns": 13123935100,
+      "storage": {
+        "total_bytes": 186878372,
+        "components": {
+          "other_or_journal": 0,
+          "manifest": 24612,
+          "chunk_with_sparse_index_and_header": 118731840,
+          "value_index": 67461120,
+          "zone_map": 660800
+        }
+      },
+      "build_samples": 1,
+      "maintenance": {
+        "append_ns": 365663500,
+        "new_version_full_rebuild_ns": 12967587500,
+        "samples": 1,
+        "after_append_storage": {
+          "total_bytes": 186927124,
+          "components": {
+            "other_or_journal": 0,
+            "manifest": 26548,
+            "chunk_with_sparse_index_and_header": 118761952,
+            "value_index": 67477504,
+            "zone_map": 661120
+          }
+        },
+        "new_version_storage": {
+          "total_bytes": 186878372,
+          "components": {
+            "other_or_journal": 0,
+            "manifest": 24612,
+            "chunk_with_sparse_index_and_header": 118731840,
+            "value_index": 67461120,
+            "zone_map": 660800
+          }
+        }
+      },
+      "latencies": {
+        "point": {
+          "samples": 40,
+          "min_ns": 21672800,
+          "median_ns": 23817900,
+          "max_ns": 30688600
+        },
+        "point-miss": {
+          "samples": 40,
+          "min_ns": 20063400,
+          "median_ns": 23218500,
+          "max_ns": 27521400
+        },
+        "range": {
+          "samples": 40,
+          "min_ns": 22194900,
+          "median_ns": 23752300,
+          "max_ns": 28800800
+        },
+        "latest": {
+          "samples": 40,
+          "min_ns": 20739800,
+          "median_ns": 22545800,
+          "max_ns": 29219700
+        },
+        "projection": {
+          "samples": 40,
+          "min_ns": 21910100,
+          "median_ns": 23912500,
+          "max_ns": 28679100
+        },
+        "predicate-eq": {
+          "samples": 40,
+          "min_ns": 23004800,
+          "median_ns": 24753800,
+          "max_ns": 36376400
+        },
+        "predicate-between": {
+          "samples": 40,
+          "min_ns": 21774800,
+          "median_ns": 23720700,
+          "max_ns": 31984500
+        },
+        "scan": {
+          "samples": 2,
+          "min_ns": 957890600,
+          "median_ns": 957890600,
+          "max_ns": 973422900
+        }
+      },
+      "open": {
+        "samples": 2,
+        "min_ns": 30770100,
+        "median_ns": 30770100,
+        "max_ns": 31376100
+      },
+      "research": {
+        "samples": 2,
+        "min_ns": 6246182600,
+        "median_ns": 6246182600,
+        "max_ns": 6305236400
+      },
+      "peak_process_tree_rss_bytes": 1003966464
+    },
+    "sqlite": {
+      "build_ns": 11076377600,
+      "storage": {
+        "total_bytes": 345583616,
+        "components": {
+          "sqlite_database": 345583616
+        }
+      },
+      "build_samples": 1,
+      "maintenance": {
+        "append_ns": 20530000,
+        "new_version_full_rebuild_ns": 11122705000,
+        "samples": 1,
+        "after_append_storage": {
+          "total_bytes": 345882624,
+          "components": {
+            "sqlite_database": 345882624
+          }
+        },
+        "new_version_storage": {
+          "total_bytes": 345583616,
+          "components": {
+            "sqlite_database": 345583616
+          }
+        }
+      },
+      "latencies": {
+        "point": {
+          "samples": 40,
+          "min_ns": 9100,
+          "median_ns": 13200,
+          "max_ns": 35900
+        },
+        "point-miss": {
+          "samples": 40,
+          "min_ns": 4700,
+          "median_ns": 11300,
+          "max_ns": 41500
+        },
+        "range": {
+          "samples": 40,
+          "min_ns": 95700,
+          "median_ns": 105200,
+          "max_ns": 162300
+        },
+        "latest": {
+          "samples": 40,
+          "min_ns": 98900,
+          "median_ns": 105300,
+          "max_ns": 150800
+        },
+        "projection": {
+          "samples": 40,
+          "min_ns": 45700,
+          "median_ns": 63300,
+          "max_ns": 106300
+        },
+        "predicate-eq": {
+          "samples": 40,
+          "min_ns": 9500,
+          "median_ns": 14400,
+          "max_ns": 40200
+        },
+        "predicate-between": {
+          "samples": 40,
+          "min_ns": 36400,
+          "median_ns": 42700,
+          "max_ns": 125400
+        },
+        "scan": {
+          "samples": 2,
+          "min_ns": 470001800,
+          "median_ns": 470001800,
+          "max_ns": 475794900
+        }
+      },
+      "open": {
+        "samples": 2,
+        "min_ns": 1271200,
+        "median_ns": 1271200,
+        "max_ns": 1869100
+      },
+      "research": {
+        "samples": 2,
+        "min_ns": 4482087300,
+        "median_ns": 4482087300,
+        "max_ns": 4838833400
+      },
+      "peak_process_tree_rss_bytes": 903950336
+    },
+    "duckdb": {
+      "build_ns": 12279105100,
+      "storage": {
+        "total_bytes": 439103488,
+        "components": {
+          "duckdb_database": 439103488
+        }
+      },
+      "build_samples": 1,
+      "maintenance": {
+        "append_ns": 114673200,
+        "new_version_full_rebuild_ns": 11881416300,
+        "samples": 1,
+        "after_append_storage": {
+          "total_bytes": 470822912,
+          "components": {
+            "duckdb_database": 470822912
+          }
+        },
+        "new_version_storage": {
+          "total_bytes": 439103488,
+          "components": {
+            "duckdb_database": 439103488
+          }
+        }
+      },
+      "latencies": {
+        "point": {
+          "samples": 40,
+          "min_ns": 1747100,
+          "median_ns": 2189900,
+          "max_ns": 4043400
+        },
+        "point-miss": {
+          "samples": 40,
+          "min_ns": 1318400,
+          "median_ns": 2046400,
+          "max_ns": 3441600
+        },
+        "range": {
+          "samples": 40,
+          "min_ns": 1787800,
+          "median_ns": 2319700,
+          "max_ns": 3948700
+        },
+        "latest": {
+          "samples": 40,
+          "min_ns": 5613900,
+          "median_ns": 6062400,
+          "max_ns": 13919600
+        },
+        "projection": {
+          "samples": 40,
+          "min_ns": 2038000,
+          "median_ns": 2180200,
+          "max_ns": 3320200
+        },
+        "predicate-eq": {
+          "samples": 40,
+          "min_ns": 2231200,
+          "median_ns": 2682200,
+          "max_ns": 4450600
+        },
+        "predicate-between": {
+          "samples": 40,
+          "min_ns": 2722600,
+          "median_ns": 3465400,
+          "max_ns": 4815700
+        },
+        "scan": {
+          "samples": 2,
+          "min_ns": 243755200,
+          "median_ns": 243755200,
+          "max_ns": 266675900
+        }
+      },
+      "open": {
+        "samples": 2,
+        "min_ns": 54646900,
+        "median_ns": 54646900,
+        "max_ns": 57963200
+      },
+      "research": {
+        "samples": 2,
+        "min_ns": 3158933400,
+        "median_ns": 3158933400,
+        "max_ns": 3286799600
+      },
+      "peak_process_tree_rss_bytes": 903200768
+    },
+    "parquet": {
+      "build_ns": 2093628400,
+      "storage": {
+        "total_bytes": 82680692,
+        "components": {
+          "parquet": 82680692
+        }
+      },
+      "build_samples": 1,
+      "maintenance": {
+        "append_ns": 63039600,
+        "new_version_full_rebuild_ns": 2100545100,
+        "samples": 1,
+        "after_append_storage": {
+          "total_bytes": 82701282,
+          "components": {
+            "parquet": 82701282
+          }
+        },
+        "new_version_storage": {
+          "total_bytes": 82680768,
+          "components": {
+            "parquet": 82680768
+          }
+        }
+      },
+      "latencies": {
+        "point": {
+          "samples": 40,
+          "min_ns": 1769300,
+          "median_ns": 2226000,
+          "max_ns": 2854300
+        },
+        "point-miss": {
+          "samples": 40,
+          "min_ns": 8000,
+          "median_ns": 10600,
+          "max_ns": 20700
+        },
+        "range": {
+          "samples": 40,
+          "min_ns": 1755400,
+          "median_ns": 2131700,
+          "max_ns": 3036500
+        },
+        "latest": {
+          "samples": 40,
+          "min_ns": 2648600,
+          "median_ns": 3310200,
+          "max_ns": 4480900
+        },
+        "projection": {
+          "samples": 40,
+          "min_ns": 1630900,
+          "median_ns": 1792800,
+          "max_ns": 2244300
+        },
+        "predicate-eq": {
+          "samples": 40,
+          "min_ns": 1672900,
+          "median_ns": 1909900,
+          "max_ns": 2496900
+        },
+        "predicate-between": {
+          "samples": 40,
+          "min_ns": 1890000,
+          "median_ns": 2200100,
+          "max_ns": 3049600
+        },
+        "scan": {
+          "samples": 2,
+          "min_ns": 375547400,
+          "median_ns": 375547400,
+          "max_ns": 397740800
+        }
+      },
+      "open": {
+        "samples": 2,
+        "min_ns": 5700,
+        "median_ns": 5700,
+        "max_ns": 6100
+      },
+      "research": {
+        "samples": 2,
+        "min_ns": 4607856100,
+        "median_ns": 4607856100,
+        "max_ns": 4619566500
+      },
+      "peak_process_tree_rss_bytes": 897507328
+    },
+    "arrow": {
+      "build_ns": 835432600,
+      "storage": {
+        "total_bytes": 118145328,
+        "components": {
+          "arrow": 118145328
+        }
+      },
+      "build_samples": 1,
+      "maintenance": {
+        "append_ns": 24434400,
+        "new_version_full_rebuild_ns": 890065900,
+        "samples": 1,
+        "after_append_storage": {
+          "total_bytes": 118181364,
+          "components": {
+            "arrow": 118181364
+          }
+        },
+        "new_version_storage": {
+          "total_bytes": 118145328,
+          "components": {
+            "arrow": 118145328
+          }
+        }
+      },
+      "latencies": {
+        "point": {
+          "samples": 40,
+          "min_ns": 480400,
+          "median_ns": 727100,
+          "max_ns": 1600100
+        },
+        "point-miss": {
+          "samples": 40,
+          "min_ns": 6300,
+          "median_ns": 7900,
+          "max_ns": 15100
+        },
+        "range": {
+          "samples": 40,
+          "min_ns": 522400,
+          "median_ns": 615400,
+          "max_ns": 1523700
+        },
+        "latest": {
+          "samples": 40,
+          "min_ns": 623500,
+          "median_ns": 788500,
+          "max_ns": 1931900
+        },
+        "projection": {
+          "samples": 40,
+          "min_ns": 480600,
+          "median_ns": 642300,
+          "max_ns": 1419400
+        },
+        "predicate-eq": {
+          "samples": 40,
+          "min_ns": 637100,
+          "median_ns": 843300,
+          "max_ns": 1629300
+        },
+        "predicate-between": {
+          "samples": 40,
+          "min_ns": 832600,
+          "median_ns": 1392500,
+          "max_ns": 1902900
+        },
+        "scan": {
+          "samples": 2,
+          "min_ns": 346831600,
+          "median_ns": 346831600,
+          "max_ns": 366853600
+        }
+      },
+      "open": {
+        "samples": 2,
+        "min_ns": 5400,
+        "median_ns": 5400,
+        "max_ns": 8600
+      },
+      "research": {
+        "samples": 2,
+        "min_ns": 4180440100,
+        "median_ns": 4180440100,
+        "max_ns": 4448252500
+      },
+      "peak_process_tree_rss_bytes": 955813888
+    }
+  },
+  "limitations": [
+    "OS cold cache was not established; no cold-cache claim",
+    "FastK uses a subprocess per request; native persistent Python bindings can be faster",
+    "build, extension and version rebuild each have one sample; descriptive, not distributions",
+    "sampled RSS can miss sub-10ms child peaks",
+    "research kernel is a deterministic integration workload, not a complete trading backtest",
+    "historical corrections are measured as full new-version rebuilds for every backend; no sparse-update claim",
+    "when prepared stores are reused, initial build times are omitted; fresh full-version rebuild costs are still measured"
+  ]
+}

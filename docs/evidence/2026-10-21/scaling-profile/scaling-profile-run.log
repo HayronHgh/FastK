@@ -1,0 +1,88 @@
+counters 1 / 78 000-schedule-t8-g4-r1
+counters 2 / 78 001-copy-t4-g4-r2
+counters 3 / 78 002-pread-t8-g4-r2
+counters 4 / 78 003-engine-t2-g2-r1
+counters 5 / 78 004-copy-t8-g8-r2
+counters 6 / 78 005-copy-t5-g5-r1
+counters 7 / 78 006-pread-t8-g5-r1
+counters 8 / 78 007-private-t1-g1-r2
+counters 9 / 78 008-engine-t1-g1-r0
+counters 10 / 78 009-copy-t8-g8-r0
+counters 11 / 78 010-engine-t1-g1-r2
+counters 12 / 78 011-private-t8-g1-r2
+counters 13 / 78 012-pread-t8-g5-r0
+counters 14 / 78 013-copy-t8-g4-r2
+counters 15 / 78 014-copy-t8-g5-r2
+counters 16 / 78 015-pread-t8-g5-r2
+counters 17 / 78 016-schedule-t4-g4-r1
+counters 18 / 78 017-schedule-t8-g5-r0
+counters 19 / 78 018-outer-t4-g1-r0
+counters 20 / 78 019-schedule-t8-g5-r2
+counters 21 / 78 020-outer-t1-g1-r0
+counters 22 / 78 021-schedule-t8-g4-r0
+counters 23 / 78 022-private-t4-g1-r0
+counters 24 / 78 023-pread-t5-g5-r1
+counters 25 / 78 024-engine-t5-g5-r0
+counters 26 / 78 025-copy-t8-g8-r1
+counters 27 / 78 026-schedule-t8-g4-r2
+counters 28 / 78 027-schedule-t8-g8-r0
+counters 29 / 78 028-private-t8-g1-r0
+counters 30 / 78 029-pread-t4-g4-r1
+counters 31 / 78 030-engine-t5-g5-r1
+counters 32 / 78 031-outer-t1-g1-r1
+counters 33 / 78 032-copy-t5-g5-r2
+counters 34 / 78 033-pread-t8-g4-r1
+counters 35 / 78 034-engine-t4-g4-r0
+counters 36 / 78 035-private-t1-g1-r0
+counters 37 / 78 036-pread-t8-g8-r1
+counters 38 / 78 037-schedule-t8-g8-r2
+counters 39 / 78 038-outer-t8-g1-r0
+counters 40 / 78 039-schedule-t4-g4-r0
+counters 41 / 78 040-private-t4-g1-r2
+counters 42 / 78 041-private-t4-g1-r1
+counters 43 / 78 042-engine-t8-g5-r1
+counters 44 / 78 043-pread-t5-g5-r2
+counters 45 / 78 044-engine-t1-g1-r1
+counters 46 / 78 045-pread-t4-g4-r2
+counters 47 / 78 046-outer-t4-g1-r1
+counters 48 / 78 047-pread-t8-g8-r0
+counters 49 / 78 048-schedule-t5-g5-r0
+counters 50 / 78 049-engine-t2-g2-r0
+counters 51 / 78 050-schedule-t4-g4-r2
+counters 52 / 78 051-outer-t4-g1-r2
+counters 53 / 78 052-engine-t8-g5-r0
+counters 54 / 78 053-schedule-t5-g5-r2
+counters 55 / 78 054-pread-t4-g4-r0
+counters 56 / 78 055-copy-t4-g4-r1
+counters 57 / 78 056-engine-t5-g5-r2
+counters 58 / 78 057-pread-t8-g4-r0
+counters 59 / 78 058-copy-t8-g5-r0
+counters 60 / 78 059-engine-t8-g5-r2
+counters 61 / 78 060-schedule-t5-g5-r1
+counters 62 / 78 061-schedule-t8-g5-r1
+counters 63 / 78 062-engine-t4-g4-r1
+counters 64 / 78 063-pread-t5-g5-r0
+counters 65 / 78 064-copy-t8-g4-r0
+counters 66 / 78 065-copy-t8-g4-r1
+counters 67 / 78 066-copy-t4-g4-r0
+counters 68 / 78 067-engine-t2-g2-r2
+counters 69 / 78 068-outer-t1-g1-r2
+counters 70 / 78 069-pread-t8-g8-r2
+counters 71 / 78 070-copy-t8-g5-r1
+counters 72 / 78 071-schedule-t8-g8-r1
+counters 73 / 78 072-private-t8-g1-r1
+counters 74 / 78 073-outer-t8-g1-r1
+counters 75 / 78 074-copy-t5-g5-r0
+counters 76 / 78 075-outer-t8-g1-r2
+counters 77 / 78 076-private-t1-g1-r1
+counters 78 / 78 077-engine-t4-g4-r2
+Traceback (most recent call last):
+  File "/work/external-tests/scaling-profile/run.py", line 181, in <module>
+    main()
+  File "/work/external-tests/scaling-profile/run.py", line 160, in main
+    invoke(args, args.output, config, record=True)
+  File "/work/external-tests/scaling-profile/run.py", line 70, in invoke
+    subprocess.run(command, env=env, stdout=stream, stderr=log, check=True, timeout=180)
+  File "/usr/local/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['perf', 'record', '-e', 'cycles', '-F', '199', '-g', '--call-graph', 'fp', '--control=fifo:/tmp/fastk-perf-hf_9u30h/control,/tmp/fastk-perf-hf_9u30h/ack', '--delay=-1', '-o', '/work/target/scaling-profile-linux-final/record-engine-t4.data', '--', '/work/target/scaling-profile-build/release/fastk-scaling-profile', 'engine', '/tmp/scaling-data/fastk', '/work/target/v02-rust-queries.json', '4', '4', '2000']' returned non-zero exit status 255.

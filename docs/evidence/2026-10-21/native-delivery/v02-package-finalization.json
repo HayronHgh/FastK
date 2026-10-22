@@ -1,0 +1,23 @@
+{
+  "fastk-0.2.0-rc.1-x86_64-pc-windows-gnu-development": {
+    "restored_historical_evidence_files": [],
+    "removed_generated_bytecode_from_crate": [
+      "fastk-0.2.0-rc.1/scripts/__pycache__/build_python_wheel.cpython-311.pyc",
+      "fastk-0.2.0-rc.1/scripts/__pycache__/build_python_wheel.cpython-312.pyc"
+    ],
+    "nested_evidence_verified": true
+  },
+  "fastk-0.2.0-rc.1-x86_64-unknown-linux-musl-development": {
+    "restored_historical_evidence_files": [
+      "docs/evidence/2026-10-20/session-json/source/target/session-json-probe-v2/bridge.rs",
+      "docs/evidence/2026-10-20/session-json/source/target/session-json-probe-v2/Cargo.toml",
+      "docs/evidence/2026-10-20/session-json/source/target/session-json-probe-v2/python/fastk_cost_client/_measure.py",
+      "docs/evidence/2026-10-20/session-json/source/target/session-json-probe-v2/python/fastk_cost_client/_session.py",
+      "docs/evidence/2026-10-20/session-json/source/target/session-json-probe-v2/session_transport.rs"
+    ],
+    "removed_generated_bytecode_from_crate": [
+      "fastk-0.2.0-rc.1/scripts/__pycache__/build_python_wheel.cpython-312.pyc"
+    ],
+    "nested_evidence_verified": true
+  }
+}

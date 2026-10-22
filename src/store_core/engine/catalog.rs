@@ -10,12 +10,23 @@ use crate::types::{FixedRecord, PartitionPolicy, RecordType, ScalarSeriesKey, Se
 #[derive(Debug, Clone)]
 pub struct Catalog {
     root: PathBuf,
+    read_only: bool,
 }
 
 impl Catalog {
     /// Creates a catalog rooted at a FastK directory.
     pub fn new(root: PathBuf) -> Self {
-        Self { root }
+        Self {
+            root,
+            read_only: false,
+        }
+    }
+
+    pub(crate) fn read_only(root: PathBuf) -> Self {
+        Self {
+            root,
+            read_only: true,
+        }
     }
 
     /// Ensures the base directory exists.
@@ -39,6 +50,9 @@ impl Catalog {
         symbol: &str,
         timeframe: &str,
     ) -> Option<manifest::ManifestLoadReport> {
+        if self.read_only {
+            return None;
+        }
         manifest::load_series_meta_shared_cached(&path::kline_series_dir(
             &self.root, symbol, timeframe,
         ))
@@ -50,7 +64,10 @@ impl Catalog {
         symbol: &str,
         timeframe: &str,
     ) -> Result<manifest::ManifestLoadReport> {
-        manifest::load_series_meta_shared(&path::kline_series_dir(&self.root, symbol, timeframe))
+        manifest::load_series_meta_shared_mode(
+            &path::kline_series_dir(&self.root, symbol, timeframe),
+            self.read_only,
+        )
     }
 
     /// Saves kline series metadata to disk.
@@ -74,6 +91,9 @@ impl Catalog {
         &self,
         key: &ScalarSeriesKey,
     ) -> Option<manifest::ManifestLoadReport> {
+        if self.read_only {
+            return None;
+        }
         manifest::load_series_meta_shared_cached(&path::scalar_series_dir(
             &self.root,
             &key.symbol,
@@ -87,12 +107,10 @@ impl Catalog {
         &self,
         key: &ScalarSeriesKey,
     ) -> Result<manifest::ManifestLoadReport> {
-        manifest::load_series_meta_shared(&path::scalar_series_dir(
-            &self.root,
-            &key.symbol,
-            &key.category,
-            &key.name,
-        ))
+        manifest::load_series_meta_shared_mode(
+            &path::scalar_series_dir(&self.root, &key.symbol, &key.category, &key.name),
+            self.read_only,
+        )
     }
 
     /// Saves scalar series metadata to disk.
@@ -109,6 +127,9 @@ impl Catalog {
         category: &str,
         name: &str,
     ) -> Option<manifest::ManifestLoadReport> {
+        if self.read_only {
+            return None;
+        }
         manifest::load_series_meta_shared_cached(&path::series_dir(
             &self.root, symbol, category, name,
         ))
@@ -121,7 +142,10 @@ impl Catalog {
         category: &str,
         name: &str,
     ) -> Result<manifest::ManifestLoadReport> {
-        manifest::load_series_meta_shared(&path::series_dir(&self.root, symbol, category, name))
+        manifest::load_series_meta_shared_mode(
+            &path::series_dir(&self.root, symbol, category, name),
+            self.read_only,
+        )
     }
 
     /// Saves generic series metadata to disk.

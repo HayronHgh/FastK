@@ -1,0 +1,125 @@
+{
+  "process_rounds": 3,
+  "verified_timed_results": 12870,
+  "jobs": [
+    {
+      "setting": "fastk",
+      "process_round": 0,
+      "output": "fastk-r0.json"
+    },
+    {
+      "setting": "arrow64",
+      "process_round": 0,
+      "output": "arrow64-r0.json"
+    },
+    {
+      "setting": "arrow256",
+      "process_round": 0,
+      "output": "arrow256-r0.json"
+    },
+    {
+      "setting": "fastk",
+      "process_round": 1,
+      "output": "fastk-r1.json"
+    },
+    {
+      "setting": "arrow64",
+      "process_round": 1,
+      "output": "arrow64-r1.json"
+    },
+    {
+      "setting": "arrow256",
+      "process_round": 1,
+      "output": "arrow256-r1.json"
+    },
+    {
+      "setting": "arrow64",
+      "process_round": 2,
+      "output": "arrow64-r2.json"
+    },
+    {
+      "setting": "arrow256",
+      "process_round": 2,
+      "output": "arrow256-r2.json"
+    },
+    {
+      "setting": "fastk",
+      "process_round": 2,
+      "output": "fastk-r2.json"
+    }
+  ],
+  "results": [
+    {
+      "setting": "fastk",
+      "process_medians_ns": [
+        70800.0,
+        66500.0,
+        71200.0
+      ],
+      "median_ns": 70800.0,
+      "median_p95_ns": 93200.0,
+      "median_p99_ns": 122026.00000000003,
+      "peak_private_bytes": [
+        27795456,
+        27312128,
+        27549696
+      ],
+      "peak_rss_bytes": [
+        42827776,
+        42500096,
+        42692608
+      ]
+    },
+    {
+      "setting": "arrow64",
+      "process_medians_ns": [
+        476950.0,
+        474400.0,
+        468350.0
+      ],
+      "median_ns": 474400.0,
+      "median_p95_ns": 617755.0,
+      "median_p99_ns": 712978.0000000001,
+      "peak_private_bytes": [
+        42065920,
+        42000384,
+        42049536
+      ],
+      "peak_rss_bytes": [
+        68730880,
+        68558848,
+        68644864
+      ]
+    },
+    {
+      "setting": "arrow256",
+      "process_medians_ns": [
+        17800.0,
+        16800.0,
+        16900.0
+      ],
+      "median_ns": 16900.0,
+      "median_p95_ns": 20300.0,
+      "median_p99_ns": 26171.000000000004,
+      "peak_private_bytes": [
+        44683264,
+        43708416,
+        44724224
+      ],
+      "peak_rss_bytes": [
+        125480960,
+        124260352,
+        125267968
+      ]
+    }
+  ],
+  "harness_sha256": {
+    "run_numpy_arrow_cache_control.py": "76c1d7fd22b853d19324b8c8140804957e2688aa1c750d98ed2eb400764e94d0",
+    "_numpy_arrow_cache_control_worker.py": "74ec4c5df8e61292b62169593b09ac38bd6fc04e3f7dc010c890f4d6fc7238b5"
+  },
+  "limits": [
+    "Three fresh processes per setting; randomized setting order per process round",
+    "Only Arrow mmap cap changes; unchanged FastK binary and original NumPy contract",
+    "Same 1430 queries, 32 warmups, budget1, complete validation outside timers"
+  ]
+}

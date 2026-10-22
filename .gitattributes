@@ -1,0 +1,4 @@
+*.sh text eol=lf
+
+# Measurements and source snapshots are immutable byte-for-byte evidence.
+docs/evidence/** -text -diff

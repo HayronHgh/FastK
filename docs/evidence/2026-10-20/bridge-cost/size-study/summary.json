@@ -1,0 +1,864 @@
+{
+  "all_results_verified": true,
+  "environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.14",
+    "qpc_frequency": 10000000,
+    "bridge_sha256": "543d5e41f92b153c573dffd30c2561871fc465b5c67c13a0d982fbd27dc91333",
+    "probe_sha256": "4ee13303e71c34dc3cac5f2f67f413d5ced8ae93b2230ba02a722da12f216679",
+    "os_cache": "uncontrolled; same prepared store; fresh child per call",
+    "rounds": 5,
+    "short_range_cases_per_round": 40,
+    "client_source_sha256": "9115b293d8c7317cbf8378b2d1a997358d793a180f846fe19f9da01cf0bbda02"
+  },
+  "groups": {
+    "probe-range": {
+      "total": {
+        "samples": 200,
+        "mean_ns": 28521076.0,
+        "median_ns": 27718900,
+        "min_ns": 22508900,
+        "max_ns": 47064800,
+        "p95_ns": 35531800,
+        "p99_ns": 45048800
+      },
+      "decode": {
+        "samples": 200,
+        "mean_ns": 162293.5,
+        "median_ns": 167300,
+        "min_ns": 56200,
+        "max_ns": 329700,
+        "p95_ns": 206500,
+        "p99_ns": 272400
+      },
+      "adapter": {
+        "samples": 200,
+        "mean_ns": 64313.0,
+        "median_ns": 63000,
+        "min_ns": 14000,
+        "max_ns": 211700,
+        "p95_ns": 91500,
+        "p99_ns": 123700
+      },
+      "popen_call": {
+        "samples": 200,
+        "mean_ns": 6219015.5,
+        "median_ns": 6186000,
+        "min_ns": 5177700,
+        "max_ns": 8398100,
+        "p95_ns": 7246600,
+        "p99_ns": 7888100
+      },
+      "child": {
+        "engine.close_ns": {
+          "samples": 200,
+          "mean_ns": 54794.0,
+          "median_ns": 30300,
+          "min_ns": 19900,
+          "max_ns": 167600,
+          "p95_ns": 128800,
+          "p99_ns": 158400
+        },
+        "engine.metadata_ns": {
+          "samples": 200,
+          "mean_ns": 497681.5,
+          "median_ns": 183800,
+          "min_ns": 161200,
+          "max_ns": 6613500,
+          "p95_ns": 4817300,
+          "p99_ns": 6013400
+        },
+        "engine.open_ns": {
+          "samples": 200,
+          "mean_ns": 144380.5,
+          "median_ns": 138200,
+          "min_ns": 118500,
+          "max_ns": 252700,
+          "p95_ns": 180900,
+          "p99_ns": 220700
+        },
+        "engine.read_ns": {
+          "samples": 200,
+          "mean_ns": 2290965.5,
+          "median_ns": 295000,
+          "min_ns": 72000,
+          "max_ns": 8426100,
+          "p95_ns": 6370700,
+          "p99_ns": 7149900
+        },
+        "engine.response_ns": {
+          "samples": 200,
+          "mean_ns": 635.5,
+          "median_ns": 300,
+          "min_ns": 100,
+          "max_ns": 13700,
+          "p95_ns": 1700,
+          "p99_ns": 2100
+        },
+        "engine.total_ns": {
+          "samples": 200,
+          "mean_ns": 2988457.0,
+          "median_ns": 661100,
+          "min_ns": 384700,
+          "max_ns": 11899800,
+          "p95_ns": 9934100,
+          "p99_ns": 11420000
+        },
+        "json.encode_and_buffer_ns": {
+          "samples": 200,
+          "mean_ns": 19269.0,
+          "median_ns": 18200,
+          "min_ns": 6400,
+          "max_ns": 35300,
+          "p95_ns": 26500,
+          "p99_ns": 32000
+        },
+        "json.pipe_write_ns": {
+          "samples": 200,
+          "mean_ns": 56060.0,
+          "median_ns": 53600,
+          "min_ns": 8100,
+          "max_ns": 154100,
+          "p95_ns": 74100,
+          "p99_ns": 131300
+        },
+        "json.total_ns": {
+          "samples": 200,
+          "mean_ns": 75329.0,
+          "median_ns": 72500,
+          "min_ns": 14500,
+          "max_ns": 171400,
+          "p95_ns": 99600,
+          "p99_ns": 148800
+        }
+      }
+    },
+    "original-range": {
+      "total": {
+        "samples": 200,
+        "mean_ns": 28056314.0,
+        "median_ns": 27291600,
+        "min_ns": 21379900,
+        "max_ns": 40453000,
+        "p95_ns": 34807800,
+        "p99_ns": 37821500
+      },
+      "decode": {
+        "samples": 200,
+        "mean_ns": 163290.5,
+        "median_ns": 175800,
+        "min_ns": 61700,
+        "max_ns": 311300,
+        "p95_ns": 208900,
+        "p99_ns": 226000
+      },
+      "adapter": {
+        "samples": 200,
+        "mean_ns": 66574.0,
+        "median_ns": 71900,
+        "min_ns": 16100,
+        "max_ns": 162000,
+        "p95_ns": 91000,
+        "p99_ns": 143400
+      },
+      "popen_call": {
+        "samples": 200,
+        "mean_ns": 6161537.0,
+        "median_ns": 6170100,
+        "min_ns": 4199900,
+        "max_ns": 8022900,
+        "p95_ns": 7152400,
+        "p99_ns": 7650000
+      },
+      "child": {}
+    },
+    "probe-null": {
+      "total": {
+        "samples": 100,
+        "mean_ns": 23214025.0,
+        "median_ns": 22504200,
+        "min_ns": 19779500,
+        "max_ns": 38819200,
+        "p95_ns": 28161300,
+        "p99_ns": 32169300
+      },
+      "decode": {
+        "samples": 100,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0,
+        "p95_ns": 0,
+        "p99_ns": 0
+      },
+      "adapter": {
+        "samples": 100,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0,
+        "p95_ns": 0,
+        "p99_ns": 0
+      },
+      "popen_call": {
+        "samples": 100,
+        "mean_ns": 4527409.0,
+        "median_ns": 4444200,
+        "min_ns": 3646600,
+        "max_ns": 6942500,
+        "p95_ns": 5550200,
+        "p99_ns": 5942000
+      },
+      "child": {}
+    },
+    "original-version": {
+      "total": {
+        "samples": 100,
+        "mean_ns": 23362247.0,
+        "median_ns": 22774200,
+        "min_ns": 19588000,
+        "max_ns": 39749800,
+        "p95_ns": 28996800,
+        "p99_ns": 31815300
+      },
+      "decode": {
+        "samples": 100,
+        "mean_ns": 25613.0,
+        "median_ns": 25300,
+        "min_ns": 19400,
+        "max_ns": 43300,
+        "p95_ns": 31300,
+        "p99_ns": 35200
+      },
+      "adapter": {
+        "samples": 100,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0,
+        "p95_ns": 0,
+        "p99_ns": 0
+      },
+      "popen_call": {
+        "samples": 100,
+        "mean_ns": 4457014.0,
+        "median_ns": 4383400,
+        "min_ns": 3685200,
+        "max_ns": 5685100,
+        "p95_ns": 5271300,
+        "p99_ns": 5636000
+      },
+      "child": {}
+    },
+    "probe-replay": {
+      "total": {
+        "samples": 100,
+        "mean_ns": 23987471.0,
+        "median_ns": 23468700,
+        "min_ns": 20273100,
+        "max_ns": 34210100,
+        "p95_ns": 28829000,
+        "p99_ns": 33118200
+      },
+      "decode": {
+        "samples": 100,
+        "mean_ns": 163454.0,
+        "median_ns": 153500,
+        "min_ns": 116300,
+        "max_ns": 302200,
+        "p95_ns": 206900,
+        "p99_ns": 293400
+      },
+      "adapter": {
+        "samples": 100,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0,
+        "p95_ns": 0,
+        "p99_ns": 0
+      },
+      "popen_call": {
+        "samples": 100,
+        "mean_ns": 4631652.0,
+        "median_ns": 4646200,
+        "min_ns": 3795300,
+        "max_ns": 6303300,
+        "p95_ns": 5507000,
+        "p99_ns": 5666900
+      },
+      "child": {
+        "replay.fixture_read_ns": {
+          "samples": 100,
+          "mean_ns": 186146.0,
+          "median_ns": 115700,
+          "min_ns": 100400,
+          "max_ns": 6687800,
+          "p95_ns": 153600,
+          "p99_ns": 251300
+        },
+        "replay.pipe_write_ns": {
+          "samples": 100,
+          "mean_ns": 70472.0,
+          "median_ns": 69800,
+          "min_ns": 46500,
+          "max_ns": 126300,
+          "p95_ns": 92200,
+          "p99_ns": 125100
+        }
+      }
+    },
+    "probe-version": {
+      "total": {
+        "samples": 100,
+        "mean_ns": 23127040.0,
+        "median_ns": 22645200,
+        "min_ns": 19436700,
+        "max_ns": 30900800,
+        "p95_ns": 27022300,
+        "p99_ns": 30615600
+      },
+      "decode": {
+        "samples": 100,
+        "mean_ns": 25566.0,
+        "median_ns": 25400,
+        "min_ns": 19700,
+        "max_ns": 47100,
+        "p95_ns": 30300,
+        "p99_ns": 32000
+      },
+      "adapter": {
+        "samples": 100,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0,
+        "p95_ns": 0,
+        "p99_ns": 0
+      },
+      "popen_call": {
+        "samples": 100,
+        "mean_ns": 4546060.0,
+        "median_ns": 4507500,
+        "min_ns": 3670000,
+        "max_ns": 5884300,
+        "p95_ns": 5329700,
+        "p99_ns": 5761100
+      },
+      "child": {
+        "json.encode_and_buffer_ns": {
+          "samples": 100,
+          "mean_ns": 5025.0,
+          "median_ns": 5000,
+          "min_ns": 4400,
+          "max_ns": 6200,
+          "p95_ns": 5800,
+          "p99_ns": 6100
+        },
+        "json.pipe_write_ns": {
+          "samples": 100,
+          "mean_ns": 15879.0,
+          "median_ns": 15300,
+          "min_ns": 12900,
+          "max_ns": 31200,
+          "p95_ns": 20100,
+          "p99_ns": 24100
+        },
+        "json.total_ns": {
+          "samples": 100,
+          "mean_ns": 20904.0,
+          "median_ns": 20300,
+          "min_ns": 17700,
+          "max_ns": 36100,
+          "p95_ns": 25100,
+          "p99_ns": 29100
+        }
+      }
+    },
+    "original-medium": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 33473640.0,
+        "median_ns": 31992300,
+        "min_ns": 30315000,
+        "max_ns": 39296100
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 3557020.0,
+        "median_ns": 3979500,
+        "min_ns": 2740300,
+        "max_ns": 4169600
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 2213060.0,
+        "median_ns": 2398900,
+        "min_ns": 1476500,
+        "max_ns": 2875100
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 5511640.0,
+        "median_ns": 5071700,
+        "min_ns": 4736800,
+        "max_ns": 6956600
+      },
+      "child": {}
+    },
+    "probe-medium": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 34256880.0,
+        "median_ns": 31083500,
+        "min_ns": 29423700,
+        "max_ns": 42146100
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 3542220.0,
+        "median_ns": 3566400,
+        "min_ns": 3175300,
+        "max_ns": 3825000
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 1643640.0,
+        "median_ns": 1609200,
+        "min_ns": 1354800,
+        "max_ns": 1846800
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 5603940.0,
+        "median_ns": 5518500,
+        "min_ns": 4761900,
+        "max_ns": 7319200
+      },
+      "child": {
+        "engine.close_ns": {
+          "samples": 5,
+          "mean_ns": 38240.0,
+          "median_ns": 25900,
+          "min_ns": 24300,
+          "max_ns": 71700
+        },
+        "engine.metadata_ns": {
+          "samples": 5,
+          "mean_ns": 200400.0,
+          "median_ns": 189200,
+          "min_ns": 172800,
+          "max_ns": 246400
+        },
+        "engine.open_ns": {
+          "samples": 5,
+          "mean_ns": 155640.0,
+          "median_ns": 152100,
+          "min_ns": 127500,
+          "max_ns": 193700
+        },
+        "engine.read_ns": {
+          "samples": 5,
+          "mean_ns": 211420.0,
+          "median_ns": 197000,
+          "min_ns": 191800,
+          "max_ns": 268100
+        },
+        "engine.response_ns": {
+          "samples": 5,
+          "mean_ns": 260.0,
+          "median_ns": 200,
+          "min_ns": 100,
+          "max_ns": 500
+        },
+        "engine.total_ns": {
+          "samples": 5,
+          "mean_ns": 605960.0,
+          "median_ns": 586500,
+          "min_ns": 520000,
+          "max_ns": 752500
+        },
+        "json.encode_and_buffer_ns": {
+          "samples": 5,
+          "mean_ns": 559860.0,
+          "median_ns": 452300,
+          "min_ns": 379900,
+          "max_ns": 889400
+        },
+        "json.pipe_write_ns": {
+          "samples": 5,
+          "mean_ns": 790680.0,
+          "median_ns": 747600,
+          "min_ns": 541300,
+          "max_ns": 1170400
+        },
+        "json.total_ns": {
+          "samples": 5,
+          "mean_ns": 1350540.0,
+          "median_ns": 1199900,
+          "min_ns": 921200,
+          "max_ns": 2059800
+        }
+      }
+    },
+    "probe-replay-medium": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 30141720.0,
+        "median_ns": 27720300,
+        "min_ns": 27271600,
+        "max_ns": 35685200
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 4116560.0,
+        "median_ns": 3033700,
+        "min_ns": 2636800,
+        "max_ns": 7609400
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 4888420.0,
+        "median_ns": 4679200,
+        "min_ns": 4322600,
+        "max_ns": 5940300
+      },
+      "child": {
+        "replay.fixture_read_ns": {
+          "samples": 5,
+          "mean_ns": 1297580.0,
+          "median_ns": 230400,
+          "min_ns": 219900,
+          "max_ns": 5575000
+        },
+        "replay.pipe_write_ns": {
+          "samples": 5,
+          "mean_ns": 537940.0,
+          "median_ns": 574900,
+          "min_ns": 443600,
+          "max_ns": 605800
+        }
+      }
+    },
+    "original-bulk": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 854640540.0,
+        "median_ns": 857156300,
+        "min_ns": 803923700,
+        "max_ns": 897918200
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 410849740.0,
+        "median_ns": 408886700,
+        "min_ns": 374368800,
+        "max_ns": 455638400
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 223480280.0,
+        "median_ns": 220934300,
+        "min_ns": 220394300,
+        "max_ns": 231999600
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 6162880.0,
+        "median_ns": 6193400,
+        "min_ns": 5931800,
+        "max_ns": 6423600
+      },
+      "child": {}
+    },
+    "probe-bulk": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 862750900.0,
+        "median_ns": 850937800,
+        "min_ns": 845260900,
+        "max_ns": 917021700
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 420839280.0,
+        "median_ns": 420706900,
+        "min_ns": 410132300,
+        "max_ns": 434154300
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 226478960.0,
+        "median_ns": 222971300,
+        "min_ns": 210870000,
+        "max_ns": 253113800
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 6028840.0,
+        "median_ns": 5636500,
+        "min_ns": 5499000,
+        "max_ns": 6999000
+      },
+      "child": {
+        "engine.close_ns": {
+          "samples": 5,
+          "mean_ns": 97600.0,
+          "median_ns": 95300,
+          "min_ns": 82100,
+          "max_ns": 120200
+        },
+        "engine.metadata_ns": {
+          "samples": 5,
+          "mean_ns": 179720.0,
+          "median_ns": 181000,
+          "min_ns": 170400,
+          "max_ns": 190200
+        },
+        "engine.open_ns": {
+          "samples": 5,
+          "mean_ns": 141780.0,
+          "median_ns": 133600,
+          "min_ns": 124900,
+          "max_ns": 179000
+        },
+        "engine.read_ns": {
+          "samples": 5,
+          "mean_ns": 5015440.0,
+          "median_ns": 5001300,
+          "min_ns": 4586500,
+          "max_ns": 5500700
+        },
+        "engine.response_ns": {
+          "samples": 5,
+          "mean_ns": 460.0,
+          "median_ns": 400,
+          "min_ns": 400,
+          "max_ns": 600
+        },
+        "engine.total_ns": {
+          "samples": 5,
+          "mean_ns": 5435000.0,
+          "median_ns": 5387800,
+          "min_ns": 4987700,
+          "max_ns": 5990700
+        },
+        "json.encode_and_buffer_ns": {
+          "samples": 5,
+          "mean_ns": 43694560.0,
+          "median_ns": 43341700,
+          "min_ns": 43094200,
+          "max_ns": 44422200
+        },
+        "json.pipe_write_ns": {
+          "samples": 5,
+          "mean_ns": 139392040.0,
+          "median_ns": 140100900,
+          "min_ns": 132811400,
+          "max_ns": 149554900
+        },
+        "json.total_ns": {
+          "samples": 5,
+          "mean_ns": 183086600.0,
+          "median_ns": 183315500,
+          "min_ns": 175918900,
+          "max_ns": 193977100
+        }
+      }
+    },
+    "probe-replay-bulk": {
+      "total": {
+        "samples": 5,
+        "mean_ns": 646509480.0,
+        "median_ns": 645295800,
+        "min_ns": 630973300,
+        "max_ns": 668789300
+      },
+      "decode": {
+        "samples": 5,
+        "mean_ns": 416345460.0,
+        "median_ns": 413900100,
+        "min_ns": 409049700,
+        "max_ns": 428735200
+      },
+      "adapter": {
+        "samples": 5,
+        "mean_ns": 0.0,
+        "median_ns": 0,
+        "min_ns": 0,
+        "max_ns": 0
+      },
+      "popen_call": {
+        "samples": 5,
+        "mean_ns": 5705480.0,
+        "median_ns": 5534200,
+        "min_ns": 5246900,
+        "max_ns": 6771500
+      },
+      "child": {
+        "replay.fixture_read_ns": {
+          "samples": 5,
+          "mean_ns": 22205400.0,
+          "median_ns": 21334900,
+          "min_ns": 18200400,
+          "max_ns": 26199800
+        },
+        "replay.pipe_write_ns": {
+          "samples": 5,
+          "mean_ns": 132958380.0,
+          "median_ns": 132809600,
+          "min_ns": 131361400,
+          "max_ns": 135140400
+        }
+      }
+    }
+  },
+  "probe_range_stages": {
+    "parent_before_launch_ns": {
+      "samples": 200,
+      "mean_ns": 15425.5,
+      "median_ns": 15400,
+      "min_ns": 8400,
+      "max_ns": 25200,
+      "p95_ns": 19700,
+      "p99_ns": 22400
+    },
+    "launch_to_main_ns": {
+      "samples": 200,
+      "mean_ns": 22939206.0,
+      "median_ns": 22506000,
+      "min_ns": 19210400,
+      "max_ns": 34199300,
+      "p95_ns": 26607700,
+      "p99_ns": 32792700
+    },
+    "child_main_ns": {
+      "samples": 200,
+      "mean_ns": 3300882.5,
+      "median_ns": 973400,
+      "min_ns": 609100,
+      "max_ns": 12254100,
+      "p95_ns": 10188200,
+      "p99_ns": 11716000
+    },
+    "after_main_to_receive_ns": {
+      "samples": 200,
+      "mean_ns": 1997431.0,
+      "median_ns": 1894200,
+      "min_ns": 1451400,
+      "max_ns": 4875100,
+      "p95_ns": 2683100,
+      "p99_ns": 4666600
+    },
+    "python_decode_ns": {
+      "samples": 200,
+      "mean_ns": 162293.5,
+      "median_ns": 167300,
+      "min_ns": 56200,
+      "max_ns": 329700,
+      "p95_ns": 206500,
+      "p99_ns": 272400
+    },
+    "python_adapter_ns": {
+      "samples": 200,
+      "mean_ns": 64313.0,
+      "median_ns": 63000,
+      "min_ns": 14000,
+      "max_ns": 211700,
+      "p95_ns": 91500,
+      "p99_ns": 123700
+    },
+    "parent_other_ns": {
+      "samples": 200,
+      "mean_ns": 41524.5,
+      "median_ns": 40600,
+      "min_ns": 31100,
+      "max_ns": 153600,
+      "p95_ns": 50500,
+      "p99_ns": 62500
+    }
+  },
+  "warm_engine": {
+    "open_ns": 142000,
+    "first_read_ns": 267000,
+    "all_reads": {
+      "samples": 1000,
+      "mean_ns": 38909.9,
+      "median_ns": 36000,
+      "min_ns": 7100,
+      "max_ns": 385500,
+      "p95_ns": 71100,
+      "p99_ns": 171200
+    },
+    "after_first": {
+      "samples": 999,
+      "mean_ns": 38681.58158158158,
+      "median_ns": 36000,
+      "min_ns": 7100,
+      "max_ns": 385500,
+      "p95_ns": 71100,
+      "p99_ns": 171200
+    }
+  },
+  "cached_json": {
+    "small": {
+      "decode_ns": {
+        "samples": 1000,
+        "mean_ns": 104146.4,
+        "median_ns": 109300,
+        "min_ns": 68100,
+        "max_ns": 1201100,
+        "p95_ns": 133900,
+        "p99_ns": 192200
+      },
+      "adapter_ns": {
+        "samples": 1000,
+        "mean_ns": 55981.0,
+        "median_ns": 60900,
+        "min_ns": 35200,
+        "max_ns": 439200,
+        "p95_ns": 74000,
+        "p99_ns": 109000
+      }
+    },
+    "medium": {
+      "decode_ns": {
+        "samples": 20,
+        "mean_ns": 3185120.0,
+        "median_ns": 3078200,
+        "min_ns": 2474100,
+        "max_ns": 4003700
+      },
+      "adapter_ns": {
+        "samples": 20,
+        "mean_ns": 1764220.0,
+        "median_ns": 1742100,
+        "min_ns": 1182000,
+        "max_ns": 2358900
+      }
+    },
+    "bulk": {
+      "decode_ns": {
+        "samples": 5,
+        "mean_ns": 406150140.0,
+        "median_ns": 407693600,
+        "min_ns": 392288300,
+        "max_ns": 417890400
+      },
+      "adapter_ns": {
+        "samples": 5,
+        "mean_ns": 212917680.0,
+        "median_ns": 208397500,
+        "min_ns": 204577200,
+        "max_ns": 226751200
+      }
+    }
+  }
+}

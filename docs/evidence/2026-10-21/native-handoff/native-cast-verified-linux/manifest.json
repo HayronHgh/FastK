@@ -1,0 +1,234 @@
+{
+  "modules": {
+    "before": {
+      "root": "/work/target/native-cast-verified-linux/before-module",
+      "sha256": "a459ff19c3f1f0db0a232f4bdee611e21be05023ff505f86963b82cd7266efbe",
+      "wheel_sha256": "58e3dec7f3807c50b3bd677cdbc69028df679f01ddf5eab338c28a171f4ece9f"
+    },
+    "after": {
+      "root": "/work/target/native-cast-verified-linux/after-module",
+      "sha256": "b7212acbc8583d07aacfc0019a5b3b36d92fa0c8236cab2189abee68adbc2ba5",
+      "wheel_sha256": "3dfb123bc78c29e8824b4609648f31bf32ad7c9a76f5c886dfece5242ac51d27"
+    }
+  },
+  "results": [
+    {
+      "job": {
+        "round": 2,
+        "version": "after",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "00-after-bulk-t8-r2.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "before",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "01-before-bulk-t8-r2.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "after",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "02-after-bulk-t1-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "before",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "03-before-bulk-t1-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "after",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "04-after-short-t1-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "before",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "05-before-short-t1-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "after",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "06-after-bulk-t8-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "before",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "07-before-bulk-t8-r1.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "after",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "08-after-bulk-t1-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "before",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "09-before-bulk-t1-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "after",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "10-after-bulk-t4-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "before",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "11-before-bulk-t4-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "before",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "12-before-bulk-t8-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "after",
+        "case": "bulk",
+        "budget": 8
+      },
+      "output": "13-after-bulk-t8-r0.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "before",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "14-before-bulk-t4-r2.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "after",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "15-after-bulk-t4-r2.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "after",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "16-after-short-t1-r0.json"
+    },
+    {
+      "job": {
+        "round": 0,
+        "version": "before",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "17-before-short-t1-r0.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "after",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "18-after-bulk-t1-r2.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "before",
+        "case": "bulk",
+        "budget": 1
+      },
+      "output": "19-before-bulk-t1-r2.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "before",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "20-before-bulk-t4-r1.json"
+    },
+    {
+      "job": {
+        "round": 1,
+        "version": "after",
+        "case": "bulk",
+        "budget": 4
+      },
+      "output": "21-after-bulk-t4-r1.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "before",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "22-before-short-t1-r2.json"
+    },
+    {
+      "job": {
+        "round": 2,
+        "version": "after",
+        "case": "short",
+        "budget": 1
+      },
+      "output": "23-after-short-t1-r2.json"
+    }
+  ],
+  "python": "3.12.14 (main, Sep 19 2026, 03:36:28) [GCC 12.2.0]",
+  "passed": true
+}

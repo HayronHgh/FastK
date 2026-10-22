@@ -12,6 +12,7 @@ const DEFAULT_SIDECAR_CACHE_CAPACITY: usize = 64;
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct SidecarCacheKey {
     pub generation: u32,
+    pub checksum: u64,
     pub relative_path: String,
 }
 
@@ -52,7 +53,7 @@ impl ScalarSidecarRuntime {
 
         self.metrics.record_sidecar_miss();
         let started = Instant::now();
-        let entries = Arc::new(zmap::read_entries(path)?);
+        let entries = Arc::new(zmap::read_entries_checked(path, key.checksum)?);
         self.metrics
             .record_sidecar_load_ns(started.elapsed().as_nanos() as u64);
         let mut state = self.zmap.lock().expect("zmap cache poisoned");
@@ -75,7 +76,7 @@ impl ScalarSidecarRuntime {
 
         self.metrics.record_sidecar_miss();
         let started = Instant::now();
-        let entries = Arc::new(vix::read_entries(path)?);
+        let entries = Arc::new(vix::read_entries_checked(path, key.checksum)?);
         self.metrics
             .record_sidecar_load_ns(started.elapsed().as_nanos() as u64);
         let mut state = self.vix.lock().expect("vix cache poisoned");

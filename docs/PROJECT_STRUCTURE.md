@@ -14,11 +14,20 @@ kline_store/
   .github/
     workflows/
       ci.yml
+      artifacts.yml
+  clients/python/       # separately packaged dependency-free client
+  clients/python-native/ # independent CPython/NumPy adapter
+  external-tests/       # public APIs only; optional isolated dependencies
   docs/
     ARCHITECTURE_BOUNDARY.md
     BACKEND_INTEGRATION.md
     BACKTEST_INTEGRATION.md
     BRIDGE_CONTRACT.md
+    CORE_CONTRACT.md
+    NATIVE_ENGINE.md
+    NATIVE_VALIDATION.md
+    INSTALLATION.md
+    EXTERNAL_VALIDATION.md
     KLINE_STORAGE_COMPARISON.md
     PROJECT_STRUCTURE.md
     READING_GUIDE.md
@@ -47,12 +56,17 @@ kline_store/
     build_release.sh
     smoke_release.ps1
     smoke_release.sh
+    package_release.py
+    build_python_wheel.py
+    smoke_install.py
+    export_benchmark_evidence.py
   src/
     lib.rs
     bridge.rs
     benchmark.rs
     error.rs
     metrics.rs
+    snapshot.rs
     kline/
       mod.rs
       record.rs
@@ -78,6 +92,7 @@ kline_store/
   tests/
     bridge_cli_contract.rs
     release_smoke.rs
+    storage_contract.rs
 ```
 
 ## Layer Responsibilities
@@ -86,6 +101,9 @@ kline_store/
 - `src/feature/`: scalar records, feature-compatible predicates, and public namespace.
 - `src/store_core/`: fixed-record chunk IO, manifests, read/write engine, indexes, recovery, and cache internals.
 - `src/control/`: SQLite control-plane metadata for datasets, features, and factors.
+- `src/snapshot.rs`: physical dataset sealing, inventory hashing, and verification.
+- `clients/python/`: public JSON transport, process lifetime, and bundled executable discovery.
+- `external-tests/`: black-box contract tests and comparisons, outside engine dependencies.
 - `examples/cli/`: subprocess tools intended for external integration.
 - `examples/demos/`: small workflows that show how upper layers call FastK.
 - `examples/benchmarks/`: benchmark runners and acceptance measurements.

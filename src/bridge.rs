@@ -4,10 +4,8 @@
 //! calculate indicators/features/factors, route records to other modules, or make workflow
 //! decisions.
 
-use std::collections::BTreeMap;
 use std::path::Path;
 
-use chrono::{TimeZone, Utc};
 use serde::{Deserialize, Serialize};
 
 use crate::engine::{
@@ -247,9 +245,9 @@ pub fn read_kline_range(
     end_ts: i64,
 ) -> Result<KlineRangeResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let meta = catalog.load_kline_meta(symbol, timeframe)?;
-    let store = FastKStore::open(root.to_path_buf())?;
     let records = store.get_kline_range(symbol, timeframe, start_ts, end_ts)?;
 
     Ok(KlineRangeResponse {
@@ -274,54 +272,26 @@ pub fn write_kline_range(
     timeframe: &str,
     request: WriteKlineRequest,
 ) -> Result<WriteKlineResponse> {
-    let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
-    let existing_meta = match catalog.load_kline_meta(symbol, timeframe) {
-        Ok(meta) => Some(meta),
-        Err(FastKError::NotFound(_)) => None,
-        Err(err) => return Err(err),
-    };
-
     let normalized = normalize_kline_records(request.records)?;
-    let grouped = group_kline_records_by_month(&normalized)?;
-    preflight_kline_overlap(existing_meta.as_ref(), &grouped)?;
-
-    let mut store = FastKStore::open(root.to_path_buf())?;
-    store.init()?;
-
-    let mut registered = false;
-    if existing_meta.is_none() {
-        store.register_kline_series(
-            symbol,
-            timeframe,
-            request.timeframe_ms,
-            request.price_scale,
-            request.volume_scale,
-        )?;
-        registered = true;
-    }
-
-    let mut written_record_count = 0usize;
-    let mut month_batches_written = 0usize;
-    for records in grouped.values() {
-        if records.is_empty() {
-            continue;
-        }
-        store.put_kline_chunk(symbol, timeframe, records)?;
-        written_record_count += records.len();
-        month_batches_written += 1;
-    }
-
+    let mut store = FastKStore::open(root.as_ref().to_path_buf())?;
+    let summary = store.append_kline_range(
+        symbol,
+        timeframe,
+        &normalized,
+        request.timeframe_ms,
+        request.price_scale,
+        request.volume_scale,
+    )?;
     Ok(WriteKlineResponse {
-        symbol: symbol.to_string(),
-        timeframe: timeframe.to_string(),
-        timeframe_ms: request.timeframe_ms,
+        symbol: symbol.into(),
+        timeframe: timeframe.into(),
+        timeframe_ms: summary.timeframe_ms,
         price_scale: request.price_scale,
         volume_scale: request.volume_scale,
-        registered,
-        requested_record_count: normalized.len(),
-        written_record_count,
-        month_batches_written,
+        registered: summary.registered,
+        requested_record_count: summary.requested_record_count,
+        written_record_count: summary.written_record_count,
+        month_batches_written: summary.month_batches_written,
     })
 }
 
@@ -332,7 +302,8 @@ pub fn kline_inventory(
     timeframe: &str,
 ) -> Result<KlineInventoryResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let meta = match catalog.load_kline_meta(symbol, timeframe) {
         Ok(meta) => Some(meta),
         Err(FastKError::NotFound(_)) => None,
@@ -340,7 +311,6 @@ pub fn kline_inventory(
     };
 
     if let Some(meta) = meta {
-        let store = FastKStore::open(root.to_path_buf())?;
         let inventory = store.kline_month_inventory(symbol, timeframe)?;
         let (coverage_start_ts, coverage_end_ts, total_record_count) = series_coverage(&meta);
         Ok(KlineInventoryResponse {
@@ -381,7 +351,8 @@ pub fn read_indicator_range(
     end_ts: i64,
 ) -> Result<IndicatorRangeResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let base_meta = catalog.load_kline_meta(symbol, timeframe)?;
     let key = indicator_series_key(symbol, timeframe, indicator_name);
 
@@ -392,7 +363,6 @@ pub fn read_indicator_range(
     };
 
     if let Some(meta) = indicator_meta {
-        let store = FastKStore::open(root.to_path_buf())?;
         let records =
             store.get_indicator_range(symbol, timeframe, indicator_name, start_ts, end_ts)?;
         let (coverage_start_ts, coverage_end_ts, total_record_count) = series_coverage(&meta);
@@ -442,7 +412,8 @@ pub fn read_scalar_range(
     end_ts: i64,
 ) -> Result<ScalarRangeResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let key = scoped_scalar_series_key(symbol, timeframe, category, name);
     let meta = match catalog.load_scalar_meta(&key) {
         Ok(meta) => Some(meta),
@@ -451,7 +422,6 @@ pub fn read_scalar_range(
     };
 
     if let Some(meta) = meta {
-        let store = FastKStore::open(root.to_path_buf())?;
         let records = store.get_scalar_range(&key, start_ts, end_ts)?;
         let (coverage_start_ts, coverage_end_ts, total_record_count) = series_coverage(&meta);
         Ok(ScalarRangeResponse {
@@ -499,8 +469,8 @@ pub fn query_scalar_predicate(
     return_values: bool,
 ) -> Result<ScalarPredicateQueryResponse> {
     let root = root.as_ref();
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
     let key = scoped_scalar_series_key(symbol, timeframe, category, name);
-    let store = FastKStore::open(root.to_path_buf())?;
     let result = store.query_scalar_predicate(ScalarPredicateQuery {
         key,
         start_ts,
@@ -534,48 +504,20 @@ pub fn write_indicator_range(
     indicator_name: &str,
     request: WriteIndicatorRequest,
 ) -> Result<WriteIndicatorResponse> {
-    let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
-    let existing_meta =
-        match catalog.load_scalar_meta(&indicator_series_key(symbol, timeframe, indicator_name)) {
-            Ok(meta) => Some(meta),
-            Err(FastKError::NotFound(_)) => None,
-            Err(err) => return Err(err),
-        };
-
     let normalized = normalize_scalar_records(request.records)?;
-    let grouped = group_scalar_records_by_month(&normalized)?;
-    preflight_scalar_overlap("write-indicator-range", existing_meta.as_ref(), &grouped)?;
-
-    let mut store = FastKStore::open(root.to_path_buf())?;
-    store.init()?;
-
-    let mut registered = false;
-    if existing_meta.is_none() {
-        store.register_indicator_series(symbol, timeframe, indicator_name)?;
-        registered = true;
-    }
-
-    let mut written_record_count = 0usize;
-    let mut month_batches_written = 0usize;
-    for records in grouped.values() {
-        if records.is_empty() {
-            continue;
-        }
-        store.put_indicator_chunk(symbol, timeframe, indicator_name, records)?;
-        written_record_count += records.len();
-        month_batches_written += 1;
-    }
-
+    let mut store = FastKStore::open(root.as_ref().to_path_buf())?;
+    let key = indicator_series_key(symbol, timeframe, indicator_name);
+    let timeframe_ms = store.kline_metadata(symbol, timeframe)?.timeframe_ms;
+    let summary = store.append_scalar_range(&key, &normalized, Some(timeframe_ms))?;
     Ok(WriteIndicatorResponse {
-        symbol: symbol.to_string(),
-        timeframe: timeframe.to_string(),
-        category: INDICATOR_CATEGORY.to_string(),
-        name: indicator_name.to_string(),
-        registered,
-        requested_record_count: normalized.len(),
-        written_record_count,
-        month_batches_written,
+        symbol: symbol.into(),
+        timeframe: timeframe.into(),
+        category: INDICATOR_CATEGORY.into(),
+        name: indicator_name.into(),
+        registered: summary.registered,
+        requested_record_count: summary.requested_record_count,
+        written_record_count: summary.written_record_count,
+        month_batches_written: summary.month_batches_written,
     })
 }
 
@@ -591,60 +533,20 @@ pub fn write_scalar_range(
     name: &str,
     request: WriteScalarRequest,
 ) -> Result<WriteScalarResponse> {
-    let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
-    let key = scoped_scalar_series_key(symbol, timeframe, category, name);
-    let existing_meta = match catalog.load_scalar_meta(&key) {
-        Ok(meta) => Some(meta),
-        Err(FastKError::NotFound(_)) => None,
-        Err(err) => return Err(err),
-    };
-
-    let timeframe_ms = match (&existing_meta, request.timeframe_ms) {
-        (Some(meta), _) => meta.timeframe_ms,
-        (None, Some(timeframe_ms)) => timeframe_ms,
-        (None, None) => catalog.load_kline_meta(symbol, timeframe)?.timeframe_ms,
-    };
-
     let normalized = normalize_scalar_records(request.records)?;
-    let grouped = group_scalar_records_by_month(&normalized)?;
-    preflight_scalar_overlap("write-scalar-range", existing_meta.as_ref(), &grouped)?;
-
-    let mut store = FastKStore::open(root.to_path_buf())?;
-    store.init()?;
-
-    let mut registered = false;
-    if existing_meta.is_none() {
-        store.register_scalar_series(&key, timeframe_ms)?;
-        registered = true;
-    }
-
-    let mut written_record_count = 0usize;
-    let mut month_batches_written = 0usize;
-    for records in grouped.values() {
-        if records.is_empty() {
-            continue;
-        }
-        store.put_scalar_chunk(
-            &key,
-            timeframe_ms,
-            records,
-            crate::engine::DEFAULT_SCALAR_ZMAP_BLOCK_SIZE,
-        )?;
-        written_record_count += records.len();
-        month_batches_written += 1;
-    }
-
+    let mut store = FastKStore::open(root.as_ref().to_path_buf())?;
+    let key = scoped_scalar_series_key(symbol, timeframe, category, name);
+    let summary = store.append_scalar_range(&key, &normalized, request.timeframe_ms)?;
     Ok(WriteScalarResponse {
-        symbol: symbol.to_string(),
-        timeframe: timeframe.to_string(),
-        category: category.to_string(),
-        name: name.to_string(),
-        timeframe_ms,
-        registered,
-        requested_record_count: normalized.len(),
-        written_record_count,
-        month_batches_written,
+        symbol: symbol.into(),
+        timeframe: timeframe.into(),
+        category: category.into(),
+        name: name.into(),
+        timeframe_ms: summary.timeframe_ms,
+        registered: summary.registered,
+        requested_record_count: summary.requested_record_count,
+        written_record_count: summary.written_record_count,
+        month_batches_written: summary.month_batches_written,
     })
 }
 
@@ -656,7 +558,8 @@ pub fn indicator_inventory(
     indicator_name: &str,
 ) -> Result<InventoryResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let key = indicator_series_key(symbol, timeframe, indicator_name);
     let meta = match catalog.load_scalar_meta(&key) {
         Ok(meta) => Some(meta),
@@ -665,7 +568,6 @@ pub fn indicator_inventory(
     };
 
     if let Some(meta) = meta {
-        let store = FastKStore::open(root.to_path_buf())?;
         let inventory = store.scalar_month_inventory(&key)?;
         let capabilities = store.indicator_capabilities(symbol, timeframe, indicator_name)?;
         let (coverage_start_ts, coverage_end_ts, total_record_count) = series_coverage(&meta);
@@ -706,7 +608,8 @@ pub fn scalar_inventory(
     name: &str,
 ) -> Result<InventoryResponse> {
     let root = root.as_ref();
-    let catalog = Catalog::new(root.to_path_buf());
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let catalog = Catalog::read_only(root.to_path_buf());
     let key = scoped_scalar_series_key(symbol, timeframe, category, name);
     let meta = match catalog.load_scalar_meta(&key) {
         Ok(meta) => Some(meta),
@@ -715,7 +618,6 @@ pub fn scalar_inventory(
     };
 
     if let Some(meta) = meta {
-        let store = FastKStore::open(root.to_path_buf())?;
         let inventory = store.scalar_month_inventory(&key)?;
         let capabilities = store.scalar_query_capabilities(&key)?;
         let (coverage_start_ts, coverage_end_ts, total_record_count) = series_coverage(&meta);
@@ -788,97 +690,6 @@ fn normalize_kline_records(
     Ok(normalized)
 }
 
-fn group_scalar_records_by_month(
-    records: &[ScalarRecord],
-) -> Result<BTreeMap<String, Vec<ScalarRecord>>> {
-    let mut grouped = BTreeMap::<String, Vec<ScalarRecord>>::new();
-    for record in records.iter().copied() {
-        grouped
-            .entry(month_key(record.ts)?)
-            .or_default()
-            .push(record);
-    }
-    Ok(grouped)
-}
-
-fn group_kline_records_by_month(
-    records: &[crate::types::KlineRecord],
-) -> Result<BTreeMap<String, Vec<crate::types::KlineRecord>>> {
-    let mut grouped = BTreeMap::<String, Vec<crate::types::KlineRecord>>::new();
-    for record in records.iter().copied() {
-        grouped
-            .entry(month_key(record.ts)?)
-            .or_default()
-            .push(record);
-    }
-    Ok(grouped)
-}
-
-fn preflight_scalar_overlap(
-    command_name: &str,
-    existing_meta: Option<&SeriesMeta>,
-    grouped: &BTreeMap<String, Vec<ScalarRecord>>,
-) -> Result<()> {
-    let Some(meta) = existing_meta else {
-        return Ok(());
-    };
-
-    for (month_key, records) in grouped {
-        let Some(first) = records.first() else {
-            continue;
-        };
-        let month_indices = meta.chunk_indices_for_month(month_key);
-        let month_end_ts = month_indices
-            .iter()
-            .map(|index| &meta.chunks[*index])
-            .filter(|chunk| chunk.state.is_readable())
-            .map(|chunk| chunk.end_ts)
-            .max();
-        if let Some(end_ts) = month_end_ts {
-            if first.ts <= end_ts {
-                return Err(FastKError::InvalidInput(format!(
-                    "{command_name} would overlap existing month coverage for {month_key}: {} <= {}",
-                    first.ts, end_ts
-                )));
-            }
-        }
-    }
-
-    Ok(())
-}
-
-fn preflight_kline_overlap(
-    existing_meta: Option<&SeriesMeta>,
-    grouped: &BTreeMap<String, Vec<crate::types::KlineRecord>>,
-) -> Result<()> {
-    let Some(meta) = existing_meta else {
-        return Ok(());
-    };
-
-    for (month_key, records) in grouped {
-        let Some(first) = records.first() else {
-            continue;
-        };
-        let month_indices = meta.chunk_indices_for_month(month_key);
-        let month_end_ts = month_indices
-            .iter()
-            .map(|index| &meta.chunks[*index])
-            .filter(|chunk| chunk.state.is_readable())
-            .map(|chunk| chunk.end_ts)
-            .max();
-        if let Some(end_ts) = month_end_ts {
-            if first.ts <= end_ts {
-                return Err(FastKError::InvalidInput(format!(
-                    "write-kline-range would overlap existing month coverage for {month_key}: {} <= {}",
-                    first.ts, end_ts
-                )));
-            }
-        }
-    }
-
-    Ok(())
-}
-
 fn series_coverage(meta: &SeriesMeta) -> (Option<i64>, Option<i64>, u64) {
     let readable: Vec<_> = meta
         .chunks
@@ -894,15 +705,6 @@ fn series_coverage(meta: &SeriesMeta) -> (Option<i64>, Option<i64>, u64) {
         readable.last().map(|chunk| chunk.end_ts),
         readable.iter().map(|chunk| chunk.count).sum(),
     )
-}
-
-fn month_key(ts: i64) -> Result<String> {
-    let Some(dt) = Utc.timestamp_millis_opt(ts).single() else {
-        return Err(FastKError::InvalidInput(format!(
-            "timestamp out of range for month key: {ts}",
-        )));
-    };
-    Ok(dt.format("%Y-%m").to_string())
 }
 
 #[cfg(test)]

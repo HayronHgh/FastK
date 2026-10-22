@@ -1,0 +1,49 @@
+name: Portable artifacts
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+jobs:
+  package:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: ubuntu-22.04
+            target: x86_64-unknown-linux-musl
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.1
+        with:
+          targets: ${{ matrix.target }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y musl-tools
+      - name: Build from a clean commit
+        run: python scripts/package_release.py --target ${{ matrix.target }}
+      - name: Offline wheel installation and black-box smoke
+        shell: bash
+        run: |
+          WHEEL=$(find dist -name '*.whl' | head -1)
+          ADMIN=$(find dist -type f \( -name fastk_admin -o -name fastk_admin.exe \) | head -1)
+          python scripts/smoke_install.py --wheel "$WHEEL" --admin "$ADMIN"
+      - name: Validate packaged contracts and checksums
+        shell: bash
+        run: |
+          WHEEL=$(find dist -name '*.whl' | head -1)
+          BRIDGE=$(find dist -type f \( -name fastk_bridge -o -name fastk_bridge.exe \) | head -1)
+          MANIFEST=$(find dist -name release_manifest.json | head -1)
+          python -m pip install --no-index --no-deps "$WHEEL"
+          python -m pip install jsonschema==4.26.0
+          export FASTK_BRIDGE_BIN="$PWD/$BRIDGE"
+          export FASTK_RELEASE_PACKAGE="$PWD/$(dirname "$MANIFEST")"
+          python -m unittest discover -s external-tests -p test_contracts.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fastk-${{ matrix.target }}
+          path: dist/

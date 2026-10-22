@@ -1,0 +1,15 @@
+{
+  "clients/python/src/fastk_client/_session.py": "fbe93fea70124e72b4c13016dfcba01784296590e6e264cee95ad6e7423aa7db",
+  "clients/python/src/fastk_client/client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+  "examples/cli/session_transport.rs": "885571768444735a848f91d53ade029312bcb880500541a1879930cfbffdc8f3",
+  "examples/cli/fastk_bridge.rs": "34a4e060702e337f6aa0809db438648e87774d34e00f77e3c1f829c36390d553",
+  "external-tests/test_session.py": "394fd9ff2cb386b3b1f29bb882895e555f32f4ad6064451eb649db014d5295e1",
+  "external-tests/fixtures/session_worker.py": "a2e87b3979c3f03e9a290078eab6a2076e1f4046d58ad5efd8c16aeb43951e8c",
+  "external-tests/benchmark_buffers.py": "3a41fcbad4d97db60c98ebf79eb0550d1b71e916b3b880fd46455606d2170bb1",
+  "external-tests/verify_session_bytes.py": "d22f83c503214e636d9453cef7809d5e970e413f9028b4069fb748e7c44933d0",
+  "external-tests/prepare_session_json_probe.py": "75b7e00f28d5a4ec49b48e96aa05b365bb39d163f57bb0fb7b6faf925b29e391",
+  "external-tests/benchmark_session.py": "104b58e5f44c72b6cafa3f2196e25cf623e7b49ed8055d5d34f5429fb68cf623",
+  "external-tests/fastk_bench/data.py": "db628b2baeaba16bf1fd91339b2bdf597eaa4ef4833e2ee12cdd52dd59d45021",
+  "docs/BUFFER_REUSE_RESULTS.md": "e36e9e23c73913cca91b15f0a691a06ecbc3b1b1f634a15a06ee674b210ee851",
+  "docs/SESSION_TRANSPORT.md": "7605cb0000c3cdc1c75302118b2987574f0016371995c3925526d8c931638d5d"
+}

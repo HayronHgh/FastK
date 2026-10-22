@@ -1,0 +1,28 @@
+   Compiling once_cell v1.21.4
+   Compiling rawpointer v0.2.1
+   Compiling libc v0.2.184
+   Compiling rustc-hash v2.1.3
+   Compiling num-traits v0.2.19
+   Compiling pyo3-ffi v0.30.1
+   Compiling bytemuck v1.25.2
+   Compiling serde v1.0.228
+   Compiling matrixmultiply v0.3.11
+   Compiling ahash v0.8.12
+   Compiling hashbrown v0.14.5
+   Compiling num-complex v0.4.6
+   Compiling num-integer v0.1.47
+   Compiling chrono v0.4.44
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling hashlink v0.9.1
+   Compiling ndarray v0.17.2
+   Compiling rusqlite v0.32.1
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+   Compiling fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 8.78s
+     Running unittests src\lib.rs (target\debug\deps\_native-dc61d2f96af23369.exe)
+error: test failed, to rerun pass `-p fastk-native --lib`
+
+Caused by:
+  process didn't exit successfully: `C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\debug\deps\_native-dc61d2f96af23369.exe` (exit code: 0xc0000135, STATUS_DLL_NOT_FOUND)
+note: test exited abnormally; to see the full output pass --no-capture to the harness.

@@ -1,0 +1,12 @@
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.77s
+     Running unittests examples\cli\fastk_bridge.rs (target\debug\examples\fastk_bridge-f30a987911aa0bda.exe)
+
+running 4 tests
+test output_tests::compact_propagates_serialization_errors ... ok
+test session_transport::tests::framing_preserves_multiline_json_and_separates_requests ... ok
+test session_transport::tests::eof_only_between_frames_and_bad_sizes_fail_closed ... ok
+test output_tests::private_compact_preserves_typed_values_and_public_pretty_bytes ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

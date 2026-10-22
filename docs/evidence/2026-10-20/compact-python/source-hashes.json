@@ -1,0 +1,13 @@
+{
+  "external-tests/measure_compact_python.py": "8f42ad759a6efe641564dc930105b3742531b1cde689b616c1f49b62de2ca9af",
+  "external-tests/benchmark_buffers.py": "cc2dbf71d641f4e07f9d938e92d81e4b01f93f5f75c317a113bde50536c38d96",
+  "external-tests/measure_session_json.py": "1bb122ba08c774cd8895dab27035375d0c0857d886b28e709ed4619258680400",
+  "external-tests/prepare_session_json_probe.py": "cdd42fafe8e829e33f2db3667963a25ac71967fe5d6824aab437d5130d2a6d5c",
+  "external-tests/benchmark_session.py": "104b58e5f44c72b6cafa3f2196e25cf623e7b49ed8055d5d34f5429fb68cf623",
+  "external-tests/fastk_bench/data.py": "db628b2baeaba16bf1fd91339b2bdf597eaa4ef4833e2ee12cdd52dd59d45021",
+  "external-tests/test_session.py": "394fd9ff2cb386b3b1f29bb882895e555f32f4ad6064451eb649db014d5295e1",
+  "external-tests/fixtures/session_worker.py": "a2e87b3979c3f03e9a290078eab6a2076e1f4046d58ad5efd8c16aeb43951e8c",
+  "docs/COMPACT_PYTHON_COST.md": "e0e10efe02beba41cd24c324989461ae92a286f73d6fabe919325b7f120038af",
+  "external-tests/README.md": "66d7c4c54c4ebf7076e8da2b44ec7226ca9a5bd409ebc51a31d6800ddf8170cd",
+  "README.md": "af0e776059519147fa1a3cb32a42ec18004e62da8ad952d11ae4f5f4526096ad"
+}

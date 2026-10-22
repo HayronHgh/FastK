@@ -1,6 +1,6 @@
-use std::fs::File;
+use crate::chunk::file::{ChunkFile as File, ReadSpan};
 use std::io::{Read, Seek, SeekFrom};
-use std::mem;
+use std::mem::{self, MaybeUninit};
 use std::ops::RangeInclusive;
 use std::path::Path;
 use std::slice;
@@ -160,6 +160,17 @@ fn append_range_in_file_with_metrics(
     }
 
     if is_short_range(&layout.header, start_ts, end_ts) {
+        if !layout.sparse_index.is_empty() {
+            let window = lookup_window(&layout.header, &layout.sparse_index, start_ts)?;
+            if window == lookup_window(&layout.header, &layout.sparse_index, end_ts)? {
+                let rows =
+                    read_record_span(file, &layout.header, window.0, window.1 - window.0, metrics)?;
+                let start = lower_bound_in_records(&rows, start_ts);
+                let end = upper_bound_in_records(&rows, end_ts);
+                out.extend_from_slice(&rows[start..end]);
+                return Ok(ScalarReadPath::ShortRange);
+            }
+        }
         let start_idx = lower_bound_via_sparse(file, layout, start_ts, metrics)?;
         if start_idx >= layout.header.count {
             return Ok(ScalarReadPath::ShortRange);
@@ -221,8 +232,7 @@ fn read_row_ranges_from_file(
             .checked_sub(start)
             .and_then(|span| span.checked_add(1))
             .ok_or_else(|| FastKError::InvalidData("scalar row span overflow".to_string()))?;
-        let mut rows = read_record_span(file, header, start, count, metrics)?;
-        out.append(&mut rows);
+        append_record_span(file, header, start, count, &mut out, metrics)?;
     }
     Ok(out)
 }
@@ -328,30 +338,7 @@ fn lookup_window(
     entries: &[SparseIndexEntry],
     target_ts: i64,
 ) -> Result<(u64, u64)> {
-    if header.count == 0 {
-        return Ok((0, 0));
-    }
-    if entries.is_empty() {
-        return Ok((0, header.count));
-    }
-    if let Some(anchor) = sparse_index::anchor_for_ts(entries, target_ts) {
-        let anchor_pos = entries
-            .iter()
-            .position(|entry| *entry == anchor)
-            .ok_or_else(|| {
-                FastKError::InvalidData("anchor lookup produced missing entry".to_string())
-            })?;
-        let end_idx = entries
-            .get(anchor_pos + 1)
-            .map(|entry| entry.record_idx)
-            .unwrap_or(header.count);
-        return Ok((anchor.record_idx, end_idx));
-    }
-    let first_end = entries
-        .get(1)
-        .map(|entry| entry.record_idx)
-        .unwrap_or(header.count);
-    Ok((0, first_end))
+    sparse_index::lookup_window(header, entries, target_ts)
 }
 
 fn is_short_range(header: &ChunkHeader, start_ts: i64, end_ts: i64) -> bool {
@@ -491,14 +478,11 @@ fn read_record_buffer(
 ) -> Result<Vec<ScalarRecord>> {
     debug_assert_eq!(mem::size_of::<ScalarRecord>(), ScalarRecord::BYTE_SIZE);
 
-    let mut records = Vec::<ScalarRecord>::with_capacity(record_count);
+    let mut records = vec![ScalarRecord::default(); record_count];
     let buffer = unsafe { slice::from_raw_parts_mut(records.as_mut_ptr() as *mut u8, byte_len) };
     file.read_exact(buffer)?;
     if let Some(metrics) = metrics {
         metrics.record_bytes_read(byte_len);
-    }
-    unsafe {
-        records.set_len(record_count);
     }
     Ok(records)
 }
@@ -514,16 +498,16 @@ fn append_record_buffer(
     debug_assert_eq!(mem::size_of::<ScalarRecord>(), ScalarRecord::BYTE_SIZE);
 
     let initial_len = out.len();
-    out.reserve(record_count);
+    out.resize(initial_len + record_count, ScalarRecord::default());
     let buffer = unsafe {
         slice::from_raw_parts_mut(out.as_mut_ptr().add(initial_len) as *mut u8, byte_len)
     };
-    file.read_exact(buffer)?;
+    if let Err(error) = file.read_exact(buffer) {
+        out.truncate(initial_len);
+        return Err(error.into());
+    }
     if let Some(metrics) = metrics {
         metrics.record_bytes_read(byte_len);
-    }
-    unsafe {
-        out.set_len(initial_len + record_count);
     }
     Ok(())
 }
@@ -559,5 +543,78 @@ fn append_record_buffer(
 ) -> Result<()> {
     let mut records = read_record_buffer(file, byte_len, record_count, metrics)?;
     out.append(&mut records);
+    Ok(())
+}
+
+pub(crate) fn plan_range(
+    runtime: &ChunkRuntime,
+    series_dir: &Path,
+    series_id: u64,
+    chunk: &ChunkMeta,
+    start: i64,
+    end: i64,
+) -> Result<ReadSpan> {
+    let layout = runtime.get_layout(chunk, series_id, series_dir)?;
+    validate_header(&layout.header)?;
+    let mut file = runtime.open_file(chunk, series_id, series_dir)?;
+    let first = if start <= layout.header.start_ts {
+        0
+    } else {
+        lower_bound_via_sparse(&mut file, &layout, start, Some(&runtime.metrics()))?
+    };
+    let last = if end >= layout.header.end_ts {
+        layout.header.count
+    } else {
+        upper_bound_via_sparse(&mut file, &layout, end, Some(&runtime.metrics()))?
+    };
+    let offset = first
+        .checked_mul(layout.header.record_size as u64)
+        .and_then(|offset| offset.checked_add(layout.header.header_size as u64))
+        .ok_or_else(|| FastKError::InvalidData("record offset overflow".into()))?;
+    let rows = usize::try_from(last.saturating_sub(first))
+        .map_err(|_| FastKError::InvalidData("record count exceeds address space".into()))?;
+    Ok(ReadSpan { file, offset, rows })
+}
+
+pub(crate) fn read_planned(
+    span: &ReadSpan,
+    out: &mut [MaybeUninit<ScalarRecord>],
+    metrics: &StoreMetrics,
+) -> Result<()> {
+    if out.len() != span.rows {
+        return Err(FastKError::InvalidData(
+            "read destination size mismatch".into(),
+        ));
+    }
+    let mut file = span.file.clone();
+    file.seek(SeekFrom::Start(span.offset))?;
+    let length = out
+        .len()
+        .checked_mul(ScalarRecord::BYTE_SIZE)
+        .ok_or_else(|| FastKError::InvalidData("read byte length overflow".into()))?;
+    #[cfg(target_endian = "little")]
+    {
+        const {
+            assert!(mem::size_of::<ScalarRecord>() == ScalarRecord::BYTE_SIZE);
+        }
+        // The destination is MaybeUninit, has no padding, and every i64 bit pattern
+        // is valid. No record reference is formed until the exact read succeeds.
+        let bytes = unsafe {
+            slice::from_raw_parts_mut(out.as_mut_ptr().cast::<MaybeUninit<u8>>(), length)
+        };
+        file.read_exact_uninit(bytes)?;
+    }
+    #[cfg(not(target_endian = "little"))]
+    {
+        let mut bytes = vec![0u8; length];
+        file.read_exact(&mut bytes)?;
+        for (record, bytes) in out
+            .iter_mut()
+            .zip(bytes.chunks_exact(ScalarRecord::BYTE_SIZE))
+        {
+            record.write(ScalarRecord::from_le_bytes(bytes.try_into().unwrap()));
+        }
+    }
+    metrics.record_bytes_read(length);
     Ok(())
 }

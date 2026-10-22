@@ -90,6 +90,11 @@ Deterministic research and backtests must use an explicit
 `resolve_latest_fastk_root(dataset_id)` is for CLI and interactive inspection
 only.
 
+An explicit reference alone does not make a mutable root reproducible. Publish
+with `DatasetRegistry::publish_dataset` or seal and pin a verified snapshot
+digest. Legacy status strings are not proof of immutable bytes. See
+[Core Contract](CORE_CONTRACT.md).
+
 ## Market Data Layer Relationship
 
 The market-data layer owns source-specific behavior:

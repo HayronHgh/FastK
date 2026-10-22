@@ -1,0 +1,1 @@
+{"bytes":872697600,"cycles":100,"fds":69,"groups_control_only":1,"mode":"private","passed":true,"phase_ns":998766968,"read_times_ns":[],"threads":1,"validation":"canonical warm/final; hot-loop length check (schedule is negative control)"}

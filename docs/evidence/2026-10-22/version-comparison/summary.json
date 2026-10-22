@@ -1,0 +1,215 @@
+{
+  "all_outcomes_identical": true,
+  "results": [
+    {
+      "case": "rsi",
+      "version": "public-814c566",
+      "total_ns": 3333028900,
+      "load_ns": 3201094700,
+      "total_samples_ns": [
+        3307810900,
+        3333028900,
+        3376700100,
+        3340358700,
+        3313513300
+      ],
+      "rss_bytes": 76369920,
+      "tree_rss_bytes": 76369920,
+      "outcome": {
+        "case": "rsi",
+        "rows": 262080,
+        "final_equity": 47286.957213456466,
+        "return_fraction": -0.5271304278654354,
+        "max_drawdown": 0.5289694425076775,
+        "fills": 1844,
+        "completed_round_trips": 922,
+        "fees": 63479.68947283635,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.0
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "bdd29715eecbcb355a66ff13d16afefcccf7dcee7572c976cb3d61074486dd3a",
+        "trades_sha256": "67ea19b7dd5ac329bed24959b925d43c271195fe3b37c4e2f0a63751a2b4185e"
+      }
+    },
+    {
+      "case": "rsi",
+      "version": "current-native",
+      "total_ns": 130896900,
+      "load_ns": 5738400,
+      "total_samples_ns": [
+        130896900,
+        131523900,
+        130123100,
+        133960100,
+        130398500
+      ],
+      "rss_bytes": 44048384,
+      "tree_rss_bytes": 44048384,
+      "outcome": {
+        "case": "rsi",
+        "rows": 262080,
+        "final_equity": 47286.957213456466,
+        "return_fraction": -0.5271304278654354,
+        "max_drawdown": 0.5289694425076775,
+        "fills": 1844,
+        "completed_round_trips": 922,
+        "fees": 63479.68947283635,
+        "open_positions": {
+          "BTCUSDT": 0.0,
+          "ETHUSDT": 0.0
+        },
+        "pending_targets": {
+          "BTCUSDT": false,
+          "ETHUSDT": false
+        },
+        "equity_sha256": "bdd29715eecbcb355a66ff13d16afefcccf7dcee7572c976cb3d61074486dd3a",
+        "trades_sha256": "67ea19b7dd5ac329bed24959b925d43c271195fe3b37c4e2f0a63751a2b4185e"
+      }
+    },
+    {
+      "case": "sma",
+      "version": "public-814c566",
+      "total_ns": 3221826100,
+      "load_ns": 3190146400,
+      "total_samples_ns": [
+        3174354600,
+        3262112500,
+        3194365600,
+        3232007600,
+        3221826100
+      ],
+      "rss_bytes": 78114816,
+      "tree_rss_bytes": 78114816,
+      "outcome": {
+        "case": "sma",
+        "rows": 262080,
+        "final_equity": 7445.253703132863,
+        "return_fraction": -0.9255474629686714,
+        "max_drawdown": 0.927211513671034,
+        "fills": 5288,
+        "completed_round_trips": 2643,
+        "fees": 92880.47987159612,
+        "open_positions": {
+          "BTCUSDT": 0.04899442822835176,
+          "ETHUSDT": 1.084393935481585
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "6e7cd852311f6eff7a1a68e17e6e7a2ddf4e4065dcb4e6a8d74fda2b78372647",
+        "trades_sha256": "01bde1882ac77e1bd0ca4df0baf4c82be1696daaad3cd7a327a17474cd058414"
+      }
+    },
+    {
+      "case": "sma",
+      "version": "current-native",
+      "total_ns": 34717400,
+      "load_ns": 5471200,
+      "total_samples_ns": [
+        35818000,
+        33981800,
+        34717400,
+        34677000,
+        34860200
+      ],
+      "rss_bytes": 45019136,
+      "tree_rss_bytes": 45019136,
+      "outcome": {
+        "case": "sma",
+        "rows": 262080,
+        "final_equity": 7445.253703132863,
+        "return_fraction": -0.9255474629686714,
+        "max_drawdown": 0.927211513671034,
+        "fills": 5288,
+        "completed_round_trips": 2643,
+        "fees": 92880.47987159612,
+        "open_positions": {
+          "BTCUSDT": 0.04899442822835176,
+          "ETHUSDT": 1.084393935481585
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "6e7cd852311f6eff7a1a68e17e6e7a2ddf4e4065dcb4e6a8d74fda2b78372647",
+        "trades_sha256": "01bde1882ac77e1bd0ca4df0baf4c82be1696daaad3cd7a327a17474cd058414"
+      }
+    },
+    {
+      "case": "momentum",
+      "version": "public-814c566",
+      "total_ns": 3267605400,
+      "load_ns": 3187119800,
+      "total_samples_ns": [
+        3297615200,
+        3311658100,
+        3267605400,
+        3227384700,
+        3223761700
+      ],
+      "rss_bytes": 81457152,
+      "tree_rss_bytes": 81457152,
+      "outcome": {
+        "case": "momentum",
+        "rows": 262080,
+        "final_equity": 16.6681326274051,
+        "return_fraction": -0.9998333186737259,
+        "max_drawdown": 0.9998338376677869,
+        "fills": 16364,
+        "completed_round_trips": 8181,
+        "fees": 93090.77372219246,
+        "open_positions": {
+          "BTCUSDT": 0.00011574376297032954,
+          "ETHUSDT": 0.0023092582607810034
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "30d81ca0797f047b6a37f705874f609225fab27f06df7f4f5027180d3561c660",
+        "trades_sha256": "7d8db09e9e7a11e2278a6b31d4d355860a4d43ce3bd69812fba5e89aacf30751"
+      }
+    },
+    {
+      "case": "momentum",
+      "version": "current-native",
+      "total_ns": 76682200,
+      "load_ns": 5617800,
+      "total_samples_ns": [
+        77267600,
+        76484600,
+        77201500,
+        76682200,
+        75990400
+      ],
+      "rss_bytes": 49655808,
+      "tree_rss_bytes": 49655808,
+      "outcome": {
+        "case": "momentum",
+        "rows": 262080,
+        "final_equity": 16.6681326274051,
+        "return_fraction": -0.9998333186737259,
+        "max_drawdown": 0.9998338376677869,
+        "fills": 16364,
+        "completed_round_trips": 8181,
+        "fees": 93090.77372219246,
+        "open_positions": {
+          "BTCUSDT": 0.00011574376297032954,
+          "ETHUSDT": 0.0023092582607810034
+        },
+        "pending_targets": {
+          "BTCUSDT": true,
+          "ETHUSDT": true
+        },
+        "equity_sha256": "30d81ca0797f047b6a37f705874f609225fab27f06df7f4f5027180d3561c660",
+        "trades_sha256": "7d8db09e9e7a11e2278a6b31d4d355860a4d43ce3bd69812fba5e89aacf30751"
+      }
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "all_results_verified": true,
+  "one_shot_bytes_identical": [
+    {
+      "round": 0,
+      "bytes": 23314,
+      "sha256": "9dbff7aa3f9ff3568941f51e418235d24f041d6fb1a0dc57670c941ab8c3af63"
+    },
+    {
+      "round": 1,
+      "bytes": 23314,
+      "sha256": "c4bb5cf92f8a6424829d709f28449cf783659bdcf37475e17ba93301d27195e5"
+    },
+    {
+      "round": 2,
+      "bytes": 23496,
+      "sha256": "a1c0b28821ca24331a933ee94dd6039f49e60ca033c2d86d5a2b60881eaac848"
+    },
+    {
+      "round": 3,
+      "bytes": 23496,
+      "sha256": "eb9e40d80400b86f015cac8112a276d5a2b946bb4639b1c79b11e7c0ea3677e7"
+    },
+    {
+      "round": 4,
+      "bytes": 23314,
+      "sha256": "b9441b15a96a18b0bbac61807084428ff6ea22a016e8025dc39890200589baf1"
+    }
+  ],
+  "queries_per_route": 1430,
+  "groups": {
+    "baseline_one_shot": {
+      "samples": 1430,
+      "mean_ns": 24337445.454545453,
+      "median_ns": 24026400,
+      "min_ns": 21580400,
+      "max_ns": 147029400,
+      "p95_ns": 26924300,
+      "p99_ns": 30252000
+    },
+    "session": {
+      "samples": 1430,
+      "mean_ns": 652818.7412587412,
+      "median_ns": 632900,
+      "min_ns": 461600,
+      "max_ns": 1267700,
+      "p95_ns": 845600,
+      "p99_ns": 1022300
+    },
+    "new_one_shot": {
+      "samples": 1430,
+      "mean_ns": 24555689.86013986,
+      "median_ns": 24177600,
+      "min_ns": 21459100,
+      "max_ns": 159499500,
+      "p95_ns": 27338900,
+      "p99_ns": 30835100
+    }
+  },
+  "startup": {
+    "baseline_one_shot": {
+      "constructor_ns": {
+        "samples": 5,
+        "mean_ns": 23594480.0,
+        "median_ns": 23465800,
+        "min_ns": 22690900,
+        "max_ns": 24475500
+      },
+      "context_entry_ns": {
+        "samples": 5,
+        "mean_ns": 1000.0,
+        "median_ns": 1000,
+        "min_ns": 700,
+        "max_ns": 1200
+      },
+      "first_result_from_constructor_ns": {
+        "samples": 5,
+        "mean_ns": 47880780.0,
+        "median_ns": 48388200,
+        "min_ns": 46147500,
+        "max_ns": 48696800
+      }
+    },
+    "new_one_shot": {
+      "constructor_ns": {
+        "samples": 5,
+        "mean_ns": 22996940.0,
+        "median_ns": 23037300,
+        "min_ns": 21920600,
+        "max_ns": 24037400
+      },
+      "context_entry_ns": {
+        "samples": 5,
+        "mean_ns": 820.0,
+        "median_ns": 800,
+        "min_ns": 700,
+        "max_ns": 1000
+      },
+      "first_result_from_constructor_ns": {
+        "samples": 5,
+        "mean_ns": 47078700.0,
+        "median_ns": 46505700,
+        "min_ns": 45333000,
+        "max_ns": 50133600
+      }
+    },
+    "session": {
+      "constructor_ns": {
+        "samples": 5,
+        "mean_ns": 23970960.0,
+        "median_ns": 24626000,
+        "min_ns": 22140700,
+        "max_ns": 25413700
+      },
+      "context_entry_ns": {
+        "samples": 5,
+        "mean_ns": 21907160.0,
+        "median_ns": 20523700,
+        "min_ns": 19730600,
+        "max_ns": 27479200
+      },
+      "first_result_from_constructor_ns": {
+        "samples": 5,
+        "mean_ns": 46983100.0,
+        "median_ns": 46158400,
+        "min_ns": 42996000,
+        "max_ns": 54083800
+      }
+    }
+  },
+  "processes_started": {
+    "baseline_one_shot": 1435,
+    "new_one_shot": 1435,
+    "session": 10
+  },
+  "rounds": [
+    {
+      "route": "baseline_one_shot",
+      "round": 0,
+      "route_order": [
+        "baseline_one_shot",
+        "session",
+        "new_one_shot"
+      ],
+      "constructor_ns": 24475500,
+      "context_entry_ns": 900,
+      "first_result_from_constructor_ns": 48439600,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "session",
+      "round": 0,
+      "route_order": [
+        "baseline_one_shot",
+        "session",
+        "new_one_shot"
+      ],
+      "constructor_ns": 25334500,
+      "context_entry_ns": 27479200,
+      "first_result_from_constructor_ns": 54083800,
+      "processes_started": 2,
+      "queries": 286,
+      "worker_pid": 19164,
+      "all_children_reaped": true
+    },
+    {
+      "route": "new_one_shot",
+      "round": 0,
+      "route_order": [
+        "baseline_one_shot",
+        "session",
+        "new_one_shot"
+      ],
+      "constructor_ns": 24037400,
+      "context_entry_ns": 800,
+      "first_result_from_constructor_ns": 50133600,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "session",
+      "round": 1,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 22140700,
+      "context_entry_ns": 19730600,
+      "first_result_from_constructor_ns": 42996000,
+      "processes_started": 2,
+      "queries": 286,
+      "worker_pid": 50924,
+      "all_children_reaped": true
+    },
+    {
+      "route": "new_one_shot",
+      "round": 1,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 22128700,
+      "context_entry_ns": 700,
+      "first_result_from_constructor_ns": 46463400,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "baseline_one_shot",
+      "round": 1,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 23465800,
+      "context_entry_ns": 1200,
+      "first_result_from_constructor_ns": 48696800,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "session",
+      "round": 2,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 22339900,
+      "context_entry_ns": 20452300,
+      "first_result_from_constructor_ns": 43776900,
+      "processes_started": 2,
+      "queries": 286,
+      "worker_pid": 46816,
+      "all_children_reaped": true
+    },
+    {
+      "route": "new_one_shot",
+      "round": 2,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 23860700,
+      "context_entry_ns": 800,
+      "first_result_from_constructor_ns": 46957800,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "baseline_one_shot",
+      "round": 2,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 23935200,
+      "context_entry_ns": 1000,
+      "first_result_from_constructor_ns": 48388200,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "new_one_shot",
+      "round": 3,
+      "route_order": [
+        "new_one_shot",
+        "session",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 23037300,
+      "context_entry_ns": 800,
+      "first_result_from_constructor_ns": 46505700,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "session",
+      "round": 3,
+      "route_order": [
+        "new_one_shot",
+        "session",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 25413700,
+      "context_entry_ns": 21350000,
+      "first_result_from_constructor_ns": 47900400,
+      "processes_started": 2,
+      "queries": 286,
+      "worker_pid": 16960,
+      "all_children_reaped": true
+    },
+    {
+      "route": "baseline_one_shot",
+      "round": 3,
+      "route_order": [
+        "new_one_shot",
+        "session",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 22690900,
+      "context_entry_ns": 700,
+      "first_result_from_constructor_ns": 46147500,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "session",
+      "round": 4,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 24626000,
+      "context_entry_ns": 20523700,
+      "first_result_from_constructor_ns": 46158400,
+      "processes_started": 2,
+      "queries": 286,
+      "worker_pid": 45104,
+      "all_children_reaped": true
+    },
+    {
+      "route": "new_one_shot",
+      "round": 4,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 21920600,
+      "context_entry_ns": 1000,
+      "first_result_from_constructor_ns": 45333000,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    },
+    {
+      "route": "baseline_one_shot",
+      "round": 4,
+      "route_order": [
+        "session",
+        "new_one_shot",
+        "baseline_one_shot"
+      ],
+      "constructor_ns": 23405000,
+      "context_entry_ns": 1200,
+      "first_result_from_constructor_ns": 47731800,
+      "processes_started": 287,
+      "queries": 286,
+      "worker_pid": null,
+      "all_children_reaped": true
+    }
+  ]
+}

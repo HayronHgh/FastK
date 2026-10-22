@@ -13,6 +13,12 @@ strategies, execute backtests, place orders, or render dashboards.
 
 ## First Pass
 
+For version 0.2, start with `docs/NATIVE_ENGINE.md` and the native Python
+quickstart in `clients/python-native/README.md`. Also read `docs/CORE_CONTRACT.md` for ownership and
+compatibility, `docs/INSTALLATION.md` for external use, and
+`docs/NATIVE_VALIDATION.md` for current checks and `docs/VALIDATION_RESULTS.md`
+for historical evidence.
+
 Start with:
 
 1. `docs/ARCHITECTURE_BOUNDARY.md`
@@ -29,6 +35,7 @@ and partition rules.
 Read:
 
 1. `src/store_core/engine/store.rs`
+2. `src/store_core/engine/store_writes.rs`
 2. `src/store_core/chunk/kline_writer.rs`
 3. `src/store_core/chunk/scalar_writer.rs`
 4. `src/store_core/storage/manifest.rs`

@@ -44,13 +44,10 @@ pub fn write_chunk(
         .ok_or_else(|| FastKError::InvalidInput("records must not be empty".to_string()))?;
     let month_key = path::month_key(first.ts)?;
 
-    for record in records.iter().skip(1) {
-        let record_month = path::month_key(record.ts)?;
-        if record_month != month_key {
-            return Err(FastKError::InvalidInput(format!(
-                "records span multiple months: {month_key} vs {record_month}"
-            )));
-        }
+    if path::month_key(records.last().unwrap().ts)? != month_key {
+        return Err(FastKError::InvalidInput(
+            "records span multiple UTC months".into(),
+        ));
     }
 
     if options.relative_path.trim().is_empty() {
@@ -60,7 +57,7 @@ pub fn write_chunk(
     }
 
     let sparse_index_every = options.sparse_index_every.max(1);
-    let sparse_index = sparse_index::build_for_kline(records, sparse_index_every)?;
+    let sparse_index = sparse_index::sample_validated(records, sparse_index_every)?;
     let index_bytes = sparse_index::encode_entries(&sparse_index);
     let record_bytes_len = records
         .len()

@@ -1,0 +1,53 @@
+# Kernel-only nearest text symbol mapping from same-boot /proc/kallsyms.
+# Original perf report remains unchanged.
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 993  of event 'cycles'
+# Event count (approx.): 27820387296
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                      
+# ........  ...............  .....................  ............................................................................................................................
+#
+     4.16%  fastk-scaling-p  [unknown]              [k] filemap_read+0x38e (raw 0xffffffff8e560e8e)
+     3.90%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0x8b (raw 0xffffffff8ead0afb)
+     3.25%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkFileCache>::open
+     2.95%  fastk-scaling-p  [unknown]              [k] filemap_get_read_batch+0xdc (raw 0xffffffff8e55c01c)
+     2.76%  fastk-scaling-p  [unknown]              [k] srso_safe_ret+0x0 (raw 0xffffffff8f3ac840)
+     2.33%  fastk-scaling-p  [unknown]              [k] fput+0x28 (raw 0xffffffff8e67bcc8)
+     1.89%  fastk-scaling-p  libc.so.6              [.] realloc
+     1.68%  fastk-scaling-p  libc.so.6              [.] malloc
+     1.47%  fastk-scaling-p  libc.so.6              [.] 0x000000000009516b
+     1.30%  fastk-scaling-p  [unknown]              [k] inode_permission+0x26 (raw 0xffffffff8e68a5e6)
+     1.16%  fastk-scaling-p  [unknown]              [k] fdget+0xa6 (raw 0xffffffff8e6a7526)
+     1.15%  fastk-scaling-p  libc.so.6              [.] 0x000000000009672c
+     1.07%  fastk-scaling-p  [unknown]              [k] inode_permission+0x69 (raw 0xffffffff8e68a629)
+     1.06%  fastk-scaling-p  [unknown]              [k] lockref_get+0x2b (raw 0xffffffff8eaca23b)
+     1.05%  fastk-scaling-p  libc.so.6              [.] 0x000000000016e0ba
+     1.00%  fastk-scaling-p  [unknown]              [k] atime_needs_update+0x3e (raw 0xffffffff8e6a557e)
+     0.99%  fastk-scaling-p  [unknown]              [k] __d_lookup_rcu+0x3c (raw 0xffffffff8e69f7ac)
+     0.99%  fastk-scaling-p  [unknown]              [k] ovl_permission+0x4 (raw 0xffffffff8e84c7d4)
+     0.96%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0x8d (raw 0xffffffff8ead0afd)
+     0.84%  fastk-scaling-p  [unknown]              [k] security_inode_permission+0x42 (raw 0xffffffff8e9bf6e2)
+     0.80%  fastk-scaling-p  [unknown]              [k] __secure_computing+0x7e (raw 0xffffffff8e42eb2e)
+     0.78%  fastk-scaling-p  fastk-scaling-profile  [.] std::io::default_read_exact::<fastk::store_core::chunk::file::ChunkFile>
+     0.77%  fastk-scaling-p  [unknown]              [k] __raw_callee_save___pv_queued_spin_unlock+0x14 (raw 0xffffffff8f3aae04)
+     0.75%  fastk-scaling-p  fastk-scaling-profile  [.] fastk::store_core::chunk::sparse_index::lookup_window
+     0.71%  fastk-scaling-p  libc.so.6              [.] 0x00000000000858d1
+     0.68%  fastk-scaling-p  libc.so.6              [.] 0x0000000000096565
+     0.68%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkRuntime>::get_layout
+     0.68%  fastk-scaling-p  [unknown]              [k] hook_file_free_security+0x1a (raw 0xffffffff8ea231ca)
+     0.66%  fastk-scaling-p  [unknown]              [k] do_syscall_64+0xe6 (raw 0xffffffff8f395756)
+     0.66%  fastk-scaling-p  [unknown]              [k] filemap_read+0x261 (raw 0xffffffff8e560d61)
+     0.62%  fastk-scaling-p  [unknown]              [k] entry_SYSCALL_64+0x0 (raw 0xffffffff8e000080)
+     0.60%  fastk-scaling-p  fastk-scaling-profile  [.] fastk_scaling_profile::read
+     0.58%  fastk-scaling-p  [unknown]              [k] security_file_permission+0x6e (raw 0xffffffff8e9c0f6e)
+     0.58%  fastk-scaling-p  [unknown]              [k] lockref_put_return+0x30 (raw 0xffffffff8eaca070)
+     0.57%  fastk-scaling-p  [unknown]              [k] selinux_inode_permission+0x45 (raw 0xffffffff8e9d3265)
+
+
+#
+# (Tip: To add Node.js USDT(User-Level Statically Defined Tracing): perf buildid-cache --add `which node`)
+#

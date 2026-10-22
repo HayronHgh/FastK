@@ -1,0 +1,494 @@
+{
+  "jobs": [
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-00-64-private-t8-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-01-512-private-t4-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-02-512-outer-t4-r0"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-03-64-outer-t8-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-04-512-outer-t1-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-05-512-private-t8-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-06-64-private-t4-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-07-512-private-t8-r1"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-08-64-outer-t4-r0"
+    },
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-09-64-private-t4-r1"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-10-64-outer-t4-r1"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-11-512-private-t8-r0"
+    },
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-12-64-private-t4-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-13-64-private-t8-r1"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-14-512-outer-t4-r1"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-15-64-outer-t4-r2"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-16-512-outer-t4-r2"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-17-512-outer-t8-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "private",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-18-64-private-t8-r2"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-19-512-outer-t1-r1"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-20-512-outer-t8-r0"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-21-64-outer-t8-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-22-64-outer-t1-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-23-64-outer-t1-r1"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-24-512-outer-t1-r2"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 2,
+      "name": "capacity-25-512-private-t4-r2"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 1,
+      "groups": 1,
+      "cycles": 100,
+      "round": 0,
+      "name": "capacity-26-64-outer-t1-r0"
+    },
+    {
+      "capacity": 512,
+      "mode": "private",
+      "threads": 4,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-27-512-private-t4-r1"
+    },
+    {
+      "capacity": 64,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-28-64-outer-t8-r1"
+    },
+    {
+      "capacity": 512,
+      "mode": "outer",
+      "threads": 8,
+      "groups": 1,
+      "cycles": 100,
+      "round": 1,
+      "name": "capacity-29-512-outer-t8-r1"
+    }
+  ],
+  "sizes": [
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 8,
+      "round": 2
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 83886080,
+      "threads": 4,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 8,
+      "round": 0
+    },
+    {
+      "bytes": 83886080,
+      "threads": 4,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 8,
+      "round": 2
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 8,
+      "round": 0
+    },
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 8,
+      "round": 0
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 8,
+      "round": 0
+    },
+    {
+      "bytes": 20971520,
+      "threads": 4,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 8,
+      "round": 1
+    },
+    {
+      "bytes": 20971520,
+      "threads": 4,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 8,
+      "round": 1
+    },
+    {
+      "bytes": 4194304,
+      "threads": 4,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 20971520,
+      "threads": 4,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 8,
+      "round": 1
+    },
+    {
+      "bytes": 4194304,
+      "threads": 4,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 83886080,
+      "threads": 4,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 1048576,
+      "threads": 4,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 4194304,
+      "threads": 4,
+      "groups": 4,
+      "round": 1
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 4194304,
+      "threads": 8,
+      "groups": 8,
+      "round": 2
+    },
+    {
+      "bytes": 20971520,
+      "threads": 8,
+      "groups": 8,
+      "round": 1
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 1048576,
+      "threads": 8,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 8,
+      "round": 2
+    },
+    {
+      "bytes": 1048576,
+      "threads": 4,
+      "groups": 4,
+      "round": 0
+    },
+    {
+      "bytes": 1048576,
+      "threads": 4,
+      "groups": 4,
+      "round": 2
+    },
+    {
+      "bytes": 83886080,
+      "threads": 8,
+      "groups": 4,
+      "round": 2
+    }
+  ],
+  "diagnostic_only": true,
+  "passed": true
+}

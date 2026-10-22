@@ -1,0 +1,42 @@
+control verified 1 / 42 {'route': 'probe', 'workers': 1, 'round': 1}
+control verified 2 / 42 {'route': 'core-control', 'workers': 1, 'round': 2}
+control verified 3 / 42 {'route': 'probe', 'workers': 4, 'round': 0}
+control verified 4 / 42 {'route': 'probe', 'workers': 8, 'round': 0}
+control verified 5 / 42 {'route': 'core-control', 'workers': 4, 'round': 0}
+control verified 6 / 42 {'route': 'core-control', 'workers': 8, 'round': 1, 'monitor': True}
+control verified 7 / 42 {'route': 'probe', 'workers': 2, 'round': 0}
+control verified 8 / 42 {'route': 'core-control', 'workers': 2, 'round': 2}
+control verified 9 / 42 {'route': 'native', 'workers': 1, 'round': 1}
+control verified 10 / 42 {'route': 'probe', 'workers': 8, 'round': 2}
+control verified 11 / 42 {'route': 'core-control', 'workers': 2, 'round': 1}
+control verified 12 / 42 {'route': 'native', 'workers': 2, 'round': 0}
+control verified 13 / 42 {'route': 'native', 'workers': 8, 'round': 0}
+control verified 14 / 42 {'route': 'core-control', 'workers': 8, 'round': 1}
+control verified 15 / 42 {'route': 'core-control', 'workers': 1, 'round': 0, 'monitor': True}
+control verified 16 / 42 {'route': 'core-control', 'workers': 8, 'round': 0}
+control verified 17 / 42 {'route': 'probe', 'workers': 4, 'round': 1}
+control verified 18 / 42 {'route': 'probe', 'workers': 1, 'round': 0}
+control verified 19 / 42 {'route': 'core-control', 'workers': 8, 'round': 0, 'monitor': True}
+control verified 20 / 42 {'route': 'core-control', 'workers': 8, 'round': 2, 'monitor': True}
+control verified 21 / 42 {'route': 'core-control', 'workers': 2, 'round': 0}
+control verified 22 / 42 {'route': 'core-control', 'workers': 1, 'round': 1, 'monitor': True}
+control verified 23 / 42 {'route': 'native', 'workers': 4, 'round': 2}
+control verified 24 / 42 {'route': 'native', 'workers': 2, 'round': 1}
+control verified 25 / 42 {'route': 'probe', 'workers': 2, 'round': 1}
+control verified 26 / 42 {'route': 'native', 'workers': 4, 'round': 1}
+control verified 27 / 42 {'route': 'native', 'workers': 1, 'round': 0}
+control verified 28 / 42 {'route': 'probe', 'workers': 2, 'round': 2}
+control verified 29 / 42 {'route': 'native', 'workers': 4, 'round': 0}
+control verified 30 / 42 {'route': 'native', 'workers': 1, 'round': 2}
+control verified 31 / 42 {'route': 'native', 'workers': 8, 'round': 2}
+control verified 32 / 42 {'route': 'native', 'workers': 2, 'round': 2}
+control verified 33 / 42 {'route': 'probe', 'workers': 4, 'round': 2}
+control verified 34 / 42 {'route': 'probe', 'workers': 1, 'round': 2}
+control verified 35 / 42 {'route': 'core-control', 'workers': 1, 'round': 1}
+control verified 36 / 42 {'route': 'core-control', 'workers': 4, 'round': 1}
+control verified 37 / 42 {'route': 'probe', 'workers': 8, 'round': 1}
+control verified 38 / 42 {'route': 'core-control', 'workers': 1, 'round': 2, 'monitor': True}
+control verified 39 / 42 {'route': 'core-control', 'workers': 1, 'round': 0}
+control verified 40 / 42 {'route': 'core-control', 'workers': 8, 'round': 2}
+control verified 41 / 42 {'route': 'native', 'workers': 8, 'round': 1}
+control verified 42 / 42 {'route': 'core-control', 'workers': 4, 'round': 2}

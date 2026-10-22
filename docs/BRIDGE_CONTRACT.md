@@ -28,17 +28,27 @@ The current success payloads are not wrapped in `{ "ok": true, "data": ... }`.
 That wrapper is reserved for a future compatibility layer if needed. The current
 contract is documented here to avoid breaking existing callers.
 
-Recommended future error envelope, not the current CLI output:
+Additive contract v1 commands: `version --json`, `init --root`,
+`seal-snapshot --root`, `verify-snapshot --root [--digest]`, and
+`read-kline-latest --root --symbol --timeframe --limit` (ascending timestamps).
+`version` returns `name`, package `version` and integer `contract_version: 1`.
+Existing successful command shapes are unchanged.
 
-```json
-{
-  "ok": false,
-  "error": {
-    "code": "FASTK_ERROR_CODE",
-    "message": "human readable message"
-  }
-}
-```
+Pass `--error-format=json` as one argument to opt into
+`{"error":{"code":"INVALID_INPUT","message":"..."}}` on stderr, with exit 1.
+Coarse codes are `IO`, `SQLITE`, `JSON`, `INVALID_INPUT`, `INVALID_DATA`,
+`NOT_FOUND`. Default errors remain human-readable. This option does not wrap
+successful stdout payloads.
+
+`schemas/bridge_commands.json` describes the command catalog at its root;
+validate individual payloads against the corresponding `$defs` response schema.
+
+Writes append within a month, preserving prior scalar values; overlaps,
+duplicates and mismatched scales/timeframes are rejected. Preflight and all
+monthly commits share writer ownership. Each month commits independently;
+on a failure the message lists `completed_months`, and the failed month can
+require recovery. No automatic write retry is safe without inspecting state.
+Readers use shared read-only ownership and never implicitly repair or migrate.
 
 ## Commands
 

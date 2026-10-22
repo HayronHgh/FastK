@@ -1,0 +1,82 @@
+{
+  "engine_edge_values_exact": true,
+  "non_drop_in_differences": {
+    "truncated": {
+      "stdlib": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      },
+      "orjson": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      }
+    },
+    "invalid_utf8": {
+      "stdlib": {
+        "accepted": false,
+        "exception": "UnicodeDecodeError"
+      },
+      "orjson": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      }
+    },
+    "nonfinite": {
+      "stdlib": {
+        "accepted": true,
+        "value_repr": "{'value': nan}",
+        "value_type": "float"
+      },
+      "orjson": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      }
+    },
+    "unpaired_surrogate": {
+      "stdlib": {
+        "accepted": true,
+        "value_repr": "{'value': '\\ud800'}",
+        "value_type": "str"
+      },
+      "orjson": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      }
+    },
+    "beyond_u64": {
+      "stdlib": {
+        "accepted": true,
+        "value_repr": "{'value': 18446744073709551616}",
+        "value_type": "int"
+      },
+      "orjson": {
+        "accepted": true,
+        "value_repr": "{'value': 1.8446744073709552e+19}",
+        "value_type": "float"
+      }
+    },
+    "below_i64": {
+      "stdlib": {
+        "accepted": true,
+        "value_repr": "{'value': -9223372036854775809}",
+        "value_type": "int"
+      },
+      "orjson": {
+        "accepted": true,
+        "value_repr": "{'value': -9.223372036854776e+18}",
+        "value_type": "float"
+      }
+    },
+    "utf16_bom": {
+      "stdlib": {
+        "accepted": true,
+        "value_repr": "{'value': 1}",
+        "value_type": "int"
+      },
+      "orjson": {
+        "accepted": false,
+        "exception": "JSONDecodeError"
+      }
+    }
+  }
+}

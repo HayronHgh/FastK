@@ -1,0 +1,13 @@
+COMMAND ['cargo', 'fmt', '--all', '--check']
+EXIT 0
+
+COMMAND ['cargo', 'fmt', '--manifest-path', 'external-tests/core-parallel/Cargo.toml', '--check']
+EXIT 0
+
+COMMAND ['target/v02-venv/Scripts/ruff.exe', 'check', 'external-tests/core-parallel']
+EXIT 0
+All checks passed!
+
+COMMAND ['target/v02-venv/Scripts/ruff.exe', 'format', '--check', 'external-tests/core-parallel']
+EXIT 0
+4 files already formatted

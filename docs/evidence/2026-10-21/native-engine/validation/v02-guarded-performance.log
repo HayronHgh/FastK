@@ -1,0 +1,141 @@
+verified duckdb-outer-2
+verified parquet-outer-4
+verified arrow-internal-1
+verified fastk-outer-2
+verified parquet-internal-1
+verified parquet-internal-4
+verified duckdb-outer-1
+verified duckdb-outer-8
+verified arrow-outer-1
+verified parquet-outer-2
+verified parquet-internal-2
+verified sqlite-internal-4
+verified fastk-internal-2
+verified arrow-outer-4
+verified duckdb-internal-1
+verified sqlite-outer-4
+verified sqlite-internal-1
+verified sqlite-outer-2
+verified sqlite-internal-8
+verified sqlite-outer-1
+verified arrow-outer-8
+verified sqlite-outer-8
+verified arrow-internal-2
+verified arrow-outer-2
+verified fastk-outer-4
+verified fastk-outer-1
+verified arrow-internal-4
+verified parquet-outer-1
+verified parquet-internal-8
+verified fastk-outer-8
+verified sqlite-internal-2
+verified fastk-internal-8
+verified duckdb-internal-2
+verified fastk-internal-4
+verified duckdb-outer-4
+verified arrow-internal-8
+verified fastk-internal-1
+verified parquet-outer-8
+verified duckdb-internal-4
+verified duckdb-internal-8
+verified duckdb-outer-2
+verified parquet-outer-4
+verified arrow-internal-1
+verified fastk-outer-2
+verified parquet-internal-1
+verified parquet-internal-4
+verified duckdb-outer-1
+verified duckdb-outer-8
+verified arrow-outer-1
+verified parquet-outer-2
+verified parquet-internal-2
+verified sqlite-internal-4
+verified fastk-internal-2
+verified arrow-outer-4
+verified duckdb-internal-1
+verified sqlite-outer-4
+verified sqlite-internal-1
+verified sqlite-outer-2
+verified sqlite-internal-8
+verified sqlite-outer-1
+verified arrow-outer-8
+verified sqlite-outer-8
+verified arrow-internal-2
+verified arrow-outer-2
+verified fastk-outer-4
+verified fastk-outer-1
+verified arrow-internal-4
+verified parquet-outer-1
+verified parquet-internal-8
+verified fastk-outer-8
+verified sqlite-internal-2
+verified fastk-internal-8
+verified duckdb-internal-2
+verified fastk-internal-4
+verified duckdb-outer-4
+verified arrow-internal-8
+verified fastk-internal-1
+verified parquet-outer-8
+verified duckdb-internal-4
+verified duckdb-internal-8
+copied prepared store arrow
+copied prepared store sqlite
+copied prepared store fastk
+copied prepared store duckdb
+copied prepared store parquet
+measured arrow round 0
+measured sqlite round 0
+measured fastk round 0
+measured duckdb round 0
+measured parquet round 0
+measured sqlite round 1
+measured fastk round 1
+measured duckdb round 1
+measured parquet round 1
+measured arrow round 1
+measured sqlite round 2
+measured parquet round 2
+measured fastk round 2
+measured arrow round 2
+measured duckdb round 2
+measured parquet round 3
+measured sqlite round 3
+measured fastk round 3
+measured arrow round 3
+measured duckdb round 3
+measured parquet round 4
+measured fastk round 4
+measured duckdb round 4
+measured sqlite round 4
+measured arrow round 4
+maintenance verified fastk
+maintenance verified sqlite
+maintenance verified duckdb
+maintenance verified parquet
+maintenance verified arrow
+C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-final-standard\REPORT.md
+prepared arrow
+prepared sqlite
+prepared fastk
+prepared duckdb
+prepared parquet
+measured arrow round 0
+measured sqlite round 0
+measured fastk round 0
+measured duckdb round 0
+measured parquet round 0
+measured sqlite round 1
+measured fastk round 1
+measured duckdb round 1
+measured parquet round 1
+measured arrow round 1
+maintenance verified fastk
+maintenance verified sqlite
+maintenance verified duckdb
+maintenance verified parquet
+maintenance verified arrow
+C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-final-real\REPORT.md
+verified legacy-short
+verified legacy-bulk
+verified native-bulk
+verified native-short

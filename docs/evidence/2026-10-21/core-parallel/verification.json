@@ -1,0 +1,26 @@
+{
+  "product_changes": [
+    "src/store_core/chunk/cache.rs",
+    "src/store_core/engine/parallel.rs",
+    "tests/parallel_reads.rs"
+  ],
+  "unchanged_prior_source_files": 140,
+  "new_public_api": false,
+  "new_product_dependencies": false,
+  "python_or_transport_source_changed": false,
+  "standalone_registry_versions_matching_product": 69,
+  "rust_tests_each_os": 142,
+  "cli_framing_tests_each_os": 4,
+  "primary_processes_each_os": 72,
+  "supplemental_serial_processes_each_os": 18,
+  "serial_gate_combines_original_and_extra_rounds": 12,
+  "timed_short_reads_canonical_checked_each_os": 137280,
+  "memory_processes_each_os": 6,
+  "historical_doc_evidence_manifests_verified": 13,
+  "historical_doc_evidence_entries_verified": 1146,
+  "kernel_fd_growth_automatically_eliminated": false,
+  "os_cold_cache_controlled": false,
+  "msvc_tested": false,
+  "native_wheels_or_release_bundles_rebuilt": false,
+  "passed": true
+}

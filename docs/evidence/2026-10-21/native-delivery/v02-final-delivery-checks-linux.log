@@ -1,0 +1,17 @@
+Processing ./dist/fastk-0.2.0-rc.1-x86_64-unknown-linux-musl-development/python/fastk_client-0.2.0rc1-py3-none-manylinux_2_17_x86_64.whl
+Installing collected packages: fastk-client
+Successfully installed fastk-client-0.2.0rc1
+test_real_version_write_read_latest_and_error_schemas (test_contracts.Contracts.test_real_version_write_read_latest_and_error_schemas) ... ok
+test_release_manifest_schema_and_all_artifact_checksums (test_contracts.Contracts.test_release_manifest_schema_and_all_artifact_checksums) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 7.076s
+
+OK
+test_real_version_write_read_latest_and_error_schemas (test_contracts.Contracts.test_real_version_write_read_latest_and_error_schemas) ... ok
+test_release_manifest_schema_and_all_artifact_checksums (test_contracts.Contracts.test_release_manifest_schema_and_all_artifact_checksums) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 5.092s
+
+OK

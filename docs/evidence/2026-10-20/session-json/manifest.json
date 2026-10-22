@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-20",
+  "kind": "measurement-and-proposal-only",
+  "production_optimization_shipped": false,
+  "platform": "Windows 11 / Python3.12.14 / AMD Ryzen9 9900X",
+  "rounds_per_route_shape": 10,
+  "main_timed_canonical_responses": 80,
+  "untimed_canonical_fixture_responses": 8,
+  "frame_byte_pairs": 4,
+  "cached_controls": 160,
+  "receiver_timed_controls": 80,
+  "receiver_warmups": 80,
+  "all_workers_reaped": true,
+  "clock": "Windows QPC, 10MHz; exact non-overlapping probe timeline closure",
+  "scope": "one reused worker per route; same standard Arrow input/premaintenance FastK store; startup excluded",
+  "limits": "Ten descriptive samples; OS cache/scheduling uncontrolled; nested write/receive counters not additive; cached controls are not full-engine speedups; Linux performance unmeasured",
+  "private_probe_source": "source/target/session-json-probe-v2",
+  "large_fixtures_exported": false,
+  "verification": {
+    "release_probe_build": "PASS",
+    "canonical_and_byte_checks": "PASS",
+    "cached_and_pipe_controls": "PASS",
+    "ruff_27_files": "PASS",
+    "deterministic_source_and_production_integrity": "PASS"
+  }
+}

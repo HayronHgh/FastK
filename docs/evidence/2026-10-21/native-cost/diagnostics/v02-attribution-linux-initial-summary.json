@@ -1,0 +1,864 @@
+{
+  "all_result_jobs_verified": true,
+  "negative_controls_are_not_read_validations": true,
+  "environment": {
+    "python": "3.12.14 (main, Sep 19 2026, 03:36:28) [GCC 12.2.0]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.36",
+    "native_module_sha256": "bf36b90736f016437dc0ecfd137f920496cf4db7fe176ed0c431be8b83c68023",
+    "probe_module_sha256": "56940becc21f66396f43cbe60ff0c38b1a37b818566218000fb72b107485ef06",
+    "dependencies": {
+      "fastk-native": "0.2.0rc1",
+      "numpy": "2.3.5",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2"
+    },
+    "cpu_count": 24,
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "cgroup": {
+      "/sys/fs/cgroup/cpu.max": "max 100000\n",
+      "/sys/fs/cgroup/cpu.stat": "usage_usec 280597806\nuser_usec 217937111\nsystem_usec 62660694\nnice_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0\n"
+    },
+    "bulk_sha256": "3436a7154d6e4f4703120c154bfcaa6bf79a49a04a1859580e5c5fd47c3ba0fe",
+    "short_sha256": "df014a8b574c837b632b2b1f931d80cd070c35c874c9ff63fa8715f178394363",
+    "source_sha256": {
+      "__init__.py": "a7da32aa8a85915bdcf263bce9f0723f8fb9204884c34773bf6054d7846dff46",
+      "probe/Cargo.lock": "36580d9db2b6ef01ac8e5a85a0d763570d238005794a781cf7b6ba22ab3ca4a0",
+      "probe/Cargo.toml": "56dbef7a1fc0642125e102736b336d278f97aa27a1cb944578c7bd91760b4dfa",
+      "probe/src/lib.rs": "a7f041a8525aeb4360eee9c1645666be7a53f44082d3d7eecfaf43261fe40266",
+      "run.py": "d151655027d043b9e2882b783f29b03946624a636772b078516c3bd2236eeb5d",
+      "verify_probe.py": "365b20a497c90e883a057f70d110b5d191ad84c8e8aeb07f77c1776d47c78791",
+      "worker.py": "b174aaaf295f5a727e05f44cc6891df69fe4d03f638e49a7c0db057a62a7c11a"
+    }
+  },
+  "results": [
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 2,
+      "file": "000-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 8,
+      "switch_interval": 0.001,
+      "file": "001-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 1,
+      "workers": 1,
+      "file": "002-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 2,
+      "switch_interval": 0.0001,
+      "file": "003-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 0,
+      "workers": 4,
+      "shared": true,
+      "file": "004-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 2,
+      "workers": 8,
+      "file": "005-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 2,
+      "workers": 4,
+      "file": "006-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 2,
+      "switch_interval": 0.001,
+      "file": "007-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 8,
+      "switch_interval": 0.001,
+      "file": "008-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 0,
+      "file": "009-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 0,
+      "workers": 4,
+      "file": "010-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 4,
+      "file": "011-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 2,
+      "file": "012-bulk-arrow.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 2,
+      "file": "013-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 4,
+      "switch_interval": 0.001,
+      "file": "014-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 2,
+      "workers": 8,
+      "file": "015-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 4,
+      "file": "016-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 0,
+      "workers": 1,
+      "file": "017-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 8,
+      "file": "018-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 1,
+      "file": "019-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 2,
+      "workers": 4,
+      "shared": true,
+      "file": "020-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 2,
+      "file": "021-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 2,
+      "workers": 4,
+      "file": "022-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 1,
+      "workers": 2,
+      "file": "023-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 2,
+      "workers": 4,
+      "file": "024-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 0,
+      "workers": 8,
+      "file": "025-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 0,
+      "workers": 1,
+      "file": "026-outer-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 2,
+      "file": "027-bulk-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 2,
+      "switch_interval": 0.001,
+      "file": "028-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 0,
+      "file": "029-bulk-numpy-copy.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 2,
+      "workers": 1,
+      "file": "030-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 8,
+      "switch_interval": 0.0001,
+      "file": "031-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 1,
+      "workers": 4,
+      "file": "032-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 0,
+      "workers": 4,
+      "file": "033-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 2,
+      "workers": 2,
+      "file": "034-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 2,
+      "workers": 1,
+      "file": "035-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 0,
+      "workers": 2,
+      "file": "036-outer-rust-words.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 0,
+      "file": "037-bulk-copy-batch.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 8,
+      "switch_interval": 0.0001,
+      "file": "038-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 1,
+      "workers": 8,
+      "file": "039-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 2,
+      "workers": 1,
+      "file": "040-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 2,
+      "workers": 4,
+      "shared": true,
+      "file": "041-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 0,
+      "workers": 2,
+      "file": "042-outer-gil-only.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 1,
+      "file": "043-bulk-numpy-copy.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 1,
+      "file": "044-bulk-copy-batch.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 4,
+      "switch_interval": 0.001,
+      "file": "045-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 2,
+      "workers": 2,
+      "file": "046-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 1,
+      "workers": 8,
+      "file": "047-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 2,
+      "workers": 4,
+      "file": "048-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 1,
+      "workers": 2,
+      "file": "049-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 1,
+      "workers": 4,
+      "file": "050-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 0,
+      "workers": 8,
+      "file": "051-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 8,
+      "file": "052-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 8,
+      "file": "053-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 1,
+      "workers": 4,
+      "file": "054-outer-rust-words.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 1,
+      "file": "055-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 0,
+      "workers": 8,
+      "file": "056-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 1,
+      "workers": 8,
+      "file": "057-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 1,
+      "workers": 8,
+      "file": "058-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 0,
+      "workers": 4,
+      "shared": true,
+      "file": "059-outer-direct.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 2,
+      "file": "060-bulk-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 2,
+      "workers": 8,
+      "file": "061-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 1,
+      "workers": 2,
+      "file": "062-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 0,
+      "workers": 1,
+      "file": "063-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 2,
+      "workers": 2,
+      "file": "064-outer-direct.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 1,
+      "file": "065-bulk-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 2,
+      "switch_interval": 0.001,
+      "file": "066-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 2,
+      "workers": 8,
+      "file": "067-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 2,
+      "workers": 1,
+      "file": "068-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 1,
+      "workers": 8,
+      "file": "069-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 8,
+      "switch_interval": 0.0001,
+      "file": "070-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 1,
+      "workers": 1,
+      "file": "071-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 4,
+      "switch_interval": 0.0001,
+      "file": "072-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 8,
+      "switch_interval": 0.001,
+      "file": "073-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 1,
+      "workers": 1,
+      "file": "074-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 0,
+      "workers": 4,
+      "file": "075-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 4,
+      "switch_interval": 0.001,
+      "file": "076-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 2,
+      "workers": 4,
+      "file": "077-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 0,
+      "workers": 2,
+      "file": "078-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 2,
+      "workers": 2,
+      "file": "079-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 2,
+      "workers": 2,
+      "file": "080-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 0,
+      "workers": 4,
+      "file": "081-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 4,
+      "file": "082-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 0,
+      "workers": 4,
+      "file": "083-outer-rust-words.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 4,
+      "switch_interval": 0.0001,
+      "file": "084-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 1,
+      "file": "085-bulk-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 0,
+      "workers": 2,
+      "file": "086-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 0,
+      "workers": 1,
+      "file": "087-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "probe",
+      "round": 1,
+      "workers": 2,
+      "file": "088-outer-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 1,
+      "workers": 4,
+      "file": "089-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 0,
+      "workers": 2,
+      "file": "090-outer-rust-core.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 0,
+      "workers": 1,
+      "file": "091-outer-direct.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 2,
+      "file": "092-bulk-copy-batch.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-core",
+      "round": 1,
+      "workers": 4,
+      "shared": true,
+      "file": "093-outer-rust-core.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 2,
+      "file": "094-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 2,
+      "workers": 1,
+      "file": "095-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 0,
+      "workers": 1,
+      "file": "096-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 0,
+      "file": "097-bulk-arrow.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 0,
+      "workers": 8,
+      "file": "098-outer-rust-words.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 0,
+      "file": "099-bulk-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 2,
+      "workers": 8,
+      "file": "100-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 2,
+      "switch_interval": 0.0001,
+      "file": "101-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 1,
+      "workers": 4,
+      "file": "102-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 0,
+      "workers": 8,
+      "file": "103-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 1,
+      "file": "104-outer-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 2,
+      "file": "105-bulk-numpy-copy.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 1,
+      "file": "106-bulk-arrow.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 1,
+      "workers": 2,
+      "file": "107-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "rust-words",
+      "round": 1,
+      "workers": 1,
+      "file": "108-outer-rust-words.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 0,
+      "file": "109-bulk-probe.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 2,
+      "workers": 4,
+      "switch_interval": 0.0001,
+      "file": "110-outer-native.json"
+    },
+    {
+      "mode": "outer",
+      "route": "direct",
+      "round": 1,
+      "workers": 4,
+      "shared": true,
+      "file": "111-outer-direct.json"
+    },
+    {
+      "mode": "outer",
+      "route": "gil-only",
+      "round": 1,
+      "workers": 1,
+      "file": "112-outer-gil-only.json"
+    },
+    {
+      "mode": "outer",
+      "route": "native",
+      "round": 1,
+      "workers": 2,
+      "switch_interval": 0.0001,
+      "file": "113-outer-native.json"
+    }
+  ]
+}

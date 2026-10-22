@@ -1,0 +1,3 @@
+# Optional measurement environment only; not a FastK runtime dependency.
+-r requirements-dev.lock
+orjson==3.13.0

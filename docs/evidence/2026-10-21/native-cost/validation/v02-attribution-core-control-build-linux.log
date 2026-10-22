@@ -1,0 +1,11 @@
+   Compiling target-lexicon v0.13.5
+   Compiling serde_core v1.0.228
+   Compiling pyo3-build-config v0.30.1
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling serde_json v1.0.149
+   Compiling serde v1.0.228
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling fastk-attribution-probe v0.0.0 (/work/external-tests/attribution/probe)
+    Finished `release` profile [optimized] target(s) in 18.18s

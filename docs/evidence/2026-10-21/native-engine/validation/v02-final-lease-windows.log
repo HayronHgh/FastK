@@ -1,0 +1,142 @@
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.11 at C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-venv311\Scripts\python.exe
+🔗 Found pyo3 bindings
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)
+    Finished `native` profile [optimized] target(s) in 10.51s
+📦 Built wheel for CPython 3.11 to C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp311-cp311-win_amd64.whl
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp311-cp311-win_amd64.whl
+Installing collected packages: fastk-native
+  Attempting uninstall: fastk-native
+    Found existing installation: fastk-native 0.2.0rc1
+    Uninstalling fastk-native-0.2.0rc1:
+      Successfully uninstalled fastk-native-0.2.0rc1
+Successfully installed fastk-native-0.2.0rc1
+test_cross_month_and_large_integer_roundtrip (test_client.IntegrationTests.test_cross_month_and_large_integer_roundtrip) ... ok
+test_invalid_payload_does_not_spawn_a_child (test_client.TransportTests.test_invalid_payload_does_not_spawn_a_child) ... ok
+test_invalid_response_is_not_accepted (test_client.TransportTests.test_invalid_response_is_not_accepted) ... ok
+test_machine_error_and_integer_payload_without_shell (test_client.TransportTests.test_machine_error_and_integer_payload_without_shell) ... ok
+test_missing_binary_has_explicit_error (test_client.TransportTests.test_missing_binary_has_explicit_error) ... ok
+test_timeout_kills_and_reaps_once_without_retry (test_client.TransportTests.test_timeout_kills_and_reaps_once_without_retry) ... ok
+test_unknown_contract_is_rejected (test_client.TransportTests.test_unknown_contract_is_rejected) ... ok
+test_real_version_write_read_latest_and_error_schemas (test_contracts.Contracts.test_real_version_write_read_latest_and_error_schemas) ... ok
+test_release_manifest_schema_and_all_artifact_checksums (test_contracts.Contracts.test_release_manifest_schema_and_all_artifact_checksums) ... skipped 'requires packaged artifacts'
+test_prefetch_parallel_execution_ordered_with_carried_position (test_month_consumer.MonthConsumerTests.test_prefetch_parallel_execution_ordered_with_carried_position) ... ok
+test_all_scalar_predicates_preserve_int64_values (test_native.NativeTests.test_all_scalar_predicates_preserve_int64_values) ... ok
+test_arrays_own_their_lifetime_without_retaining_store_lock (test_native.NativeTests.test_arrays_own_their_lifetime_without_retaining_store_lock) ... ok
+test_dtype_shape_and_integer_overflow_rejected (test_native.NativeTests.test_dtype_shape_and_integer_overflow_rejected) ... ok
+test_invalid_input_does_not_dirty_store_or_replay_failed_write (test_native.NativeTests.test_invalid_input_does_not_dirty_store_or_replay_failed_write) ... ok
+test_layout_range_metadata_and_empty_results (test_native.NativeTests.test_layout_range_metadata_and_empty_results) ... ok
+test_noncontiguous_input_and_independent_readers (test_native.NativeTests.test_noncontiguous_input_and_independent_readers) ... ok
+test_parallel_scalar_and_truncated_payload_fail_without_partial_result (test_native.NativeTests.test_parallel_scalar_and_truncated_payload_fail_without_partial_result) ... ok
+test_reader_requires_initialization_and_cannot_attach_without_a_lease (test_native.NativeTests.test_reader_requires_initialization_and_cannot_attach_without_a_lease) ... ok
+test_shared_reader_parallel_chunks_and_close_race (test_native.NativeTests.test_shared_reader_parallel_chunks_and_close_race) ... ok
+test_old_bridge_reads_new_native_int64_records_and_sidecars (test_native_compat.DiskCompatibilityTests.test_old_bridge_reads_new_native_int64_records_and_sidecars) ... ok
+test_bad_sizes_rejected_before_body_allocation_and_truncation (test_session.FrameReads.test_bad_sizes_rejected_before_body_allocation_and_truncation) ... ok
+test_fragmented_readinto_and_exact_integer_unicode_values (test_session.FrameReads.test_fragmented_readinto_and_exact_integer_unicode_values) ... ok
+test_body_allocation_failure_poisons_and_reaps (test_session.SessionFaults.test_body_allocation_failure_poisons_and_reaps) ... ok
+test_close_during_frame_construction_never_enqueues_or_waits (test_session.SessionFaults.test_close_during_frame_construction_never_enqueues_or_waits) ... ok
+test_close_interrupts_inflight_and_reaps (test_session.SessionFaults.test_close_interrupts_inflight_and_reaps) ... ok
+test_external_kill_does_not_restart_worker (test_session.SessionFaults.test_external_kill_does_not_restart_worker) ... ok
+test_fragmented_worker_frames (test_session.SessionFaults.test_fragmented_worker_frames) ... ok
+test_malformed_frames_and_crashes_poison_session (test_session.SessionFaults.test_malformed_frames_and_crashes_poison_session) ... ok
+test_nested_context_and_invalid_input_do_not_disrupt_worker (test_session.SessionFaults.test_nested_context_and_invalid_input_do_not_disrupt_worker) ... ok
+test_partial_body_timeout_and_close_reap_without_replay (test_session.SessionFaults.test_partial_body_timeout_and_close_reap_without_replay) ... ok
+test_queue_timeout_never_interrupts_or_sends_another_request (test_session.SessionFaults.test_queue_timeout_never_interrupts_or_sends_another_request) ... ok
+test_scope_reuses_one_child_and_close_is_idempotent (test_session.SessionFaults.test_scope_reuses_one_child_and_close_is_idempotent) ... ok
+test_startup_failures_reap_without_fallback (test_session.SessionFaults.test_startup_failures_reap_without_fallback) ... ok
+test_stderr_is_continuously_drained_and_bounded (test_session.SessionFaults.test_stderr_is_continuously_drained_and_bounded) ... ok
+test_thread_start_failure_reaps_child (test_session.SessionFaults.test_thread_start_failure_reaps_child) ... ok
+test_timeout_reaps_and_no_failed_write_is_replayed (test_session.SessionFaults.test_timeout_reaps_and_no_failed_write_is_replayed) ... ok
+test_timeout_releases_actual_os_write_lock (test_session.SessionFaults.test_timeout_releases_actual_os_write_lock) ... ok
+test_user_exception_and_interrupted_request_cleanup (test_session.SessionFaults.test_user_exception_and_interrupted_request_cleanup) ... ok
+test_write_blocked_in_pipe_is_interruptible (test_session.SessionFaults.test_write_blocked_in_pipe_is_interruptible) ... ok
+test_kline_and_indicator_shapes_and_sealed_writes (test_session.SessionStorage.test_kline_and_indicator_shapes_and_sealed_writes) ... ok
+test_metadata_refresh_between_requests_and_no_idle_read_lock (test_session.SessionStorage.test_metadata_refresh_between_requests_and_no_idle_read_lock) ... ok
+test_partial_month_error_and_explicit_recovery_without_replay (test_session.SessionStorage.test_partial_month_error_and_explicit_recovery_without_replay) ... ok
+test_real_shared_and_exclusive_ownership (test_session.SessionStorage.test_real_shared_and_exclusive_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 7.107s
+
+OK (skipped=1)
+Looking in links: c:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheelhouse
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp311-cp311-win_amd64.whl
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheelhouse\numpy-2.3.5-cp311-cp311-win_amd64.whl (from fastk-native==0.2.0rc1)
+Installing collected packages: numpy, fastk-native
+Successfully installed fastk-native-0.2.0rc1 numpy-2.3.5
+{"version": "0.2.0rc1", "python": "3.11.15 (main, Aug  5 2026, 16:05:37) [MSC v.1944 64 bit (AMD64)]", "dtype": "[('ts', '<i8'), ('open', '<i8'), ('high', '<i8'), ('low', '<i8'), ('close', '<i8'), ('volume', '<i8')]", "compiler_or_bridge_required": false, "passed": true}
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-venv\Scripts\python.exe
+🔗 Found pyo3 bindings
+   Compiling pyo3-ffi v0.30.1
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling fastk-native v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\clients\python-native)
+    Finished `native` profile [optimized] target(s) in 10.42s
+📦 Built wheel for CPython 3.12 to C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+Installing collected packages: fastk-native
+  Attempting uninstall: fastk-native
+    Found existing installation: fastk-native 0.2.0rc1
+    Uninstalling fastk-native-0.2.0rc1:
+      Successfully uninstalled fastk-native-0.2.0rc1
+Successfully installed fastk-native-0.2.0rc1
+test_cross_month_and_large_integer_roundtrip (test_client.IntegrationTests.test_cross_month_and_large_integer_roundtrip) ... ok
+test_invalid_payload_does_not_spawn_a_child (test_client.TransportTests.test_invalid_payload_does_not_spawn_a_child) ... ok
+test_invalid_response_is_not_accepted (test_client.TransportTests.test_invalid_response_is_not_accepted) ... ok
+test_machine_error_and_integer_payload_without_shell (test_client.TransportTests.test_machine_error_and_integer_payload_without_shell) ... ok
+test_missing_binary_has_explicit_error (test_client.TransportTests.test_missing_binary_has_explicit_error) ... ok
+test_timeout_kills_and_reaps_once_without_retry (test_client.TransportTests.test_timeout_kills_and_reaps_once_without_retry) ... ok
+test_unknown_contract_is_rejected (test_client.TransportTests.test_unknown_contract_is_rejected) ... ok
+test_real_version_write_read_latest_and_error_schemas (test_contracts.Contracts.test_real_version_write_read_latest_and_error_schemas) ... ok
+test_release_manifest_schema_and_all_artifact_checksums (test_contracts.Contracts.test_release_manifest_schema_and_all_artifact_checksums) ... skipped 'requires packaged artifacts'
+test_prefetch_parallel_execution_ordered_with_carried_position (test_month_consumer.MonthConsumerTests.test_prefetch_parallel_execution_ordered_with_carried_position) ... ok
+test_all_scalar_predicates_preserve_int64_values (test_native.NativeTests.test_all_scalar_predicates_preserve_int64_values) ... ok
+test_arrays_own_their_lifetime_without_retaining_store_lock (test_native.NativeTests.test_arrays_own_their_lifetime_without_retaining_store_lock) ... ok
+test_dtype_shape_and_integer_overflow_rejected (test_native.NativeTests.test_dtype_shape_and_integer_overflow_rejected) ... ok
+test_invalid_input_does_not_dirty_store_or_replay_failed_write (test_native.NativeTests.test_invalid_input_does_not_dirty_store_or_replay_failed_write) ... ok
+test_layout_range_metadata_and_empty_results (test_native.NativeTests.test_layout_range_metadata_and_empty_results) ... ok
+test_noncontiguous_input_and_independent_readers (test_native.NativeTests.test_noncontiguous_input_and_independent_readers) ... ok
+test_parallel_scalar_and_truncated_payload_fail_without_partial_result (test_native.NativeTests.test_parallel_scalar_and_truncated_payload_fail_without_partial_result) ... ok
+test_reader_requires_initialization_and_cannot_attach_without_a_lease (test_native.NativeTests.test_reader_requires_initialization_and_cannot_attach_without_a_lease) ... ok
+test_shared_reader_parallel_chunks_and_close_race (test_native.NativeTests.test_shared_reader_parallel_chunks_and_close_race) ... ok
+test_old_bridge_reads_new_native_int64_records_and_sidecars (test_native_compat.DiskCompatibilityTests.test_old_bridge_reads_new_native_int64_records_and_sidecars) ... ok
+test_bad_sizes_rejected_before_body_allocation_and_truncation (test_session.FrameReads.test_bad_sizes_rejected_before_body_allocation_and_truncation) ... ok
+test_fragmented_readinto_and_exact_integer_unicode_values (test_session.FrameReads.test_fragmented_readinto_and_exact_integer_unicode_values) ... ok
+test_body_allocation_failure_poisons_and_reaps (test_session.SessionFaults.test_body_allocation_failure_poisons_and_reaps) ... ok
+test_close_during_frame_construction_never_enqueues_or_waits (test_session.SessionFaults.test_close_during_frame_construction_never_enqueues_or_waits) ... ok
+test_close_interrupts_inflight_and_reaps (test_session.SessionFaults.test_close_interrupts_inflight_and_reaps) ... ok
+test_external_kill_does_not_restart_worker (test_session.SessionFaults.test_external_kill_does_not_restart_worker) ... ok
+test_fragmented_worker_frames (test_session.SessionFaults.test_fragmented_worker_frames) ... ok
+test_malformed_frames_and_crashes_poison_session (test_session.SessionFaults.test_malformed_frames_and_crashes_poison_session) ... ok
+test_nested_context_and_invalid_input_do_not_disrupt_worker (test_session.SessionFaults.test_nested_context_and_invalid_input_do_not_disrupt_worker) ... ok
+test_partial_body_timeout_and_close_reap_without_replay (test_session.SessionFaults.test_partial_body_timeout_and_close_reap_without_replay) ... ok
+test_queue_timeout_never_interrupts_or_sends_another_request (test_session.SessionFaults.test_queue_timeout_never_interrupts_or_sends_another_request) ... ok
+test_scope_reuses_one_child_and_close_is_idempotent (test_session.SessionFaults.test_scope_reuses_one_child_and_close_is_idempotent) ... ok
+test_startup_failures_reap_without_fallback (test_session.SessionFaults.test_startup_failures_reap_without_fallback) ... ok
+test_stderr_is_continuously_drained_and_bounded (test_session.SessionFaults.test_stderr_is_continuously_drained_and_bounded) ... ok
+test_thread_start_failure_reaps_child (test_session.SessionFaults.test_thread_start_failure_reaps_child) ... ok
+test_timeout_reaps_and_no_failed_write_is_replayed (test_session.SessionFaults.test_timeout_reaps_and_no_failed_write_is_replayed) ... ok
+test_timeout_releases_actual_os_write_lock (test_session.SessionFaults.test_timeout_releases_actual_os_write_lock) ... ok
+test_user_exception_and_interrupted_request_cleanup (test_session.SessionFaults.test_user_exception_and_interrupted_request_cleanup) ... ok
+test_write_blocked_in_pipe_is_interruptible (test_session.SessionFaults.test_write_blocked_in_pipe_is_interruptible) ... ok
+test_kline_and_indicator_shapes_and_sealed_writes (test_session.SessionStorage.test_kline_and_indicator_shapes_and_sealed_writes) ... ok
+test_metadata_refresh_between_requests_and_no_idle_read_lock (test_session.SessionStorage.test_metadata_refresh_between_requests_and_no_idle_read_lock) ... ok
+test_partial_month_error_and_explicit_recovery_without_replay (test_session.SessionStorage.test_partial_month_error_and_explicit_recovery_without_replay) ... ok
+test_real_shared_and_exclusive_ownership (test_session.SessionStorage.test_real_shared_and_exclusive_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 43 tests in 7.080s
+
+OK (skipped=1)
+Looking in links: c:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheelhouse
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheels\fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+Processing c:\users\a3204\documents\codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\v02-wheelhouse\numpy-2.3.5-cp312-cp312-win_amd64.whl (from fastk-native==0.2.0rc1)
+Installing collected packages: numpy, fastk-native
+Successfully installed fastk-native-0.2.0rc1 numpy-2.3.5
+{"version": "0.2.0rc1", "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]", "dtype": "[('ts', '<i8'), ('open', '<i8'), ('high', '<i8'), ('low', '<i8'), ('close', '<i8'), ('volume', '<i8')]", "compiler_or_bridge_required": false, "passed": true}

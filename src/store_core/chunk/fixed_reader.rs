@@ -1,4 +1,4 @@
-use std::fs::File;
+use crate::chunk::file::ChunkFile as File;
 use std::io::{Read, Seek, SeekFrom};
 use std::path::Path;
 
@@ -194,30 +194,7 @@ fn lookup_window(
     entries: &[SparseIndexEntry],
     target_ts: i64,
 ) -> Result<(u64, u64)> {
-    if header.count == 0 {
-        return Ok((0, 0));
-    }
-    if entries.is_empty() {
-        return Ok((0, header.count));
-    }
-    if let Some(anchor) = sparse_index::anchor_for_ts(entries, target_ts) {
-        let anchor_pos = entries
-            .iter()
-            .position(|entry| *entry == anchor)
-            .ok_or_else(|| {
-                FastKError::InvalidData("anchor lookup produced missing entry".to_string())
-            })?;
-        let end_idx = entries
-            .get(anchor_pos + 1)
-            .map(|entry| entry.record_idx)
-            .unwrap_or(header.count);
-        return Ok((anchor.record_idx, end_idx));
-    }
-    let first_end = entries
-        .get(1)
-        .map(|entry| entry.record_idx)
-        .unwrap_or(header.count);
-    Ok((0, first_end))
+    sparse_index::lookup_window(header, entries, target_ts)
 }
 
 fn read_timestamp_at(

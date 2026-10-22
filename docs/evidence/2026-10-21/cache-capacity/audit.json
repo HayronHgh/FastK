@@ -1,0 +1,13 @@
+{
+  "primary_processes": 70,
+  "primary_verified_outputs": 78950,
+  "attribution_processes": 36,
+  "attribution_verified_outputs": 38790,
+  "total_verified_outputs": 117740,
+  "production_source_files_unchanged": 62,
+  "installed_native_sha256_unchanged": "69781ff8ebbcdcab364642b2b3aaff0e3ca76aad51fa7693281dc297eaa9d4b1",
+  "production_default": 64,
+  "public_interface_unchanged": true,
+  "native_contract_tests": 27,
+  "source_capacity_difference_only": true
+}

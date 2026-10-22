@@ -1,5 +1,10 @@
 # Kline Storage Comparison
 
+> Historical measurements from 2026-06-14, not rerun adoption evidence. The current
+> SQLite runners use WITHOUT ROWID; those results must not be substituted into
+> this table. See EXTERNAL_VALIDATION.md for the new reproducible comparisons.
+> These numbers do not describe Python subprocess latency or scalar index space.
+
 This report compares storage options for normalized OHLCV kline records:
 
 ```text

@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "manifests": [
+    {
+      "manifest": "docs/evidence/2026-10-20/bridge-cost/SHA256SUMS",
+      "entries": 17
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/buffers/SHA256SUMS",
+      "entries": 22
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/compact/SHA256SUMS",
+      "entries": 23
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/compact-python/SHA256SUMS",
+      "entries": 27
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/correctness/SHA256SUMS",
+      "entries": 3
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/real/SHA256SUMS",
+      "entries": 18
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/session-json/SHA256SUMS",
+      "entries": 30
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/session-reuse/SHA256SUMS",
+      "entries": 13
+    },
+    {
+      "manifest": "docs/evidence/2026-10-20/standard/SHA256SUMS",
+      "entries": 36
+    },
+    {
+      "manifest": "docs/evidence/2026-10-21/rust-core-review/SHA256SUMS",
+      "entries": 17
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-pc-windows-gnu-development/SHA256SUMS",
+      "entries": 101
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-unknown-linux-musl-development/SHA256SUMS",
+      "entries": 101
+    },
+    {
+      "manifest": "dist/session-buffers-2026-10-20/SHA256SUMS",
+      "entries": 32
+    },
+    {
+      "manifest": "dist/session-compact-2026-10-20/SHA256SUMS",
+      "entries": 33
+    },
+    {
+      "manifest": "dist/session-reuse-2026-10-20/SHA256SUMS",
+      "entries": 23
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-pc-windows-gnu-development/docs/evidence/2026-10-20/correctness/SHA256SUMS",
+      "entries": 3
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-pc-windows-gnu-development/docs/evidence/2026-10-20/real/SHA256SUMS",
+      "entries": 18
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-pc-windows-gnu-development/docs/evidence/2026-10-20/standard/SHA256SUMS",
+      "entries": 36
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-unknown-linux-musl-development/docs/evidence/2026-10-20/correctness/SHA256SUMS",
+      "entries": 3
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-unknown-linux-musl-development/docs/evidence/2026-10-20/real/SHA256SUMS",
+      "entries": 18
+    },
+    {
+      "manifest": "dist/fastk-0.1.0-rc.1-x86_64-unknown-linux-musl-development/docs/evidence/2026-10-20/standard/SHA256SUMS",
+      "entries": 36
+    },
+    {
+      "manifest": "dist/session-buffers-2026-10-20/docs/evidence/2026-10-20/buffers/SHA256SUMS",
+      "entries": 22
+    },
+    {
+      "manifest": "dist/session-compact-2026-10-20/docs/evidence/2026-10-20/compact/SHA256SUMS",
+      "entries": 23
+    },
+    {
+      "manifest": "dist/session-reuse-2026-10-20/docs/evidence/2026-10-20/session-reuse/SHA256SUMS",
+      "entries": 13
+    }
+  ]
+}

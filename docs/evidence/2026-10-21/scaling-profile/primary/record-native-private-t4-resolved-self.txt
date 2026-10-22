@@ -1,0 +1,58 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 975  of event 'cycles'
+# Event count (approx.): 27214403408
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                      
+# ........  ...............  .....................  ............................................................................................................................
+#
+     2.78%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afb
+     2.36%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560e8e
+     2.24%  fastk-scaling-p  libc.so.6              [.] realloc
+     1.84%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkFileCache>::open
+     1.77%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3ac840
+     1.77%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e55c01c
+     1.63%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e67befd
+     1.62%  fastk-scaling-p  libc.so.6              [.] 0x000000000016e0ba
+     1.61%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e67bcc8
+     1.36%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e6a7526
+     1.20%  fastk-scaling-p  libc.so.6              [.] 0x000000000009672c
+     1.19%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9d3265
+     1.18%  fastk-scaling-p  libc.so.6              [.] malloc
+     1.18%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9bf6e2
+     1.09%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::engine::store::FastKStore>::get_kline_range_prepared
+     1.02%  fastk-scaling-p  [unknown]              [k] 0xffffffff8eaca169
+     1.00%  fastk-scaling-p  libc.so.6              [.] 0x000000000009516b
+     1.00%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560d61
+     0.99%  fastk-scaling-p  libc.so.6              [.] 0x0000000000096565
+     0.95%  fastk-scaling-p  [unknown]              [k] 0xffffffff8eaca23b
+     0.89%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a360
+     0.88%  fastk-scaling-p  fastk-scaling-profile  [.] fastk::store_core::chunk::sparse_index::lookup_window
+     0.84%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a629
+     0.78%  fastk-scaling-p  [unknown]              [k] 0xffffffff8eaca070
+     0.77%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e3a9e71
+     0.69%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a39c
+     0.68%  fastk-scaling-p  fastk-scaling-profile  [.] std::io::default_read_exact::<fastk::store_core::chunk::file::ChunkFile>
+     0.65%  fastk-scaling-p  libc.so.6              [.] 0x0000000000163961
+     0.61%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkRuntime>::get_layout
+     0.61%  fastk-scaling-p  fastk-scaling-profile  [.] fastk::store_core::chunk::kline_reader::upper_bound_via_sparse
+     0.61%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e3aa6c2
+     0.60%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e42eb2e
+     0.60%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e9bf6d3
+     0.59%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a5e6
+     0.59%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e6a5695
+     0.59%  fastk-scaling-p  libc.so.6              [.] 0x00000000000974e3
+     0.59%  fastk-scaling-p  fastk-scaling-profile  [.] alloc::fmt::format::format_inner
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a606
+     0.58%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e67b908
+     0.57%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68f425
+     0.54%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e68a38b
+     0.54%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e849b91
+
+
+#
+# (Tip: Add -I to perf record to sample register values, which will be visible in perf report sample context.)
+#

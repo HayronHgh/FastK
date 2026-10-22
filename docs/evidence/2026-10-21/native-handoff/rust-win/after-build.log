@@ -1,0 +1,12 @@
+     Locking 78 packages to latest compatible versions
+      Adding rustix v1.1.4 (available: v1.1.5)
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling syn v3.0.9
+   Compiling serde_derive v1.0.229
+   Compiling bytemuck_derive v1.12.1
+   Compiling bytemuck v1.25.2
+   Compiling serde v1.0.229
+   Compiling fastk v0.2.0-rc.1 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk)
+   Compiling fastk-read-bench v0.0.0 (C:\Users\a3204\Documents\Codex\2026-10-20\fastk-coding-2026sideproject-db-fastk-fastk\target\native-cast-rust-win\after)
+    Finished `release` profile [optimized] target(s) in 18.94s

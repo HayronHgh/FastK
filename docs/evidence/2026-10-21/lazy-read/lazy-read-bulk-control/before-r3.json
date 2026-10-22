@@ -1,0 +1,748 @@
+{
+  "backend": "fastk",
+  "mode": "cycle",
+  "python_pid": 24672,
+  "samples": [
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 0,
+      "open_ns": 367600,
+      "read_ns": 738600,
+      "close_ns": 23600,
+      "total_ns": 1129800
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 0,
+      "open_ns": 401200,
+      "read_ns": 506500,
+      "close_ns": 22000,
+      "total_ns": 929700
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 0,
+      "open_ns": 238000,
+      "read_ns": 6395800,
+      "close_ns": 130500,
+      "total_ns": 6764300
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 0,
+      "open_ns": 503500,
+      "read_ns": 2698800,
+      "close_ns": 113000,
+      "total_ns": 3315300
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 1,
+      "open_ns": 524900,
+      "read_ns": 493500,
+      "close_ns": 20300,
+      "total_ns": 1038700
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 1,
+      "open_ns": 231100,
+      "read_ns": 405400,
+      "close_ns": 19100,
+      "total_ns": 655600
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 1,
+      "open_ns": 215200,
+      "read_ns": 1922300,
+      "close_ns": 112300,
+      "total_ns": 2249800
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 1,
+      "open_ns": 343900,
+      "read_ns": 5979500,
+      "close_ns": 106500,
+      "total_ns": 6429900
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 2,
+      "open_ns": 547100,
+      "read_ns": 2057700,
+      "close_ns": 90400,
+      "total_ns": 2695200
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 2,
+      "open_ns": 475300,
+      "read_ns": 426300,
+      "close_ns": 18700,
+      "total_ns": 920300
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 2,
+      "open_ns": 326700,
+      "read_ns": 415200,
+      "close_ns": 17800,
+      "total_ns": 759700
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 2,
+      "open_ns": 234300,
+      "read_ns": 5322000,
+      "close_ns": 132900,
+      "total_ns": 5689200
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 3,
+      "open_ns": 429600,
+      "read_ns": 1971800,
+      "close_ns": 91100,
+      "total_ns": 2492500
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 3,
+      "open_ns": 393400,
+      "read_ns": 447900,
+      "close_ns": 18900,
+      "total_ns": 860200
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 3,
+      "open_ns": 216200,
+      "read_ns": 5402800,
+      "close_ns": 124800,
+      "total_ns": 5743800
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 3,
+      "open_ns": 450800,
+      "read_ns": 507100,
+      "close_ns": 21500,
+      "total_ns": 979400
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 4,
+      "open_ns": 241800,
+      "read_ns": 5496500,
+      "close_ns": 108200,
+      "total_ns": 5846500
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 4,
+      "open_ns": 451900,
+      "read_ns": 419900,
+      "close_ns": 19000,
+      "total_ns": 890800
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 4,
+      "open_ns": 230500,
+      "read_ns": 387900,
+      "close_ns": 17800,
+      "total_ns": 636200
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 4,
+      "open_ns": 299100,
+      "read_ns": 2190500,
+      "close_ns": 85800,
+      "total_ns": 2575400
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 5,
+      "open_ns": 349100,
+      "read_ns": 431700,
+      "close_ns": 19400,
+      "total_ns": 800200
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 5,
+      "open_ns": 211600,
+      "read_ns": 4913200,
+      "close_ns": 99200,
+      "total_ns": 5224000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 5,
+      "open_ns": 472400,
+      "read_ns": 2028100,
+      "close_ns": 96500,
+      "total_ns": 2597000
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 5,
+      "open_ns": 475700,
+      "read_ns": 452500,
+      "close_ns": 18800,
+      "total_ns": 947000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 6,
+      "open_ns": 226700,
+      "read_ns": 1764600,
+      "close_ns": 71900,
+      "total_ns": 2063200
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 6,
+      "open_ns": 488800,
+      "read_ns": 5327300,
+      "close_ns": 154600,
+      "total_ns": 5970700
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 6,
+      "open_ns": 439800,
+      "read_ns": 671200,
+      "close_ns": 33800,
+      "total_ns": 1144800
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 6,
+      "open_ns": 290800,
+      "read_ns": 422300,
+      "close_ns": 17200,
+      "total_ns": 730300
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 7,
+      "open_ns": 244500,
+      "read_ns": 580100,
+      "close_ns": 18400,
+      "total_ns": 843000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 7,
+      "open_ns": 228000,
+      "read_ns": 1885900,
+      "close_ns": 85900,
+      "total_ns": 2199800
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 7,
+      "open_ns": 322200,
+      "read_ns": 4936800,
+      "close_ns": 120400,
+      "total_ns": 5379400
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 7,
+      "open_ns": 543100,
+      "read_ns": 462700,
+      "close_ns": 18900,
+      "total_ns": 1024700
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 8,
+      "open_ns": 288300,
+      "read_ns": 4932300,
+      "close_ns": 139800,
+      "total_ns": 5360400
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 8,
+      "open_ns": 494300,
+      "read_ns": 545100,
+      "close_ns": 41000,
+      "total_ns": 1080400
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 8,
+      "open_ns": 335500,
+      "read_ns": 386800,
+      "close_ns": 16900,
+      "total_ns": 739200
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 8,
+      "open_ns": 211600,
+      "read_ns": 1878100,
+      "close_ns": 85900,
+      "total_ns": 2175600
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 9,
+      "open_ns": 422700,
+      "read_ns": 404500,
+      "close_ns": 17800,
+      "total_ns": 845000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 9,
+      "open_ns": 221700,
+      "read_ns": 1843800,
+      "close_ns": 78800,
+      "total_ns": 2144300
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 9,
+      "open_ns": 309300,
+      "read_ns": 5118600,
+      "close_ns": 109900,
+      "total_ns": 5537800
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 9,
+      "open_ns": 516400,
+      "read_ns": 518400,
+      "close_ns": 21000,
+      "total_ns": 1055800
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 10,
+      "open_ns": 231100,
+      "read_ns": 1887500,
+      "close_ns": 85300,
+      "total_ns": 2203900
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 10,
+      "open_ns": 363800,
+      "read_ns": 476600,
+      "close_ns": 19100,
+      "total_ns": 859500
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 10,
+      "open_ns": 213600,
+      "read_ns": 306900,
+      "close_ns": 14900,
+      "total_ns": 535400
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 10,
+      "open_ns": 193800,
+      "read_ns": 5689900,
+      "close_ns": 139800,
+      "total_ns": 6023500
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 11,
+      "open_ns": 470200,
+      "read_ns": 1965000,
+      "close_ns": 91800,
+      "total_ns": 2527000
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 11,
+      "open_ns": 390200,
+      "read_ns": 5490900,
+      "close_ns": 126300,
+      "total_ns": 6007400
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 11,
+      "open_ns": 442000,
+      "read_ns": 592700,
+      "close_ns": 21700,
+      "total_ns": 1056400
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 11,
+      "open_ns": 245800,
+      "read_ns": 401900,
+      "close_ns": 17000,
+      "total_ns": 664700
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 12,
+      "open_ns": 234600,
+      "read_ns": 323300,
+      "close_ns": 15100,
+      "total_ns": 573000
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 12,
+      "open_ns": 234800,
+      "read_ns": 345500,
+      "close_ns": 14700,
+      "total_ns": 595000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 12,
+      "open_ns": 202900,
+      "read_ns": 1791400,
+      "close_ns": 91900,
+      "total_ns": 2086200
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 12,
+      "open_ns": 314600,
+      "read_ns": 5253300,
+      "close_ns": 133800,
+      "total_ns": 5701700
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 13,
+      "open_ns": 422500,
+      "read_ns": 1893800,
+      "close_ns": 91400,
+      "total_ns": 2407700
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 13,
+      "open_ns": 392000,
+      "read_ns": 601600,
+      "close_ns": 21700,
+      "total_ns": 1015300
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 13,
+      "open_ns": 246300,
+      "read_ns": 5304300,
+      "close_ns": 139900,
+      "total_ns": 5690500
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 13,
+      "open_ns": 516100,
+      "read_ns": 468900,
+      "close_ns": 21800,
+      "total_ns": 1006800
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 14,
+      "open_ns": 243300,
+      "read_ns": 440200,
+      "close_ns": 18500,
+      "total_ns": 702000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 14,
+      "open_ns": 215300,
+      "read_ns": 1954900,
+      "close_ns": 89500,
+      "total_ns": 2259700
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 14,
+      "open_ns": 363700,
+      "read_ns": 393800,
+      "close_ns": 18800,
+      "total_ns": 776300
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 14,
+      "open_ns": 244000,
+      "read_ns": 5710700,
+      "close_ns": 142600,
+      "total_ns": 6097300
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 15,
+      "open_ns": 450700,
+      "read_ns": 5365100,
+      "close_ns": 145000,
+      "total_ns": 5960800
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 15,
+      "open_ns": 446600,
+      "read_ns": 642600,
+      "close_ns": 20400,
+      "total_ns": 1109600
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 15,
+      "open_ns": 329700,
+      "read_ns": 2750400,
+      "close_ns": 94000,
+      "total_ns": 3174100
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 15,
+      "open_ns": 460700,
+      "read_ns": 528300,
+      "close_ns": 23600,
+      "total_ns": 1012600
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 16,
+      "open_ns": 245200,
+      "read_ns": 5210400,
+      "close_ns": 134600,
+      "total_ns": 5590200
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 16,
+      "open_ns": 492100,
+      "read_ns": 497500,
+      "close_ns": 22300,
+      "total_ns": 1011900
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 16,
+      "open_ns": 214400,
+      "read_ns": 350100,
+      "close_ns": 15600,
+      "total_ns": 580100
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 16,
+      "open_ns": 305600,
+      "read_ns": 2030300,
+      "close_ns": 77600,
+      "total_ns": 2413500
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 17,
+      "open_ns": 301700,
+      "read_ns": 387800,
+      "close_ns": 17500,
+      "total_ns": 707000
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 17,
+      "open_ns": 206200,
+      "read_ns": 1899200,
+      "close_ns": 79700,
+      "total_ns": 2185100
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 17,
+      "open_ns": 330300,
+      "read_ns": 376700,
+      "close_ns": 18700,
+      "total_ns": 725700
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 17,
+      "open_ns": 243100,
+      "read_ns": 5203700,
+      "close_ns": 180800,
+      "total_ns": 5627600
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 18,
+      "open_ns": 579900,
+      "read_ns": 535600,
+      "close_ns": 19400,
+      "total_ns": 1134900
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 18,
+      "open_ns": 237200,
+      "read_ns": 5252200,
+      "close_ns": 135100,
+      "total_ns": 5624500
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 18,
+      "open_ns": 524200,
+      "read_ns": 1978700,
+      "close_ns": 84700,
+      "total_ns": 2587600
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 18,
+      "open_ns": 393700,
+      "read_ns": 515200,
+      "close_ns": 19000,
+      "total_ns": 927900
+    },
+    {
+      "index": 3,
+      "case": "bulk_scalar",
+      "round": 19,
+      "open_ns": 220600,
+      "read_ns": 1924000,
+      "close_ns": 72300,
+      "total_ns": 2216900
+    },
+    {
+      "index": 1,
+      "case": "medium_kline",
+      "round": 19,
+      "open_ns": 366200,
+      "read_ns": 442600,
+      "close_ns": 18300,
+      "total_ns": 827100
+    },
+    {
+      "index": 2,
+      "case": "bulk_kline",
+      "round": 19,
+      "open_ns": 210900,
+      "read_ns": 4978900,
+      "close_ns": 129100,
+      "total_ns": 5318900
+    },
+    {
+      "index": 0,
+      "case": "small_kline",
+      "round": 19,
+      "open_ns": 517200,
+      "read_ns": 513300,
+      "close_ns": 22000,
+      "total_ns": 1052500
+    }
+  ],
+  "native_sha256": "2fa5cbe91eefabfe21c996e949789fad9ee89b406a784eb95ca66c8ab09a99e7",
+  "all_results_verified": true,
+  "arrow_capacity": 64,
+  "patched_arrow_function_sha256": null,
+  "catalog_policy": "caller_resident",
+  "limits": [
+    "OS cache uncontrolled; a fresh handle is not a cold disk",
+    "Libraries imported before timers; Python process remains resident",
+    "Cycle close includes adapter.close and destruction; validation and output destruction excluded"
+  ],
+  "memory": {
+    "python_pid": 24672,
+    "peak_rss_bytes": 61190144,
+    "peak_private_bytes": 46727168,
+    "private_definition": "Windows private commit; Linux unique resident set (USS)",
+    "sampling_interval_ms": 5,
+    "samples": 502,
+    "peak_process_thread_count": 4,
+    "numeric_library_thread_limits": 1,
+    "scope": "actual worker after bootstrap, includes backend imports and validation; sampled peaks are lower bounds"
+  }
+}

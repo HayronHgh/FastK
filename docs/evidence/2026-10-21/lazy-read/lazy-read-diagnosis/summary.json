@@ -1,0 +1,643 @@
+{
+  "jobs": [
+    {
+      "backend": "fastk",
+      "workload": "cycle-bulk",
+      "version": "before",
+      "process_round": 0,
+      "output": "00-fastk-before-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-replay",
+      "version": "peer",
+      "process_round": 0,
+      "output": "01-arrow-peer-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-local",
+      "version": "before",
+      "process_round": 0,
+      "output": "02-fastk-before-hot-local-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-short",
+      "version": "peer",
+      "process_round": 0,
+      "output": "03-arrow-peer-cycle-short-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "cycle-bulk",
+      "version": "peer",
+      "process_round": 0,
+      "output": "04-arrow-peer-cycle-bulk-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "hot-replay",
+      "version": "before",
+      "process_round": 0,
+      "output": "05-fastk-before-hot-replay-r0.json"
+    },
+    {
+      "backend": "fastk",
+      "workload": "cycle-short",
+      "version": "before",
+      "process_round": 0,
+      "output": "06-fastk-before-cycle-short-r0.json"
+    },
+    {
+      "backend": "arrow",
+      "workload": "hot-local",
+      "version": "peer",
+      "process_round": 0,
+      "output": "07-arrow-peer-hot-local-r0.json"
+    }
+  ],
+  "modules": {
+    "before": {
+      "root": "C:\\Users\\a3204\\Documents\\Codex\\2026-10-20\\fastk-coding-2026sideproject-db-fastk-fastk\\target\\lazy-read-diagnosis\\before-module",
+      "sha256": "2fa5cbe91eefabfe21c996e949789fad9ee89b406a784eb95ca66c8ab09a99e7",
+      "wheel_sha256": "f6705d5b09c71ccd15c62ee6bc6c9380425cdb729fea1b5fea685cbb462b11e5"
+    }
+  },
+  "process_rounds": 1,
+  "results": [
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            143100
+          ],
+          "median_ns": 143100,
+          "p95_ns": 217380.0,
+          "p99_ns": 231956.0
+        },
+        "read_ns": {
+          "process_medians": [
+            12463100
+          ],
+          "median_ns": 12463100,
+          "p95_ns": 13854560.0,
+          "p99_ns": 14037312.0
+        },
+        "close_ns": {
+          "process_medians": [
+            2339900
+          ],
+          "median_ns": 2339900,
+          "p95_ns": 2434100.0,
+          "p99_ns": 2452740.0
+        },
+        "total_ns": {
+          "process_medians": [
+            14945100
+          ],
+          "median_ns": 14945100,
+          "p95_ns": 16464300.0,
+          "p99_ns": 16713660.0
+        }
+      },
+      "peak_private": [
+        59228160
+      ],
+      "peak_rss": [
+        100442112
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            210100
+          ],
+          "median_ns": 210100,
+          "p95_ns": 231420.0,
+          "p99_ns": 232684.0
+        },
+        "read_ns": {
+          "process_medians": [
+            6022700
+          ],
+          "median_ns": 6022700,
+          "p95_ns": 6564400.0,
+          "p99_ns": 6636720.0
+        },
+        "close_ns": {
+          "process_medians": [
+            664400
+          ],
+          "median_ns": 664400,
+          "p95_ns": 984560.0,
+          "p99_ns": 992592.0
+        },
+        "total_ns": {
+          "process_medians": [
+            7092300
+          ],
+          "median_ns": 7092300,
+          "p95_ns": 7647240.0,
+          "p99_ns": 7731208.0
+        }
+      },
+      "peak_private": [
+        59228160
+      ],
+      "peak_rss": [
+        100442112
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            160300
+          ],
+          "median_ns": 160300,
+          "p95_ns": 220740.0,
+          "p99_ns": 221108.0
+        },
+        "read_ns": {
+          "process_medians": [
+            728400
+          ],
+          "median_ns": 728400,
+          "p95_ns": 1571499.9999999998,
+          "p99_ns": 1710140.0
+        },
+        "close_ns": {
+          "process_medians": [
+            63700
+          ],
+          "median_ns": 63700,
+          "p95_ns": 69560.0,
+          "p99_ns": 70152.0
+        },
+        "total_ns": {
+          "process_medians": [
+            955300
+          ],
+          "median_ns": 955300,
+          "p95_ns": 1859839.9999999998,
+          "p99_ns": 1999168.0
+        }
+      },
+      "peak_private": [
+        59228160
+      ],
+      "peak_rss": [
+        100442112
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            197800
+          ],
+          "median_ns": 197800,
+          "p95_ns": 228520.0,
+          "p99_ns": 233624.0
+        },
+        "read_ns": {
+          "process_medians": [
+            553600
+          ],
+          "median_ns": 553600,
+          "p95_ns": 949820.0,
+          "p99_ns": 987004.0
+        },
+        "close_ns": {
+          "process_medians": [
+            42500
+          ],
+          "median_ns": 42500,
+          "p95_ns": 63239.99999999999,
+          "p99_ns": 67048.0
+        },
+        "total_ns": {
+          "process_medians": [
+            792800
+          ],
+          "median_ns": 792800,
+          "p95_ns": 1240100.0,
+          "p99_ns": 1287380.0
+        }
+      },
+      "peak_private": [
+        59228160
+      ],
+      "peak_rss": [
+        100442112
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            142500.0
+          ],
+          "median_ns": 142500.0,
+          "p95_ns": 157855.0,
+          "p99_ns": 192768.00000000003
+        },
+        "read_ns": {
+          "process_medians": [
+            466500.0
+          ],
+          "median_ns": 466500.0,
+          "p95_ns": 588740.0,
+          "p99_ns": 686931.0000000002
+        },
+        "close_ns": {
+          "process_medians": [
+            35700.0
+          ],
+          "median_ns": 35700.0,
+          "p95_ns": 57229.99999999997,
+          "p99_ns": 89855.00000000001
+        },
+        "total_ns": {
+          "process_medians": [
+            646350.0
+          ],
+          "median_ns": 646350.0,
+          "p95_ns": 804294.9999999999,
+          "p99_ns": 929497.0
+        }
+      },
+      "peak_private": [
+        41308160
+      ],
+      "peak_rss": [
+        63631360
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            13900.0
+          ],
+          "median_ns": 13900.0,
+          "p95_ns": 22000.0,
+          "p99_ns": 24913.00000000001
+        }
+      },
+      "peak_private": [
+        44036096
+      ],
+      "peak_rss": [
+        124108800
+      ]
+    },
+    {
+      "backend": "arrow",
+      "version": "peer",
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            17500.0
+          ],
+          "median_ns": 17500.0,
+          "p95_ns": 19900.0,
+          "p99_ns": 23371.000000000004
+        }
+      },
+      "peak_private": [
+        44130304
+      ],
+      "peak_rss": [
+        125505536
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "bulk_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            202900
+          ],
+          "median_ns": 202900,
+          "p95_ns": 276620.0,
+          "p99_ns": 287644.0
+        },
+        "read_ns": {
+          "process_medians": [
+            5108600
+          ],
+          "median_ns": 5108600,
+          "p95_ns": 5714380.0,
+          "p99_ns": 5758236.0
+        },
+        "close_ns": {
+          "process_medians": [
+            122600
+          ],
+          "median_ns": 122600,
+          "p95_ns": 152900.0,
+          "p99_ns": 158820.0
+        },
+        "total_ns": {
+          "process_medians": [
+            5434100
+          ],
+          "median_ns": 5434100,
+          "p95_ns": 6096880.0,
+          "p99_ns": 6140176.0
+        }
+      },
+      "peak_private": [
+        46895104
+      ],
+      "peak_rss": [
+        61403136
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "bulk_scalar",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            408800
+          ],
+          "median_ns": 408800,
+          "p95_ns": 454940.0,
+          "p99_ns": 458588.0
+        },
+        "read_ns": {
+          "process_medians": [
+            1890400
+          ],
+          "median_ns": 1890400,
+          "p95_ns": 2615580.0,
+          "p99_ns": 2669276.0
+        },
+        "close_ns": {
+          "process_medians": [
+            81800
+          ],
+          "median_ns": 81800,
+          "p95_ns": 152400.0,
+          "p99_ns": 166160.0
+        },
+        "total_ns": {
+          "process_medians": [
+            2410700
+          ],
+          "median_ns": 2410700,
+          "p95_ns": 3175380.0,
+          "p99_ns": 3284516.0
+        }
+      },
+      "peak_private": [
+        46895104
+      ],
+      "peak_rss": [
+        61403136
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "medium_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            217600
+          ],
+          "median_ns": 217600,
+          "p95_ns": 456140.0,
+          "p99_ns": 476828.0
+        },
+        "read_ns": {
+          "process_medians": [
+            415300
+          ],
+          "median_ns": 415300,
+          "p95_ns": 668520.0,
+          "p99_ns": 705624.0
+        },
+        "close_ns": {
+          "process_medians": [
+            16500
+          ],
+          "median_ns": 16500,
+          "p95_ns": 22840.0,
+          "p99_ns": 24008.0
+        },
+        "total_ns": {
+          "process_medians": [
+            649400
+          ],
+          "median_ns": 649400,
+          "p95_ns": 1069920.0,
+          "p99_ns": 1087504.0
+        }
+      },
+      "peak_private": [
+        46895104
+      ],
+      "peak_rss": [
+        61403136
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-bulk",
+      "case": "small_kline",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            343500
+          ],
+          "median_ns": 343500,
+          "p95_ns": 478180.0,
+          "p99_ns": 481156.0
+        },
+        "read_ns": {
+          "process_medians": [
+            386600
+          ],
+          "median_ns": 386600,
+          "p95_ns": 422980.0,
+          "p99_ns": 427876.0
+        },
+        "close_ns": {
+          "process_medians": [
+            17300
+          ],
+          "median_ns": 17300,
+          "p95_ns": 18540.0,
+          "p99_ns": 18748.0
+        },
+        "total_ns": {
+          "process_medians": [
+            737900
+          ],
+          "median_ns": 737900,
+          "p95_ns": 904960.0,
+          "p99_ns": 908752.0
+        }
+      },
+      "peak_private": [
+        46895104
+      ],
+      "peak_rss": [
+        61403136
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "cycle-short",
+      "case": "short",
+      "phases": {
+        "open_ns": {
+          "process_medians": [
+            196100.0
+          ],
+          "median_ns": 196100.0,
+          "p95_ns": 251355.0,
+          "p99_ns": 322372.0000000001
+        },
+        "read_ns": {
+          "process_medians": [
+            295400.0
+          ],
+          "median_ns": 295400.0,
+          "p95_ns": 369894.99999999994,
+          "p99_ns": 440923.00000000006
+        },
+        "close_ns": {
+          "process_medians": [
+            14400.0
+          ],
+          "median_ns": 14400.0,
+          "p95_ns": 17154.999999999996,
+          "p99_ns": 22000.0
+        },
+        "total_ns": {
+          "process_medians": [
+            507350.0
+          ],
+          "median_ns": 507350.0,
+          "p95_ns": 633795.0,
+          "p99_ns": 743158.0000000003
+        }
+      },
+      "peak_private": [
+        27676672
+      ],
+      "peak_rss": [
+        41877504
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "hot-local",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            6900.0
+          ],
+          "median_ns": 6900.0,
+          "p95_ns": 7400.0,
+          "p99_ns": 10500.0
+        }
+      },
+      "peak_private": [
+        27418624
+      ],
+      "peak_rss": [
+        42754048
+      ]
+    },
+    {
+      "backend": "fastk",
+      "version": "before",
+      "workload": "hot-replay",
+      "case": "short",
+      "phases": {
+        "read_ns": {
+          "process_medians": [
+            67250.0
+          ],
+          "median_ns": 67250.0,
+          "p95_ns": 87100.0,
+          "p99_ns": 116088.0000000001
+        }
+      },
+      "peak_private": [
+        27598848
+      ],
+      "peak_rss": [
+        42983424
+      ]
+    }
+  ],
+  "verified_timed_outputs": 8620,
+  "all_results_verified": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "dependencies": {
+      "numpy": "2.3.5",
+      "duckdb": "1.5.6",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2"
+    }
+  },
+  "source_sha256": {
+    "external-tests/read_lifecycle/__init__.py": "2378f3ad05fc85cd65d9a216b76b9b19df89e441cc90b08906d7246b00b435a2",
+    "external-tests/read_lifecycle/run.py": "a05bfc2f7d0d3d3226e1599531ffc57030401d44801dd213efbed31c4ec21715",
+    "external-tests/read_lifecycle/worker.py": "883da1bae4186fcdc38c2f3f7b6d9ed4bb01ae95bdb0d30653464352e5fa0d7e",
+    "external-tests/fastk_bench/__init__.py": "63ec6f82e47686664dc049c21e5b96458526775261f16e3900970759b5780b4f",
+    "external-tests/fastk_bench/backends.py": "0465c26b50ba5641a417d9a5f3d687ede97c5961fd9c455a0ececaf34364513b",
+    "external-tests/fastk_bench/batches.py": "bf74477ab4bdd6f0f7831d4cedff968dfd49244a0d61e169257f2994e930827f",
+    "external-tests/fastk_bench/data.py": "4aadd2b4b3801fc7e54a74721e9287ca6b9b52b0f0897e28d6b30da335c9799f",
+    "external-tests/fastk_bench/legacy.py": "6a4fbfbe72a8830c952e9c063410c02d35c7927c51d307910736a775f07e4327",
+    "external-tests/fastk_bench/matrix_worker.py": "07238506e86908f1946878a2f9c07415d47687ce9484dbd87c34e0ef20cf3646",
+    "external-tests/fastk_bench/process.py": "5c57ff3390327f09204d8f2251f0062ab2e39bcfbfe58abe100d4a667022852d",
+    "external-tests/fastk_bench/worker.py": "9cf39ec80d1550ececc1811512a80b4d8ca7f4958a6a765b43384ce44dbf5f2e"
+  }
+}

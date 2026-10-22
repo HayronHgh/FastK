@@ -1,0 +1,58 @@
+# Kernel-only nearest text symbol mapping from same-boot /proc/kallsyms.
+# Original perf report remains unchanged.
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 38055476088
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                                                                                                              
+# ........  ...............  .....................  ....................................................................................................................................................................................................................
+#
+     3.83%  fastk-scaling-p  [unknown]              [k] __pv_queued_spin_lock_slowpath+0x185 (raw 0xffffffff8f3ab265)
+     3.05%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0x8b (raw 0xffffffff8ead0afb)
+     2.29%  fastk-scaling-p  libc.so.6              [.] 0x000000000009672c
+     2.26%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkFileCache>::open
+     2.26%  fastk-scaling-p  [unknown]              [k] filemap_get_read_batch+0xdc (raw 0xffffffff8e55c01c)
+     1.82%  fastk-scaling-p  libc.so.6              [.] realloc
+     1.75%  fastk-scaling-p  [unknown]              [k] __raw_callee_save___pv_queued_spin_unlock+0x14 (raw 0xffffffff8f3aae04)
+     1.72%  fastk-scaling-p  libc.so.6              [.] 0x0000000000096565
+     1.64%  fastk-scaling-p  [unknown]              [k] filemap_read+0x38e (raw 0xffffffff8e560e8e)
+     1.49%  fastk-scaling-p  [unknown]              [k] syscall_trace_enter+0xa2 (raw 0xffffffff8e3aa6c2)
+     1.46%  fastk-scaling-p  libc.so.6              [.] 0x000000000009516b
+     1.32%  fastk-scaling-p  [unknown]              [k] lockref_put_return+0x30 (raw 0xffffffff8eaca070)
+     1.24%  fastk-scaling-p  [unknown]              [k] srso_safe_ret+0x0 (raw 0xffffffff8f3ac840)
+     1.13%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::engine::store::FastKStore>::load_kline_meta
+     1.08%  fastk-scaling-p  libc.so.6              [.] 0x00000000000858d1
+     1.02%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::engine::store::FastKStore>::get_kline_range_prepared
+     0.97%  fastk-scaling-p  fastk-scaling-profile  [.] fastk::store_core::chunk::sparse_index::lookup_window
+     0.96%  fastk-scaling-p  [unknown]              [k] _raw_spin_lock+0x1b (raw 0xffffffff8f3aac0b)
+     0.94%  fastk-scaling-p  [unknown]              [k] ovl_open_realfile+0x59 (raw 0xffffffff8e84e619)
+     0.87%  fastk-scaling-p  [unknown]              [k] inode_permission+0x69 (raw 0xffffffff8e68a629)
+     0.84%  fastk-scaling-p  [unknown]              [k] fdget+0xa6 (raw 0xffffffff8e6a7526)
+     0.84%  fastk-scaling-p  [unknown]              [k] __d_lookup_rcu+0x3c (raw 0xffffffff8e69f7ac)
+     0.83%  fastk-scaling-p  libc.so.6              [.] malloc
+     0.83%  fastk-scaling-p  [unknown]              [k] __fput+0x187 (raw 0xffffffff8e67beb7)
+     0.82%  fastk-scaling-p  [unknown]              [k] fput+0x28 (raw 0xffffffff8e67bcc8)
+     0.78%  fastk-scaling-p  [unknown]              [k] generic_permission+0x9c (raw 0xffffffff8e68a39c)
+     0.74%  fastk-scaling-p  libc.so.6              [.] 0x00000000000974e3
+     0.73%  fastk-scaling-p  [unknown]              [k] security_inode_permission+0x42 (raw 0xffffffff8e9bf6e2)
+     0.69%  fastk-scaling-p  [unknown]              [k] init_file+0x28 (raw 0xffffffff8e67b908)
+     0.63%  fastk-scaling-p  fastk-scaling-profile  [.] <fastk::store_core::chunk::cache::ChunkRuntime>::get_layout
+     0.62%  fastk-scaling-p  [unknown]              [k] inode_permission+0x26 (raw 0xffffffff8e68a5e6)
+     0.62%  fastk-scaling-p  [unknown]              [k] ovl_open+0xa (raw 0xffffffff8e84f65a)
+     0.59%  fastk-scaling-p  fastk-scaling-profile  [.] std::io::default_read_exact::<fastk::store_core::chunk::file::ChunkFile>
+     0.58%  fastk-scaling-p  [unknown]              [k] selinux_file_alloc_security+0x35 (raw 0xffffffff8e9ca6b5)
+     0.58%  fastk-scaling-p  [unknown]              [k] _copy_to_iter+0x8d (raw 0xffffffff8ead0afd)
+     0.57%  fastk-scaling-p  [unknown]              [k] link_path_walk+0x205 (raw 0xffffffff8e68f425)
+     0.56%  fastk-scaling-p  fastk-scaling-profile  [.] fastk_scaling_profile::read
+     0.53%  fastk-scaling-p  [unknown]              [k] ovl_verify_lowerdata+0x3f (raw 0xffffffff8e847c4f)
+     0.53%  fastk-scaling-p  [unknown]              [k] alloc_fd+0x137 (raw 0xffffffff8e6a7987)
+     0.52%  fastk-scaling-p  [unknown]              [k] __seccomp_filter+0x41 (raw 0xffffffff8e42d9d1)
+
+
+#
+# (Tip: To show IPC for sampling periods use perf record -e '{cycles,instructions}:S' and then browse context)
+#

@@ -80,7 +80,7 @@ pub fn write_chunk<R: FixedRecord>(
     }
 
     let sparse_index_every = options.sparse_index_every.max(1);
-    let sparse_index = sparse_index::build_for_fixed(records, sparse_index_every)?;
+    let sparse_index = sparse_index::sample_validated(records, sparse_index_every)?;
     let index_bytes = sparse_index::encode_entries(&sparse_index);
     let record_bytes_len = records
         .len()

@@ -1,0 +1,18 @@
+Looking in links: /work/target/v02-attribution-wheelhouse
+Processing ./target/v02-attribution-wheelhouse/maturin-1.15.0-py3-none-manylinux_2_12_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/psutil-7.2.2-cp36-abi3-manylinux_2_12_x86_64.whl
+Processing ./target/v02-attribution-wheelhouse/pyarrow-26.0.0-cp312-cp312-manylinux_2_28_x86_64.whl
+Installing collected packages: pyarrow, psutil, numpy, maturin
+Successfully installed maturin-1.15.0 numpy-2.3.5 psutil-7.2.2 pyarrow-26.0.0
+📦 Including license file `LICENSE`
+🍹 Building a mixed python/rust project
+🐍 Found CPython 3.12 at /tmp/shared-native/bin/python
+🔗 Found pyo3 bindings
+   Compiling pyo3-ffi v0.30.1
+   Compiling fastk v0.2.0-rc.1 (/work)
+   Compiling pyo3 v0.30.1
+   Compiling numpy v0.30.0
+   Compiling fastk-native v0.2.0-rc.1 (/work/clients/python-native)
+    Finished `native` profile [optimized] target(s) in 15.92s
+📦 Built wheel for CPython 3.12 to /work/target/shared-reader-before-linux-wheels/fastk_native-0.2.0rc1-cp312-cp312-manylinux_2_34_x86_64.whl

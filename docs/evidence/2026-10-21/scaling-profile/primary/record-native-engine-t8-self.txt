@@ -1,0 +1,30 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 1K of event 'cycles'
+# Event count (approx.): 32782303258
+#
+# Overhead  Command          Shared Object          Symbol                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+# ........  ...............  .....................  .......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+#
+    67.93%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afb
+     4.29%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e55c01c
+     2.20%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560e8e
+     1.94%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3aac0b
+     1.71%  fastk-scaling-p  fastk-scaling-profile  [.] crossbeam_epoch::default::with_handle::<crossbeam_epoch::default::pin::{closure#0}, crossbeam_epoch::guard::Guard>
+     0.97%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0afd
+     0.88%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3aae04
+     0.85%  fastk-scaling-p  [unknown]              [k] 0xffffffff8ead0a7e
+     0.77%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e337301
+     0.67%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e33730d
+     0.66%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e560d61
+     0.60%  fastk-scaling-p  [unknown]              [k] 0xffffffff8e55c008
+     0.59%  fastk-scaling-p  fastk-scaling-profile  [.] <rayon_core::sleep::Sleep>::sleep::<<rayon_core::registry::WorkerThread>::wait_until_cold::{closure#0}>
+     0.52%  fastk-scaling-p  [unknown]              [k] 0xffffffff8f3ac840
+
+
+#
+# (Tip: To record every process run by a user: perf record -u <user>)
+#

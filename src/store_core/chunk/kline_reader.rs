@@ -1,6 +1,6 @@
-use std::fs::File;
+use crate::chunk::file::{ChunkFile as File, ReadSpan};
 use std::io::{Read, Seek, SeekFrom};
-use std::mem;
+use std::mem::{self, MaybeUninit};
 use std::path::Path;
 use std::slice;
 use std::time::Instant;
@@ -69,25 +69,6 @@ pub fn append_range_in_chunk(
         out,
         Some(metrics.as_ref()),
     )
-}
-
-/// Reads the latest `n` rows from a cached chunk.
-pub fn read_tail_in_chunk(
-    runtime: &ChunkRuntime,
-    series_dir: &Path,
-    series_id: u64,
-    chunk: &ChunkMeta,
-    n: usize,
-) -> Result<Vec<KlineRecord>> {
-    if n == 0 {
-        return Ok(Vec::new());
-    }
-
-    let layout = runtime.get_layout(chunk, series_id, series_dir)?;
-    validate_header(&layout.header)?;
-    let mut file = runtime.open_file(chunk, series_id, series_dir)?;
-    let metrics = runtime.metrics();
-    read_tail_in_file_with_metrics(&mut file, &layout, n, Some(metrics.as_ref()))
 }
 
 #[cfg(test)]
@@ -176,6 +157,24 @@ fn append_range_in_file_with_metrics(
     }
 
     if is_short_range(&layout.header, start_ts, end_ts) {
+        if !layout.sparse_index.is_empty() {
+            let first = lookup_window(&layout.header, &layout.sparse_index, start_ts)?;
+            let last = lookup_window(&layout.header, &layout.sparse_index, end_ts)?;
+            if last.0 <= first.1 {
+                // Read adjacent sparse blocks into the output, preserving earlier chunks.
+                let initial_len = out.len();
+                let count = last.1.checked_sub(first.0).ok_or_else(|| {
+                    FastKError::InvalidData("sparse windows are out of order".into())
+                })?;
+                append_record_span(file, &layout.header, first.0, count, out, metrics)?;
+                let rows = &out[initial_len..];
+                let start = lower_bound_in_records(rows, start_ts);
+                let end = upper_bound_in_records(rows, end_ts);
+                out.copy_within(initial_len + start..initial_len + end, initial_len);
+                out.truncate(initial_len + end - start);
+                return Ok(KlineReadPath::ShortRange);
+            }
+        }
         let start_idx = lower_bound_via_sparse(file, layout, start_ts, metrics)?;
         if start_idx >= layout.header.count {
             return Ok(KlineReadPath::ShortRange);
@@ -217,23 +216,6 @@ fn append_range_in_file_with_metrics(
         metrics,
     )?;
     Ok(KlineReadPath::FullScan)
-}
-
-fn read_tail_in_file_with_metrics(
-    file: &mut File,
-    layout: &CachedChunkLayout,
-    n: usize,
-    metrics: Option<&StoreMetrics>,
-) -> Result<Vec<KlineRecord>> {
-    let count = layout.header.count as usize;
-    let start = count.saturating_sub(n) as u64;
-    read_record_span(
-        file,
-        &layout.header,
-        start,
-        layout.header.count - start,
-        metrics,
-    )
 }
 
 fn validate_header(header: &ChunkHeader) -> Result<()> {
@@ -343,33 +325,7 @@ fn lookup_window(
     entries: &[SparseIndexEntry],
     target_ts: i64,
 ) -> Result<(u64, u64)> {
-    if header.count == 0 {
-        return Ok((0, 0));
-    }
-
-    if entries.is_empty() {
-        return Ok((0, header.count));
-    }
-
-    if let Some(anchor) = sparse_index::anchor_for_ts(entries, target_ts) {
-        let anchor_pos = entries
-            .iter()
-            .position(|entry| *entry == anchor)
-            .ok_or_else(|| {
-                FastKError::InvalidData("anchor lookup produced missing entry".to_string())
-            })?;
-        let end_idx = entries
-            .get(anchor_pos + 1)
-            .map(|entry| entry.record_idx)
-            .unwrap_or(header.count);
-        return Ok((anchor.record_idx, end_idx));
-    }
-
-    let first_end = entries
-        .get(1)
-        .map(|entry| entry.record_idx)
-        .unwrap_or(header.count);
-    Ok((0, first_end))
+    sparse_index::lookup_window(header, entries, target_ts)
 }
 
 fn is_short_range(header: &ChunkHeader, start_ts: i64, end_ts: i64) -> bool {
@@ -525,14 +481,11 @@ fn read_record_buffer(
 ) -> Result<Vec<KlineRecord>> {
     debug_assert_eq!(mem::size_of::<KlineRecord>(), KlineRecord::BYTE_SIZE);
 
-    let mut records = Vec::<KlineRecord>::with_capacity(record_count);
+    let mut records = vec![KlineRecord::default(); record_count];
     let buffer = unsafe { slice::from_raw_parts_mut(records.as_mut_ptr() as *mut u8, byte_len) };
     file.read_exact(buffer)?;
     if let Some(metrics) = metrics {
         metrics.record_bytes_read(byte_len);
-    }
-    unsafe {
-        records.set_len(record_count);
     }
     Ok(records)
 }
@@ -548,16 +501,16 @@ fn append_record_buffer(
     debug_assert_eq!(mem::size_of::<KlineRecord>(), KlineRecord::BYTE_SIZE);
 
     let initial_len = out.len();
-    out.reserve(record_count);
+    out.resize(initial_len + record_count, KlineRecord::default());
     let buffer = unsafe {
         slice::from_raw_parts_mut(out.as_mut_ptr().add(initial_len) as *mut u8, byte_len)
     };
-    file.read_exact(buffer)?;
+    if let Err(error) = file.read_exact(buffer) {
+        out.truncate(initial_len);
+        return Err(error.into());
+    }
     if let Some(metrics) = metrics {
         metrics.record_bytes_read(byte_len);
-    }
-    unsafe {
-        out.set_len(initial_len + record_count);
     }
     Ok(())
 }
@@ -595,4 +548,99 @@ fn append_record_buffer(
     let mut records = read_record_buffer(file, byte_len, record_count, metrics)?;
     out.append(&mut records);
     Ok(())
+}
+
+pub(crate) fn plan_range(
+    runtime: &ChunkRuntime,
+    series_dir: &Path,
+    series_id: u64,
+    chunk: &ChunkMeta,
+    start: i64,
+    end: i64,
+) -> Result<ReadSpan> {
+    let layout = runtime.get_layout(chunk, series_id, series_dir)?;
+    validate_header(&layout.header)?;
+    let mut file = runtime.open_file(chunk, series_id, series_dir)?;
+    let first = if start <= layout.header.start_ts {
+        0
+    } else {
+        lower_bound_via_sparse(&mut file, &layout, start, Some(&runtime.metrics()))?
+    };
+    let last = if end >= layout.header.end_ts {
+        layout.header.count
+    } else {
+        upper_bound_via_sparse(&mut file, &layout, end, Some(&runtime.metrics()))?
+    };
+    let offset = first
+        .checked_mul(layout.header.record_size as u64)
+        .and_then(|offset| offset.checked_add(layout.header.header_size as u64))
+        .ok_or_else(|| FastKError::InvalidData("record offset overflow".into()))?;
+    let rows = usize::try_from(last.saturating_sub(first))
+        .map_err(|_| FastKError::InvalidData("record count exceeds address space".into()))?;
+    Ok(ReadSpan { file, offset, rows })
+}
+
+pub(crate) fn read_planned(
+    span: &ReadSpan,
+    out: &mut [MaybeUninit<KlineRecord>],
+    metrics: &StoreMetrics,
+) -> Result<()> {
+    if out.len() != span.rows {
+        return Err(FastKError::InvalidData(
+            "read destination size mismatch".into(),
+        ));
+    }
+    let mut file = span.file.clone();
+    file.seek(SeekFrom::Start(span.offset))?;
+    let length = out
+        .len()
+        .checked_mul(KlineRecord::BYTE_SIZE)
+        .ok_or_else(|| FastKError::InvalidData("read byte length overflow".into()))?;
+    #[cfg(target_endian = "little")]
+    {
+        const {
+            assert!(mem::size_of::<KlineRecord>() == KlineRecord::BYTE_SIZE);
+        }
+        // The destination is MaybeUninit, has no padding, and every i64 bit pattern
+        // is valid. No record reference is formed until the exact read succeeds.
+        let bytes = unsafe {
+            slice::from_raw_parts_mut(out.as_mut_ptr().cast::<MaybeUninit<u8>>(), length)
+        };
+        file.read_exact_uninit(bytes)?;
+    }
+    #[cfg(not(target_endian = "little"))]
+    {
+        let mut bytes = vec![0u8; length];
+        file.read_exact(&mut bytes)?;
+        for (record, bytes) in out
+            .iter_mut()
+            .zip(bytes.chunks_exact(KlineRecord::BYTE_SIZE))
+        {
+            record.write(KlineRecord::from_le_bytes(bytes.try_into().unwrap()));
+        }
+    }
+    metrics.record_bytes_read(length);
+    Ok(())
+}
+
+pub(crate) fn plan_tail(
+    runtime: &ChunkRuntime,
+    series_dir: &Path,
+    series_id: u64,
+    chunk: &ChunkMeta,
+    take: usize,
+) -> Result<ReadSpan> {
+    let layout = runtime.get_layout(chunk, series_id, series_dir)?;
+    validate_header(&layout.header)?;
+    let rows = take.min(layout.header.count as usize);
+    let first = layout.header.count - rows as u64;
+    let offset = first
+        .checked_mul(layout.header.record_size as u64)
+        .and_then(|offset| offset.checked_add(layout.header.header_size as u64))
+        .ok_or_else(|| FastKError::InvalidData("tail offset overflow".into()))?;
+    Ok(ReadSpan {
+        file: runtime.open_file(chunk, series_id, series_dir)?,
+        offset,
+        rows,
+    })
 }

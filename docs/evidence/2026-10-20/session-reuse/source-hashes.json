@@ -1,0 +1,15 @@
+{
+  "examples/cli/fastk_bridge.rs": "34a4e060702e337f6aa0809db438648e87774d34e00f77e3c1f829c36390d553",
+  "examples/cli/session_transport.rs": "512187767dc99f6e6b818acc72eb9e73c38a7d04c140b78bac19180ecd3a3b76",
+  "clients/python/src/fastk_client/client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+  "clients/python/src/fastk_client/_session.py": "ce1042d3b93a0ceba28a43726b5c683d385889b474f6b7e661cbaa3a1b57d936",
+  "external-tests/test_session.py": "a40c82620ae909e553f4456abbd343dc668fdd7b5ba878531aaf8fbf4ed1916b",
+  "external-tests/benchmark_session.py": "104b58e5f44c72b6cafa3f2196e25cf623e7b49ed8055d5d34f5429fb68cf623",
+  "external-tests/fixtures/session_worker.py": "2da459af4d717f583b8a85d8282516d74a74e60b229a6c7a72e1df0ef8857ab8",
+  "external-tests/fixtures/session_lock.py": "062245159d227c03553cda7565e877f14e6d5ff935082a3cc88facd0fa055769",
+  "external-tests/smoke_installed.py": "63fb142afc3b233224684aa4fffc1acf0241508b600c9c72f4063302e786afb0",
+  "external-tests/prepare_bridge_cost_probe.py": "cb2d9f84ef1707007b476045f268599a952f3fcb62dd200e7200e9240f19c0c2",
+  "docs/SESSION_TRANSPORT.md": "9b53ec1b79d2b48093d4006cc9ab4655c7b98375755b004726810980dfc555cf",
+  "docs/SESSION_REUSE_RESULTS.md": "f4250aadfeacf3c0b22f462e0d819a7f5029e183c0471650a81141b7838077c4",
+  ".github/workflows/ci.yml": "2c9387ef44b42c3cf4e94aed026e5a47691788d1ad610713f216e4816410a884"
+}

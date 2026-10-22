@@ -9,13 +9,17 @@ on:
 jobs:
   rust:
     name: Rust
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@1.97.1
         with:
           components: rustfmt
 
@@ -26,4 +30,79 @@ jobs:
         run: cargo check --examples
 
       - name: Test
-        run: cargo test
+        run: |
+          cargo test --locked --features fault-injection
+          cargo test --locked --example fastk_bridge
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Client transport tests
+        shell: bash
+        run: PYTHONPATH=clients/python/src python -m unittest discover -s external-tests -p test_client.py
+
+      - name: Python formatting and static checks
+        run: |
+          python -m pip install ruff==0.17.1
+          python -m ruff check clients/python/src scripts/build_python_wheel.py scripts/package_release.py scripts/smoke_install.py scripts/export_benchmark_evidence.py external-tests
+          python -m ruff format --check clients/python/src scripts/build_python_wheel.py scripts/package_release.py scripts/smoke_install.py scripts/export_benchmark_evidence.py external-tests
+
+      - name: Build standalone bridge
+        run: cargo build --locked --release --example fastk_bridge --example fastk_admin
+
+      - name: Client black-box integration
+        shell: bash
+        run: |
+          SUFFIX=""
+          if [ "$RUNNER_OS" = "Windows" ]; then SUFFIX=".exe"; fi
+          export FASTK_BRIDGE_BIN="$PWD/target/release/examples/fastk_bridge$SUFFIX"
+          export PYTHONPATH=clients/python/src
+          python -m unittest discover -s external-tests -p test_client.py
+          python -m unittest discover -s external-tests -p test_session.py
+
+  native:
+    name: Native Python ${{ matrix.python }} / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-latest]
+        python: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@1.97.1
+        with:
+          components: rustfmt, clippy
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install pinned test and build environment
+        run: python -m pip install -r external-tests/requirements-native.lock
+      - name: Build and install native module
+        shell: bash
+        run: |
+          python scripts/build_native_wheel.py --output target/native-wheels
+          python -m pip install --no-deps target/native-wheels/*.whl
+      - name: Native public contracts
+        run: |
+          python -m unittest discover -s external-tests -p test_native.py -v
+          python -m unittest discover -s external-tests -p test_month_consumer.py -v
+          python -m unittest discover -s external-tests -p test_engine.py -v
+      - name: All five adapters with common NumPy output
+        run: python external-tests/run_benchmarks.py --root target/numpy-smoke --profile smoke --rounds 1 --short-ops 35 --full-scans 1
+      - name: Offline native use outside the checkout
+        shell: bash
+        run: |
+          python -m pip download --only-binary=:all: --no-deps numpy==2.3.5 -d target/native-wheelhouse
+          WHEEL=$(find target/native-wheels -name '*.whl' | head -1)
+          python scripts/smoke_native_install.py --wheel "$WHEEL" --wheelhouse target/native-wheelhouse
+      - name: Native source checks
+        run: |
+          cargo fmt --check
+          python -m ruff check clients/python-native scripts/build_native_wheel.py scripts/smoke_native_install.py external-tests
+          python -m ruff format --check clients/python-native scripts/build_native_wheel.py scripts/smoke_native_install.py external-tests
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-${{ matrix.os }}-${{ matrix.python }}
+          path: target/native-wheels/*.whl

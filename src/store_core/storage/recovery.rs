@@ -10,10 +10,7 @@ use crate::engine::Catalog;
 use crate::error::{FastKError, Result};
 use crate::index::{ValueIndexEntry, ZoneMapEntry};
 use crate::storage::{fs as storage_fs, manifest, path};
-use crate::types::{
-    BboRecord, BookDeltaRecord, ChunkMeta, ChunkState, PartitionPolicy, RecordType,
-    ScalarSeriesKey, SeriesMeta, SidecarMeta, TradeRecord,
-};
+use crate::types::{ChunkMeta, ChunkState, RecordType, ScalarSeriesKey, SeriesMeta, SidecarMeta};
 
 const RECOVERY_MARKER_FILE: &str = ".fastk.recovery.pending";
 
@@ -113,7 +110,11 @@ impl RecoveryMarkerGuard {
     pub fn arm(root: &Path) -> Result<Self> {
         storage_fs::ensure_dir(root)?;
         let path = recovery_marker_path(root);
-        fs::write(&path, format!("dirty_since={}\n", now_timestamp_ms()))?;
+        storage_fs::atomic_write_replace(&path, |writer| {
+            use std::io::Write;
+            writeln!(writer, "dirty_since={}", now_timestamp_ms())?;
+            Ok(())
+        })?;
         Ok(Self { path })
     }
 
@@ -127,6 +128,30 @@ pub fn startup_recover(root: &Path) -> Result<RecoveryReport> {
 }
 
 pub fn startup_recover_with_options(
+    root: &Path,
+    options: RecoveryOptions,
+) -> Result<RecoveryReport> {
+    if !root.exists() {
+        return Ok(RecoveryReport {
+            dry_run: options.dry_run,
+            ..RecoveryReport::default()
+        });
+    }
+    if options.dry_run {
+        let _lock = super::lock::StoreReadLock::acquire(root)?;
+        return startup_recover_locked(root, options);
+    }
+    let _lock = super::lock::StoreWriteLock::acquire(root)?;
+    manifest::invalidate_root(root);
+    startup_recover_locked(root, options)
+}
+
+/// Inspects pending recovery under a shared lock without clearing its marker.
+pub fn preview_recovery(root: &Path) -> Result<RecoveryReport> {
+    startup_recover_with_options(root, RecoveryOptions { dry_run: true })
+}
+
+pub(crate) fn startup_recover_locked(
     root: &Path,
     options: RecoveryOptions,
 ) -> Result<RecoveryReport> {
@@ -332,7 +357,13 @@ pub fn choose_surviving_chunk_for_overlap(chunks: &[ChunkMeta]) -> OverlapResolu
 }
 
 /// Rebuilds one series manifest from chunk files currently present on disk.
+#[cfg(test)]
 pub fn rebuild_manifest_from_fs(root: &Path, series_dir: &Path) -> Result<SeriesMeta> {
+    let _lock = super::lock::StoreWriteLock::acquire(root)?;
+    rebuild_manifest_locked(root, series_dir)
+}
+
+fn rebuild_manifest_locked(root: &Path, series_dir: &Path) -> Result<SeriesMeta> {
     let chunks = scan_chunk_files(series_dir)?;
     if chunks.is_empty() {
         return Err(FastKError::NotFound(format!(
@@ -361,6 +392,8 @@ fn rebuild_manifest_preview(root: &Path, series_dir: &Path) -> Result<SeriesMeta
 
 /// Rebuilds every manifest reachable from `root`.
 pub fn rebuild_all_manifests_from_fs(root: &Path) -> Result<Vec<PathBuf>> {
+    let _lock = super::lock::StoreWriteLock::acquire(root)?;
+    manifest::invalidate_root(root);
     let series_root = path::series_root(root);
     if !series_root.exists() {
         return Ok(Vec::new());
@@ -419,7 +452,7 @@ fn recovery_marker_path(root: &Path) -> PathBuf {
 
 fn clear_recovery_marker_path(path: &Path) -> Result<()> {
     match fs::remove_file(path) {
-        Ok(()) => Ok(()),
+        Ok(()) => storage_fs::sync_parent_dir(path.parent().expect("marker has parent")),
         Err(err) if err.kind() == std::io::ErrorKind::NotFound => Ok(()),
         Err(err) => Err(FastKError::Io(err)),
     }
@@ -442,7 +475,9 @@ fn recover_series_dir(
         return Ok(());
     }
 
-    let mut meta = match manifest::load_series_meta(series_dir) {
+    let mut meta = match manifest::load_series_meta_shared_mode(series_dir, options.dry_run)
+        .map(|report| (*report.meta).clone())
+    {
         Ok(meta) => meta,
         Err(_) => {
             report.rebuilt_manifests += 1;
@@ -450,7 +485,7 @@ fn recover_series_dir(
             if options.dry_run {
                 rebuild_manifest_preview(root, series_dir)?
             } else {
-                rebuild_manifest_from_fs(root, series_dir)?
+                rebuild_manifest_locked(root, series_dir)?
             }
         }
     };
@@ -484,6 +519,16 @@ fn recover_series_dir(
             meta.chunks.push(candidate);
             changed = true;
             report.adopted_chunks += 1;
+            continue;
+        }
+
+        // Committed metadata is authoritative over older/equal generations.
+        // Deferred GC can leave a larger old chunk; adopting it would resurrect
+        // rows intentionally removed by a newer committed replacement.
+        if overlap_indices
+            .iter()
+            .any(|index| meta.chunks[*index].generation >= candidate.generation)
+        {
             continue;
         }
 
@@ -565,7 +610,7 @@ fn validate_series_dir(
         });
     }
 
-    let meta = manifest::load_series_meta(series_dir)?;
+    let meta = manifest::load_series_meta_shared_mode(series_dir, true)?.meta;
     let mut missing_chunks = Vec::new();
     let mut missing_sidecars = Vec::new();
     let mut checksum_mismatches = Vec::new();
@@ -938,37 +983,35 @@ fn build_series_meta_from_chunks(
         }
     };
 
-    let mut meta = match record_type {
-        RecordType::Kline => Catalog::build_kline_meta(&symbol, &name, header.timeframe_ms, 1, 1),
-        RecordType::Scalar => Catalog::build_scalar_meta(
+    let preserved = manifest::load_series_meta_shared_mode(series_dir, true).ok();
+    let mut meta = if let Some(existing) = preserved {
+        let existing = existing.meta;
+        if existing.record_type != record_type
+            || existing.schema_id != header.schema_id
+            || existing.timeframe_ms != header.timeframe_ms
+            || existing.symbol != symbol
+            || existing.category != category
+            || existing.name != name
+        {
+            return Err(FastKError::InvalidData(
+                "existing semantic metadata does not match chunk identity".into(),
+            ));
+        }
+        (*existing).clone()
+    } else if record_type == RecordType::Scalar {
+        // Scalar layout has unit scales; its namespace and timeframe are present
+        // in the path/header. Other record types have caller-specific metadata
+        // (e.g. kline scales) which cannot be inferred from existing headers.
+        Catalog::build_scalar_meta(
             &ScalarSeriesKey {
                 symbol: symbol.clone(),
                 category: category.clone(),
                 name: name.clone(),
             },
             header.timeframe_ms,
-        ),
-        RecordType::Trade => Catalog::build_fixed_meta::<TradeRecord>(
-            &symbol,
-            &category,
-            &name,
-            header.timeframe_ms,
-            &PartitionPolicy::hour(),
-        ),
-        RecordType::Bbo => Catalog::build_fixed_meta::<BboRecord>(
-            &symbol,
-            &category,
-            &name,
-            header.timeframe_ms,
-            &PartitionPolicy::day(),
-        ),
-        RecordType::BookDelta => Catalog::build_fixed_meta::<BookDeltaRecord>(
-            &symbol,
-            &category,
-            &name,
-            header.timeframe_ms,
-            &PartitionPolicy::hour(),
-        ),
+        )
+    } else {
+        return Err(FastKError::InvalidData("cannot reconstruct semantic metadata from chunk headers; restore the original series.meta backup before recovery (scales/partition policy must not be guessed)".into()));
     };
     meta.category = category;
     meta.record_size = header.record_size;
@@ -983,9 +1026,8 @@ fn build_series_meta_from_chunks(
         .rev()
         .find(|chunk| chunk.state == ChunkState::Active)
         .map(|chunk| chunk.chunk_id);
-    meta.manifest_seq = 1;
+    meta.manifest_seq = meta.manifest_seq.saturating_add(1);
     meta.updated_at = now_timestamp_ms();
-    meta.created_at = meta.updated_at;
     meta.validate()?;
     Ok(meta)
 }

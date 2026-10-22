@@ -1,0 +1,209 @@
+--- production/src/bridge.rs
++++ private-probe/src/bridge.rs
+@@ -246,22 +246,32 @@
+     start_ts: i64,
+     end_ts: i64,
+ ) -> Result<KlineRangeResponse> {
++
++    let started = std::time::Instant::now();
+     let root = root.as_ref();
+     let store = FastKStore::open_read_only(root.to_path_buf())?;
++    let opened = started.elapsed().as_nanos();
+     let catalog = Catalog::read_only(root.to_path_buf());
+     let meta = catalog.load_kline_meta(symbol, timeframe)?;
++    let metadata = started.elapsed().as_nanos();
+     let records = store.get_kline_range(symbol, timeframe, start_ts, end_ts)?;
+-
+-    Ok(KlineRangeResponse {
+-        symbol: symbol.to_string(),
+-        timeframe: timeframe.to_string(),
+-        timeframe_ms: meta.timeframe_ms,
+-        start_ts,
+-        end_ts,
+-        price_scale: meta.price_scale,
+-        volume_scale: meta.volume_scale,
++    let read = started.elapsed().as_nanos();
++    let response = KlineRangeResponse {
++        symbol: symbol.to_string(), timeframe: timeframe.to_string(),
++        timeframe_ms: meta.timeframe_ms, start_ts, end_ts,
++        price_scale: meta.price_scale, volume_scale: meta.volume_scale,
+         records: records.into_iter().map(Into::into).collect(),
+-    })
++    };
++    let converted = started.elapsed().as_nanos();
++    drop(meta); drop(catalog); drop(store);
++    let closed = started.elapsed().as_nanos();
++    eprintln!("FASTK_COST_ENGINE {}", serde_json::json!({
++        "open_ns": opened, "metadata_ns": metadata-opened,
++        "read_ns": read-metadata, "response_ns": converted-read,
++        "close_ns": closed-converted, "total_ns": closed
++    }));
++    Ok(response)
++
+ }
+ 
+ /// Writes kline rows through the existing kline lifecycle.
+--- production/examples/cli/fastk_bridge.rs
++++ private-probe/bridge.rs
+@@ -12,7 +12,11 @@
+ };
+ 
+ fn main() {
+-    if let Err(err) = run() {
++    let main_tick = cost_ticks();
++    let result = run();
++    let end_tick = cost_ticks();
++    eprintln!("FASTK_COST_LIFECYCLE {}", serde_json::json!({"main_tick": main_tick, "end_tick": end_tick}));
++    if let Err(err) = result {
+         if std::env::args().any(|arg| arg == "--error-format=json") {
+             eprintln!(
+                 "{}",
+@@ -39,6 +43,17 @@
+         return Ok(());
+     }
+ 
++    if command == "cost-null" { return Ok(()); }
++    if command == "cost-replay" {
++        let path = args.next().expect("fixture path");
++        let t = std::time::Instant::now();
++        let bytes = fs::read(path)?;
++        let read_ns = t.elapsed().as_nanos();
++        let mut writer = CostWriter { inner: io::stdout().lock(), ns: 0, calls: 0 };
++        writer.write_all(&bytes)?; writer.flush()?;
++        eprintln!("FASTK_COST_REPLAY {}", serde_json::json!({"fixture_read_ns":read_ns,
++            "pipe_write_ns":writer.ns,"write_calls":writer.calls})); return Ok(());
++    }
+     if command == "version" {
+         let remaining: Vec<_> = args.collect();
+         if remaining != ["--json"] {
+@@ -50,6 +65,7 @@
+     }
+ 
+     let options = parse_options(args.collect())?;
++    if command == "cost-loop" { return cost_loop(&options); }
+     match command.as_str() {
+         "read-kline-latest" => {
+             let store = fastk::FastKStore::open_read_only(require_path(&options, "root")?)?;
+@@ -318,16 +334,35 @@
+     Ok(serde_json::from_str(&raw)?)
+ }
+ 
++
++struct CostWriter<W> { inner: W, ns: u128, calls: usize }
++impl<W: Write> Write for CostWriter<W> {
++    fn write(&mut self, bytes: &[u8]) -> io::Result<usize> {
++        let t = std::time::Instant::now();
++        let result = self.inner.write(bytes);
++        self.ns += t.elapsed().as_nanos(); self.calls += 1; result
++    }
++    fn flush(&mut self) -> io::Result<()> {
++        let t = std::time::Instant::now();
++        let result = self.inner.flush(); self.ns += t.elapsed().as_nanos(); result
++    }
++}
+ fn write_json<T: serde::Serialize>(value: &T) -> Result<()> {
+     let stdout = io::stdout();
+-    // Pretty JSON contains many newlines. Buffer above stdout's line writer so
+-    // bulk responses do not issue one OS pipe write per output line.
+-    let mut handle = io::BufWriter::with_capacity(64 * 1024, stdout.lock());
++    let writer = CostWriter { inner: stdout.lock(), ns: 0, calls: 0 };
++    let mut handle = io::BufWriter::with_capacity(64 * 1024, writer);
++    let started = std::time::Instant::now();
+     serde_json::to_writer_pretty(&mut handle, value)?;
+-    handle.write_all(b"\n")?;
+-    handle.flush()?;
++    handle.write_all(b"\n")?; handle.flush()?;
++    let total = started.elapsed().as_nanos();
++    eprintln!("FASTK_COST_JSON {}", serde_json::json!({
++        "encode_and_buffer_ns": total-handle.get_ref().ns,
++        "pipe_write_ns": handle.get_ref().ns, "total_ns": total,
++        "write_calls": handle.get_ref().calls
++    }));
+     Ok(())
+ }
++
+ 
+ fn print_usage() {
+     eprintln!(
+@@ -368,3 +403,38 @@
+     --root <path> --symbol <symbol> --timeframe <tf> --category <category> --name <name>"
+     );
+ }
++
++
++#[link(name = "kernel32")]
++unsafe extern "system" { fn QueryPerformanceCounter(value: *mut i64) -> i32; }
++fn cost_ticks() -> i64 {
++    let mut value = 0;
++    assert_ne!(unsafe { QueryPerformanceCounter(&mut value) }, 0); value
++}
++fn cost_loop(options: &HashMap<String, String>) -> Result<()> {
++    use sha2::{Digest, Sha256};
++    let root = require_path(options, "root")?;
++    let requests: Vec<serde_json::Value> = serde_json::from_slice(
++        &fs::read(require_path(options, "requests")?)?)?;
++    let repeat = require_i64(options, "repeat")?;
++    let t = std::time::Instant::now();
++    let store = fastk::FastKStore::open_read_only(root)?;
++    let open_ns = t.elapsed().as_nanos();
++    let mut samples = Vec::new();
++    for round in 0..repeat {
++        for q in &requests {
++            let t = std::time::Instant::now();
++            let records = store.get_kline_range(q["symbol"].as_str().unwrap(), "1m",
++                q["start_ts"].as_i64().unwrap(), q["end_ts"].as_i64().unwrap())?;
++            let elapsed = t.elapsed().as_nanos();
++            let mut hash = Sha256::new();
++            for r in &records {
++                hash.update(serde_json::to_vec(&[r.ts,r.open,r.high,r.low,r.close,r.volume])?);
++                hash.update(b"\n");
++            }
++            samples.push(serde_json::json!({"round":round,"read_ns":elapsed,
++                "rows":records.len(),"sha256":format!("{:x}",hash.finalize())}));
++        }
++    }
++    write_json(&serde_json::json!({"open_ns":open_ns,"samples":samples}))
++}
+--- production/Cargo.toml
++++ private-probe/Cargo.toml
+@@ -42,39 +42,7 @@
+ 
+ [[example]]
+ name = "fastk_bridge"
+-path = "examples/cli/fastk_bridge.rs"
+-
+-[[example]]
+-name = "fastk_admin"
+-path = "examples/cli/fastk_admin.rs"
+-
+-[[example]]
+-name = "backtest_facade_demo"
+-path = "examples/demos/backtest_facade_demo.rs"
+-
+-[[example]]
+-name = "indicator_series_demo"
+-path = "examples/demos/indicator_series_demo.rs"
+-
+-[[example]]
+-name = "prepare_python_demo_store"
+-path = "examples/demos/prepare_python_demo_store.rs"
+-
+-[[example]]
+-name = "bench_acceptance"
+-path = "examples/benchmarks/bench_acceptance.rs"
+-
+-[[example]]
+-name = "bench_backtest_facade"
+-path = "examples/benchmarks/bench_backtest_facade.rs"
+-
+-[[example]]
+-name = "bench_scalar_sidecars"
+-path = "examples/benchmarks/bench_scalar_sidecars.rs"
+-
+-[[example]]
+-name = "bench_kline_storage_comparison"
+-path = "examples/benchmarks/bench_kline_storage_comparison.rs"
++path = "bridge.rs"
+ 
+ [profile.release]
+ opt-level = 3

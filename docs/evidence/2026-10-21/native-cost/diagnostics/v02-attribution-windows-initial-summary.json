@@ -1,0 +1,140 @@
+{
+  "all_result_jobs_verified": true,
+  "negative_controls_are_not_read_validations": true,
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "native_module_sha256": "979f215482c0c353968076a683018dfec1e64141737a397a740513040456b7d1",
+    "probe_module_sha256": "56940becc21f66396f43cbe60ff0c38b1a37b818566218000fb72b107485ef06",
+    "dependencies": {
+      "fastk-native": "0.2.0rc1",
+      "numpy": "2.3.5",
+      "pyarrow": "26.0.0",
+      "psutil": "7.2.2"
+    },
+    "cpu_count": 24,
+    "affinity": null,
+    "cgroup": {},
+    "bulk_sha256": "3436a7154d6e4f4703120c154bfcaa6bf79a49a04a1859580e5c5fd47c3ba0fe",
+    "short_sha256": "df014a8b574c837b632b2b1f931d80cd070c35c874c9ff63fa8715f178394363",
+    "source_sha256": {
+      "__init__.py": "a7da32aa8a85915bdcf263bce9f0723f8fb9204884c34773bf6054d7846dff46",
+      "probe\\Cargo.lock": "36580d9db2b6ef01ac8e5a85a0d763570d238005794a781cf7b6ba22ab3ca4a0",
+      "probe\\Cargo.toml": "56dbef7a1fc0642125e102736b336d278f97aa27a1cb944578c7bd91760b4dfa",
+      "probe\\src\\lib.rs": "a7f041a8525aeb4360eee9c1645666be7a53f44082d3d7eecfaf43261fe40266",
+      "run.py": "d151655027d043b9e2882b783f29b03946624a636772b078516c3bd2236eeb5d",
+      "verify_probe.py": "365b20a497c90e883a057f70d110b5d191ad84c8e8aeb07f77c1776d47c78791",
+      "worker.py": "b174aaaf295f5a727e05f44cc6891df69fe4d03f638e49a7c0db057a62a7c11a"
+    }
+  },
+  "results": [
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 0,
+      "file": "000-bulk-copy-batch.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 0,
+      "file": "001-bulk-arrow.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 1,
+      "file": "002-bulk-arrow.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 2,
+      "file": "003-bulk-copy-batch.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 0,
+      "file": "004-bulk-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 2,
+      "file": "005-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 1,
+      "file": "006-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 2,
+      "file": "007-bulk-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "probe",
+      "round": 1,
+      "file": "008-bulk-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow-probe",
+      "round": 0,
+      "file": "009-bulk-arrow-probe.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 1,
+      "file": "010-bulk-numpy-copy.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "copy-batch",
+      "round": 1,
+      "file": "011-bulk-copy-batch.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 0,
+      "file": "012-bulk-numpy-copy.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "arrow",
+      "round": 2,
+      "file": "013-bulk-arrow.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 1,
+      "file": "014-bulk-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 0,
+      "file": "015-bulk-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "native",
+      "round": 2,
+      "file": "016-bulk-native.json"
+    },
+    {
+      "mode": "bulk",
+      "route": "numpy-copy",
+      "round": 2,
+      "file": "017-bulk-numpy-copy.json"
+    }
+  ]
+}

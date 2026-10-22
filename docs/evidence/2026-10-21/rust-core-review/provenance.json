@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-21",
+  "kind": "native-core-audit-and-proposal-only",
+  "production_optimization_implemented": false,
+  "source_head": "814c566",
+  "source_state": "existing dirty working tree; hashes identify reviewed production",
+  "product_source_files_unchanged": 59,
+  "production_source_hashes": {
+    "Cargo.toml": "4ae13ca0e427ba84230bf3e2c7ed67cc02c947847fc68f9f288a50e93b5e9da3",
+    "Cargo.lock": "6a1ce917921a1ba9e913005ebb975e9e579e016630f1b97b74e15156903eb001",
+    "src/benchmark.rs": "751f47d7709590bc9c892e2c7cba1d5e0afea27aed6053766b3ded7d86140184",
+    "src/bridge.rs": "4d0adb313e908d401c45fe6859b2a8f277e5ee6392c0af502d0f89c5e8bbd816",
+    "src/error.rs": "e796ce1a79cf21334da749da7633e8c478fa168555478da115075c80919064d9",
+    "src/lib.rs": "2c8f7f21c155e24057d763ce1ad560c86b029bb75fd774c9cc8136b815927a52",
+    "src/metrics.rs": "faab335ac459025e8a23a512e8340b6c01c00f8f99a6d203ae139ccb0e134d15",
+    "src/snapshot.rs": "8932d2594404a0cb7504224d9227b6a2898b226901fc17af01e6949bc0d0249b",
+    "src/control/dataset_registry.rs": "ce45694b9c2d1fd2d7862378ec27cf3a1baf6f561e18a932760758086ce4f239",
+    "src/control/mod.rs": "5423cf98b1a887137d0f5453fab85e2689dd53ca7531c76ac6a8e3107b056fc8",
+    "src/feature/mod.rs": "f8772550fb2499b0f2f25739dbe0a0fa95cf9042db8ab630dce9ade3716e399d",
+    "src/feature/query.rs": "a85095d9c78fb3f091e5a60700e2f78573253b1343794370022b6fa1387250ce",
+    "src/feature/scalar.rs": "eaab9670aaa6419fca8de09104ea377d730686f7b0ae5dddd5c9cef264d6cc8f",
+    "src/kline/mod.rs": "4f69c9baf33612a7dad1937c32dbf01b9909650cb17ce36e799809027da912bd",
+    "src/kline/record.rs": "65d4a74e38c57b54b92da4295abdc7fff6c8705a486a5a2de3ac20f6b1884f68",
+    "src/store_core/mod.rs": "650c1de3897d5761d4729c626eaa5781aaa89f49706164a023cfd73d1e43b18a",
+    "src/types/bbo.rs": "6e4da4a1aeb8724fa9b50e69227525b31716cbf482104fe8653a0f20f2898946",
+    "src/types/book_delta.rs": "39024cc0a61db0f9151fb795da2035bb0b30bf670d9b48ecf861e3d6b33bc96b",
+    "src/types/fixed.rs": "8275000743fd14fd9185c43d313dcf8f218166298114f035167234cd0493e914",
+    "src/types/meta.rs": "623e8543f8c457d9de1702f47a5e051368cc7382c10cc50f2c95d79a21eba0c4",
+    "src/types/mod.rs": "7b0f011c039b57988cad33aa73c1593feb41a02e43aa896ae92a902d9e9016aa",
+    "src/types/trade.rs": "2b1b8fa2d8c429135bc94a290bc7d2d4680fb754c2fd64b938366d8328b6c12b",
+    "src/store_core/chunk/cache.rs": "b7168b06d1a4673dcef043839e439b460a9579dd66cf63434c99971bad9c0c19",
+    "src/store_core/chunk/fixed_reader.rs": "d2d0fd0df5539037470b6c0704071043059658963d1254c7d08aed0dec786bfa",
+    "src/store_core/chunk/fixed_writer.rs": "9069f582c48a83f9cba5cde751bdf22f631ef16cdaa217166f80e52b5ed50062",
+    "src/store_core/chunk/header.rs": "9f2faaafd4782d56bad923074aca50a5782f83980dff27eab58a30117de20f8f",
+    "src/store_core/chunk/kline_reader.rs": "e41f9878d20495e1c1020d46aee92a24ad17d457917283390e5fc2ef51286ca0",
+    "src/store_core/chunk/kline_writer.rs": "b164ad37895e80afb49ffa9c2bcb9e9cf5ffc965c8ef90c152b58ed5c8e4d886",
+    "src/store_core/chunk/mod.rs": "f0a13b6040f2b814e2fd715ada5b5e3ec40eb05426524b5374ca0ba30b1d6156",
+    "src/store_core/chunk/scalar_reader.rs": "863e4a2d2b195d25abd76c121cd55f8b91ba6de7f1702bc627f783e0775e5485",
+    "src/store_core/chunk/scalar_writer.rs": "0c211e4cbc81c67a721e73cedab913998c2f5c6482d2401e7ff222c9169dbff7",
+    "src/store_core/chunk/sparse_index.rs": "ec36251d3e6752f6966c911c03369b897fd9d36634f7da7382ab6db82b22f85f",
+    "src/store_core/engine/backtest.rs": "fb61390887d31cfd60713cdd7402de2a1961eaec546559e943dff2eedda4609e",
+    "src/store_core/engine/catalog.rs": "ac67066956e629e953a7f7507c114cf425bd767e36e1557a76ffad507d9a179a",
+    "src/store_core/engine/compaction.rs": "34565361cbf88284122f604c1ca32fc9b4c370758101e44269b801b5f0b78139",
+    "src/store_core/engine/derived.rs": "ab61391781ee0628819707283c99c6fefe21b84b546efbbeb2ec2366116418a6",
+    "src/store_core/engine/mod.rs": "b8e31f9802e18617b9f1519db630fa3b541692155e4d3475038fe93c6d4c5e0a",
+    "src/store_core/engine/replay.rs": "8de56de6cfc75b5b4f2d1753d13d4206044e95193273177eefce329fef2b0815",
+    "src/store_core/engine/sequence.rs": "df43021ac5f1e2960e67de3458d39ed909479dac0db5e8e5dfac2be49113a6cf",
+    "src/store_core/engine/store.rs": "6bc731083d1ef571d849eedfc60e171d03b614b98b726cf66de9ae56a65e2536",
+    "src/store_core/engine/store_tests.rs": "7b4540b083ae5588d47b8aa2898e2d1311903f74c4406132f945b52b6c2ffcae",
+    "src/store_core/engine/store_writes.rs": "d40d7a8ac09ddf06e04651248cda99b57ebb4094568b9fdd03642b216e47f09a",
+    "src/store_core/index/cache.rs": "f37beea93bf491c24d99e36d252a586fc6c6327fcac969f8a8c68d09b47ff2d3",
+    "src/store_core/index/mod.rs": "ceacbfdadef78ed998adfe62da0f98c3a8f916745d1b68bebe0d81ed4ad1264a",
+    "src/store_core/index/query_engine.rs": "212ea1a14e3b8726ac14d012988d9d2e189403251a4d0a1fb2d6809e34a3bc80",
+    "src/store_core/index/vix.rs": "aa837013815c4a6dcdaf31ff9ce0d850eaacee505632b45d780938d844396002",
+    "src/store_core/index/zmap.rs": "9f105465512dbdccf2d96c8588f7741e02ffc035172cd88a46f797a470948961",
+    "src/store_core/storage/fs.rs": "0ce3967e8b22fa9f4c82da9dcc175f5587c2fd333323595af5aa98a0873c00f3",
+    "src/store_core/storage/lock.rs": "c1ba7d81e46cafa8d48228bae30b419ee2c47a292300462707e017d9b234d780",
+    "src/store_core/storage/manifest.rs": "72fbcf18633dbe123b8ee7b3c00f6e9620bca8962f46672c81d177122e1e69fe",
+    "src/store_core/storage/mod.rs": "7793cf65c5207df0fa00141958c69a29ee14c6bf0cd5cebd767141a413f5b929",
+    "src/store_core/storage/path.rs": "cbdcd90fbec49d0982faaf597d899099f50ad43bda031148cf8542abf2c1158d",
+    "src/store_core/storage/recovery.rs": "a135b5e448cbf68cae82afd8ea58832021bd74f4ff5ba31c428b8a691c777f53",
+    "examples/cli/fastk_admin.rs": "80c5631915d963c6f62538f8b6e67a33bcb2899a305d0bd7c67cba09fdff6fd3",
+    "examples/cli/fastk_bridge.rs": "c38f10fc8002cde0c62ef2119fd527e4fbbda67183975256d4e3cb73c53d6fb6",
+    "examples/cli/session_transport.rs": "476c9e80beaaffa193a0f161ad02b66cbd0ced14ab25827aaa95d55868f9914c",
+    "clients/python/src/fastk_client/client.py": "5d295c8ada61786b0007e4df7e3ed8528588318c2a2d8c8e3dee5a27bcf9376c",
+    "clients/python/src/fastk_client/_session.py": "fbe93fea70124e72b4c13016dfcba01784296590e6e264cee95ad6e7423aa7db",
+    "clients/python/src/fastk_client/__init__.py": "3c2c7eaa544bd3c5089bd950ec830b7eea00c410a99d30e598629da2ad041e28"
+  },
+  "production_bridge_sha256": "56af92b6d64e4e4bd85482e230a70d0cf36e522a93a61f2741b3afa9852489b1",
+  "reproducer_binary_sha256": "4c5883a3f24817f2df391cfae05967414d1f24a2a9a5db0a4181d53be0984226",
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+  "cargo": "cargo 1.97.1 (c980f4866 2026-06-30)",
+  "rustflags": "-C target-feature=+crt-static",
+  "reproducer_release_panic": "unwind",
+  "os": "Windows-11-10.0.26200-SP0",
+  "python_oracle": "3.12.14",
+  "input_manifest_sha256": "7222d5c7f09c8d7e515507aaccc1fef69458bc4d4feb86b3c75feb1e7f4fa9d0",
+  "used_input_parts_sha256_verified": {
+    "S00/2024-01/bars.arrow": "f9cd03e2ad93cc83dc3175b6a3b1c3375f5768e1e27789fa508c718b7ccab7da"
+  },
+  "public_api_concurrent_results": {
+    "shared-run-1.json": {
+      "calls": 16000,
+      "wrong": 15886,
+      "errors": 0
+    },
+    "shared-run-2.json": {
+      "calls": 16000,
+      "wrong": 15859,
+      "errors": 0
+    },
+    "independent.json": {
+      "calls": 16000,
+      "wrong": 0,
+      "errors": 0
+    }
+  },
+  "all_saved_serial_reference_fields_verified_against_arrow": true,
+  "native_performance_measurement": false,
+  "linux_reproduction_run": false,
+  "full_engine_test_suite_rerun": false,
+  "earlier_deliveries_evidence_unchanged": {
+    "dist/session-compact-2026-10-20": {
+      "entries_verified": 33,
+      "manifest_sha256": "bf631c587ca692ec025a72d1d294ec855eaa08e2e7615231f4b93a4f043526cb"
+    },
+    "docs/evidence/2026-10-20/compact": {
+      "entries_verified": 23,
+      "manifest_sha256": "6eb47dd00b71131e4df181ad1feeb1e363fd230550cb708d492943e1dfafc5fb"
+    },
+    "dist/session-buffers-2026-10-20": {
+      "entries_verified": 32,
+      "manifest_sha256": "063ea6684239b12fe5283827ca1bb95b4e3b3c1ba3631affc7601e80939fd03a"
+    },
+    "docs/evidence/2026-10-20/buffers": {
+      "entries_verified": 22,
+      "manifest_sha256": "d4983787926091e5f47e7642fcc90362d6d27077261b9ba6da42c1e9a47e8b94"
+    },
+    "dist/session-reuse-2026-10-20": {
+      "entries_verified": 23,
+      "manifest_sha256": "e243147e08d8bbd41d38cec107268291670619465743d4df49327df2d7f6f07c"
+    },
+    "docs/evidence/2026-10-20/session-json": {
+      "entries_verified": 30,
+      "manifest_sha256": "d8f19d4f90326e14c8ab50393cb67332ee3e5b73a141fce0d3657f4ebfc373e8"
+    },
+    "docs/evidence/2026-10-20/session-reuse": {
+      "entries_verified": 13,
+      "manifest_sha256": "bce834e2528bc2f6d12f54008f30bca4d06fdf3d4e2567393aff3cd05338517b"
+    },
+    "docs/evidence/2026-10-20/bridge-cost": {
+      "entries_verified": 17,
+      "manifest_sha256": "c41fbdf71b1d854e133d8c6fff8bc9e6d62d29afdbbf65cea3ae25d1db7fe24f"
+    },
+    "docs/evidence/2026-10-20/compact-python": {
+      "entries_verified": 27,
+      "manifest_sha256": "9d679c42af501ef64aaa8b24b7940804c8c80571149ebe56d0407042cdb24e85"
+    }
+  },
+  "report_sha256": "89b51b986b3373e56c72ae28865b9682328443e7cebedf4daf1d957235135d29",
+  "core_contract_sha256": "ebc0068391582649de0ef2cea6cb67dc667a3d61954812e5f3b6df888fa56dde"
+}

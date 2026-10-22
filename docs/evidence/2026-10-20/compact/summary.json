@@ -1,0 +1,586 @@
+{
+  "all_results_verified": true,
+  "all_children_reaped": true,
+  "groups": {
+    "before": {
+      "small_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 639510.0,
+            "median_ns": 618600,
+            "min_ns": 523900,
+            "max_ns": 818000
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 683930.0,
+            "median_ns": 669700,
+            "min_ns": 564500,
+            "max_ns": 865000
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 44420.0,
+            "median_ns": 43300,
+            "min_ns": 40600,
+            "max_ns": 51100
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 45653606.4,
+            "median_bytes": 45658112,
+            "min_bytes": 45486080,
+            "max_bytes": 45793280
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 23472947.2,
+            "median_bytes": 23490560,
+            "min_bytes": 23306240,
+            "max_bytes": 23605248
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 34231500.8,
+            "median_bytes": 34234368,
+            "min_bytes": 34066432,
+            "max_bytes": 34377728
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 5926502.4,
+            "median_bytes": 5926912,
+            "min_bytes": 5922816,
+            "max_bytes": 5931008
+          }
+        },
+        "runs": 10
+      },
+      "medium_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 4748750.0,
+            "median_ns": 4705300,
+            "min_ns": 4449100,
+            "max_ns": 5258700
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 6064980.0,
+            "median_ns": 5935000,
+            "min_ns": 5697500,
+            "max_ns": 7131400
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 1316230.0,
+            "median_ns": 1248400,
+            "min_ns": 1189300,
+            "max_ns": 1872700
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 50375065.6,
+            "median_bytes": 50364416,
+            "min_bytes": 49860608,
+            "max_bytes": 50819072
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 28210380.8,
+            "median_bytes": 28278784,
+            "min_bytes": 27418624,
+            "max_bytes": 29011968
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 38753484.8,
+            "median_bytes": 38723584,
+            "min_bytes": 38531072,
+            "max_bytes": 38899712
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 7889715.2,
+            "median_bytes": 7888896,
+            "min_bytes": 7852032,
+            "max_bytes": 7942144
+          }
+        },
+        "runs": 10
+      },
+      "bulk_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 421868070.0,
+            "median_ns": 415477300,
+            "min_ns": 413702000,
+            "max_ns": 441556600
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 580843340.0,
+            "median_ns": 573181400,
+            "min_ns": 569064500,
+            "max_ns": 607617800
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 158975270.0,
+            "median_ns": 156590900,
+            "min_ns": 155362500,
+            "max_ns": 171330200
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 413043916.8,
+            "median_bytes": 412819456,
+            "min_bytes": 412147712,
+            "max_bytes": 415039488
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 392098611.2,
+            "median_bytes": 391766016,
+            "min_bytes": 391503872,
+            "max_bytes": 394055680
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 401788108.8,
+            "median_bytes": 401408000,
+            "min_bytes": 401195008,
+            "max_bytes": 403636224
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 162176614.4,
+            "median_bytes": 162172928,
+            "min_bytes": 162148352,
+            "max_bytes": 162213888
+          }
+        },
+        "runs": 10
+      },
+      "bulk_scalar": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 169236360.0,
+            "median_ns": 168131600,
+            "min_ns": 160644900,
+            "max_ns": 184474200
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 273619880.0,
+            "median_ns": 271707000,
+            "min_ns": 262840300,
+            "max_ns": 286501300
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 104383520.0,
+            "median_ns": 102619500,
+            "min_ns": 101330100,
+            "max_ns": 112668400
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 224412057.6,
+            "median_bytes": 224030720,
+            "min_bytes": 223625216,
+            "max_bytes": 225955840
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 202944102.4,
+            "median_bytes": 202510336,
+            "min_bytes": 202301440,
+            "max_bytes": 204345344
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 214424371.2,
+            "median_bytes": 214085632,
+            "min_bytes": 213659648,
+            "max_bytes": 215859200
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 46649344.0,
+            "median_bytes": 46600192,
+            "min_bytes": 46559232,
+            "max_bytes": 47165440
+          }
+        },
+        "runs": 10
+      },
+      "range": {
+        "latency": {
+          "client_ns": {
+            "samples": 1430,
+            "mean_ns": 557066.7132867132,
+            "median_ns": 545600,
+            "min_ns": 368800,
+            "max_ns": 1229000,
+            "p95_ns": 698000,
+            "p99_ns": 949800
+          },
+          "total_ns": {
+            "samples": 1430,
+            "mean_ns": 595341.4685314685,
+            "median_ns": 583900,
+            "min_ns": 402200,
+            "max_ns": 1275400,
+            "p95_ns": 744200,
+            "p99_ns": 987000
+          },
+          "adapter_ns": {
+            "samples": 1430,
+            "mean_ns": 38274.755244755244,
+            "median_ns": 36400,
+            "min_ns": 6500,
+            "max_ns": 174800,
+            "p95_ns": 48200,
+            "p99_ns": 72400
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 5,
+            "mean_bytes": 47104000.0,
+            "median_bytes": 47124480,
+            "min_bytes": 47034368,
+            "max_bytes": 47169536
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 5,
+            "mean_bytes": 25138790.4,
+            "median_bytes": 25157632,
+            "min_bytes": 25067520,
+            "max_bytes": 25210880
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 5,
+            "mean_bytes": 35663052.8,
+            "median_bytes": 35684352,
+            "min_bytes": 35598336,
+            "max_bytes": 35725312
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 5,
+            "mean_bytes": 5955584.0,
+            "median_bytes": 5955584,
+            "min_bytes": 5951488,
+            "max_bytes": 5959680
+          }
+        },
+        "runs": 5
+      }
+    },
+    "after": {
+      "small_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 614980.0,
+            "median_ns": 590300,
+            "min_ns": 520300,
+            "max_ns": 765100
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 663540.0,
+            "median_ns": 634600,
+            "min_ns": 563400,
+            "max_ns": 811200
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 48560.0,
+            "median_ns": 44300,
+            "min_ns": 42700,
+            "max_ns": 83300
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 45679411.2,
+            "median_bytes": 45727744,
+            "min_bytes": 45412352,
+            "max_bytes": 45879296
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 23504896.0,
+            "median_bytes": 23556096,
+            "min_bytes": 23191552,
+            "max_bytes": 23728128
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 34233958.4,
+            "median_bytes": 34283520,
+            "min_bytes": 33968128,
+            "max_bytes": 34426880
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 5891276.8,
+            "median_bytes": 5890048,
+            "min_bytes": 5890048,
+            "max_bytes": 5894144
+          }
+        },
+        "runs": 10
+      },
+      "medium_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 4418870.0,
+            "median_ns": 4255300,
+            "min_ns": 4014500,
+            "max_ns": 5045200
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 5719830.0,
+            "median_ns": 5425000,
+            "min_ns": 5197700,
+            "max_ns": 7019000
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 1300960.0,
+            "median_ns": 1214700,
+            "min_ns": 1166600,
+            "max_ns": 1973800
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 50802688.0,
+            "median_bytes": 50814976,
+            "min_bytes": 50561024,
+            "max_bytes": 50991104
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 28643328.0,
+            "median_bytes": 28491776,
+            "min_bytes": 28372992,
+            "max_bytes": 29016064
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 38249676.8,
+            "median_bytes": 38244352,
+            "min_bytes": 38125568,
+            "max_bytes": 38412288
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 7457177.6,
+            "median_bytes": 7458816,
+            "min_bytes": 7430144,
+            "max_bytes": 7475200
+          }
+        },
+        "runs": 10
+      },
+      "bulk_kline": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 380502100.0,
+            "median_ns": 378006600,
+            "min_ns": 367557300,
+            "max_ns": 417220200
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 541965980.0,
+            "median_ns": 535055600,
+            "min_ns": 528008000,
+            "max_ns": 581463600
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 161463880.0,
+            "median_ns": 160450700,
+            "min_ns": 153888400,
+            "max_ns": 169965300
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 364860211.2,
+            "median_bytes": 364802048,
+            "min_bytes": 363274240,
+            "max_bytes": 365699072
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 343709696.0,
+            "median_bytes": 343019520,
+            "min_bytes": 342511616,
+            "max_bytes": 344813568
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 351967641.6,
+            "median_bytes": 351723520,
+            "min_bytes": 350531584,
+            "max_bytes": 352841728
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 83072204.8,
+            "median_bytes": 83070976,
+            "min_bytes": 83038208,
+            "max_bytes": 83091456
+          }
+        },
+        "runs": 10
+      },
+      "bulk_scalar": {
+        "latency": {
+          "client_ns": {
+            "samples": 10,
+            "mean_ns": 150346810.0,
+            "median_ns": 148179700,
+            "min_ns": 142494800,
+            "max_ns": 165786400
+          },
+          "total_ns": {
+            "samples": 10,
+            "mean_ns": 256412370.0,
+            "median_ns": 253740000,
+            "min_ns": 247950300,
+            "max_ns": 267155100
+          },
+          "adapter_ns": {
+            "samples": 10,
+            "mean_ns": 106065560.0,
+            "median_ns": 104257300,
+            "min_ns": 101368700,
+            "max_ns": 115971400
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 10,
+            "mean_bytes": 214219161.6,
+            "median_bytes": 213839872,
+            "min_bytes": 213602304,
+            "max_bytes": 215248896
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 10,
+            "mean_bytes": 192959283.2,
+            "median_bytes": 192647168,
+            "min_bytes": 192217088,
+            "max_bytes": 193798144
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 203363532.8,
+            "median_bytes": 203513856,
+            "min_bytes": 202305536,
+            "max_bytes": 204673024
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 10,
+            "mean_bytes": 41515008.0,
+            "median_bytes": 41508864,
+            "min_bytes": 41455616,
+            "max_bytes": 41562112
+          }
+        },
+        "runs": 10
+      },
+      "range": {
+        "latency": {
+          "client_ns": {
+            "samples": 1430,
+            "mean_ns": 513056.5034965035,
+            "median_ns": 500700,
+            "min_ns": 336500,
+            "max_ns": 1041100,
+            "p95_ns": 678700,
+            "p99_ns": 845000
+          },
+          "total_ns": {
+            "samples": 1430,
+            "mean_ns": 552477.4825174825,
+            "median_ns": 538100,
+            "min_ns": 370300,
+            "max_ns": 1084200,
+            "p95_ns": 722900,
+            "p99_ns": 904200
+          },
+          "adapter_ns": {
+            "samples": 1430,
+            "mean_ns": 39420.97902097902,
+            "median_ns": 36900,
+            "min_ns": 7500,
+            "max_ns": 122800,
+            "p95_ns": 58000,
+            "p99_ns": 75500
+          }
+        },
+        "memory": {
+          "sampled_tree_peak_rss_bytes": {
+            "samples": 5,
+            "mean_bytes": 47220326.4,
+            "median_bytes": 47190016,
+            "min_bytes": 47087616,
+            "max_bytes": 47374336
+          },
+          "sampled_tree_peak_private_bytes": {
+            "samples": 5,
+            "mean_bytes": 25245286.4,
+            "median_bytes": 25198592,
+            "min_bytes": 25075712,
+            "max_bytes": 25411584
+          },
+          "os_python_peak_working_set_bytes": {
+            "samples": 5,
+            "mean_bytes": 35664691.2,
+            "median_bytes": 35643392,
+            "min_bytes": 35545088,
+            "max_bytes": 35840000
+          },
+          "os_worker_peak_working_set_bytes": {
+            "samples": 5,
+            "mean_bytes": 5986713.6,
+            "median_bytes": 5988352,
+            "min_bytes": 5984256,
+            "max_bytes": 5988352
+          }
+        },
+        "runs": 5
+      }
+    }
+  },
+  "short_queries_per_route": 1430,
+  "bulk_queries_per_route": 40,
+  "jobs": 90,
+  "memory_stats_units": "bytes"
+}

@@ -1,0 +1,224 @@
+{
+  "primary_rounds": 3,
+  "supplemental_rounds": 9,
+  "combined_rounds": 12,
+  "primary_hashes": {
+    "before": "436346492b1389417fc2265dcd75b6bcd7eba22dc12b5f74afdc91d84cbff058",
+    "after": "70c3266187ab48adb8a71008cba966116e352b955fa664748f69afd5ca2f9642",
+    "short": "df014a8b574c837b632b2b1f931d80cd070c35c874c9ff63fa8715f178394363",
+    "bulk": "5b2c863f11b59e2b5c01852187f8dae7fd8db1299b6605a98f47cf0f62651c75"
+  },
+  "sources": [
+    "/work/target/core-parallel-verified-linux/000-before-bulk-shared-1-2.json",
+    "/work/target/core-parallel-verified-linux/000-after-bulk-shared-1-2.json",
+    "/work/target/core-parallel-verified-linux/031-after-bulk-shared-1-1.json",
+    "/work/target/core-parallel-verified-linux/031-before-bulk-shared-1-1.json",
+    "/work/target/core-parallel-verified-linux/034-before-bulk-shared-1-0.json",
+    "/work/target/core-parallel-verified-linux/034-after-bulk-shared-1-0.json",
+    "/work/target/core-parallel-serial-linux/00-before.json",
+    "/work/target/core-parallel-serial-linux/00-after.json",
+    "/work/target/core-parallel-serial-linux/01-after.json",
+    "/work/target/core-parallel-serial-linux/01-before.json",
+    "/work/target/core-parallel-serial-linux/02-before.json",
+    "/work/target/core-parallel-serial-linux/02-after.json",
+    "/work/target/core-parallel-serial-linux/03-after.json",
+    "/work/target/core-parallel-serial-linux/03-before.json",
+    "/work/target/core-parallel-serial-linux/04-before.json",
+    "/work/target/core-parallel-serial-linux/04-after.json",
+    "/work/target/core-parallel-serial-linux/05-after.json",
+    "/work/target/core-parallel-serial-linux/05-before.json",
+    "/work/target/core-parallel-serial-linux/06-before.json",
+    "/work/target/core-parallel-serial-linux/06-after.json",
+    "/work/target/core-parallel-serial-linux/07-after.json",
+    "/work/target/core-parallel-serial-linux/07-before.json",
+    "/work/target/core-parallel-serial-linux/08-before.json",
+    "/work/target/core-parallel-serial-linux/08-after.json"
+  ],
+  "results": {
+    "short": {
+      "before_ns": 2525.0,
+      "after_ns": 2485.0,
+      "ratio": 0.9841584158415841,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9315068493150684,
+        1.0163339382940109,
+        0.9963175122749591,
+        0.9759368836291913,
+        1.020040899795501,
+        0.981980198019802,
+        0.9962219129051502,
+        0.9959758551307847,
+        1.0264227642276422,
+        0.9431372549019608,
+        0.9940476190476191,
+        0.9611650485436893
+      ],
+      "paired_ratio_median": 0.9950117370892019,
+      "paired_ratio_bootstrap_95": [
+        0.9685509660864403,
+        1.006325725284485
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "small_kline": {
+      "before_ns": 2484.0,
+      "after_ns": 2425.0,
+      "ratio": 0.9762479871175523,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9675403225806452,
+        0.9919517102615694,
+        0.9630831643002028,
+        0.9597113650030066,
+        0.9705824671504216,
+        0.9681908548707754,
+        1.002053388090349,
+        0.9877300613496932,
+        0.9454191033138402,
+        0.9799599198396793,
+        0.9796334012219959,
+        1.0353378797272164
+      ],
+      "paired_ratio_median": 0.9751079341862088,
+      "paired_ratio_bootstrap_95": [
+        0.9653117434404239,
+        0.9898408858056313
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "medium_kline": {
+      "before_ns": 44076.0,
+      "after_ns": 44385.5,
+      "ratio": 1.0070219620655232,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        1.0385336066838613,
+        1.1340265675672556,
+        1.0688349114862083,
+        1.0092222770722075,
+        1.0062393122891344,
+        1.0286965089459659,
+        0.9771970504522127,
+        0.9995410633562036,
+        0.9777581681600145,
+        0.9104285699472194,
+        1.0547779645019453,
+        0.8900334663276485
+      ],
+      "paired_ratio_median": 1.007730794680671,
+      "paired_ratio_bootstrap_95": [
+        0.9774776093061136,
+        1.0466557855929033
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "bulk_kline": {
+      "before_ns": 979924.5,
+      "after_ns": 949648.5,
+      "ratio": 0.9691037421760554,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9695090906973962,
+        1.1142819285837846,
+        0.9827474793170993,
+        0.9472845186584598,
+        1.0796828817994732,
+        1.0459522187070769,
+        0.9539726285539303,
+        0.9667599575786859,
+        0.9228150755268026,
+        0.6790842884906115,
+        0.8953141561290641,
+        0.9616282122718374
+      ],
+      "paired_ratio_median": 0.9641940849252617,
+      "paired_ratio_bootstrap_95": [
+        0.9350497970926313,
+        1.0143498490120881
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "bulk_scalar": {
+      "before_ns": 143282.0,
+      "after_ns": 140872.5,
+      "ratio": 0.9831835122346143,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9481023088435603,
+        1.0434758440511678,
+        0.9479583100425248,
+        1.197885015938902,
+        1.095161568851344,
+        1.0270593475036034,
+        1.047781133701714,
+        0.9314708800319719,
+        0.8482778568885725,
+        0.9258867881418861,
+        0.910706815864467,
+        0.9770327938456667
+      ],
+      "paired_ratio_median": 0.9625675513446135,
+      "paired_ratio_bootstrap_95": [
+        0.928678834086929,
+        1.0456284888764409
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "latest": {
+      "before_ns": 1738.5,
+      "after_ns": 1703.0,
+      "ratio": 0.9795800977854472,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9286889742183214,
+        1.0674603174603174,
+        1.0122100122100122,
+        1.017825311942959,
+        1.036068530207394,
+        1.1228124040528094,
+        0.681923076923077,
+        0.935338768625246,
+        0.9736992567181246,
+        0.9731604342581424,
+        0.8739967897271268,
+        1.059762202753442
+      ],
+      "paired_ratio_median": 0.9929546344640684,
+      "paired_ratio_bootstrap_95": [
+        0.9320138714217837,
+        1.047915366480418
+      ],
+      "pooled_median_within_5_percent": true
+    },
+    "bulk_latest": {
+      "before_ns": 978457.5,
+      "after_ns": 970611.5,
+      "ratio": 0.9919812562119459,
+      "samples_per_version": 360,
+      "paired_process_ratios": [
+        0.9713844484034315,
+        1.0889486026869166,
+        0.9511532911498304,
+        0.9942883258083801,
+        1.0278258129596052,
+        1.1059954545997475,
+        0.9673668025816283,
+        1.0257109068688355,
+        0.9556660546348821,
+        1.020257181936711,
+        1.122576592788043,
+        0.8328662129693016
+      ],
+      "paired_ratio_median": 1.0072727538725457,
+      "paired_ratio_bootstrap_95": [
+        0.9615164286082551,
+        1.058387207823261
+      ],
+      "pooled_median_within_5_percent": true
+    }
+  },
+  "all_results_verified": true,
+  "gate_passed": true,
+  "ci_unit": "paired process median ratio; not independent individual queries"
+}

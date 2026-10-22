@@ -1,0 +1,32 @@
+{
+  "scope": "measurement and proposal only; no production implementation",
+  "windows_primary_jobs": 18,
+  "linux_primary_jobs": 132,
+  "gil_only_negative_controls": 12,
+  "warm_and_monitor_jobs": 42,
+  "fd_causal_control_jobs": 54,
+  "canonical_output_checks": "passed for all read jobs; every measured result checked",
+  "probe_parity_each_os": {
+    "bulk_cases": 4,
+    "internal_budgets": [
+      1,
+      4
+    ],
+    "canonical_concurrent_rust_reads": 5720,
+    "passed": true
+  },
+  "pointer_handoff": "record-to-word differs; word-to-NumPy same pointer on both OSes",
+  "production_and_history_preservation": {
+    "production_source_files_unchanged": 143,
+    "primary_diagnostic_source_files_unchanged": 7,
+    "historical_manifests_verified": 52,
+    "historical_entries_verified": 4719,
+    "registry_versions_matching_production": 86,
+    "passed": true
+  },
+  "historical_product_suites_rerun": false,
+  "style": "Ruff check/format (8 Python files) and separate Rust fmt passed",
+  "initial_diagnostic_group_timer": "invalid: prior-validation wait included; corrected and primary experiments fully replayed",
+  "syscall_trace": "diagnostic only; throughput under strace excluded",
+  "fd_preparation": "experimental only; dummy descriptors closed before timed work; not added to engine"
+}

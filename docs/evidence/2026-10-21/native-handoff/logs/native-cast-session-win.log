@@ -1,0 +1,28 @@
+test_bad_sizes_rejected_before_body_allocation_and_truncation (test_session.FrameReads.test_bad_sizes_rejected_before_body_allocation_and_truncation) ... ok
+test_fragmented_readinto_and_exact_integer_unicode_values (test_session.FrameReads.test_fragmented_readinto_and_exact_integer_unicode_values) ... ok
+test_body_allocation_failure_poisons_and_reaps (test_session.SessionFaults.test_body_allocation_failure_poisons_and_reaps) ... ok
+test_close_during_frame_construction_never_enqueues_or_waits (test_session.SessionFaults.test_close_during_frame_construction_never_enqueues_or_waits) ... ok
+test_close_interrupts_inflight_and_reaps (test_session.SessionFaults.test_close_interrupts_inflight_and_reaps) ... ok
+test_external_kill_does_not_restart_worker (test_session.SessionFaults.test_external_kill_does_not_restart_worker) ... ok
+test_fragmented_worker_frames (test_session.SessionFaults.test_fragmented_worker_frames) ... ok
+test_malformed_frames_and_crashes_poison_session (test_session.SessionFaults.test_malformed_frames_and_crashes_poison_session) ... ok
+test_nested_context_and_invalid_input_do_not_disrupt_worker (test_session.SessionFaults.test_nested_context_and_invalid_input_do_not_disrupt_worker) ... ok
+test_partial_body_timeout_and_close_reap_without_replay (test_session.SessionFaults.test_partial_body_timeout_and_close_reap_without_replay) ... ok
+test_queue_timeout_never_interrupts_or_sends_another_request (test_session.SessionFaults.test_queue_timeout_never_interrupts_or_sends_another_request) ... ok
+test_scope_reuses_one_child_and_close_is_idempotent (test_session.SessionFaults.test_scope_reuses_one_child_and_close_is_idempotent) ... ok
+test_startup_failures_reap_without_fallback (test_session.SessionFaults.test_startup_failures_reap_without_fallback) ... ok
+test_stderr_is_continuously_drained_and_bounded (test_session.SessionFaults.test_stderr_is_continuously_drained_and_bounded) ... ok
+test_thread_start_failure_reaps_child (test_session.SessionFaults.test_thread_start_failure_reaps_child) ... ok
+test_timeout_reaps_and_no_failed_write_is_replayed (test_session.SessionFaults.test_timeout_reaps_and_no_failed_write_is_replayed) ... ok
+test_timeout_releases_actual_os_write_lock (test_session.SessionFaults.test_timeout_releases_actual_os_write_lock) ... ok
+test_user_exception_and_interrupted_request_cleanup (test_session.SessionFaults.test_user_exception_and_interrupted_request_cleanup) ... ok
+test_write_blocked_in_pipe_is_interruptible (test_session.SessionFaults.test_write_blocked_in_pipe_is_interruptible) ... ok
+test_kline_and_indicator_shapes_and_sealed_writes (test_session.SessionStorage.test_kline_and_indicator_shapes_and_sealed_writes) ... ok
+test_metadata_refresh_between_requests_and_no_idle_read_lock (test_session.SessionStorage.test_metadata_refresh_between_requests_and_no_idle_read_lock) ... ok
+test_partial_month_error_and_explicit_recovery_without_replay (test_session.SessionStorage.test_partial_month_error_and_explicit_recovery_without_replay) ... ok
+test_real_shared_and_exclusive_ownership (test_session.SessionStorage.test_real_shared_and_exclusive_ownership) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 8.080s
+
+OK

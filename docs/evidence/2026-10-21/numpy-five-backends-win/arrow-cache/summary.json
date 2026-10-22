@@ -1,0 +1,33 @@
+{
+  "capacity": 256,
+  "process_rounds": 3,
+  "verified_timed_results": 4290,
+  "process_medians_ns": [
+    16900.0,
+    16600.0,
+    17200.0
+  ],
+  "median_ns": 16900.0,
+  "median_p95_ns": 20500.0,
+  "median_p99_ns": 29507.000000000062,
+  "peak_private_bytes": [
+    45367296,
+    44675072,
+    45207552
+  ],
+  "peak_rss_bytes": [
+    124919808,
+    124428288,
+    125734912
+  ],
+  "harness_sha256": {
+    "run_numpy_arrow_cache.py": "b2a9752a0f8473bedaf4c25cf0e5fa15c8d69f31f37144908cbac67aaccce222",
+    "_numpy_arrow_cache_worker.py": "47b583d72f2ea833ff152536fc1961f62636f0d265ce183f7ce3c41705bcdbc5"
+  },
+  "limits": [
+    "Additional independent unpaired sensitivity, three processes vs five primary processes",
+    "Only mmap cache capacity changes 64 to 256 in the measurement process; no source file patch",
+    "Same 1430 queries, 32 warmups, budget1, NumPy contract, timer and full validation",
+    "256 entries cover all 240 monthly Kline files; consumes more cache resources"
+  ]
+}

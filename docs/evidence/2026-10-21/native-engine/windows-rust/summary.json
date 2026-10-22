@@ -1,0 +1,137 @@
+{
+  "before": {
+    "short": {
+      "samples": 137280,
+      "min_ns": 4800,
+      "median_ns": 5000,
+      "max_ns": 84700,
+      "p95_ns": 5500,
+      "p99_ns": 7500
+    },
+    "small_kline": {
+      "samples": 30,
+      "min_ns": 5000,
+      "median_ns": 5100,
+      "max_ns": 5200
+    },
+    "medium_kline": {
+      "samples": 30,
+      "min_ns": 67500,
+      "median_ns": 73300,
+      "max_ns": 157700
+    },
+    "bulk_kline": {
+      "samples": 30,
+      "min_ns": 3239800,
+      "median_ns": 3349100,
+      "max_ns": 3511800
+    },
+    "bulk_scalar": {
+      "samples": 30,
+      "min_ns": 2298100,
+      "median_ns": 2375600,
+      "max_ns": 2513200
+    },
+    "latest": {
+      "samples": 480,
+      "min_ns": 2500,
+      "median_ns": 2600,
+      "max_ns": 3000,
+      "p95_ns": 2700,
+      "p99_ns": 2900
+    },
+    "bulk_latest": {
+      "samples": 30,
+      "min_ns": 11672700,
+      "median_ns": 12063000,
+      "max_ns": 20382700
+    }
+  },
+  "after": {
+    "short": {
+      "samples": 137280,
+      "min_ns": 1800,
+      "median_ns": 4100,
+      "max_ns": 117200,
+      "p95_ns": 4300,
+      "p99_ns": 5900
+    },
+    "small_kline": {
+      "samples": 30,
+      "min_ns": 4000,
+      "median_ns": 4100,
+      "max_ns": 4300
+    },
+    "medium_kline": {
+      "samples": 30,
+      "min_ns": 36500,
+      "median_ns": 37400,
+      "max_ns": 40100
+    },
+    "bulk_kline": {
+      "samples": 30,
+      "min_ns": 3273700,
+      "median_ns": 3401400,
+      "max_ns": 3739500
+    },
+    "bulk_scalar": {
+      "samples": 30,
+      "min_ns": 887100,
+      "median_ns": 917100,
+      "max_ns": 1015800
+    },
+    "latest": {
+      "samples": 480,
+      "min_ns": 1800,
+      "median_ns": 1900,
+      "max_ns": 8000,
+      "p95_ns": 2000,
+      "p99_ns": 2200
+    },
+    "bulk_latest": {
+      "samples": 30,
+      "min_ns": 3287000,
+      "median_ns": 3365400,
+      "max_ns": 3557400
+    }
+  },
+  "ratio_after_before": {
+    "short": 0.82,
+    "small_kline": 0.803921568627451,
+    "medium_kline": 0.5102319236016372,
+    "bulk_kline": 1.0156161356782418,
+    "bulk_scalar": 0.3860498400404108,
+    "latest": 0.7307692307692307,
+    "bulk_latest": 0.2789853270330763
+  },
+  "gate": {
+    "maximum_regression": 1.05,
+    "passed": true
+  },
+  "all_results_verified": true,
+  "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)\nbinary: rustc\ncommit-hash: 8bab26f4f68e0e26f0bb7960be334d5b520ea452\ncommit-date: 2026-07-14\nhost: x86_64-pc-windows-gnu\nrelease: 1.97.1\nLLVM version: 22.1.6\n",
+  "round_orders": [
+    [
+      "before",
+      "after"
+    ],
+    [
+      "before",
+      "after"
+    ],
+    [
+      "before",
+      "after"
+    ]
+  ],
+  "binary_sha256": {
+    "before": "2f29d1c1489d6d6bc0a68b8bdb791124a2a4fb5016c26d8920cf6069d8c95707",
+    "after": "2bcf5270578354f5822c25ace3867ff402c725f339e457bf0d9306721c9f4d7d"
+  },
+  "probe_source_sha256": "7e548a23def06f5c6a838a18d14fd219f30ed53eba8bb8e349b59dde7fd49289",
+  "limits": [
+    "metrics off, one prewarmed handle; OS cache uncontrolled",
+    "three paired process rounds; 32 separately recorded warmup reads per case; 32 measured repeats per short/latest, ten per bulk",
+    "query execution only; validation and result destruction outside timer"
+  ]
+}

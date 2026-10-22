@@ -4,7 +4,7 @@ use crate::types::{FixedRecord, RecordType};
 
 /// Fixed-width OHLCV record stored in chunk files.
 #[repr(C)]
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Default, Clone, Copy, PartialEq, Eq, bytemuck::NoUninit)]
 pub struct KlineRecord {
     pub ts: i64,
     pub open: i64,

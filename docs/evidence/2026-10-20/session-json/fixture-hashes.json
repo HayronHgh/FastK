@@ -1,0 +1,34 @@
+{
+  "bulk_kline-frame.json": {
+    "bytes": 79555158,
+    "sha256": "feb5ff8ce9aeb2e1f351aefc9db72cd5c51cbdc70f2ed9c3020f983f7ccaa4d5"
+  },
+  "bulk_scalar-frame.json": {
+    "bytes": 30161273,
+    "sha256": "d7f441d8d2703eeef438ade7e3b19bfff000a8ff5e164d70a019688c62d4c8f3"
+  },
+  "medium_kline-frame.json": {
+    "bytes": 742242,
+    "sha256": "2be75060a4ee82e9995aa112604829451b035bbc52d7634c3e55d9f5d1fb0509"
+  },
+  "small_kline-frame.json": {
+    "bytes": 23342,
+    "sha256": "c31fa9e62572a4f9d583dfd07b2d9165e0c29eb11cc19b55363b603c316710b2"
+  },
+  "receiver/bulk_kline-compact.json": {
+    "bytes": 54202451,
+    "sha256": "7487b0a28bd878056b02958900c9ec9f36ab4d263771889751fb06382601e776"
+  },
+  "receiver/bulk_kline-pretty.json": {
+    "bytes": 79555158,
+    "sha256": "feb5ff8ce9aeb2e1f351aefc9db72cd5c51cbdc70f2ed9c3020f983f7ccaa4d5"
+  },
+  "receiver/bulk_scalar-compact.json": {
+    "bytes": 18796230,
+    "sha256": "061e6fab319d864213099fb409b65817984d3efe30b91df8527a2a16e570439b"
+  },
+  "receiver/bulk_scalar-pretty.json": {
+    "bytes": 30161273,
+    "sha256": "d7f441d8d2703eeef438ade7e3b19bfff000a8ff5e164d70a019688c62d4c8f3"
+  }
+}

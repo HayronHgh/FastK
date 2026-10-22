@@ -1,0 +1,11 @@
+{
+  "production_sources_unchanged": 8,
+  "bridge_sha256": "b1d34929a311b72173849da0d12e5ad064a9e6ad6a1e50485d7903d11397ed85",
+  "private_source_regeneration_identical": true,
+  "library_sources_identical_to_production": true,
+  "prior_evidence_and_delivery_hashes_verified": {
+    "docs/evidence/2026-10-20/session-reuse": 13,
+    "docs/evidence/2026-10-20/bridge-cost": 17,
+    "dist/session-reuse-2026-10-20": 23
+  }
+}

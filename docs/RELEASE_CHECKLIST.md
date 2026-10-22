@@ -3,7 +3,36 @@
 This checklist validates FastK as a storage engine. It does not validate
 strategy, research, trading, market-data sourcing, or indicator correctness.
 
+## Native module gate
+
+Run the native public tests and five-backend NumPy smoke on Windows/Linux,
+CPython 3.11 and 3.12. Build separate ABI wheels using the native unwind profile.
+Run `smoke_native_install.py` with a local NumPy wheelhouse outside the checkout
+and with compiler/CLI paths absent. Keep all previous evidence and packages.
+Measure Rust serial before/after separately from removal of JSON/process cost.
+Record internal 1/2/4/8 budgets separately from outer concurrency and validate
+all fields outside query timers. Report actual-PID RSS/private memory and cache
+limitations. See NATIVE_VALIDATION.md for executed evidence.
+
 ## Correctness Gate
+
+For the technical validation update, include the opt-in subprocess crash/IO
+contracts and installed-artifact checks:
+
+```sh
+cargo test --locked --features fault-injection
+python -m unittest discover -s external-tests -p test_client.py
+python scripts/package_release.py --development
+python scripts/smoke_install.py --wheel /path/to/platform.whl --admin /path/to/fastk_admin
+```
+
+Run Python transport checks with the client installed (or
+`PYTHONPATH=clients/python/src`), and set `FASTK_BRIDGE_BIN` to exercise a built
+bridge. For `test_contracts.py`, set both `FASTK_BRIDGE_BIN` and
+`FASTK_RELEASE_PACKAGE` to validate actual responses and every packaged hash.
+Use clean-commit packaging without `--development` only for an official release.
+The fault feature must be absent from production builds. See INSTALLATION.md
+and EXTERNAL_VALIDATION.md for platform commands and isolated dependencies.
 
 Run:
 

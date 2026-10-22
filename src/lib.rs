@@ -53,6 +53,7 @@ mod error;
 pub mod feature;
 pub mod kline;
 mod metrics;
+pub mod snapshot;
 mod store_core;
 mod types;
 
@@ -85,7 +86,7 @@ pub use engine::{
     scoped_scalar_series_key, signal_series_key, BacktestCapabilitySnapshot, BacktestKlineBinding,
     BacktestPreparePlan, BacktestScalarBinding, BacktestStoreView, CompactionDecision,
     CompactionPolicy, DerivedSeriesBuilder, DerivedSeriesRequest, FastKReadSession, FastKStore,
-    IndicatorInventoryEntry, MonthInventoryEntry, ReplayCursor, ReplayOptions,
+    IndicatorInventoryEntry, MonthInventoryEntry, RangeWriteSummary, ReplayCursor, ReplayOptions,
     ScalarQueryCapabilities, ScopedScalarBinding, SequenceDuplicate, SequenceGap,
     SequenceScanReport, SequenceViolation, SeriesInventoryEntry, SessionCacheSummary,
     SessionResetMode, StoreHealthSummary, StoreStats, DEFAULT_SCALAR_ZMAP_BLOCK_SIZE,
@@ -101,7 +102,9 @@ pub use feature::{
 pub use index::{PredicateQueryEngine, ValueIndexEntry, ZoneMapEntry};
 pub use kline::KlineRecord;
 pub use metrics::{MetricsLevel, StoreMetricsSnapshot};
-pub use storage::recovery::{explain_overlaps, rebuild_all_manifests_from_fs};
+pub use snapshot::{seal_snapshot, verify_snapshot, SnapshotFile, SnapshotManifest};
+pub use storage::recovery::startup_recover as recover_store;
+pub use storage::recovery::{explain_overlaps, preview_recovery, rebuild_all_manifests_from_fs};
 pub use storage::recovery::{
     ManifestValidation, OrphanArtifact, OverlapResolution, RecoveryOptions, RecoveryReport,
     ScrubSeriesReport, SeriesOverlapExplanation, ValidationOptions,

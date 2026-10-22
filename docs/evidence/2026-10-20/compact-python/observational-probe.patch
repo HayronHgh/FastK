@@ -1,0 +1,146 @@
+--- examples/cli/fastk_bridge.rs
++++ PRIVATE/bridge.rs
+@@ -362,6 +362,7 @@
+ }
+ 
+ fn write_json<T: serde::Serialize>(output: &mut JsonOutput<impl Write>, value: &T) -> Result<()> {
++    let cost_json_start = cost_ticks();
+     match output {
+         JsonOutput::Compact(writer) => serde_json::to_writer(writer, value)?,
+         JsonOutput::Pretty(writer) => {
+@@ -372,6 +373,10 @@
+             handle.flush()?;
+         }
+     }
++    let cost_json_end = cost_ticks();
++    eprintln!("FASTK_BULK_JSON {}", serde_json::json!({
++        "start_tick":cost_json_start, "end_tick":cost_json_end
++    }));
+     Ok(())
+ }
+ 
+@@ -458,3 +463,11 @@
+     --root <path> --symbol <symbol> --timeframe <tf> --category <category> --name <name>"
+     );
+ }
++
++#[link(name = "kernel32")]
++unsafe extern "system" { fn QueryPerformanceCounter(value: *mut i64) -> i32; }
++fn cost_ticks() -> i64 {
++    let mut value = 0;
++    assert_ne!(unsafe { QueryPerformanceCounter(&mut value) }, 0);
++    value
++}
+--- examples/cli/session_transport.rs
++++ PRIVATE/session_transport.rs
+@@ -4,7 +4,7 @@
+ use fastk::{FastKError, Result};
+ use serde::Deserialize;
+ 
+-use super::{dispatch, Input, JsonOutput};
++use super::{cost_ticks, dispatch, Input, JsonOutput};
+ 
+ const MAX_FRAME_BYTES: u64 = 1024 * 1024 * 1024;
+ 
+@@ -74,14 +74,18 @@
+             return Err(FastKError::InvalidInput("invalid session request".into()));
+         }
+         last_id = request.id;
++        let cost_dispatch_start = cost_ticks();
+         let mut response = format!("{{\"id\":{},\"ok\":true,\"result\":", request.id).into_bytes();
+         // Same dispatcher and response serializer as one-shot CLI. Its local
+         // stores/guards have dropped before a response is written.
+-        match dispatch(
++        let cost_prefix_len = response.len();
++        let cost_result = dispatch(
+             request.args,
+             Input::Session(request.payload),
+             &mut JsonOutput::Compact(&mut response),
+-        ) {
++        );
++        let cost_dispatch_end = cost_ticks();
++        match cost_result {
+             Ok(()) => response.push(b'}'),
+             Err(error) => {
+                 // Nothing has reached stdout. Discard any partial success
+@@ -96,7 +100,15 @@
+                 )?;
+             }
+         }
++        let cost_write_start = cost_ticks();
+         write_frame(&mut writer, &response)?;
++        let cost_write_end = cost_ticks();
++        eprintln!("FASTK_BULK_SESSION {}", serde_json::json!({
++            "id":request.id, "dispatch_start_tick":cost_dispatch_start,
++            "dispatch_end_tick":cost_dispatch_end, "write_start_tick":cost_write_start,
++            "write_end_tick":cost_write_end, "result_bytes":response.len().saturating_sub(cost_prefix_len + 1),
++            "frame_bytes":response.len()
++        }));
+     }
+     Ok(())
+ }
+--- clients/python/src/fastk_client/_session.py
++++ PRIVATE/python/fastk_cost_client/_session.py
+@@ -12,6 +12,8 @@
+ from dataclasses import dataclass, field
+ from pathlib import Path
+ 
++from ._measure import TRACE, ticks
++
+ MAX_FRAME_BYTES = 1024 * 1024 * 1024
+ 
+ 
+@@ -37,14 +39,25 @@
+ 
+ 
+ def _read_exact(stream, size):
++    started = ticks()
++    before = time.perf_counter_ns()
+     data = bytearray(size)
+     view = memoryview(data)
+-    offset = 0
++    allocation_ns = time.perf_counter_ns()-before
++    offset = calls = read_ns = 0
+     while offset < size:
+-        amount = stream.readinto(view[offset : offset + 64 * 1024])
++        before = time.perf_counter_ns()
++        amount = stream.readinto(view[offset:offset + 64 * 1024])
++        read_ns += time.perf_counter_ns()-before
+         if not amount:
+             raise SessionProtocolError("worker closed a session frame")
+         offset += amount
++        calls += 1
++    TRACE.setdefault("reads", []).append({
++        "bytes":size, "calls":calls, "syscall_and_wait_ns":read_ns,
++        "allocation_ns":allocation_ns, "append_ns":0, "final_bytes_copy_ns":0,
++        "start_tick":started, "end_tick":ticks(),
++    })
+     return data
+ 
+ 
+@@ -74,6 +87,7 @@
+         self._ready = _Exchange()
+         self._failure: str | None = None
+         self._stderr: deque[bytes] = deque(maxlen=8)
++        self._cost_stderr = bytearray()
+         self._sequence = 0
+         self._closed = False
+         self.process = subprocess.Popen(
+@@ -124,6 +138,9 @@
+         try:
+             while chunk := self.process.stderr.read(8192):
+                 self._stderr.append(chunk)
++                self._cost_stderr.extend(chunk)
++                if len(self._cost_stderr) > 65536:
++                    del self._cost_stderr[:-65536]
+         except OSError:
+             pass
+ 
+@@ -140,6 +157,7 @@
+                     raise SessionBroken("session closed before dispatch")
+                 _write_all(self.process.stdin, current.frame)
+                 current.response = _read_frame(self.process.stdout)
++                TRACE["io_return_tick"] = ticks()
+                 current.done.set()
+         except Exception as exc:
+             self._failure = str(exc)

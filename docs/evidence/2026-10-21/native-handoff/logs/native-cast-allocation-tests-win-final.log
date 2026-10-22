@@ -1,0 +1,10 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.15s
+     Running unittests src\lib.rs (target\debug\deps\_native-dc61d2f96af23369.exe)
+
+running 3 tests
+test allocation_tests::incompatible_layout_returns_an_error ... ok
+test allocation_tests::kline_handoff_preserves_allocation_capacity_and_field_order ... ok
+test allocation_tests::scalar_and_empty_handoff_keep_the_original_allocation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
