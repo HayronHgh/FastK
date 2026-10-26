@@ -35,6 +35,14 @@ and equity curves. The [initial-public-version comparison](docs/VERSION_COMPARIS
 separately measures the original CLI/JSON delivery against current native use;
 its whole-application ratios are not Rust-only algorithm speedups.
 
+The [native cold-read report](docs/NATIVE_MARKET_COLD_RESULTS.md) compares
+FastK with market-data, HistoryVault, QuestDB, TimescaleDB and MarketStore using
+the original 1,430 short queries and bulk cases. It reports native delivery time,
+memory, disk and read-volume tradeoffs, with embedded and server paths separated.
+The controlled scope is Linux guest data-page cold; host/device caches are not
+controlled. This publication contains the report only, without the test code or
+deployment environment. FastK core and public APIs were not changed.
+
 ## What This Project Is For
 
 FastK is useful when an upper-layer system already produces clean, normalized
