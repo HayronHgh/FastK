@@ -14,6 +14,10 @@ use crate::types::{ChunkMeta, ChunkState, RecordType, SeriesMeta, SidecarMeta};
 
 const MANIFEST_MAGIC: [u8; 8] = *b"FKMETA02";
 const MANIFEST_VERSION: u32 = 2;
+/// Version 3 is written only for series with a `quote_scale` (kline flow series);
+/// it inserts that scale after `volume_scale`. Every other series keeps
+/// byte-identical version 2 manifests, and version 2 readers reject version 3.
+const MANIFEST_VERSION_QUOTE_SCALE: u32 = 3;
 const MANIFEST_HEADER_LEN: usize = 24;
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
@@ -252,6 +256,9 @@ pub fn encode_manifest(meta: &SeriesMeta) -> Result<Vec<u8>> {
     put_i64(&mut body, meta.timeframe_ms);
     put_i64(&mut body, meta.price_scale);
     put_i64(&mut body, meta.volume_scale);
+    if let Some(quote_scale) = meta.quote_scale {
+        put_i64(&mut body, quote_scale);
+    }
     put_str(&mut body, &meta.chunk_unit)?;
     put_u64(&mut body, meta.active_chunk_id.unwrap_or(0));
     put_str(&mut body, &meta.symbol)?;
@@ -288,7 +295,12 @@ pub fn encode_manifest(meta: &SeriesMeta) -> Result<Vec<u8>> {
     let checksum = fs::checksum64(&body);
     let mut bytes = Vec::with_capacity(MANIFEST_HEADER_LEN + body.len());
     bytes.extend_from_slice(&MANIFEST_MAGIC);
-    put_u32(&mut bytes, MANIFEST_VERSION);
+    let version = if meta.quote_scale.is_some() {
+        MANIFEST_VERSION_QUOTE_SCALE
+    } else {
+        MANIFEST_VERSION
+    };
+    put_u32(&mut bytes, version);
     put_u32(&mut bytes, meta.flags);
     put_u64(&mut bytes, checksum);
     bytes.extend_from_slice(&body);
@@ -314,7 +326,7 @@ fn decode_manifest_with_stats(bytes: &[u8]) -> Result<(SeriesMeta, ManifestLoadS
     let version = cursor.read_u32()?;
     let flags = cursor.read_u32()?;
     let checksum = cursor.read_u64()?;
-    if version != MANIFEST_VERSION {
+    if version != MANIFEST_VERSION && version != MANIFEST_VERSION_QUOTE_SCALE {
         return Err(FastKError::InvalidData(format!(
             "unsupported manifest version: {version}",
         )));
@@ -339,6 +351,11 @@ fn decode_manifest_with_stats(bytes: &[u8]) -> Result<(SeriesMeta, ManifestLoadS
     let timeframe_ms = body_cursor.read_i64()?;
     let price_scale = body_cursor.read_i64()?;
     let volume_scale = body_cursor.read_i64()?;
+    let quote_scale = if version == MANIFEST_VERSION_QUOTE_SCALE {
+        Some(body_cursor.read_i64()?)
+    } else {
+        None
+    };
     let chunk_unit = body_cursor.read_string()?;
     let active_chunk_id = match body_cursor.read_u64()? {
         0 => None,
@@ -415,6 +432,7 @@ fn decode_manifest_with_stats(bytes: &[u8]) -> Result<(SeriesMeta, ManifestLoadS
         schema_id,
         price_scale,
         volume_scale,
+        quote_scale,
         chunk_unit,
         series_id,
         manifest_seq,
@@ -494,6 +512,7 @@ fn migrate_legacy_json(legacy: LegacySeriesMeta, series_dir: &Path) -> Result<Se
         schema_id: legacy.schema_id,
         price_scale: legacy.price_scale,
         volume_scale: legacy.volume_scale,
+        quote_scale: None,
         chunk_unit: legacy.chunk_unit,
         series_id: legacy.series_id,
         manifest_seq: 1,
@@ -759,6 +778,7 @@ mod tests {
             schema_id: 1,
             price_scale: 100_000,
             volume_scale: 100_000,
+            quote_scale: None,
             chunk_unit: "month".to_string(),
             series_id: 42,
             manifest_seq: 7,

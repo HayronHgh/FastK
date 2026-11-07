@@ -233,6 +233,48 @@ class Client:
     def read_kline_latest(self, symbol: str, timeframe: str, limit: int = 128) -> dict[str, Any]:
         return self._run("read-kline-latest", symbol=symbol, timeframe=timeframe, limit=limit)
 
+    def read_kline_flow_range(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> dict[str, Any]:
+        """Read OHLCV plus order-flow fields; absent flow values are ``None``."""
+        return self._run(
+            "read-kline-flow-range",
+            symbol=symbol,
+            timeframe=timeframe,
+            start_ts=start_ts,
+            end_ts=end_ts,
+        )
+
+    def write_kline_flow_range(
+        self,
+        symbol: str,
+        timeframe: str,
+        records: Iterable[Mapping[str, int | None]],
+        *,
+        timeframe_ms: int,
+        price_scale: int,
+        volume_scale: int,
+        quote_scale: int,
+    ) -> dict[str, Any]:
+        """Write OHLCV plus order-flow rows into a kline flow series."""
+        return self._run(
+            "write-kline-flow-range",
+            symbol=symbol,
+            timeframe=timeframe,
+            payload=dict(
+                records=list(records),
+                timeframe_ms=timeframe_ms,
+                price_scale=price_scale,
+                volume_scale=volume_scale,
+                quote_scale=quote_scale,
+            ),
+        )
+
+    def read_kline_flow_latest(
+        self, symbol: str, timeframe: str, limit: int = 128
+    ) -> dict[str, Any]:
+        return self._run("read-kline-flow-latest", symbol=symbol, timeframe=timeframe, limit=limit)
+
     def read_scalar_range(
         self,
         symbol: str,

@@ -1,3 +1,32 @@
+# FastK v0.3.0-rc.1
+
+Kline flow series keep the remaining useful exchange kline columns next to
+OHLCV: quote volume, trade count, taker-buy base volume and taker-buy quote
+volume. They are signed `i64` fixed-point values (`quote_scale` for quote
+totals, `volume_scale` for base totals, unscaled counts) in 80-byte rows with
+`schema_id = 3`. An absent value is stored as `i64::MIN` and exposed as
+`None`/`null`/`KLINE_FLOW_MISSING`, never `0`. Writes reject negative values,
+`taker_buy_volume > volume` and `taker_buy_quote_volume > quote_volume` before
+anything is written. See [Kline flow fields](KLINE_FLOW_FIELDS.md).
+
+Compatibility: OHLCV chunks, version 2 manifests and every existing bridge
+payload are byte-identical to v0.2.0-rc.1. A golden chunk digest and paired
+old/new CLI runs check this. Flow series write manifest version 3 under the
+unchanged `FKMETA02` magic. v0.2 readers reject it explicitly. Existing OHLCV
+APIs read flow series as their OHLCV projection. Flow APIs read OHLCV series
+with every flow field absent. Schemas never mix within a series, and old files
+are not rewritten.
+
+New surfaces: Rust `register_kline_flow_series`, `put_kline_flow_chunk`,
+`append_kline_flow_range`, `get_kline_flow_{at,range,latest_n}`,
+`replay_kline_flow`, `SeriesMeta::quote_scale`, `kline_schema_name`. Bridge
+`read-kline-flow-range`, `write-kline-flow-range` and `read-kline-flow-latest`
+(contract version 1, additive). Python client and `fastk_native` gain matching
+methods plus `KLINE_FLOW_DTYPE`. `SeriesMeta` and `KlineInventoryResponse` gain
+fields, so code that builds them with struct literals must add them; this is
+why the minor version changes. The OHLCV read path is monomorphized and
+unchanged ([performance](KLINE_FLOW_PERFORMANCE.md)).
+
 # FastK v0.2.0-rc.1
 
 The independent `fastk-native` Python module returns named NumPy int64 batches

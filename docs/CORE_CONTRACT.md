@@ -63,7 +63,9 @@ is introduced.
 
 ## Write semantics
 
-`put_kline_chunk` appends non-overlapping ordered records. `put_scalar_chunk`
+`put_kline_chunk` appends non-overlapping ordered records; `put_kline_flow_chunk`
+and `append_kline_flow_range` do the same for flow series after validating every
+row (non-negative values, taker-buy totals within their totals). `put_scalar_chunk`
 retains its original whole-month replacement semantics. New
 `append_scalar_chunk` preserves earlier rows and rejects overlapping timestamps.
 The generic and indicator bridge writes use append semantics. Direct `put_*`
@@ -145,3 +147,11 @@ manifests). Existing roundtrip, legacy-JSON migration, unknown-version and
 checksum tests remain release gates. A future format change must add explicit
 reader/migration tests and document compatibility; do not silently reinterpret
 old bytes or change numeric scales.
+
+Version 0.3 adds one kline layout without changing any existing bytes. Kline flow series
+use `schema_id = 3`, 80-byte rows and the unchanged version 2 chunk header. Their
+manifest is version 3 under the same magic, carrying `quote_scale`. OHLCV series
+keep schema 1 and byte-identical version 2 manifests and chunks. Old readers
+reject version 3 explicitly. Schemas never mix within a series and old series are
+not rewritten. Absent flow values are stored as `i64::MIN`, never `0`. See
+[Kline flow fields](KLINE_FLOW_FIELDS.md).

@@ -16,7 +16,14 @@ and is shared with the existing bridge.
 | Batch | Fields in order | Bytes per row |
 |---|---|---:|
 | Kline | ts, open, high, low, close, volume | 48 |
+| Kline flow (v0.3) | Kline fields, quote_volume, trade_count, taker_buy_volume, taker_buy_quote_volume | 80 |
 | Scalar | ts, value | 16 |
+
+Kline flow batches use `KLINE_FLOW_DTYPE` through `Reader.read_kline_flow_range`,
+`Reader.read_kline_flow_latest` and `Writer.write_kline_flow_range(...,
+quote_scale=...)`. Absent flow values hold `KLINE_FLOW_MISSING` (`i64::MIN`),
+never `0`. The existing Kline methods return the OHLCV projection of a flow
+series. See [Kline flow fields](KLINE_FLOW_FIELDS.md).
 
 All fields remain little-endian signed int64, with the original disk format,
 UTC millisecond timestamps and fixed-point scales. Smaller integer types would

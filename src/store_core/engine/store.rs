@@ -6,6 +6,9 @@ use std::sync::{Arc, RwLock};
 use std::time::Instant;
 
 use crate::chunk::cache::ChunkRuntime;
+use crate::chunk::file::ReadSpan;
+use crate::chunk::header::KLINE_FLOW_SCHEMA_ID;
+use crate::chunk::kline_reader::KlineRow;
 use crate::chunk::{fixed_reader, fixed_writer, kline_reader, kline_writer};
 use crate::chunk::{scalar_reader, scalar_writer};
 use crate::engine::catalog::Catalog;
@@ -26,10 +29,10 @@ use crate::storage::{
     manifest, path, recovery,
 };
 use crate::types::{
-    BboRecord, BookDeltaRecord, ChunkState, FixedRecord, KlineRecord, PartitionPolicy,
-    PartitionUnit, ScalarIndexKind, ScalarPredicate, ScalarPredicateExpr, ScalarPredicateMatch,
-    ScalarPredicateQuery, ScalarPredicateQueryResult, ScalarPredicateQueryStats, ScalarRecord,
-    ScalarSeriesKey, SeriesMeta, SidecarMeta, TradeRecord,
+    BboRecord, BookDeltaRecord, ChunkState, FixedRecord, KlineFlowRecord, KlineRecord,
+    PartitionPolicy, PartitionUnit, ScalarIndexKind, ScalarPredicate, ScalarPredicateExpr,
+    ScalarPredicateMatch, ScalarPredicateQuery, ScalarPredicateQueryResult,
+    ScalarPredicateQueryStats, ScalarRecord, ScalarSeriesKey, SeriesMeta, SidecarMeta, TradeRecord,
 };
 
 const SHORT_RANGE_MAX_RECORDS: i64 = 2_048;
@@ -285,6 +288,33 @@ impl FastKStore {
             timeframe_ms,
             price_scale,
             volume_scale,
+            None,
+        )
+    }
+
+    /// Registers a kline flow series (schema 3) and persists its metadata.
+    ///
+    /// Flow series store quote volume, trade count and taker-buy volumes next to
+    /// OHLCV. `quote_scale` applies to `quote_volume` and `taker_buy_quote_volume`.
+    pub fn register_kline_flow_series(
+        &mut self,
+        symbol: &str,
+        timeframe: &str,
+        timeframe_ms: i64,
+        price_scale: i64,
+        volume_scale: i64,
+        quote_scale: i64,
+    ) -> Result<()> {
+        writes::validate_configuration(timeframe_ms, price_scale, volume_scale)?;
+        writes::validate_quote_scale(quote_scale)?;
+        let _lock = self.begin_mutation()?;
+        self.register_kline_series_locked(
+            symbol,
+            timeframe,
+            timeframe_ms,
+            price_scale,
+            volume_scale,
+            Some(quote_scale),
         )
     }
 
@@ -295,19 +325,41 @@ impl FastKStore {
         timeframe_ms: i64,
         price_scale: i64,
         volume_scale: i64,
+        quote_scale: Option<i64>,
     ) -> Result<()> {
         let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
         let meta_path = path::series_meta_path(&series_dir);
         if meta_path.exists() {
             let existing = self.load_kline_meta(symbol, timeframe)?;
-            validate_existing_series(&existing, timeframe_ms, price_scale, volume_scale)?;
+            validate_existing_series(
+                &existing,
+                timeframe_ms,
+                price_scale,
+                volume_scale,
+                quote_scale,
+            )?;
             return Ok(());
         }
 
         let marker = recovery::RecoveryMarkerGuard::arm(&self.root)?;
         crate::storage::fs::ensure_dir(&path::chunks_dir(&series_dir))?;
-        let meta =
-            Catalog::build_kline_meta(symbol, timeframe, timeframe_ms, price_scale, volume_scale);
+        let meta = match quote_scale {
+            None => Catalog::build_kline_meta(
+                symbol,
+                timeframe,
+                timeframe_ms,
+                price_scale,
+                volume_scale,
+            ),
+            Some(quote_scale) => Catalog::build_kline_flow_meta(
+                symbol,
+                timeframe,
+                timeframe_ms,
+                price_scale,
+                volume_scale,
+                quote_scale,
+            ),
+        };
         manifest::save_series_meta(&series_dir, &meta)?;
         self.store_meta_in_cache(meta);
         marker.commit()?;
@@ -326,19 +378,36 @@ impl FastKStore {
         self.put_kline_chunk_locked(symbol, timeframe, records)
     }
 
-    fn put_kline_chunk_locked(
+    /// Writes a kline flow chunk or append delta; the series must use schema 3.
+    ///
+    /// Rows must be ordered, within one UTC month, and pass
+    /// [`KlineFlowRecord::validate_values`].
+    pub fn put_kline_flow_chunk(
         &mut self,
         symbol: &str,
         timeframe: &str,
-        records: &[KlineRecord],
+        records: &[KlineFlowRecord],
+    ) -> Result<()> {
+        validate_month_records(records)?;
+        KlineFlowRecord::validate_all(records)?;
+        let _lock = self.begin_mutation()?;
+        self.put_kline_chunk_locked(symbol, timeframe, records)
+    }
+
+    fn put_kline_chunk_locked<R: KlineRow>(
+        &mut self,
+        symbol: &str,
+        timeframe: &str,
+        records: &[R],
     ) -> Result<()> {
         let mut meta = (*self.load_kline_meta(symbol, timeframe)?).clone();
+        ensure_kline_schema::<R>(&meta)?;
         let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
 
         let first = records
             .first()
             .ok_or_else(|| FastKError::InvalidInput("records must not be empty".to_string()))?;
-        let month_key = path::month_key(first.ts)?;
+        let month_key = path::month_key(first.ts())?;
         let month_indices = meta.chunk_indices_for_month(&month_key);
         let chunk_id = next_chunk_id(&meta);
         let generation = month_indices
@@ -349,13 +418,14 @@ impl FastKStore {
             .saturating_add(1);
 
         let (file_name, state) = if month_indices.is_empty() {
-            (path::month_chunk_file_name(first.ts)?, ChunkState::Sealed)
+            (path::month_chunk_file_name(first.ts())?, ChunkState::Sealed)
         } else {
             let last_chunk = &meta.chunks[*month_indices.last().expect("month_indices not empty")];
-            if records[0].ts <= last_chunk.end_ts {
+            if records[0].ts() <= last_chunk.end_ts {
                 return Err(FastKError::InvalidInput(format!(
                     "append overlaps existing month chunk: {} <= {}",
-                    records[0].ts, last_chunk.end_ts
+                    records[0].ts(),
+                    last_chunk.end_ts
                 )));
             }
             (
@@ -470,6 +540,74 @@ impl FastKStore {
         let meta = self.load_kline_meta(symbol, timeframe)?;
         let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
         self.get_kline_latest_n_prepared(&series_dir, meta.as_ref(), n)
+    }
+
+    /// Returns the exact kline flow row at `ts`, if it exists.
+    ///
+    /// For an OHLCV-only (schema 1) series every flow field is absent.
+    pub fn get_kline_flow_at(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        ts: i64,
+    ) -> Result<Option<KlineFlowRecord>> {
+        let meta = self.load_kline_meta(symbol, timeframe)?;
+        let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
+        self.get_kline_flow_at_prepared(&series_dir, meta.as_ref(), ts)
+    }
+
+    /// Returns kline flow rows inside the inclusive timestamp range.
+    ///
+    /// For an OHLCV-only (schema 1) series every flow field is absent
+    /// ([`crate::KLINE_FLOW_MISSING`]), never zero.
+    pub fn get_kline_flow_range(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<KlineFlowRecord>> {
+        if start_ts > end_ts {
+            return Ok(Vec::new());
+        }
+        let meta = self.load_kline_meta(symbol, timeframe)?;
+        let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
+        self.get_kline_flow_range_prepared(&series_dir, meta.as_ref(), start_ts, end_ts)
+    }
+
+    /// Returns the latest `n` kline flow rows in ascending timestamp order.
+    pub fn get_kline_flow_latest_n(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        n: usize,
+    ) -> Result<Vec<KlineFlowRecord>> {
+        if n == 0 {
+            return Ok(Vec::new());
+        }
+        let meta = self.load_kline_meta(symbol, timeframe)?;
+        let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
+        self.get_kline_flow_latest_n_prepared(&series_dir, meta.as_ref(), n)
+    }
+
+    /// Creates a deterministic sealed-chunk replay cursor for a kline flow series.
+    pub fn replay_kline_flow(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: Option<i64>,
+    ) -> Result<ReplayCursor<KlineFlowRecord>> {
+        let meta = self.load_kline_meta(symbol, timeframe)?;
+        ReplayCursor::new(
+            path::kline_series_dir(&self.root, symbol, timeframe),
+            meta.as_ref(),
+            ReplayOptions {
+                start_ts,
+                end_ts,
+                batch_hint: None,
+            },
+        )
     }
 
     /// Creates a deterministic sealed-chunk replay cursor for a kline series.
@@ -1539,6 +1677,34 @@ impl FastKStore {
         meta: &SeriesMeta,
         ts: i64,
     ) -> Result<Option<KlineRecord>> {
+        if is_kline_flow(meta) {
+            return Ok(self
+                .kline_at_rows::<KlineFlowRecord>(series_dir, meta, ts)?
+                .map(|row| row.ohlcv()));
+        }
+        self.kline_at_rows::<KlineRecord>(series_dir, meta, ts)
+    }
+
+    fn get_kline_flow_at_prepared(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        ts: i64,
+    ) -> Result<Option<KlineFlowRecord>> {
+        if is_kline_flow(meta) {
+            return self.kline_at_rows::<KlineFlowRecord>(series_dir, meta, ts);
+        }
+        Ok(self
+            .kline_at_rows::<KlineRecord>(series_dir, meta, ts)?
+            .map(KlineFlowRecord::from_ohlcv))
+    }
+
+    fn kline_at_rows<R: KlineRow>(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        ts: i64,
+    ) -> Result<Option<R>> {
         let lookup_started = Instant::now();
         let Some(index) = meta.find_chunk_for_ts(ts) else {
             self.metrics
@@ -1563,6 +1729,79 @@ impl FastKStore {
         start_ts: i64,
         end_ts: i64,
     ) -> Result<Vec<KlineRecord>> {
+        if !is_kline_flow(meta) {
+            return self.kline_range_rows::<KlineRecord>(series_dir, meta, start_ts, end_ts);
+        }
+        // OHLCV view of a flow series: large reads copy the 48-byte prefix of each
+        // row straight into the result; short reads project the decoded rows.
+        if start_ts <= end_ts {
+            let chunk_range = meta.find_chunks_for_range(start_ts, end_ts);
+            let chunks = &meta.chunks[chunk_range];
+            if !chunks.is_empty() && self.should_plan_read(meta, chunks, start_ts, end_ts) {
+                let spans = self.kline_range_spans::<KlineFlowRecord>(
+                    series_dir, meta, chunks, start_ts, end_ts,
+                )?;
+                return self.read_spans(
+                    spans,
+                    KlineFlowRecord::BYTE_SIZE,
+                    kline_reader::read_planned_ohlcv_from_flow,
+                );
+            }
+        }
+        Ok(self
+            .kline_range_rows::<KlineFlowRecord>(series_dir, meta, start_ts, end_ts)?
+            .iter()
+            .map(KlineFlowRecord::ohlcv)
+            .collect())
+    }
+
+    fn get_kline_flow_range_prepared(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<KlineFlowRecord>> {
+        if is_kline_flow(meta) {
+            return self.kline_range_rows::<KlineFlowRecord>(series_dir, meta, start_ts, end_ts);
+        }
+        Ok(self
+            .kline_range_rows::<KlineRecord>(series_dir, meta, start_ts, end_ts)?
+            .into_iter()
+            .map(KlineFlowRecord::from_ohlcv)
+            .collect())
+    }
+
+    fn kline_range_spans<R: KlineRow>(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        chunks: &[crate::types::ChunkMeta],
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<ReadSpan>> {
+        chunks
+            .iter()
+            .map(|chunk| {
+                kline_reader::plan_range::<R>(
+                    &self.chunk_runtime,
+                    series_dir,
+                    meta.series_id,
+                    chunk,
+                    start_ts,
+                    end_ts,
+                )
+            })
+            .collect()
+    }
+
+    fn kline_range_rows<R: KlineRow>(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<R>> {
         if start_ts > end_ts {
             return Ok(Vec::new());
         }
@@ -1591,20 +1830,8 @@ impl FastKStore {
             })?;
         let chunks = &meta.chunks[chunk_range.clone()];
         if self.should_plan_read(meta, chunks, start_ts, end_ts) {
-            let spans = chunks
-                .iter()
-                .map(|chunk| {
-                    kline_reader::plan_range(
-                        &self.chunk_runtime,
-                        series_dir,
-                        meta.series_id,
-                        chunk,
-                        start_ts,
-                        end_ts,
-                    )
-                })
-                .collect::<Result<Vec<_>>>()?;
-            return self.read_spans(spans, KlineRecord::BYTE_SIZE, kline_reader::read_planned);
+            let spans = self.kline_range_spans::<R>(series_dir, meta, chunks, start_ts, end_ts)?;
+            return self.read_spans(spans, R::BYTE_SIZE, kline_reader::read_planned::<R>);
         }
 
         let mut records = Vec::with_capacity(capacity);
@@ -1633,7 +1860,52 @@ impl FastKStore {
         if n == 0 {
             return Ok(Vec::new());
         }
+        if is_kline_flow(meta) {
+            let spans = self.kline_tail_spans::<KlineFlowRecord>(series_dir, meta, n)?;
+            return self.read_spans(
+                spans,
+                KlineFlowRecord::BYTE_SIZE,
+                kline_reader::read_planned_ohlcv_from_flow,
+            );
+        }
+        let spans = self.kline_tail_spans::<KlineRecord>(series_dir, meta, n)?;
+        self.read_spans(
+            spans,
+            KlineRecord::BYTE_SIZE,
+            kline_reader::read_planned::<KlineRecord>,
+        )
+    }
 
+    fn get_kline_flow_latest_n_prepared(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        n: usize,
+    ) -> Result<Vec<KlineFlowRecord>> {
+        if n == 0 {
+            return Ok(Vec::new());
+        }
+        if is_kline_flow(meta) {
+            let spans = self.kline_tail_spans::<KlineFlowRecord>(series_dir, meta, n)?;
+            return self.read_spans(
+                spans,
+                KlineFlowRecord::BYTE_SIZE,
+                kline_reader::read_planned::<KlineFlowRecord>,
+            );
+        }
+        Ok(self
+            .get_kline_latest_n_prepared(series_dir, meta, n)?
+            .into_iter()
+            .map(KlineFlowRecord::from_ohlcv)
+            .collect())
+    }
+
+    fn kline_tail_spans<R: KlineRow>(
+        &self,
+        series_dir: &Path,
+        meta: &SeriesMeta,
+        n: usize,
+    ) -> Result<Vec<ReadSpan>> {
         let mut remaining = n;
         let mut spans = Vec::new();
         for chunk in meta.chunks.iter().rev() {
@@ -1641,7 +1913,7 @@ impl FastKStore {
                 break;
             }
             let take = remaining.min(chunk.count as usize);
-            spans.push(kline_reader::plan_tail(
+            spans.push(kline_reader::plan_tail::<R>(
                 &self.chunk_runtime,
                 series_dir,
                 meta.series_id,
@@ -1651,7 +1923,7 @@ impl FastKStore {
             remaining -= take;
         }
         spans.reverse();
-        self.read_spans(spans, KlineRecord::BYTE_SIZE, kline_reader::read_planned)
+        Ok(spans)
     }
 
     fn get_scalar_at_prepared(
@@ -2335,6 +2607,20 @@ impl FastKStore {
         month_key: &str,
         meta: &mut SeriesMeta,
     ) -> Result<()> {
+        if is_kline_flow(meta) {
+            self.merge_kline_rows_locked::<KlineFlowRecord>(symbol, timeframe, month_key, meta)
+        } else {
+            self.merge_kline_rows_locked::<KlineRecord>(symbol, timeframe, month_key, meta)
+        }
+    }
+
+    fn merge_kline_rows_locked<R: KlineRow>(
+        &mut self,
+        symbol: &str,
+        timeframe: &str,
+        month_key: &str,
+        meta: &mut SeriesMeta,
+    ) -> Result<()> {
         let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
         let month_indices = meta.chunk_indices_for_month(month_key);
         if month_indices.len() <= 1 {
@@ -2345,7 +2631,7 @@ impl FastKStore {
             .iter()
             .map(|index| meta.chunks[*index].clone())
             .collect();
-        let mut merged_records = Vec::new();
+        let mut merged_records: Vec<R> = Vec::new();
         for chunk in &source_chunks {
             kline_reader::append_range_in_chunk(
                 &self.chunk_runtime,
@@ -2357,7 +2643,7 @@ impl FastKStore {
                 &mut merged_records,
             )?;
         }
-        KlineRecord::validate_strict_order(&merged_records)?;
+        R::validate_strict_order(&merged_records)?;
 
         for index in &month_indices {
             let chunk = &meta.chunks[*index];
@@ -3230,12 +3516,56 @@ fn record_file_bytes_written(metrics: &StoreMetrics, path: &Path) {
     }
 }
 
+fn is_kline_flow(meta: &SeriesMeta) -> bool {
+    meta.schema_id == KLINE_FLOW_SCHEMA_ID
+}
+
+/// Public name of a kline schema used in errors and bridge payloads.
+pub fn kline_schema_name(schema_id: u32) -> &'static str {
+    match schema_id {
+        KLINE_FLOW_SCHEMA_ID => "ohlcv_flow",
+        _ => "ohlcv",
+    }
+}
+
+fn ensure_kline_schema<R: KlineRow>(meta: &SeriesMeta) -> Result<()> {
+    if meta.schema_id != R::SCHEMA_ID {
+        return Err(FastKError::InvalidInput(format!(
+            "kline series {}/{} uses schema '{}' but the write supplies '{}' rows; old OHLCV series are never rewritten in place",
+            meta.symbol,
+            meta.name,
+            kline_schema_name(meta.schema_id),
+            kline_schema_name(R::SCHEMA_ID)
+        )));
+    }
+    Ok(())
+}
+
 fn validate_existing_series(
     existing: &SeriesMeta,
     timeframe_ms: i64,
     price_scale: i64,
     volume_scale: i64,
+    quote_scale: Option<i64>,
 ) -> Result<()> {
+    let expected_schema = if quote_scale.is_some() {
+        KLINE_FLOW_SCHEMA_ID
+    } else {
+        crate::chunk::header::KLINE_SCHEMA_ID
+    };
+    if existing.schema_id != expected_schema {
+        return Err(FastKError::InvalidInput(format!(
+            "series already exists with kline schema '{}', requested '{}'",
+            kline_schema_name(existing.schema_id),
+            kline_schema_name(expected_schema)
+        )));
+    }
+    if existing.quote_scale != quote_scale {
+        return Err(FastKError::InvalidInput(format!(
+            "series already exists with different configuration: quote_scale={:?}",
+            existing.quote_scale
+        )));
+    }
     if existing.timeframe_ms != timeframe_ms
         || existing.price_scale != price_scale
         || existing.volume_scale != volume_scale

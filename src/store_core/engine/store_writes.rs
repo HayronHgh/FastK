@@ -39,6 +39,60 @@ impl FastKStore {
         volume_scale: i64,
     ) -> Result<RangeWriteSummary> {
         validate_configuration(timeframe_ms, price_scale, volume_scale)?;
+        self.append_kline_rows(
+            symbol,
+            timeframe,
+            records,
+            timeframe_ms,
+            price_scale,
+            volume_scale,
+            None,
+            "write-kline-range",
+        )
+    }
+
+    /// Appends ordered kline flow rows, committing each UTC month independently.
+    ///
+    /// Registers a schema 3 series when absent. Every row is validated before
+    /// ownership is taken; an invalid row rejects the whole request.
+    #[allow(clippy::too_many_arguments)]
+    pub fn append_kline_flow_range(
+        &mut self,
+        symbol: &str,
+        timeframe: &str,
+        records: &[KlineFlowRecord],
+        timeframe_ms: i64,
+        price_scale: i64,
+        volume_scale: i64,
+        quote_scale: i64,
+    ) -> Result<RangeWriteSummary> {
+        validate_configuration(timeframe_ms, price_scale, volume_scale)?;
+        validate_quote_scale(quote_scale)?;
+        KlineFlowRecord::validate_all(records)?;
+        self.append_kline_rows(
+            symbol,
+            timeframe,
+            records,
+            timeframe_ms,
+            price_scale,
+            volume_scale,
+            Some(quote_scale),
+            "write-kline-flow-range",
+        )
+    }
+
+    #[allow(clippy::too_many_arguments)]
+    fn append_kline_rows<R: KlineRow>(
+        &mut self,
+        symbol: &str,
+        timeframe: &str,
+        records: &[R],
+        timeframe_ms: i64,
+        price_scale: i64,
+        volume_scale: i64,
+        quote_scale: Option<i64>,
+        command: &str,
+    ) -> Result<RangeWriteSummary> {
         let months = month_batches(records)?;
         let _lock = self.begin_mutation()?;
         let existing = match self.load_kline_meta(symbol, timeframe) {
@@ -47,9 +101,9 @@ impl FastKStore {
             Err(error) => return Err(error),
         };
         if let Some(meta) = &existing {
-            validate_existing_series(meta, timeframe_ms, price_scale, volume_scale)?;
+            validate_existing_series(meta, timeframe_ms, price_scale, volume_scale, quote_scale)?;
         }
-        preflight_overlap(existing.as_deref(), &months, "write-kline-range")?;
+        preflight_overlap(existing.as_deref(), &months, command)?;
         if !self.root.join("series").exists() {
             self.init_locked()?;
         }
@@ -60,6 +114,7 @@ impl FastKStore {
                 timeframe_ms,
                 price_scale,
                 volume_scale,
+                quote_scale,
             )?;
         }
         let mut completed = Vec::new();
@@ -207,6 +262,15 @@ pub(super) fn validate_configuration(
     if timeframe_ms <= 0 || price_scale <= 0 || volume_scale <= 0 {
         return Err(FastKError::InvalidInput(
             "timeframe and scales must be positive".into(),
+        ));
+    }
+    Ok(())
+}
+
+pub(super) fn validate_quote_scale(quote_scale: i64) -> Result<()> {
+    if quote_scale <= 0 {
+        return Err(FastKError::InvalidInput(
+            "quote_scale must be positive".into(),
         ));
     }
     Ok(())

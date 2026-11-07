@@ -9,7 +9,7 @@ pub use crate::feature::{
     ScalarPredicateQuery, ScalarPredicateQueryResult, ScalarPredicateQueryStats, ScalarRecord,
     ScalarSeriesKey,
 };
-pub use crate::kline::KlineRecord;
+pub use crate::kline::{KlineFlowRecord, KlineRecord};
 pub use bbo::BboRecord;
 pub use book_delta::BookDeltaRecord;
 pub use fixed::FixedRecord;

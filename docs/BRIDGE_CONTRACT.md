@@ -137,7 +137,95 @@ Arguments:
 ```
 
 Response includes existence, metadata, total record count, coverage bounds, and
-monthly inventory entries.
+monthly inventory entries. For a kline flow series it also includes
+`"kline_schema": "ohlcv_flow"` and `quote_scale`; both keys are omitted for OHLCV
+series, whose payload bytes are unchanged.
+
+### Kline flow commands (v0.3, additive)
+
+These commands carry quote volume, trade count and taker-buy volumes next to
+OHLCV ([field reference](KLINE_FLOW_FIELDS.md)). They are additive to contract
+version 1: existing commands and their payloads are unchanged, and
+`read-kline-range` / `read-kline-latest` / `kline-inventory` keep working on
+flow series (OHLCV projection). `write-kline-range` into a flow series and
+`write-kline-flow-range` into an OHLCV series are rejected with `INVALID_INPUT`.
+
+`read-kline-flow-range`
+
+```text
+--root <path> --symbol <symbol> --timeframe <tf> --start-ts <ms> --end-ts <ms>
+```
+
+```json
+{
+  "symbol": "ETHUSDT",
+  "timeframe": "1m",
+  "kline_schema": "ohlcv_flow",
+  "timeframe_ms": 60000,
+  "start_ts": 1706745600000,
+  "end_ts": 1706749200000,
+  "price_scale": 100000000,
+  "volume_scale": 100000000,
+  "quote_scale": 100000000,
+  "records": [
+    {
+      "ts": 1706745600000,
+      "open": 230000000000,
+      "high": 230100000000,
+      "low": 229900000000,
+      "close": 230050000000,
+      "volume": 100000000000,
+      "quote_volume": 230020000000000,
+      "trade_count": 512,
+      "taker_buy_volume": 60000000000,
+      "taker_buy_quote_volume": null
+    }
+  ]
+}
+```
+
+Every flow key is always present in output; `null` means absent and is never
+reported as `0`. On an OHLCV series `kline_schema` is `"ohlcv"`, `quote_scale`
+is `null` and every flow value is `null`.
+
+`read-kline-flow-latest --root --symbol --timeframe --limit` returns
+`{"kline_schema": ..., "quote_scale": ..., "records": [...]}` in ascending order.
+
+`write-kline-flow-range`
+
+```text
+--root <path> --symbol <symbol> --timeframe <tf> [--input-json <file>]
+```
+
+```json
+{
+  "timeframe_ms": 60000,
+  "price_scale": 100000000,
+  "volume_scale": 100000000,
+  "quote_scale": 100000000,
+  "records": [
+    {
+      "ts": 1706745600000,
+      "open": 230000000000,
+      "high": 230100000000,
+      "low": 229900000000,
+      "close": 230050000000,
+      "volume": 100000000000,
+      "quote_volume": 230020000000000,
+      "trade_count": 512,
+      "taker_buy_volume": 60000000000
+    }
+  ]
+}
+```
+
+Flow keys may be omitted or `null` when absent. Rows are sorted, duplicates are
+rejected, and the whole request is rejected before any write when a value is
+negative, `taker_buy_volume > volume`, `taker_buy_quote_volume > quote_volume`,
+`taker_buy_quote_volume` is present without `quote_volume`, or a value equals the
+reserved `-9223372036854775808`. The response is the `write-kline-range` response
+plus `"kline_schema": "ohlcv_flow"` and `quote_scale`. A missing series is
+registered as a flow series.
 
 ### read-indicator-range
 
@@ -335,6 +423,10 @@ Kline JSON record:
   "volume": 10000
 }
 ```
+
+Kline flow JSON record (`read-kline-flow-*`, `write-kline-flow-range`): the
+kline fields plus `quote_volume`, `trade_count`, `taker_buy_volume` and
+`taker_buy_quote_volume`, each an integer or `null`.
 
 Scalar JSON record:
 

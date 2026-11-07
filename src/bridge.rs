@@ -9,13 +9,13 @@ use std::path::Path;
 use serde::{Deserialize, Serialize};
 
 use crate::engine::{
-    indicator_series_key, scoped_scalar_series_key, Catalog, FastKStore, MonthInventoryEntry,
-    ScalarQueryCapabilities, INDICATOR_CATEGORY,
+    indicator_series_key, kline_schema_name, scoped_scalar_series_key, Catalog, FastKStore,
+    MonthInventoryEntry, ScalarQueryCapabilities, INDICATOR_CATEGORY,
 };
 use crate::error::{FastKError, Result};
 use crate::types::{
-    ScalarPredicateExpr, ScalarPredicateMatch, ScalarPredicateQuery, ScalarPredicateQueryStats,
-    ScalarRecord, SeriesMeta,
+    KlineFlowRecord, ScalarPredicateExpr, ScalarPredicateMatch, ScalarPredicateQuery,
+    ScalarPredicateQueryStats, ScalarRecord, SeriesMeta,
 };
 
 /// JSON contract used by `read-kline-range`.
@@ -168,10 +168,136 @@ pub struct KlineInventoryResponse {
     pub timeframe_ms: Option<i64>,
     pub price_scale: Option<i64>,
     pub volume_scale: Option<i64>,
+    /// `"ohlcv_flow"` for kline flow series; omitted for OHLCV series so their
+    /// payload stays byte-identical to contract v1.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub kline_schema: Option<String>,
+    /// Scale of quote-denominated flow fields; omitted for OHLCV series.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub quote_scale: Option<i64>,
     pub record_count: u64,
     pub coverage_start_ts: Option<i64>,
     pub coverage_end_ts: Option<i64>,
     pub inventory: Vec<MonthInventoryEntry>,
+}
+
+/// Kline row with optional order-flow fields rendered for JSON transport.
+///
+/// An absent flow value is `null` on output and may be `null` or omitted on input.
+/// It is never reported as `0`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+pub struct KlineFlowBridgeRecord {
+    pub ts: i64,
+    pub open: i64,
+    pub high: i64,
+    pub low: i64,
+    pub close: i64,
+    pub volume: i64,
+    #[serde(default)]
+    pub quote_volume: Option<i64>,
+    #[serde(default)]
+    pub trade_count: Option<i64>,
+    #[serde(default)]
+    pub taker_buy_volume: Option<i64>,
+    #[serde(default)]
+    pub taker_buy_quote_volume: Option<i64>,
+}
+
+impl From<KlineFlowRecord> for KlineFlowBridgeRecord {
+    fn from(value: KlineFlowRecord) -> Self {
+        Self {
+            ts: value.ts,
+            open: value.open,
+            high: value.high,
+            low: value.low,
+            close: value.close,
+            volume: value.volume,
+            quote_volume: value.quote_volume_opt(),
+            trade_count: value.trade_count_opt(),
+            taker_buy_volume: value.taker_buy_volume_opt(),
+            taker_buy_quote_volume: value.taker_buy_quote_volume_opt(),
+        }
+    }
+}
+
+impl KlineFlowBridgeRecord {
+    /// Converts to a stored row, rejecting values reserved for absence.
+    fn to_record(self) -> Result<KlineFlowRecord> {
+        for value in [
+            self.quote_volume,
+            self.trade_count,
+            self.taker_buy_volume,
+            self.taker_buy_quote_volume,
+        ]
+        .into_iter()
+        .flatten()
+        {
+            if value == crate::KLINE_FLOW_MISSING {
+                return Err(FastKError::InvalidInput(format!(
+                    "flow value {value} at ts {} is reserved; use null for an absent value",
+                    self.ts
+                )));
+            }
+        }
+        Ok(KlineFlowRecord::new(
+            crate::types::KlineRecord {
+                ts: self.ts,
+                open: self.open,
+                high: self.high,
+                low: self.low,
+                close: self.close,
+                volume: self.volume,
+            },
+            self.quote_volume,
+            self.trade_count,
+            self.taker_buy_volume,
+            self.taker_buy_quote_volume,
+        ))
+    }
+}
+
+/// JSON contract used by `read-kline-flow-range`.
+///
+/// For an OHLCV series `kline_schema` is `"ohlcv"`, `quote_scale` is `null` and
+/// every flow field is `null`.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+pub struct KlineFlowRangeResponse {
+    pub symbol: String,
+    pub timeframe: String,
+    pub kline_schema: String,
+    pub timeframe_ms: i64,
+    pub start_ts: i64,
+    pub end_ts: i64,
+    pub price_scale: i64,
+    pub volume_scale: i64,
+    pub quote_scale: Option<i64>,
+    pub records: Vec<KlineFlowBridgeRecord>,
+}
+
+/// JSON contract accepted by `write-kline-flow-range`.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct WriteKlineFlowRequest {
+    pub timeframe_ms: i64,
+    pub price_scale: i64,
+    pub volume_scale: i64,
+    pub quote_scale: i64,
+    pub records: Vec<KlineFlowBridgeRecord>,
+}
+
+/// JSON response returned by `write-kline-flow-range`.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize)]
+pub struct WriteKlineFlowResponse {
+    pub symbol: String,
+    pub timeframe: String,
+    pub kline_schema: String,
+    pub timeframe_ms: i64,
+    pub price_scale: i64,
+    pub volume_scale: i64,
+    pub quote_scale: i64,
+    pub registered: bool,
+    pub requested_record_count: usize,
+    pub written_record_count: usize,
+    pub month_batches_written: usize,
 }
 
 /// Fixed-width kline row rendered for JSON transport.
@@ -295,6 +421,69 @@ pub fn write_kline_range(
     })
 }
 
+/// Reads a kline range with order-flow fields and renders it as bridge JSON.
+pub fn read_kline_flow_range(
+    root: impl AsRef<Path>,
+    symbol: &str,
+    timeframe: &str,
+    start_ts: i64,
+    end_ts: i64,
+) -> Result<KlineFlowRangeResponse> {
+    let root = root.as_ref();
+    let store = FastKStore::open_read_only(root.to_path_buf())?;
+    let meta = store.kline_metadata(symbol, timeframe)?;
+    let records = store.get_kline_flow_range(symbol, timeframe, start_ts, end_ts)?;
+    Ok(KlineFlowRangeResponse {
+        symbol: symbol.to_string(),
+        timeframe: timeframe.to_string(),
+        kline_schema: kline_schema_name(meta.schema_id).to_string(),
+        timeframe_ms: meta.timeframe_ms,
+        start_ts,
+        end_ts,
+        price_scale: meta.price_scale,
+        volume_scale: meta.volume_scale,
+        quote_scale: meta.quote_scale,
+        records: records.into_iter().map(Into::into).collect(),
+    })
+}
+
+/// Writes kline flow rows, registering a kline flow series when absent.
+///
+/// Rows are sorted, duplicate timestamps are rejected, and every row is validated
+/// (non-negative flow values, taker-buy totals within their totals) before any
+/// month is written. Writing into an existing OHLCV series is rejected.
+pub fn write_kline_flow_range(
+    root: impl AsRef<Path>,
+    symbol: &str,
+    timeframe: &str,
+    request: WriteKlineFlowRequest,
+) -> Result<WriteKlineFlowResponse> {
+    let normalized = normalize_kline_flow_records(request.records)?;
+    let mut store = FastKStore::open(root.as_ref().to_path_buf())?;
+    let summary = store.append_kline_flow_range(
+        symbol,
+        timeframe,
+        &normalized,
+        request.timeframe_ms,
+        request.price_scale,
+        request.volume_scale,
+        request.quote_scale,
+    )?;
+    Ok(WriteKlineFlowResponse {
+        symbol: symbol.into(),
+        timeframe: timeframe.into(),
+        kline_schema: kline_schema_name(crate::chunk::header::KLINE_FLOW_SCHEMA_ID).to_string(),
+        timeframe_ms: summary.timeframe_ms,
+        price_scale: request.price_scale,
+        volume_scale: request.volume_scale,
+        quote_scale: request.quote_scale,
+        registered: summary.registered,
+        requested_record_count: summary.requested_record_count,
+        written_record_count: summary.written_record_count,
+        month_batches_written: summary.month_batches_written,
+    })
+}
+
 /// Returns kline existence, month inventory and coverage details.
 pub fn kline_inventory(
     root: impl AsRef<Path>,
@@ -320,6 +509,10 @@ pub fn kline_inventory(
             timeframe_ms: Some(meta.timeframe_ms),
             price_scale: Some(meta.price_scale),
             volume_scale: Some(meta.volume_scale),
+            kline_schema: meta
+                .quote_scale
+                .map(|_| kline_schema_name(meta.schema_id).to_string()),
+            quote_scale: meta.quote_scale,
             record_count: total_record_count,
             coverage_start_ts,
             coverage_end_ts,
@@ -333,6 +526,8 @@ pub fn kline_inventory(
             timeframe_ms: None,
             price_scale: None,
             volume_scale: None,
+            kline_schema: None,
+            quote_scale: None,
             record_count: 0,
             coverage_start_ts: None,
             coverage_end_ts: None,
@@ -683,6 +878,25 @@ fn normalize_kline_records(
         if window[0].ts == window[1].ts {
             return Err(FastKError::InvalidInput(format!(
                 "write-kline-range contains duplicate timestamp {}",
+                window[0].ts
+            )));
+        }
+    }
+    Ok(normalized)
+}
+
+fn normalize_kline_flow_records(
+    records: Vec<KlineFlowBridgeRecord>,
+) -> Result<Vec<KlineFlowRecord>> {
+    let mut normalized = records
+        .into_iter()
+        .map(KlineFlowBridgeRecord::to_record)
+        .collect::<Result<Vec<_>>>()?;
+    normalized.sort_by_key(|record| record.ts);
+    for window in normalized.windows(2) {
+        if window[0].ts == window[1].ts {
+            return Err(FastKError::InvalidInput(format!(
+                "write-kline-flow-range contains duplicate timestamp {}",
                 window[0].ts
             )));
         }

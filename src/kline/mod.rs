@@ -1,3 +1,3 @@
 mod record;
 
-pub use record::KlineRecord;
+pub use record::{KlineFlowRecord, KlineRecord, KLINE_FLOW_MISSING};

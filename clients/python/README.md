@@ -11,7 +11,9 @@ with Client("./research-store") as store:
 ```
 
 Import `Client` as shown below. Existing methods and return dictionaries are
-unchanged. Outside a context each operation still starts a process. Context exit
+unchanged. Version 0.3 adds `read_kline_flow_range`, `write_kline_flow_range`
+(with `quote_scale`) and `read_kline_flow_latest` for kline flow series. Absent
+flow values are `None`, never `0` (see `docs/KLINE_FLOW_FIELDS.md`). Outside a context each operation still starts a process. Context exit
 or `close()` permanently closes that Client; create another Client to resume.
 Timeout or a broken worker ends the session without replay or automatic restart.
 A timeout while only waiting for another call does not interrupt that call.

@@ -5,10 +5,11 @@ use std::path::PathBuf;
 
 use fastk::{
     bridge_indicator_inventory, bridge_kline_inventory, bridge_query_scalar_predicate,
-    bridge_read_indicator_range, bridge_read_kline_range, bridge_read_scalar_range,
-    bridge_scalar_inventory, bridge_write_indicator_range, bridge_write_kline_range,
-    bridge_write_scalar_range, FastKError, Result, ScalarPredicateExpr, WriteIndicatorRequest,
-    WriteKlineRequest, WriteScalarRequest,
+    bridge_read_indicator_range, bridge_read_kline_flow_range, bridge_read_kline_range,
+    bridge_read_scalar_range, bridge_scalar_inventory, bridge_write_indicator_range,
+    bridge_write_kline_flow_range, bridge_write_kline_range, bridge_write_scalar_range, FastKError,
+    Result, ScalarPredicateExpr, WriteIndicatorRequest, WriteKlineFlowRequest, WriteKlineRequest,
+    WriteScalarRequest,
 };
 
 #[path = "session_transport.rs"]
@@ -104,6 +105,28 @@ fn dispatch(args: Vec<String>, input: Input, output: &mut JsonOutput<impl Write>
                 .collect();
             write_json(output, &serde_json::json!({"records": rows}))?;
         }
+        "read-kline-flow-latest" => {
+            let store = fastk::FastKStore::open_read_only(require_path(&options, "root")?)?;
+            let limit = require_i64(&options, "limit")?;
+            let limit = usize::try_from(limit)
+                .map_err(|_| FastKError::InvalidInput("limit must be nonnegative".into()))?;
+            let symbol = require_str(&options, "symbol")?;
+            let timeframe = require_str(&options, "timeframe")?;
+            let meta = store.kline_metadata(symbol, timeframe)?;
+            let rows: Vec<fastk::KlineFlowBridgeRecord> = store
+                .get_kline_flow_latest_n(symbol, timeframe, limit)?
+                .into_iter()
+                .map(Into::into)
+                .collect();
+            write_json(
+                output,
+                &serde_json::json!({
+                    "kline_schema": fastk::kline_schema_name(meta.schema_id),
+                    "quote_scale": meta.quote_scale,
+                    "records": rows,
+                }),
+            )?;
+        }
         "init" => {
             let mut store = fastk::FastKStore::open(require_path(&options, "root")?)?;
             store.init()?;
@@ -126,6 +149,16 @@ fn dispatch(args: Vec<String>, input: Input, output: &mut JsonOutput<impl Write>
         }
         "read-kline-range" => {
             let response = bridge_read_kline_range(
+                require_path(&options, "root")?,
+                require_str(&options, "symbol")?,
+                require_str(&options, "timeframe")?,
+                require_i64(&options, "start-ts")?,
+                require_i64(&options, "end-ts")?,
+            )?;
+            write_json(output, &response)?;
+        }
+        "read-kline-flow-range" => {
+            let response = bridge_read_kline_flow_range(
                 require_path(&options, "root")?,
                 require_str(&options, "symbol")?,
                 require_str(&options, "timeframe")?,
@@ -175,6 +208,17 @@ fn dispatch(args: Vec<String>, input: Input, output: &mut JsonOutput<impl Write>
             let payload = input.read(opt_str(&options, "input-json"))?;
             let payload: WriteKlineRequest = serde_json::from_value(payload)?;
             let response = bridge_write_kline_range(
+                require_path(&options, "root")?,
+                require_str(&options, "symbol")?,
+                require_str(&options, "timeframe")?,
+                payload,
+            )?;
+            write_json(output, &response)?;
+        }
+        "write-kline-flow-range" => {
+            let payload = input.read(opt_str(&options, "input-json"))?;
+            let payload: WriteKlineFlowRequest = serde_json::from_value(payload)?;
+            let response = bridge_write_kline_flow_range(
                 require_path(&options, "root")?,
                 require_str(&options, "symbol")?,
                 require_str(&options, "timeframe")?,
@@ -437,6 +481,15 @@ Commands:
     If --input-json is omitted, JSON is read from stdin.
   kline-inventory
     --root <path> --symbol <symbol> --timeframe <tf>
+  read-kline-flow-latest --root <path> --symbol <symbol> --timeframe <tf> --limit <n>
+  read-kline-flow-range
+    --root <path> --symbol <symbol> --timeframe <tf> --start-ts <ms> --end-ts <ms>
+    Includes quote_volume, trade_count, taker_buy_volume, taker_buy_quote_volume;
+    absent values are null (OHLCV series report every flow field as null).
+  write-kline-flow-range
+    --root <path> --symbol <symbol> --timeframe <tf> [--input-json <file>]
+    Payload adds quote_scale; flow fields may be null. If --input-json is omitted,
+    JSON is read from stdin.
   read-indicator-range
     --root <path> --symbol <symbol> --timeframe <tf> --indicator-name <name> --start-ts <ms> --end-ts <ms>
   read-scalar-range

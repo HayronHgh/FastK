@@ -3,8 +3,8 @@ use std::fs;
 use std::path::{Path, PathBuf};
 
 use crate::chunk::header::{
-    ChunkHeader, BBO_SCHEMA_ID, BOOK_DELTA_SCHEMA_ID, KLINE_SCHEMA_ID, SCALAR_SCHEMA_ID,
-    TRADE_SCHEMA_ID,
+    ChunkHeader, BBO_SCHEMA_ID, BOOK_DELTA_SCHEMA_ID, KLINE_FLOW_SCHEMA_ID, KLINE_SCHEMA_ID,
+    SCALAR_SCHEMA_ID, TRADE_SCHEMA_ID,
 };
 use crate::engine::Catalog;
 use crate::error::{FastKError, Result};
@@ -971,7 +971,7 @@ fn build_series_meta_from_chunks(
         .to_string();
 
     let record_type = match header.schema_id {
-        KLINE_SCHEMA_ID => RecordType::Kline,
+        KLINE_SCHEMA_ID | KLINE_FLOW_SCHEMA_ID => RecordType::Kline,
         SCALAR_SCHEMA_ID => RecordType::Scalar,
         TRADE_SCHEMA_ID => RecordType::Trade,
         BBO_SCHEMA_ID => RecordType::Bbo,

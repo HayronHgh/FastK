@@ -116,6 +116,13 @@ The market-data layer handles REST/WebSocket clients, source payload parsing,
 normalization, sequence policy, gap recovery policy, and scheduling. The FastK
 adapter only converts already-normalized records into FastK storage calls.
 
+Kline flow fields (quote volume, trade count, taker-buy volumes) follow the same
+rule. The caller parses exchange columns into fixed-point integers and chooses
+`quote_scale`. FastK validates storage invariants (non-negative values,
+taker-buy totals within their totals) and keeps absent values absent. Derived
+flow features such as VWAP, CVD or average trade size are computed upstream
+([Kline flow fields](KLINE_FLOW_FIELDS.md)).
+
 ## Feature And Factor Engine Relationship
 
 Feature and factor engines own calculation:

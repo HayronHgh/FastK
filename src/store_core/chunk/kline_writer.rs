@@ -2,12 +2,13 @@ use std::io::Write;
 use std::path::Path;
 
 use crate::chunk::header::{
-    ChunkHeader, CHUNK_FLAG_HAS_SPARSE_INDEX, CHUNK_MAGIC, CHUNK_VERSION_CURRENT, KLINE_SCHEMA_ID,
+    ChunkHeader, CHUNK_FLAG_HAS_SPARSE_INDEX, CHUNK_MAGIC, CHUNK_VERSION_CURRENT,
 };
+use crate::chunk::kline_reader::KlineRow;
 use crate::chunk::sparse_index::{self, DEFAULT_SPARSE_INDEX_EVERY};
 use crate::error::{FastKError, Result};
 use crate::storage::{fs, path};
-use crate::types::{ChunkMeta, ChunkState, KlineRecord, SeriesMeta};
+use crate::types::{ChunkMeta, ChunkState, SeriesMeta};
 
 /// Input describing the target identity and layout of a newly written kline chunk.
 #[derive(Debug, Clone)]
@@ -32,19 +33,26 @@ impl Default for WriteKlineChunkOptions {
 }
 
 /// Validates and writes a single kline chunk as `[header][records][sparse_index]`.
-pub fn write_chunk(
+pub fn write_chunk<R: KlineRow>(
     chunk_path: &Path,
     meta: &SeriesMeta,
-    records: &[KlineRecord],
+    records: &[R],
     options: &WriteKlineChunkOptions,
 ) -> Result<ChunkMeta> {
-    KlineRecord::validate_strict_order(records)?;
+    if meta.schema_id != R::SCHEMA_ID || meta.record_size as usize != R::BYTE_SIZE {
+        return Err(FastKError::InvalidInput(format!(
+            "series schema_id {} does not match kline writer schema {}",
+            meta.schema_id,
+            R::SCHEMA_ID
+        )));
+    }
+    R::validate_strict_order(records)?;
     let first = records
         .first()
         .ok_or_else(|| FastKError::InvalidInput("records must not be empty".to_string()))?;
-    let month_key = path::month_key(first.ts)?;
+    let month_key = path::month_key(first.ts())?;
 
-    if path::month_key(records.last().unwrap().ts)? != month_key {
+    if path::month_key(records.last().unwrap().ts())? != month_key {
         return Err(FastKError::InvalidInput(
             "records span multiple UTC months".into(),
         ));
@@ -61,7 +69,7 @@ pub fn write_chunk(
     let index_bytes = sparse_index::encode_entries(&sparse_index);
     let record_bytes_len = records
         .len()
-        .checked_mul(KlineRecord::BYTE_SIZE)
+        .checked_mul(R::BYTE_SIZE)
         .ok_or_else(|| FastKError::InvalidInput("kline chunk byte length overflow".to_string()))?;
     let header_size = ChunkHeader::BYTE_SIZE_V2;
 
@@ -69,14 +77,14 @@ pub fn write_chunk(
         magic: CHUNK_MAGIC,
         version: CHUNK_VERSION_CURRENT,
         header_size: header_size as u32,
-        record_size: KlineRecord::BYTE_SIZE as u32,
-        schema_id: KLINE_SCHEMA_ID,
+        record_size: R::BYTE_SIZE as u32,
+        schema_id: R::SCHEMA_ID,
         series_id: meta.series_id,
         chunk_id: options.chunk_id,
         generation: options.generation as u64,
         timeframe_ms: meta.timeframe_ms,
-        start_ts: records[0].ts,
-        end_ts: records[records.len() - 1].ts,
+        start_ts: records[0].ts(),
+        end_ts: records[records.len() - 1].ts(),
         count: records.len() as u64,
         flags: CHUNK_FLAG_HAS_SPARSE_INDEX,
         index_offset: (header_size + record_bytes_len) as u64,
@@ -87,7 +95,7 @@ pub fn write_chunk(
     let mut bytes = Vec::with_capacity(header_size + record_bytes_len + index_bytes.len());
     bytes.extend_from_slice(&header.to_le_bytes());
     for record in records {
-        bytes.extend_from_slice(&record.to_le_bytes());
+        record.encode_le(&mut bytes);
     }
     bytes.extend_from_slice(&index_bytes);
     let chunk_checksum = fs::checksum64(&bytes);

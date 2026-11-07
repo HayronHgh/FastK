@@ -186,6 +186,7 @@ mod tests {
             schema_id: 1,
             price_scale: 100_000,
             volume_scale: 100_000,
+            quote_scale: None,
             chunk_unit: "month".to_string(),
             series_id: 1,
             manifest_seq: 1,

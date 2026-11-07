@@ -16,7 +16,7 @@ close; read-only handles exclude writers until closed. Native calls have no hard
 timeout. The independent subprocess client below retains its deadlines.
 
 ```sh
-python -m pip install numpy==2.3.5 /path/to/fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+python -m pip install numpy==2.3.5 /path/to/fastk_native-0.3.0rc1-cp312-cp312-win_amd64.whl
 ```
 
 Linux native wheels use glibc tags determined by the actual build. Do not relabel
@@ -29,9 +29,9 @@ Offline installation requires the matching NumPy wheel supplied with
 Obtain the wheel matching your platform from a built release package:
 
 ```sh
-python -m pip install /path/to/fastk_client-0.2.0rc1-py3-none-win_amd64.whl
+python -m pip install /path/to/fastk_client-0.3.0rc1-py3-none-win_amd64.whl
 # Linux:
-python -m pip install /path/to/fastk_client-0.2.0rc1-py3-none-manylinux_2_17_x86_64.whl
+python -m pip install /path/to/fastk_client-0.3.0rc1-py3-none-manylinux_2_17_x86_64.whl
 ```
 
 The wheel includes a standalone bridge executable. Nothing is downloaded or

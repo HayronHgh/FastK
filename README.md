@@ -4,7 +4,7 @@ FastK is a Rust storage engine for normalized, fixed-record time-series data.
 It is designed for read-heavy market-data and research workflows that need fast
 local range reads without bringing in a full SQL database.
 
-Current release target: `v0.2.0-rc.1`
+Current release target: `v0.3.0-rc.1`
 
 FastK is a technical/research MIT project, not an enterprise service offering.
 Start with [Installation](docs/INSTALLATION.md) for compiler-free Python/CLI use,
@@ -43,12 +43,17 @@ The controlled scope is Linux guest data-page cold; host/device caches are not
 controlled. This publication contains the report only, without the test code or
 deployment environment. FastK core and public APIs were not changed.
 
+Version 0.3 adds [kline flow series](docs/KLINE_FLOW_FIELDS.md). Quote volume,
+trade count and taker-buy base/quote volume are stored next to OHLCV as 80-byte
+rows. Absent values stay absent (never `0`), and invalid flow rows are rejected.
+Existing OHLCV data and contracts are byte-for-byte unchanged.
+
 ## What This Project Is For
 
 FastK is useful when an upper-layer system already produces clean, normalized
 records and needs a compact local persistence layer for:
 
-- kline / OHLCV base series
+- kline / OHLCV base series, optionally with exchange order-flow fields
 - scalar indicator and feature outputs
 - factor, signal, risk, portfolio, and metric scalar series
 - deterministic research and backtest adapters
@@ -308,6 +313,7 @@ FastK core business logic.
 - [Backend Integration](docs/BACKEND_INTEGRATION.md)
 - [Backtest Integration](docs/BACKTEST_INTEGRATION.md)
 - [Bridge Contract](docs/BRIDGE_CONTRACT.md)
+- [Kline Flow Fields](docs/KLINE_FLOW_FIELDS.md)
 - [Signal-as-Scalar Bridge](docs/SIGNAL_SCALAR_STORAGE.md)
 - [Kline Storage Comparison](docs/KLINE_STORAGE_COMPARISON.md)
 - [Release Checklist](docs/RELEASE_CHECKLIST.md)

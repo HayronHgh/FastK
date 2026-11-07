@@ -5,7 +5,7 @@ standard-library-only `fastk-client` subprocess package. Install a wheel matchin
 your CPython version and platform, plus NumPy 2.3.5 or newer (below 3).
 
 ```sh
-python -m pip install fastk_native-0.2.0rc1-cp312-cp312-win_amd64.whl
+python -m pip install fastk_native-0.3.0rc1-cp312-cp312-win_amd64.whl
 ```
 
 ```python
@@ -36,8 +36,17 @@ through a checked ownership cast, without another record-to-word buffer. Predica
 results still validate optional values and build their output. Disk IO still copies
 data into the engine buffer.
 
-Input must be a one-dimensional NumPy array with exactly `KLINE_DTYPE` or
-`SCALAR_DTYPE`, in strictly increasing timestamp order. Noncontiguous input is
+Kline flow series (v0.3) use `KLINE_FLOW_DTYPE`: the Kline fields followed by
+`quote_volume, trade_count, taker_buy_volume, taker_buy_quote_volume` (80
+bytes/row). Use `read_kline_flow_range`, `read_kline_flow_latest` and
+`write_kline_flow_range(..., quote_scale=...)`. An absent flow value is
+`KLINE_FLOW_MISSING` (`i64::MIN`), never `0`. OHLCV series read through the flow
+methods report every flow field as missing. `read_kline_range` on a flow series
+returns its OHLCV columns. `kline_info` reports `kline_schema` and `quote_scale`.
+See `docs/KLINE_FLOW_FIELDS.md`.
+
+Input must be a one-dimensional NumPy array with exactly `KLINE_DTYPE`,
+`KLINE_FLOW_DTYPE` or `SCALAR_DTYPE`, in strictly increasing timestamp order. Noncontiguous input is
 copied. Input is copied into Rust before releasing the GIL; floating point or
 unsigned input is rejected. Integers outside int64 are rejected rather than
 truncated. The on-disk format is unchanged.

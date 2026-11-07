@@ -204,6 +204,10 @@ pub struct SeriesMeta {
     pub schema_id: u32,
     pub price_scale: i64,
     pub volume_scale: i64,
+    /// Scale of quote-denominated flow fields; present only for kline flow series.
+    /// Omitted from serialized output when absent so OHLCV metadata JSON is unchanged.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub quote_scale: Option<i64>,
     pub chunk_unit: String,
     pub series_id: u64,
     pub manifest_seq: u64,
@@ -227,6 +231,22 @@ impl SeriesMeta {
         if self.record_size == 0 {
             return Err(FastKError::InvalidData(
                 "record_size must be greater than zero".to_string(),
+            ));
+        }
+        let is_flow = self.schema_id == crate::chunk::header::KLINE_FLOW_SCHEMA_ID;
+        if is_flow
+            && (self.record_type != RecordType::Kline
+                || self.record_size as usize != crate::kline::KlineFlowRecord::BYTE_SIZE
+                || !self.quote_scale.is_some_and(|scale| scale > 0))
+        {
+            return Err(FastKError::InvalidData(
+                "kline flow series requires kline record type, 80-byte rows and a positive quote_scale"
+                    .to_string(),
+            ));
+        }
+        if !is_flow && self.quote_scale.is_some() {
+            return Err(FastKError::InvalidData(
+                "quote_scale is only valid for kline flow series".to_string(),
             ));
         }
         let partition_unit = PartitionUnit::from_str(&self.chunk_unit)?;
@@ -397,6 +417,7 @@ mod tests {
             schema_id: 1,
             price_scale: 100_000,
             volume_scale: 100_000,
+            quote_scale: None,
             chunk_unit: "month".to_string(),
             series_id: 1,
             manifest_seq: 1,

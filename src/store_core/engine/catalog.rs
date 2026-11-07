@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 use std::sync::Arc;
 
-use crate::chunk::header::{KLINE_SCHEMA_ID, SCALAR_SCHEMA_ID};
+use crate::chunk::header::{KLINE_FLOW_SCHEMA_ID, KLINE_SCHEMA_ID, SCALAR_SCHEMA_ID};
 use crate::error::Result;
 use crate::storage::{fs, manifest, path};
 use crate::types::{FixedRecord, PartitionPolicy, RecordType, ScalarSeriesKey, SeriesMeta};
@@ -173,6 +173,7 @@ impl Catalog {
             schema_id: KLINE_SCHEMA_ID,
             price_scale,
             volume_scale,
+            quote_scale: None,
             chunk_unit: "month".to_string(),
             series_id: Self::series_id_for(symbol, path::KLINE_CATEGORY, timeframe),
             manifest_seq: 1,
@@ -181,6 +182,23 @@ impl Catalog {
             flags: 0,
             active_chunk_id: None,
             chunks: Vec::new(),
+        }
+    }
+
+    /// Builds metadata for a new kline flow series (schema 3, 80-byte rows).
+    pub fn build_kline_flow_meta(
+        symbol: &str,
+        timeframe: &str,
+        timeframe_ms: i64,
+        price_scale: i64,
+        volume_scale: i64,
+        quote_scale: i64,
+    ) -> SeriesMeta {
+        SeriesMeta {
+            record_size: crate::types::KlineFlowRecord::BYTE_SIZE as u32,
+            schema_id: KLINE_FLOW_SCHEMA_ID,
+            quote_scale: Some(quote_scale),
+            ..Self::build_kline_meta(symbol, timeframe, timeframe_ms, price_scale, volume_scale)
         }
     }
 
@@ -197,6 +215,7 @@ impl Catalog {
             schema_id: SCALAR_SCHEMA_ID,
             price_scale: 1,
             volume_scale: 1,
+            quote_scale: None,
             chunk_unit: "month".to_string(),
             series_id: Self::series_id_for(&key.symbol, &key.category, &key.name),
             manifest_seq: 1,
@@ -227,6 +246,7 @@ impl Catalog {
             schema_id: R::SCHEMA_ID,
             price_scale: 1,
             volume_scale: 1,
+            quote_scale: None,
             chunk_unit: partition_policy.unit.as_str().to_string(),
             series_id: Self::series_id_for(symbol, category, name),
             manifest_seq: 1,

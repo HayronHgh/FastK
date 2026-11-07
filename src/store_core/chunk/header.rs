@@ -8,6 +8,8 @@ pub const CHUNK_VERSION_V2: u32 = 2;
 pub const CHUNK_VERSION_CURRENT: u32 = CHUNK_VERSION_V2;
 pub const KLINE_SCHEMA_ID: u32 = 1;
 pub const SCALAR_SCHEMA_ID: u32 = 2;
+/// Kline rows with quote volume, trade count and taker-buy volumes (80 bytes).
+pub const KLINE_FLOW_SCHEMA_ID: u32 = 3;
 pub const TRADE_SCHEMA_ID: u32 = 10;
 pub const BBO_SCHEMA_ID: u32 = 11;
 pub const BOOK_DELTA_SCHEMA_ID: u32 = 12;

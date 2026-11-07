@@ -472,6 +472,359 @@
           "const": true
         }
       }
+    },
+    "kline_flow_record": {
+      "type": "object",
+      "description": "Kline row with order-flow fields (kline schema ohlcv_flow). Flow fields may be omitted or null on input; reads always include them, null when absent.",
+      "required": [
+        "ts",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ts": {
+          "type": "integer"
+        },
+        "open": {
+          "type": "integer"
+        },
+        "high": {
+          "type": "integer"
+        },
+        "low": {
+          "type": "integer"
+        },
+        "close": {
+          "type": "integer"
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quote_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Quote-asset volume at quote_scale; null when absent, never 0."
+        },
+        "trade_count": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Unscaled trade count; null when absent."
+        },
+        "taker_buy_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Taker-buy base volume at volume_scale; must not exceed volume."
+        },
+        "taker_buy_quote_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Taker-buy quote volume at quote_scale; requires quote_volume and must not exceed it."
+        }
+      }
+    },
+    "kline_flow_record_output": {
+      "type": "object",
+      "required": [
+        "ts",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "quote_volume",
+        "trade_count",
+        "taker_buy_volume",
+        "taker_buy_quote_volume"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ts": {
+          "type": "integer"
+        },
+        "open": {
+          "type": "integer"
+        },
+        "high": {
+          "type": "integer"
+        },
+        "low": {
+          "type": "integer"
+        },
+        "close": {
+          "type": "integer"
+        },
+        "volume": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quote_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Quote-asset volume at quote_scale; null when absent, never 0."
+        },
+        "trade_count": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Unscaled trade count; null when absent."
+        },
+        "taker_buy_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Taker-buy base volume at volume_scale; must not exceed volume."
+        },
+        "taker_buy_quote_volume": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Taker-buy quote volume at quote_scale; requires quote_volume and must not exceed it."
+        }
+      }
+    },
+    "write_kline_flow_request": {
+      "type": "object",
+      "required": [
+        "timeframe_ms",
+        "price_scale",
+        "volume_scale",
+        "quote_scale",
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "timeframe_ms": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "price_scale": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "volume_scale": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote_scale": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kline_flow_record"
+          }
+        }
+      }
+    },
+    "write_kline_flow_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "kline_schema",
+        "timeframe_ms",
+        "price_scale",
+        "volume_scale",
+        "quote_scale",
+        "registered",
+        "requested_record_count",
+        "written_record_count",
+        "month_batches_written"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        },
+        "kline_schema": {
+          "const": "ohlcv_flow"
+        },
+        "timeframe_ms": {
+          "type": "integer"
+        },
+        "price_scale": {
+          "type": "integer"
+        },
+        "volume_scale": {
+          "type": "integer"
+        },
+        "quote_scale": {
+          "type": "integer"
+        },
+        "registered": {
+          "type": "boolean"
+        },
+        "requested_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "written_record_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "month_batches_written": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "kline_flow_range_response": {
+      "type": "object",
+      "required": [
+        "symbol",
+        "timeframe",
+        "kline_schema",
+        "timeframe_ms",
+        "start_ts",
+        "end_ts",
+        "price_scale",
+        "volume_scale",
+        "quote_scale",
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "type": "string"
+        },
+        "timeframe": {
+          "type": "string"
+        },
+        "kline_schema": {
+          "enum": [
+            "ohlcv",
+            "ohlcv_flow"
+          ]
+        },
+        "timeframe_ms": {
+          "type": "integer"
+        },
+        "start_ts": {
+          "type": "integer"
+        },
+        "end_ts": {
+          "type": "integer"
+        },
+        "price_scale": {
+          "type": "integer"
+        },
+        "volume_scale": {
+          "type": "integer"
+        },
+        "quote_scale": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kline_flow_record_output"
+          }
+        }
+      }
+    },
+    "kline_flow_latest_response": {
+      "type": "object",
+      "required": [
+        "kline_schema",
+        "quote_scale",
+        "records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kline_schema": {
+          "enum": [
+            "ohlcv",
+            "ohlcv_flow"
+          ]
+        },
+        "quote_scale": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/kline_flow_record_output"
+          }
+        }
+      }
     }
   },
   "type": "object",
@@ -498,7 +851,10 @@
           "init",
           "seal-snapshot",
           "verify-snapshot",
-          "read-kline-latest"
+          "read-kline-latest",
+          "read-kline-flow-range",
+          "write-kline-flow-range",
+          "read-kline-flow-latest"
         ]
       }
     }

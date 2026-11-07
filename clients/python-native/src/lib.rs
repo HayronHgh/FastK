@@ -2,8 +2,9 @@ use std::path::PathBuf;
 use std::sync::{Mutex, RwLock};
 
 use fastk::{
-    scoped_scalar_series_key, FastKStore, KlineRecord, MetricsLevel, RangeWriteSummary,
-    ScalarPredicateExpr, ScalarPredicateQuery, ScalarRecord,
+    kline_schema_name, scoped_scalar_series_key, FastKStore, KlineFlowRecord, KlineRecord,
+    MetricsLevel, RangeWriteSummary, ScalarPredicateExpr, ScalarPredicateQuery, ScalarRecord,
+    KLINE_FLOW_MISSING,
 };
 use numpy::{IntoPyArray, PyArray1, PyArrayMethods};
 use pyo3::exceptions::{PyRuntimeError, PyValueError};
@@ -40,7 +41,28 @@ const _: () = {
     assert!(offset_of!(KlineRecord, volume) == 40);
     assert!(offset_of!(ScalarRecord, ts) == 0);
     assert!(offset_of!(ScalarRecord, value) == 8);
+    assert!(size_of::<KlineFlowRecord>() == 80);
+    assert!(align_of::<KlineFlowRecord>() == align_of::<i64>());
+    assert!(offset_of!(KlineFlowRecord, ts) == 0);
+    assert!(offset_of!(KlineFlowRecord, volume) == 40);
+    assert!(offset_of!(KlineFlowRecord, quote_volume) == 48);
+    assert!(offset_of!(KlineFlowRecord, trade_count) == 56);
+    assert!(offset_of!(KlineFlowRecord, taker_buy_volume) == 64);
+    assert!(offset_of!(KlineFlowRecord, taker_buy_quote_volume) == 72);
 };
+
+const KLINE_FLOW_FIELDS: [&str; 10] = [
+    "ts",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "quote_volume",
+    "trade_count",
+    "taker_buy_volume",
+    "taker_buy_quote_volume",
+];
 
 fn words<T: bytemuck::NoUninit>(rows: Vec<T>) -> fastk::Result<Vec<i64>> {
     bytemuck::allocation::try_cast_vec(rows).map_err(|(error, _)| {
@@ -169,6 +191,34 @@ impl Reader {
         array(py, words, "KLINE_DTYPE")
     }
 
+    /// Flow rows; absent flow values hold `KLINE_FLOW_MISSING`, never 0.
+    fn read_kline_flow_range(
+        &self,
+        py: Python<'_>,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> PyResult<Py<PyAny>> {
+        let words = self.read(py, |store| {
+            words(store.get_kline_flow_range(symbol, timeframe, start_ts, end_ts)?)
+        })?;
+        array(py, words, "KLINE_FLOW_DTYPE")
+    }
+
+    fn read_kline_flow_latest(
+        &self,
+        py: Python<'_>,
+        symbol: &str,
+        timeframe: &str,
+        limit: usize,
+    ) -> PyResult<Py<PyAny>> {
+        let words = self.read(py, |store| {
+            words(store.get_kline_flow_latest_n(symbol, timeframe, limit)?)
+        })?;
+        array(py, words, "KLINE_FLOW_DTYPE")
+    }
+
     fn read_scalar_range(
         &self,
         py: Python<'_>,
@@ -258,6 +308,8 @@ impl Reader {
         result.set_item("timeframe_ms", meta.timeframe_ms)?;
         result.set_item("price_scale", meta.price_scale)?;
         result.set_item("volume_scale", meta.volume_scale)?;
+        result.set_item("quote_scale", meta.quote_scale)?;
+        result.set_item("kline_schema", kline_schema_name(meta.schema_id))?;
         result.set_item("timestamp_unit", "ms")?;
         result.set_item("schema_id", meta.schema_id)?;
         Ok(result.into_any().unbind())
@@ -396,6 +448,52 @@ impl Writer {
         summary(py, result)
     }
 
+    /// Writes flow rows; use `KLINE_FLOW_MISSING` for an absent flow value.
+    #[pyo3(signature = (symbol, timeframe, rows, *, timeframe_ms, price_scale, volume_scale, quote_scale))]
+    #[allow(clippy::too_many_arguments)]
+    fn write_kline_flow_range(
+        &self,
+        py: Python<'_>,
+        symbol: &str,
+        timeframe: &str,
+        rows: &Bound<'_, PyAny>,
+        timeframe_ms: i64,
+        price_scale: i64,
+        volume_scale: i64,
+        quote_scale: i64,
+    ) -> PyResult<Py<PyAny>> {
+        let input = input_array(py, rows, "KLINE_FLOW_DTYPE")?;
+        let records: Vec<_> = input
+            .readonly()
+            .as_slice()?
+            .chunks_exact(KLINE_FLOW_FIELDS.len())
+            .map(|r| KlineFlowRecord {
+                ts: r[0],
+                open: r[1],
+                high: r[2],
+                low: r[3],
+                close: r[4],
+                volume: r[5],
+                quote_volume: r[6],
+                trade_count: r[7],
+                taker_buy_volume: r[8],
+                taker_buy_quote_volume: r[9],
+            })
+            .collect();
+        let result = self.write(py, |store| {
+            store.append_kline_flow_range(
+                symbol,
+                timeframe,
+                &records,
+                timeframe_ms,
+                price_scale,
+                volume_scale,
+                quote_scale,
+            )
+        })?;
+        summary(py, result)
+    }
+
     #[pyo3(signature = (symbol, timeframe, category, name, rows, *, timeframe_ms))]
     fn write_scalar_range(
         &self,
@@ -472,6 +570,17 @@ fn _native(module: &Bound<'_, PyModule>) -> PyResult<()> {
         )?,
     )?;
     module.add(
+        "KLINE_FLOW_DTYPE",
+        np.call_method1(
+            "dtype",
+            (KLINE_FLOW_FIELDS
+                .iter()
+                .map(|name| (*name, "<i8"))
+                .collect::<Vec<_>>(),),
+        )?,
+    )?;
+    module.add("KLINE_FLOW_MISSING", KLINE_FLOW_MISSING)?;
+    module.add(
         "SCALAR_DTYPE",
         np.call_method1("dtype", (vec![("ts", "<i8"), ("value", "<i8")],))?,
     )?;
@@ -531,6 +640,28 @@ mod allocation_tests {
             assert!(result.is_empty());
         }
         assert!(words(Vec::<ScalarRecord>::new()).unwrap().is_empty());
+    }
+
+    #[test]
+    fn kline_flow_handoff_keeps_allocation_and_field_order() {
+        let mut rows = Vec::with_capacity(3);
+        rows.push(KlineFlowRecord {
+            ts: 1,
+            open: 2,
+            high: 3,
+            low: 4,
+            close: 5,
+            volume: 6,
+            quote_volume: 7,
+            trade_count: KLINE_FLOW_MISSING,
+            taker_buy_volume: 0,
+            taker_buy_quote_volume: 9,
+        });
+        let pointer = rows.as_ptr().cast::<i64>();
+        let result = words(rows).unwrap();
+        assert_eq!(result.as_ptr(), pointer);
+        assert_eq!(result.capacity(), 3 * KLINE_FLOW_FIELDS.len());
+        assert_eq!(result, [1, 2, 3, 4, 5, 6, 7, KLINE_FLOW_MISSING, 0, 9]);
     }
 
     #[test]

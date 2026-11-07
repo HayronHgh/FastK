@@ -5,6 +5,8 @@ import numpy as np
 
 Batch = np.ndarray[Any, np.dtype[np.void]]
 KLINE_DTYPE: np.dtype[np.void]
+KLINE_FLOW_DTYPE: np.dtype[np.void]
+KLINE_FLOW_MISSING: int
 SCALAR_DTYPE: np.dtype[np.void]
 __version__: str
 
@@ -17,6 +19,10 @@ class Reader:
         self, symbol: str, timeframe: str, start_ts: int, end_ts: int
     ) -> Batch: ...
     def read_kline_latest(self, symbol: str, timeframe: str, limit: int) -> Batch: ...
+    def read_kline_flow_range(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> Batch: ...
+    def read_kline_flow_latest(self, symbol: str, timeframe: str, limit: int) -> Batch: ...
     def read_scalar_range(
         self, symbol: str, timeframe: str, category: str, name: str, start_ts: int, end_ts: int
     ) -> Batch: ...
@@ -55,6 +61,17 @@ class Writer:
         timeframe_ms: int,
         price_scale: int,
         volume_scale: int,
+    ) -> dict[str, Any]: ...
+    def write_kline_flow_range(
+        self,
+        symbol: str,
+        timeframe: str,
+        rows: Batch,
+        *,
+        timeframe_ms: int,
+        price_scale: int,
+        volume_scale: int,
+        quote_scale: int,
     ) -> dict[str, Any]: ...
     def write_scalar_range(
         self,

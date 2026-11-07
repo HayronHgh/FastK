@@ -67,14 +67,17 @@ pub use bridge::{
     indicator_inventory as bridge_indicator_inventory, kline_inventory as bridge_kline_inventory,
     query_scalar_predicate as bridge_query_scalar_predicate,
     read_indicator_range as bridge_read_indicator_range,
+    read_kline_flow_range as bridge_read_kline_flow_range,
     read_kline_range as bridge_read_kline_range, read_scalar_range as bridge_read_scalar_range,
     scalar_inventory as bridge_scalar_inventory,
     write_indicator_range as bridge_write_indicator_range,
+    write_kline_flow_range as bridge_write_kline_flow_range,
     write_kline_range as bridge_write_kline_range, write_scalar_range as bridge_write_scalar_range,
-    IndicatorRangeResponse, InventoryResponse, KlineBridgeRecord, KlineInventoryResponse,
-    KlineRangeResponse, ScalarBridgeRecord, ScalarPredicateQueryResponse, ScalarRangeResponse,
-    WriteIndicatorRequest, WriteIndicatorResponse, WriteKlineRequest, WriteKlineResponse,
-    WriteScalarRequest, WriteScalarResponse,
+    IndicatorRangeResponse, InventoryResponse, KlineBridgeRecord, KlineFlowBridgeRecord,
+    KlineFlowRangeResponse, KlineInventoryResponse, KlineRangeResponse, ScalarBridgeRecord,
+    ScalarPredicateQueryResponse, ScalarRangeResponse, WriteIndicatorRequest,
+    WriteIndicatorResponse, WriteKlineFlowRequest, WriteKlineFlowResponse, WriteKlineRequest,
+    WriteKlineResponse, WriteScalarRequest, WriteScalarResponse,
 };
 pub use control::{
     versioned_dataset_root, DatasetManifestRecord, DatasetRef, DatasetRegistry,
@@ -82,13 +85,13 @@ pub use control::{
 };
 pub use engine::{
     can_chunk_state_transition, factor_series_key, feature_series_key, indicator_series_key,
-    metric_series_key, portfolio_series_key, reserved_scalar_categories, risk_series_key,
-    scoped_scalar_series_key, signal_series_key, BacktestCapabilitySnapshot, BacktestKlineBinding,
-    BacktestPreparePlan, BacktestScalarBinding, BacktestStoreView, CompactionDecision,
-    CompactionPolicy, DerivedSeriesBuilder, DerivedSeriesRequest, FastKReadSession, FastKStore,
-    IndicatorInventoryEntry, MonthInventoryEntry, RangeWriteSummary, ReplayCursor, ReplayOptions,
-    ScalarQueryCapabilities, ScopedScalarBinding, SequenceDuplicate, SequenceGap,
-    SequenceScanReport, SequenceViolation, SeriesInventoryEntry, SessionCacheSummary,
+    kline_schema_name, metric_series_key, portfolio_series_key, reserved_scalar_categories,
+    risk_series_key, scoped_scalar_series_key, signal_series_key, BacktestCapabilitySnapshot,
+    BacktestKlineBinding, BacktestPreparePlan, BacktestScalarBinding, BacktestStoreView,
+    CompactionDecision, CompactionPolicy, DerivedSeriesBuilder, DerivedSeriesRequest,
+    FastKReadSession, FastKStore, IndicatorInventoryEntry, MonthInventoryEntry, RangeWriteSummary,
+    ReplayCursor, ReplayOptions, ScalarQueryCapabilities, ScopedScalarBinding, SequenceDuplicate,
+    SequenceGap, SequenceScanReport, SequenceViolation, SeriesInventoryEntry, SessionCacheSummary,
     SessionResetMode, StoreHealthSummary, StoreStats, DEFAULT_SCALAR_ZMAP_BLOCK_SIZE,
     FACTOR_CATEGORY, FEATURE_CATEGORY, INDICATOR_CATEGORY, METRIC_CATEGORY, PORTFOLIO_CATEGORY,
     RISK_CATEGORY, SIGNAL_CATEGORY,
@@ -100,7 +103,7 @@ pub use feature::{
     ScalarSeriesKey,
 };
 pub use index::{PredicateQueryEngine, ValueIndexEntry, ZoneMapEntry};
-pub use kline::KlineRecord;
+pub use kline::{KlineFlowRecord, KlineRecord, KLINE_FLOW_MISSING};
 pub use metrics::{MetricsLevel, StoreMetricsSnapshot};
 pub use snapshot::{seal_snapshot, verify_snapshot, SnapshotFile, SnapshotManifest};
 pub use storage::recovery::startup_recover as recover_store;
