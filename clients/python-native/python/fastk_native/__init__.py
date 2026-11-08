@@ -3,9 +3,9 @@
 from ._native import (
     KLINE_ACTIVITY_DTYPE,
     KLINE_DTYPE,
-    KLINE_PRICE_DTYPE,
     KLINE_FLOW_DTYPE,
     KLINE_FLOW_MISSING,
+    KLINE_PRICE_DTYPE,
     SCALAR_DTYPE,
     FastKError,
     Reader,
