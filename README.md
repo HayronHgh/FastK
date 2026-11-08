@@ -4,7 +4,7 @@ FastK is a Rust storage engine for normalized, fixed-record time-series data.
 It is designed for read-heavy market-data and research workflows that need fast
 local range reads without bringing in a full SQL database.
 
-Current release target: `v0.3.0-rc.1`
+Current release target: `v0.3.0-rc.2`
 
 FastK is a technical/research MIT project, not an enterprise service offering.
 Start with [Installation](docs/INSTALLATION.md) for compiler-free Python/CLI use,
@@ -44,8 +44,8 @@ controlled. This publication contains the report only, without the test code or
 deployment environment. FastK core and public APIs were not changed.
 
 Version 0.3 adds [kline flow series](docs/KLINE_FLOW_FIELDS.md). Quote volume,
-trade count and taker-buy base/quote volume are stored next to OHLCV as 80-byte
-rows. Absent values stay absent (never `0`), and invalid flow rows are rejected.
+trade count and taker-buy base/quote volume bring each flow row to 80 logical bytes. New flow chunks separate timestamps,
+prices and trading activity for selective reads. Absent values stay absent (never `0`), and invalid flow rows are rejected.
 Existing OHLCV data and contracts are byte-for-byte unchanged.
 
 ## What This Project Is For

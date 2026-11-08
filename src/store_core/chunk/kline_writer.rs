@@ -3,6 +3,7 @@ use std::path::Path;
 
 use crate::chunk::header::{
     ChunkHeader, CHUNK_FLAG_HAS_SPARSE_INDEX, CHUNK_MAGIC, CHUNK_VERSION_CURRENT,
+    CHUNK_VERSION_SPLIT_FLOW, KLINE_FLOW_SCHEMA_ID,
 };
 use crate::chunk::kline_reader::KlineRow;
 use crate::chunk::sparse_index::{self, DEFAULT_SPARSE_INDEX_EVERY};
@@ -75,7 +76,11 @@ pub fn write_chunk<R: KlineRow>(
 
     let header = ChunkHeader {
         magic: CHUNK_MAGIC,
-        version: CHUNK_VERSION_CURRENT,
+        version: if R::SCHEMA_ID == KLINE_FLOW_SCHEMA_ID {
+            CHUNK_VERSION_SPLIT_FLOW
+        } else {
+            CHUNK_VERSION_CURRENT
+        },
         header_size: header_size as u32,
         record_size: R::BYTE_SIZE as u32,
         schema_id: R::SCHEMA_ID,
@@ -94,8 +99,22 @@ pub fn write_chunk<R: KlineRow>(
 
     let mut bytes = Vec::with_capacity(header_size + record_bytes_len + index_bytes.len());
     bytes.extend_from_slice(&header.to_le_bytes());
-    for record in records {
-        record.encode_le(&mut bytes);
+    if header.split_flow() {
+        bytes.resize(header_size + record_bytes_len, 0);
+        let (timestamps, data) = bytes[header_size..].split_at_mut(records.len() * 8);
+        let (prices, activity) = data.split_at_mut(records.len() * 32);
+        let mut row = Vec::with_capacity(R::BYTE_SIZE);
+        for (i, record) in records.iter().enumerate() {
+            row.clear();
+            record.encode_le(&mut row);
+            timestamps[i * 8..(i + 1) * 8].copy_from_slice(&row[..8]);
+            prices[i * 32..(i + 1) * 32].copy_from_slice(&row[8..40]);
+            activity[i * 40..(i + 1) * 40].copy_from_slice(&row[40..80]);
+        }
+    } else {
+        for record in records {
+            record.encode_le(&mut bytes);
+        }
     }
     bytes.extend_from_slice(&index_bytes);
     let chunk_checksum = fs::checksum64(&bytes);

@@ -1,3 +1,9 @@
+# v0.3.0-rc.2
+
+New flow chunks store timestamps, OHLC and trading activity in separate sections.
+Use the price or activity range reader to fetch the corresponding section.
+The reader also supports version 2 flow chunks and the original OHLCV layout.
+
 # FastK v0.3.0-rc.1
 
 Kline flow series keep the remaining useful exchange kline columns next to

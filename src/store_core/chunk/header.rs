@@ -5,6 +5,7 @@ use crate::error::{FastKError, Result};
 pub const CHUNK_MAGIC: [u8; 8] = *b"FASTK001";
 pub const CHUNK_VERSION_V1: u32 = 1;
 pub const CHUNK_VERSION_V2: u32 = 2;
+pub const CHUNK_VERSION_SPLIT_FLOW: u32 = 3;
 pub const CHUNK_VERSION_CURRENT: u32 = CHUNK_VERSION_V2;
 pub const KLINE_SCHEMA_ID: u32 = 1;
 pub const SCALAR_SCHEMA_ID: u32 = 2;
@@ -91,7 +92,7 @@ impl ChunkHeader {
         }
         let expected = match version {
             CHUNK_VERSION_V1 => Self::BYTE_SIZE_V1,
-            CHUNK_VERSION_V2 => Self::BYTE_SIZE_V2,
+            CHUNK_VERSION_V2 | CHUNK_VERSION_SPLIT_FLOW => Self::BYTE_SIZE_V2,
             other => {
                 return Err(FastKError::InvalidData(format!(
                     "unsupported chunk version: {other}",
@@ -172,6 +173,18 @@ impl ChunkHeader {
         Ok(header)
     }
 
+    pub(crate) fn split_flow(&self) -> bool {
+        self.version == CHUNK_VERSION_SPLIT_FLOW
+    }
+
+    pub(crate) fn timestamp_stride(&self) -> u64 {
+        if self.split_flow() {
+            8
+        } else {
+            self.record_size as u64
+        }
+    }
+
     pub fn validate(&self) -> Result<()> {
         if self.magic != CHUNK_MAGIC {
             return Err(FastKError::InvalidData("invalid chunk magic".to_string()));
@@ -185,7 +198,7 @@ impl ChunkHeader {
                     )));
                 }
             }
-            CHUNK_VERSION_V2 => {
+            CHUNK_VERSION_V2 | CHUNK_VERSION_SPLIT_FLOW => {
                 if self.header_size as usize != Self::BYTE_SIZE_V2 {
                     return Err(FastKError::InvalidData(format!(
                         "unexpected header size: {}",
@@ -198,6 +211,17 @@ impl ChunkHeader {
                     "unsupported chunk version: {other}",
                 )))
             }
+        }
+        if self.split_flow()
+            && (self.schema_id != KLINE_FLOW_SCHEMA_ID
+                || self.record_size != 80
+                || self
+                    .count
+                    .checked_mul(80)
+                    .and_then(|n| n.checked_add(self.header_size as u64))
+                    != Some(self.index_offset))
+        {
+            return Err(FastKError::InvalidData("invalid split flow layout".into()));
         }
         if self.count > 0 && self.start_ts > self.end_ts {
             return Err(FastKError::InvalidData(format!(

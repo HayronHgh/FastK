@@ -1,3 +1,5 @@
 mod record;
 
-pub use record::{KlineFlowRecord, KlineRecord, KLINE_FLOW_MISSING};
+pub use record::{
+    KlineActivityRecord, KlineFlowRecord, KlinePriceRecord, KlineRecord, KLINE_FLOW_MISSING,
+};

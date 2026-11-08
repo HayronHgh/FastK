@@ -17,6 +17,9 @@ pub(crate) struct ReadSpan {
     pub file: ChunkFile,
     pub offset: u64,
     pub rows: usize,
+    // Split flow spans start in the timestamp section. The count locates
+    // the price and activity sections in the same chunk.
+    pub split_flow_count: Option<u64>,
 }
 
 impl ChunkFile {

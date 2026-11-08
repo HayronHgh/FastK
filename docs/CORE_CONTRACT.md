@@ -149,7 +149,8 @@ reader/migration tests and document compatibility; do not silently reinterpret
 old bytes or change numeric scales.
 
 Version 0.3 adds one kline layout without changing any existing bytes. Kline flow series
-use `schema_id = 3`, 80-byte rows and the unchanged version 2 chunk header. Their
+use `schema_id = 3` and 80 logical bytes per row. New flow chunks use layout
+version 3 with separate timestamp, price and activity sections. Their
 manifest is version 3 under the same magic, carrying `quote_scale`. OHLCV series
 keep schema 1 and byte-identical version 2 manifests and chunks. Old readers
 reject version 3 explicitly. Schemas never mix within a series and old series are

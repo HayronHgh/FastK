@@ -573,7 +573,12 @@ pub(crate) fn plan_range(
         .ok_or_else(|| FastKError::InvalidData("record offset overflow".into()))?;
     let rows = usize::try_from(last.saturating_sub(first))
         .map_err(|_| FastKError::InvalidData("record count exceeds address space".into()))?;
-    Ok(ReadSpan { file, offset, rows })
+    Ok(ReadSpan {
+        file,
+        offset,
+        rows,
+        split_flow_count: None,
+    })
 }
 
 pub(crate) fn read_planned(

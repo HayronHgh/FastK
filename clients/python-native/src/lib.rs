@@ -178,6 +178,34 @@ impl Reader {
         array(py, words, "KLINE_DTYPE")
     }
 
+    fn read_kline_activity(
+        &self,
+        py: Python<'_>,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> PyResult<Py<PyAny>> {
+        let words = self.read(py, |store| {
+            words(store.read_kline_activity(symbol, timeframe, start_ts, end_ts)?)
+        })?;
+        array(py, words, "KLINE_ACTIVITY_DTYPE")
+    }
+
+    fn read_kline_prices(
+        &self,
+        py: Python<'_>,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> PyResult<Py<PyAny>> {
+        let words = self.read(py, |store| {
+            words(store.read_kline_prices(symbol, timeframe, start_ts, end_ts)?)
+        })?;
+        array(py, words, "KLINE_PRICE_DTYPE")
+    }
+
     fn read_kline_latest(
         &self,
         py: Python<'_>,
@@ -579,6 +607,26 @@ fn _native(module: &Bound<'_, PyModule>) -> PyResult<()> {
                 .collect::<Vec<_>>(),),
         )?,
     )?;
+    for (name, fields) in [
+        ("KLINE_PRICE_DTYPE", &KLINE_FLOW_FIELDS[..5]),
+        (
+            "KLINE_ACTIVITY_DTYPE",
+            &[
+                "ts",
+                "volume",
+                "quote_volume",
+                "trade_count",
+                "taker_buy_volume",
+                "taker_buy_quote_volume",
+            ][..],
+        ),
+    ] {
+        let descriptor = fields
+            .iter()
+            .map(|field| (*field, "<i8"))
+            .collect::<Vec<_>>();
+        module.add(name, np.call_method1("dtype", (descriptor,))?)?;
+    }
     module.add("KLINE_FLOW_MISSING", KLINE_FLOW_MISSING)?;
     module.add(
         "SCALAR_DTYPE",

@@ -157,6 +157,30 @@ fn dispatch(args: Vec<String>, input: Input, output: &mut JsonOutput<impl Write>
             )?;
             write_json(output, &response)?;
         }
+        "read-kline-prices" | "read-kline-activity" => {
+            let root = require_path(&options, "root")?;
+            let symbol = require_str(&options, "symbol")?;
+            let timeframe = require_str(&options, "timeframe")?;
+            let start = require_i64(&options, "start-ts")?;
+            let end = require_i64(&options, "end-ts")?;
+            let store = fastk::FastKStore::open_read_only(root)?;
+            let meta = store.kline_metadata(symbol, timeframe)?;
+            if command == "read-kline-prices" {
+                let records = store.read_kline_prices(symbol, timeframe, start, end)?;
+                write_json(
+                    output,
+                    &serde_json::json!({"price_scale": meta.price_scale, "records": records}),
+                )?;
+            } else {
+                let records = store.read_kline_activity(symbol, timeframe, start, end)?;
+                write_json(
+                    output,
+                    &serde_json::json!({
+                        "volume_scale": meta.volume_scale, "quote_scale": meta.quote_scale, "records": records,
+                    }),
+                )?;
+            }
+        }
         "read-kline-flow-range" => {
             let response = bridge_read_kline_flow_range(
                 require_path(&options, "root")?,
@@ -482,6 +506,8 @@ Commands:
   kline-inventory
     --root <path> --symbol <symbol> --timeframe <tf>
   read-kline-flow-latest --root <path> --symbol <symbol> --timeframe <tf> --limit <n>
+  read-kline-prices --root <path> --symbol <symbol> --timeframe <tf> --start-ts <ms> --end-ts <ms>
+  read-kline-activity --root <path> --symbol <symbol> --timeframe <tf> --start-ts <ms> --end-ts <ms>
   read-kline-flow-range
     --root <path> --symbol <symbol> --timeframe <tf> --start-ts <ms> --end-ts <ms>
     Includes quote_volume, trade_count, taker_buy_volume, taker_buy_quote_volume;

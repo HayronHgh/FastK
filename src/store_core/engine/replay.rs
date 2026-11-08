@@ -234,6 +234,43 @@ fn read_batch_from_chunk<R: FixedRecord>(
     let mut file = open_chunk_file(chunk_ref)?;
     let header = read_and_validate_header::<R>(&mut file, chunk_ref)?;
     let mut out = Vec::with_capacity(max_records.min((header.count - start_index) as usize));
+    if header.split_flow() {
+        let mut left = start_index;
+        let mut right = header
+            .count
+            .min(start_index.saturating_add(max_records as u64));
+        if let Some(end) = end_ts.filter(|end| *end < header.end_ts) {
+            while left < right {
+                let mid = left + (right - left) / 2;
+                if read_timestamp_at(&mut file, &header, mid)? <= end {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+        }
+        let count = (right - start_index) as usize;
+        crate::chunk::kline_reader::read_split(
+            &mut file,
+            header.header_size as u64 + start_index * 8,
+            header.count,
+            count,
+            8..80,
+            None,
+            |row| {
+                out.push(R::decode_le(row)?);
+                Ok(())
+            },
+        )?;
+        return Ok((
+            out,
+            if count < max_records {
+                header.count
+            } else {
+                right
+            },
+        ));
+    }
     let mut index = start_index;
     while index < header.count && out.len() < max_records {
         let record = read_record_at::<R>(&mut file, &header, index)?;
@@ -281,7 +318,7 @@ fn read_and_validate_header<R: FixedRecord>(
 }
 
 fn read_timestamp_at(file: &mut File, header: &ChunkHeader, index: u64) -> Result<i64> {
-    let offset = header.header_size as u64 + index * header.record_size as u64;
+    let offset = header.header_size as u64 + index * header.timestamp_stride();
     file.seek(SeekFrom::Start(offset))?;
     let mut bytes = [0u8; 8];
     file.read_exact(&mut bytes)?;
@@ -289,7 +326,7 @@ fn read_timestamp_at(file: &mut File, header: &ChunkHeader, index: u64) -> Resul
 }
 
 fn read_record_at<R: FixedRecord>(file: &mut File, header: &ChunkHeader, index: u64) -> Result<R> {
-    let offset = header.header_size as u64 + index * header.record_size as u64;
+    let offset = header.header_size as u64 + index * header.timestamp_stride();
     file.seek(SeekFrom::Start(offset))?;
     let mut bytes = vec![0u8; R::BYTE_SIZE];
     file.read_exact(&mut bytes)?;

@@ -57,7 +57,7 @@ impl FastKStore {
         &self,
         spans: Vec<ReadSpan>,
         record_size: usize,
-        fill: fn(&ReadSpan, &mut [MaybeUninit<R>], &StoreMetrics) -> Result<()>,
+        fill: impl Fn(&ReadSpan, &mut [MaybeUninit<R>], &StoreMetrics) -> Result<()> + Sync,
     ) -> Result<Vec<R>> {
         let rows = spans.iter().try_fold(0usize, |total, span| {
             total
@@ -95,15 +95,21 @@ impl FastKStore {
                 let count = (span.rows - start).min(task_rows);
                 let (destination, rest) = remaining.split_at_mut(count);
                 remaining = rest;
+                let stride = if span.split_flow_count.is_some() {
+                    8
+                } else {
+                    record_size
+                };
                 let offset = span
                     .offset
-                    .checked_add((start * record_size) as u64)
+                    .checked_add((start * stride) as u64)
                     .ok_or_else(|| FastKError::InvalidData("read task offset overflow".into()))?;
                 tasks.push((
                     ReadSpan {
                         file: span.file.clone(),
                         offset,
                         rows: count,
+                        split_flow_count: span.split_flow_count,
                     },
                     destination,
                 ));
