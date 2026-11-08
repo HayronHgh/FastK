@@ -1,5 +1,7 @@
 # Kline flow performance (v0.3.0-rc.1)
 
+These measurements describe the original interleaved flow layout.
+
 Measured 2026-11-07 on Windows 11, AMD Ryzen 9 9900X, 94 GiB RAM, Rust 1.97.1,
 release builds. The baseline is v0.2.0-rc.1 (`origin/main` 4e5f7a2), built with
 the same toolchain. Timings are local wall-clock medians, not portable promises.

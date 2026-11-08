@@ -4,6 +4,8 @@ from typing import Any, Literal
 import numpy as np
 
 Batch = np.ndarray[Any, np.dtype[np.void]]
+KLINE_ACTIVITY_DTYPE: np.dtype[np.void]
+KLINE_PRICE_DTYPE: np.dtype[np.void]
 KLINE_DTYPE: np.dtype[np.void]
 KLINE_FLOW_DTYPE: np.dtype[np.void]
 KLINE_FLOW_MISSING: int
@@ -16,6 +18,12 @@ class FastKError(RuntimeError):
 class Reader:
     def __init__(self, root: str | PathLike[str], *, threads: int = 1) -> None: ...
     def read_kline_range(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> Batch: ...
+    def read_kline_prices(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> Batch: ...
+    def read_kline_activity(
         self, symbol: str, timeframe: str, start_ts: int, end_ts: int
     ) -> Batch: ...
     def read_kline_latest(self, symbol: str, timeframe: str, limit: int) -> Batch: ...

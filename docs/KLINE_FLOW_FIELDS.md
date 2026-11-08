@@ -11,8 +11,7 @@ choosing scales and computing derived features stay in the caller
 
 ## Record layout
 
-`KlineFlowRecord` is ten little-endian `i64` words (80 bytes). The first six
-words are exactly the 48-byte `KlineRecord`.
+`KlineFlowRecord` is ten little-endian `i64` words (80 bytes). The first six words of the in-memory record match the 48-byte `KlineRecord`.
 
 | Word | Field | Unit / scale | Binance USDⓈ-M `GET /fapi/v1/klines` column |
 |---:|---|---|---|
@@ -111,6 +110,19 @@ order above), `KLINE_FLOW_MISSING`, `Reader.read_kline_flow_range`,
 `Reader.read_kline_flow_latest`, `Writer.write_kline_flow_range(...,
 quote_scale=...)`. `Reader.kline_info` adds `kline_schema` and `quote_scale`.
 Flow reads hand the Rust allocation to NumPy like OHLCV reads do.
+
+For an inclusive time range, Rust and both Python clients expose
+`read_kline_prices` and `read_kline_activity`. The CLI equivalents are
+`read-kline-prices` and `read-kline-activity`, with the same time arguments as
+`read-kline-range`. NumPy returns named integer fields using
+`KLINE_PRICE_DTYPE` or `KLINE_ACTIVITY_DTYPE`. The activity result contains
+per-bar totals and trade count. Optional flow fields keep the existing
+missing-value convention.
+
+On version 3 flow chunks, price and activity reads request 40 and 48 bytes
+of payload per selected row, respectively, including timestamps. Index and
+range lookup reads are separate. For old interleaved chunks the readers
+project fields after reading the original rows.
 
 ## Derived features belong to the caller
 

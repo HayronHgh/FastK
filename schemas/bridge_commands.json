@@ -852,6 +852,8 @@
           "seal-snapshot",
           "verify-snapshot",
           "read-kline-latest",
+          "read-kline-prices",
+          "read-kline-activity",
           "read-kline-flow-range",
           "write-kline-flow-range",
           "read-kline-flow-latest"

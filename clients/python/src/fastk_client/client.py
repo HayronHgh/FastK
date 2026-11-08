@@ -233,6 +233,30 @@ class Client:
     def read_kline_latest(self, symbol: str, timeframe: str, limit: int = 128) -> dict[str, Any]:
         return self._run("read-kline-latest", symbol=symbol, timeframe=timeframe, limit=limit)
 
+    def read_kline_prices(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> dict[str, Any]:
+        """Read timestamps and OHLC."""
+        return self._run(
+            "read-kline-prices",
+            symbol=symbol,
+            timeframe=timeframe,
+            start_ts=start_ts,
+            end_ts=end_ts,
+        )
+
+    def read_kline_activity(
+        self, symbol: str, timeframe: str, start_ts: int, end_ts: int
+    ) -> dict[str, Any]:
+        """Read per-bar trading activity; absent fields are ``None``."""
+        return self._run(
+            "read-kline-activity",
+            symbol=symbol,
+            timeframe=timeframe,
+            start_ts=start_ts,
+            end_ts=end_ts,
+        )
+
     def read_kline_flow_range(
         self, symbol: str, timeframe: str, start_ts: int, end_ts: int
     ) -> dict[str, Any]:

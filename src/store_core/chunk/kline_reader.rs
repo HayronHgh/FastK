@@ -294,7 +294,7 @@ fn lower_bound_via_sparse<R: KlineRow>(
     target_ts: i64,
     metrics: Option<&StoreMetrics>,
 ) -> Result<u64> {
-    if layout.sparse_index.is_empty() {
+    if layout.header.split_flow() || layout.sparse_index.is_empty() {
         return lower_bound(file, &layout.header, target_ts, metrics);
     }
 
@@ -315,7 +315,7 @@ fn upper_bound_via_sparse<R: KlineRow>(
     target_ts: i64,
     metrics: Option<&StoreMetrics>,
 ) -> Result<u64> {
-    if layout.sparse_index.is_empty() {
+    if layout.header.split_flow() || layout.sparse_index.is_empty() {
         return upper_bound(file, &layout.header, target_ts, metrics);
     }
 
@@ -355,7 +355,15 @@ fn read_record_at<R: KlineRow>(
     metrics: Option<&StoreMetrics>,
 ) -> Result<R> {
     const { assert!(R::BYTE_SIZE <= MAX_RECORD_BYTES) };
-    let offset = header.header_size as u64 + index * header.record_size as u64;
+    let offset = header.header_size as u64 + index * header.timestamp_stride();
+    if header.split_flow() {
+        let mut result = None;
+        read_split(file, offset, header.count, 1, 8..80, metrics, |row| {
+            result = Some(R::decode_le(row)?);
+            Ok(())
+        })?;
+        return result.ok_or_else(|| FastKError::InvalidData("missing split flow row".into()));
+    }
     file.seek(SeekFrom::Start(offset))?;
     let mut buffer = [0u8; MAX_RECORD_BYTES];
     let bytes = &mut buffer[..R::BYTE_SIZE];
@@ -372,7 +380,7 @@ fn read_timestamp_at(
     index: u64,
     metrics: Option<&StoreMetrics>,
 ) -> Result<i64> {
-    let offset = header.header_size as u64 + index * header.record_size as u64;
+    let offset = header.header_size as u64 + index * header.timestamp_stride();
     file.seek(SeekFrom::Start(offset))?;
     let mut bytes = [0u8; 8];
     file.read_exact(&mut bytes)?;
@@ -407,10 +415,16 @@ fn read_record_span<R: KlineRow>(
         )));
     }
 
+    if header.split_flow() {
+        let mut out = Vec::new();
+        append_record_span(file, header, start_index, count, &mut out, metrics)?;
+        return Ok(out);
+    }
+
     let byte_len = (count as usize)
         .checked_mul(R::BYTE_SIZE)
         .ok_or_else(|| FastKError::InvalidData("record span byte length overflow".to_string()))?;
-    let offset = header.header_size as u64 + start_index * header.record_size as u64;
+    let offset = header.header_size as u64 + start_index * header.timestamp_stride();
 
     file.seek(SeekFrom::Start(offset))?;
     read_record_buffer(file, byte_len, count as usize, metrics)
@@ -443,10 +457,27 @@ fn append_record_span<R: KlineRow>(
         )));
     }
 
+    if header.split_flow() {
+        let count = usize::try_from(count)
+            .map_err(|_| FastKError::InvalidData("record count exceeds address space".into()))?;
+        return read_split(
+            file,
+            header.header_size as u64 + start_index * 8,
+            header.count,
+            count,
+            8..80,
+            metrics,
+            |row| {
+                out.push(R::decode_le(row)?);
+                Ok(())
+            },
+        );
+    }
+
     let byte_len = (count as usize)
         .checked_mul(R::BYTE_SIZE)
         .ok_or_else(|| FastKError::InvalidData("append span byte length overflow".to_string()))?;
-    let offset = header.header_size as u64 + start_index * header.record_size as u64;
+    let offset = header.header_size as u64 + start_index * header.timestamp_stride();
 
     file.seek(SeekFrom::Start(offset))?;
     append_record_buffer(file, out, byte_len, count as usize, metrics)
@@ -582,12 +613,17 @@ pub(crate) fn plan_range<R: KlineRow>(
         upper_bound_via_sparse::<R>(&mut file, &layout, end, Some(&runtime.metrics()))?
     };
     let offset = first
-        .checked_mul(layout.header.record_size as u64)
+        .checked_mul(layout.header.timestamp_stride())
         .and_then(|offset| offset.checked_add(layout.header.header_size as u64))
         .ok_or_else(|| FastKError::InvalidData("record offset overflow".into()))?;
     let rows = usize::try_from(last.saturating_sub(first))
         .map_err(|_| FastKError::InvalidData("record count exceeds address space".into()))?;
-    Ok(ReadSpan { file, offset, rows })
+    Ok(ReadSpan {
+        file,
+        offset,
+        rows,
+        split_flow_count: layout.header.split_flow().then_some(layout.header.count),
+    })
 }
 
 pub(crate) fn read_planned<R: KlineRow>(
@@ -599,6 +635,24 @@ pub(crate) fn read_planned<R: KlineRow>(
         return Err(FastKError::InvalidData(
             "read destination size mismatch".into(),
         ));
+    }
+    if let Some(count) = span.split_flow_count {
+        let mut slots = out.iter_mut();
+        return read_split(
+            &mut span.file.clone(),
+            span.offset,
+            count,
+            span.rows,
+            8..80,
+            Some(metrics),
+            |row| {
+                slots
+                    .next()
+                    .expect("one destination per row")
+                    .write(R::decode_le(row)?);
+                Ok(())
+            },
+        );
     }
     let mut file = span.file.clone();
     file.seek(SeekFrom::Start(span.offset))?;
@@ -641,6 +695,24 @@ pub(crate) fn read_planned_ohlcv_from_flow(
     out: &mut [MaybeUninit<KlineRecord>],
     metrics: &StoreMetrics,
 ) -> Result<()> {
+    if let Some(count) = span.split_flow_count {
+        let mut slots = out.iter_mut();
+        return read_split(
+            &mut span.file.clone(),
+            span.offset,
+            count,
+            span.rows,
+            8..48,
+            Some(metrics),
+            |row| {
+                slots
+                    .next()
+                    .expect("one destination per row")
+                    .write(KlineRecord::decode_le(&row[..48])?);
+                Ok(())
+            },
+        );
+    }
     const STACK_BYTES: usize = 64 * 1024;
     const BATCH_ROWS: usize = 4_096;
     if out.len() != span.rows {
@@ -697,12 +769,125 @@ pub(crate) fn plan_tail<R: KlineRow>(
     let rows = take.min(layout.header.count as usize);
     let first = layout.header.count - rows as u64;
     let offset = first
-        .checked_mul(layout.header.record_size as u64)
+        .checked_mul(layout.header.timestamp_stride())
         .and_then(|offset| offset.checked_add(layout.header.header_size as u64))
         .ok_or_else(|| FastKError::InvalidData("tail offset overflow".into()))?;
     Ok(ReadSpan {
         file: runtime.open_file(chunk, series_id, series_dir)?,
         offset,
         rows,
+        split_flow_count: layout.header.split_flow().then_some(layout.header.count),
     })
+}
+
+/// Reassembles the requested words from timestamp, price and activity sections.
+/// Only selected bytes are read. Batches bound scratch space for bulk reads.
+pub(crate) fn read_split(
+    file: &mut (impl Read + Seek),
+    timestamp_offset: u64,
+    chunk_rows: u64,
+    rows: usize,
+    fields: std::ops::Range<usize>,
+    metrics: Option<&StoreMetrics>,
+    mut emit: impl FnMut(&[u8; 80]) -> Result<()>,
+) -> Result<()> {
+    const BATCH_ROWS: usize = 1024;
+    let prices = fields.start < 40;
+    let activity_words = fields.end.saturating_sub(40);
+    let mut times = vec![0; rows.min(BATCH_ROWS) * 8];
+    let mut price_bytes = vec![0; rows.min(BATCH_ROWS) * if prices { 32 } else { 0 }];
+    // A full activity section can be read contiguously. OHLCV only needs
+    // volume but still reads that section, where volume is interleaved.
+    let mut activity = vec![0; rows.min(BATCH_ROWS) * if activity_words > 0 { 40 } else { 0 }];
+    let header = ChunkHeader::BYTE_SIZE_V2 as u64;
+    let first = (timestamp_offset - header) / 8;
+    for batch in (0..rows).step_by(BATCH_ROWS) {
+        let n = (rows - batch).min(BATCH_ROWS);
+        let index = first + batch as u64;
+        let mut read = |offset, bytes: &mut [u8]| -> Result<()> {
+            file.seek(SeekFrom::Start(offset))?;
+            file.read_exact(bytes)?;
+            if let Some(metrics) = metrics {
+                metrics.record_bytes_read(bytes.len());
+            }
+            Ok(())
+        };
+        read(header + index * 8, &mut times[..n * 8])?;
+        if prices {
+            read(
+                header + chunk_rows * 8 + index * 32,
+                &mut price_bytes[..n * 32],
+            )?;
+        }
+        if activity_words > 0 {
+            read(
+                header + chunk_rows * 40 + index * 40,
+                &mut activity[..n * 40],
+            )?;
+        }
+        for i in 0..n {
+            let mut row = [0; 80];
+            row[..8].copy_from_slice(&times[i * 8..(i + 1) * 8]);
+            if prices {
+                row[8..40].copy_from_slice(&price_bytes[i * 32..(i + 1) * 32]);
+            }
+            if activity_words > 0 {
+                row[40..40 + activity_words]
+                    .copy_from_slice(&activity[i * 40..i * 40 + activity_words]);
+            }
+            emit(&row)?;
+        }
+    }
+    Ok(())
+}
+
+pub(crate) fn read_projection<R>(
+    span: &ReadSpan,
+    out: &mut [MaybeUninit<R>],
+    metrics: &StoreMetrics,
+    flow: bool,
+    fields: std::ops::Range<usize>,
+    project: fn(KlineFlowRecord) -> R,
+) -> Result<()> {
+    let mut file = span.file.clone();
+    if let Some(count) = span.split_flow_count {
+        let mut slots = out.iter_mut();
+        return read_split(
+            &mut file,
+            span.offset,
+            count,
+            span.rows,
+            fields,
+            Some(metrics),
+            |row| {
+                slots
+                    .next()
+                    .expect("one destination per row")
+                    .write(project(KlineFlowRecord::from_le_bytes(*row)));
+                Ok(())
+            },
+        );
+    }
+
+    file.seek(SeekFrom::Start(span.offset))?;
+    let stride = if flow {
+        KlineFlowRecord::BYTE_SIZE
+    } else {
+        KlineRecord::BYTE_SIZE
+    };
+    let mut staging = vec![0; span.rows.min(1024) * stride];
+    for batch in out.chunks_mut(1024) {
+        let bytes = &mut staging[..batch.len() * stride];
+        file.read_exact(bytes)?;
+        metrics.record_bytes_read(bytes.len());
+        for (slot, row) in batch.iter_mut().zip(bytes.chunks_exact(stride)) {
+            let row = if flow {
+                KlineFlowRecord::decode_le(row)?
+            } else {
+                KlineFlowRecord::from_ohlcv(KlineRecord::decode_le(row)?)
+            };
+            slot.write(project(row));
+        }
+    }
+    Ok(())
 }

@@ -103,7 +103,9 @@ pub use feature::{
     ScalarSeriesKey,
 };
 pub use index::{PredicateQueryEngine, ValueIndexEntry, ZoneMapEntry};
-pub use kline::{KlineFlowRecord, KlineRecord, KLINE_FLOW_MISSING};
+pub use kline::{
+    KlineActivityRecord, KlineFlowRecord, KlinePriceRecord, KlineRecord, KLINE_FLOW_MISSING,
+};
 pub use metrics::{MetricsLevel, StoreMetricsSnapshot};
 pub use snapshot::{seal_snapshot, verify_snapshot, SnapshotFile, SnapshotManifest};
 pub use storage::recovery::startup_recover as recover_store;

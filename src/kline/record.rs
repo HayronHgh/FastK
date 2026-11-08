@@ -321,3 +321,63 @@ impl KlineFlowRecord {
 fn present(value: i64) -> Option<i64> {
     (value != KLINE_FLOW_MISSING).then_some(value)
 }
+
+/// Timestamp and prices, in the series price scale.
+#[repr(C)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, bytemuck::NoUninit)]
+pub struct KlinePriceRecord {
+    pub ts: i64,
+    pub open: i64,
+    pub high: i64,
+    pub low: i64,
+    pub close: i64,
+}
+
+/// Timestamp and aggregate trading activity for one bar. Optional fields use
+/// KLINE_FLOW_MISSING in Rust and NumPy, and null when serialized to JSON.
+#[repr(C)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, bytemuck::NoUninit)]
+pub struct KlineActivityRecord {
+    pub ts: i64,
+    pub volume: i64,
+    #[serde(serialize_with = "serialize_flow_word")]
+    pub quote_volume: i64,
+    #[serde(serialize_with = "serialize_flow_word")]
+    pub trade_count: i64,
+    #[serde(serialize_with = "serialize_flow_word")]
+    pub taker_buy_volume: i64,
+    #[serde(serialize_with = "serialize_flow_word")]
+    pub taker_buy_quote_volume: i64,
+}
+
+fn serialize_flow_word<S: serde::Serializer>(
+    word: &i64,
+    serializer: S,
+) -> std::result::Result<S::Ok, S::Error> {
+    serde::Serialize::serialize(&present(*word), serializer)
+}
+
+impl From<KlineFlowRecord> for KlinePriceRecord {
+    fn from(row: KlineFlowRecord) -> Self {
+        Self {
+            ts: row.ts,
+            open: row.open,
+            high: row.high,
+            low: row.low,
+            close: row.close,
+        }
+    }
+}
+
+impl From<KlineFlowRecord> for KlineActivityRecord {
+    fn from(row: KlineFlowRecord) -> Self {
+        Self {
+            ts: row.ts,
+            volume: row.volume,
+            quote_volume: row.quote_volume,
+            trade_count: row.trade_count,
+            taker_buy_volume: row.taker_buy_volume,
+            taker_buy_quote_volume: row.taker_buy_quote_volume,
+        }
+    }
+}

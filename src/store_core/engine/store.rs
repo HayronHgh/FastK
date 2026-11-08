@@ -23,6 +23,7 @@ use crate::engine::sequence::{
 use crate::error::{FastKError, Result};
 use crate::index::cache::{ScalarSidecarRuntime, SidecarCacheKey};
 use crate::index::{vix, zmap, PredicateQueryEngine};
+use crate::kline::{KlineActivityRecord, KlinePriceRecord};
 use crate::metrics::{MetricsLevel, StoreMetrics, StoreMetricsSnapshot};
 use crate::storage::{
     lock::{StoreReadLock, StoreWriteLock},
@@ -524,6 +525,66 @@ impl FastKStore {
         let meta = self.load_kline_meta(symbol, timeframe)?;
         let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
         self.get_kline_range_prepared(&series_dir, meta.as_ref(), start_ts, end_ts)
+    }
+
+    /// Returns timestamp and OHLC in the inclusive range.
+    pub fn read_kline_prices(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<KlinePriceRecord>> {
+        self.read_kline_projection(
+            symbol,
+            timeframe,
+            start_ts..=end_ts,
+            8..40,
+            KlinePriceRecord::from,
+        )
+    }
+
+    /// Returns timestamp and per-bar trading activity in the inclusive range.
+    pub fn read_kline_activity(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        start_ts: i64,
+        end_ts: i64,
+    ) -> Result<Vec<KlineActivityRecord>> {
+        self.read_kline_projection(
+            symbol,
+            timeframe,
+            start_ts..=end_ts,
+            40..80,
+            KlineActivityRecord::from,
+        )
+    }
+
+    fn read_kline_projection<R: Send>(
+        &self,
+        symbol: &str,
+        timeframe: &str,
+        range: RangeInclusive<i64>,
+        fields: std::ops::Range<usize>,
+        project: fn(KlineFlowRecord) -> R,
+    ) -> Result<Vec<R>> {
+        if range.is_empty() {
+            return Ok(Vec::new());
+        }
+        let (start, end) = range.into_inner();
+        let meta = self.load_kline_meta(symbol, timeframe)?;
+        let series_dir = path::kline_series_dir(&self.root, symbol, timeframe);
+        let chunks = &meta.chunks[meta.find_chunks_for_range(start, end)];
+        let flow = is_kline_flow(&meta);
+        let spans = if flow {
+            self.kline_range_spans::<KlineFlowRecord>(&series_dir, &meta, chunks, start, end)?
+        } else {
+            self.kline_range_spans::<KlineRecord>(&series_dir, &meta, chunks, start, end)?
+        };
+        self.read_spans(spans, meta.record_size as usize, |span, out, metrics| {
+            kline_reader::read_projection(span, out, metrics, flow, fields.clone(), project)
+        })
     }
 
     /// Returns the latest `n` klines in ascending timestamp order.
